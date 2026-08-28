@@ -1,0 +1,16 @@
+{
+  "name": "rafeeq-almunazer-app",
+  "version": "1.0.0",
+  "description": "«رفيق المناظر» (The Debater's Companion) - Multi-Sect Theological Debate Archive & OCR Platform",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build:client": "cd client && npm ci && npm run build",
+    "build": "cd client && npm ci && npm run build",
+    "start": "cd server && node server.js",
+    "scan": "cd server && node db/scan_and_index.js"
+  }
+}

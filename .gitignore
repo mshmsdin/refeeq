@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build artifacts
+dist/
+client/dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & Secrets (Never commit secrets to GitHub)
+.env
+.env.*
+!.env.example
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local databases & WAL files in dev
+*.db
+*.db-shm
+*.db-wal
+server/db/library.db
+server/db/library.db-shm
+server/db/library.db-wal
+
+# Temporary / Scratch
+scratch/
+
+# Large media files (stored separately, not on GitHub)
+media/
+server/storage/
+folders_dump.json
+current_state.json
+analyze_out.txt
+api_verify.txt
+check_output.txt
+docs_out.txt
+final_verify.txt
+fix2_out.txt
+fix_docs_out.txt
+fix_out.txt
+orphan_out.txt
+pass2_output.txt
+pass3_output.txt
+pass4_output.txt
+sect_out.txt
+tree_check.txt
+tree_final.txt
+tree_names.json
+tree_output.txt
+bad_folders.json
+doc_sample.json
+doc_verify.json
+final_structure.json
+orphans.json

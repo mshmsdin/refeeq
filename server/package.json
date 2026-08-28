@@ -1,0 +1,24 @@
+{
+  "name": "rafeeq-almunazer-server",
+  "version": "1.0.0",
+  "description": "Backend API with SQLite FTS5 for Rafeeq Al-Munazer",
+  "main": "server.js",
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "scan": "node db/scan_and_index.js",
+    "bible:import:svd": "node importers/import_svd.js",
+    "bible:import:deutero": "node importers/import_deutero.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.6.0",
+    "better-sqlite3": "^11.8.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
+    "sharp": "^0.35.3"
+  }
+}

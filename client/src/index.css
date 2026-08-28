@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-card: #ffffff;
+    --bg-muted: #f1f5f9;
+    --border-main: #e2e8f0;
+    --border-subtle: #edf2f7;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --accent-amber: #d97706;
+    --accent-amber-subtle: rgba(217, 119, 6, 0.08);
+    color-scheme: light;
+  }
+
+  html.dark {
+    --bg-main: #090e17;
+    --bg-surface: #0f172a;
+    --bg-card: #131d31;
+    --bg-muted: #19253d;
+    --border-main: #1e2e4a;
+    --border-subtle: #162238;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-amber: #f59e0b;
+    --accent-amber-subtle: rgba(245, 158, 11, 0.12);
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+  }
+
+  /* Custom Slim Scrollbars */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(148, 163, 184, 0.28);
+    border-radius: 9999px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(148, 163, 184, 0.5);
+  }
+}
+
+/* Polished Card & Surface Utilities */
+.app-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-main);
+  border-radius: 1rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.app-card:hover {
+  border-color: rgba(217, 119, 6, 0.45);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.08), 0 4px 10px -2px rgba(217, 119, 6, 0.04);
+  transform: translateY(-2px);
+}
+
+.dark .app-card:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 14px 32px -6px rgba(0, 0, 0, 0.5), 0 4px 12px -2px rgba(245, 158, 11, 0.06);
+  transform: translateY(-2px);
+}
+
+.app-header {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-main);
+}
+
+.dark .app-header {
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-main);
+}
+
+/* Micro-Interaction Helpers */
+.btn-press {
+  transition: transform 0.12s ease-out, filter 0.12s ease-out;
+}
+.btn-press:active {
+  transform: scale(0.96);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark .glass-panel {
+  background: rgba(19, 29, 49, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 46, 74, 0.8);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+/* Interactive focus ring standard */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500;
+}
+
+/* Bible Font & Luxury Manuscript Styling */
+.font-scheherazade,
+.scheherazade-font,
+.font-readex,
+.bible-scope {
+  font-family: 'Scheherazade New', 'Amiri', serif !important;
+}
+
+/* Ensure inputs, buttons, and placeholders in Bible use Scheherazade New */
+.bible-scope *,
+.bible-scope input,
+.bible-scope textarea,
+.bible-scope select,
+.bible-scope button,
+.font-scheherazade input,
+.font-scheherazade textarea,
+.font-scheherazade select,
+.font-scheherazade button,
+.scheherazade-font input,
+.scheherazade-font textarea,
+.scheherazade-font select,
+.scheherazade-font button {
+  font-family: 'Scheherazade New', 'Amiri', serif !important;
+}
+
+.bible-scope input::placeholder,
+.font-scheherazade input::placeholder,
+.scheherazade-font input::placeholder {
+  font-family: 'Scheherazade New', 'Amiri', serif !important;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  opacity: 0.75;
+}
+
+.luxury-border {
+  border: 1px solid rgba(181, 138, 67, 0.28);
+  box-shadow: 0 10px 30px -5px rgba(90, 60, 30, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+html.dark .luxury-border {
+  border: 1px solid rgba(181, 138, 67, 0.35);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.verse-card {
+  transition: all 0.22s ease-in-out;
+}
+
+.verse-card:hover {
+  border-color: rgba(181, 138, 67, 0.5);
+  box-shadow: 0 6px 20px -3px rgba(115, 85, 53, 0.1);
+  transform: translateY(-2px);
+}
+
+.verse-card.highlighted {
+  background-color: rgba(248, 243, 234, 0.9) !important;
+  border-color: #8d6e47 !important;
+}
+
+html.dark .verse-card.highlighted {
+  background-color: rgba(141, 110, 71, 0.25) !important;
+  border-color: #c2a578 !important;
+}
+
+/* Calligraphy Divider Line */
+.divider-ornament {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #8d6e47;
+  opacity: 0.85;
+}
+
+.divider-ornament::before,
+.divider-ornament::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(181, 138, 67, 0.3);
+}
+
+.divider-ornament::before {
+  margin-left: 1em;
+}
+
+.divider-ornament::after {
+  margin-right: 1em;
+}
