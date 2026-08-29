@@ -177,3 +177,19 @@ export function getDb() {
   dbInstance = db;
   return db;
 }
+
+export function closeDb() {
+  if (dbInstance && dbInstance.open) {
+    try {
+      dbInstance.close();
+    } catch (e) {
+      console.error('Error closing SQLite DB:', e.message);
+    }
+    dbInstance = null;
+  }
+}
+
+export function getDbPath() {
+  return dbPath;
+}
+

@@ -4,7 +4,8 @@ import morgan from 'morgan';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
-import { initDatabase, getDb } from './db/schema.js';
+import AdmZip from 'adm-zip';
+import { initDatabase, getDb, closeDb, getDbPath } from './db/schema.js';
 import { initBibleSchema } from './db/bible_schema.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
@@ -17,6 +18,7 @@ import { parseReference, looksLikeReference } from './utils/bible_reference_pars
 import { scanAndIndex } from './db/scan_and_index.js';
 import { spawn } from 'child_process';
 import { extractDistinctKeywords, normalizeArabicText } from './utils/arabic_nlp.js';
+import { resolveImagePath } from './utils/path_resolver.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -32,13 +34,15 @@ const HOST = process.env.HOST || '0.0.0.0';
 // Enable proxy trust for Traefik / Cloudflare
 app.set('trust proxy', 1);
 
-// Security & Parsing Middleware
+// Security & Parsing Middleware (support chunk uploads up to 60MB)
 app.use(cors());
-app.use(express.json({ limit: '10mb' }));
+app.use(express.json({ limit: '60mb' }));
+app.use(express.urlencoded({ limit: '60mb', extended: true }));
 
 if (process.env.NODE_ENV !== 'test') {
   app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 }
+
 
 // ----------------------------------------------------
 // Health Check & Readiness Endpoints (Mandatory Rules)
@@ -700,24 +704,213 @@ app.post('/api/folder/:id/category', (req, res) => {
   }
 });
 
-// 8. Image Streaming / Raw File
+// 8. Image Streaming / Raw File (Smart Cross-Platform Resolution)
 app.get('/api/image/raw', (req, res) => {
   try {
-    const filePath = req.query.path;
-    if (!filePath) {
+    const rawPath = req.query.path;
+    if (!rawPath) {
       return res.status(400).send('Missing path parameter');
     }
 
-    if (!fs.existsSync(filePath)) {
+    const resolved = resolveImagePath(rawPath);
+    if (!resolved || !fs.existsSync(resolved)) {
       return res.status(404).send('Image file not found on disk');
     }
 
     res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.sendFile(filePath);
+    res.sendFile(resolved);
   } catch (err) {
     res.status(500).send(err.message);
   }
 });
+
+// ====================================================
+// Cloudflare-Safe Chunked Sync & Media Upload APIs
+// ====================================================
+const SYNC_SECRET = process.env.SYNC_SECRET_TOKEN || 'rafeeq-almunazer-sync-2026-secure';
+
+function requireSyncAuth(req, res, next) {
+  const token = req.headers['x-sync-token'] || req.query.token || req.body?.token;
+  if (!token || token !== SYNC_SECRET) {
+    return res.status(401).json({ success: false, error: 'Unauthorized: Invalid or missing sync token' });
+  }
+  next();
+}
+
+const SYNC_TMP_DIR = process.env.SYNC_TMP_DIR || path.join(
+  process.env.DB_PATH ? path.dirname(process.env.DB_PATH) : path.join(__dirname, 'storage'),
+  'tmp_sync'
+);
+
+// 1. Sync Status & Health Check
+app.get('/api/sync/status', requireSyncAuth, (req, res) => {
+  try {
+    const db = getDb();
+    const docCount = db.prepare('SELECT COUNT(*) as c FROM documents').get()?.c || 0;
+    const folderCount = db.prepare('SELECT COUNT(*) as c FROM folders').get()?.c || 0;
+    const dbFilePath = getDbPath();
+
+    res.json({
+      success: true,
+      platform: process.platform,
+      db_path: dbFilePath,
+      db_exists: fs.existsSync(dbFilePath),
+      db_size_bytes: fs.existsSync(dbFilePath) ? fs.statSync(dbFilePath).size : 0,
+      documents_count: docCount,
+      folders_count: folderCount,
+      archive_path: process.env.ARCHIVE_PATH || '/app/data/archive',
+      media_path: process.env.MEDIA_PATH || '/app/data/media',
+      uptime: process.uptime(),
+      memory_usage: process.memoryUsage()
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// 2. Upload Single Chunk (base64 payload)
+app.post('/api/sync/chunk', requireSyncAuth, (req, res) => {
+  try {
+    const { upload_id, chunk_index, total_chunks, filename, chunk_data } = req.body;
+    if (!upload_id || chunk_index === undefined || !chunk_data) {
+      return res.status(400).json({ success: false, error: 'Missing required chunk fields' });
+    }
+
+    const uploadDir = path.join(SYNC_TMP_DIR, upload_id);
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+
+    const chunkFile = path.join(uploadDir, `chunk_${String(chunk_index).padStart(5, '0')}`);
+    const buffer = Buffer.from(chunk_data, 'base64');
+    fs.writeFileSync(chunkFile, buffer);
+
+    res.json({
+      success: true,
+      upload_id,
+      chunk_index,
+      total_chunks,
+      received_bytes: buffer.length
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// 3. Finalize & Extract Bundle
+app.post('/api/sync/finalize', requireSyncAuth, (req, res) => {
+  try {
+    const { upload_id, filename = 'bundle.zip', total_chunks } = req.body;
+    if (!upload_id || total_chunks === undefined) {
+      return res.status(400).json({ success: false, error: 'Missing upload_id or total_chunks' });
+    }
+
+    const uploadDir = path.join(SYNC_TMP_DIR, upload_id);
+    if (!fs.existsSync(uploadDir)) {
+      return res.status(404).json({ success: false, error: 'Upload session not found' });
+    }
+
+    // Assemble assembled file
+    const assembledFilePath = path.join(uploadDir, filename);
+    const writeStream = fs.createWriteStream(assembledFilePath);
+
+    for (let i = 0; i < total_chunks; i++) {
+      const chunkFile = path.join(uploadDir, `chunk_${String(i).padStart(5, '0')}`);
+      if (!fs.existsSync(chunkFile)) {
+        writeStream.close();
+        return res.status(400).json({ success: false, error: `Missing chunk ${i}` });
+      }
+      const data = fs.readFileSync(chunkFile);
+      writeStream.write(data);
+    }
+    writeStream.end();
+
+    writeStream.on('finish', () => {
+      try {
+        console.log(`[Sync] Assembled ${filename} (${fs.statSync(assembledFilePath).size} bytes). Extracting...`);
+
+        // Target destinations
+        const targetDataDir = process.env.DB_PATH ? path.dirname(process.env.DB_PATH) : path.join(__dirname, '../media');
+        const targetMediaDir = process.env.MEDIA_PATH || (process.env.ARCHIVE_PATH || path.join(targetDataDir, 'media'));
+
+        if (!fs.existsSync(targetMediaDir)) {
+          fs.mkdirSync(targetMediaDir, { recursive: true });
+        }
+
+        let extractedCount = 0;
+        let dbReplaced = false;
+
+        if (filename.endsWith('.zip')) {
+          const zip = new AdmZip(assembledFilePath);
+          const zipEntries = zip.getEntries();
+
+          // Check if library.db is in the zip
+          const dbEntry = zipEntries.find(e => e.entryName === 'library.db' || e.entryName.endsWith('/library.db'));
+          if (dbEntry) {
+            console.log('[Sync] Found library.db in archive. Hot-swapping database...');
+            closeDb();
+            const currentDbPath = getDbPath();
+            const dbDir = path.dirname(currentDbPath);
+            if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true });
+
+            // Extract db
+            fs.writeFileSync(currentDbPath, dbEntry.getData());
+            dbReplaced = true;
+            console.log('[Sync] Database replaced successfully. Reconnecting...');
+            initDatabase();
+          }
+
+          // Extract media entries
+          for (const entry of zipEntries) {
+            if (entry.isDirectory || entry.entryName === 'library.db' || entry.entryName.endsWith('/library.db')) {
+              continue;
+            }
+
+            let entryRel = entry.entryName.replace(/^media[\\/]/, '');
+            const destPath = path.join(targetMediaDir, entryRel);
+            const destDir = path.dirname(destPath);
+            if (!fs.existsSync(destDir)) {
+              fs.mkdirSync(destDir, { recursive: true });
+            }
+            fs.writeFileSync(destPath, entry.getData());
+            extractedCount++;
+          }
+        }
+
+        // Clean up temporary chunks
+        try {
+          fs.rmSync(uploadDir, { recursive: true, force: true });
+        } catch (e) {
+          console.warn('[Sync] Could not remove temp dir:', e.message);
+        }
+
+        // Recalculate stats
+        const db = getDb();
+        const docCount = db.prepare('SELECT COUNT(*) as c FROM documents').get()?.c || 0;
+        const folderCount = db.prepare('SELECT COUNT(*) as c FROM folders').get()?.c || 0;
+
+        res.json({
+          success: true,
+          message: 'Upload and sync finalized successfully!',
+          extracted_files: extractedCount,
+          database_replaced: dbReplaced,
+          documents_count: docCount,
+          folders_count: folderCount
+        });
+      } catch (err) {
+        console.error('[Sync Error]', err);
+        res.status(500).json({ success: false, error: err.message });
+      }
+    });
+
+    writeStream.on('error', (err) => {
+      res.status(500).json({ success: false, error: err.message });
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 
 // 9. Favorites / Live Debate Tray management
 app.get('/api/favorites', (req, res) => {
