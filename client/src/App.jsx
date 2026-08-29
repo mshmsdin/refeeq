@@ -9,7 +9,7 @@ import StatsModal from './components/StatsModal';
 import CategoryGuideModal from './components/CategoryGuideModal';
 import BibleSection from './components/BibleSection';
 import { Tag as TagIcon, X, Compass, Folder, ChevronLeft, Link2, Check, Sparkles, RotateCcw, BookOpen } from 'lucide-react';
-import { parseCurrentRoute, buildRouteUrl, pushRouteUrl } from './utils/urlRoutes';
+import { parseCurrentRoute, buildRouteUrl, buildBibleUrl, pushRouteUrl } from './utils/urlRoutes';
 import { DEBATE_CATEGORIES } from './utils/categories';
 
 export default function App() {
@@ -441,7 +441,7 @@ export default function App() {
           <div className="sticky top-0 z-30 app-header shadow-sm">
             <div className="max-w-[1920px] mx-auto px-4 py-2.5 flex items-center gap-3" dir="rtl">
               <button
-                onClick={() => { setIsBibleView(false); window.history.pushState(null, '', '/'); document.title = 'رفيق المحاور'; }}
+                onClick={() => { setIsBibleView(false); window.history.pushState(null, '', buildRouteUrl({})); document.title = 'رفيق المحاور'; }}
                 className="flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-amber-500 transition-colors"
               >
                 <Compass className="w-4 h-4" />
@@ -499,7 +499,7 @@ export default function App() {
         stats={stats}
         onToggleMobileSidebar={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
         isMobileSidebarOpen={isMobileSidebarOpen}
-        onOpenBible={() => { setIsBibleView(true); window.history.pushState(null, '', '/bible'); document.title = 'الكتاب المقدس - رفيق المحاور'; }}
+        onOpenBible={() => { setIsBibleView(true); window.history.pushState(null, '', buildBibleUrl()); document.title = 'الكتاب المقدس - رفيق المحاور'; }}
       />
 
 
