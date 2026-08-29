@@ -9,10 +9,11 @@ const __dirname = path.dirname(__filename);
 const CANDIDATE_ROOTS = [
   process.env.MEDIA_PATH,
   process.env.ARCHIVE_PATH,
+  path.resolve(__dirname, '../../media'),   // e:\المكتبة الشيعية\تطبيق\media ← الأصح
+  path.resolve(__dirname, '../storage'),    // server/storage
   '/app/data/media',
   '/app/data/archive',
   '/app/data',
-  path.resolve(__dirname, '../../media'),
   path.resolve(__dirname, '../media'),
   path.resolve(__dirname, '../data/media'),
   path.resolve(__dirname, '../data/archive'),

@@ -15,13 +15,13 @@ import {
   searchBible, getBibleStats
 } from './utils/bible_service.js';
 import { parseReference, looksLikeReference } from './utils/bible_reference_parser.js';
-import { scanAndIndex } from './db/scan_and_index.js';
 import { spawn, execSync } from 'child_process';
-
+import zlib from 'zlib';
 import { pipeline } from 'stream/promises';
 import { Readable } from 'stream';
 import { extractDistinctKeywords, normalizeArabicText } from './utils/arabic_nlp.js';
 import { resolveImagePath } from './utils/path_resolver.js';
+
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -1074,78 +1074,126 @@ app.post('/api/sync/pull-url', requireSyncAuth, async (req, res) => {
         currentSyncJob.progress = `Downloaded ${(downloadedBytes / (1024 * 1024)).toFixed(2)} MB. Extracting files...`;
         currentSyncJob.updatedAt = Date.now();
 
-        // Extract archive using Python streaming (supports >2 GiB archives without memory limits)
-        const extractScript = path.join(getSyncTmpDir(), 'extract_helper.py');
+        // Extract archive using pure Node.js streaming (supports >2 GiB archives without external Python or memory limits)
         const targetDataDir = process.env.DB_PATH ? path.dirname(process.env.DB_PATH) : path.join(__dirname, '../media');
         const targetMediaDir = process.env.MEDIA_PATH || (process.env.ARCHIVE_PATH || path.join(targetDataDir, 'media'));
         const currentDbPath = getDbPath();
 
-        const pyCode = `
-import zipfile, os, sys, shutil
-
-zip_path = sys.argv[1]
-media_dir = sys.argv[2]
-db_dest = sys.argv[3]
-
-os.makedirs(media_dir, exist_ok=True)
-db_replaced = False
-extracted_count = 0
-
-with zipfile.ZipFile(zip_path, 'r') as zf:
-    for member in zf.infolist():
-        if member.is_dir():
-            continue
-        filename = member.filename
-        if filename == 'library.db' or filename.endswith('/library.db'):
-            os.makedirs(os.path.dirname(db_dest), exist_ok=True)
-            with zf.open(member) as source, open(db_dest + '.tmp', 'wb') as target:
-                shutil.copyfileobj(source, target)
-            db_replaced = True
-        else:
-            rel = filename
-            if rel.startswith('media/'):
-                rel = rel[6:]
-            elif rel.startswith('media\\\\'):
-                rel = rel[6:]
-            out_file = os.path.join(media_dir, rel)
-            os.makedirs(os.path.dirname(out_file), exist_ok=True)
-            with zf.open(member) as source, open(out_file, 'wb') as target:
-                shutil.copyfileobj(source, target)
-            extracted_count += 1
-
-if db_replaced and os.path.exists(db_dest + '.tmp'):
-    if os.path.exists(db_dest):
-        try:
-            os.remove(db_dest)
-        except:
-            pass
-    shutil.move(db_dest + '.tmp', db_dest)
-
-print(f"OK:{extracted_count}:{1 if db_replaced else 0}")
-`;
-        fs.writeFileSync(extractScript, pyCode);
-        
         closeDb();
-        const pyCmd = process.platform === 'win32' ? 'python' : 'python3';
-        const pyOutput = execSync(`${pyCmd} "${extractScript}" "${tempZip}" "${targetMediaDir}" "${currentDbPath}"`, {
-          timeout: 900000,
-          maxBuffer: 50 * 1024 * 1024
-        }).toString();
-        
-        initDatabase();
 
+        const fd = fs.openSync(tempZip, 'r');
+        const stat = fs.fstatSync(fd);
+        const fileSize = stat.size;
+
+        const searchSize = Math.min(fileSize, 65536 + 22);
+        const searchBuf = Buffer.alloc(searchSize);
+        fs.readSync(fd, searchBuf, 0, searchSize, fileSize - searchSize);
+
+        let eocdOffset = -1;
+        for (let i = searchSize - 22; i >= 0; i--) {
+          if (searchBuf.readUInt32LE(i) === 0x06054b50) {
+            eocdOffset = fileSize - searchSize + i;
+            break;
+          }
+        }
+
+        if (eocdOffset === -1) {
+          fs.closeSync(fd);
+          throw new Error('Could not find End of Central Directory in zip');
+        }
+
+        const eocdBuf = Buffer.alloc(22);
+        fs.readSync(fd, eocdBuf, 0, 22, eocdOffset);
+
+        const totalEntries = eocdBuf.readUInt16LE(10);
+        const cdSize = eocdBuf.readUInt32LE(12);
+        const cdOffset = eocdBuf.readUInt32LE(16);
+
+        const cdBuf = Buffer.alloc(cdSize);
+        fs.readSync(fd, cdBuf, 0, cdSize, cdOffset);
+
+        let pos = 0;
         let extractedCount = 0;
         let dbReplaced = false;
-        if (pyOutput.includes('OK:')) {
-          const parts = pyOutput.trim().split(':');
-          extractedCount = parseInt(parts[1], 10) || 0;
-          dbReplaced = parts[2] === '1';
+
+        for (let i = 0; i < totalEntries; i++) {
+          if (pos + 46 > cdSize) break;
+          const sig = cdBuf.readUInt32LE(pos);
+          if (sig !== 0x02014b50) break;
+
+          const method = cdBuf.readUInt16LE(pos + 10);
+          const compSize = cdBuf.readUInt32LE(pos + 20);
+          const nameLen = cdBuf.readUInt16LE(pos + 28);
+          const extraLen = cdBuf.readUInt16LE(pos + 30);
+          const commentLen = cdBuf.readUInt16LE(pos + 32);
+          const localHeaderOffset = cdBuf.readUInt32LE(pos + 42);
+
+          const filename = cdBuf.toString('utf8', pos + 46, pos + 46 + nameLen);
+          pos += 46 + nameLen + extraLen + commentLen;
+
+          if (filename.endsWith('/') || filename.endsWith('\\')) {
+            continue;
+          }
+
+          const localHeaderBuf = Buffer.alloc(30);
+          fs.readSync(fd, localHeaderBuf, 0, 30, localHeaderOffset);
+          const localNameLen = localHeaderBuf.readUInt16LE(26);
+          const localExtraLen = localHeaderBuf.readUInt16LE(28);
+          const dataOffset = localHeaderOffset + 30 + localNameLen + localExtraLen;
+
+          const compData = Buffer.alloc(compSize);
+          fs.readSync(fd, compData, 0, compSize, dataOffset);
+
+          let uncompData;
+          try {
+            if (method === 0) {
+              uncompData = compData;
+            } else if (method === 8) {
+              uncompData = zlib.inflateRawSync(compData);
+            } else {
+              continue;
+            }
+          } catch (zlibErr) {
+            console.warn(`[Sync] Skipping corrupted entry ${filename}:`, zlibErr.message);
+            continue;
+          }
+
+          if (filename === 'library.db' || filename.endsWith('/library.db') || filename.endsWith('\\library.db')) {
+            const dbDir = path.dirname(currentDbPath);
+            if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true });
+            fs.writeFileSync(currentDbPath + '.tmp', uncompData);
+            dbReplaced = true;
+          } else {
+            let rel = filename;
+            if (rel.startsWith('media/')) rel = rel.slice(6);
+            else if (rel.startsWith('media\\')) rel = rel.slice(6);
+            const outPath = path.join(targetMediaDir, rel);
+            const outDir = path.dirname(outPath);
+            if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+            try {
+              fs.writeFileSync(outPath, uncompData);
+              extractedCount++;
+            } catch (writeErr) {
+              console.warn(`[Sync] Path write error for ${rel}:`, writeErr.message);
+            }
+          }
         }
+
+        fs.closeSync(fd);
+
+        if (dbReplaced && fs.existsSync(currentDbPath + '.tmp')) {
+          if (fs.existsSync(currentDbPath)) {
+            try { fs.unlinkSync(currentDbPath); } catch (e) {}
+          }
+          fs.renameSync(currentDbPath + '.tmp', currentDbPath);
+        }
+
+        initDatabase();
 
         try {
           fs.unlinkSync(tempZip);
-          fs.unlinkSync(extractScript);
         } catch (e) {}
+
 
 
         const db = getDb();
