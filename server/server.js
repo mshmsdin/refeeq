@@ -16,7 +16,8 @@ import {
 } from './utils/bible_service.js';
 import { parseReference, looksLikeReference } from './utils/bible_reference_parser.js';
 import { scanAndIndex } from './db/scan_and_index.js';
-import { spawn } from 'child_process';
+import { spawn, execSync } from 'child_process';
+
 import { pipeline } from 'stream/promises';
 import { Readable } from 'stream';
 import { extractDistinctKeywords, normalizeArabicText } from './utils/arabic_nlp.js';
@@ -1073,48 +1074,79 @@ app.post('/api/sync/pull-url', requireSyncAuth, async (req, res) => {
         currentSyncJob.progress = `Downloaded ${(downloadedBytes / (1024 * 1024)).toFixed(2)} MB. Extracting files...`;
         currentSyncJob.updatedAt = Date.now();
 
-        const zip = new AdmZip(tempZip);
-        const zipEntries = zip.getEntries();
-        
-        // Check if library.db is in the zip
-        const dbEntry = zipEntries.find(e => e.entryName === 'library.db' || e.entryName.endsWith('/library.db'));
-        let dbReplaced = false;
-        if (dbEntry) {
-          console.log('[Sync] Found library.db in archive. Hot-swapping database...');
-          closeDb();
-          const currentDbPath = getDbPath();
-          const dbDir = path.dirname(currentDbPath);
-          if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true });
-          fs.writeFileSync(currentDbPath, dbEntry.getData());
-          dbReplaced = true;
-          initDatabase();
-        }
-
-        // Extract media entries
+        // Extract archive using Python streaming (supports >2 GiB archives without memory limits)
+        const extractScript = path.join(getSyncTmpDir(), 'extract_helper.py');
         const targetDataDir = process.env.DB_PATH ? path.dirname(process.env.DB_PATH) : path.join(__dirname, '../media');
         const targetMediaDir = process.env.MEDIA_PATH || (process.env.ARCHIVE_PATH || path.join(targetDataDir, 'media'));
-        if (!fs.existsSync(targetMediaDir)) {
-          fs.mkdirSync(targetMediaDir, { recursive: true });
-        }
+        const currentDbPath = getDbPath();
+
+        const pyCode = `
+import zipfile, os, sys, shutil
+
+zip_path = sys.argv[1]
+media_dir = sys.argv[2]
+db_dest = sys.argv[3]
+
+os.makedirs(media_dir, exist_ok=True)
+db_replaced = False
+extracted_count = 0
+
+with zipfile.ZipFile(zip_path, 'r') as zf:
+    for member in zf.infolist():
+        if member.is_dir():
+            continue
+        filename = member.filename
+        if filename == 'library.db' or filename.endswith('/library.db'):
+            os.makedirs(os.path.dirname(db_dest), exist_ok=True)
+            with zf.open(member) as source, open(db_dest + '.tmp', 'wb') as target:
+                shutil.copyfileobj(source, target)
+            db_replaced = True
+        else:
+            rel = filename
+            if rel.startswith('media/'):
+                rel = rel[6:]
+            elif rel.startswith('media\\\\'):
+                rel = rel[6:]
+            out_file = os.path.join(media_dir, rel)
+            os.makedirs(os.path.dirname(out_file), exist_ok=True)
+            with zf.open(member) as source, open(out_file, 'wb') as target:
+                shutil.copyfileobj(source, target)
+            extracted_count += 1
+
+if db_replaced and os.path.exists(db_dest + '.tmp'):
+    if os.path.exists(db_dest):
+        try:
+            os.remove(db_dest)
+        except:
+            pass
+    shutil.move(db_dest + '.tmp', db_dest)
+
+print(f"OK:{extracted_count}:{1 if db_replaced else 0}")
+`;
+        fs.writeFileSync(extractScript, pyCode);
+        
+        closeDb();
+        const pyCmd = process.platform === 'win32' ? 'python' : 'python3';
+        const pyOutput = execSync(`${pyCmd} "${extractScript}" "${tempZip}" "${targetMediaDir}" "${currentDbPath}"`, {
+          timeout: 900000,
+          maxBuffer: 50 * 1024 * 1024
+        }).toString();
+        
+        initDatabase();
 
         let extractedCount = 0;
-        for (const entry of zipEntries) {
-          if (entry.isDirectory || entry.entryName === 'library.db' || entry.entryName.endsWith('/library.db')) {
-            continue;
-          }
-          let entryRel = entry.entryName.replace(/^media[\\/]/, '');
-          const destPath = path.join(targetMediaDir, entryRel);
-          const destDir = path.dirname(destPath);
-          if (!fs.existsSync(destDir)) {
-            fs.mkdirSync(destDir, { recursive: true });
-          }
-          fs.writeFileSync(destPath, entry.getData());
-          extractedCount++;
+        let dbReplaced = false;
+        if (pyOutput.includes('OK:')) {
+          const parts = pyOutput.trim().split(':');
+          extractedCount = parseInt(parts[1], 10) || 0;
+          dbReplaced = parts[2] === '1';
         }
 
         try {
           fs.unlinkSync(tempZip);
+          fs.unlinkSync(extractScript);
         } catch (e) {}
+
 
         const db = getDb();
         const docCount = db.prepare('SELECT COUNT(*) as c FROM documents').get()?.c || 0;

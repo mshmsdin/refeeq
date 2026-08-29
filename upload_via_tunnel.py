@@ -40,10 +40,12 @@ class CustomHTTPHandler(http.server.SimpleHTTPRequestHandler):
         print(f"  [نقل البيانات] {self.address_string()} - {format % args}", flush=True)
 
 def start_local_server():
+    socketserver.TCPServer.allow_reuse_address = True
     server = socketserver.TCPServer(("127.0.0.1", PORT), CustomHTTPHandler)
     server_thread = threading.Thread(target=server.serve_forever, daemon=True)
     server_thread.start()
     return server
+
 
 def main():
     print("=" * 75, flush=True)
