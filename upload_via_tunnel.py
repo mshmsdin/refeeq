@@ -164,16 +164,17 @@ def main():
                             pass
                     s_data = json.loads(raw_s.decode('utf-8'))
 
-                status = s_data.get('status')
-                progress = s_data.get('progress', '')
+                status = s_data.get('job_status') or s_data.get('status')
+                progress = s_data.get('job_progress') or s_data.get('progress', '')
                 
                 if progress != last_progress and progress:
-                    print(f"  ⚡ [{status.upper()}] {progress}", flush=True)
+                    print(f"  ⚡ [{str(status).upper()}] {progress}", flush=True)
                     last_progress = progress
 
                 if status == 'completed':
-                    stats = s_data.get('stats', {})
+                    stats = s_data.get('job_stats') or s_data.get('stats', {})
                     elapsed = time.time() - t_pull_start
+
                     print("\n" + "=" * 75, flush=True)
                     print(f" 🎉 تم رفع وتثبيت كامل الأرشيف والبيانات بنجاح في {elapsed:.1f} ثانية!", flush=True)
                     print("=" * 75, flush=True)

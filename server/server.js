@@ -785,7 +785,17 @@ function getSyncTmpDir() {
   }
 }
 
-// 1. Sync Status & Health Check
+// Global state for background sync jobs
+let currentSyncJob = {
+  status: 'idle', // 'idle' | 'downloading' | 'extracting' | 'completed' | 'error'
+  progress: '',
+  error: null,
+  stats: null,
+  startTime: null,
+  updatedAt: null
+};
+
+// 1. Sync Status, Health Check & Background Job Progress
 app.get('/api/sync/status', requireSyncAuth, (req, res) => {
   try {
     const db = getDb();
@@ -805,12 +815,21 @@ app.get('/api/sync/status', requireSyncAuth, (req, res) => {
       media_path: process.env.MEDIA_PATH || '/app/data/media',
       tmp_sync_dir: getSyncTmpDir(),
       uptime: process.uptime(),
-      memory_usage: process.memoryUsage()
+      job: currentSyncJob,
+      job_status: currentSyncJob.status,
+      job_progress: currentSyncJob.progress,
+      job_error: currentSyncJob.error,
+      job_stats: currentSyncJob.stats
     });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
 });
+
+app.get('/api/sync/job-status', (req, res) => {
+  res.json({ success: true, ...currentSyncJob });
+});
+
 
 // 2. Upload Single Chunk as Raw Binary Stream (High-Performance)
 app.post('/api/sync/chunk-stream', requireSyncAuth, (req, res) => {
@@ -1000,19 +1019,6 @@ app.post('/api/sync/finalize', requireSyncAuth, (req, res) => {
   }
 });
 
-// Global state for background sync jobs
-let currentSyncJob = {
-  status: 'idle', // 'idle' | 'downloading' | 'extracting' | 'completed' | 'error'
-  progress: '',
-  error: null,
-  stats: null,
-  startTime: null,
-  updatedAt: null
-};
-
-app.get('/api/sync/status', (req, res) => {
-  res.json({ success: true, ...currentSyncJob });
-});
 
 // 4. Download and Extract Archive from Direct URL (Async background job)
 app.post('/api/sync/pull-url', requireSyncAuth, async (req, res) => {
