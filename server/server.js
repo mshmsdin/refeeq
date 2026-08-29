@@ -737,10 +737,20 @@ function requireSyncAuth(req, res, next) {
   next();
 }
 
-const SYNC_TMP_DIR = process.env.SYNC_TMP_DIR || path.join(
-  process.env.DB_PATH ? path.dirname(process.env.DB_PATH) : path.join(__dirname, 'storage'),
-  'tmp_sync'
-);
+function getSyncTmpDir() {
+  const primary = process.env.SYNC_TMP_DIR || (process.env.DB_PATH ? path.join(path.dirname(process.env.DB_PATH), 'tmp_sync') : path.join(__dirname, 'storage', 'tmp_sync'));
+  try {
+    if (!fs.existsSync(primary)) fs.mkdirSync(primary, { recursive: true });
+    const testF = path.join(primary, '.write_test');
+    fs.writeFileSync(testF, 'ok');
+    fs.unlinkSync(testF);
+    return primary;
+  } catch (e) {
+    const fallback = path.join(path.resolve('/tmp'), 'rafeeq_sync');
+    if (!fs.existsSync(fallback)) fs.mkdirSync(fallback, { recursive: true });
+    return fallback;
+  }
+}
 
 // 1. Sync Status & Health Check
 app.get('/api/sync/status', requireSyncAuth, (req, res) => {
@@ -760,6 +770,7 @@ app.get('/api/sync/status', requireSyncAuth, (req, res) => {
       folders_count: folderCount,
       archive_path: process.env.ARCHIVE_PATH || '/app/data/archive',
       media_path: process.env.MEDIA_PATH || '/app/data/media',
+      tmp_sync_dir: getSyncTmpDir(),
       uptime: process.uptime(),
       memory_usage: process.memoryUsage()
     });
@@ -768,7 +779,51 @@ app.get('/api/sync/status', requireSyncAuth, (req, res) => {
   }
 });
 
-// 2. Upload Single Chunk (base64 payload)
+// 2. Upload Single Chunk as Raw Binary Stream (High-Performance)
+app.post('/api/sync/chunk-stream', requireSyncAuth, (req, res) => {
+  try {
+    const upload_id = req.query.upload_id || req.headers['x-upload-id'];
+    const chunk_index = req.query.chunk_index !== undefined ? parseInt(req.query.chunk_index, 10) : parseInt(req.headers['x-chunk-index'], 10);
+    const total_chunks = req.query.total_chunks ? parseInt(req.query.total_chunks, 10) : parseInt(req.headers['x-total-chunks'], 10);
+
+    if (!upload_id || isNaN(chunk_index)) {
+      return res.status(400).json({ success: false, error: 'Missing upload_id or chunk_index' });
+    }
+
+    const uploadDir = path.join(getSyncTmpDir(), upload_id);
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+
+    const chunkFile = path.join(uploadDir, `chunk_${String(chunk_index).padStart(5, '0')}`);
+    const writeStream = fs.createWriteStream(chunkFile);
+
+    let bytesReceived = 0;
+    req.on('data', (data) => {
+      bytesReceived += data.length;
+    });
+
+    req.pipe(writeStream);
+
+    writeStream.on('finish', () => {
+      res.json({
+        success: true,
+        upload_id,
+        chunk_index,
+        total_chunks,
+        received_bytes: bytesReceived
+      });
+    });
+
+    writeStream.on('error', (err) => {
+      res.status(500).json({ success: false, error: err.message });
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// 2b. Upload Single Chunk (base64 JSON payload fallback)
 app.post('/api/sync/chunk', requireSyncAuth, (req, res) => {
   try {
     const { upload_id, chunk_index, total_chunks, filename, chunk_data } = req.body;
@@ -776,7 +831,7 @@ app.post('/api/sync/chunk', requireSyncAuth, (req, res) => {
       return res.status(400).json({ success: false, error: 'Missing required chunk fields' });
     }
 
-    const uploadDir = path.join(SYNC_TMP_DIR, upload_id);
+    const uploadDir = path.join(getSyncTmpDir(), upload_id);
     if (!fs.existsSync(uploadDir)) {
       fs.mkdirSync(uploadDir, { recursive: true });
     }
@@ -805,7 +860,7 @@ app.post('/api/sync/finalize', requireSyncAuth, (req, res) => {
       return res.status(400).json({ success: false, error: 'Missing upload_id or total_chunks' });
     }
 
-    const uploadDir = path.join(SYNC_TMP_DIR, upload_id);
+    const uploadDir = path.join(getSyncTmpDir(), upload_id);
     if (!fs.existsSync(uploadDir)) {
       return res.status(404).json({ success: false, error: 'Upload session not found' });
     }
@@ -824,6 +879,7 @@ app.post('/api/sync/finalize', requireSyncAuth, (req, res) => {
       writeStream.write(data);
     }
     writeStream.end();
+
 
     writeStream.on('finish', () => {
       try {
