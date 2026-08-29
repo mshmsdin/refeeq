@@ -1000,7 +1000,21 @@ app.post('/api/sync/finalize', requireSyncAuth, (req, res) => {
   }
 });
 
-// 4. Download and Extract Archive from Direct URL (e.g. Google Drive / Direct Cloud Link / GitHub Release)
+// Global state for background sync jobs
+let currentSyncJob = {
+  status: 'idle', // 'idle' | 'downloading' | 'extracting' | 'completed' | 'error'
+  progress: '',
+  error: null,
+  stats: null,
+  startTime: null,
+  updatedAt: null
+};
+
+app.get('/api/sync/status', (req, res) => {
+  res.json({ success: true, ...currentSyncJob });
+});
+
+// 4. Download and Extract Archive from Direct URL (Async background job)
 app.post('/api/sync/pull-url', requireSyncAuth, async (req, res) => {
   try {
     const { url } = req.body;
@@ -1008,82 +1022,129 @@ app.post('/api/sync/pull-url', requireSyncAuth, async (req, res) => {
       return res.status(400).json({ success: false, error: 'Missing url parameter' });
     }
 
-    console.log(`[Sync] Pulling archive from: ${url}...`);
-    const tempZip = path.join(getSyncTmpDir(), `download_${Date.now()}.zip`);
-    
-    const response = await fetch(url, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
-      redirect: 'follow'
-    });
-
-    if (!response.ok) {
-      return res.status(400).json({ success: false, error: `Failed to fetch URL: HTTP ${response.status}` });
+    if (currentSyncJob.status === 'downloading' || currentSyncJob.status === 'extracting') {
+      return res.json({ success: true, message: 'Sync job already in progress', ...currentSyncJob });
     }
 
-    const fileStream = fs.createWriteStream(tempZip);
-    await pipeline(Readable.fromWeb(response.body), fileStream);
-    console.log(`[Sync] Downloaded ${fs.statSync(tempZip).size} bytes. Extracting...`);
+    currentSyncJob = {
+      status: 'downloading',
+      progress: 'Starting download from tunnel...',
+      error: null,
+      stats: null,
+      startTime: Date.now(),
+      updatedAt: Date.now()
+    };
 
-    const zip = new AdmZip(tempZip);
-    const zipEntries = zip.getEntries();
-    
-    // Check if library.db is in the zip
-    const dbEntry = zipEntries.find(e => e.entryName === 'library.db' || e.entryName.endsWith('/library.db'));
-    let dbReplaced = false;
-    if (dbEntry) {
-      console.log('[Sync] Found library.db in archive. Hot-swapping database...');
-      closeDb();
-      const currentDbPath = getDbPath();
-      const dbDir = path.dirname(currentDbPath);
-      if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true });
-      fs.writeFileSync(currentDbPath, dbEntry.getData());
-      dbReplaced = true;
-      initDatabase();
-    }
-
-    // Extract media entries
-    const targetDataDir = process.env.DB_PATH ? path.dirname(process.env.DB_PATH) : path.join(__dirname, '../media');
-    const targetMediaDir = process.env.MEDIA_PATH || (process.env.ARCHIVE_PATH || path.join(targetDataDir, 'media'));
-    if (!fs.existsSync(targetMediaDir)) {
-      fs.mkdirSync(targetMediaDir, { recursive: true });
-    }
-
-    let extractedCount = 0;
-    for (const entry of zipEntries) {
-      if (entry.isDirectory || entry.entryName === 'library.db' || entry.entryName.endsWith('/library.db')) {
-        continue;
-      }
-      let entryRel = entry.entryName.replace(/^media[\\/]/, '');
-      const destPath = path.join(targetMediaDir, entryRel);
-      const destDir = path.dirname(destPath);
-      if (!fs.existsSync(destDir)) {
-        fs.mkdirSync(destDir, { recursive: true });
-      }
-      fs.writeFileSync(destPath, entry.getData());
-      extractedCount++;
-    }
-
-    try {
-      fs.unlinkSync(tempZip);
-    } catch (e) {}
-
-    const db = getDb();
-    const docCount = db.prepare('SELECT COUNT(*) as c FROM documents').get()?.c || 0;
-    const folderCount = db.prepare('SELECT COUNT(*) as c FROM folders').get()?.c || 0;
-
+    // Immediately respond to caller to avoid Cloudflare 120s timeout!
     res.json({
       success: true,
-      message: 'Archive pulled and extracted successfully!',
-      extracted_files: extractedCount,
-      database_replaced: dbReplaced,
-      documents_count: docCount,
-      folders_count: folderCount
+      status: 'downloading',
+      message: 'Background pull job started successfully'
     });
+
+    // Run async background processing
+    (async () => {
+      try {
+        console.log(`[Sync] Background pulling archive from: ${url}...`);
+        const tempZip = path.join(getSyncTmpDir(), `download_${Date.now()}.zip`);
+        
+        const response = await fetch(url, {
+          headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+          redirect: 'follow'
+        });
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch URL: HTTP ${response.status}`);
+        }
+
+        const fileStream = fs.createWriteStream(tempZip);
+        await pipeline(Readable.fromWeb(response.body), fileStream);
+        
+        const downloadedBytes = fs.statSync(tempZip).size;
+        console.log(`[Sync] Downloaded ${(downloadedBytes / (1024 * 1024)).toFixed(2)} MB. Extracting...`);
+        
+        currentSyncJob.status = 'extracting';
+        currentSyncJob.progress = `Downloaded ${(downloadedBytes / (1024 * 1024)).toFixed(2)} MB. Extracting files...`;
+        currentSyncJob.updatedAt = Date.now();
+
+        const zip = new AdmZip(tempZip);
+        const zipEntries = zip.getEntries();
+        
+        // Check if library.db is in the zip
+        const dbEntry = zipEntries.find(e => e.entryName === 'library.db' || e.entryName.endsWith('/library.db'));
+        let dbReplaced = false;
+        if (dbEntry) {
+          console.log('[Sync] Found library.db in archive. Hot-swapping database...');
+          closeDb();
+          const currentDbPath = getDbPath();
+          const dbDir = path.dirname(currentDbPath);
+          if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true });
+          fs.writeFileSync(currentDbPath, dbEntry.getData());
+          dbReplaced = true;
+          initDatabase();
+        }
+
+        // Extract media entries
+        const targetDataDir = process.env.DB_PATH ? path.dirname(process.env.DB_PATH) : path.join(__dirname, '../media');
+        const targetMediaDir = process.env.MEDIA_PATH || (process.env.ARCHIVE_PATH || path.join(targetDataDir, 'media'));
+        if (!fs.existsSync(targetMediaDir)) {
+          fs.mkdirSync(targetMediaDir, { recursive: true });
+        }
+
+        let extractedCount = 0;
+        for (const entry of zipEntries) {
+          if (entry.isDirectory || entry.entryName === 'library.db' || entry.entryName.endsWith('/library.db')) {
+            continue;
+          }
+          let entryRel = entry.entryName.replace(/^media[\\/]/, '');
+          const destPath = path.join(targetMediaDir, entryRel);
+          const destDir = path.dirname(destPath);
+          if (!fs.existsSync(destDir)) {
+            fs.mkdirSync(destDir, { recursive: true });
+          }
+          fs.writeFileSync(destPath, entry.getData());
+          extractedCount++;
+        }
+
+        try {
+          fs.unlinkSync(tempZip);
+        } catch (e) {}
+
+        const db = getDb();
+        const docCount = db.prepare('SELECT COUNT(*) as c FROM documents').get()?.c || 0;
+        const folderCount = db.prepare('SELECT COUNT(*) as c FROM folders').get()?.c || 0;
+
+        currentSyncJob = {
+          status: 'completed',
+          progress: 'Extraction completed successfully!',
+          error: null,
+          stats: {
+            extracted_files: extractedCount,
+            database_replaced: dbReplaced,
+            documents_count: docCount,
+            folders_count: folderCount,
+            duration_seconds: ((Date.now() - currentSyncJob.startTime) / 1000).toFixed(1)
+          },
+          updatedAt: Date.now()
+        };
+        console.log(`[Sync] Completed successfully! Extracted ${extractedCount} files.`);
+      } catch (jobErr) {
+        console.error('[Sync Background Error]', jobErr);
+        currentSyncJob = {
+          status: 'error',
+          progress: 'Job failed',
+          error: jobErr.message,
+          stats: null,
+          updatedAt: Date.now()
+        };
+      }
+    })();
   } catch (err) {
     console.error('[Sync Pull Error]', err);
     res.status(500).json({ success: false, error: err.message });
   }
 });
+
 
 
 
