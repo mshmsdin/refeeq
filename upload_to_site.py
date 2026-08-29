@@ -168,11 +168,12 @@ def main():
     print(f"   - المجلدات الحالية: {sync_status.get('folders_count', 0)}")
 
     # Paths
-    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    project_root = os.path.dirname(os.path.abspath(__file__))
     media_dir = os.path.join(project_root, 'media')
     db_path = os.path.join(project_root, 'server', 'db', 'library.db')
     zip_path = os.path.join(project_root, 'scratch', 'sync_bundle.zip')
     os.makedirs(os.path.dirname(zip_path), exist_ok=True)
+
 
     # 1. Create ZIP
     zip_size = create_sync_zip(zip_path, media_dir, db_path)
