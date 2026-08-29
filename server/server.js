@@ -47,6 +47,14 @@ if (process.env.NODE_ENV !== 'test') {
   app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 }
 
+// Rewrite /rafeeq/api/* → /api/* so API routes work under both base paths
+app.use((req, res, next) => {
+  if (req.path.startsWith('/rafeeq/api/') || req.path === '/rafeeq/api') {
+    req.url = req.url.replace('/rafeeq/api', '/api');
+  }
+  next();
+});
+
 
 // ----------------------------------------------------
 // Health Check & Readiness Endpoints (Mandatory Rules)
@@ -747,16 +755,33 @@ app.get('/api/image/raw', (req, res) => {
     }
 
     const resolved = resolveImagePath(rawPath);
-    if (!resolved || !fs.existsSync(resolved)) {
+    if (!resolved) {
       return res.status(404).send('Image file not found on disk');
     }
 
+    // Detect content type from extension
+    const ext = path.extname(resolved).toLowerCase();
+    const mimeTypes = {
+      '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
+      '.png': 'image/png', '.gif': 'image/gif',
+      '.webp': 'image/webp', '.mp4': 'video/mp4',
+      '.mov': 'video/quicktime', '.emf': 'application/x-emf'
+    };
+    const contentType = mimeTypes[ext] || 'application/octet-stream';
+
+    // Use createReadStream instead of sendFile to handle emoji/Unicode filenames on Windows
+    const stream = fs.createReadStream(resolved);
+    stream.on('error', (err) => {
+      if (!res.headersSent) res.status(404).send('Image file not found on disk');
+    });
     res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.sendFile(resolved);
+    res.setHeader('Content-Type', contentType);
+    stream.pipe(res);
   } catch (err) {
     res.status(500).send(err.message);
   }
 });
+
 
 // ====================================================
 // Cloudflare-Safe Chunked Sync & Media Upload APIs
@@ -1629,11 +1654,19 @@ app.get('/api/bible/stats', (req, res) => {
 
 
 // Serve frontend static build files (client/dist)
+// Supports both /rafeeq/ base path (production build) and / (root)
 const clientDistPath = path.join(__dirname, '..', 'client', 'dist');
 if (fs.existsSync(clientDistPath)) {
+  // Serve static assets under /rafeeq/ prefix
+  app.use('/rafeeq', express.static(clientDistPath));
+  // Also serve from root for direct access
   app.use(express.static(clientDistPath));
+
+  // SPA fallback: redirect all non-API routes to index.html
   app.get('*', (req, res) => {
-    if (!req.path.startsWith('/api') && !req.path.startsWith('/health') && !req.path.startsWith('/ready')) {
+    const isApi = req.path.startsWith('/api') || req.path.startsWith('/rafeeq/api');
+    const isHealth = req.path.startsWith('/health') || req.path.startsWith('/ready');
+    if (!isApi && !isHealth) {
       res.sendFile(path.join(clientDistPath, 'index.html'));
     }
   });
