@@ -17,8 +17,11 @@ import {
 import { parseReference, looksLikeReference } from './utils/bible_reference_parser.js';
 import { scanAndIndex } from './db/scan_and_index.js';
 import { spawn } from 'child_process';
+import { pipeline } from 'stream/promises';
+import { Readable } from 'stream';
 import { extractDistinctKeywords, normalizeArabicText } from './utils/arabic_nlp.js';
 import { resolveImagePath } from './utils/path_resolver.js';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -966,6 +969,92 @@ app.post('/api/sync/finalize', requireSyncAuth, (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 });
+
+// 4. Download and Extract Archive from Direct URL (e.g. Google Drive / Direct Cloud Link / GitHub Release)
+app.post('/api/sync/pull-url', requireSyncAuth, async (req, res) => {
+  try {
+    const { url } = req.body;
+    if (!url) {
+      return res.status(400).json({ success: false, error: 'Missing url parameter' });
+    }
+
+    console.log(`[Sync] Pulling archive from: ${url}...`);
+    const tempZip = path.join(getSyncTmpDir(), `download_${Date.now()}.zip`);
+    
+    const response = await fetch(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+      redirect: 'follow'
+    });
+
+    if (!response.ok) {
+      return res.status(400).json({ success: false, error: `Failed to fetch URL: HTTP ${response.status}` });
+    }
+
+    const fileStream = fs.createWriteStream(tempZip);
+    await pipeline(Readable.fromWeb(response.body), fileStream);
+    console.log(`[Sync] Downloaded ${fs.statSync(tempZip).size} bytes. Extracting...`);
+
+    const zip = new AdmZip(tempZip);
+    const zipEntries = zip.getEntries();
+    
+    // Check if library.db is in the zip
+    const dbEntry = zipEntries.find(e => e.entryName === 'library.db' || e.entryName.endsWith('/library.db'));
+    let dbReplaced = false;
+    if (dbEntry) {
+      console.log('[Sync] Found library.db in archive. Hot-swapping database...');
+      closeDb();
+      const currentDbPath = getDbPath();
+      const dbDir = path.dirname(currentDbPath);
+      if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true });
+      fs.writeFileSync(currentDbPath, dbEntry.getData());
+      dbReplaced = true;
+      initDatabase();
+    }
+
+    // Extract media entries
+    const targetDataDir = process.env.DB_PATH ? path.dirname(process.env.DB_PATH) : path.join(__dirname, '../media');
+    const targetMediaDir = process.env.MEDIA_PATH || (process.env.ARCHIVE_PATH || path.join(targetDataDir, 'media'));
+    if (!fs.existsSync(targetMediaDir)) {
+      fs.mkdirSync(targetMediaDir, { recursive: true });
+    }
+
+    let extractedCount = 0;
+    for (const entry of zipEntries) {
+      if (entry.isDirectory || entry.entryName === 'library.db' || entry.entryName.endsWith('/library.db')) {
+        continue;
+      }
+      let entryRel = entry.entryName.replace(/^media[\\/]/, '');
+      const destPath = path.join(targetMediaDir, entryRel);
+      const destDir = path.dirname(destPath);
+      if (!fs.existsSync(destDir)) {
+        fs.mkdirSync(destDir, { recursive: true });
+      }
+      fs.writeFileSync(destPath, entry.getData());
+      extractedCount++;
+    }
+
+    try {
+      fs.unlinkSync(tempZip);
+    } catch (e) {}
+
+    const db = getDb();
+    const docCount = db.prepare('SELECT COUNT(*) as c FROM documents').get()?.c || 0;
+    const folderCount = db.prepare('SELECT COUNT(*) as c FROM folders').get()?.c || 0;
+
+    res.json({
+      success: true,
+      message: 'Archive pulled and extracted successfully!',
+      extracted_files: extractedCount,
+      database_replaced: dbReplaced,
+      documents_count: docCount,
+      folders_count: folderCount
+    });
+  } catch (err) {
+    console.error('[Sync Pull Error]', err);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 
 
 // 9. Favorites / Live Debate Tray management
