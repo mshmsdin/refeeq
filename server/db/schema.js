@@ -103,9 +103,16 @@ export function initDatabase() {
     if (!docCols.some(c => c.name === 'category')) {
       db.exec("ALTER TABLE documents ADD COLUMN category TEXT DEFAULT NULL");
     }
+    if (!docCols.some(c => c.name === 'images_json')) {
+      db.exec("ALTER TABLE documents ADD COLUMN images_json TEXT DEFAULT NULL");
+    }
+    if (!docCols.some(c => c.name === 'image_count')) {
+      db.exec("ALTER TABLE documents ADD COLUMN image_count INTEGER DEFAULT 1");
+    }
   } catch (e) {
     console.error("Migration warning (documents):", e.message);
   }
+
 
   try {
     const folderCols = db.prepare("PRAGMA table_info(folders)").all();

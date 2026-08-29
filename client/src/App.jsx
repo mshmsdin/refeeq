@@ -260,11 +260,25 @@ export default function App() {
       });
   }, [activeFolder, activeFolderId, debouncedSearch, activeSect, activeCategory, activeTag, activeFilter, page]);
 
+  // Handle switching sects
+  const handleSelectSect = (sect) => {
+    setActiveSect(sect);
+    setActiveFolder('');
+    setActiveFolderId(null);
+    setActiveFolderCategory(null);
+    setActiveCategory('all');
+    setActiveTag('');
+    setSearchTerm('');
+    setDebouncedSearch('');
+    setPage(1);
+  };
+
   // Handle select folder from tree or breadcrumb
   const handleSelectFolder = (folderPath, folderId = null) => {
     setActiveFolder(folderPath);
     setActiveFolderId(folderId);
     setPage(1);
+
 
     if (folderId) {
       fetch(`/api/folder/${folderId}`)
@@ -474,15 +488,9 @@ export default function App() {
           setPage(1);
         }}
         activeSect={activeSect}
-        setActiveSect={(sect) => {
-          setActiveSect(sect);
-          setActiveFolder('');
-          setActiveFolderId(null);
-          setActiveFolderCategory(null);
-          setActiveCategory('all');
-          setPage(1);
-        }}
+        setActiveSect={handleSelectSect}
         activeCategory={activeCategory}
+
         setActiveCategory={(cat) => {
           setActiveCategory(cat);
           setPage(1);

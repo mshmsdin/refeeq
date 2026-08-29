@@ -24,8 +24,10 @@ import {
   Type,
   Trash2,
   FolderPlus,
-  Compass
+  Compass,
+  Layers
 } from 'lucide-react';
+
 import { DEBATE_CATEGORIES } from '../utils/categories';
 
 export default function ImageViewerModal({
@@ -52,6 +54,8 @@ export default function ImageViewerModal({
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [copiedText, setCopiedText] = useState(false);
   const [readerFontSize, setReaderFontSize] = useState(16);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
   
   // Editor Tag state
   const [newTagInput, setNewTagInput] = useState('');
@@ -64,6 +68,37 @@ export default function ImageViewerModal({
   const [folderSearchText, setFolderSearchText] = useState('');
 
   const imageRef = useRef(null);
+  const viewportRef = useRef(null);
+
+  // Zoom towards a specific screen coordinate (cursor position)
+  const zoomAtPoint = (clientX, clientY, zoomMultiplier, targetZoom = null) => {
+    if (!viewportRef.current) return;
+    const rect = viewportRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const mouseRelX = clientX - centerX;
+    const mouseRelY = clientY - centerY;
+
+    setZoom((prevZoom) => {
+      let newZoom = targetZoom !== null ? targetZoom : prevZoom * zoomMultiplier;
+      newZoom = Math.min(Math.max(newZoom, 0.4), 6.0);
+      const ratio = newZoom / prevZoom;
+
+      setPan((prevPan) => {
+        if (newZoom <= 1.05 && targetZoom === 1) {
+          return { x: 0, y: 0 };
+        }
+        return {
+          x: mouseRelX - (mouseRelX - prevPan.x) * ratio,
+          y: mouseRelY - (mouseRelY - prevPan.y) * ratio
+        };
+      });
+
+      return newZoom;
+    });
+  };
+
 
   // Add any custom phrase or line as tag
   const handleAddPhraseTag = (phrase) => {
@@ -101,6 +136,8 @@ export default function ImageViewerModal({
     setZoom(1);
     setPan({ x: 0, y: 0 });
     setRotation(0);
+    setActiveImageIndex(0);
+
 
     fetch(`/api/document/${id}`)
       .then((res) => res.json())
@@ -381,11 +418,43 @@ export default function ImageViewerModal({
 
   const handleMouseUp = () => setIsDragging(false);
 
+  // Double Click Handler: Zoom into cursor point or reset
+  const handleDoubleClick = (e) => {
+    if (e.target.closest('button') || e.target.closest('input') || e.target.closest('form')) return;
+    if (zoom > 1.15) {
+      setZoom(1);
+      setPan({ x: 0, y: 0 });
+    } else {
+      zoomAtPoint(e.clientX, e.clientY, 1, 2.5);
+    }
+  };
+
+  // Attach non-passive wheel listener to zoom towards cursor
+  useEffect(() => {
+    const el = viewportRef.current;
+    if (!el) return;
+
+    const handleWheelZoom = (e) => {
+      e.preventDefault();
+      const zoomFactor = e.deltaY < 0 ? 1.15 : 0.85;
+      zoomAtPoint(e.clientX, e.clientY, zoomFactor);
+    };
+
+    el.addEventListener('wheel', handleWheelZoom, { passive: false });
+    return () => {
+      el.removeEventListener('wheel', handleWheelZoom);
+    };
+  }, [docId]);
+
+
   if (!docId) return null;
 
   const doc = docData?.document;
-  const hasImage = Boolean(doc?.full_path && /\.(jpe?g|png|webp|gif|bmp)$/i.test(doc.full_path));
-  const imageUrl = hasImage ? `/api/image/raw?path=${encodeURIComponent(doc.full_path)}` : '';
+  const docImages = (doc?.images && doc.images.length > 0) ? doc.images : (doc?.full_path ? [doc.full_path] : []);
+  const isAlbum = docImages.length > 1;
+  const currentImageRel = docImages[activeImageIndex] || docImages[0] || doc?.full_path;
+  const hasImage = Boolean(currentImageRel && /\.(jpe?g|png|webp|gif|bmp)$/i.test(currentImageRel));
+  const imageUrl = hasImage ? `/api/image/raw?path=${encodeURIComponent(currentImageRel)}` : '';
   const isCopied = doc && copiedDocId === doc.id;
   const currentCat = doc?.category ? DEBATE_CATEGORIES[doc.category] : null;
 
@@ -406,9 +475,17 @@ export default function ImageViewerModal({
           </button>
 
           <div className="min-w-0">
-            <h2 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-slate-100 truncate">
-              {doc?.filename || 'جاري التحميل...'}
-            </h2>
+            <div className="flex items-center gap-2">
+              <h2 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-slate-100 truncate">
+                {doc?.filename || 'جاري التحميل...'}
+              </h2>
+              {isAlbum && (
+                <span className="px-2 py-0.5 rounded-md bg-amber-500 text-slate-950 text-[10px] font-black flex items-center gap-1 shadow-xs shrink-0">
+                  <Layers className="w-3 h-3" />
+                  <span>{activeImageIndex + 1} / {docImages.length}</span>
+                </span>
+              )}
+            </div>
             <div className="flex items-center gap-1.5 text-[10px] text-slate-500 dark:text-slate-400">
               <Folder className="w-3 h-3 text-amber-500 shrink-0" />
               <span className="truncate">{doc?.folder_name}</span>
@@ -421,31 +498,34 @@ export default function ImageViewerModal({
           </div>
         </div>
 
-        {/* Category Classification Buttons (هجوم • إلزام • دفاع) */}
-        <div className="hidden sm:flex items-center gap-1 bg-slate-100 dark:bg-slate-800/90 p-1 rounded-xl border border-slate-200 dark:border-slate-700/80">
-          <span className="text-[11px] text-slate-400 px-2 font-medium">تصنيف الوثيقة:</span>
-          {Object.values(DEBATE_CATEGORIES).map((cat) => {
-            const isSelected = doc?.category === cat.key;
-            return (
-              <button
-                key={cat.key}
-                onClick={() => handleSetCategory(cat.key)}
-                className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-                  isSelected
-                    ? cat.activeBtn
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-white dark:hover:bg-slate-700'
-                }`}
-                title={cat.description}
-              >
-                <span className={cat.dotClass} />
-                <span>{cat.name}</span>
-              </button>
-            );
-          })}
-        </div>
+        {/* Left Actions Group: Category Classification + Action Buttons */}
+        <div className="flex items-center gap-2 shrink-0">
+          
+          {/* Category Classification Buttons (هجوم • إلزام • دفاع) */}
+          <div className="hidden sm:flex items-center gap-1 bg-slate-100 dark:bg-slate-800/90 p-1 rounded-xl border border-slate-200 dark:border-slate-700/80">
+            <span className="text-[11px] text-slate-400 px-2 font-medium">تصنيف الوثيقة:</span>
+            {Object.values(DEBATE_CATEGORIES).map((cat) => {
+              const isSelected = doc?.category === cat.key;
+              return (
+                <button
+                  key={cat.key}
+                  onClick={() => handleSetCategory(cat.key)}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+                    isSelected
+                      ? cat.activeBtn
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-white dark:hover:bg-slate-700'
+                  }`}
+                  title={cat.description}
+                >
+                  <span className={cat.dotClass} />
+                  <span>{cat.name}</span>
+                </button>
+              );
+            })}
+          </div>
 
-        {/* Action Buttons */}
-        <div className="flex items-center gap-1.5 shrink-0">
+          <div className="w-[1px] h-5 bg-slate-200 dark:bg-slate-700 hidden sm:block mx-0.5" />
+
           {/* Reader Font Controls for Text Articles */}
           {!hasImage && (
             <div className="flex items-center bg-slate-100 dark:bg-slate-800 rounded-xl p-0.5 border border-slate-200 dark:border-slate-700">
@@ -460,7 +540,7 @@ export default function ImageViewerModal({
                 {readerFontSize}px
               </span>
               <button
-                onClick={() => setReaderFontSize((s) => Math.min(s + 2, 28))}
+                onClick={() => setReaderFontSize((s) => Math.min(s + 2, 32))}
                 className="p-1.5 rounded-lg hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
                 title="تكبير الخط (A+)"
               >
@@ -468,6 +548,7 @@ export default function ImageViewerModal({
               </button>
             </div>
           )}
+
 
           {/* Add to Debate Tray */}
           {doc && (
@@ -519,76 +600,14 @@ export default function ImageViewerModal({
         {/* Left/Main: Interactive Image Canvas OR Full Article Reader */}
         {hasImage ? (
           <div 
+            ref={viewportRef}
             className="flex-1 bg-slate-950 relative flex items-center justify-center overflow-hidden"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
+            onDoubleClick={handleDoubleClick}
           >
-            {/* Floating Canvas Controls Toolbar */}
-            <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 bg-slate-900/90 backdrop-blur-md p-1.5 rounded-xl border border-slate-800 text-slate-200 shadow-lg">
-              <button
-                onClick={() => setZoom((z) => Math.min(z + 0.25, 5))}
-                className="p-1.5 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-white transition-colors"
-                title="تكبير (+)"
-              >
-                <ZoomIn className="w-4 h-4" />
-              </button>
-
-              <button
-                onClick={() => setZoom((z) => Math.max(z - 0.25, 0.4))}
-                className="p-1.5 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-white transition-colors"
-                title="تصغير (-)"
-              >
-                <ZoomOut className="w-4 h-4" />
-              </button>
-
-              <button
-                onClick={() => {
-                  setZoom(1);
-                  setPan({ x: 0, y: 0 });
-                  setRotation(0);
-                }}
-                className="px-2 py-1 rounded-lg hover:bg-slate-800 text-[11px] font-mono text-slate-300 hover:text-white transition-colors"
-                title="إعادة تعيين الأبعاد (0)"
-              >
-                {Math.round(zoom * 100)}%
-              </button>
-
-              <div className="w-[1px] h-4 bg-slate-700 mx-1" />
-
-              <button
-                onClick={() => setRotation((r) => (r + 90) % 360)}
-                className="p-1.5 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-white transition-colors"
-                title="تدوير الصورة 90 درجة"
-              >
-                <RotateCw className="w-4 h-4" />
-              </button>
-
-              <button
-                onClick={() => setInvert(!invert)}
-                className={`p-1.5 rounded-lg transition-colors ${
-                  invert ? 'bg-amber-500 text-slate-950' : 'hover:bg-slate-800 text-slate-300 hover:text-white'
-                }`}
-                title="عكس الألوان (الوضع الليلي للوثائق)"
-              >
-                <SunMedium className="w-4 h-4" />
-              </button>
-
-              <div className="w-[1px] h-4 bg-slate-700 mx-1" />
-
-              {doc && (
-                <button
-                  onClick={() => onCopyImage(doc)}
-                  className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500 text-amber-300 hover:text-slate-950 font-bold text-xs transition-colors"
-                  title="نسخ الصورة للحافظة (Ctrl+C)"
-                >
-                  {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  <span>نسخ الصورة</span>
-                </button>
-              )}
-            </div>
-
             {/* Navigation Arrows */}
             {docData?.prevDoc && (
               <button
@@ -599,6 +618,7 @@ export default function ImageViewerModal({
                 <ChevronRight className="w-6 h-6" />
               </button>
             )}
+
 
             {docData?.nextDoc && (
               <button
@@ -635,6 +655,9 @@ export default function ImageViewerModal({
               </div>
             )}
           </div>
+
+
+
         ) : (
           /* النمط غير الصوري: لوحة قراءة موحدة كاملة للمقال */
           <div className="flex-1 bg-slate-100/60 dark:bg-slate-950 relative flex flex-col overflow-hidden">
@@ -783,12 +806,77 @@ export default function ImageViewerModal({
             {/* Panel Content (Scrollable) */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 text-xs">
               
+              {/* Image Controls Toolbar (Embedded in Sidebar) */}
+              <div className="flex flex-wrap items-center justify-between gap-1.5 p-2 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80">
+                {/* Copy Image Button */}
+                {doc && (
+                  <button
+                    onClick={() => onCopyImage(doc)}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-sm transition-all active:scale-95"
+                    title="نسخ الصورة للحافظة (Ctrl+C)"
+                  >
+                    {isCopied ? <Check className="w-3.5 h-3.5 text-slate-950" /> : <Copy className="w-3.5 h-3.5" />}
+                    <span>نسخ الصورة</span>
+                  </button>
+                )}
+
+                {/* Zoom & Canvas Options */}
+                <div className="flex items-center gap-1">
+                  <button
+                    onClick={() => setZoom((z) => Math.min(z + 0.25, 5))}
+                    className="p-1.5 rounded-lg hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
+                    title="تكبير (+)"
+                  >
+                    <ZoomIn className="w-3.5 h-3.5" />
+                  </button>
+
+                  <button
+                    onClick={() => setZoom((z) => Math.max(z - 0.25, 0.4))}
+                    className="p-1.5 rounded-lg hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
+                    title="تصغير (-)"
+                  >
+                    <ZoomOut className="w-3.5 h-3.5" />
+                  </button>
+
+                  <button
+                    onClick={() => {
+                      setZoom(1);
+                      setPan({ x: 0, y: 0 });
+                      setRotation(0);
+                    }}
+                    className="px-1.5 py-0.5 rounded-lg hover:bg-white dark:hover:bg-slate-700 text-[11px] font-mono text-slate-500 dark:text-slate-400 transition-colors"
+                    title="إعادة تعيين الأبعاد (0)"
+                  >
+                    {Math.round(zoom * 100)}%
+                  </button>
+
+                  <button
+                    onClick={() => setRotation((r) => (r + 90) % 360)}
+                    className="p-1.5 rounded-lg hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
+                    title="تدوير الصورة 90 درجة"
+                  >
+                    <RotateCw className="w-3.5 h-3.5" />
+                  </button>
+
+                  <button
+                    onClick={() => setInvert(!invert)}
+                    className={`p-1.5 rounded-lg transition-colors ${
+                      invert ? 'bg-amber-500 text-slate-950' : 'hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300'
+                    }`}
+                    title="عكس الألوان (الوضع الليلي للوثائق)"
+                  >
+                    <SunMedium className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+
               {/* OCR Body Text */}
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 font-medium">
                   <span>محتوى الوثيقة:</span>
                   <span className="text-[10px]">حدد أي عبارة لإضافتها كوسم سريع ⚡</span>
                 </div>
+
 
                 <div
                   onMouseUp={handleTextMouseUp}
@@ -949,9 +1037,52 @@ export default function ImageViewerModal({
                 </div>
               </div>
 
+              {/* Multi-Image Album Gallery Section in Left Sidebar */}
+              {isAlbum && (
+                <div className="space-y-2.5 pt-3 border-t border-slate-200 dark:border-slate-800">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                      <Layers className="w-3.5 h-3.5 text-amber-500" />
+                      <span>صور الألبوم / المنشور ({docImages.length} صور):</span>
+                    </span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500 text-slate-950">
+                      صورة {activeImageIndex + 1} من {docImages.length}
+                    </span>
+                  </div>
+
+                  {/* Thumbnails Grid inside Left Sidebar */}
+                  <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 pt-1">
+                    {docImages.map((imgRel, idx) => {
+                      const thumbUrl = `/api/image/raw?path=${encodeURIComponent(imgRel)}`;
+                      const isActive = idx === activeImageIndex;
+                      return (
+                        <button
+                          key={idx}
+                          onClick={() => setActiveImageIndex(idx)}
+                          className={`group/thumb relative aspect-[3/4] rounded-xl overflow-hidden border-2 transition-all cursor-pointer bg-slate-100 dark:bg-slate-800 ${
+                            isActive
+                              ? 'border-amber-500 ring-2 ring-amber-500/50 scale-[1.03] shadow-md'
+                              : 'border-slate-200 dark:border-slate-700/80 opacity-70 hover:opacity-100 hover:border-slate-400'
+                          }`}
+                          title={`عرض صورة ${idx + 1}`}
+                        >
+                          <img src={thumbUrl} alt="" className="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform" />
+                          <span className={`absolute bottom-1 right-1 text-[9px] font-mono font-bold px-1.5 py-0.2 rounded-md shadow-sm ${
+                            isActive ? 'bg-amber-500 text-slate-950' : 'bg-slate-950/85 text-white'
+                          }`}>
+                            {idx + 1}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
             </div>
 
           </div>
+
         )}
 
       </div>

@@ -96,11 +96,27 @@ function attachTagsToDocuments(db, docs) {
     tagsByDoc.get(r.document_id).push(r.tag);
   }
 
-  return docs.map(d => ({
-    ...d,
-    tags: tagsByDoc.get(d.id) || (d.ocr_text ? extractDistinctKeywords(d.ocr_text, d.filename, 6) : [])
-  }));
+  return docs.map(d => {
+    let images = [];
+    if (d.images_json) {
+      try {
+        images = JSON.parse(d.images_json);
+      } catch (e) {
+        images = [d.relative_path || d.filename];
+      }
+    } else if (d.relative_path || d.full_path) {
+      images = [d.relative_path || d.full_path];
+    }
+
+    return {
+      ...d,
+      images,
+      image_count: d.image_count || (images ? images.length : 1),
+      tags: tagsByDoc.get(d.id) || (d.ocr_text ? extractDistinctKeywords(d.ocr_text, d.filename, 6) : [])
+    };
+  });
 }
+
 
 // 1. Stats endpoint (Multi-sect aware)
 app.get('/api/stats', (req, res) => {
@@ -558,14 +574,28 @@ app.get('/api/document/:id', (req, res) => {
     const prevDoc = db.prepare('SELECT id FROM documents WHERE id < ? ORDER BY id DESC LIMIT 1').get(docId);
     const nextDoc = db.prepare('SELECT id FROM documents WHERE id > ? ORDER BY id ASC LIMIT 1').get(docId);
 
+    let images = [];
+    if (doc.images_json) {
+      try {
+        images = JSON.parse(doc.images_json);
+      } catch (e) {
+        images = [doc.relative_path || doc.filename];
+      }
+    } else if (doc.relative_path || doc.full_path) {
+      images = [doc.relative_path || doc.full_path];
+    }
+
     res.json({
       success: true,
       document: {
         ...doc,
+        images,
+        image_count: doc.image_count || (images ? images.length : 1),
         tags: tagsList
       },
       folders: linkedFolders,
       tags,
+
       boxes: formattedBoxes,
       prevDoc,
       nextDoc

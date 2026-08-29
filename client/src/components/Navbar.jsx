@@ -205,9 +205,35 @@ export default function Navbar({
             </div>
 
             <div className="flex items-center gap-1.5 flex-nowrap">
+              {/* All Sects Button */}
+              <button
+                onClick={() => setActiveSect('all')}
+                className={`px-3 py-1 rounded-lg text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 btn-press ${
+                  activeSect === 'all' || !activeSect
+                    ? 'bg-amber-500 text-slate-950 font-black shadow-sm shadow-amber-500/20'
+                    : 'bg-slate-100/80 hover:bg-slate-200 dark:bg-slate-800/70 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/60'
+                }`}
+              >
+                <span>الكل</span>
+                {stats?.totalDocuments && (
+                  <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-semibold ${
+                    activeSect === 'all' || !activeSect ? 'bg-slate-950/20 text-slate-950' : 'bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400'
+                  }`}>
+                    {stats.totalDocuments.toLocaleString('ar-EG')}
+                  </span>
+                )}
+              </button>
+
               {sectsList && sectsList.length > 0 ? (
                 sectsList.map((s) => {
                   const isActive = activeSect === s.sect;
+                  const displayName = {
+                    'شيعة': 'الشيعة الإمامية',
+                    'نصارى': 'النصارى والمسيحية',
+                    'إلحاد': 'الإلحاد واللادينية',
+                    'سلفية': 'أهل السنة'
+                  }[s.sect] || s.name || s.sect;
+
                   return (
                     <button
                       key={s.sect}
@@ -218,7 +244,7 @@ export default function Navbar({
                           : 'bg-slate-100/80 hover:bg-slate-200 dark:bg-slate-800/70 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/60'
                       }`}
                     >
-                      <span>{s.name}</span>
+                      <span>{displayName}</span>
                       {s.count > 0 && (
                         <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-semibold ${
                           isActive ? 'bg-slate-950/20 text-slate-950' : 'bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400'
@@ -232,6 +258,7 @@ export default function Navbar({
               ) : null}
             </div>
           </div>
+
 
           {/* 3 Categories Filter Pills (هجوم 🔴 • إلزام 🟡 • دفاع 🟢) */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-none">

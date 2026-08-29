@@ -18,8 +18,10 @@ import {
   SlidersHorizontal,
   FileQuestion,
   FileText,
-  Quote
+  Quote,
+  Layers
 } from 'lucide-react';
+
 import { DEBATE_CATEGORIES } from '../utils/categories';
 
 export default function DocumentGrid({
@@ -148,8 +150,11 @@ export default function DocumentGrid({
             {documents.map((doc) => {
               const isFav = !!favoritesMap[doc.id];
               const isCopied = copiedDocId === doc.id;
-              const hasImage = Boolean(doc.full_path && /\.(jpe?g|png|webp|gif|bmp)$/i.test(doc.full_path));
-              const imageUrl = hasImage ? `/api/image/raw?path=${encodeURIComponent(doc.full_path)}` : '';
+              const hasImage = Boolean(doc.full_path && /\.(jpe?g|png|webp|gif|bmp)$/i.test(doc.full_path)) || Boolean(doc.images && doc.images.length > 0);
+              const isAlbum = (doc.image_count && doc.image_count > 1) || (doc.images && doc.images.length > 1);
+              const albumCount = doc.image_count || (doc.images ? doc.images.length : 1);
+              const firstImage = (doc.images && doc.images[0]) || doc.relative_path || doc.full_path;
+              const imageUrl = hasImage ? `/api/image/raw?path=${encodeURIComponent(firstImage)}` : '';
               const docCat = doc.category ? DEBATE_CATEGORIES[doc.category] : null;
               const textSnippet = doc.ocr_text 
                 ? doc.ocr_text.replace(/!\[.*?\]\(.*?\)/g, '').replace(/#+\s*/g, '').trim()
@@ -159,7 +164,9 @@ export default function DocumentGrid({
                 <div
                   key={doc.id}
                   onClick={() => onOpenDoc(doc.id)}
-                  className="group app-card p-3.5 flex flex-col justify-between cursor-pointer relative overflow-hidden bg-white dark:bg-slate-800/90 hover:border-amber-500/50 transition-all duration-200 shadow-xs hover:shadow-lg hover:-translate-y-1"
+                  className={`group app-card p-3.5 flex flex-col justify-between cursor-pointer relative overflow-hidden bg-white dark:bg-slate-800/90 hover:border-amber-500/50 transition-all duration-200 shadow-xs hover:shadow-lg hover:-translate-y-1 ${
+                    isAlbum ? 'border-amber-500/30' : ''
+                  }`}
                 >
                   {/* Top Metadata */}
                   <div className="space-y-1.5 mb-2.5">
@@ -178,8 +185,13 @@ export default function DocumentGrid({
                           </span>
                         )}
 
-                        {/* Document Type Badge */}
-                        {hasImage ? (
+                        {/* Document Type / Album Badge */}
+                        {isAlbum ? (
+                          <span className="text-[9px] px-1.5 py-0.5 rounded-md bg-amber-500 text-slate-950 font-black flex items-center gap-1 shadow-xs" title={`ألبوم يضم ${albumCount} صور متتابعة`}>
+                            <Layers className="w-2.5 h-2.5" />
+                            <span>{albumCount} صور</span>
+                          </span>
+                        ) : hasImage ? (
                           <span className="text-[9px] px-1.5 py-0.2 rounded-md bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 font-bold" title="وثيقة مصورة">
                             مُصوّر
                           </span>
@@ -210,6 +222,15 @@ export default function DocumentGrid({
                         loading="lazy"
                         className="w-full h-full object-contain p-1 transform group-hover/img:scale-105 transition-transform duration-300"
                       />
+
+                      {/* Stack Indicator on corner for multi-image albums */}
+                      {isAlbum && (
+                        <div className="absolute top-2 left-2 px-1.5 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-sm text-amber-400 text-[9px] font-black border border-amber-500/30 flex items-center gap-1 shadow-md">
+                          <Layers className="w-2.5 h-2.5" />
+                          <span>{albumCount}</span>
+                        </div>
+                      )}
+
 
                       {/* Hover Quick Action Buttons */}
                       <div className="absolute inset-0 bg-slate-950/65 backdrop-blur-[2px] opacity-0 group-hover/img:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 p-2">

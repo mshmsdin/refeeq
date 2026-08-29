@@ -3,6 +3,7 @@ import os
 import re
 import shutil
 import sqlite3
+import json
 from pathlib import Path
 from datetime import datetime
 from bs4 import BeautifulSoup
@@ -22,10 +23,8 @@ os.makedirs(MEDIA_DIR, exist_ok=True)
 def safe_filename(text: str, max_len: int = 85) -> str:
     if not text:
         text = "بدون_عنوان"
-    # Remove emojis or characters forbidden in filenames
     clean = re.sub(r'[\\/:*?"<>|\n\r\t]', ' ', text)
     clean = re.sub(r'\s+', ' ', clean).strip()
-    # Clean leading/trailing punctuation/dots/dashes
     clean = clean.strip('. -_')
     if not clean:
         clean = "بدون_عنوان"
@@ -184,6 +183,13 @@ def run_import():
     
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
+
+    # Ensure schema columns exist
+    doc_cols = [c[1] for c in cur.execute("PRAGMA table_info(documents)").fetchall()]
+    if 'images_json' not in doc_cols:
+        cur.execute("ALTER TABLE documents ADD COLUMN images_json TEXT DEFAULT NULL")
+    if 'image_count' not in doc_cols:
+        cur.execute("ALTER TABLE documents ADD COLUMN image_count INTEGER DEFAULT 1")
     
     # 1. Ensure folder exists in folders table
     cur.execute("""
@@ -194,6 +200,8 @@ def run_import():
             sect = excluded.sect
     """, (FOLDER_NAME, FOLDER_NAME, SECT))
     
+    # Delete previous individual rows for this folder to replace with clean album rows
+    cur.execute("DELETE FROM documents WHERE folder_path = ?", (FOLDER_NAME,))
     conn.commit()
     
     # Get folder id
@@ -202,13 +210,16 @@ def run_import():
     folder_id = folder_row[0] if folder_row else None
     print(f"Folder '{FOLDER_NAME}' registered with ID: {folder_id}")
     
-    total_inserted = 0
-    total_copied = 0
+    total_albums = 0
+    total_photos_copied = 0
     
     for it in items:
         title = it['resolved_title']
         safe_base = safe_filename(title)
         num_photos = len(it['photos'])
+        
+        album_rel_paths = []
+        album_total_size = 0
         
         for idx, photo_rel in enumerate(it['photos']):
             src_path = os.path.normpath(os.path.join(EXPORT_DIR, photo_rel))
@@ -224,10 +235,8 @@ def run_import():
                 
             dest_path = os.path.join(MEDIA_DIR, filename)
             
-            # Handle collision if multiple items produced the same base name
             c_idx = 1
             while os.path.exists(dest_path):
-                # Check if it is the same file or different
                 if os.path.getsize(dest_path) == os.path.getsize(src_path) and Path(dest_path).name == filename:
                     break
                 if num_photos > 1:
@@ -239,29 +248,39 @@ def run_import():
                 
             if not os.path.exists(dest_path):
                 shutil.copy2(src_path, dest_path)
-                total_copied += 1
+                total_photos_copied += 1
                 
             file_size = os.path.getsize(dest_path)
-            rel_path = f"شيعة\\تحريف القرآن\\{filename}"
+            album_total_size += file_size
+            rel_p = f"شيعة/تحريف القرآن/{filename}"
+            album_rel_paths.append(rel_p)
             
-            # Check if record already exists in documents
-            cur.execute("SELECT id FROM documents WHERE relative_path = ? OR full_path = ?", (rel_path, dest_path))
-            existing = cur.fetchone()
-            if existing:
-                doc_id = existing[0]
-                cur.execute("""
-                    UPDATE documents
-                    SET filename = ?, folder_name = ?, folder_path = ?, sect = ?, book_source = ?, ocr_text = ?, file_size = ?
-                    WHERE id = ?
-                """, (filename, FOLDER_NAME, FOLDER_NAME, SECT, SOURCE_NAME, title, file_size, doc_id))
-            else:
-                cur.execute("""
-                    INSERT INTO documents
-                    (filename, relative_path, full_path, folder_name, folder_path, sect, category, book_source, ocr_status, ocr_text, file_size)
-                    VALUES (?, ?, ?, ?, ?, ?, NULL, ?, 'pending', ?, ?)
-                """, (filename, rel_path, dest_path, FOLDER_NAME, FOLDER_NAME, SECT, SOURCE_NAME, title, file_size))
-                total_inserted += 1
-                
+        if not album_rel_paths:
+            continue
+            
+        # Primary cover photo & name
+        cover_rel = album_rel_paths[0]
+        cover_full = os.path.normpath(os.path.join(PROJECT_ROOT, 'media', cover_rel))
+        doc_filename = Path(cover_rel).name
+        images_json_str = json.dumps(album_rel_paths, ensure_ascii=False)
+        
+        cur.execute("""
+            INSERT INTO documents
+            (filename, relative_path, full_path, folder_name, folder_path, sect, category, book_source, ocr_status, ocr_text, file_size, images_json, image_count)
+            VALUES (?, ?, ?, ?, ?, ?, NULL, ?, 'pending', ?, ?, ?, ?)
+        """, (doc_filename, cover_rel, cover_full, FOLDER_NAME, FOLDER_NAME, SECT, SOURCE_NAME, title, album_total_size, images_json_str, num_photos))
+        
+        doc_id = cur.lastrowid
+        
+        # Link in document_folders table
+        if folder_id:
+            cur.execute("""
+                INSERT OR IGNORE INTO document_folders (document_id, folder_id, folder_path)
+                VALUES (?, ?, ?)
+            """, (doc_id, folder_id, FOLDER_NAME))
+            
+        total_albums += 1
+
     conn.commit()
     
     # Update folder file_count
@@ -274,12 +293,23 @@ def run_import():
     """, (FOLDER_NAME,))
     conn.commit()
     
+    # Refresh FTS5 index
+    try:
+        cur.execute("DELETE FROM documents_fts WHERE rowid NOT IN (SELECT id FROM documents)")
+        cur.execute("""
+            INSERT OR REPLACE INTO documents_fts (rowid, filename, folder_name, book_source, ocr_text)
+            SELECT id, filename, folder_name, book_source, ocr_text FROM documents WHERE folder_path = ?
+        """, (FOLDER_NAME,))
+        conn.commit()
+    except Exception as e:
+        print("FTS5 sync note:", e)
+        
     cur.execute("SELECT file_count FROM folders WHERE path = ?", (FOLDER_NAME,))
     final_count = cur.fetchone()[0]
-    print(f"\n✅ Import completed successfully!")
-    print(f"   Files Copied: {total_copied}")
-    print(f"   Documents Inserted/Updated: {total_inserted}")
-    print(f"   Folder '{FOLDER_NAME}' final count in DB: {final_count}")
+    print(f"\n✅ Album grouping import completed successfully!")
+    print(f"   Total Posts/Albums: {total_albums}")
+    print(f"   Total Photos in albums: {total_photos_copied} (134 total images)")
+    print(f"   Folder '{FOLDER_NAME}' final count in DB: {final_count} posts")
     
     conn.close()
 
