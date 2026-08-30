@@ -95,8 +95,8 @@ def make_http_request(url, data=None, headers=None, method='GET', timeout=180):
     except Exception as e:
         return 0, str(e)
 
-def create_sync_zip(zip_path, media_dir, db_path):
-    if os.path.exists(zip_path) and os.path.getsize(zip_path) > 1024 * 1024 * 500:
+def create_sync_zip(zip_path, media_dir, db_path, force=False):
+    if not force and os.path.exists(zip_path) and os.path.getsize(zip_path) > 1024 * 1024 * 500:
         age_s = time.time() - os.path.getmtime(zip_path)
         if age_s < 7200:
             zip_size = os.path.getsize(zip_path)
@@ -136,6 +136,7 @@ def main():
     parser.add_argument('--url', help='رابط الموقع (مثال: https://my-site.com)', default=None)
     parser.add_argument('--token', help='رمز المزامنة السري (SYNC_SECRET_TOKEN)', default=DEFAULT_TOKEN)
     parser.add_argument('--chunk-size', type=int, help='حجم الدفعة بالميجابايت', default=DEFAULT_CHUNK_SIZE_MB)
+    parser.add_argument('--force', action='store_true', help='إعادة ضغط الحزمة من الصفر وتجاهل الحزمة المؤقتة السابقة')
     args = parser.parse_args()
 
     print("=" * 75, flush=True)
@@ -186,7 +187,7 @@ def main():
     os.makedirs(os.path.dirname(zip_path), exist_ok=True)
 
     # 1. Create or reuse ZIP
-    zip_size = create_sync_zip(zip_path, media_dir, db_path)
+    zip_size = create_sync_zip(zip_path, media_dir, db_path, force=args.force)
 
     # 2. Setup streaming chunks
     chunk_size_bytes = args.chunk_size * 1024 * 1024

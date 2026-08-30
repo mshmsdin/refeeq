@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Candidate roots for media search
-const CANDIDATE_ROOTS = [
+export const CANDIDATE_ROOTS = [
   process.env.MEDIA_PATH,
   process.env.ARCHIVE_PATH,
   path.resolve(__dirname, '../../media'),   // e:\المكتبة الشيعية\تطبيق\media
@@ -24,23 +24,72 @@ const CANDIDATE_ROOTS = [
   'E:\\المكتبة الشيعية\\الرافضة'
 ].filter(Boolean);
 
+// In-memory index of filenames -> absolute file paths
+let mediaIndex = null;
+let lastIndexTime = 0;
+const INDEX_TTL_MS = 60 * 1000; // refresh index at most once per minute
+
+/**
+ * Recursively scans directory and adds all files to the mediaIndex Map.
+ */
+function scanDirectory(dir, map) {
+  try {
+    if (!fs.existsSync(dir)) return;
+    const items = fs.readdirSync(dir, { withFileTypes: true });
+    for (const item of items) {
+      const fullPath = path.join(dir, item.name);
+      if (item.isDirectory()) {
+        scanDirectory(fullPath, map);
+      } else {
+        const base = item.name;
+        const baseNFC = base.normalize('NFC');
+        const cleanBase = base.replace(/[\r\n\t]/g, '').trim();
+        
+        if (!map.has(base)) map.set(base, fullPath);
+        if (!map.has(baseNFC)) map.set(baseNFC, fullPath);
+        if (!map.has(cleanBase)) map.set(cleanBase, fullPath);
+        if (!map.has(cleanBase.normalize('NFC'))) map.set(cleanBase.normalize('NFC'), fullPath);
+      }
+    }
+  } catch (err) {
+    // Ignore permissions / unreadable dirs
+  }
+}
+
+/**
+ * Builds or refreshes the media index across all candidate roots.
+ */
+export function getMediaIndex() {
+  const now = Date.now();
+  if (mediaIndex && (now - lastIndexTime < INDEX_TTL_MS)) {
+    return mediaIndex;
+  }
+
+  const map = new Map();
+  for (const root of CANDIDATE_ROOTS) {
+    if (fs.existsSync(root)) {
+      scanDirectory(root, map);
+    }
+  }
+
+  mediaIndex = map;
+  lastIndexTime = now;
+  return mediaIndex;
+}
+
 /**
  * Safe existsSync that handles Unicode/emoji normalization issues on Windows.
- * Falls back to directory listing when direct stat fails.
  */
 function safeExists(fullPath) {
   try {
     fs.accessSync(fullPath, fs.constants.F_OK);
     return true;
   } catch {
-    // Fallback: check via parent directory listing
-    // This handles emoji/Unicode normalization differences on Windows NTFS
     try {
       const dir = path.dirname(fullPath);
       const base = path.basename(fullPath);
       if (!fs.existsSync(dir)) return false;
       const files = fs.readdirSync(dir);
-      // Compare by NFC normalization
       const baseNFC = base.normalize('NFC');
       return files.some(f => f.normalize('NFC') === baseNFC);
     } catch {
@@ -50,7 +99,7 @@ function safeExists(fullPath) {
 }
 
 /**
- * Like safeExists but returns the actual resolved path with correct casing.
+ * Returns the actual resolved path with correct casing if file exists.
  */
 function safeResolve(fullPath) {
   try {
@@ -74,23 +123,22 @@ function safeResolve(fullPath) {
 
 /**
  * Intelligent cross-platform image path resolver.
- * Handles Windows paths on Linux, relative paths, emoji in filenames, and archive relocations.
+ * Handles Windows paths on Linux, relative paths, emoji/Unicode normalization, and reorganized directories.
  */
 export function resolveImagePath(inputPath) {
   if (!inputPath || typeof inputPath !== 'string') return null;
 
-  // 1. Direct path check
-  const direct = safeResolve(inputPath);
-  if (direct) return direct;
-
-  // 2. Normalize path: convert backslashes to forward slashes, strip quotes
-  // Use split/join to reliably handle single backslashes
+  // 1. Normalize input string
   const normalized = inputPath
     .split('\\').join('/')
     .replace(/^['"]|['"]$/g, '')
     .trim();
 
-  // 3. Extract relative part (e.g. after 'media/' or relative sect directory)
+  // 2. Direct absolute path check
+  const direct = safeResolve(normalized);
+  if (direct) return direct;
+
+  // 3. Extract relative part (strip media/ or drive letters)
   let subPath = normalized;
   const mediaIdx = normalized.toLowerCase().indexOf('/media/');
   if (mediaIdx !== -1) {
@@ -98,34 +146,36 @@ export function resolveImagePath(inputPath) {
   } else if (normalized.toLowerCase().startsWith('media/')) {
     subPath = normalized.substring(6);
   }
-
-  // Strip drive letters like E:/ or C:/ if still present
   subPath = subPath.replace(/^[a-zA-Z]:\//, '');
 
-  // 4. Try candidate roots with subPath parts
   const subParts = subPath.split('/').filter(Boolean);
+  if (subParts.length === 0) return null;
 
+  // 4. Try candidate roots with direct subPath
   for (const root of CANDIDATE_ROOTS) {
+    if (!fs.existsSync(root)) continue;
     const candidate = path.join(root, ...subParts);
     const resolved = safeResolve(candidate);
     if (resolved) return resolved;
-
-    // Also try filename only in root
-    const candidateDirect = path.join(root, subParts[subParts.length - 1]);
-    const resolvedDirect = safeResolve(candidateDirect);
-    if (resolvedDirect) return resolvedDirect;
   }
 
-  // 5. Try filename only inside known sect subfolders
+  // 5. Try basename lookup in fast media index
   const filename = subParts[subParts.length - 1];
-  const sects = ['شيعة', 'نصارى', 'christian', 'إلحاد', 'سلفية'];
-  for (const root of CANDIDATE_ROOTS) {
-    for (const sect of sects) {
-      const sectCandidate = path.join(root, sect, filename);
-      const resolved = safeResolve(sectCandidate);
-      if (resolved) return resolved;
-    }
+  const index = getMediaIndex();
+  
+  if (index.has(filename)) return index.get(filename);
+  if (index.has(filename.normalize('NFC'))) return index.get(filename.normalize('NFC'));
+  
+  const cleanFilename = filename.replace(/[\r\n\t]/g, '').trim();
+  if (index.has(cleanFilename)) return index.get(cleanFilename);
+  if (index.has(cleanFilename.normalize('NFC'))) return index.get(cleanFilename.normalize('NFC'));
+
+  // 6. Try without leading non-alphanumerics if any
+  const strippedFilename = cleanFilename.replace(/^[^\p{L}\p{N}]+/u, '').trim();
+  if (strippedFilename && index.has(strippedFilename)) {
+    return index.get(strippedFilename);
   }
 
   return null;
 }
+

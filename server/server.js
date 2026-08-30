@@ -48,12 +48,68 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 // Rewrite /rafeeq/api/* → /api/* so API routes work under both base paths
+// Also rewrite /rafeeq/media/* → /media/* so images work behind reverse proxy
 app.use((req, res, next) => {
   if (req.path.startsWith('/rafeeq/api/') || req.path === '/rafeeq/api') {
     req.url = req.url.replace('/rafeeq/api', '/api');
+  } else if (req.path.startsWith('/rafeeq/media/')) {
+    req.url = req.url.replace('/rafeeq/media', '/media');
   }
   next();
 });
+
+// Serve media files with custom handler that correctly resolves Arabic/emoji filenames
+// Priority: env var → relative to server dir (works in Docker) → Windows dev path
+const MEDIA_DIR = (
+  process.env.MEDIA_PATH ||
+  (() => {
+    // Derive relative to server root - works both in Docker (/app/server) and Windows
+    const relPath = path.resolve(__dirname, '../../media');
+    if (fs.existsSync(relPath)) return relPath;
+    return 'E:\\المكتبة الشيعية\\تطبيق\\media';
+  })()
+);
+
+// Determine MIME type from file extension
+function getMimeType(filePath) {
+  const ext = path.extname(filePath).toLowerCase();
+  const mimes = {
+    '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
+    '.png': 'image/png', '.webp': 'image/webp',
+    '.gif': 'image/gif', '.bmp': 'image/bmp',
+    '.svg': 'image/svg+xml', '.avif': 'image/avif'
+  };
+  return mimes[ext] || 'application/octet-stream';
+}
+
+// Custom media file handler: resolves Arabic/Unicode filenames correctly on all platforms
+function serveMediaFile(req, res) {
+  try {
+    const rawSub = decodeURIComponent(req.path || '');
+    const subPath = rawSub.replace(/^\//, '');
+    const resolved = resolveImagePath(subPath);
+
+    if (!resolved) {
+      return res.status(404).send('Media file not found');
+    }
+
+    const stat = fs.statSync(resolved);
+    const mime = getMimeType(resolved);
+
+    res.setHeader('Content-Type', mime);
+    res.setHeader('Content-Length', stat.size);
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
+    fs.createReadStream(resolved).pipe(res);
+  } catch (err) {
+    res.status(500).send('Error serving media: ' + err.message);
+  }
+}
+
+app.use('/media', serveMediaFile);
+app.use('/rafeeq/media', serveMediaFile);
+
 
 
 // ----------------------------------------------------
@@ -746,7 +802,7 @@ app.post('/api/folder/:id/category', (req, res) => {
   }
 });
 
-// 8. Image Streaming / Raw File (Smart Cross-Platform Resolution)
+// 8. Image Streaming / Raw File (Smart Cross-Platform Direct Stream)
 app.get('/api/image/raw', (req, res) => {
   try {
     const rawPath = req.query.path;
@@ -756,31 +812,23 @@ app.get('/api/image/raw', (req, res) => {
 
     const resolved = resolveImagePath(rawPath);
     if (!resolved) {
-      return res.status(404).send('Image file not found on disk');
+      return res.status(404).send('Image not found');
     }
 
-    // Detect content type from extension
-    const ext = path.extname(resolved).toLowerCase();
-    const mimeTypes = {
-      '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
-      '.png': 'image/png', '.gif': 'image/gif',
-      '.webp': 'image/webp', '.mp4': 'video/mp4',
-      '.mov': 'video/quicktime', '.emf': 'application/x-emf'
-    };
-    const contentType = mimeTypes[ext] || 'application/octet-stream';
+    const stat = fs.statSync(resolved);
+    const mime = getMimeType(resolved);
 
-    // Use createReadStream instead of sendFile to handle emoji/Unicode filenames on Windows
-    const stream = fs.createReadStream(resolved);
-    stream.on('error', (err) => {
-      if (!res.headersSent) res.status(404).send('Image file not found on disk');
-    });
+    res.setHeader('Content-Type', mime);
+    res.setHeader('Content-Length', stat.size);
     res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.setHeader('Content-Type', contentType);
-    stream.pipe(res);
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
+    fs.createReadStream(resolved).pipe(res);
   } catch (err) {
-    res.status(500).send(err.message);
+    res.status(500).send('Error streaming image: ' + err.message);
   }
 });
+
 
 
 // ====================================================

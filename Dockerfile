@@ -40,10 +40,11 @@ ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOST=0.0.0.0
 ENV DB_PATH=/app/data/library.db
-ENV ARCHIVE_PATH=/app/data/archive
+ENV MEDIA_PATH=/app/data/media
+ENV ARCHIVE_PATH=/app/data/media
 
-# Create persistent data directory and assign ownership to node user
-RUN mkdir -p /app/data && chown -R node:node /app
+# Create persistent data directories and assign ownership to node user
+RUN mkdir -p /app/data /app/data/media && chown -R node:node /app
 
 # Copy server code and production dependencies
 COPY --chown=node:node server/package*.json ./server/

@@ -24,7 +24,8 @@ export default function ProjectorView({ doc, onClose, onCopyImage, copiedDocId }
 
   if (!doc) return null;
 
-  const imageUrl = `/api/image/raw?path=${encodeURIComponent(doc.full_path)}`;
+  const imgPath = (doc.images && doc.images[0]) || doc.relative_path || doc.full_path;
+  const imageUrl = imgPath ? `/api/image/raw?path=${encodeURIComponent(imgPath)}` : '';
   const isCopied = copiedDocId === doc.id;
 
   return (

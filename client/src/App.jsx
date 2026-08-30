@@ -373,7 +373,12 @@ export default function App() {
   // Copy Image to Clipboard
   const handleCopyImage = async (doc) => {
     try {
-      const imageUrl = `/api/image/raw?path=${encodeURIComponent(doc.full_path)}`;
+      const imgPath = (doc.images && doc.images[0]) || doc.relative_path || doc.full_path;
+      if (!imgPath) {
+        showToast('⚠️ لا يوجد مسار صورة لهذه الوثيقة');
+        return;
+      }
+      const imageUrl = `/api/image/raw?path=${encodeURIComponent(imgPath)}`;
       const res = await fetch(imageUrl);
       const blob = await res.blob();
 

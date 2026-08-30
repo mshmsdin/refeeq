@@ -87,8 +87,8 @@ export default function DebateTray({
           </div>
         ) : (
           favorites.map((doc, idx) => {
-            const isCopied = copiedDocId === doc.id;
-            const imageUrl = `/api/image/raw?path=${encodeURIComponent(doc.full_path)}`;
+            const imgPath = (doc.images && doc.images[0]) || doc.relative_path || doc.full_path;
+            const imageUrl = imgPath ? `/api/image/raw?path=${encodeURIComponent(imgPath)}` : '';
 
             return (
               <div

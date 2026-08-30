@@ -450,9 +450,11 @@ export default function ImageViewerModal({
   if (!docId) return null;
 
   const doc = docData?.document;
-  const docImages = (doc?.images && doc.images.length > 0) ? doc.images : (doc?.full_path ? [doc.full_path] : []);
+  const docImages = (doc?.images && doc.images.length > 0) 
+    ? doc.images 
+    : (doc?.relative_path ? [doc.relative_path] : (doc?.full_path ? [doc.full_path] : []));
   const isAlbum = docImages.length > 1;
-  const currentImageRel = docImages[activeImageIndex] || docImages[0] || doc?.full_path;
+  const currentImageRel = docImages[activeImageIndex] || docImages[0] || doc?.relative_path || doc?.full_path;
   const hasImage = Boolean(currentImageRel && /\.(jpe?g|png|webp|gif|bmp)$/i.test(currentImageRel));
   const imageUrl = hasImage ? `/api/image/raw?path=${encodeURIComponent(currentImageRel)}` : '';
   const isCopied = doc && copiedDocId === doc.id;
