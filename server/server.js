@@ -47,13 +47,16 @@ if (process.env.NODE_ENV !== 'test') {
   app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 }
 
-// Rewrite /rafeeq/api/* → /api/* so API routes work under both base paths
-// Also rewrite /rafeeq/media/* → /media/* so images work behind reverse proxy
+// Rewrite /rafeeq/* → /* so API routes, media, and health work under both base paths
 app.use((req, res, next) => {
-  if (req.path.startsWith('/rafeeq/api/') || req.path === '/rafeeq/api') {
+  if (req.url.startsWith('/rafeeq/api')) {
     req.url = req.url.replace('/rafeeq/api', '/api');
-  } else if (req.path.startsWith('/rafeeq/media/')) {
+  } else if (req.url.startsWith('/rafeeq/media')) {
     req.url = req.url.replace('/rafeeq/media', '/media');
+  } else if (req.url.startsWith('/rafeeq/health')) {
+    req.url = req.url.replace('/rafeeq/health', '/health');
+  } else if (req.url.startsWith('/rafeeq/ready')) {
+    req.url = req.url.replace('/rafeeq/ready', '/ready');
   }
   next();
 });
