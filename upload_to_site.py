@@ -165,24 +165,30 @@ def main():
 
     print(f"\n🔍 [2/4] فحص الاتصال بالموقع: {base_url} ...", flush=True)
     
-    health_status, health_resp = make_http_request(f"{base_url}/health")
-    if health_status != 200:
-        print(f"❌ تعذر الاتصال بـ {base_url}/health (كود: {health_status})", flush=True)
-        return
-
-    print("✅ تم تأكيد عمل الموقع بنجاح!", flush=True)
-
     sync_status_code, sync_status = make_http_request(
         f"{base_url}/api/sync/status",
         headers={'x-sync-token': token}
     )
 
+    if sync_status_code != 200 and base_url.endswith('/rafeeq'):
+        alt_base = base_url[:-7]
+        alt_code, alt_status = make_http_request(
+            f"{alt_base}/api/sync/status",
+            headers={'x-sync-token': token}
+        )
+        if alt_code == 200:
+            base_url = alt_base
+            sync_status_code = alt_code
+            sync_status = alt_status
+
     if sync_status_code == 401:
         print("❌ رمز المزامنة (Token) غير صالح.", flush=True)
         return
     elif sync_status_code != 200:
-        print(f"⚠️ نقطة المزامنة /api/sync/status غير متاحة (كود: {sync_status_code}).", flush=True)
+        print(f"⚠️ نقطة المزامنة /api/sync/status غير متاحة حالياً (كود: {sync_status_code}). قد يكون السيرفر يعيد التشغيل.", flush=True)
         return
+
+    print("✅ تم تأكيد الاتصال بالسيرفر بنجاح!", flush=True)
 
     print(f"📊 حالة السيرفر الحالية:", flush=True)
     print(f"   - المنصة: {sync_status.get('platform')}", flush=True)
