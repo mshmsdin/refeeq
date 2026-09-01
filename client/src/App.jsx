@@ -13,9 +13,9 @@ import { parseCurrentRoute, buildRouteUrl, buildBibleUrl, pushRouteUrl } from '.
 import { DEBATE_CATEGORIES } from './utils/categories';
 
 export default function App() {
-  // Theme state: 'dark' | 'light'
+  // Theme state: 'light' | 'dark' (Default is light mode)
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('app_theme') || 'dark';
+    return localStorage.getItem('app_theme') || 'light';
   });
 
   // Parse initial route from URL
@@ -468,7 +468,7 @@ export default function App() {
               </button>
               <div className="flex-1" />
               <button
-                onClick={() => { const d = document.documentElement; d.classList.toggle('dark'); localStorage.setItem('app_theme', d.classList.contains('dark') ? 'dark' : 'light'); }}
+                onClick={toggleTheme}
                 className="p-2 rounded-xl bg-[var(--bg-muted)] text-[var(--text-secondary)] hover:text-amber-500 transition-colors text-xs"
                 aria-label="تبديل المظهر"
               >
