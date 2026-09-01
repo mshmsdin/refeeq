@@ -43,27 +43,23 @@ ENV DB_PATH=/app/data/library.db
 ENV MEDIA_PATH=/app/data/media
 ENV ARCHIVE_PATH=/app/data/media
 
-# Create persistent data directories and assign ownership to node user
-RUN mkdir -p /app/data /app/data/media && chown -R node:node /app
+# Create persistent data directories
+RUN mkdir -p /app/data /app/data/media /app/data/tmp_sync /app/client/dist && chmod -R 777 /app/data
 
 # Copy server code and production dependencies
-COPY --chown=node:node server/package*.json ./server/
-COPY --chown=node:node --from=server-deps /app/server/node_modules ./server/node_modules
-COPY --chown=node:node server/ ./server/
+COPY server/ ./server/
+COPY --from=server-deps /app/server/node_modules ./server/node_modules
 
 # Copy built frontend assets
-COPY --chown=node:node --from=client-builder /app/client/dist ./client/dist
+COPY --from=client-builder /app/client/dist ./client/dist
 
-# Set user to non-root node user (Rule 24)
-USER node
-
-# Expose internal production port (Rule 6)
+# Expose internal production port
 EXPOSE 3000
 
-# Docker Health Check (Rule 7)
-HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
+# Docker Health Check
+HEALTHCHECK --interval=20s --timeout=5s --start-period=10s --retries=3 \
   CMD node -e "fetch('http://127.0.0.1:3000/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
 
-# Start production server (Rule 27)
+# Start production server
 WORKDIR /app/server
 CMD ["node", "server.js"]

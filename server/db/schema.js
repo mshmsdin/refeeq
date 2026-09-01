@@ -6,19 +6,30 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Support configurable DB path for containerized persistent volume (e.g. /app/data/library.db)
-const dbPath = process.env.DB_PATH || path.join(__dirname, 'library.db');
-
-// Ensure parent directory exists for DB path
-const parentDir = path.dirname(dbPath);
-if (!fs.existsSync(parentDir)) {
-  fs.mkdirSync(parentDir, { recursive: true });
-}
+let resolvedDbPath = process.env.DB_PATH || path.join(__dirname, 'library.db');
 
 let dbInstance = null;
 
 export function initDatabase() {
-  const db = new Database(dbPath);
+  let db;
+  try {
+    const parentDir = path.dirname(resolvedDbPath);
+    if (!fs.existsSync(parentDir)) {
+      fs.mkdirSync(parentDir, { recursive: true });
+    }
+    db = new Database(resolvedDbPath);
+  } catch (err) {
+    console.error(`[Database Error] Could not open database at ${resolvedDbPath}:`, err.message);
+    const fallbackPath = path.join(__dirname, 'library.db');
+    console.warn(`[Database Fallback] Falling back to: ${fallbackPath}`);
+    resolvedDbPath = fallbackPath;
+    const parentDir = path.dirname(resolvedDbPath);
+    if (!fs.existsSync(parentDir)) {
+      fs.mkdirSync(parentDir, { recursive: true });
+    }
+    db = new Database(resolvedDbPath);
+  }
+
   db.pragma('journal_mode = WAL');
   db.pragma('synchronous = NORMAL');
   db.pragma('foreign_keys = ON');
@@ -178,7 +189,7 @@ export function getDb() {
   if (dbInstance && dbInstance.open) {
     return dbInstance;
   }
-  const db = new Database(dbPath);
+  const db = new Database(resolvedDbPath);
   db.pragma('journal_mode = WAL');
   db.pragma('synchronous = NORMAL');
   dbInstance = db;
@@ -197,6 +208,6 @@ export function closeDb() {
 }
 
 export function getDbPath() {
-  return dbPath;
+  return resolvedDbPath;
 }
 
