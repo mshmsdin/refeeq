@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Flame, X, Trash2, Copy, Maximize2, Check, BookOpen } from 'lucide-react';
+import { Flame, X, Trash2, Copy, Maximize2, Check, BookOpen, FileText } from 'lucide-react';
 
 export default function DebateTray({
   isOpen,
@@ -38,20 +38,20 @@ export default function DebateTray({
   return (
     <div className="fixed bottom-4 left-4 z-40 w-96 max-w-[calc(100vw-2rem)] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden animate-slideUp text-slate-800 dark:text-slate-100">
       {/* Tray Header */}
-      <div className="p-3.5 bg-amber-500/10 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+      <div className="p-3 bg-amber-500/10 dark:bg-amber-500/5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="p-1.5 rounded-lg bg-amber-500 text-slate-950">
+          <div className="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-bold">
             <Flame className="w-4 h-4 fill-current" />
           </div>
           <div>
-            <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
-              سلة البث والمناظرة الحية
-              <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-amber-500 text-slate-950 font-bold">
+            <h4 className="text-xs font-bold text-slate-800 dark:text-slate-100 flex items-center gap-1.5">
+              <span>سلة المناظرة والبث السريع</span>
+              <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-amber-500/20 text-amber-800 dark:text-amber-300 font-mono">
                 {favorites.length}
               </span>
             </h4>
             <p className="text-[10px] text-slate-500 dark:text-slate-400">
-              اضغط الأرقام (1-9) لفتح الوثيقة بسرعة أثناء الحوار
+              اضغط الأرقام <span className="font-mono font-bold text-amber-600 dark:text-amber-400">1..9</span> للفتح المباشر، أو <span className="font-mono font-bold text-amber-600 dark:text-amber-400">Alt+1..9</span> للنسخ
             </p>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function DebateTray({
           {favorites.length > 0 && (
             <button
               onClick={onClearFavorites}
-              className="p-1.5 rounded-lg hover:bg-rose-500/15 text-slate-400 hover:text-rose-600 transition-colors text-xs"
+              className="p-1 rounded-lg hover:bg-rose-500/10 text-slate-400 hover:text-rose-500 transition-colors"
               title="تفريغ السلة"
             >
               <Trash2 className="w-4 h-4" />
@@ -68,15 +68,15 @@ export default function DebateTray({
           )}
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+            className="p-1 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
       </div>
 
-      {/* Tray Items List */}
-      <div className="max-h-96 overflow-y-auto p-2.5 space-y-2">
+      {/* Items List */}
+      <div className="max-h-80 overflow-y-auto p-2 space-y-1.5">
         {favorites.length === 0 ? (
           <div className="text-center py-8 px-4 text-xs text-slate-500 dark:text-slate-400 space-y-2">
             <Flame className="w-8 h-8 mx-auto text-slate-300 dark:text-slate-700" />
@@ -87,8 +87,11 @@ export default function DebateTray({
           </div>
         ) : (
           favorites.map((doc, idx) => {
-            const imgPath = (doc.images && doc.images[0]) || doc.relative_path || doc.full_path;
-            const imageUrl = imgPath ? `/api/image/raw?path=${encodeURIComponent(imgPath)}` : '';
+            const isImageFile = (p) => Boolean(p && typeof p === 'string' && /\.(jpe?g|png|webp|gif|bmp|svg)$/i.test(p));
+            const imgPath = (doc.images && doc.images.find(isImageFile)) || (isImageFile(doc.relative_path) ? doc.relative_path : '') || (isImageFile(doc.full_path) ? doc.full_path : '') || (isImageFile(doc.filename) ? doc.filename : '');
+            const hasImage = Boolean(imgPath);
+            const imageUrl = hasImage ? `/api/image/raw?path=${encodeURIComponent(imgPath)}` : '';
+            const isCopied = copiedDocId === doc.id;
 
             return (
               <div
@@ -102,12 +105,16 @@ export default function DebateTray({
                 </span>
 
                 {/* Thumbnail */}
-                <div className="w-10 h-10 rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-900 shrink-0 border border-slate-200 dark:border-slate-700">
-                  <img
-                    src={imageUrl}
-                    alt={doc.filename}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-10 h-10 rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-900 shrink-0 border border-slate-200 dark:border-slate-700 flex items-center justify-center">
+                  {hasImage ? (
+                    <img
+                      src={imageUrl}
+                      alt={doc.filename}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <FileText className="w-5 h-5 text-amber-500" />
+                  )}
                 </div>
 
                 {/* Info */}

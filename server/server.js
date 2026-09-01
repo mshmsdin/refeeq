@@ -161,22 +161,32 @@ function attachTagsToDocuments(db, docs) {
     tagsByDoc.get(r.document_id).push(r.tag);
   }
 
+  const isImageRegex = /\.(jpe?g|png|webp|gif|bmp|svg)$/i;
+
   return docs.map(d => {
     let images = [];
     if (d.images_json) {
       try {
-        images = JSON.parse(d.images_json);
-      } catch (e) {
-        images = [d.relative_path || d.filename];
-      }
-    } else if (d.relative_path || d.full_path) {
-      images = [d.relative_path || d.full_path];
+        const parsed = JSON.parse(d.images_json);
+        if (Array.isArray(parsed)) {
+          images = parsed.filter(p => typeof p === 'string' && isImageRegex.test(p));
+        }
+      } catch (e) {}
     }
+    
+    if (images.length === 0) {
+      const candidatePath = d.full_path || d.relative_path || d.filename || '';
+      if (isImageRegex.test(candidatePath)) {
+        images = [d.relative_path || d.full_path || d.filename];
+      }
+    }
+
+    const hasRealImages = images.length > 0;
 
     return {
       ...d,
       images,
-      image_count: d.image_count || (images ? images.length : 1),
+      image_count: hasRealImages ? (d.image_count || images.length) : 0,
       tags: tagsByDoc.get(d.id) || (d.ocr_text ? extractDistinctKeywords(d.ocr_text, d.filename, 6) : [])
     };
   });
@@ -639,16 +649,25 @@ app.get('/api/document/:id', (req, res) => {
     const prevDoc = db.prepare('SELECT id FROM documents WHERE id < ? ORDER BY id DESC LIMIT 1').get(docId);
     const nextDoc = db.prepare('SELECT id FROM documents WHERE id > ? ORDER BY id ASC LIMIT 1').get(docId);
 
+    const isImageRegex = /\.(jpe?g|png|webp|gif|bmp|svg)$/i;
     let images = [];
     if (doc.images_json) {
       try {
-        images = JSON.parse(doc.images_json);
-      } catch (e) {
-        images = [doc.relative_path || doc.filename];
-      }
-    } else if (doc.relative_path || doc.full_path) {
-      images = [doc.relative_path || doc.full_path];
+        const parsed = JSON.parse(doc.images_json);
+        if (Array.isArray(parsed)) {
+          images = parsed.filter(p => typeof p === 'string' && isImageRegex.test(p));
+        }
+      } catch (e) {}
     }
+    
+    if (images.length === 0) {
+      const candidatePath = doc.full_path || doc.relative_path || doc.filename || '';
+      if (isImageRegex.test(candidatePath)) {
+        images = [doc.relative_path || doc.full_path || doc.filename];
+      }
+    }
+
+    const hasRealImages = images.length > 0;
 
     res.json({
       success: true,
@@ -1048,8 +1067,14 @@ app.post('/api/sync/finalize', requireSyncAuth, (req, res) => {
               continue;
             }
 
-            let entryRel = entry.entryName.replace(/^media[\\/]/, '');
-            const destPath = path.join(targetMediaDir, entryRel);
+            let destPath;
+            if (entry.entryName.startsWith('storage/') || entry.entryName.startsWith('storage\\')) {
+              destPath = path.join(targetDataDir, entry.entryName);
+            } else {
+              let entryRel = entry.entryName.replace(/^media[\\/]/, '');
+              destPath = path.join(targetMediaDir, entryRel);
+            }
+
             const destDir = path.dirname(destPath);
             if (!fs.existsSync(destDir)) {
               fs.mkdirSync(destDir, { recursive: true });
@@ -1065,6 +1090,11 @@ app.post('/api/sync/finalize', requireSyncAuth, (req, res) => {
         } catch (e) {
           console.warn('[Sync] Could not remove temp dir:', e.message);
         }
+
+        // Invalidate and refresh media index
+        try {
+          getMediaIndex();
+        } catch (e) {}
 
         // Recalculate stats
         const db = getDb();

@@ -150,10 +150,11 @@ export default function DocumentGrid({
             {documents.map((doc) => {
               const isFav = !!favoritesMap[doc.id];
               const isCopied = copiedDocId === doc.id;
-              const hasImage = Boolean(doc.full_path && /\.(jpe?g|png|webp|gif|bmp)$/i.test(doc.full_path)) || Boolean(doc.images && doc.images.length > 0);
-              const isAlbum = (doc.image_count && doc.image_count > 1) || (doc.images && doc.images.length > 1);
-              const albumCount = doc.image_count || (doc.images ? doc.images.length : 1);
-              const firstImage = (doc.images && doc.images[0]) || doc.relative_path || doc.full_path;
+              const isImageFile = (p) => Boolean(p && typeof p === 'string' && /\.(jpe?g|png|webp|gif|bmp|svg)$/i.test(p));
+              const firstImage = (doc.images && doc.images.find(isImageFile)) || (isImageFile(doc.relative_path) ? doc.relative_path : '') || (isImageFile(doc.full_path) ? doc.full_path : '') || (isImageFile(doc.filename) ? doc.filename : '');
+              const hasImage = Boolean(firstImage);
+              const isAlbum = hasImage && ((doc.image_count && doc.image_count > 1) || (doc.images && doc.images.filter(isImageFile).length > 1));
+              const albumCount = doc.image_count || (doc.images ? doc.images.filter(isImageFile).length : 1);
               const imageUrl = hasImage ? `/api/image/raw?path=${encodeURIComponent(firstImage)}` : '';
               const docCat = doc.category ? DEBATE_CATEGORIES[doc.category] : null;
               const textSnippet = doc.ocr_text 

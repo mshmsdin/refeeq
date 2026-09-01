@@ -95,7 +95,7 @@ def make_http_request(url, data=None, headers=None, method='GET', timeout=180):
     except Exception as e:
         return 0, str(e)
 
-def create_sync_zip(zip_path, media_dir, db_path, force=False):
+def create_sync_zip(zip_path, media_dir, storage_dir, db_path, force=False):
     if not force and os.path.exists(zip_path) and os.path.getsize(zip_path) > 1024 * 1024 * 500:
         age_s = time.time() - os.path.getmtime(zip_path)
         if age_s < 7200:
@@ -123,6 +123,15 @@ def create_sync_zip(zip_path, media_dir, db_path, force=False):
                     total_files += 1
                     if total_files % 2500 == 0:
                         print(f"    تم أرشفة {total_files:,} ملف...", flush=True)
+
+        if storage_dir and os.path.exists(storage_dir):
+            print(f"  + إضافة ملفات التخزين والكتب من: {storage_dir}", flush=True)
+            for root, dirs, files in os.walk(storage_dir):
+                for file in files:
+                    full_p = os.path.join(root, file)
+                    rel_p = 'storage/' + os.path.relpath(full_p, storage_dir).replace('\\', '/')
+                    zipf.write(full_p, arcname=rel_p)
+                    total_files += 1
 
     duration = time.time() - start_time
     zip_size = os.path.getsize(zip_path)
@@ -182,12 +191,13 @@ def main():
 
     project_root = os.path.dirname(os.path.abspath(__file__))
     media_dir = os.path.join(project_root, 'media')
+    storage_dir = os.path.join(project_root, 'server', 'storage')
     db_path = os.path.join(project_root, 'server', 'db', 'library.db')
     zip_path = os.path.join(project_root, 'scratch', 'sync_bundle.zip')
     os.makedirs(os.path.dirname(zip_path), exist_ok=True)
 
     # 1. Create or reuse ZIP
-    zip_size = create_sync_zip(zip_path, media_dir, db_path, force=args.force)
+    zip_size = create_sync_zip(zip_path, media_dir, storage_dir, db_path, force=args.force)
 
     # 2. Setup streaming chunks
     chunk_size_bytes = args.chunk_size * 1024 * 1024
