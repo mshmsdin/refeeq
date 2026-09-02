@@ -4,7 +4,7 @@
 # ==============================================================================
 
 # --- Stage 1: Build Frontend (React + Vite) ---
-FROM node:24.19.0-bookworm-slim AS client-builder
+FROM node:22.19.0-bookworm-slim AS client-builder
 
 WORKDIR /app/client
 
@@ -16,7 +16,7 @@ ENV NODE_ENV=production
 RUN npm run build
 
 # --- Stage 2: Production Server Dependencies ---
-FROM node:24.19.0-bookworm-slim AS server-deps
+FROM node:22.19.0-bookworm-slim AS server-deps
 
 WORKDIR /app/server
 
@@ -31,7 +31,7 @@ COPY server/package*.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 
 # --- Stage 3: Production Runner ---
-FROM node:24.19.0-bookworm-slim AS runner
+FROM node:22.19.0-bookworm-slim AS runner
 
 WORKDIR /app
 
