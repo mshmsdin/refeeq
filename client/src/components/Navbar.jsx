@@ -11,7 +11,8 @@ import {
   Compass, 
   Sparkles,
   Menu,
-  SlidersHorizontal
+  SlidersHorizontal,
+  CircleHelp
 } from 'lucide-react';
 
 import { DEBATE_CATEGORIES } from '../utils/categories';
@@ -37,7 +38,8 @@ export default function Navbar({
   stats,
   onToggleMobileSidebar,
   isMobileSidebarOpen,
-  onOpenBible
+  onOpenBible,
+  onOpenFeatures
 }) {
   const searchInputRef = useRef(null);
 
@@ -145,6 +147,19 @@ export default function Navbar({
               <Sparkles className="w-3.5 h-3.5" />
               <span>دليل الأصناف</span>
             </button>
+
+            {/* How to use Button */}
+            {onOpenFeatures && (
+              <button
+                onClick={onOpenFeatures}
+                className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 text-sky-700 dark:text-sky-400 border border-sky-500/25 text-xs font-bold transition-all btn-press"
+                title="تعليمات"
+                aria-label="تعليمات"
+              >
+                <CircleHelp className="w-3.5 h-3.5" />
+                <span>تعليمات</span>
+              </button>
+            )}
 
             {/* Theme Toggle Button */}
             <button

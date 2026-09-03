@@ -8,6 +8,7 @@ import ProjectorView from './components/ProjectorView';
 import StatsModal from './components/StatsModal';
 import CategoryGuideModal from './components/CategoryGuideModal';
 import BibleSection from './components/BibleSection';
+import FeaturesPage from './components/FeaturesPage';
 import { Tag as TagIcon, X, Compass, Folder, ChevronLeft, Link2, Check, Sparkles, RotateCcw, BookOpen } from 'lucide-react';
 import { parseCurrentRoute, buildRouteUrl, buildBibleUrl, pushRouteUrl } from './utils/urlRoutes';
 import { DEBATE_CATEGORIES } from './utils/categories';
@@ -23,12 +24,14 @@ export default function App() {
 
   // Bible section state
   const [isBibleView, setIsBibleView] = useState(initialRoute.page === 'bible');
+  const [isGuideView, setIsGuideView] = useState(initialRoute.page === 'guide');
 
   // Listen to popstate to handle browser back/forward
   useEffect(() => {
     const handlePop = () => {
       const r = parseCurrentRoute();
       setIsBibleView(r.page === 'bible');
+      setIsGuideView(r.page === 'guide');
     };
     window.addEventListener('popstate', handlePop);
     return () => window.removeEventListener('popstate', handlePop);
@@ -120,6 +123,7 @@ export default function App() {
 
   // Synchronize browser URL when activeSect, activeFolderId, or activeDocId changes
   useEffect(() => {
+    if (isBibleView || isGuideView) return;
     const activeDoc = documents.find((d) => d.id === activeDocId);
     const isArticle = activeDoc ? !activeDoc.full_path : (activeSect === 'إلحاد');
 
@@ -129,12 +133,13 @@ export default function App() {
       docId: activeDocId,
       isArticle: Boolean(isArticle)
     });
-  }, [activeSect, activeFolderId, activeDocId, documents]);
+  }, [activeSect, activeFolderId, activeDocId, documents, isBibleView, isGuideView]);
 
   // Handle browser Back/Forward navigation
   useEffect(() => {
     const handlePopState = () => {
       const route = parseCurrentRoute();
+      setIsGuideView(route.page === 'guide');
       setActiveSect(route.sect || 'all');
       setActiveDocId(route.docId || null);
 
@@ -450,11 +455,33 @@ export default function App() {
 
   const currentFolderCatMeta = activeFolderCategory ? DEBATE_CATEGORIES[activeFolderCategory] : null;
 
+  const openGuide = () => {
+    setIsGuideView(true);
+    setIsBibleView(false);
+    window.history.pushState(null, '', buildRouteUrl({}) .replace(/\/$/, '/f1'));
+    document.title = 'تعليمات - رفيق المناظر';
+  };
+
+  const backToArchive = () => {
+    setIsGuideView(false);
+    setIsBibleView(false);
+    window.history.pushState(null, '', buildRouteUrl({}));
+    document.title = 'رفيق المناظر';
+  };
+
   return (
     <div className="min-h-screen flex flex-col transition-colors">
 
       {/* Bible Section — full-page takeover */}
-      {isBibleView ? (
+      {isGuideView ? (
+        <FeaturesPage
+          theme={theme}
+          onToggleTheme={toggleTheme}
+          onBack={backToArchive}
+          onOpenBible={() => { setIsGuideView(false); setIsBibleView(true); window.history.pushState(null, '', buildBibleUrl()); document.title = 'الكتاب المقدس - رفيق المناظر'; }}
+          totalDocs={stats?.totalDocuments}
+        />
+      ) : isBibleView ? (
         <>
           {/* Slim header with back button */}
           <div className="sticky top-0 z-30 app-header shadow-sm">
@@ -512,7 +539,8 @@ export default function App() {
         stats={stats}
         onToggleMobileSidebar={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
         isMobileSidebarOpen={isMobileSidebarOpen}
-        onOpenBible={() => { setIsBibleView(true); window.history.pushState(null, '', buildBibleUrl()); document.title = 'الكتاب المقدس - رفيق المحاور'; }}
+        onOpenBible={() => { setIsBibleView(true); setIsGuideView(false); window.history.pushState(null, '', buildBibleUrl()); document.title = 'الكتاب المقدس - رفيق المحاور'; }}
+        onOpenFeatures={openGuide}
       />
 
 

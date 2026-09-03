@@ -58,6 +58,13 @@ export function parseCurrentRoute() {
 
   const parts = fullPath.split('/');
 
+  if (parts[0] === 'f1') {
+    return {
+      page: 'guide',
+      sect: 'all', folderId: null, docId: null, articleId: null, videoId: null
+    };
+  }
+
   // Bible routes
   if (parts[0] === 'bible') {
     return {
