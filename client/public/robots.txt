@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /rafeeq/
+Allow: /rafeeq/f1
+Allow: /rafeeq/bible
+Allow: /rafeeq/shia
+Allow: /rafeeq/sunna
+Allow: /rafeeq/christian
+Allow: /rafeeq/atheism
+Allow: /rafeeq/llms.txt
+Allow: /rafeeq/sitemap.xml
+
+Disallow: /rafeeq/api/
+Disallow: /rafeeq/health
+Disallow: /rafeeq/ready
+Disallow: /api/
+Disallow: /health
+Disallow: /ready
+
+Sitemap: https://din.hk/rafeeq/sitemap.xml
