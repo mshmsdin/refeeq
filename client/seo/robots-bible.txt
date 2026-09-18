@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /bible/
+Allow: /bible/llms.txt
+Allow: /bible/sitemap.xml
+
+Disallow: /bible/api/
+Disallow: /bible/health
+Disallow: /bible/ready
+
+Sitemap: https://wiki.din.hk/bible/sitemap.xml

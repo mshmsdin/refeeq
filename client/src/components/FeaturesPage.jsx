@@ -89,8 +89,8 @@ const features = [
     tone: 'blue',
     eyebrow: 'الكتاب المقدس',
     title: 'ابحث في نصوص الكتاب المقدس',
-    description: 'انتقل إلى الأسفار والأصحاحات والأعداد، وابحث بكلمة أو بمرجع، واقرأ أكثر من ترجمة مع إمكان المقارنة والنسخ الموثق.',
-    tips: ['انتقل إلى سفر أو إصحاح أو عدد مباشرة', 'قارن الترجمات المتاحة', 'انسخ العدد مع توثيقه'],
+    description: 'انتقل إلى الأسفار والأصحاحات والأعداد، وابحث بكلمة أو بمرجع، واقرأ أكثر من ترجمة مع إمكان المقارنة والنسخ الموثق. تتوفر نسخة مستقلة للكتاب المقدس على نطاق منفصل.',
+    tips: ['انتقل إلى سفر أو إصحاح أو عدد مباشرة', 'قارن الترجمات المتاحة', 'انسخ العدد مع توثيقه', 'النسخة المستقلة: wiki.din.hk/bible'],
   },
   {
     icon: BarChart3,
@@ -265,7 +265,7 @@ export default function FeaturesPage({ theme, onToggleTheme, onBack, onOpenBible
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/12 text-blue-600 dark:text-blue-300"><Languages className="h-5 w-5" /></span>
               <h2 className="text-lg font-black">للبحث المقارن</h2>
             </div>
-            <p className="text-sm leading-8 text-slate-600 dark:text-slate-300">استخدم قسم الكتاب المقدس للانتقال إلى المرجع، البحث في الأعداد، مقارنة الترجمات ونسخ النص مع توثيقه.</p>
+            <p className="text-sm leading-8 text-slate-600 dark:text-slate-300">استخدم قسم الكتاب المقدس للانتقال إلى المرجع، البحث في الأعداد، مقارنة الترجمات ونسخ النص مع توثيقه. ويمكن فتح النسخة المستقلة من <a className="font-bold text-blue-600 hover:underline" href="https://wiki.din.hk/bible/" target="_blank" rel="noreferrer">wiki.din.hk/bible</a>.</p>
           </div>
         </section>
 

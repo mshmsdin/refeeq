@@ -13,6 +13,8 @@ import { Tag as TagIcon, X, Compass, Folder, ChevronLeft, Link2, Check, Sparkles
 import { parseCurrentRoute, buildRouteUrl, buildBibleUrl, pushRouteUrl } from './utils/urlRoutes';
 import { DEBATE_CATEGORIES } from './utils/categories';
 
+const BIBLE_ONLY = import.meta.env.VITE_BIBLE_ONLY === 'true';
+
 export default function App() {
   // Theme state: 'light' | 'dark' (Default is light mode)
   const [theme, setTheme] = useState(() => {
@@ -23,14 +25,14 @@ export default function App() {
   const initialRoute = parseCurrentRoute();
 
   // Bible section state
-  const [isBibleView, setIsBibleView] = useState(initialRoute.page === 'bible');
+  const [isBibleView, setIsBibleView] = useState(initialRoute.page === 'bible' || BIBLE_ONLY);
   const [isGuideView, setIsGuideView] = useState(initialRoute.page === 'guide');
 
   // Listen to popstate to handle browser back/forward
   useEffect(() => {
     const handlePop = () => {
       const r = parseCurrentRoute();
-      setIsBibleView(r.page === 'bible');
+      setIsBibleView(BIBLE_ONLY || r.page === 'bible');
       setIsGuideView(r.page === 'guide');
     };
     window.addEventListener('popstate', handlePop);
@@ -104,6 +106,7 @@ export default function App() {
 
   // If initial route has folderId, fetch folder details
   useEffect(() => {
+    if (BIBLE_ONLY) return;
     if (initialRoute.folderId) {
       fetch(`/api/folder/${initialRoute.folderId}`)
         .then((res) => res.json())
@@ -137,7 +140,8 @@ export default function App() {
 
   // Handle browser Back/Forward navigation
   useEffect(() => {
-    const handlePopState = () => {
+  const handlePopState = () => {
+      if (BIBLE_ONLY) return;
       const route = parseCurrentRoute();
       setIsGuideView(route.page === 'guide');
       setActiveSect(route.sect || 'all');
@@ -167,6 +171,7 @@ export default function App() {
 
   // Fetch Tree & Stats on mount and when activeSect changes
   const fetchTreeAndStats = useCallback(() => {
+    if (BIBLE_ONLY) return;
     const sectParam = activeSect && activeSect !== 'all' ? `?sect=${encodeURIComponent(activeSect)}` : '';
 
     fetch(`/api/tree${sectParam}`)
@@ -219,11 +224,13 @@ export default function App() {
   };
 
   useEffect(() => {
+    if (BIBLE_ONLY) return;
     fetchFavorites();
   }, []);
 
   // Fetch Documents whenever search, folder, sect, category, tag, filter, or page changes
   useEffect(() => {
+    if (BIBLE_ONLY) return;
     setIsLoadingDocs(true);
     const params = new URLSearchParams({
       page: page.toString(),
@@ -264,6 +271,44 @@ export default function App() {
         setIsLoadingDocs(false);
       });
   }, [activeFolder, activeFolderId, debouncedSearch, activeSect, activeCategory, activeTag, activeFilter, page]);
+
+  useEffect(() => {
+    if (!BIBLE_ONLY) return;
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+    document.title = 'الكتاب المقدس | Bible';
+    const description = 'الكتاب المقدس باللغة العربية: تصفح الأسفار والأصحاحات والأعداد، وابحث وقارن الترجمات مع توثيق المرجع.';
+    const canonicalUrl = 'https://wiki.din.hk/bible/';
+    let descriptionTag = document.querySelector('meta[name="description"]');
+    if (!descriptionTag) {
+      descriptionTag = document.createElement('meta');
+      descriptionTag.setAttribute('name', 'description');
+      document.head.appendChild(descriptionTag);
+    }
+    descriptionTag.setAttribute('content', description);
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', canonicalUrl);
+    let structuredData = document.getElementById('bible-structured-data');
+    if (!structuredData) {
+      structuredData = document.createElement('script');
+      structuredData.id = 'bible-structured-data';
+      structuredData.type = 'application/ld+json';
+      document.head.appendChild(structuredData);
+    }
+    structuredData.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'الكتاب المقدس | Bible',
+      url: canonicalUrl,
+      inLanguage: 'ar',
+      description
+    });
+  }, []);
 
   // Handle switching sects
   const handleSelectSect = (sect) => {
@@ -468,6 +513,32 @@ export default function App() {
     window.history.pushState(null, '', buildRouteUrl({}));
     document.title = 'رفيق المناظر';
   };
+
+  if (BIBLE_ONLY) {
+    return (
+      <div className="min-h-screen flex flex-col bg-[#f6f1e7] dark:bg-[#0b1120]">
+        <header className="sticky top-0 z-30 app-header shadow-sm">
+          <div className="max-w-[1440px] mx-auto px-4 py-3 flex items-center justify-between gap-3" dir="rtl">
+            <h1 className="text-base sm:text-lg font-black text-[var(--text-primary)]">الكتاب المقدس <span className="text-xs opacity-60">Bible</span></h1>
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-xl bg-[var(--bg-muted)] text-[var(--text-secondary)] hover:text-amber-500 transition-colors text-xs"
+              aria-label="تبديل المظهر"
+            >
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
+          </div>
+        </header>
+        <main className="flex-1 w-full max-w-[1440px] mx-auto px-3 sm:px-6 py-5">
+          <BibleSection
+            initialBook={initialRoute.bibleBook}
+            initialChapter={initialRoute.bibleChapter}
+            initialVerse={initialRoute.bibleVerse}
+          />
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col transition-colors">

@@ -34,6 +34,13 @@ initBibleSchema();
 const app = express();
 const PORT = process.env.PORT || 3001;
 const HOST = process.env.HOST || '0.0.0.0';
+const APP_BASE_PATH = (() => {
+  const raw = String(process.env.APP_BASE_PATH || '/rafeeq').trim();
+  if (!raw || raw === '/') return '';
+  return `/${raw.replace(/^\/+|\/+$/g, '')}`;
+})();
+const BIBLE_ONLY = process.env.BIBLE_ONLY === 'true';
+const PUBLIC_BASE_URL = (process.env.PUBLIC_BASE_URL || (BIBLE_ONLY ? 'https://wiki.din.hk/bible/' : 'https://din.hk/rafeeq/')).replace(/\/+$/, '/');
 
 // Enable proxy trust for Traefik / Cloudflare
 app.set('trust proxy', 1);
@@ -47,16 +54,17 @@ if (process.env.NODE_ENV !== 'test') {
   app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 }
 
-// Rewrite /rafeeq/* → /* so API routes, media, and health work under both base paths
+// Rewrite the configured base path so API routes, media, and health work under any deployment path.
 app.use((req, res, next) => {
-  if (req.url.startsWith('/rafeeq/api')) {
-    req.url = req.url.replace('/rafeeq/api', '/api');
-  } else if (req.url.startsWith('/rafeeq/media')) {
-    req.url = req.url.replace('/rafeeq/media', '/media');
-  } else if (req.url.startsWith('/rafeeq/health')) {
-    req.url = req.url.replace('/rafeeq/health', '/health');
-  } else if (req.url.startsWith('/rafeeq/ready')) {
-    req.url = req.url.replace('/rafeeq/ready', '/ready');
+  const base = APP_BASE_PATH;
+  if (base && req.url.startsWith(`${base}/api`)) {
+    req.url = req.url.replace(`${base}/api`, '/api');
+  } else if (base && req.url.startsWith(`${base}/media`)) {
+    req.url = req.url.replace(`${base}/media`, '/media');
+  } else if (base && req.url.startsWith(`${base}/health`)) {
+    req.url = req.url.replace(`${base}/health`, '/health');
+  } else if (base && req.url.startsWith(`${base}/ready`)) {
+    req.url = req.url.replace(`${base}/ready`, '/ready');
   }
   next();
 });
@@ -111,7 +119,7 @@ function serveMediaFile(req, res) {
 }
 
 app.use('/media', serveMediaFile);
-app.use('/rafeeq/media', serveMediaFile);
+if (APP_BASE_PATH) app.use(`${APP_BASE_PATH}/media`, serveMediaFile);
 
 
 
@@ -143,6 +151,43 @@ app.get('/ready', (req, res) => {
     });
   }
 });
+
+// Standalone Bible SEO endpoints. The sitemap is generated from the actual books
+// seeded in the database, so it stays aligned with the published content.
+if (BIBLE_ONLY && APP_BASE_PATH) {
+  app.get(`${APP_BASE_PATH}/sitemap.xml`, (req, res) => {
+    try {
+      const db = getDb();
+      const books = db.prepare(`
+        SELECT code
+        FROM bible_books
+        ORDER BY canonical_order, code
+      `).all();
+      const urls = [PUBLIC_BASE_URL, ...books.map((book) => `${PUBLIC_BASE_URL}${book.code}`)];
+      const xml = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        ...urls.map((url) => `  <url><loc>${url}</loc></url>`),
+        '</urlset>'
+      ].join('\n');
+      res.type('application/xml').send(xml);
+    } catch (err) {
+      res.status(500).type('text/plain').send('Sitemap generation failed');
+    }
+  });
+
+  app.get(`${APP_BASE_PATH}/robots.txt`, (req, res) => {
+    res.type('text/plain').send([
+      'User-agent: *',
+      `Allow: ${APP_BASE_PATH}/`,
+      `Disallow: ${APP_BASE_PATH}/api/`,
+      `Disallow: ${APP_BASE_PATH}/health`,
+      `Disallow: ${APP_BASE_PATH}/ready`,
+      `Sitemap: ${PUBLIC_BASE_URL}sitemap.xml`,
+      ''
+    ].join('\n'));
+  });
+}
 
 // Helper to attach tags to document objects
 function attachTagsToDocuments(db, docs) {
@@ -1734,18 +1779,16 @@ app.get('/api/bible/stats', (req, res) => {
 });
 
 
-// Serve frontend static build files (client/dist)
-// Supports both /rafeeq/ base path (production build) and / (root)
+// Serve frontend static build files (client/dist) under the configured base path and root.
 const clientDistPath = path.join(__dirname, '..', 'client', 'dist');
 if (fs.existsSync(clientDistPath)) {
-  // Serve static assets under /rafeeq/ prefix
-  app.use('/rafeeq', express.static(clientDistPath));
+  if (APP_BASE_PATH) app.use(APP_BASE_PATH, express.static(clientDistPath));
   // Also serve from root for direct access
   app.use(express.static(clientDistPath));
 
   // SPA fallback: redirect all non-API routes to index.html
   app.get('*', (req, res) => {
-    const isApi = req.path.startsWith('/api') || req.path.startsWith('/rafeeq/api');
+    const isApi = req.path.startsWith('/api') || (APP_BASE_PATH && req.path.startsWith(`${APP_BASE_PATH}/api`));
     const isHealth = req.path.startsWith('/health') || req.path.startsWith('/ready');
     if (!isApi && !isHealth) {
       res.sendFile(path.join(clientDistPath, 'index.html'));

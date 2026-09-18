@@ -15,6 +15,8 @@ import {
   useTranslations, useCollections, useBooks, useChapter, useVerse, useBibleSearch
 } from '../utils/useBible';
 
+const BIBLE_ONLY = import.meta.env.VITE_BIBLE_ONLY === 'true';
+
 // ─────────────────────────────────────────────────────────
 //  Helpers & Clipboard
 // ─────────────────────────────────────────────────────────
@@ -1831,12 +1833,13 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
     const currentBookObj = books.find(b => b.code === currentBook);
     const bookTitle = currentBookObj ? currentBookObj.name_ar : currentBook;
 
+    const titleSuffix = BIBLE_ONLY ? 'الكتاب المقدس | Bible' : 'الكتاب المقدس - رفيق المحاور';
     document.title =
       isModalOpen && modalVerse
-        ? `${bookTitle} ${currentChapter}:${modalVerse} - الكتاب المقدس - رفيق المحاور`
+        ? `${bookTitle} ${currentChapter}:${modalVerse} - ${titleSuffix}`
         : view === 'chapter'
-        ? `${bookTitle} ${currentChapter} - الكتاب المقدس - رفيق المحاور`
-        : 'الكتاب المقدس - رفيق المحاور';
+        ? `${bookTitle} ${currentChapter} - ${titleSuffix}`
+        : titleSuffix;
   }, [view, currentBook, currentChapter, isModalOpen, modalVerse, books]);
 
   // Auto-switch selected translations when navigating to a book if current selection is not available for that book

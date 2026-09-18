@@ -18,6 +18,7 @@ export const SLUG_TO_SECT = {
 };
 
 const APP_BASE = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
+const BIBLE_ONLY = import.meta.env.VITE_BIBLE_ONLY === 'true';
 
 function withAppBase(path) {
   const normalized = path.startsWith('/') ? path : `/${path}`;
@@ -52,6 +53,18 @@ export function parseCurrentRoute() {
     pathname = pathname.slice(APP_BASE.length);
   }
   const fullPath = pathname.replace(/^\/+|\/+$/g, '');
+
+  if (BIBLE_ONLY) {
+    const bibleParts = fullPath === 'bible' ? [] : fullPath.split('/').filter(Boolean);
+    return {
+      page: 'bible',
+      bibleBook: bibleParts[0] || null,
+      bibleChapter: bibleParts[1] ? parseInt(bibleParts[1]) : null,
+      bibleVerse: bibleParts[2] ? parseInt(bibleParts[2]) : null,
+      sect: 'all', folderId: null, docId: null, articleId: null, videoId: null
+    };
+  }
+
   if (!fullPath) {
     return { sect: 'all', folderId: null, docId: null, articleId: null, videoId: null, page: 'home' };
   }
@@ -104,10 +117,11 @@ export function parseCurrentRoute() {
  * Generates Bible URL
  */
 export function buildBibleUrl({ book, chapter, verse } = {}) {
-  if (!book) return withAppBase('/bible');
-  if (!chapter) return withAppBase(`/bible/${book}`);
-  if (!verse) return withAppBase(`/bible/${book}/${chapter}`);
-  return withAppBase(`/bible/${book}/${chapter}/${verse}`);
+  const routePrefix = BIBLE_ONLY ? '' : '/bible';
+  if (!book) return withAppBase(routePrefix || '/');
+  if (!chapter) return withAppBase(`${routePrefix}/${book}`);
+  if (!verse) return withAppBase(`${routePrefix}/${book}/${chapter}`);
+  return withAppBase(`${routePrefix}/${book}/${chapter}/${verse}`);
 }
 
 /**
