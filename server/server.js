@@ -154,8 +154,10 @@ app.get('/ready', (req, res) => {
 
 // Standalone Bible SEO endpoints. The sitemap is generated from the actual books
 // seeded in the database, so it stays aligned with the published content.
-if (BIBLE_ONLY && APP_BASE_PATH) {
-  app.get(`${APP_BASE_PATH}/sitemap.xml`, (req, res) => {
+// Some reverse proxies remove the public /bible prefix before forwarding a
+// request, so both the prefixed and stripped paths must be handled.
+if (BIBLE_ONLY) {
+  const serveBibleSitemap = (req, res) => {
     try {
       const db = getDb();
       const books = db.prepare(`
@@ -174,19 +176,27 @@ if (BIBLE_ONLY && APP_BASE_PATH) {
     } catch (err) {
       res.status(500).type('text/plain').send('Sitemap generation failed');
     }
-  });
+  };
 
-  app.get(`${APP_BASE_PATH}/robots.txt`, (req, res) => {
+  const serveBibleRobots = (req, res) => {
+    const publicPath = APP_BASE_PATH || '/';
     res.type('text/plain').send([
       'User-agent: *',
-      `Allow: ${APP_BASE_PATH}/`,
-      `Disallow: ${APP_BASE_PATH}/api/`,
-      `Disallow: ${APP_BASE_PATH}/health`,
-      `Disallow: ${APP_BASE_PATH}/ready`,
+      `Allow: ${publicPath}/`,
+      `Disallow: ${publicPath}/api/`,
+      `Disallow: ${publicPath}/health`,
+      `Disallow: ${publicPath}/ready`,
       `Sitemap: ${PUBLIC_BASE_URL}sitemap.xml`,
       ''
     ].join('\n'));
-  });
+  };
+
+  app.get('/sitemap.xml', serveBibleSitemap);
+  app.get('/robots.txt', serveBibleRobots);
+  if (APP_BASE_PATH) {
+    app.get(`${APP_BASE_PATH}/sitemap.xml`, serveBibleSitemap);
+    app.get(`${APP_BASE_PATH}/robots.txt`, serveBibleRobots);
+  }
 }
 
 // Helper to attach tags to document objects
