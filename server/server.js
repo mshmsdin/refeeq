@@ -153,7 +153,8 @@ app.get('/ready', (req, res) => {
 });
 
 // Standalone Bible SEO endpoints. The sitemap is generated from the actual books
-// seeded in the database, so it stays aligned with the published content.
+// and chapters in the database, so it stays aligned with the published content
+// whenever a book or chapter is added.
 // Some reverse proxies remove the public /bible prefix before forwarding a
 // request, so both the prefixed and stripped paths must be handled.
 if (BIBLE_ONLY) {
@@ -161,15 +162,31 @@ if (BIBLE_ONLY) {
     try {
       const db = getDb();
       const books = db.prepare(`
-        SELECT code
+        SELECT code, canonical_order
         FROM bible_books
         ORDER BY canonical_order, code
       `).all();
-      const urls = [PUBLIC_BASE_URL, ...books.map((book) => `${PUBLIC_BASE_URL}${book.code}`)];
+      const chapters = db.prepare(`
+        SELECT DISTINCT bv.book_code, bv.chapter, bb.canonical_order
+        FROM bible_verses bv
+        JOIN bible_books bb ON bb.code = bv.book_code
+        ORDER BY bb.canonical_order, bv.book_code, bv.chapter
+      `).all();
+      const escapeXml = (value) => String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&apos;');
+      const urls = [
+        PUBLIC_BASE_URL,
+        ...books.map((book) => `${PUBLIC_BASE_URL}${book.code}`),
+        ...chapters.map((chapter) => `${PUBLIC_BASE_URL}${chapter.book_code}/${chapter.chapter}`)
+      ];
       const xml = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-        ...urls.map((url) => `  <url><loc>${url}</loc></url>`),
+        ...urls.map((url) => `  <url><loc>${escapeXml(url)}</loc></url>`),
         '</urlset>'
       ].join('\n');
       res.type('application/xml').send(xml);

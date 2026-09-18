@@ -299,3 +299,5 @@ https://wiki.din.hk/bible/
 - https://wiki.din.hk/bible/sitemap.xml
 - https://wiki.din.hk/bible/robots.txt
 - https://wiki.din.hk/bible/llms.txt
+
+خريطة موقع النسخة المستقلة تُولَّد من قاعدة البيانات، وتشمل كل سفر وكل إصحاح له نص فعلي، لذلك تتحدث تلقائياً عند إضافة سفر أو إصحاح جديد.
