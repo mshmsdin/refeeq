@@ -12,7 +12,7 @@ import {
   getBooks, getBook, getChapterList, getChapter, getVerse,
   getVerseRange, getVerseAcrossTranslations, getChapterAcrossTranslations,
   getVerseNavigation, getChapterNavigation,
-  searchBible, getBibleStats
+  searchBible, getBibleStats, getBookMetadata, getVerseVariants
 } from './utils/bible_service.js';
 import { parseReference, looksLikeReference } from './utils/bible_reference_parser.js';
 import { spawn, execSync } from 'child_process';
@@ -164,12 +164,19 @@ if (BIBLE_ONLY) {
       const books = db.prepare(`
         SELECT code, canonical_order
         FROM bible_books
+        JOIN bible_collections bc ON bc.id = bible_books.collection_id
+        WHERE (bc.site_scope = 'both' OR bc.site_scope = 'bible')
+          AND EXISTS (SELECT 1 FROM bible_verses bv WHERE bv.book_code = bible_books.code)
         ORDER BY canonical_order, code
       `).all();
       const chapters = db.prepare(`
         SELECT DISTINCT bv.book_code, bv.chapter, bb.canonical_order
         FROM bible_verses bv
         JOIN bible_books bb ON bb.code = bv.book_code
+        JOIN bible_collections bc ON bc.id = bb.collection_id
+        JOIN bible_translations bt ON bt.id = bv.translation_id
+        WHERE (bc.site_scope = 'both' OR bc.site_scope = 'bible')
+          AND (bt.site_scope = 'both' OR bt.site_scope = 'bible')
         ORDER BY bb.canonical_order, bv.book_code, bv.chapter
       `).all();
       const escapeXml = (value) => String(value)
@@ -1537,7 +1544,7 @@ app.get('/api/bible/collections', (req, res) => {
     const cols = getCollections();
     // Add verse count per collection from default translation
     const db = getDb();
-    const defaultTrans = db.prepare('SELECT id FROM bible_translations WHERE is_active=1 ORDER BY display_order LIMIT 1').get();
+    const defaultTrans = db.prepare("SELECT id FROM bible_translations WHERE is_active=1 AND (site_scope='both' OR site_scope='bible') ORDER BY display_order LIMIT 1").get();
     const result = cols.map(col => {
       let verseCount = 0;
       if (defaultTrans) {
@@ -1585,13 +1592,14 @@ app.get('/api/bible/chapters', (req, res) => {
     if (!book) return res.status(400).json({ success: false, error: 'book required' });
     const bookCode = book.toUpperCase();
     const bookInfo = getBook(bookCode);
+    if (!bookInfo) return res.status(404).json({ success: false, error: 'هذا السفر غير متاح في هذا الموقع.' });
 
-    let trans = db.prepare('SELECT id, slug FROM bible_translations WHERE slug=?').get(translation);
+    let trans = db.prepare("SELECT id, slug FROM bible_translations WHERE slug=? AND is_active=1 AND (site_scope='both' OR site_scope=?)").get(translation, BIBLE_ONLY ? 'bible' : 'rafeeq');
     let chapters = trans ? getChapterList(trans.id, bookCode) : [];
 
     if (chapters.length === 0 && bookInfo?.available_translations?.length > 0) {
       const fallbackSlug = bookInfo.available_translations[0];
-      const fallbackTrans = db.prepare('SELECT id, slug FROM bible_translations WHERE slug=?').get(fallbackSlug);
+      const fallbackTrans = db.prepare("SELECT id, slug FROM bible_translations WHERE slug=? AND is_active=1 AND (site_scope='both' OR site_scope=?)").get(fallbackSlug, BIBLE_ONLY ? 'bible' : 'rafeeq');
       if (fallbackTrans) {
         chapters = getChapterList(fallbackTrans.id, bookCode);
       }
@@ -1612,15 +1620,16 @@ app.get('/api/bible/chapter', (req, res) => {
     const bookCode = book.toUpperCase();
     const ch = parseInt(chapter);
     const bookInfo = getBook(bookCode);
+    if (!bookInfo) return res.status(404).json({ success: false, error: 'هذا السفر غير متاح في هذا الموقع.' });
 
-    let trans = db.prepare('SELECT id, slug FROM bible_translations WHERE slug=?').get(translation);
+    let trans = db.prepare("SELECT id, slug FROM bible_translations WHERE slug=? AND is_active=1 AND (site_scope='both' OR site_scope=?)").get(translation, BIBLE_ONLY ? 'bible' : 'rafeeq');
     let verses = trans ? getChapter(trans.id, bookCode, ch) : [];
     let activeTranslation = trans ? trans.slug : translation;
 
     // Automatic fallback if translation has no verses for this book/chapter
     if (verses.length === 0 && bookInfo?.available_translations?.length > 0) {
       const fallbackSlug = bookInfo.available_translations[0];
-      const fallbackTrans = db.prepare('SELECT id, slug FROM bible_translations WHERE slug=?').get(fallbackSlug);
+      const fallbackTrans = db.prepare("SELECT id, slug FROM bible_translations WHERE slug=? AND is_active=1 AND (site_scope='both' OR site_scope=?)").get(fallbackSlug, BIBLE_ONLY ? 'bible' : 'rafeeq');
       if (fallbackTrans) {
         trans = fallbackTrans;
         activeTranslation = fallbackSlug;
@@ -1644,6 +1653,7 @@ app.get('/api/bible/verse', (req, res) => {
     const bookCode = book.toUpperCase();
     const ch = parseInt(chapter), v = parseInt(verse);
     const bookInfo = getBook(bookCode);
+    if (!bookInfo) return res.status(404).json({ success: false, error: 'هذا السفر غير متاح في هذا الموقع.' });
 
     let trans = db.prepare('SELECT id, slug FROM bible_translations WHERE slug=?').get(translation);
     let activeTranslation = trans ? trans.slug : translation;
@@ -1690,10 +1700,11 @@ app.get('/api/bible/compare', (req, res) => {
     const db = getDb();
     const { book, chapter, verse, translations } = req.query;
     if (!book || !chapter || !verse) return res.status(400).json({ success: false, error: 'book, chapter, verse required' });
+    if (!getBook(book.toUpperCase())) return res.status(404).json({ success: false, error: 'هذا السفر غير متاح في هذا الموقع.' });
     const slugs = (translations || '').split(',').filter(Boolean);
     if (!slugs.length) return res.status(400).json({ success: false, error: 'translations required' });
     const ids = slugs.map(s => {
-      const t = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(s);
+      const t = db.prepare("SELECT id FROM bible_translations WHERE slug=? AND is_active=1 AND (site_scope='both' OR site_scope=?)").get(s, BIBLE_ONLY ? 'bible' : 'rafeeq');
       return t?.id;
     }).filter(Boolean);
     const results = getVerseAcrossTranslations(book.toUpperCase(), parseInt(chapter), parseInt(verse), ids);
@@ -1711,6 +1722,7 @@ app.get('/api/bible/compare-chapter', (req, res) => {
     if (!book || !chapter) return res.status(400).json({ success: false, error: 'book and chapter required' });
     const bookCode = book.toUpperCase();
     const bookInfo = getBook(bookCode);
+    if (!bookInfo) return res.status(404).json({ success: false, error: 'هذا السفر غير متاح في هذا الموقع.' });
 
     let slugs = (translations || '').split(',').filter(Boolean);
     if (!slugs.length) return res.status(400).json({ success: false, error: 'translations required' });
@@ -1727,7 +1739,7 @@ app.get('/api/bible/compare-chapter', (req, res) => {
 
     const transMap = {};
     const ids = slugs.map(s => {
-      const t = db.prepare('SELECT id, slug, name_ar, abbreviation FROM bible_translations WHERE slug=?').get(s);
+      const t = db.prepare("SELECT id, slug, name_ar, abbreviation FROM bible_translations WHERE slug=? AND is_active=1 AND (site_scope='both' OR site_scope=?)").get(s, BIBLE_ONLY ? 'bible' : 'rafeeq');
       if (t) transMap[t.id] = t;
       return t?.id;
     }).filter(Boolean);
@@ -1757,11 +1769,41 @@ app.get('/api/bible/compare-chapter', (req, res) => {
       verses: groupedVerses,
       rawVerses: verses,
       translations: slugs.map(s => {
-        return db.prepare('SELECT id, slug, name_ar, abbreviation FROM bible_translations WHERE slug=?').get(s);
+        return db.prepare("SELECT id, slug, name_ar, abbreviation FROM bible_translations WHERE slug=? AND is_active=1 AND (site_scope='both' OR site_scope=?)").get(s, BIBLE_ONLY ? 'bible' : 'rafeeq');
       }).filter(Boolean),
       navigation: nav,
       book: bookInfo
     });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// GET /api/bible/metadata/:code — provenance and future translation state
+app.get('/api/bible/metadata/:code', (req, res) => {
+  try {
+    const book = getBook(req.params.code.toUpperCase());
+    if (!book) return res.status(404).json({ success: false, error: 'هذا العمل غير متاح في هذا الموقع.' });
+    res.json({ success: true, book, ...getBookMetadata(book.code) });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// GET /api/bible/variants?book=GEN&chapter=1&verse=1&base=ar-svd&compared=en-brenton
+app.get('/api/bible/variants', (req, res) => {
+  try {
+    const { book, chapter, verse, base, compared } = req.query;
+    if (!book) return res.status(400).json({ success: false, error: 'book required' });
+    if (!getBook(book.toUpperCase())) return res.status(404).json({ success: false, error: 'هذا العمل غير متاح في هذا الموقع.' });
+    const variants = getVerseVariants({
+      bookCode: book.toUpperCase(),
+      chapter: chapter ? parseInt(chapter) : null,
+      verse: verse ? parseInt(verse) : null,
+      base,
+      compared
+    });
+    res.json({ success: true, variants });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }

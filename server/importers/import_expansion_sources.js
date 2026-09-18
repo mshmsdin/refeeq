@@ -1,0 +1,160 @@
+/**
+ * استيراد النصوص الإنجليزية العامة التي نحتاجها للنسخة المستقلة من الكتاب المقدس.
+ *
+ * المصادر:
+ * - برنتون للسُّبعينية من eBible.
+ * - الكتاب المقدس العالمي الكلاسيكي، مع عزرا الثاني عند توفره.
+ *
+ * لا يكتب هذا المستورد في رفيق: كل ترجمة تحمل site_scope = bible.
+ * التشغيل:
+ *   node server/importers/import_expansion_sources.js
+ */
+
+import https from 'https';
+import http from 'http';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import AdmZip from 'adm-zip';
+import { initDatabase, getDb } from '../db/schema.js';
+import { initBibleSchema } from '../db/bible_schema.js';
+import { normalizeArabicText } from '../utils/arabic_nlp.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const CACHE_DIR = path.join(__dirname, '..', 'cache');
+
+const SOURCES = [
+  {
+    slug: 'en-brenton',
+    name_ar: 'ترجمة برنتون الإنجليزية للسُّبعينية',
+    name_en: 'Brenton English Septuagint',
+    abbreviation: 'LXX-EN',
+    url: 'https://ebible.org/Scriptures/eng-Brenton_vpl.zip',
+    filename: 'eng-Brenton_vpl.zip',
+    notes: 'ترجمة إنجليزية للسُّبعينية؛ تسجل كطبعة موازية ولا تستبدل الشاهد اليوناني.'
+  },
+  {
+    slug: 'en-web',
+    name_ar: 'الكتاب المقدس العالمي الكلاسيكي',
+    name_en: 'World English Bible Classic',
+    abbreviation: 'WEB',
+    url: 'https://ebible.org/Scriptures/eng-web_vpl.zip',
+    filename: 'eng-web_vpl.zip',
+    notes: 'ترجمة إنجليزية عامة؛ تستخدم أيضاً لاستكمال الأعمال التي لا يتوفر لها عربي، ومنها عزرا الثاني عند وجوده في المصدر.'
+  }
+];
+
+function download(url, destination) {
+  return new Promise((resolve, reject) => {
+    if (fs.existsSync(destination) && fs.statSync(destination).size > 100000) return resolve();
+    const protocol = url.startsWith('https') ? https : http;
+    const file = fs.createWriteStream(destination);
+    const request = protocol.get(url, { headers: { 'User-Agent': 'Rafeeq-Bible-Importer/1.0' } }, (response) => {
+      if ([301, 302, 307, 308].includes(response.statusCode)) {
+        file.close();
+        if (fs.existsSync(destination)) fs.unlinkSync(destination);
+        return download(response.headers.location, destination).then(resolve).catch(reject);
+      }
+      if (response.statusCode !== 200) {
+        file.close();
+        if (fs.existsSync(destination)) fs.unlinkSync(destination);
+        return reject(new Error(`HTTP ${response.statusCode} for ${url}`));
+      }
+      response.pipe(file);
+      file.on('finish', () => file.close(resolve));
+    });
+    request.on('error', (error) => {
+      file.close();
+      if (fs.existsSync(destination)) fs.unlinkSync(destination);
+      reject(error);
+    });
+    request.setTimeout(120000, () => request.destroy(new Error(`انتهت مهلة تنزيل ${url}`)));
+  });
+}
+
+const BOOK_CODE_MAP = {
+  MAR: 'MRK', JOH: 'JHN', JAM: 'JAS', JOE: 'JOL', NAH: 'NAM', EZE: 'EZK',
+  PHI: 'PHP', '1JO': '1JN', '2JO': '2JN', '3JO': '3JN', SOL: 'SNG',
+  PSA151: 'PS2', PS151: 'PS2', ESTG: 'ESG', DANG: 'DAG'
+};
+
+function parseVpl(content, validBooks) {
+  const rows = [];
+  for (const rawLine of content.replace(/^\uFEFF/, '').split(/\r?\n/)) {
+    const line = rawLine.trim();
+    const match = line.match(/^(\S+)\s+(\d+):(\d+)\s+(.+)$/);
+    if (!match) continue;
+    const rawCode = match[1].toUpperCase();
+    const bookCode = BOOK_CODE_MAP[rawCode] || rawCode;
+    const chapter = Number(match[2]);
+    const verse = Number(match[3]);
+    const text = match[4].trim();
+    if (!validBooks.has(bookCode) || !text || !chapter || !verse) continue;
+    rows.push({ bookCode, chapter, verse, text });
+  }
+  return rows;
+}
+
+async function run() {
+  initDatabase();
+  initBibleSchema();
+  const db = getDb();
+  fs.mkdirSync(CACHE_DIR, { recursive: true });
+  const validBooks = new Set(db.prepare('SELECT code FROM bible_books').all().map((row) => row.code));
+  const insertTranslation = db.prepare(`
+    INSERT INTO bible_translations
+      (slug, name_ar, name_en, abbreviation, language, source_url, source_type, source_notes, site_scope, is_active, display_order)
+    VALUES (?, ?, ?, ?, 'en', ?, 'vpl', ?, 'bible', 1, ?)
+    ON CONFLICT(slug) DO UPDATE SET
+      name_ar=excluded.name_ar, name_en=excluded.name_en, abbreviation=excluded.abbreviation,
+      source_url=excluded.source_url, source_notes=excluded.source_notes, site_scope='bible', is_active=1
+  `);
+  const insertVerse = db.prepare(`
+    INSERT INTO bible_verses
+      (translation_id, book_code, chapter, verse, text, search_text, source_url, imported_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+    ON CONFLICT(translation_id, book_code, chapter, verse)
+    DO UPDATE SET text=excluded.text, search_text=excluded.search_text, source_url=excluded.source_url, imported_at=CURRENT_TIMESTAMP
+  `);
+  const insertMany = db.transaction((rows) => rows.forEach((row) => insertVerse.run(...row)));
+
+  for (const [index, source] of SOURCES.entries()) {
+    const translationId = insertTranslation.run(
+      source.slug, source.name_ar, source.name_en, source.abbreviation,
+      source.url, source.notes, 20 + index
+    ).lastInsertRowid || db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
+    const id = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id || translationId;
+    const zipPath = path.join(CACHE_DIR, source.filename);
+    await download(source.url, zipPath);
+    const zip = new AdmZip(zipPath);
+    const entry = zip.getEntries().find((item) => item.entryName.endsWith('_vpl.txt') || item.entryName.endsWith('.txt'));
+    if (!entry) throw new Error(`لم يوجد ملف نصي بصيغة VPL داخل ${source.filename}`);
+    const parsed = parseVpl(zip.readAsText(entry), validBooks);
+    const rows = parsed.map((verse) => [
+      id, verse.bookCode, verse.chapter, verse.verse, verse.text,
+      normalizeArabicText(verse.text), source.url
+    ]);
+    for (let offset = 0; offset < rows.length; offset += 2000) insertMany(rows.slice(offset, offset + 2000));
+    const chaptersByBook = new Map();
+    for (const verse of parsed) {
+      chaptersByBook.set(verse.bookCode, Math.max(chaptersByBook.get(verse.bookCode) || 0, verse.chapter));
+    }
+    const updateBook = db.prepare('UPDATE bible_books SET chapter_count = CASE WHEN chapter_count < ? THEN ? ELSE chapter_count END WHERE code = ?');
+    const markMetadata = db.prepare(`
+      UPDATE bible_book_metadata
+      SET text_status='complete', english_status='available', source_name=?, source_url=?, updated_at=CURRENT_TIMESTAMP
+      WHERE book_code=?
+    `);
+    for (const [bookCode, chapterCount] of chaptersByBook) {
+      updateBook.run(chapterCount, chapterCount, bookCode);
+      markMetadata.run(source.name_en, source.url, bookCode);
+    }
+    db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(id);
+    console.log(`[Bible] ${source.slug}: ${rows.length} وحدة نصية`);
+  }
+}
+
+run().catch((error) => {
+  console.error('[Bible expansion import]', error.message);
+  process.exit(1);
+});

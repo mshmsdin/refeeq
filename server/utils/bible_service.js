@@ -7,11 +7,17 @@ import { normalizeArabicText } from './arabic_nlp.js';
 import { parseReference } from './bible_reference_parser.js';
 import { BOOK_CANON_DATA, getCanonInfoForBook } from './bible_canon_data.js';
 
+// رفيق يعرض النصوص الأساسية فقط، أما الموسوعة المستقلة فتُظهر الكتالوج الموسع.
+const SITE_SCOPE = process.env.BIBLE_ONLY === 'true' ? 'bible' : 'rafeeq';
+const SITE_SCOPE_SQL = `(site_scope = 'both' OR site_scope = '${SITE_SCOPE}')`;
+
 // ── Translations ───────────────────────────────────────────────────────────
 
 export function getTranslations() {
   return getDb().prepare(`
-    SELECT * FROM bible_translations WHERE is_active = 1 ORDER BY display_order, id
+    SELECT * FROM bible_translations
+    WHERE is_active = 1 AND ${SITE_SCOPE_SQL}
+    ORDER BY display_order, id
   `).all();
 }
 
@@ -22,7 +28,11 @@ export function getTranslationBySlug(slug) {
 // ── Collections ────────────────────────────────────────────────────────────
 
 export function getCollections() {
-  return getDb().prepare('SELECT * FROM bible_collections ORDER BY display_order').all();
+  return getDb().prepare(`
+    SELECT * FROM bible_collections
+    WHERE ${SITE_SCOPE_SQL}
+    ORDER BY display_order
+  `).all();
 }
 
 // ── Books ─────────────────────────────────────────────────────────────────
@@ -38,9 +48,11 @@ export function getBooks(collectionSlug) {
           ROW_NUMBER() OVER (ORDER BY bc.display_order, bb.canonical_order, bb.id) as book_number,
           ROW_NUMBER() OVER (PARTITION BY bb.collection_id ORDER BY bb.canonical_order, bb.id) as collection_book_number,
           bc.slug as collection_slug, 
-          bc.name_ar as collection_name_ar
+          bc.name_ar as collection_name_ar,
+          bc.site_scope as collection_site_scope
         FROM bible_books bb
         JOIN bible_collections bc ON bb.collection_id = bc.id
+        WHERE ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bc.site_scope')}
       )
       SELECT * FROM RankedBooks
       WHERE collection_slug = ?
@@ -54,9 +66,11 @@ export function getBooks(collectionSlug) {
           ROW_NUMBER() OVER (ORDER BY bc.display_order, bb.canonical_order, bb.id) as book_number,
           ROW_NUMBER() OVER (PARTITION BY bb.collection_id ORDER BY bb.canonical_order, bb.id) as collection_book_number,
           bc.slug as collection_slug, 
-          bc.name_ar as collection_name_ar
+          bc.name_ar as collection_name_ar,
+          bc.site_scope as collection_site_scope
         FROM bible_books bb
         JOIN bible_collections bc ON bb.collection_id = bc.id
+        WHERE ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bc.site_scope')}
       )
       SELECT * FROM RankedBooks
       ORDER BY book_number
@@ -70,6 +84,7 @@ export function getBooks(collectionSlug) {
       SELECT DISTINCT bv.book_code, bt.slug
       FROM bible_verses bv
       JOIN bible_translations bt ON bv.translation_id = bt.id
+      WHERE ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope')}
     `).all();
     for (const r of transRows) {
       if (!transMap.has(r.book_code)) transMap.set(r.book_code, []);
@@ -79,11 +94,21 @@ export function getBooks(collectionSlug) {
     console.error('Error fetching available translations map:', e.message);
   }
 
+  const metadataMap = new Map();
+  try {
+    for (const metadata of db.prepare('SELECT * FROM bible_book_metadata').all()) {
+      metadataMap.set(metadata.book_code, metadata);
+    }
+  } catch (e) {
+    console.error('Error fetching Bible metadata map:', e.message);
+  }
+
   // Attach is_disputed and available_translations
   return rows.map(b => ({
     ...b,
     is_disputed: !!BOOK_CANON_DATA[b.code]?.is_disputed,
-    available_translations: transMap.get(b.code) || []
+    available_translations: transMap.get(b.code) || [],
+    metadata: metadataMap.get(b.code) || null
   }));
 }
 
@@ -94,11 +119,13 @@ export function getBook(code) {
       SELECT 
         bb.*, 
         ROW_NUMBER() OVER (ORDER BY bc.display_order, bb.canonical_order, bb.id) as book_number,
-        ROW_NUMBER() OVER (PARTITION BY bb.collection_id ORDER BY bb.canonical_order, bb.id) as collection_book_number,
-        bc.slug as collection_slug, 
-        bc.name_ar as collection_name_ar
-      FROM bible_books bb
-      JOIN bible_collections bc ON bb.collection_id = bc.id
+      ROW_NUMBER() OVER (PARTITION BY bb.collection_id ORDER BY bb.canonical_order, bb.id) as collection_book_number,
+      bc.slug as collection_slug,
+      bc.name_ar as collection_name_ar,
+      bc.site_scope as collection_site_scope
+    FROM bible_books bb
+    JOIN bible_collections bc ON bb.collection_id = bc.id
+    WHERE ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bc.site_scope')}
     )
     SELECT * FROM RankedBooks
     WHERE code = ?
@@ -111,17 +138,45 @@ export function getBook(code) {
     SELECT DISTINCT bt.slug
     FROM bible_verses bv
     JOIN bible_translations bt ON bv.translation_id = bt.id
-    WHERE bv.book_code = ?
+    WHERE bv.book_code = ? AND ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope')}
   `).all(code);
 
   const canonInfo = getCanonInfoForBook(code);
+
+  const metadata = db.prepare('SELECT * FROM bible_book_metadata WHERE book_code = ?').get(code) || null;
+  const sources = db.prepare('SELECT * FROM bible_book_sources WHERE book_code = ? ORDER BY id').all(code);
 
   return {
     ...book,
     is_disputed: canonInfo.is_disputed,
     canon_info: canonInfo,
-    available_translations: transRows.map(r => r.slug)
+    available_translations: transRows.map(r => r.slug),
+    metadata,
+    sources
   };
+}
+
+export function getBookMetadata(code) {
+  const db = getDb();
+  return {
+    metadata: db.prepare('SELECT * FROM bible_book_metadata WHERE book_code = ?').get(code) || null,
+    sources: db.prepare('SELECT * FROM bible_book_sources WHERE book_code = ? ORDER BY id').all(code)
+  };
+}
+
+export function getVerseVariants({ bookCode, chapter, verse, base, compared }) {
+  const db = getDb();
+  const where = ['book_code = ?'];
+  const params = [bookCode];
+  if (chapter) { where.push('chapter = ?'); params.push(chapter); }
+  if (verse) { where.push('verse = ?'); params.push(verse); }
+  if (base) { where.push('base_translation_slug = ?'); params.push(base); }
+  if (compared) { where.push('compared_translation_slug = ?'); params.push(compared); }
+  return db.prepare(`
+    SELECT * FROM bible_verse_variants
+    WHERE ${where.join(' AND ')}
+    ORDER BY chapter, verse, id
+  `).all(...params);
 }
 
 
@@ -172,6 +227,7 @@ export function getVerseAcrossTranslations(bookCode, chapter, verse, translation
     JOIN bible_translations bt ON bv.translation_id = bt.id
     WHERE bv.book_code = ? AND bv.chapter = ? AND bv.verse = ?
       AND bv.translation_id IN (${placeholders})
+      AND ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope')}
     ORDER BY bt.display_order
   `).all(bookCode, chapter, verse, ...translationIds);
 }
@@ -186,6 +242,7 @@ export function getChapterAcrossTranslations(bookCode, chapter, translationIds) 
     JOIN bible_translations bt ON bv.translation_id = bt.id
     WHERE bv.book_code = ? AND bv.chapter = ?
       AND bv.translation_id IN (${placeholders})
+      AND ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope')}
     ORDER BY bv.verse, bt.display_order
   `).all(bookCode, chapter, ...translationIds);
 }
@@ -361,6 +418,8 @@ export function searchBible({ query, translationIds, bookCode, collectionSlug, p
 
   const where = [];
   const params = [];
+  where.push(SITE_SCOPE_SQL.replaceAll('site_scope', 'bc.site_scope'));
+  where.push(SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope'));
 
   if (translationIds && translationIds.length > 0) {
     where.push(`bv.translation_id IN (${translationIds.map(() => '?').join(',')})`);
@@ -373,7 +432,7 @@ export function searchBible({ query, translationIds, bookCode, collectionSlug, p
   }
 
   if (collectionSlug) {
-    const col = db.prepare('SELECT id FROM bible_collections WHERE slug = ?').get(collectionSlug);
+    const col = db.prepare(`SELECT id FROM bible_collections WHERE slug = ? AND ${SITE_SCOPE_SQL}`).get(collectionSlug);
     if (col) {
       where.push('bb.collection_id = ?');
       params.push(col.id);
@@ -391,9 +450,10 @@ export function searchBible({ query, translationIds, bookCode, collectionSlug, p
            bb.name_ar as book_name, bt.name_ar as translation_name, bt.slug as translation_slug
     FROM bible_verses bv
     JOIN bible_books bb ON bv.book_code = bb.code
+    JOIN bible_collections bc ON bb.collection_id = bc.id
     JOIN bible_translations bt ON bv.translation_id = bt.id
     ${whereStr}
-    ${whereStr ? 'AND' : 'WHERE'} bv.id IN (SELECT rowid FROM bible_verses_fts WHERE bible_verses_fts MATCH ?)
+    AND bv.id IN (SELECT rowid FROM bible_verses_fts WHERE bible_verses_fts MATCH ?)
     ORDER BY bv.book_code, bv.chapter, bv.verse, bt.display_order
     LIMIT ? OFFSET ?
   `;
@@ -402,12 +462,15 @@ export function searchBible({ query, translationIds, bookCode, collectionSlug, p
     SELECT COUNT(*) as total
     FROM bible_verses bv
     JOIN bible_books bb ON bv.book_code = bb.code
+    JOIN bible_collections bc ON bb.collection_id = bc.id
+    JOIN bible_translations bt ON bv.translation_id = bt.id
     ${whereStr}
-    ${whereStr ? 'AND' : 'WHERE'} bv.id IN (SELECT rowid FROM bible_verses_fts WHERE bible_verses_fts MATCH ?)
+    AND bv.id IN (SELECT rowid FROM bible_verses_fts WHERE bible_verses_fts MATCH ?)
   `;
 
   try {
     const results = db.prepare(sql).all(...params, ftsQuery, limit, offset);
+    const total = db.prepare(countSql).get(...params, ftsQuery)?.total || 0;
     return { type: 'text', results, total, page, limit };
   } catch {
     // Fallback to LIKE search
@@ -417,6 +480,7 @@ export function searchBible({ query, translationIds, bookCode, collectionSlug, p
              bb.name_ar as book_name, bt.name_ar as translation_name, bt.slug as translation_slug
       FROM bible_verses bv
       JOIN bible_books bb ON bv.book_code = bb.code
+      JOIN bible_collections bc ON bb.collection_id = bc.id
       JOIN bible_translations bt ON bv.translation_id = bt.id
       ${whereStr}
       AND bv.search_text LIKE ?
@@ -424,7 +488,16 @@ export function searchBible({ query, translationIds, bookCode, collectionSlug, p
       LIMIT ? OFFSET ?
     `;
     const results = db.prepare(sqlLike).all(...params, likeQ, limit, offset);
-    const total = db.prepare(sqlLike.replace(/SELECT bv\.book_code.*FROM/s, 'SELECT COUNT(*) as total FROM').replace(/LIMIT.*/, '')).get(...params, likeQ)?.total || 0;
+    const totalSql = `
+      SELECT COUNT(*) as total
+      FROM bible_verses bv
+      JOIN bible_books bb ON bv.book_code = bb.code
+      JOIN bible_collections bc ON bb.collection_id = bc.id
+      JOIN bible_translations bt ON bv.translation_id = bt.id
+      ${whereStr}
+      AND bv.search_text LIKE ?
+    `;
+    const total = db.prepare(totalSql).get(...params, likeQ)?.total || 0;
     return { type: 'text', results, total, page, limit };
   }
 }
@@ -437,12 +510,19 @@ export function getBibleStats() {
     SELECT bt.*, COUNT(bv.id) as verse_count
     FROM bible_translations bt
     LEFT JOIN bible_verses bv ON bv.translation_id = bt.id
+    WHERE bt.is_active = 1 AND ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope')}
     GROUP BY bt.id
   `).all();
 
   const bookCounts = db.prepare(`
-    SELECT book_code, COUNT(*) as verse_count
-    FROM bible_verses GROUP BY book_code
+    SELECT bv.book_code, COUNT(*) as verse_count
+    FROM bible_verses bv
+    JOIN bible_books bb ON bb.code = bv.book_code
+    JOIN bible_collections bc ON bc.id = bb.collection_id
+    JOIN bible_translations bt ON bt.id = bv.translation_id
+    WHERE ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bc.site_scope')}
+      AND ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope')}
+    GROUP BY bv.book_code
   `).all();
 
   return { translations, bookCounts };

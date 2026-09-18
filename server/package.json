@@ -11,7 +11,8 @@
     "start": "node server.js",
     "scan": "node db/scan_and_index.js",
     "bible:import:svd": "node importers/import_svd.js",
-    "bible:import:deutero": "node importers/import_deutero.js"
+    "bible:import:deutero": "node importers/import_deutero.js",
+    "bible:import:expansion": "node importers/import_expansion_sources.js"
   },
   "dependencies": {
     "adm-zip": "^0.6.0",

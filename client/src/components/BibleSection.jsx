@@ -17,6 +17,17 @@ import {
 
 const BIBLE_ONLY = import.meta.env.VITE_BIBLE_ONLY === 'true';
 
+function catalogStatusLabel(value) {
+  return {
+    not_imported: 'قيد الإعداد',
+    cataloged: 'مفهرس',
+    planned: 'مخطط له',
+    pending_review: 'بانتظار المراجعة',
+    complete: 'كامل',
+    partial: 'مجزأ'
+  }[value] || value || 'غير محدد';
+}
+
 // ─────────────────────────────────────────────────────────
 //  Helpers & Clipboard
 // ─────────────────────────────────────────────────────────
@@ -260,7 +271,8 @@ function QuickNavigator({ books, onNavigate }) {
   const [verse, setVerse] = useState('');
   const containerRef = useRef(null);
 
-  const filteredBooks = books.filter(b => {
+  const navigableBooks = books.filter(b => (b.available_translations || []).length > 0);
+  const filteredBooks = navigableBooks.filter(b => {
     if (!bookQuery.trim()) return true;
     const q = bookQuery.trim();
     return (
@@ -270,7 +282,7 @@ function QuickNavigator({ books, onNavigate }) {
     );
   });
 
-  const selectedBook = books.find(b => b.code === selectedBookCode);
+  const selectedBook = navigableBooks.find(b => b.code === selectedBookCode);
 
   const handleSelectBook = (b) => {
     setSelectedBookCode(b.code);
@@ -894,6 +906,22 @@ function ChapterReader({
           </div>
         )}
 
+        {bookInfo?.metadata && !['old-testament', 'new-testament'].includes(bookInfo.collection_slug) && (
+          <div className="mt-3 rounded-xl border border-blue-500/20 bg-blue-500/[0.06] px-3 py-2.5 text-xs leading-6 text-[#5c4127] dark:text-slate-300" dir="rtl">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-bold">
+              <span>حالة النص: {catalogStatusLabel(bookInfo.metadata.text_status)}</span>
+              <span>اللغة الأصلية: {bookInfo.metadata.original_language || 'غير محددة'}</span>
+              <span>العربية: {bookInfo.metadata.arabic_status === 'planned' ? 'الترجمة العربية قيد الإعداد' : catalogStatusLabel(bookInfo.metadata.arabic_status)}</span>
+            </div>
+            {bookInfo.metadata.source_url && (
+              <a href={bookInfo.metadata.source_url} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 text-blue-700 underline decoration-blue-300 underline-offset-2 dark:text-blue-300">
+                مصدر الفهرسة والطبعة
+                <ArrowLeft className="h-3 w-3" />
+              </a>
+            )}
+          </div>
+        )}
+
         {/* Translation Selector Chips */}
         <div className="mt-3 pt-2.5 border-t border-[#ddcfb8]/60 dark:border-slate-800">
           <TranslationSelectorChips
@@ -1478,12 +1506,16 @@ function BooksGrid({ collectionSlug, onOpenChapter }) {
       {books.map(b => {
         const isDeutero = b.collection_slug === 'deuterocanon';
         const isApocrypha = b.collection_slug === 'apocrypha';
+        const isReady = (b.available_translations || []).length > 0;
+        const isCatalogOnly = !isReady && b.metadata?.text_status === 'not_imported';
 
         return (
           <button
             key={b.code}
-            onClick={() => onOpenChapter(b.code, 1)}
-            className="verse-card p-3.5 sm:p-4 text-right flex items-center justify-between gap-2.5 border border-[#ddcfb8] dark:border-slate-800 bg-white/80 dark:bg-[#152238] rounded-2xl hover:border-[#b58a43] hover:shadow-md transition-all group shadow-sm cursor-pointer"
+            onClick={() => isReady && onOpenChapter(b.code, 1)}
+            disabled={!isReady}
+            title={isCatalogOnly ? 'هذا العمل مفهرس، والنص قيد الإعداد' : undefined}
+            className={`verse-card p-3.5 sm:p-4 text-right flex items-center justify-between gap-2.5 border border-[#ddcfb8] dark:border-slate-800 bg-white/80 dark:bg-[#152238] rounded-2xl transition-all group shadow-sm ${isReady ? 'hover:border-[#b58a43] hover:shadow-md cursor-pointer' : 'cursor-not-allowed opacity-75'}`}
           >
             <div className="flex flex-col min-w-0 flex-1">
               <div className="flex items-center gap-2">
@@ -1499,6 +1531,7 @@ function BooksGrid({ collectionSlug, onOpenChapter }) {
                 <span className="font-medium">
                   {b.chapter_count || 0} {b.chapter_count === 1 ? 'إصحاح واحد' : 'إصحاحاً'}
                 </span>
+                {!isReady && <span className="font-bold text-slate-500 dark:text-slate-400">مدخل فهرسي</span>}
                 {isDeutero && (
                   <span className="text-[10px] text-[#735535] dark:text-[#d5be98] bg-[#f0e6d2] dark:bg-slate-800 px-1.5 py-0.2 rounded-md font-bold">
                     قانوني ثانٍ
@@ -1507,6 +1540,11 @@ function BooksGrid({ collectionSlug, onOpenChapter }) {
                 {isApocrypha && (
                   <span className="text-[10px] text-amber-800 dark:text-amber-300 bg-amber-500/10 dark:bg-amber-500/20 px-1.5 py-0.2 rounded-md font-bold">
                     أبوكريفا
+                  </span>
+                )}
+                {isCatalogOnly && (
+                  <span className="text-[10px] text-slate-600 dark:text-slate-300 bg-slate-500/10 dark:bg-slate-500/20 px-1.5 py-0.5 rounded-md font-bold">
+                    النص قيد الإعداد
                   </span>
                 )}
               </div>
@@ -1569,6 +1607,10 @@ function BibleLanding({
     'new-testament': '✝️',
     'deuterocanon': '📖',
     'apocrypha': '📚',
+    'ethiopian-canon': '⛪',
+    'textual-traditions': '🪶',
+    'church-writings': '📜',
+    'pseudepigrapha': '🗂️',
   };
 
   return (
@@ -1602,7 +1644,7 @@ function BibleLanding({
       {collections.length > 0 && (
         <div>
           <h2 className="text-base font-extrabold text-[#322010] dark:text-slate-100 mb-3 flex items-center gap-2">
-            <span>أقسام العهدين والأسفار:</span>
+            <span>أقسام الأسفار والتقاليد والنصوص:</span>
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {collections.map(col => (
