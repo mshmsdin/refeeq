@@ -16,9 +16,9 @@ const SOURCES = [
     nameEn: 'R. H. Charles English 1 Enoch',
     abbreviation: 'ENO-EN',
     url: 'https://enocharchive.com/books/the-book-of-enoch/{chapter}',
-    kind: 'enoch-html',
+    kind: 'structured-html',
     maxChapter: 108,
-    notes: 'ترجمة آر. هـ. تشارلز، طبعة 1917، من مشروع غوتنبرغ المعلنة ملكيتها العامة.'
+    notes: 'ترجمة آر. هـ. تشارلز، طبعة 1917، من نسخة منظمة تنقل النص الإنجليزي المعلن ملكيته العامة.'
   },
   {
     bookCode: 'JUB',
@@ -26,10 +26,10 @@ const SOURCES = [
     nameAr: 'ترجمة تشارلز الإنجليزية لسفر اليوبيلات',
     nameEn: 'R. H. Charles English Jubilees',
     abbreviation: 'JUB-EN',
-    url: 'https://archive.org/download/bookofjubileesor00char/bookofjubileesor00char_djvu.txt',
-    anchor: '\nI. And it came to pass in the first year',
+    url: 'https://enocharchive.com/books/the-book-of-jubilees/{chapter}',
+    kind: 'structured-html',
     maxChapter: 50,
-    notes: 'ترجمة آر. هـ. تشارلز، طبعة 1902، من نسخة أرشيفية معلنة الملكية العامة.'
+    notes: 'ترجمة آر. هـ. تشارلز، طبعة 1902، من نسخة منظمة تنقل النص الإنجليزي المعلن ملكيته العامة.'
   },
   {
     bookCode: 'DIDAS',
@@ -90,7 +90,7 @@ function cleanHtmlVerse(html) {
     .replace(/<[^>]+>/g, ' ')));
 }
 
-async function parseEnochChapters(source) {
+async function parseStructuredHtmlChapters(source) {
   const chapters = [];
   for (let chapter = 1; chapter <= source.maxChapter; chapter += 1) {
     const html = await fetchText(source.url.replace('{chapter}', String(chapter)));
@@ -109,7 +109,7 @@ async function parseEnochChapters(source) {
 }
 
 async function parseChapters(content, source) {
-  if (source.kind === 'enoch-html') return parseEnochChapters(source);
+  if (source.kind === 'structured-html') return parseStructuredHtmlChapters(source);
   const start = content.indexOf(source.anchor);
   if (start < 0) throw new Error(`لم يُعثر على بداية النص في ${source.slug}`);
   const body = content.slice(start);
