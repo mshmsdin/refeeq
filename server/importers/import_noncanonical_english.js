@@ -82,7 +82,7 @@ const SOURCES = [
     abbreviation: 'MOS-LA',
     url: 'https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Mois.xml',
     kind: 'ocp-xml',
-    maxChapter: 19,
+    maxChapter: 12,
     language: 'la',
     sourceType: 'tei-xml',
     notes: 'الشاهد اللاتيني الإلكتروني من Online Critical Pseudepigrapha، مع حفظ التقسيم الإصحاحي والعددي للشاهد.'
