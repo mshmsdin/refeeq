@@ -1697,7 +1697,7 @@ function BibleLanding({
       {/* Apocrypha / Ethiopian Canon Quick Grid */}
       <div>
         <h2 className="text-base font-extrabold text-[#322010] dark:text-slate-100 mb-3 flex items-center gap-2">
-          <span>نصوص أبوكريفية وقانون الكنيسة الإثيوبية (أخنوخ، اليوبيلات):</span>
+          <span>نصوص أبوكريفية وتقاليد إثيوبية وكنسية (أخنوخ، اليوبيلات، وصية موسى، الدسقولية):</span>
         </h2>
         <BooksGrid collectionSlug="apocrypha" onOpenChapter={onOpenChapter} />
       </div>
