@@ -409,11 +409,11 @@ async function run() {
   }
 
   for (const [index, source] of SOURCES.entries()) {
-    const result = insertTranslation.run(
+    insertTranslation.run(
       source.slug, source.nameAr, source.nameEn, source.abbreviation,
       source.language, source.url, source.sourceType, source.notes, 40 + index
     );
-    const translationId = result.lastInsertRowid || db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
+    const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
     const content = ['structured-html', 'sacredthings-html'].includes(source.kind)
       ? null
       : await fetchText(source.url);
