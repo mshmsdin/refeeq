@@ -303,8 +303,7 @@ async function run() {
   const insertMany = db.transaction((rows) => rows.forEach((row) => insertVerse.run(...row)));
   const legacyEthiopic = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get('gez-ocp-enoch');
   if (legacyEthiopic) {
-    db.prepare('DELETE FROM bible_verses WHERE translation_id=?').run(legacyEthiopic.id);
-    db.prepare('DELETE FROM bible_translations WHERE id=?').run(legacyEthiopic.id);
+    db.prepare('UPDATE bible_translations SET is_active=0 WHERE id=?').run(legacyEthiopic.id);
   }
 
   for (const [index, source] of SOURCES.entries()) {
@@ -321,7 +320,6 @@ async function run() {
       translationId, source.bookCode, chapter.chapter, chapter.verse, chapter.text,
       normalizeArabicText(chapter.text), chapter.sourceUrl || source.url
     ]);
-    db.prepare('DELETE FROM bible_verses WHERE translation_id=? AND book_code=?').run(translationId, source.bookCode);
     insertMany(rows);
     db.prepare('UPDATE bible_books SET chapter_count = CASE WHEN chapter_count < ? THEN ? ELSE chapter_count END WHERE code=?')
       .run(source.maxChapter, source.maxChapter, source.bookCode);
