@@ -15,8 +15,8 @@ const SOURCES = [
     nameAr: 'ترجمة تشارلز الإنجليزية لسفر أخنوخ الأول',
     nameEn: 'R. H. Charles English 1 Enoch',
     abbreviation: 'ENO-EN',
-    url: 'https://www.gutenberg.org/cache/epub/77935/pg77935.txt',
-    anchor: '\nI. 1.',
+    url: 'https://enocharchive.com/books/the-book-of-enoch/{chapter}',
+    kind: 'enoch-html',
     maxChapter: 108,
     notes: 'ترجمة آر. هـ. تشارلز، طبعة 1917، من مشروع غوتنبرغ المعلنة ملكيتها العامة.'
   },
@@ -68,7 +68,48 @@ function cleanText(text) {
     .trim();
 }
 
-function parseChapters(content, source) {
+function decodeHtml(text) {
+  return text
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/&ndash;/gi, '–')
+    .replace(/&mdash;/gi, '—')
+    .replace(/&hellip;/gi, '…')
+    .replace(/&#x([0-9a-f]+);/gi, (_, value) => String.fromCodePoint(parseInt(value, 16)))
+    .replace(/&#(\d+);/g, (_, value) => String.fromCodePoint(Number(value)));
+}
+
+function cleanHtmlVerse(html) {
+  return cleanText(decodeHtml(html
+    .replace(/<img\b[^>]*>/gi, '')
+    .replace(/<span[^>]*class="[^"]*dropcap-fallback[^"]*"[^>]*>[\s\S]*?<\/span>/gi, '')
+    .replace(/<span[^>]*class="[^"]*verse-link-icon[^"]*"[^>]*>[\s\S]*?<\/span>/gi, '')
+    .replace(/<sup[^>]*class="[^"]*verse-number[^"]*"[^>]*>[\s\S]*?<\/sup>/gi, '')
+    .replace(/<[^>]+>/g, ' ')));
+}
+
+async function parseEnochChapters(source) {
+  const chapters = [];
+  for (let chapter = 1; chapter <= source.maxChapter; chapter += 1) {
+    const html = await fetchText(source.url.replace('{chapter}', String(chapter)));
+    const container = html.match(/<div class="chapter-text">([\s\S]*?)<\/div>/i)?.[1];
+    if (!container) throw new Error(`لم يُعثر على نص الإصحاح ${chapter} في ${source.slug}`);
+    const verses = [...container.matchAll(/<p[^>]*class="[^"]*\bverse\b[^"]*"[^>]*>([\s\S]*?)<\/p>/gi)]
+      .map((match, index) => {
+        const verse = Number(match[1].match(/<sup[^>]*class="[^"]*verse-number[^"]*"[^>]*>\s*(\d+)\s*<\/sup>/i)?.[1] || index + 1);
+        return { chapter, verse, text: cleanHtmlVerse(match[1]) };
+      })
+      .filter((row) => row.text.length > 10);
+    if (!verses.length) throw new Error(`لم تُكتشف أعداد الإصحاح ${chapter} في ${source.slug}`);
+    chapters.push(...verses);
+  }
+  return chapters;
+}
+
+async function parseChapters(content, source) {
+  if (source.kind === 'enoch-html') return parseEnochChapters(source);
   const start = content.indexOf(source.anchor);
   if (start < 0) throw new Error(`لم يُعثر على بداية النص في ${source.slug}`);
   const body = content.slice(start);
@@ -120,7 +161,8 @@ async function run() {
       source.url, source.notes, 40 + index
     );
     const translationId = result.lastInsertRowid || db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
-    const rows = parseChapters(await fetchText(source.url), source).map((chapter) => [
+    const content = source.kind === 'enoch-html' ? null : await fetchText(source.url);
+    const rows = (await parseChapters(content, source)).map((chapter) => [
       translationId, source.bookCode, chapter.chapter, chapter.verse, chapter.text,
       normalizeArabicText(chapter.text), source.url
     ]);
