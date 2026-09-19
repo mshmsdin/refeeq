@@ -58,6 +58,7 @@ const SOURCES = [
     kind: 'tau-ethiopic-html',
     maxChapter: 108,
     language: 'gez',
+    originalLanguage: 'الجعزية',
     sourceType: 'critical-ethiopic',
     notes: 'نسخة رقمية من طبعة أغسطس دِلمن الجعزية المنشورة في 1851، بصفحة مستقلة لكل إصحاح حتى الإصحاح 108؛ تحفظ هذه النسخة وحدة نصية واحدة لكل إصحاح لأن صفحات المصدر لا تقدم تقسيماً عددياً موحداً.'
   },
@@ -71,6 +72,7 @@ const SOURCES = [
     kind: 'sacredthings-html',
     maxChapter: 12,
     language: 'en',
+    originalLanguage: 'اللاتينية مع إعادة بناء نقدية',
     sourceType: 'html',
     notes: 'نص إنجليزي منسوب إلى طبعة آر. هـ. تشارلز، مع التنبيه إلى أن المخطوط الباقي ناقص وأن الاسم الأكاديمي الشائع هو وصية موسى.'
   },
@@ -84,6 +86,7 @@ const SOURCES = [
     kind: 'ocp-xml',
     maxChapter: 12,
     language: 'la',
+    originalLanguage: 'اللاتينية',
     sourceType: 'tei-xml',
     notes: 'الشاهد اللاتيني الإلكتروني من Online Critical Pseudepigrapha، مع حفظ التقسيم الإصحاحي والعددي للشاهد.'
   }
@@ -301,6 +304,11 @@ async function run() {
     DO UPDATE SET text=excluded.text, search_text=excluded.search_text, source_url=excluded.source_url, imported_at=CURRENT_TIMESTAMP
   `);
   const insertMany = db.transaction((rows) => rows.forEach((row) => insertVerse.run(...row)));
+  const insertBookSource = db.prepare(`
+    INSERT OR IGNORE INTO bible_book_sources
+      (book_code, label_ar, label_en, language, availability_status, source_type, source_url, notes)
+    VALUES (?, ?, ?, ?, 'available', ?, ?, ?)
+  `);
   const legacyEthiopic = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get('gez-ocp-enoch');
   if (legacyEthiopic) {
     db.prepare('UPDATE bible_translations SET is_active=0 WHERE id=?').run(legacyEthiopic.id);
@@ -325,10 +333,15 @@ async function run() {
       .run(source.maxChapter, source.maxChapter, source.bookCode);
     db.prepare(`
       UPDATE bible_book_metadata
-      SET text_status='complete', english_status=CASE WHEN ?='en' THEN 'available' ELSE english_status END,
+      SET text_status='complete', original_language=COALESCE(NULLIF(?, ''), original_language),
+          english_status=CASE WHEN ?='en' THEN 'available' ELSE english_status END,
           source_name=?, source_url=?, source_notes=?, updated_at=CURRENT_TIMESTAMP
       WHERE book_code=?
-    `).run(source.language, source.nameEn, source.url, source.notes, source.bookCode);
+    `).run(source.originalLanguage || '', source.language, source.nameEn, source.url, source.notes, source.bookCode);
+    insertBookSource.run(
+      source.bookCode, source.nameAr, source.nameEn, source.language,
+      source.sourceType, source.url, source.notes
+    );
     db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(translationId);
     console.log(`[Bible] ${source.slug}: ${new Set(parsedChapters.map((row) => row.chapter)).size} إصحاحاً، ${rows.length} وحدة`);
   }
