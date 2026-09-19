@@ -87,15 +87,15 @@ const features = [
   {
     icon: BookOpen,
     tone: 'blue',
-    eyebrow: 'الكتاب المقدس',
-    title: 'ابحث في نصوص الكتاب المقدس',
+    eyebrow: 'البيبل',
+    title: 'ابحث في نصوص البيبل',
     description: 'انتقل إلى الأسفار والأصحاحات والأعداد، وابحث بكلمة أو بمرجع، واقرأ أكثر من ترجمة مع إمكان المقارنة والنسخ الموثق. تتوفر نسخة مستقلة للكتاب المقدس على نطاق منفصل.',
     tips: ['انتقل إلى سفر أو إصحاح أو عدد مباشرة', 'قارن الترجمات المتاحة', 'انسخ العدد مع توثيقه', 'النسخة المستقلة: wiki.din.hk/bible'],
   },
   {
     icon: Languages,
     tone: 'teal',
-    eyebrow: 'موسوعة الكتاب المقدس المستقلة',
+    eyebrow: 'موسوعة البيبل المستقلة',
     title: 'توسعة النصوص والتقاليد',
     description: 'النسخة المستقلة مخصصة للنصوص الأساسية والتوسعات البحثية: الأسفار القانونية الثانية، التقليد الإثيوبي، الدسقولية، التوراة السامرية، السبعينية، البيشيطا، الفولجاتا، والمنحولات. تتضمن الدفعة الحالية أخنوخ الأول بالإنجليزية والجعزية، واليوبيلات، والدسقولية، والمكابيان الإثيوبي بالإنجليزية، ووصية موسى/صعود موسى بالإنجليزية واللاتينية. يسجل الموقع لغة كل شاهد وحالته ومصدره، ويترك مكاناً للترجمة العربية اللاحقة.',
     tips: ['رفيق يحتفظ بالنصوص الأساسية فقط', 'كل عمل موسع يسجل كعمل مستقل لا كإضافة عشوائية', 'النص غير المستورد يظهر بحالة قيد الإعداد', 'افتح أخنوخ الجعزي أو وصية موسى واختر الترجمة من صفحة السفر', 'المقارنة العلمية تعرض الفرق بين الشواهد والترجمات'],
@@ -220,7 +220,7 @@ export default function FeaturesPage({ theme, onToggleTheme, onBack, onOpenBible
               </button>
               <button onClick={onOpenBible} className="btn-press inline-flex items-center gap-2 rounded-xl border border-blue-500/25 bg-blue-500/10 px-4 py-2.5 text-xs font-black text-blue-700 transition-colors hover:bg-blue-500/20 focus-ring dark:text-blue-300">
                 <BookOpen className="h-4 w-4" />
-                افتح الكتاب المقدس
+                افتح البيبل
               </button>
             </div>
           </div>
@@ -273,7 +273,7 @@ export default function FeaturesPage({ theme, onToggleTheme, onBack, onOpenBible
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/12 text-blue-600 dark:text-blue-300"><Languages className="h-5 w-5" /></span>
               <h2 className="text-lg font-black">للبحث المقارن</h2>
             </div>
-            <p className="text-sm leading-8 text-slate-600 dark:text-slate-300">استخدم قسم الكتاب المقدس للانتقال إلى المرجع، البحث في الأعداد، مقارنة الترجمات ونسخ النص مع توثيقه. ويمكن فتح النسخة المستقلة من <a className="font-bold text-blue-600 hover:underline" href="https://wiki.din.hk/bible/" target="_blank" rel="noreferrer">wiki.din.hk/bible</a>.</p>
+            <p className="text-sm leading-8 text-slate-600 dark:text-slate-300">استخدم قسم البيبل للانتقال إلى المرجع، البحث في الأعداد، مقارنة الترجمات ونسخ النص مع توثيقه. ويمكن فتح النسخة المستقلة من <a className="font-bold text-blue-600 hover:underline" href="https://wiki.din.hk/bible/" target="_blank" rel="noreferrer">wiki.din.hk/bible</a>.</p>
           </div>
         </section>
 

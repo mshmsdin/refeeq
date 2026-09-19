@@ -130,11 +130,11 @@ export default function Navbar({
               <button
                 onClick={onOpenBible}
                 className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-700 dark:text-blue-400 border border-blue-500/25 text-xs font-bold transition-all btn-press"
-                title="الكتاب المقدس"
-                aria-label="فتح الكتاب المقدس"
+                title="البيبل"
+                aria-label="فتح البيبل"
               >
                 <BookOpen className="w-3.5 h-3.5" />
-                <span>الكتاب المقدس</span>
+                <span>البيبل</span>
               </button>
             )}
 

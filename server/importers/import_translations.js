@@ -59,7 +59,7 @@ const TRANSLATIONS = [
     display_order: 2,
     url: 'https://ebible.org/Scriptures/arbnav_vpl.zip',
     filename: 'arbnav_vpl.zip',
-    source_notes: 'ترجمة كتاب الحياة المعاصرة - دار الكتاب المقدس / Biblica'
+    source_notes: 'ترجمة كتاب الحياة المعاصرة - دار البيبل / Biblica'
   },
   {
     slug: 'ar-erv',
@@ -69,7 +69,7 @@ const TRANSLATIONS = [
     display_order: 3,
     url: 'https://ebible.org/Scriptures/arbwbtc_vpl.zip',
     filename: 'arbwbtc_vpl.zip',
-    source_notes: 'الترجمة العربية المبسطة - مركز ترجمة الكتاب المقدس العالمي WBTC'
+    source_notes: 'الترجمة العربية المبسطة - مركز ترجمة البيبل العالمي WBTC'
   }
 ];
 

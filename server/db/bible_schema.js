@@ -373,7 +373,7 @@ function _seedExpansionCatalog(db) {
       `مدخل موسع: ${book.name_ar}. تُراجع اللغة والمصدر والطبعة قبل استكمال الإدخال.`,
       sourceName,
       sourceUrl,
-      'مُضاف إلى كتالوج موقع الكتاب المقدس فقط.'
+      'مُضاف إلى كتالوج موقع البيبل فقط.'
     );
     insertSource.run(
       book.code,

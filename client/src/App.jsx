@@ -276,8 +276,8 @@ export default function App() {
     if (!BIBLE_ONLY) return;
     document.documentElement.lang = 'ar';
     document.documentElement.dir = 'rtl';
-    document.title = 'الكتاب المقدس | Bible';
-    const description = 'الكتاب المقدس باللغة العربية: تصفح الأسفار والأصحاحات والأعداد، وابحث وقارن الترجمات مع توثيق المرجع.';
+    document.title = 'البيبل | Bible';
+    const description = 'البيبل باللغة العربية: تصفح الأسفار والأصحاحات والأعداد، وابحث وقارن الترجمات مع توثيق المرجع.';
     const canonicalUrl = 'https://wiki.din.hk/bible/';
     let descriptionTag = document.querySelector('meta[name="description"]');
     if (!descriptionTag) {
@@ -303,7 +303,7 @@ export default function App() {
     structuredData.textContent = JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: 'الكتاب المقدس | Bible',
+      name: 'البيبل | Bible',
       url: canonicalUrl,
       inLanguage: 'ar',
       description
@@ -519,7 +519,7 @@ export default function App() {
       <div className="min-h-screen flex flex-col bg-[#f6f1e7] dark:bg-[#0b1120]">
         <header className="sticky top-0 z-30 app-header shadow-sm">
           <div className="max-w-[1440px] mx-auto px-4 py-3 flex items-center justify-between gap-3" dir="rtl">
-            <h1 className="text-base sm:text-lg font-black text-[var(--text-primary)]">الكتاب المقدس <span className="text-xs opacity-60">Bible</span></h1>
+            <h1 className="text-base sm:text-lg font-black text-[var(--text-primary)]">البيبل <span className="text-xs opacity-60">Bible</span></h1>
             <button
               onClick={toggleTheme}
               className="p-2 rounded-xl bg-[var(--bg-muted)] text-[var(--text-secondary)] hover:text-amber-500 transition-colors text-xs"
@@ -549,7 +549,7 @@ export default function App() {
           theme={theme}
           onToggleTheme={toggleTheme}
           onBack={backToArchive}
-          onOpenBible={() => { setIsGuideView(false); setIsBibleView(true); window.history.pushState(null, '', buildBibleUrl()); document.title = 'الكتاب المقدس - رفيق المناظر'; }}
+          onOpenBible={() => { setIsGuideView(false); setIsBibleView(true); window.history.pushState(null, '', buildBibleUrl()); document.title = 'البيبل - رفيق المناظر'; }}
           totalDocs={stats?.totalDocuments}
         />
       ) : isBibleView ? (
@@ -610,7 +610,7 @@ export default function App() {
         stats={stats}
         onToggleMobileSidebar={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
         isMobileSidebarOpen={isMobileSidebarOpen}
-        onOpenBible={() => { setIsBibleView(true); setIsGuideView(false); window.history.pushState(null, '', buildBibleUrl()); document.title = 'الكتاب المقدس - رفيق المحاور'; }}
+          onOpenBible={() => { setIsBibleView(true); setIsGuideView(false); window.history.pushState(null, '', buildBibleUrl()); document.title = 'البيبل - رفيق المحاور'; }}
         onOpenFeatures={openGuide}
       />
 

@@ -16,8 +16,8 @@ export default defineConfig(({ mode }) => {
   const basePrefix = base === '/' ? '' : base.slice(0, -1);
   const site = bibleOnly
     ? {
-        title: 'الكتاب المقدس | Bible',
-        description: 'الكتاب المقدس باللغة العربية: تصفح الأسفار والأصحاحات والأعداد، وابحث وقارن الترجمات مع توثيق المرجع.',
+        title: 'البيبل | Bible',
+        description: 'البيبل باللغة العربية: تصفح الأسفار والأصحاحات والأعداد، وابحث وقارن الترجمات مع توثيق المرجع.',
         canonical: env.VITE_SITE_URL || 'https://wiki.din.hk/bible/'
       }
     : {

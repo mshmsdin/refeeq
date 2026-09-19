@@ -538,7 +538,7 @@ function SearchResults({
     return (
       <div className="text-center py-16 text-[#735535] font-scheherazade" dir="rtl">
         <div className="inline-block w-8 h-8 border-2 border-[#b58a43] border-t-transparent rounded-full animate-spin mb-3" />
-        <p className="font-semibold text-sm">جارٍ البحث في نصوص الكتاب المقدس...</p>
+        <p className="font-semibold text-sm">جارٍ البحث في نصوص البيبل...</p>
       </div>
     );
   }
@@ -744,7 +744,7 @@ function ChapterReader({
   });
 
   const handleCopyChapter = () => {
-    let fullText = `${bookInfo?.collection_name_ar || 'الكتاب المقدس'} — ${bookInfo?.name_ar} — الإصحاح ${chapter} (${t1?.name_ar})\n\n`;
+    let fullText = `${bookInfo?.collection_name_ar || 'البيبل'} — ${bookInfo?.name_ar} — الإصحاح ${chapter} (${t1?.name_ar})\n\n`;
     (data.verses || []).forEach(v => {
       const text = isCompareMode
         ? (v.translations?.[activeSlugs[0]]?.text || v.text)
@@ -778,7 +778,7 @@ function ChapterReader({
             </div>
             <div>
               <div className="flex items-center gap-1.5 text-xs font-bold text-[#735535] dark:text-slate-300">
-                <span>الكتاب المقدس</span>
+                <span>البيبل</span>
                 <ChevronLeft className="w-3 h-3 text-[#aa8e67]" />
                 <span className="bg-[#efe8dc] dark:bg-slate-800 text-[#46301b] dark:text-[#f8f3ea] px-2 py-0.5 rounded text-[11px] font-bold">
                   {bookInfo?.collection_name_ar || 'الأسفار'}
@@ -965,7 +965,7 @@ function ChapterReader({
         <div className="text-center mb-5 pb-3 border-b border-[#ddcfb8]/70 dark:border-slate-800 relative">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white dark:bg-[#111a2e] border border-[#ddcfb8] dark:border-slate-700 text-[#5c4127] dark:text-slate-200 text-xs font-bold mb-1.5 shadow-sm">
             <Scroll className="w-3.5 h-3.5 text-[#b58a43]" />
-            <span>الكتاب المقدس — {bookInfo?.collection_name_ar}</span>
+            <span>البيبل — {bookInfo?.collection_name_ar}</span>
           </div>
 
           <h2 className="text-xl sm:text-2xl font-bold text-[#322010] dark:text-slate-100 scheherazade-font mt-1 mb-1.5 tracking-wide leading-tight">
@@ -1250,7 +1250,7 @@ function VerseFocusModal({
 
   const copyWithCitation = () => {
     if (!primaryVerseObj) return;
-    const formatted = `"${primaryVerseObj.text}"\n— (${bookInfo?.collection_name_ar || 'الكتاب المقدس'} - ${bookInfo?.name_ar} ${chapter} : ${verse} - ${primaryVerseObj.translation_name || primaryTrans?.name_ar})`;
+    const formatted = `"${primaryVerseObj.text}"\n— (${bookInfo?.collection_name_ar || 'البيبل'} - ${bookInfo?.name_ar} ${chapter} : ${verse} - ${primaryVerseObj.translation_name || primaryTrans?.name_ar})`;
     copyToClipboard(formatted);
     showToast('تم النسخ مع التوثيق الكامل!');
   };
@@ -1270,7 +1270,7 @@ function VerseFocusModal({
         <div className="flex items-center justify-between px-1">
           <div className="flex items-center gap-2 text-xs font-bold text-[#46301b] dark:text-slate-200 bg-[#efe8dc]/95 dark:bg-[#152238]/95 backdrop-blur px-3 py-1.5 rounded-xl border border-[#ddcfb8] dark:border-slate-700 shadow-sm">
             <BookOpen className="w-3.5 h-3.5 text-[#b58a43]" />
-            <span>{bookInfo?.collection_name_ar || 'الكتاب المقدس'}</span>
+            <span>{bookInfo?.collection_name_ar || 'البيبل'}</span>
           </div>
 
           <button
@@ -1621,7 +1621,7 @@ function BibleLanding({
           <BookOpen className="w-7 h-7" />
         </div>
         <h1 className="text-2xl sm:text-3xl font-black text-[#322010] dark:text-slate-100 tracking-tight scheherazade-font">
-          الكتاب المقدس باللغة العربية
+          البيبل باللغة العربية
         </h1>
         <p className="text-[#735535] dark:text-slate-400 text-xs sm:text-sm mt-1 max-w-md mx-auto">
           الموثق الرقمي — تصفح، بحث، ومقارنة فورية مع توثيق مواقف الكنائس والمجامع
@@ -1875,7 +1875,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
     const currentBookObj = books.find(b => b.code === currentBook);
     const bookTitle = currentBookObj ? currentBookObj.name_ar : currentBook;
 
-    const titleSuffix = BIBLE_ONLY ? 'الكتاب المقدس | Bible' : 'الكتاب المقدس - رفيق المحاور';
+    const titleSuffix = BIBLE_ONLY ? 'البيبل | Bible' : 'البيبل - رفيق المحاور';
     document.title =
       isModalOpen && modalVerse
         ? `${bookTitle} ${currentChapter}:${modalVerse} - ${titleSuffix}`
@@ -1972,7 +1972,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
             className="flex items-center gap-1.5 text-xs sm:text-sm font-black text-[#8d6e47] dark:text-[#c2a578] hover:text-[#5c4127] transition-colors shrink-0"
           >
             <BookOpen className="w-4 h-4" />
-            <span>الكتاب المقدس</span>
+            <span>البيبل</span>
           </button>
 
           {/* Breadcrumb path */}
