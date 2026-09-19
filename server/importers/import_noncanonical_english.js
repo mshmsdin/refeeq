@@ -50,16 +50,16 @@ const SOURCES = [
   },
   {
     bookCode: 'ENO',
-    slug: 'gez-ocp-enoch',
+    slug: 'gez-dillmann-enoch',
     nameAr: 'النص الجعزي لأخنوخ الأول',
-    nameEn: 'OCP Ethiopic 1 Enoch',
+    nameEn: 'August Dillmann Digital Ethiopic 1 Enoch',
     abbreviation: 'ENO-GEZ',
-    url: 'https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/1En.xml',
-    kind: 'ocp-xml',
+    url: 'https://www.tau.ac.il/~hacohen/Henoch/Henoch%201.html',
+    kind: 'tau-ethiopic-html',
     maxChapter: 108,
     language: 'gez',
-    sourceType: 'tei-xml',
-    notes: 'طبعة إلكترونية نقدية مفتوحة من مستودع Online Critical Pseudepigrapha، وتعرض القراءة الجعزية الأساسية مع وحدات الإصحاح والعدد.'
+    sourceType: 'critical-ethiopic',
+    notes: 'نسخة رقمية من طبعة أغسطس دِلمن الجعزية المنشورة في 1851، بصفحة مستقلة لكل إصحاح حتى الإصحاح 108؛ تحفظ هذه النسخة وحدة نصية واحدة لكل إصحاح لأن صفحات المصدر لا تقدم تقسيماً عددياً موحداً.'
   },
   {
     bookCode: 'MOS',
@@ -82,7 +82,7 @@ const SOURCES = [
     abbreviation: 'MOS-LA',
     url: 'https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Mois.xml',
     kind: 'ocp-xml',
-    maxChapter: 12,
+    maxChapter: 19,
     language: 'la',
     sourceType: 'tei-xml',
     notes: 'الشاهد اللاتيني الإلكتروني من Online Critical Pseudepigrapha، مع حفظ التقسيم الإصحاحي والعددي للشاهد.'
@@ -178,6 +178,23 @@ async function parseSacredThingsChapters(source) {
   return chapters;
 }
 
+async function parseTauEthiopicChapters(source) {
+  const chapters = [];
+  for (let chapter = 1; chapter <= source.maxChapter; chapter += 1) {
+    const url = chapter === 1
+      ? source.url
+      : `https://www.tau.ac.il/~hacohen/Henoch/Henoch%20${chapter}.html`;
+    const html = await fetchText(url);
+    const paragraph = [...html.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
+      .map((match) => match[1])
+      .find((value) => value.includes('Cap.'));
+    const text = stripHtml(paragraph || '').replace(new RegExp(`^${chapter}\\s+`), '').trim();
+    if (text.length < 20) throw new Error(`لم يُكتشف نص الإصحاح ${chapter} في ${source.slug}`);
+    chapters.push({ chapter, verse: 1, text, sourceUrl: url });
+  }
+  return chapters;
+}
+
 function parseOcpChapters(xml, source) {
   const version = xml.match(new RegExp(`<version\\b[^>]*language="${source.language === 'gez' ? 'Ethiopic' : 'Latin'}"[\\s\\S]*?<\\/version>`, 'i'))?.[0];
   if (!version) throw new Error(`لم يُعثر على النسخة اللغوية في ${source.slug}`);
@@ -237,6 +254,7 @@ function parseOcpChapters(xml, source) {
 async function parseChapters(content, source) {
   if (source.kind === 'structured-html') return parseStructuredHtmlChapters(source);
   if (source.kind === 'sacredthings-html') return parseSacredThingsChapters(source);
+  if (source.kind === 'tau-ethiopic-html') return parseTauEthiopicChapters(source);
   if (source.kind === 'ocp-xml') return parseOcpChapters(content, source);
   const start = content.indexOf(source.anchor);
   if (start < 0) throw new Error(`لم يُعثر على بداية النص في ${source.slug}`);
@@ -283,6 +301,11 @@ async function run() {
     DO UPDATE SET text=excluded.text, search_text=excluded.search_text, source_url=excluded.source_url, imported_at=CURRENT_TIMESTAMP
   `);
   const insertMany = db.transaction((rows) => rows.forEach((row) => insertVerse.run(...row)));
+  const legacyEthiopic = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get('gez-ocp-enoch');
+  if (legacyEthiopic) {
+    db.prepare('DELETE FROM bible_verses WHERE translation_id=?').run(legacyEthiopic.id);
+    db.prepare('DELETE FROM bible_translations WHERE id=?').run(legacyEthiopic.id);
+  }
 
   for (const [index, source] of SOURCES.entries()) {
     const result = insertTranslation.run(
@@ -298,6 +321,7 @@ async function run() {
       translationId, source.bookCode, chapter.chapter, chapter.verse, chapter.text,
       normalizeArabicText(chapter.text), chapter.sourceUrl || source.url
     ]);
+    db.prepare('DELETE FROM bible_verses WHERE translation_id=? AND book_code=?').run(translationId, source.bookCode);
     insertMany(rows);
     db.prepare('UPDATE bible_books SET chapter_count = CASE WHEN chapter_count < ? THEN ? ELSE chapter_count END WHERE code=?')
       .run(source.maxChapter, source.maxChapter, source.bookCode);
