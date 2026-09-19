@@ -161,7 +161,7 @@ async function run() {
       source.url, source.notes, 40 + index
     );
     const translationId = result.lastInsertRowid || db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
-    const content = source.kind === 'enoch-html' ? null : await fetchText(source.url);
+    const content = source.kind === 'structured-html' ? null : await fetchText(source.url);
     const rows = (await parseChapters(content, source)).map((chapter) => [
       translationId, source.bookCode, chapter.chapter, chapter.verse, chapter.text,
       normalizeArabicText(chapter.text), source.url
