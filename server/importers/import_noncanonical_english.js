@@ -49,6 +49,48 @@ const SOURCES = [
     notes: 'ترجمة مارغريت دنلوب غيبسون من السريانية، طبعة 1903، من نسخة أرشيفية معلنة الملكية العامة.'
   },
   {
+    bookCode: '1MCE',
+    slug: 'en-wikisource-1-meqabyan',
+    nameAr: 'الترجمة الإنجليزية للمكابيان الإثيوبي الأول',
+    nameEn: 'Wikisource English 1 Meqabyan',
+    abbreviation: '1MCE-EN',
+    url: 'https://en.wikisource.org/w/api.php?action=parse&page=Translation%3A1_Meqabyan&prop=wikitext&format=json&origin=*',
+    kind: 'wikisource-api',
+    maxChapter: 7,
+    language: 'en',
+    originalLanguage: 'الجعزية',
+    sourceType: 'community-translation',
+    notes: 'ترجمة إنجليزية مجتمعية منشورة في ويكي مصدر عن أصل جعزي، بترخيص المشاع الإبداعي نسب المصنف-المشاركة بالمثل 4.0؛ ليست طبعة نقدية معيارية.'
+  },
+  {
+    bookCode: '2MCE',
+    slug: 'en-wikisource-2-meqabyan',
+    nameAr: 'الترجمة الإنجليزية للمكابيان الإثيوبي الثاني',
+    nameEn: 'Wikisource English 2 Meqabyan',
+    abbreviation: '2MCE-EN',
+    url: 'https://en.wikisource.org/w/api.php?action=parse&page=Translation%3A2_Meqabyan&prop=wikitext&format=json&origin=*',
+    kind: 'wikisource-api',
+    maxChapter: 21,
+    language: 'en',
+    originalLanguage: 'الجعزية',
+    sourceType: 'community-translation',
+    notes: 'ترجمة إنجليزية مجتمعية منشورة في ويكي مصدر عن أصل جعزي، بترخيص المشاع الإبداعي نسب المصنف-المشاركة بالمثل 4.0؛ ليست طبعة نقدية معيارية.'
+  },
+  {
+    bookCode: '3MCE',
+    slug: 'en-wikisource-3-meqabyan',
+    nameAr: 'الترجمة الإنجليزية للمكابيان الإثيوبي الثالث',
+    nameEn: 'Wikisource English 3 Meqabyan',
+    abbreviation: '3MCE-EN',
+    url: 'https://en.wikisource.org/w/api.php?action=parse&page=Translation%3A3_Meqabyan&prop=wikitext&format=json&origin=*',
+    kind: 'wikisource-api',
+    maxChapter: 10,
+    language: 'en',
+    originalLanguage: 'الجعزية',
+    sourceType: 'community-translation',
+    notes: 'ترجمة إنجليزية مجتمعية منشورة في ويكي مصدر عن أصل جعزي، بترخيص المشاع الإبداعي نسب المصنف-المشاركة بالمثل 4.0؛ ليست طبعة نقدية معيارية.'
+  },
+  {
     bookCode: 'ENO',
     slug: 'gez-dillmann-enoch',
     nameAr: 'النص الجعزي لأخنوخ الأول',
@@ -160,6 +202,62 @@ function stripHtml(html) {
   return cleanText(decodeHtml(html.replace(/<[^>]+>/g, ' ')));
 }
 
+function stripWikisourceMarkup(text) {
+  return cleanText(decodeHtml(text
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<ref\b[^>]*>[\s\S]*?<\/ref>/gi, '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\{\{[\s\S]*?\}\}/g, '')
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
+    .replace(/\[\[([^\]]+)\]\]/g, '$1')
+    .replace(/'{2,5}/g, '')));
+}
+
+function parseWikisourceChapters(content, source) {
+  let payload;
+  try {
+    payload = JSON.parse(content);
+  } catch {
+    throw new Error(`استجابة ويكي مصدر ليست بصيغة JSON في ${source.slug}`);
+  }
+  const raw = payload?.parse?.wikitext?.['*'];
+  if (!raw) throw new Error(`لم يُعثر على النص في استجابة ويكي مصدر لـ ${source.slug}`);
+
+  const headingPattern = /^\s*={0,3}\s*Chapter\s+(\d+)\s*={0,3}\s*$/gim;
+  const headings = [...raw.matchAll(headingPattern)].map((match) => ({
+    chapter: Number(match[1]),
+    end: match.index,
+    start: match.index + match[0].length
+  }));
+  if (headings.length !== source.maxChapter) {
+    throw new Error(`اكتُشف ${headings.length} إصحاحاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+
+  const chapters = [];
+  for (const [index, heading] of headings.entries()) {
+    const end = headings[index + 1]?.end ?? raw.length;
+    const body = raw.slice(heading.start, end);
+    const blocks = body.split(/\n\s*\n/).map(stripWikisourceMarkup).filter(Boolean);
+    const rows = [];
+    let preface = '';
+    for (const block of blocks) {
+      const verseMatch = block.match(/^\s*(?:\[(\d+)\]|(\d+)\.?)\s+([\s\S]+)$/);
+      if (!verseMatch) {
+        if (!rows.length) preface = [preface, block].filter(Boolean).join(' ');
+        else rows[rows.length - 1].text = `${rows[rows.length - 1].text} ${block}`;
+        continue;
+      }
+      const verse = Number(verseMatch[1] || verseMatch[2]);
+      const text = [preface, verseMatch[3]].filter(Boolean).join(' ');
+      rows.push({ chapter: heading.chapter, verse, text, sourceUrl: source.url });
+      preface = '';
+    }
+    if (!rows.length) throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+    chapters.push(...rows.filter((row) => row.text.length > 10));
+  }
+  return chapters;
+}
+
 async function parseSacredThingsChapters(source) {
   const chapters = [];
   for (let chapter = 1; chapter <= source.maxChapter; chapter += 1) {
@@ -258,6 +356,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'structured-html') return parseStructuredHtmlChapters(source);
   if (source.kind === 'sacredthings-html') return parseSacredThingsChapters(source);
   if (source.kind === 'tau-ethiopic-html') return parseTauEthiopicChapters(source);
+  if (source.kind === 'wikisource-api') return parseWikisourceChapters(content, source);
   if (source.kind === 'ocp-xml') return parseOcpChapters(content, source);
   const start = content.indexOf(source.anchor);
   if (start < 0) throw new Error(`لم يُعثر على بداية النص في ${source.slug}`);
