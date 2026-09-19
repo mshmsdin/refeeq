@@ -432,6 +432,7 @@ function _seedBooks(db) {
   const NT = colMap['new-testament'];
   const DC = colMap['deuterocanon'];
   const AP = colMap['apocrypha'];
+  const CW = colMap['church-writings'];
 
   const books = [
     // OT — 39 books
@@ -521,6 +522,7 @@ function _seedBooks(db) {
     // Apocrypha / Pseudepigrapha (Ethiopian Canon)
     ['ENO','أخنوخ الأول','1 Enoch','أخ',AP,1,108],
     ['JUB','اليوبيلات','Book of Jubilees','يوب',AP,2,50],
+    ['DIDAS','الدسقولية الرسولية','Didascalia Apostolorum','دسق',CW,1,26],
   ];
 
   for (const b of books) insertBook.run(...b);
