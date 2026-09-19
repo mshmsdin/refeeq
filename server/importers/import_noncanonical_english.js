@@ -304,11 +304,6 @@ async function run() {
     DO UPDATE SET text=excluded.text, search_text=excluded.search_text, source_url=excluded.source_url, imported_at=CURRENT_TIMESTAMP
   `);
   const insertMany = db.transaction((rows) => rows.forEach((row) => insertVerse.run(...row)));
-  const insertBookSource = db.prepare(`
-    INSERT OR IGNORE INTO bible_book_sources
-      (book_code, label_ar, label_en, language, availability_status, source_type, source_url, notes)
-    VALUES (?, ?, ?, ?, 'available', ?, ?, ?)
-  `);
   const legacyEthiopic = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get('gez-ocp-enoch');
   if (legacyEthiopic) {
     db.prepare('UPDATE bible_translations SET is_active=0 WHERE id=?').run(legacyEthiopic.id);
@@ -338,10 +333,6 @@ async function run() {
           source_name=?, source_url=?, source_notes=?, updated_at=CURRENT_TIMESTAMP
       WHERE book_code=?
     `).run(source.originalLanguage || '', source.language, source.nameEn, source.url, source.notes, source.bookCode);
-    insertBookSource.run(
-      source.bookCode, source.nameAr, source.nameEn, source.language,
-      source.sourceType, source.url, source.notes
-    );
     db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(translationId);
     console.log(`[Bible] ${source.slug}: ${new Set(parsedChapters.map((row) => row.chapter)).size} إصحاحاً، ${rows.length} وحدة`);
   }
