@@ -74,7 +74,7 @@ function parseChapters(content, source) {
   const body = content.slice(start);
   const pattern = source.bookCode === 'DIDAS'
     ? /(?:^|\n)CHAPTER\s+([IVXLCDM]+)\./gi
-    : /(?:^|\n)([IVXLCDM]+)\.\s+/g;
+    : /(?:^|\n)\s*([IVXLCDM]+)\.\s+/g;
   const headings = [];
   for (const match of body.matchAll(pattern)) {
     const chapter = romanToNumber(match[1].toUpperCase());
