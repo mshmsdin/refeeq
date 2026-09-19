@@ -91,6 +91,48 @@ const SOURCES = [
     notes: 'ترجمة إنجليزية مجتمعية منشورة في ويكي مصدر عن أصل جعزي، بترخيص المشاع الإبداعي نسب المصنف-المشاركة بالمثل 4.0؛ ليست طبعة نقدية معيارية.'
   },
   {
+    bookCode: 'ENO2',
+    slug: 'en-platt-2-enoch',
+    nameAr: 'الترجمة الإنجليزية لأخنوخ الثاني',
+    nameEn: 'Rutherford H. Platt English 2 Enoch',
+    abbreviation: 'ENO2-EN',
+    url: 'https://en.wikisource.org/w/api.php?action=parse&page=The_Forgotten_Books_of_Eden%2FThe_Book_of_the_Secrets_of_Enoch&prop=wikitext&format=json&origin=*',
+    kind: 'wikisource-book-api',
+    maxChapter: 68,
+    language: 'en',
+    originalLanguage: 'السلافية الكنسية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة روذرفورد بلات الإنجليزية المنشورة في كتاب The Forgotten Books of Eden سنة 1928؛ تُعرض بوصفها ترجمة تاريخية، مع التنبيه إلى اختلاف تقسيمات أخنوخ الثاني بين المخطوطات والمراجعات.'
+  },
+  {
+    bookCode: 'PSOL',
+    slug: 'en-platt-psalms-solomon',
+    nameAr: 'الترجمة الإنجليزية لمزامير سليمان',
+    nameEn: 'Rutherford H. Platt English Psalms of Solomon',
+    abbreviation: 'PSOL-EN',
+    url: 'https://en.wikisource.org/w/api.php?action=parse&page=The_Forgotten_Books_of_Eden%2FThe_Psalms_of_Solomon&prop=wikitext&format=json&origin=*',
+    kind: 'wikisource-book-api',
+    maxChapter: 18,
+    language: 'en',
+    originalLanguage: 'اليونانية مع شواهد سريانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة إنجليزية تاريخية لمجموعة مزامير سليمان، 18 مزموراً؛ تُعرض كعمل يهودي منحول مستقل، لا كسفر قانوني ولا كجزء من المزامير الكتابية.'
+  },
+  {
+    bookCode: 'ASC',
+    slug: 'en-charles-ascension-isaiah',
+    nameAr: 'الترجمة الإنجليزية لصعود إشعياء',
+    nameEn: 'R. H. Charles English Ascension of Isaiah',
+    abbreviation: 'ASC-EN',
+    url: 'https://viachrista.org/Library/Anon_Ascension_Isaiah.html',
+    kind: 'viachrista-html',
+    maxChapter: 11,
+    language: 'en',
+    originalLanguage: 'الجعزية مع شواهد أقدم',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة آر. هـ. تشارلز من النص الإثيوبي مع الشواهد الأقدم، في 11 إصحاحاً؛ العمل مركب من استشهاد إشعياء ورؤيا لاحقة، لذلك لا يعرض كنص موحد بلا وصف.'
+  },
+  {
     bookCode: 'ENO',
     slug: 'gez-dillmann-enoch',
     nameAr: 'النص الجعزي لأخنوخ الأول',
@@ -167,6 +209,7 @@ function decodeHtml(text) {
     .replace(/&ndash;/gi, '–')
     .replace(/&mdash;/gi, '—')
     .replace(/&hellip;/gi, '…')
+    .replace(/&emsp;/gi, ' ')
     .replace(/&#x([0-9a-f]+);/gi, (_, value) => String.fromCodePoint(parseInt(value, 16)))
     .replace(/&#(\d+);/g, (_, value) => String.fromCodePoint(Number(value)));
 }
@@ -251,6 +294,94 @@ function parseWikisourceChapters(content, source) {
       const text = [preface, verseMatch[3]].filter(Boolean).join(' ');
       rows.push({ chapter: heading.chapter, verse, text, sourceUrl: source.url });
       preface = '';
+    }
+    if (!rows.length) throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+    chapters.push(...rows.filter((row) => row.text.length > 10));
+  }
+  return chapters;
+}
+
+function parseWikisourceBookChapters(content, source) {
+  let payload;
+  try {
+    payload = JSON.parse(content);
+  } catch {
+    throw new Error(`استجابة ويكي مصدر ليست بصيغة JSON في ${source.slug}`);
+  }
+  const raw = payload?.parse?.wikitext?.['*'];
+  if (!raw) throw new Error(`لم يُعثر على النص في استجابة ويكي مصدر لـ ${source.slug}`);
+
+  const headingPattern = /^\s*=+\s*Chapter\s+(\d+)\s*=+\s*$/gim;
+  const headings = [...raw.matchAll(headingPattern)].map((match) => ({
+    chapter: Number(match[1]),
+    end: match.index,
+    start: match.index + match[0].length
+  }));
+  if (headings.length !== source.maxChapter) {
+    throw new Error(`اكتُشف ${headings.length} إصحاحاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+
+  const chapters = [];
+  for (const [index, heading] of headings.entries()) {
+    const end = headings[index + 1]?.end ?? raw.length;
+    const body = raw.slice(heading.start, end);
+    const rows = [];
+    let preface = '';
+    for (const rawLine of body.split(/\r?\n/)) {
+      const colonPrefix = rawLine.match(/^\s*(:+)/)?.[1] || '';
+      const cleaned = stripWikisourceMarkup(rawLine.replace(/^\s*:+\s*/, ''));
+      if (!cleaned || /^\{\{|^={2,}|^''/.test(rawLine.trim())) continue;
+      if (/^(?:Category:|The Forgotten Books of Eden|Top\s|Note:)/i.test(cleaned)) break;
+      const verseMatch = cleaned.match(/^\s*(\d+)\.?\s+([\s\S]+)$/);
+      if (!verseMatch) {
+        if (colonPrefix.length >= 2 && rows.length) rows[rows.length - 1].text = `${rows[rows.length - 1].text} ${cleaned}`;
+        else if (colonPrefix.length === 1) rows.push({ chapter: heading.chapter, verse: rows.length + 1, text: cleaned, sourceUrl: source.url });
+        else if (!rows.length) preface = [preface, cleaned].filter(Boolean).join(' ');
+        else rows[rows.length - 1].text = `${rows[rows.length - 1].text} ${cleaned}`;
+        continue;
+      }
+      const verse = Number(verseMatch[1]);
+      const text = [preface, verseMatch[2]].filter(Boolean).join(' ');
+      rows.push({ chapter: heading.chapter, verse, text, sourceUrl: source.url });
+      preface = '';
+    }
+    if (!rows.length) throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+    chapters.push(...rows.filter((row) => row.text.length > 10));
+  }
+  return chapters;
+}
+
+function parseViaChristaChapters(content, source) {
+  const headingPattern = /<p>\s*<b>Chapter\s+(\d+)<\/b>/gi;
+  const headings = [...content.matchAll(headingPattern)].map((match) => ({
+    chapter: Number(match[1]),
+    end: match.index,
+    start: match.index + match[0].length
+  }));
+  if (headings.length !== source.maxChapter) {
+    throw new Error(`اكتُشف ${headings.length} إصحاحاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+
+  const chapters = [];
+  for (const [index, heading] of headings.entries()) {
+    const end = headings[index + 1]?.end ?? content.length;
+    const body = content.slice(heading.start, end)
+      .replace(/<hr\b[^>]*>/gi, '\n')
+      .replace(/<br\s*\/?>/gi, '\n')
+      .replace(/<\/p>/gi, '\n');
+    const rows = [];
+    for (const rawLine of body.split(/\r?\n/)) {
+      const cleaned = cleanText(decodeHtml(rawLine.replace(/<[^>]+>/g, ' ')));
+      if (!cleaned || /^R\. H\. Charles, Translator$/i.test(cleaned)) continue;
+      if (/(?:Top\s|Note:|Copyright)/i.test(cleaned)) break;
+      const verseMatch = cleaned.match(/^\s*(\d+)\.\s+([\s\S]+)$/);
+      if (verseMatch) {
+        rows.push({ chapter: heading.chapter, verse: Number(verseMatch[1]), text: verseMatch[2], sourceUrl: source.url });
+      } else if (!rows.length) {
+        rows.push({ chapter: heading.chapter, verse: 1, text: cleaned, sourceUrl: source.url });
+      } else {
+        rows[rows.length - 1].text = `${rows[rows.length - 1].text} ${cleaned}`;
+      }
     }
     if (!rows.length) throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
     chapters.push(...rows.filter((row) => row.text.length > 10));
@@ -357,6 +488,8 @@ async function parseChapters(content, source) {
   if (source.kind === 'sacredthings-html') return parseSacredThingsChapters(source);
   if (source.kind === 'tau-ethiopic-html') return parseTauEthiopicChapters(source);
   if (source.kind === 'wikisource-api') return parseWikisourceChapters(content, source);
+  if (source.kind === 'wikisource-book-api') return parseWikisourceBookChapters(content, source);
+  if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
   if (source.kind === 'ocp-xml') return parseOcpChapters(content, source);
   const start = content.indexOf(source.anchor);
   if (start < 0) throw new Error(`لم يُعثر على بداية النص في ${source.slug}`);
