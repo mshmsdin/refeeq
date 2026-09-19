@@ -315,7 +315,7 @@ function parseWikisourceCollectionPage(content, source, chapter, page) {
   const body = raw
     .replace(/^.*?Concerning [\s\S]*?\n\s*/i, '')
     .replace(/<ref[\s\S]*?<\/ref>/gi, ' ');
-  const rows = [...body.matchAll(/(?:^|\n)\s*(\d+)\.\s*([\s\S]*?)(?=\n\s*\d+\.\s|$)/g)]
+  const rows = [...body.matchAll(/(?:^|\n)\s*(\d+)\.(?:\s|&#160;|&nbsp;)+([\s\S]*?)(?=\n\s*\d+\.(?:\s|&#160;|&nbsp;)+|$)/g)]
     .map((match) => ({
       chapter,
       verse: Number(match[1]),
