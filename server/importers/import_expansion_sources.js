@@ -44,6 +44,14 @@ const SOURCES = [
   }
 ];
 
+const HTML_SOURCES = [
+  {
+    bookCode: 'MAN',
+    url: 'https://ebible.org/eng-web/MAN01.htm',
+    notes: 'World English Bible Classic؛ صفحة صلاة منسى، والنص معلن في المصدر ملكاً عاماً.'
+  }
+];
+
 function download(url, destination) {
   return new Promise((resolve, reject) => {
     if (fs.existsSync(destination) && fs.statSync(destination).size > 100000) return resolve();
@@ -72,10 +80,42 @@ function download(url, destination) {
   });
 }
 
+async function fetchText(url) {
+  const response = await fetch(url, { headers: { 'User-Agent': 'Rafeeq-Bible-Importer/1.0' } });
+  if (!response.ok) throw new Error(`HTTP ${response.status} for ${url}`);
+  return response.text();
+}
+
+function decodeHtml(text) {
+  const named = {
+    nbsp: ' ', amp: '&', lt: '<', gt: '>', quot: '"', apos: "'",
+    rsquo: '’', lsquo: '‘', ldquo: '“', rdquo: '”', hellip: '…'
+  };
+  return text
+    .replace(/&#x([0-9a-f]+);/gi, (_, value) => String.fromCodePoint(parseInt(value, 16)))
+    .replace(/&#(\d+);/g, (_, value) => String.fromCodePoint(Number(value)))
+    .replace(/&([a-z]+);/gi, (_, name) => named[name.toLowerCase()] ?? `&${name};`);
+}
+
+function parseHtmlVerses(content) {
+  const rows = [];
+  const pattern = /<span\s+class=["']verse["'][^>]*id=["']V(\d+)["'][^>]*>[\s\S]*?<\/span>([\s\S]*?)(?=<span\s+class=["']verse["']|<\/div>)/gi;
+  for (const match of content.matchAll(pattern)) {
+    const verse = Number(match[1]);
+    const text = decodeHtml(match[2]
+      .replace(/<a\b[^>]*>[\s\S]*?<\/a>/gi, '')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim());
+    if (verse && text) rows.push({ chapter: 1, verse, text });
+  }
+  return rows;
+}
+
 const BOOK_CODE_MAP = {
   MAR: 'MRK', JOH: 'JHN', JAM: 'JAS', JOE: 'JOL', NAH: 'NAM', EZE: 'EZK',
   PHI: 'PHP', '1JO': '1JN', '2JO': '2JN', '3JO': '3JN', SOL: 'SNG',
-  PSA151: 'PS2', PS151: 'PS2', ESTG: 'ESG', DANG: 'DAG'
+  PSA151: 'PS2', PS151: 'PS2', ESTG: 'ESG', DANG: 'DAG', '4ES': '2ES'
 };
 
 function parseVpl(content, validBooks) {
@@ -151,6 +191,25 @@ async function run() {
     }
     db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(id);
     console.log(`[Bible] ${source.slug}: ${rows.length} وحدة نصية`);
+  }
+
+  for (const source of HTML_SOURCES) {
+    const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get('en-web')?.id;
+    if (!translationId) throw new Error('لم توجد ترجمة en-web قبل استيراد المصادر الإضافية');
+    const parsed = parseHtmlVerses(await fetchText(source.url));
+    const rows = parsed.map((verse) => [
+      translationId, source.bookCode, verse.chapter, verse.verse, verse.text,
+      normalizeArabicText(verse.text), source.url
+    ]);
+    insertMany(rows);
+    db.prepare('UPDATE bible_books SET chapter_count = CASE WHEN chapter_count < 1 THEN 1 ELSE chapter_count END WHERE code=?').run(source.bookCode);
+    db.prepare(`
+      UPDATE bible_book_metadata
+      SET text_status='complete', english_status='available', source_name=?, source_url=?, updated_at=CURRENT_TIMESTAMP
+      WHERE book_code=?
+    `).run('World English Bible Classic', source.url, source.bookCode);
+    db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(translationId);
+    console.log(`[Bible] en-web/${source.bookCode}: ${rows.length} وحدة نصية`);
   }
 }
 
