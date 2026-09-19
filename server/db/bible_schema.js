@@ -386,6 +386,35 @@ function _seedExpansionCatalog(db) {
       `المصدر المسجل للعمل: ${book.name_ar}`
     );
   }
+
+  // لا نعلن توفر نص لمجرد وجوده في الفهرس؛ الحالة تُشتق من الوحدات الموجودة فعلياً.
+  db.prepare(`
+    UPDATE bible_book_metadata
+    SET text_status = CASE WHEN EXISTS (
+          SELECT 1 FROM bible_verses bv
+          JOIN bible_translations bt ON bt.id = bv.translation_id
+          WHERE bv.book_code = bible_book_metadata.book_code
+            AND bt.is_active = 1 AND (bt.site_scope = 'both' OR bt.site_scope = 'bible')
+        ) THEN 'complete' ELSE 'not_imported' END,
+        arabic_status = CASE WHEN EXISTS (
+          SELECT 1 FROM bible_verses bv
+          JOIN bible_translations bt ON bt.id = bv.translation_id
+          WHERE bv.book_code = bible_book_metadata.book_code
+            AND bt.language = 'ar' AND bt.is_active = 1
+            AND (bt.site_scope = 'both' OR bt.site_scope = 'bible')
+        ) THEN 'available'
+        WHEN book_code IN (SELECT bb.code FROM bible_books bb JOIN bible_collections bc ON bc.id = bb.collection_id WHERE bc.slug = 'deuterocanon')
+        THEN 'planned' ELSE arabic_status END,
+        english_status = CASE WHEN EXISTS (
+          SELECT 1 FROM bible_verses bv
+          JOIN bible_translations bt ON bt.id = bv.translation_id
+          WHERE bv.book_code = bible_book_metadata.book_code
+            AND bt.language = 'en' AND bt.is_active = 1
+            AND (bt.site_scope = 'both' OR bt.site_scope = 'bible')
+        ) THEN 'available' ELSE english_status END,
+        updated_at = CURRENT_TIMESTAMP
+    WHERE book_code IN (SELECT bb.code FROM bible_books bb JOIN bible_collections bc ON bc.id = bb.collection_id WHERE bc.site_scope = 'bible')
+  `).run();
 }
 
 function _seedBooks(db) {
