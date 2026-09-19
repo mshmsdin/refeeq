@@ -370,15 +370,24 @@ function parseViaChristaChapters(content, source) {
       .replace(/<br\s*\/?>/gi, '\n')
       .replace(/<\/p>/gi, '\n');
     const rows = [];
+    const hasVerseOne = /\b1\.?\s+/.test(body);
+    let preface = '';
     for (const rawLine of body.split(/\r?\n/)) {
       const cleaned = cleanText(decodeHtml(rawLine.replace(/<[^>]+>/g, ' ')));
       if (!cleaned || /^R\. H\. Charles, Translator$/i.test(cleaned)) continue;
       if (/(?:Top\s|Note:|Copyright)/i.test(cleaned)) break;
       const verseMatch = cleaned.match(/^\s*(\d+)\.\s+([\s\S]+)$/);
       if (verseMatch) {
-        rows.push({ chapter: heading.chapter, verse: Number(verseMatch[1]), text: verseMatch[2], sourceUrl: source.url });
+        rows.push({
+          chapter: heading.chapter,
+          verse: Number(verseMatch[1]),
+          text: [preface, verseMatch[2]].filter(Boolean).join(' '),
+          sourceUrl: source.url
+        });
+        preface = '';
       } else if (!rows.length) {
-        rows.push({ chapter: heading.chapter, verse: 1, text: cleaned, sourceUrl: source.url });
+        if (hasVerseOne) preface = [preface, cleaned].filter(Boolean).join(' ');
+        else rows.push({ chapter: heading.chapter, verse: 1, text: cleaned, sourceUrl: source.url });
       } else {
         rows[rows.length - 1].text = `${rows[rows.length - 1].text} ${cleaned}`;
       }
