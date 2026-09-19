@@ -376,7 +376,7 @@ function parseViaChristaChapters(content, source) {
       const cleaned = cleanText(decodeHtml(rawLine.replace(/<[^>]+>/g, ' ')));
       if (!cleaned || /^R\. H\. Charles, Translator$/i.test(cleaned)) continue;
       if (/(?:Top\s|Note:|Copyright)/i.test(cleaned)) break;
-      const verseMatch = cleaned.match(/^\s*(\d+)\.\s+([\s\S]+)$/);
+      const verseMatch = cleaned.match(/^\s*(\d+)\.?\s+([\s\S]+)$/);
       if (verseMatch) {
         rows.push({
           chapter: heading.chapter,
