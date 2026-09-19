@@ -133,6 +133,34 @@ const SOURCES = [
     notes: 'ترجمة آر. هـ. تشارلز من النص الإثيوبي مع الشواهد الأقدم، في 11 إصحاحاً؛ العمل مركب من استشهاد إشعياء ورؤيا لاحقة، لذلك لا يعرض كنص موحد بلا وصف.'
   },
   {
+    bookCode: 'T12',
+    slug: 'en-wikisource-twelve-patriarchs',
+    nameAr: 'الترجمة الإنجليزية لوصايا الآباء الاثني عشر',
+    nameEn: 'Wikisource English Testaments of the Twelve Patriarchs',
+    abbreviation: 'T12-EN',
+    url: 'https://en.wikisource.org/wiki/Ante-Nicene_Fathers/Volume_VIII/The_Testaments_of_the_Twelve_Patriarchs',
+    kind: 'wikisource-collection',
+    maxChapter: 12,
+    language: 'en',
+    originalLanguage: 'اليونانية مع شواهد عبرية وأرمينية وسلافية',
+    sourceType: 'community-translation',
+    notes: 'نص إنجليزي من مجموعة آباء ما قبل نيقية المنشورة في ويكي مصدر، مقسم إلى وصية مستقلة لكل واحد من الآباء الاثني عشر. يحفظ المصدر ترقيم الفقرات، ولا توجد ترجمة عربية مدخلة في هذه المرحلة.',
+    pages: [
+      'Ante-Nicene Fathers/Volume VIII/The Testaments of the Twelve Patriarchs/The Testament of Reuben Concerning Thoughts',
+      'Ante-Nicene Fathers/Volume VIII/The Testaments of the Twelve Patriarchs/The Testament of Simeon Concerning Envy',
+      'Ante-Nicene Fathers/Volume VIII/The Testaments of the Twelve Patriarchs/The Testament of Levi Concerning the Priesthood and Arrogance',
+      'Ante-Nicene Fathers/Volume VIII/The Testaments of the Twelve Patriarchs/The Testament of Judah Concerning Fortitude, and Love of Money, and Fornication',
+      'Ante-Nicene Fathers/Volume VIII/The Testaments of the Twelve Patriarchs/The Testament of Issachar Concerning Simplicity',
+      'Ante-Nicene Fathers/Volume VIII/The Testaments of the Twelve Patriarchs/The Testament of Zebulun Concerning Compassion and Mercy',
+      'Ante-Nicene Fathers/Volume VIII/The Testaments of the Twelve Patriarchs/The Testament of Dan Concerning Anger and Lying',
+      'Ante-Nicene Fathers/Volume VIII/The Testaments of the Twelve Patriarchs/The Testament of Naphtali Concerning Natural Goodness',
+      'Ante-Nicene Fathers/Volume VIII/The Testaments of the Twelve Patriarchs/The Testament of Gad Concerning Hatred',
+      'Ante-Nicene Fathers/Volume VIII/The Testaments of the Twelve Patriarchs/The Testament of Asher Concerning Two Faces of Vice and Virtue',
+      'Ante-Nicene Fathers/Volume VIII/The Testaments of the Twelve Patriarchs/The Testament of Joseph Concerning Sobriety',
+      'Ante-Nicene Fathers/Volume VIII/The Testaments of the Twelve Patriarchs/The Testament of Benjamin Concerning a Pure Mind'
+    ]
+  },
+  {
     bookCode: 'ENO',
     slug: 'gez-dillmann-enoch',
     nameAr: 'النص الجعزي لأخنوخ الأول',
@@ -254,6 +282,43 @@ function stripWikisourceMarkup(text) {
     .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
     .replace(/\[\[([^\]]+)\]\]/g, '$1')
     .replace(/'{2,5}/g, '')));
+}
+
+function wikisourceApiUrl(page) {
+  return `https://en.wikisource.org/w/api.php?action=parse&page=${encodeURIComponent(page)}&prop=wikitext&format=json&origin=*`;
+}
+
+function parseWikisourceCollectionPage(content, source, chapter, page) {
+  let payload;
+  try {
+    payload = JSON.parse(content);
+  } catch {
+    throw new Error(`استجابة ويكي مصدر ليست بصيغة JSON في ${source.slug}، القسم ${chapter}`);
+  }
+  const raw = payload?.parse?.wikitext?.['*'];
+  if (!raw) throw new Error(`لم يُعثر على النص في ${source.slug}، القسم ${chapter}`);
+  const body = raw
+    .replace(/^.*?Concerning [\s\S]*?\n\s*/i, '')
+    .replace(/<ref[\s\S]*?<\/ref>/gi, ' ');
+  const rows = [...body.matchAll(/(?:^|\n)\s*(\d+)\.\s*([\s\S]*?)(?=\n\s*\d+\.\s|$)/g)]
+    .map((match) => ({
+      chapter,
+      verse: Number(match[1]),
+      text: stripWikisourceMarkup(match[2]),
+      sourceUrl: wikisourceApiUrl(page)
+    }))
+    .filter((row) => row.text.length > 10);
+  if (!rows.length) throw new Error(`لم تُكتشف فقرات القسم ${chapter} في ${source.slug}`);
+  return rows;
+}
+
+async function parseWikisourceCollectionChapters(source) {
+  const chapters = [];
+  for (const [index, page] of source.pages.entries()) {
+    const content = await fetchText(wikisourceApiUrl(page));
+    chapters.push(...parseWikisourceCollectionPage(content, source, index + 1, page));
+  }
+  return chapters;
 }
 
 function parseWikisourceChapters(content, source) {
@@ -498,6 +563,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'tau-ethiopic-html') return parseTauEthiopicChapters(source);
   if (source.kind === 'wikisource-api') return parseWikisourceChapters(content, source);
   if (source.kind === 'wikisource-book-api') return parseWikisourceBookChapters(content, source);
+  if (source.kind === 'wikisource-collection') return parseWikisourceCollectionChapters(source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
   if (source.kind === 'ocp-xml') return parseOcpChapters(content, source);
   const start = content.indexOf(source.anchor);
