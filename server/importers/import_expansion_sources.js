@@ -62,6 +62,16 @@ const HTML_SOURCES = [
   }
 ];
 
+const PESHITTA_FILES = [
+  ['MAT', '40_Matthieu.usfm'], ['MRK', '41_Marc.usfm'], ['LUK', '42_Luc.usfm'], ['JHN', '43_Jean.usfm'],
+  ['ACT', '44_Actes.usfm'], ['ROM', '45_Romains.usfm'], ['1CO', '46_1_Corinthiens.usfm'], ['2CO', '47_2_Corinthiens.usfm'],
+  ['GAL', '48_Galates.usfm'], ['EPH', '49_Éphésiens.usfm'], ['PHP', '50_Philippiens.usfm'], ['COL', '51_Colossiens.usfm'],
+  ['1TH', '52_1_Thessaloniens.usfm'], ['2TH', '53_2_Thessaloniens.usfm'], ['1TI', '54_1_Timothée.usfm'], ['2TI', '55_2_Timothée.usfm'],
+  ['TIT', '56_Tite.usfm'], ['PHM', '57_Philémon.usfm'], ['HEB', '58_Hébreux.usfm'], ['JAS', '59_Jacques.usfm'],
+  ['1PE', '60_1_Pierre.usfm'], ['2PE', '61_2_Pierre.usfm'], ['1JN', '62_1_Jean.usfm'], ['2JN', '63_2_Jean.usfm'],
+  ['3JN', '64_3_Jean.usfm'], ['JUD', '65_Jude.usfm'], ['REV', '66_Apocalypse.usfm']
+];
+
 function download(url, destination) {
   return new Promise((resolve, reject) => {
     if (fs.existsSync(destination) && fs.statSync(destination).size > 100000) return resolve();
@@ -145,6 +155,29 @@ function parseVpl(content, validBooks) {
   return rows;
 }
 
+function parseUsfm(content, bookCode) {
+  let chapter = 0;
+  const rows = [];
+  for (const rawLine of content.split(/\r?\n/)) {
+    const chapterMatch = rawLine.match(/^\\c\s+(\d+)/);
+    if (chapterMatch) {
+      chapter = Number(chapterMatch[1]);
+      continue;
+    }
+    const verseMatch = rawLine.match(/^\\v\s+(\d+)\s+(.+)$/);
+    if (!verseMatch || !chapter) continue;
+    const text = verseMatch[2]
+      .replace(/\\f\s+[\s\S]*?\\f\*/g, '')
+      .replace(/\\x\s+[\s\S]*?\\x\*/g, '')
+      .replace(/\\[a-z0-9-]+\*?/gi, '')
+      .replace(/[{}]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (text) rows.push({ bookCode, chapter, verse: Number(verseMatch[1]), text });
+  }
+  return rows;
+}
+
 async function run() {
   initDatabase();
   initBibleSchema();
@@ -202,6 +235,40 @@ async function run() {
     db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(id);
     console.log(`[Bible] ${source.slug}: ${rows.length} وحدة نصية`);
   }
+
+  const peshittaSlug = 'syr-peshitta';
+  const peshittaUrl = 'https://gitlab.com/crosswire-bible-society/peshitta/-/tree/master/usfm';
+  const peshittaId = insertTranslation.run(
+    peshittaSlug,
+    'البيشيطا السريانية',
+    'Syriac Peshitta New Testament',
+    'PESH-SYR',
+    'syr',
+    peshittaUrl,
+    'الشاهد السرياني المنشور في ملفات يو إس إف إم لمشروع جمعية كروس واير؛ يحفظ هنا بوصفه تقليداً سريانياً موازياً، ولا يدعي تمثيل كل تاريخ البيشيطا أو كل صيغها المخطوطية.',
+    23
+  ).lastInsertRowid || db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(peshittaSlug).id;
+  const peshittaRows = [];
+  for (const [bookCode, filename] of PESHITTA_FILES) {
+    const url = `https://gitlab.com/crosswire-bible-society/peshitta/-/raw/master/usfm/${encodeURI(filename)}`;
+    const parsed = parseUsfm(await fetchText(url), bookCode);
+    peshittaRows.push(...parsed.map((verse) => [
+      peshittaId, verse.bookCode, verse.chapter, verse.verse, verse.text,
+      normalizeArabicText(verse.text), url
+    ]));
+    const chapterCount = Math.max(...parsed.map((verse) => verse.chapter), 0);
+    if (chapterCount) {
+      db.prepare('UPDATE bible_books SET chapter_count = CASE WHEN chapter_count < ? THEN ? ELSE chapter_count END WHERE code=?').run(chapterCount, chapterCount, bookCode);
+      db.prepare(`
+        UPDATE bible_book_metadata
+        SET text_status='complete', english_status='available', source_name=?, source_url=?, updated_at=CURRENT_TIMESTAMP
+        WHERE book_code=?
+      `).run('Syriac Peshitta New Testament', url, bookCode);
+    }
+  }
+  for (let offset = 0; offset < peshittaRows.length; offset += 2000) insertMany(peshittaRows.slice(offset, offset + 2000));
+  db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(peshittaId);
+  console.log(`[Bible] ${peshittaSlug}: ${peshittaRows.length} وحدة نصية`);
 
   for (const source of HTML_SOURCES) {
     const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get('en-web')?.id;
