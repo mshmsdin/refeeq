@@ -516,7 +516,8 @@ const SOURCES = [
     abbreviation: 'HERM-I-EN',
     url: 'https://www.newadvent.org/fathers/02011.htm',
     kind: 'new-advent-chaptered-html',
-    maxChapter: 13,
+    maxChapter: 24,
+    renumberChapters: true,
     language: 'en',
     originalLanguage: 'اليونانية',
     sourceType: 'public-domain-text',
@@ -530,7 +531,8 @@ const SOURCES = [
     abbreviation: 'HERM-II-EN',
     url: 'https://www.newadvent.org/fathers/02012.htm',
     kind: 'new-advent-chaptered-html',
-    maxChapter: 6,
+    maxChapter: 16,
+    renumberChapters: true,
     language: 'en',
     originalLanguage: 'اليونانية',
     sourceType: 'public-domain-text',
@@ -544,7 +546,8 @@ const SOURCES = [
     abbreviation: 'HERM-III-EN',
     url: 'https://www.newadvent.org/fathers/02013.htm',
     kind: 'new-advent-chaptered-html',
-    maxChapter: 33,
+    maxChapter: 60,
+    renumberChapters: true,
     language: 'en',
     originalLanguage: 'اليونانية',
     sourceType: 'public-domain-text',
@@ -1125,7 +1128,7 @@ function parseNewAdventChapteredHtml(content, source) {
       .filter((paragraph) => paragraph.length > 8)
       .join('\n\n');
     if (text.length < 40) throw new Error(`لم يُكتشف نص كافٍ للفصل ${heading.chapter} في ${source.slug}`);
-    return { chapter: heading.chapter, verse: 1, text, sourceUrl: source.url };
+    return { chapter: source.renumberChapters ? index + 1 : heading.chapter, verse: 1, text, sourceUrl: source.url };
   });
 }
 
