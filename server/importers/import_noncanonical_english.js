@@ -481,6 +481,76 @@ const SOURCES = [
     notes: 'ترجمة م. ر. جيمس التاريخية لنص إنجيل نيقوديموس/أعمال بيلاطس؛ المصدر نفسه يصف اختلاف الصيغ اليونانية واللاتينية والقبطية والسريانية والأرمنية، لذلك يحفظ هذا السجل الشاهد المنشور فقط ولا يدمج الصيغ.'
   },
   {
+    bookCode: 'CLE1',
+    slug: 'en-newadvent-first-clement',
+    nameAr: 'الترجمة الإنجليزية للرسالة الأولى لإكليمندس',
+    nameEn: 'New Advent English First Epistle of Clement',
+    abbreviation: 'CLE1-EN',
+    url: 'https://www.newadvent.org/fathers/1010.htm',
+    kind: 'new-advent-chaptered-html',
+    maxChapter: 65,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة تاريخية من مجموعة آباء ما قبل نيقية منشورة في نيو أدفنت، تحفظ الفصول الخمسة والستين، وتعرض كرسالة كنسية مبكرة لا كسفر قانوني.'
+  },
+  {
+    bookCode: 'CLE2',
+    slug: 'en-newadvent-second-clement',
+    nameAr: 'الترجمة الإنجليزية للرسالة الثانية لإكليمندس',
+    nameEn: 'New Advent English Second Epistle of Clement',
+    abbreviation: 'CLE2-EN',
+    url: 'https://www.newadvent.org/fathers/1011.htm',
+    kind: 'new-advent-chaptered-html',
+    maxChapter: 20,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة تاريخية للرسالة الثانية المنسوبة تقليدياً إلى إكليمندس، تحفظ عشرين فصلاً، مع إبقاء نسبة العمل وتاريخه موضع وصف علمي لا حكماً قطعياً.'
+  },
+  {
+    bookCode: 'HERM',
+    slug: 'en-newadvent-shepherd-hermas-book-1',
+    nameAr: 'الترجمة الإنجليزية لراعي هرماس، الكتاب الأول',
+    nameEn: 'New Advent English Shepherd of Hermas Book I',
+    abbreviation: 'HERM-I-EN',
+    url: 'https://www.newadvent.org/fathers/02011.htm',
+    kind: 'new-advent-chaptered-html',
+    maxChapter: 13,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'الكتاب الأول من راعي هرماس في ترجمة تاريخية منشورة في نيو أدفنت، ويحفظ مستقلاً حتى يمكن مقارنة تقسيمات الرؤى والوصايا والأمثال.'
+  },
+  {
+    bookCode: 'HERM',
+    slug: 'en-newadvent-shepherd-hermas-book-2',
+    nameAr: 'الترجمة الإنجليزية لراعي هرماس، الكتاب الثاني',
+    nameEn: 'New Advent English Shepherd of Hermas Book II',
+    abbreviation: 'HERM-II-EN',
+    url: 'https://www.newadvent.org/fathers/02012.htm',
+    kind: 'new-advent-chaptered-html',
+    maxChapter: 6,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'الكتاب الثاني من راعي هرماس في ترجمة تاريخية منشورة في نيو أدفنت، يحفظ كترجمة مستقلة عن الكتابين الأول والثالث.'
+  },
+  {
+    bookCode: 'HERM',
+    slug: 'en-newadvent-shepherd-hermas-book-3',
+    nameAr: 'الترجمة الإنجليزية لراعي هرماس، الكتاب الثالث',
+    nameEn: 'New Advent English Shepherd of Hermas Book III',
+    abbreviation: 'HERM-III-EN',
+    url: 'https://www.newadvent.org/fathers/02013.htm',
+    kind: 'new-advent-chaptered-html',
+    maxChapter: 33,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'الكتاب الثالث من راعي هرماس في ترجمة تاريخية منشورة في نيو أدفنت، يحفظ بفصوله الثلاثة والثلاثين وبسجل مستقل للمقارنة.'
+  },
+  {
     bookCode: 'SIBYLL',
     slug: 'en-terry-sibylline-oracles',
     nameAr: 'الترجمة الإنجليزية لأقوال العرافات',
@@ -1040,6 +1110,25 @@ function parseEarlyChristianFragmentHtml(content, source) {
   return [{ chapter: 1, verse: 1, text, sourceUrl: source.url }];
 }
 
+function parseNewAdventChapteredHtml(content, source) {
+  const headings = [...content.matchAll(/<h2\b[^>]*id=["']chapter(\d+)["'][^>]*>[\s\S]*?<\/h2>/gi)]
+    .map((match) => ({ chapter: Number(match[1]), index: match.index, start: match.index + match[0].length }))
+    .filter((heading) => heading.chapter >= 1 && heading.chapter <= source.maxChapter);
+  if (headings.length !== source.maxChapter) {
+    throw new Error(`اكتُشف ${headings.length} فصلاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  return headings.map((heading, index) => {
+    const end = headings[index + 1]?.index ?? content.length;
+    const section = content.slice(heading.start, end);
+    const text = [...section.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
+      .map((match) => stripHtml(match[1]))
+      .filter((paragraph) => paragraph.length > 8)
+      .join('\n\n');
+    if (text.length < 40) throw new Error(`لم يُكتشف نص كافٍ للفصل ${heading.chapter} في ${source.slug}`);
+    return { chapter: heading.chapter, verse: 1, text, sourceUrl: source.url };
+  });
+}
+
 function parseWikisourceNumberedParagraphs(content, source) {
   const start = content.indexOf('The Birth of Mary');
   const section = content.slice(start >= 0 ? start : 0);
@@ -1388,6 +1477,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'gospel-thomas-sayings-html') return parseThomasSayingsHtml(content, source);
   if (source.kind === 'earlychristian-gospel-mary-html') return parseEarlyChristianGospelMaryHtml(content, source);
   if (source.kind === 'earlychristian-fragment-html') return parseEarlyChristianFragmentHtml(content, source);
+  if (source.kind === 'new-advent-chaptered-html') return parseNewAdventChapteredHtml(content, source);
   if (source.kind === 'wikisource-numbered-paragraphs') return parseWikisourceNumberedParagraphs(content, source);
   if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
   if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
