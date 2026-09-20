@@ -436,6 +436,51 @@ const SOURCES = [
     notes: 'ترجمة توماس أو. لامبدين لأقوال إنجيل توما المحفوظة في مخطوط نجع حمادي؛ تعرض في سجل واحد و١١٤ قولاً مرقماً، مع ترك مكان للغة القبطية والترجمة العربية والمقارنة مع الشواهد اليونانية.'
   },
   {
+    bookCode: 'GMA',
+    slug: 'en-gnostic-society-gospel-mary',
+    nameAr: 'الترجمة الإنجليزية لإنجيل مريم',
+    nameEn: 'Gnostic Society English Gospel of Mary',
+    abbreviation: 'GMA-EN',
+    url: 'https://www.earlychristianwritings.com/text/gospelmary.html',
+    kind: 'earlychristian-gospel-mary-html',
+    maxChapter: 9,
+    chapterLabels: [4, 5, 8, 9],
+    language: 'en',
+    originalLanguage: 'القبطية واليونانية',
+    sourceType: 'web-edition',
+    notes: 'ترجمة إنجليزية للشاهد القبطي المجزأ؛ الإصحاحات ١–٣ مفقودة، والمتاح في المصدر هو ٤ و٥ و٨ و٩، لذلك يحفظ الموقع الفجوات كما هي ولا يعرضها كنص كامل.'
+  },
+  {
+    bookCode: 'GPE',
+    slug: 'en-mr-james-gospel-peter',
+    nameAr: 'الترجمة الإنجليزية لإنجيل بطرس',
+    nameEn: 'M. R. James English Gospel of Peter',
+    abbreviation: 'GPE-EN',
+    url: 'https://www.earlychristianwritings.com/text/gospelpeter-mrjames.html',
+    kind: 'earlychristian-fragment-html',
+    startMarker: 'GOSPEL OF PETER',
+    maxChapter: 1,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'web-edition',
+    notes: 'ترجمة م. ر. جيمس للشاهد اليوناني المجزأ من إنجيل بطرس؛ يحفظه الموقع في سجل واحد لأن المصدر لا يقدم تقسيماً مستقراً إلى إصحاحات وأعداد، مع وسمه نصاً مجزأً.'
+  },
+  {
+    bookCode: 'GNIC',
+    slug: 'en-mr-james-gospel-nicodemus',
+    nameAr: 'الترجمة الإنجليزية لإنجيل نيقوديموس',
+    nameEn: 'M. R. James English Gospel of Nicodemus',
+    abbreviation: 'GNIC-EN',
+    url: 'https://earlychristianwritings.com/text/gospelnicodemus.html',
+    kind: 'earlychristian-fragment-html',
+    startMarker: 'THE GOSPEL OF NICODEMUS, OR ACTS OF PILATE',
+    maxChapter: 1,
+    language: 'en',
+    originalLanguage: 'اليونانية واللاتينية مع صيغ موازية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة م. ر. جيمس التاريخية لنص إنجيل نيقوديموس/أعمال بيلاطس؛ المصدر نفسه يصف اختلاف الصيغ اليونانية واللاتينية والقبطية والسريانية والأرمنية، لذلك يحفظ هذا السجل الشاهد المنشور فقط ولا يدمج الصيغ.'
+  },
+  {
     bookCode: 'SIBYLL',
     slug: 'en-terry-sibylline-oracles',
     nameAr: 'الترجمة الإنجليزية لأقوال العرافات',
@@ -965,6 +1010,36 @@ function parseThomasSayingsHtml(content, source) {
   return rows;
 }
 
+function parseEarlyChristianGospelMaryHtml(content, source) {
+  const headings = [...content.matchAll(/<h4\b[^>]*>[\s\S]*?Chapter\s+(\d+)\s*:?[\s\S]*?<\/h4>/gi)]
+    .map((match) => ({ chapter: Number(match[1]), index: match.index, start: match.index + match[0].length }))
+    .filter((heading) => source.chapterLabels.includes(heading.chapter));
+  if (headings.length !== source.chapterLabels.length) {
+    throw new Error(`اكتُشفت ${headings.length} أقسام فقط في ${source.slug}، والمتوقع ${source.chapterLabels.length}`);
+  }
+  const chapters = [];
+  for (const [index, heading] of headings.entries()) {
+    const end = headings[index + 1]?.index ?? content.length;
+    const section = content.slice(heading.start, end);
+    for (const match of section.matchAll(/<p\b[^>]*>\s*(\d+)\)\s*([\s\S]*?)<\/p>/gi)) {
+      const text = stripHtml(match[2]);
+      if (text.length > 8) chapters.push({ chapter: heading.chapter, verse: Number(match[1]), text, sourceUrl: source.url });
+    }
+    if (!chapters.some((row) => row.chapter === heading.chapter)) {
+      throw new Error(`لم تُكتشف وحدات القسم ${heading.chapter} في ${source.slug}`);
+    }
+  }
+  return chapters;
+}
+
+function parseEarlyChristianFragmentHtml(content, source) {
+  const start = content.toUpperCase().indexOf(source.startMarker.toUpperCase());
+  if (start < 0) throw new Error(`لم يُعثر على بداية الشاهد في ${source.slug}`);
+  const text = stripHtml(content.slice(start));
+  if (text.length < 500) throw new Error(`لم يُكتشف نص كافٍ في ${source.slug}`);
+  return [{ chapter: 1, verse: 1, text, sourceUrl: source.url }];
+}
+
 function parseWikisourceNumberedParagraphs(content, source) {
   const start = content.indexOf('The Birth of Mary');
   const section = content.slice(start >= 0 ? start : 0);
@@ -1311,6 +1386,8 @@ async function parseChapters(content, source) {
   if (source.kind === 'chaptered-paragraph-html') return parseChapteredParagraphHtml(content, source);
   if (source.kind === 'wikisource-roman-chapter-html') return parseWikisourceRomanChapterHtml(content, source);
   if (source.kind === 'gospel-thomas-sayings-html') return parseThomasSayingsHtml(content, source);
+  if (source.kind === 'earlychristian-gospel-mary-html') return parseEarlyChristianGospelMaryHtml(content, source);
+  if (source.kind === 'earlychristian-fragment-html') return parseEarlyChristianFragmentHtml(content, source);
   if (source.kind === 'wikisource-numbered-paragraphs') return parseWikisourceNumberedParagraphs(content, source);
   if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
   if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
