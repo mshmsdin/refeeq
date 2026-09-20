@@ -41,6 +41,16 @@ const SOURCES = [
     url: 'https://ebible.org/Scriptures/eng-web_vpl.zip',
     filename: 'eng-web_vpl.zip',
     notes: 'ترجمة إنجليزية عامة؛ تستخدم أيضاً لاستكمال الأعمال التي لا يتوفر لها عربي، ومنها عزرا الثاني عند وجوده في المصدر.'
+  },
+  {
+    slug: 'la-vulgate',
+    name_ar: 'الفولجاتا اللاتينية الكليمنتية',
+    name_en: 'Clementine Vulgate 1598',
+    abbreviation: 'VUL-LA',
+    language: 'la',
+    url: 'https://ebible.org/Scriptures/latVUC_vpl.zip',
+    filename: 'latVUC_vpl.zip',
+    notes: 'النص اللاتيني للفولجاتا الكليمنتية المنشورة سنة 1598 من مصدر البيبل، يحفظ كتقليد نصي موازٍ ولا يستبدل الترجمات العربية أو الإنجليزية.'
   }
 ];
 
@@ -144,7 +154,7 @@ async function run() {
   const insertTranslation = db.prepare(`
     INSERT INTO bible_translations
       (slug, name_ar, name_en, abbreviation, language, source_url, source_type, source_notes, site_scope, is_active, display_order)
-    VALUES (?, ?, ?, ?, 'en', ?, 'vpl', ?, 'bible', 1, ?)
+    VALUES (?, ?, ?, ?, ?, ?, 'vpl', ?, 'bible', 1, ?)
     ON CONFLICT(slug) DO UPDATE SET
       name_ar=excluded.name_ar, name_en=excluded.name_en, abbreviation=excluded.abbreviation,
       source_url=excluded.source_url, source_notes=excluded.source_notes, site_scope='bible', is_active=1
@@ -160,7 +170,7 @@ async function run() {
 
   for (const [index, source] of SOURCES.entries()) {
     const translationId = insertTranslation.run(
-      source.slug, source.name_ar, source.name_en, source.abbreviation,
+      source.slug, source.name_ar, source.name_en, source.abbreviation, source.language || 'en',
       source.url, source.notes, 20 + index
     ).lastInsertRowid || db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
     const id = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id || translationId;
