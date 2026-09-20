@@ -519,7 +519,15 @@ export default function App() {
       <div className="min-h-screen flex flex-col bg-[#f6f1e7] dark:bg-[#0b1120]">
         <header className="sticky top-0 z-30 app-header shadow-sm">
           <div className="max-w-[1440px] mx-auto px-4 py-3 flex items-center justify-between gap-3" dir="rtl">
-            <h1 className="text-base sm:text-lg font-black text-[var(--text-primary)]">البيبل <span className="text-xs opacity-60">Bible</span></h1>
+            <a
+              href={buildBibleUrl()}
+              className="inline-flex items-center gap-1 rounded-xl px-2 py-1 text-base sm:text-lg font-black text-[var(--text-primary)] transition-colors hover:text-amber-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+              aria-label="العودة إلى واجهة البيبل"
+              title="العودة إلى واجهة البيبل"
+            >
+              <BookOpen className="h-4 w-4 text-amber-600" />
+              <span>البيبل</span> <span className="text-xs opacity-60">Bible</span>
+            </a>
             <button
               onClick={toggleTheme}
               className="p-2 rounded-xl bg-[var(--bg-muted)] text-[var(--text-secondary)] hover:text-amber-500 transition-colors text-xs"

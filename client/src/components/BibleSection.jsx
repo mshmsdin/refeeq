@@ -10,7 +10,7 @@ import {
   BookMarked, CheckSquare, Square, Info, Award, Scroll, Bookmark,
   CheckCircle2, XCircle, Landmark, FileText
 } from 'lucide-react';
-import { pushBibleUrl } from '../utils/urlRoutes';
+import { parseCurrentRoute, pushBibleUrl } from '../utils/urlRoutes';
 import {
   useTranslations, useCollections, useBooks, useChapter, useVerse, useBibleSearch
 } from '../utils/useBible';
@@ -1802,6 +1802,26 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
   const [currentCollection, setCurrentCollection] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
+  // Keep the reader state synchronized with the browser Back/Forward buttons.
+  useEffect(() => {
+    const handlePopState = () => {
+      const route = parseCurrentRoute();
+      const nextBook = route.bibleBook || null;
+      const nextChapter = route.bibleChapter || null;
+      const nextVerse = route.bibleVerse || null;
+      setCurrentBook(nextBook);
+      setCurrentChapter(nextChapter);
+      setCurrentCollection(null);
+      setModalVerse(nextVerse || 1);
+      setIsModalOpen(Boolean(nextBook && nextChapter && nextVerse));
+      setView(nextBook && nextChapter ? 'chapter' : nextBook ? 'book' : 'landing');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   // Initial modal open if verse specified in initial URL
   useEffect(() => {
     if (initialVerse && initialBook && initialChapter) {
@@ -1970,6 +1990,8 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
               setView('landing');
             }}
             className="flex items-center gap-1.5 text-xs sm:text-sm font-black text-[#8d6e47] dark:text-[#c2a578] hover:text-[#5c4127] transition-colors shrink-0"
+            aria-label="العودة إلى واجهة البيبل"
+            title="العودة إلى واجهة البيبل"
           >
             <BookOpen className="w-4 h-4" />
             <span>البيبل</span>
