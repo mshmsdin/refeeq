@@ -451,6 +451,20 @@ const SOURCES = [
     notes: 'ترجمة إنجليزية للشاهد القبطي المجزأ؛ الإصحاحات ١–٣ مفقودة، والمتاح في المصدر هو ٤ و٥ و٨ و٩، لذلك يحفظ الموقع الفجوات كما هي ولا يعرضها كنص كامل.'
   },
   {
+    bookCode: 'GJUD',
+    slug: 'en-mattison-gospel-judas',
+    nameAr: 'الترجمة الإنجليزية لإنجيل يهوذا',
+    nameEn: 'Mark M. Mattison Public Domain English Gospel of Judas',
+    abbreviation: 'GJUD-EN',
+    url: 'https://www.gospels.net/judas',
+    kind: 'gospels-net-paragraph-html',
+    maxUnits: 71,
+    language: 'en',
+    originalLanguage: 'القبطية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة مارك م. ماتيسون المعلنة ملكيتها العامة، مبنية على النص القبطي لمخطوط كودكس تشاكوس 3. لا يملك المصدر تقسيماً ثابتاً إلى إصحاحات، لذلك تحفظ الفقرات والعناوين في إصحاح واحد، مع إبقاء الفجوات والإضافات التحريرية كما في المصدر.'
+  },
+  {
     bookCode: 'GPE',
     slug: 'en-mr-james-gospel-peter',
     nameAr: 'الترجمة الإنجليزية لإنجيل بطرس',
@@ -1113,6 +1127,19 @@ function parseEarlyChristianFragmentHtml(content, source) {
   return [{ chapter: 1, verse: 1, text, sourceUrl: source.url }];
 }
 
+function parseGospelsNetParagraphHtml(content, source) {
+  const start = content.indexOf('<strong>Introduction</strong>');
+  const end = content.indexOf('<strong>Notes on Translation</strong>', start);
+  if (start < 0 || end <= start) throw new Error(`لم يُعثر على نطاق النص في ${source.slug}`);
+  const rows = [...content.slice(start, end).matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
+    .map((match) => stripHtml(match[1]))
+    .filter((text) => text.length > 8 && !/^Introduction$/i.test(text) && !/^The Gospel of Judas$/i.test(text));
+  if (rows.length !== source.maxUnits) {
+    throw new Error(`اكتُشفت ${rows.length} وحدة فقط في ${source.slug}، والمتوقع ${source.maxUnits}`);
+  }
+  return rows.map((text, index) => ({ chapter: 1, verse: index + 1, text, sourceUrl: source.url }));
+}
+
 function parseNewAdventChapteredHtml(content, source) {
   const headings = [...content.matchAll(/<h[1-6]\b[^>]*?(?:id=["']chapter(\d+)["'])?[^>]*>\s*Chapter\s+(\d+)\b[\s\S]*?<\/h[1-6]>/gi)]
     .map((match) => ({ chapter: Number(match[1] || match[2]), index: match.index, start: match.index + match[0].length }))
@@ -1480,6 +1507,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'gospel-thomas-sayings-html') return parseThomasSayingsHtml(content, source);
   if (source.kind === 'earlychristian-gospel-mary-html') return parseEarlyChristianGospelMaryHtml(content, source);
   if (source.kind === 'earlychristian-fragment-html') return parseEarlyChristianFragmentHtml(content, source);
+  if (source.kind === 'gospels-net-paragraph-html') return parseGospelsNetParagraphHtml(content, source);
   if (source.kind === 'new-advent-chaptered-html') return parseNewAdventChapteredHtml(content, source);
   if (source.kind === 'wikisource-numbered-paragraphs') return parseWikisourceNumberedParagraphs(content, source);
   if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
