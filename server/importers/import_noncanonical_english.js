@@ -323,6 +323,20 @@ const SOURCES = [
     notes: 'ترجمة وليم ب. هننغ المنشورة سنة 1943 للنسخة المانوية المجزأة؛ تحفظ هنا كتقليد ماني مستقل عن شواهد قمران الآرامية، ولا تدعي أنها نص كامل أو إعادة بناء نهائية.'
   },
   {
+    bookCode: 'TSOL',
+    slug: 'en-wikisource-testament-solomon',
+    nameAr: 'الترجمة الإنجليزية لوصية سليمان',
+    nameEn: 'Wikisource English Testament of Solomon',
+    abbreviation: 'TSOL-EN',
+    url: 'https://en.wikisource.org/wiki/Testament_of_Solomon',
+    kind: 'testament-solomon-wikisource-html',
+    maxChapter: 1,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة إنجليزية قديمة منشورة في طبعة ويكي مصدر تعود إلى سنة 1898؛ تحفظ هنا في فصل واحد مع أعداد متتابعة من فقرات الصفحة، لأن تقسيمها المنشور لا يطابق تقسيماً حديثاً ثابتاً.'
+  },
+  {
     bookCode: 'SIBYLL',
     slug: 'en-terry-sibylline-oracles',
     nameAr: 'الترجمة الإنجليزية لأقوال العرافات',
@@ -764,6 +778,17 @@ function parseOtherGospelsJson(content, source) {
   return chapters;
 }
 
+function parseTestamentSolomonWikisource(content, source) {
+  const start = content.indexOf('Of the sage Solomon.');
+  const end = content.indexOf('mw-references-wrap', start);
+  const section = content.slice(start >= 0 ? start : 0, end > start ? end : content.length);
+  const paragraphs = [...section.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
+    .map((match) => stripHtml(match[1]))
+    .filter((text) => text.length > 8 && !/^Greek title/i.test(text));
+  if (!paragraphs.length) throw new Error(`لم تُكتشف فقرات النص في ${source.slug}`);
+  return paragraphs.map((text, index) => ({ chapter: 1, verse: index + 1, text, sourceUrl: source.url }));
+}
+
 function parseNewAdventVersionChapters(content, source) {
   const versionLabel = `Version ${source.version}`;
   const nextLabel = source.version === 1 ? 'Version 2' : 'About this page';
@@ -1092,6 +1117,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'apocryphon-ezekiel-fragments-html') return parseApocryphonEzekielFragments(content, source);
   if (source.kind === 'wikisource-rendered-collection') return parseRenderedWikisourceCollectionChapters(source);
   if (source.kind === 'other-gospels-json') return parseOtherGospelsJson(content, source);
+  if (source.kind === 'testament-solomon-wikisource-html') return parseTestamentSolomonWikisource(content, source);
   if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
   if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
