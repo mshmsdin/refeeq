@@ -223,6 +223,36 @@ const SOURCES = [
     notes: 'طبعة ويب تعرض ترجمتين إنجليزيتين مجهولتي المترجم؛ أُدخل العمود الأول وحده في ٣٢ إصحاحاً و٣٠٢ وحدة، مع إبقاء النص منفصلاً عن أي ترجمة عربية لاحقة.'
   },
   {
+    bookCode: 'AABR',
+    slug: 'en-craigie-testament-abraham-version-1',
+    nameAr: 'الترجمة الإنجليزية لوصية إبراهيم، النسخة الأولى',
+    nameEn: 'W. A. Craigie English Testament of Abraham, Version 1',
+    abbreviation: 'AABR-V1-EN',
+    url: 'https://www.newadvent.org/fathers/1007.htm',
+    kind: 'new-advent-version-html',
+    version: 1,
+    maxChapter: 20,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة دبليو. أ. كريغي المنشورة في آباء ما قبل نيقية، وتعرض النسخة الأولى من وصية إبراهيم في ٢٠ مقطعاً مرقماً؛ يحفظها المستورد مستقلة عن النسخة الثانية.'
+  },
+  {
+    bookCode: 'AABR',
+    slug: 'en-craigie-testament-abraham-version-2',
+    nameAr: 'الترجمة الإنجليزية لوصية إبراهيم، النسخة الثانية',
+    nameEn: 'W. A. Craigie English Testament of Abraham, Version 2',
+    abbreviation: 'AABR-V2-EN',
+    url: 'https://www.newadvent.org/fathers/1007.htm',
+    kind: 'new-advent-version-html',
+    version: 2,
+    maxChapter: 15,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة دبليو. أ. كريغي المنشورة في آباء ما قبل نيقية، وتعرض النسخة الثانية من وصية إبراهيم في ١٤ مقطعاً مرقماً؛ تحفظ منفصلة لأن النسختين تختلفان في الطول والترتيب.'
+  },
+  {
     bookCode: 'ENO',
     slug: 'gez-dillmann-enoch',
     nameAr: 'النص الجعزي لأخنوخ الأول',
@@ -481,6 +511,28 @@ function parsePseudepigraphaTwoColumnChapters(content, source) {
     throw new Error(`اكتُشف ${chaptersSeen.size} إصحاحاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
   }
   return chapters;
+}
+
+function parseNewAdventVersionChapters(content, source) {
+  const versionLabel = `Version ${source.version}`;
+  const nextLabel = source.version === 1 ? 'Version 2' : 'About this page';
+  const section = content.match(new RegExp(`<h[1-6][^>]*>\\s*${versionLabel}\\s*<\\/h[1-6]>([\\s\\S]*?)<h[1-6][^>]*>\\s*${nextLabel}\\s*<\\/h[1-6]>`, 'i'))?.[1];
+  if (!section) throw new Error(`لم يُعثر على ${versionLabel} في ${source.slug}`);
+  const rows = [...section.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
+    .map((match) => stripHtml(match[1]))
+    .map((text) => text.match(/^(\d+)\.\s+([\s\S]+)$/))
+    .filter(Boolean)
+    .map((match, index) => ({
+      chapter: index + 1,
+      verse: 1,
+      text: match[2],
+      sourceUrl: source.url
+    }))
+    .filter((row) => row.text.length > 10);
+  if (rows.length !== source.maxChapter) {
+    throw new Error(`اكتُشفت ${rows.length} مقاطع فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  return rows;
 }
 
 async function parseEnoch3Chapters(source) {
@@ -751,6 +803,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'pseudepigrapha-chapter-html') return parsePseudepigraphaChapterHtml(content, source);
   if (source.kind === 'enoch3-collection') return parseEnoch3Chapters(source);
   if (source.kind === 'pseudepigrapha-two-column-html') return parsePseudepigraphaTwoColumnChapters(content, source);
+  if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
   if (source.kind === 'ocp-xml') return parseOcpChapters(content, source);
   const start = content.indexOf(source.anchor);
