@@ -982,7 +982,7 @@ function parseOdesSolomonWikisource(content, source) {
   const chapters = [];
   const sections = content.split(/\{\{header\s*/i).slice(1);
   for (const section of sections) {
-    const chapterMatch = section.match(/section\s*=\s*Ode\s+(\d+)/i) || section.match(/title=[^\n]*\bOde\s+(\d+)/i);
+    const chapterMatch = section.match(/title=[^\n]*\bOde\s+(\d+)/i) || section.match(/section\s*=\s*Ode\s+(\d+)/i);
     const chapter = Number(chapterMatch?.[1]);
     if (!chapter || chapter > source.maxChapter) continue;
     let body = section;
