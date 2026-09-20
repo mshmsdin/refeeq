@@ -309,6 +309,35 @@ const SOURCES = [
     notes: 'تحرير آر. هـ. تشارلز المنشور سنة 1913؛ الرسالة طويلة وغير مقسمة إلى إصحاحات ثابتة في المصدر، لذلك تحفظ هنا كوحدة واحدة، مع إمكانية إعادة تقسيم الفقرات ومقارنتها لاحقاً.'
   },
   {
+    bookCode: 'SIBYLL',
+    slug: 'en-terry-sibylline-oracles',
+    nameAr: 'الترجمة الإنجليزية لأقوال العرافات',
+    nameEn: 'Milton Spenser Terry English Sibylline Oracles',
+    abbreviation: 'SIBYLL-EN',
+    url: 'https://en.wikisource.org/wiki/The_Sibylline_Oracles_(Terry,_2nd_edition)',
+    kind: 'wikisource-rendered-collection',
+    maxChapter: 12,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة ميلتون سبنسر تيري المنشورة سنة 1899 في ويكي مصدر؛ تحفظ الكتب المتاحة 1–8 و11–14 كسجلات مستقلة، لأن الكتابين 9 و10 غير موجودين في هذه الطبعة المنشورة هناك.' ,
+    pages: [1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 14]
+  },
+  {
+    bookCode: 'APOEZ',
+    slug: 'en-greekdoc-apocryphon-ezekiel-fragments',
+    nameAr: 'الشواهد الإنجليزية لرؤيا حزقيال',
+    nameEn: 'English Apocryphon of Ezekiel Fragments',
+    abbreviation: 'APOEZ-EN',
+    url: 'https://greekdoc.com/DOCUMENTS/pseudepigrapha/ap-ezekiel.html',
+    kind: 'apocryphon-ezekiel-fragments-html',
+    maxChapter: 5,
+    language: 'en',
+    originalLanguage: 'اليونانية واللاتينية مع أصل آرامي محتمل',
+    sourceType: 'fragmentary-web-edition',
+    notes: 'خمسة شواهد إنجليزية مترجمة من مقتطفات يونانية ولاتينية محفوظة في اقتباسات الآباء؛ لا يمثل النص الكامل المفقود، وتبقى مواضع الشواهد وسياقها النقدي بحاجة إلى مقارنة مستقلة.'
+  },
+  {
     bookCode: 'ENO',
     slug: 'gez-dillmann-enoch',
     nameAr: 'النص الجعزي لأخنوخ الأول',
@@ -651,6 +680,49 @@ function parsePseudepigraphaSingleHtml(content, source) {
   return [{ chapter: 1, verse: 1, text, sourceUrl: source.url }];
 }
 
+function parseRenderedWikisourceCollectionBook(content, source, chapter, page, pageUrl) {
+  const lines = [...content.matchAll(/<span\b[^>]*class="[^"]*ws-poem-line[^"]*"[^>]*>([\s\S]*?)(?=<span\b[^>]*class="[^"]*ws-poem-break|<span\b[^>]*class="[^"]*ws-poem-line|<\/div>)/gi)]
+    .map((match) => stripHtml(match[1]))
+    .filter((text) => text.length > 1);
+  if (!lines.length) throw new Error(`لم تُكتشف أسطر الكتاب ${page} في ${source.slug}`);
+  return { chapter, verse: 1, text: lines.join(' '), sourceUrl: pageUrl };
+}
+
+async function parseRenderedWikisourceCollectionChapters(source) {
+  const chapters = [];
+  for (const [index, book] of source.pages.entries()) {
+    const page = `The Sibylline Oracles (Terry, 2nd edition)/Book ${book}`;
+    const pageUrl = `https://en.wikisource.org/wiki/${page.replaceAll(' ', '_')}`;
+    const content = await fetchText(pageUrl);
+    chapters.push(parseRenderedWikisourceCollectionBook(content, source, index + 1, `الكتاب ${book}`, pageUrl));
+  }
+  return chapters;
+}
+
+function parseApocryphonEzekielFragments(content, source) {
+  const headings = [...content.matchAll(/Fragment\s+(1|Two|Three|Four|Five):/gi)].map((match) => ({
+    label: match[1],
+    index: match.index
+  }));
+  if (headings.length !== source.maxChapter) {
+    throw new Error(`اكتُشفت ${headings.length} شواهد فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  const chapters = [];
+  for (const [index, heading] of headings.entries()) {
+    const end = headings[index + 1]?.index ?? content.length;
+    const section = content.slice(heading.index, end);
+    let verse = 0;
+    for (const row of section.matchAll(/<tr\b[^>]*>\s*<td\b[^>]*>([\s\S]*?)<\/td>\s*<td\b[^>]*>([\s\S]*?)<\/td>\s*<\/tr>/gi)) {
+      const text = stripHtml(row[2]);
+      if (text.length <= 8) continue;
+      verse += 1;
+      chapters.push({ chapter: index + 1, verse, text, sourceUrl: source.url });
+    }
+    if (!verse) throw new Error(`لم تُكتشف وحدات الشاهد ${index + 1} في ${source.slug}`);
+  }
+  return chapters;
+}
+
 function parseNewAdventVersionChapters(content, source) {
   const versionLabel = `Version ${source.version}`;
   const nextLabel = source.version === 1 ? 'Version 2' : 'About this page';
@@ -976,6 +1048,8 @@ async function parseChapters(content, source) {
   if (source.kind === 'firmament-joseph-aseneth-html') return parseFirmamentJosephAsenethChapters(content, source);
   if (source.kind === 'vita-adae-eve-html') return parseVitaAdaeEveChapters(content, source);
   if (source.kind === 'pseudepigrapha-single-html') return parsePseudepigraphaSingleHtml(content, source);
+  if (source.kind === 'apocryphon-ezekiel-fragments-html') return parseApocryphonEzekielFragments(content, source);
+  if (source.kind === 'wikisource-rendered-collection') return parseRenderedWikisourceCollectionChapters(source);
   if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
   if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
