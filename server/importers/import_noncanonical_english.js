@@ -250,7 +250,21 @@ const SOURCES = [
     language: 'en',
     originalLanguage: 'اليونانية',
     sourceType: 'public-domain-text',
-    notes: 'ترجمة دبليو. أ. كريغي المنشورة في آباء ما قبل نيقية، وتعرض النسخة الثانية من وصية إبراهيم في ١٤ مقطعاً مرقماً؛ تحفظ منفصلة لأن النسختين تختلفان في الطول والترتيب.'
+    notes: 'ترجمة دبليو. أ. كريغي المنشورة في آباء ما قبل نيقية، وتعرض النسخة الثانية من وصية إبراهيم في ١٥ مقطعاً مرقماً؛ تحفظ منفصلة لأن النسختين تختلفان في الطول والترتيب.'
+  },
+  {
+    bookCode: 'TJOB',
+    slug: 'en-wesley-testament-job',
+    nameAr: 'الترجمة الإنجليزية لوصية أيوب',
+    nameEn: 'M. R. James English Testament of Job',
+    abbreviation: 'TJOB-EN',
+    url: 'https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/',
+    kind: 'wesley-testament-html',
+    maxChapter: 12,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'web-edition',
+    notes: 'ترجمة م. ر. جيمس المنشورة سنة 1897، في ١٢ إصحاحاً؛ حُفظت الوحدات المرقمة بترتيب ظهورها لأن المصدر يكرر بعض أرقام الفقرات ويحتوي أحياناً على ترقيم غير منتظم.'
   },
   {
     bookCode: 'ENO',
@@ -535,6 +549,37 @@ function parseNewAdventVersionChapters(content, source) {
   return rows;
 }
 
+function parseWesleyTestamentChapters(content, source) {
+  const headings = [...content.matchAll(/Chapter\s+(\d+)/gi)].map((match) => ({
+    chapter: Number(match[1]),
+    index: match.index,
+    start: match.index + match[0].length,
+  }));
+  if (headings.length !== source.maxChapter) {
+    throw new Error(`اكتُشف ${headings.length} إصحاحاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  const chapters = [];
+  for (const [index, heading] of headings.entries()) {
+    const end = headings[index + 1]?.index ?? content.length;
+    const section = content.slice(heading.start, end);
+    let verse = 0;
+    for (const paragraph of section.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)) {
+      const text = stripHtml(paragraph[1]);
+      const markers = [...text.matchAll(/(?:^|\s)(\d{1,3})[.]?\s+/g)];
+      for (const [markerIndex, marker] of markers.entries()) {
+        const start = marker.index + marker[0].length;
+        const nextStart = markers[markerIndex + 1]?.index;
+        const unit = text.slice(start, nextStart).trim();
+        if (unit.length <= 2) continue;
+        verse += 1;
+        chapters.push({ chapter: heading.chapter, verse, text: unit, sourceUrl: source.url });
+      }
+    }
+    if (!verse) throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+  }
+  return chapters;
+}
+
 async function parseEnoch3Chapters(source) {
   const chapters = [];
   for (const [index, label] of source.pages.entries()) {
@@ -804,6 +849,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'enoch3-collection') return parseEnoch3Chapters(source);
   if (source.kind === 'pseudepigrapha-two-column-html') return parsePseudepigraphaTwoColumnChapters(content, source);
   if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
+  if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
   if (source.kind === 'ocp-xml') return parseOcpChapters(content, source);
   const start = content.indexOf(source.anchor);
