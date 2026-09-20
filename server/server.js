@@ -21,6 +21,7 @@ import { pipeline } from 'stream/promises';
 import { Readable } from 'stream';
 import { extractDistinctKeywords, normalizeArabicText } from './utils/arabic_nlp.js';
 import { resolveImagePath } from './utils/path_resolver.js';
+import { getBibleSeoContext } from './utils/bible_seo.js';
 
 
 
@@ -41,6 +42,73 @@ const APP_BASE_PATH = (() => {
 })();
 const BIBLE_ONLY = process.env.BIBLE_ONLY === 'true';
 const PUBLIC_BASE_URL = (process.env.PUBLIC_BASE_URL || (BIBLE_ONLY ? 'https://wiki.din.hk/bible/' : 'https://din.hk/rafeeq/')).replace(/\/+$/, '/');
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function buildBibleStructuredData(seo) {
+  const breadcrumb = [
+    { '@type': 'ListItem', position: 1, name: 'البيبل', item: PUBLIC_BASE_URL }
+  ];
+  if (seo.book) {
+    breadcrumb.push({ '@type': 'ListItem', position: 2, name: seo.book.name_ar, item: `${PUBLIC_BASE_URL}${seo.book.code}` });
+  }
+  if (seo.chapter) {
+    breadcrumb.push({ '@type': 'ListItem', position: 3, name: `الإصحاح ${seo.chapter}`, item: `${PUBLIC_BASE_URL}${seo.book.code}/${seo.chapter}` });
+  }
+  if (seo.verse) {
+    breadcrumb.push({ '@type': 'ListItem', position: 4, name: `العدد ${seo.verse}`, item: seo.url });
+  }
+
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: seo.title,
+      description: seo.description,
+      url: seo.url,
+      inLanguage: 'ar',
+      isPartOf: { '@type': 'WebSite', name: 'البيبل | Bible', url: PUBLIC_BASE_URL },
+      about: seo.book ? { '@type': 'Book', name: seo.book.name_ar, inLanguage: seo.book.metadata?.original_language || 'ar' } : undefined,
+      abstract: seo.summary
+    },
+    { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: breadcrumb }
+  ];
+}
+
+function renderBibleSeoHtml(indexHtml, seo) {
+  const structuredData = JSON.stringify(buildBibleStructuredData(seo)).replaceAll('<', '\\u003c');
+  const tags = `
+    <meta name="description" content="${escapeHtml(seo.description)}" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="${escapeHtml(seo.url)}" />
+    <link rel="alternate" type="text/plain" href="${escapeHtml(`${PUBLIC_BASE_URL}llms.txt`)}" title="تعريف البيبل للأنظمة الذكية" />
+    <meta property="og:type" content="${seo.kind === 'home' ? 'website' : 'article'}" />
+    <meta property="og:site_name" content="البيبل | Bible" />
+    <meta property="og:locale" content="ar_AR" />
+    <meta property="og:title" content="${escapeHtml(seo.title)}" />
+    <meta property="og:description" content="${escapeHtml(seo.description)}" />
+    <meta property="og:url" content="${escapeHtml(seo.url)}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="${escapeHtml(seo.title)}" />
+    <meta name="twitter:description" content="${escapeHtml(seo.description)}" />
+    <script type="application/ld+json">${structuredData}</script>
+  `;
+  return indexHtml
+    .replace(/<title>[\s\S]*?<\/title>/i, '')
+    .replace(/<meta name="description"[^>]*>\s*/i, '')
+    .replace(/<meta name="robots"[^>]*>\s*/i, '')
+    .replace(/<link rel="canonical"[^>]*>\s*/i, '')
+    .replace(/<meta property="og:[^"]+"[^>]*>\s*/gi, '')
+    .replace(/<meta name="twitter:[^"]+"[^>]*>\s*/gi, '')
+    .replace('</head>', `${tags}\n    <title>${escapeHtml(seo.title)}</title>\n  </head>`);
+}
 
 // Enable proxy trust for Traefik / Cloudflare
 app.set('trust proxy', 1);
@@ -1860,7 +1928,18 @@ if (fs.existsSync(clientDistPath)) {
     const isApi = req.path.startsWith('/api') || (APP_BASE_PATH && req.path.startsWith(`${APP_BASE_PATH}/api`));
     const isHealth = req.path.startsWith('/health') || req.path.startsWith('/ready');
     if (!isApi && !isHealth) {
-      res.sendFile(path.join(clientDistPath, 'index.html'));
+      const indexPath = path.join(clientDistPath, 'index.html');
+      if (BIBLE_ONLY) {
+        try {
+          const seo = getBibleSeoContext({ pathname: req.path, publicBaseUrl: PUBLIC_BASE_URL, appBasePath: APP_BASE_PATH });
+          if (seo) {
+            return res.type('html').send(renderBibleSeoHtml(fs.readFileSync(indexPath, 'utf8'), seo));
+          }
+        } catch (seoError) {
+          console.warn('[Bible SEO] Falling back to static shell:', seoError.message);
+        }
+      }
+      res.sendFile(indexPath);
     }
   });
 }

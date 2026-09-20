@@ -65,6 +65,53 @@ function highlightText(text, query) {
   );
 }
 
+function upsertMeta(attribute, name, content) {
+  if (!content) return;
+  let node = document.head.querySelector(`meta[${attribute}="${name}"]`);
+  if (!node) {
+    node = document.createElement('meta');
+    node.setAttribute(attribute, name);
+    document.head.appendChild(node);
+  }
+  node.setAttribute('content', content);
+}
+
+function updateBibleSeo({ title, description, url, summary, bookTitle, chapter, verse }) {
+  document.title = title;
+  upsertMeta('name', 'description', description);
+  upsertMeta('property', 'og:title', title);
+  upsertMeta('property', 'og:description', description);
+  upsertMeta('property', 'og:url', url);
+  upsertMeta('name', 'twitter:title', title);
+  upsertMeta('name', 'twitter:description', description);
+
+  let canonical = document.head.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement('link');
+    canonical.setAttribute('rel', 'canonical');
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute('href', url);
+
+  const existing = document.getElementById('bible-client-structured-data');
+  const script = existing || document.createElement('script');
+  script.id = 'bible-client-structured-data';
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    description,
+    abstract: summary,
+    url,
+    inLanguage: 'ar',
+    isPartOf: { '@type': 'WebSite', name: 'البيبل | Bible', url: `${window.location.origin}${import.meta.env.BASE_URL}` },
+    about: bookTitle ? { '@type': 'Book', name: bookTitle } : undefined,
+    mainEntity: chapter ? { '@type': 'Chapter', name: `${bookTitle} — الإصحاح ${chapter}${verse ? `:${verse}` : ''}` } : undefined
+  });
+  if (!existing) document.head.appendChild(script);
+}
+
 // ─────────────────────────────────────────────────────────
 //  Church Recognition & Canon Info Box
 // ─────────────────────────────────────────────────────────
@@ -1896,12 +1943,25 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
     const bookTitle = currentBookObj ? currentBookObj.name_ar : currentBook;
 
     const titleSuffix = BIBLE_ONLY ? 'البيبل | Bible' : 'البيبل - رفيق المحاور';
-    document.title =
+    const pageTitle =
       isModalOpen && modalVerse
         ? `${bookTitle} ${currentChapter}:${modalVerse} - ${titleSuffix}`
         : view === 'chapter'
         ? `${bookTitle} ${currentChapter} - ${titleSuffix}`
         : titleSuffix;
+    const summary = currentBookObj?.metadata?.summary_ar || 'موسوعة نصية لتصفح البيبل، قراءة الشواهد، البحث، والمقارنة بين الترجمات والتقاليد النصية.';
+    const description = view === 'landing'
+      ? 'البيبل باللغة العربية: تصفح الأسفار والأصحاحات والأعداد، وابحث وقارن الترجمات مع توثيق المرجع.'
+      : `${bookTitle || 'البيبل'}${currentChapter ? ` — الإصحاح ${currentChapter}` : ''}: ${summary}`;
+    updateBibleSeo({
+      title: pageTitle,
+      description: description.slice(0, 165),
+      url: window.location.href,
+      summary,
+      bookTitle,
+      chapter: currentChapter,
+      verse: isModalOpen ? modalVerse : null
+    });
   }, [view, currentBook, currentChapter, isModalOpen, modalVerse, books]);
 
   // Auto-switch selected translations when navigating to a book if current selection is not available for that book
