@@ -281,6 +281,34 @@ const SOURCES = [
     notes: 'نص إنجليزي كامل في صفحة ويب واحدة من ٢٩ إصحاحاً و٣٥٨ وحدة مدخلة؛ المترجم أو الطبعة غير معلنين بوضوح في الصفحة، لذلك يسجل كشاهد ويب يحتاج إلى توثيق ومقارنة لاحقين، ولا يخلط مع الصيغة الأقصر المنسوبة إلى يوجين ماسون.'
   },
   {
+    bookCode: 'TADAM',
+    slug: 'en-charles-life-adam-eve',
+    nameAr: 'الترجمة الإنجليزية لحياة آدم وحواء',
+    nameEn: 'R. H. Charles English Life of Adam and Eve',
+    abbreviation: 'TADAM-EN',
+    url: 'https://onthewaytoithaca.wordpress.com/apocrypha-collection/vita-adae-et-evae-en/',
+    kind: 'vita-adae-eve-html',
+    maxChapter: 57,
+    language: 'en',
+    originalLanguage: 'اليونانية واللاتينية مع صيغ موازية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة آر. هـ. تشارلز للنص اللاتيني من طبعة 1913، في ٥٧ إصحاحاً؛ يسجلها الموقع مستقلة عن رؤيا موسى اليونانية والصيغ السلافية والأرمنية والقبطية التي تحتاج إلى سجلات مقارنة لاحقة.'
+  },
+  {
+    bookCode: 'ARIST',
+    slug: 'en-charles-letter-aristeas',
+    nameAr: 'الترجمة الإنجليزية لرسالة أريستاس',
+    nameEn: 'R. H. Charles English Letter of Aristeas',
+    abbreviation: 'ARIST-EN',
+    url: 'https://www.pseudepigrapha.com/pseudepigrapha/aristeas.htm',
+    kind: 'pseudepigrapha-single-html',
+    maxChapter: 1,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'تحرير آر. هـ. تشارلز المنشور سنة 1913؛ الرسالة طويلة وغير مقسمة إلى إصحاحات ثابتة في المصدر، لذلك تحفظ هنا كوحدة واحدة، مع إمكانية إعادة تقسيم الفقرات ومقارنتها لاحقاً.'
+  },
+  {
     bookCode: 'ENO',
     slug: 'gez-dillmann-enoch',
     nameAr: 'النص الجعزي لأخنوخ الأول',
@@ -590,6 +618,37 @@ function parseFirmamentJosephAsenethChapters(content, source) {
     }
   }
   return chapters;
+}
+
+function parseVitaAdaeEveChapters(content, source) {
+  const headings = [...content.matchAll(/en-vaee-(\d+)/gi)].map((match) => ({
+    chapter: Number(match[1]),
+    index: match.index
+  }));
+  if (headings.length !== source.maxChapter) {
+    throw new Error(`اكتُشف ${headings.length} إصحاحاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  const chapters = [];
+  for (const [index, heading] of headings.entries()) {
+    const end = headings[index + 1]?.index ?? content.length;
+    const section = content.slice(heading.index, end);
+    let verse = 0;
+    for (const match of section.matchAll(/<td\b[^>]*>\s*(\d+)\s*<\/td>\s*<td\b[^>]*>([\s\S]*?)<\/td>/gi)) {
+      const text = stripHtml(match[2]);
+      if (text.length <= 2) continue;
+      verse += 1;
+      chapters.push({ chapter: heading.chapter, verse, text, sourceUrl: source.url });
+    }
+    if (!verse) throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+  }
+  return chapters;
+}
+
+function parsePseudepigraphaSingleHtml(content, source) {
+  const body = content.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || content;
+  const text = stripHtml(body.replace(/^[\s\S]*?<\/b>/i, ''));
+  if (text.length < 1000) throw new Error(`لم يُكتشف نص كافٍ في ${source.slug}`);
+  return [{ chapter: 1, verse: 1, text, sourceUrl: source.url }];
 }
 
 function parseNewAdventVersionChapters(content, source) {
@@ -915,6 +974,8 @@ async function parseChapters(content, source) {
   if (source.kind === 'pseudepigrapha-two-column-html') return parsePseudepigraphaTwoColumnChapters(content, source);
   if (source.kind === 'pseudepigrapha-hdf-column-html') return parsePseudepigraphaHdfColumnChapters(content, source);
   if (source.kind === 'firmament-joseph-aseneth-html') return parseFirmamentJosephAsenethChapters(content, source);
+  if (source.kind === 'vita-adae-eve-html') return parseVitaAdaeEveChapters(content, source);
+  if (source.kind === 'pseudepigrapha-single-html') return parsePseudepigraphaSingleHtml(content, source);
   if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
   if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
