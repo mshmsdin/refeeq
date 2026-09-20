@@ -379,6 +379,63 @@ const SOURCES = [
     notes: 'ترجمة تشارلز هـ. هول المنشورة سنة 1885؛ تحفظ الفصول الإحدى والعشرين كما يقسمها المصدر، وتعرض بوصفها كتابة كنسية مبكرة لا سفراً قانونياً.'
   },
   {
+    bookCode: 'GTINF',
+    slug: 'en-walker-infant-thomas-greek-a',
+    nameAr: 'الترجمة الإنجليزية لإنجيل طفولة توما، الصيغة اليونانية الأولى',
+    nameEn: 'Alexander Walker English Infancy Gospel of Thomas, Greek A',
+    abbreviation: 'GTINF-GA-EN',
+    url: 'https://en.wikisource.org/wiki/The_Apocryphal_Gospels_and_other_documents_relating_to_the_History_of_Christ/The_Gospel_of_Thomas_(I.)',
+    kind: 'wikisource-roman-chapter-html',
+    maxChapter: 19,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة ألكسندر ووكر التاريخية للصيغة اليونانية الأولى، محفوظة في ١٩ إصحاحاً كما يقسمها ويكي مصدر، مع إبقائها شاهداً مستقلاً لا نصاً موحداً لكل صيغ إنجيل الطفولة.'
+  },
+  {
+    bookCode: 'GTINF',
+    slug: 'en-walker-infant-thomas-greek-b',
+    nameAr: 'الترجمة الإنجليزية لإنجيل طفولة توما، الصيغة اليونانية الثانية',
+    nameEn: 'Alexander Walker English Infancy Gospel of Thomas, Greek B',
+    abbreviation: 'GTINF-GB-EN',
+    url: 'https://en.wikisource.org/wiki/The_Apocryphal_Gospels_and_other_documents_relating_to_the_History_of_Christ/The_Gospel_of_Thomas_(II.)',
+    kind: 'wikisource-roman-chapter-html',
+    maxChapter: 11,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة ألكسندر ووكر التاريخية للصيغة اليونانية الثانية الأقصر، محفوظة في ١١ إصحاحاً، وتعرض منفصلة عن الصيغة الأطول لإظهار الفروق النصية.'
+  },
+  {
+    bookCode: 'GTINF',
+    slug: 'en-walker-infant-thomas-latin',
+    nameAr: 'الترجمة الإنجليزية لإنجيل طفولة توما، الصيغة اللاتينية',
+    nameEn: 'Alexander Walker English Infancy Gospel of Thomas, Latin',
+    abbreviation: 'GTINF-LA-EN',
+    url: 'https://en.wikisource.org/wiki/The_Apocryphal_Gospels_and_other_documents_relating_to_the_History_of_Christ/The_Gospel_of_Thomas_(III.)',
+    kind: 'wikisource-roman-chapter-html',
+    maxChapter: 15,
+    language: 'en',
+    originalLanguage: 'اللاتينية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة ألكسندر ووكر التاريخية للصيغة اللاتينية، محفوظة في ١٥ إصحاحاً، وتعرض منفصلة عن الشاهدين اليونانيين للمقارنة اللاحقة.'
+  },
+  {
+    bookCode: 'GTH',
+    slug: 'en-lambdin-gospel-thomas',
+    nameAr: 'الترجمة الإنجليزية لإنجيل توما',
+    nameEn: 'Thomas O. Lambdin English Gospel of Thomas',
+    abbreviation: 'GTH-EN',
+    url: 'https://www.earlychristianwritings.com/text/thomas-lambdin.html',
+    kind: 'gospel-thomas-sayings-html',
+    maxChapter: 1,
+    maxUnits: 114,
+    language: 'en',
+    originalLanguage: 'القبطية مع شواهد يونانية',
+    sourceType: 'web-edition',
+    notes: 'ترجمة توماس أو. لامبدين لأقوال إنجيل توما المحفوظة في مخطوط نجع حمادي؛ تعرض في سجل واحد و١١٤ قولاً مرقماً، مع ترك مكان للغة القبطية والترجمة العربية والمقارنة مع الشواهد اليونانية.'
+  },
+  {
     bookCode: 'SIBYLL',
     slug: 'en-terry-sibylline-oracles',
     nameAr: 'الترجمة الإنجليزية لأقوال العرافات',
@@ -875,6 +932,39 @@ function parseChapteredParagraphHtml(content, source) {
   return chapters;
 }
 
+function parseWikisourceRomanChapterHtml(content, source) {
+  const headings = [...content.matchAll(/<p\b[^>]*>\s*CHAPTER\s+([IVXLCDM]+)\.?\s*<\/p>/gi)]
+    .map((match) => ({ chapter: romanToNumber(match[1].toUpperCase()), index: match.index, start: match.index + match[0].length }))
+    .filter((heading) => heading.chapter >= 1 && heading.chapter <= source.maxChapter);
+  if (headings.length !== source.maxChapter) {
+    throw new Error(`اكتُشفت ${headings.length} إصحاحات فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  const chapters = [];
+  for (const [index, heading] of headings.entries()) {
+    const end = headings[index + 1]?.index ?? content.length;
+    const section = content.slice(heading.start, end);
+    let verse = 0;
+    for (const match of section.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)) {
+      const text = stripHtml(match[1]);
+      if (text.length <= 8 || /^CHAPTER\s+/i.test(text)) continue;
+      verse += 1;
+      chapters.push({ chapter: heading.chapter, verse, text, sourceUrl: source.url });
+    }
+    if (!verse) throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+  }
+  return chapters;
+}
+
+function parseThomasSayingsHtml(content, source) {
+  const rows = [...content.matchAll(/<p\b[^>]*>\s*\((\d+)\)\s*([\s\S]*?)<\/p>/gi)]
+    .map((match) => ({ chapter: 1, verse: Number(match[1]), text: stripHtml(match[2]), sourceUrl: source.url }))
+    .filter((row) => row.text.length > 8);
+  if (rows.length !== source.maxUnits) {
+    throw new Error(`اكتُشفت ${rows.length} أقوال فقط في ${source.slug}، والمتوقع ${source.maxUnits}`);
+  }
+  return rows;
+}
+
 function parseWikisourceNumberedParagraphs(content, source) {
   const start = content.indexOf('The Birth of Mary');
   const section = content.slice(start >= 0 ? start : 0);
@@ -1219,6 +1309,8 @@ async function parseChapters(content, source) {
   if (source.kind === 'testament-solomon-wikisource-html') return parseTestamentSolomonWikisource(content, source);
   if (source.kind === 'chaptered-html') return parseChapteredHtml(content, source);
   if (source.kind === 'chaptered-paragraph-html') return parseChapteredParagraphHtml(content, source);
+  if (source.kind === 'wikisource-roman-chapter-html') return parseWikisourceRomanChapterHtml(content, source);
+  if (source.kind === 'gospel-thomas-sayings-html') return parseThomasSayingsHtml(content, source);
   if (source.kind === 'wikisource-numbered-paragraphs') return parseWikisourceNumberedParagraphs(content, source);
   if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
   if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
