@@ -161,6 +161,20 @@ const SOURCES = [
     ]
   },
   {
+    bookCode: '2BAR',
+    slug: 'en-charles-2-baruch',
+    nameAr: 'الترجمة الإنجليزية لباروخ الثاني',
+    nameEn: 'R. H. Charles English 2 Baruch',
+    abbreviation: '2BAR-EN',
+    url: 'https://www.pseudepigrapha.com/pseudepigrapha/2Baruch.html',
+    kind: 'pseudepigrapha-html',
+    maxChapter: 85,
+    language: 'en',
+    originalLanguage: 'السريانية مع شواهد يونانية وآرامية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة آر. هـ. تشارلز المنشورة في مجموعة المنحولات والأبوكريفا سنة 1913، من نسخة منظمة تحفظ ترقيم الإصحاحات والفقرات كما يظهر في المصدر. لا توجد ترجمة عربية مدخلة في هذه المرحلة، وتُترك للمقارنة والترجمة اللاحقة.'
+  },
+  {
     bookCode: 'ENO',
     slug: 'gez-dillmann-enoch',
     nameAr: 'النص الجعزي لأخنوخ الأول',
@@ -333,6 +347,35 @@ async function parseWikisourceCollectionChapters(source) {
     const content = await fetchText(wikisourceApiUrl(page));
     chapters.push(...parseWikisourceCollectionPage(content, source, index + 1, page));
   }
+  return chapters;
+}
+
+function stripPseudepigraphaHtml(html) {
+  return cleanText(decodeHtml(html
+    .replace(/<font[^>]*>\s*finish\s*<\/font>[\s\S]*$/i, '')
+    .replace(/<br\s*\/?>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')));
+}
+
+function parsePseudepigraphaChapters(content, source) {
+  const chapterMatches = [...content.matchAll(/<a\s+id="C(\d+)"[^>]*>\s*<font[^>]*>\s*Chapter\s+\1\s*<\/font>\s*<\/a>/gi)];
+  if (!chapterMatches.length) throw new Error(`لم تُكتشف عناوين الإصحاحات في ${source.slug}`);
+
+  const chapters = [];
+  for (const [chapterIndex, chapterMatch] of chapterMatches.entries()) {
+    const chapter = Number(chapterMatch[1]);
+    const chapterEnd = chapterMatches[chapterIndex + 1]?.index ?? content.length;
+    const body = content.slice(chapterMatch.index, chapterEnd);
+    const versePattern = new RegExp(`<a\\s+id="C${chapter}\\.(\\d+)"[^>]*>\\s*<font[^>]*>[\\s\\S]*?<\\/font>\\s*<\\/a>`, 'gi');
+    const verseMatches = [...body.matchAll(versePattern)];
+    for (const [verseIndex, verseMatch] of verseMatches.entries()) {
+      const verse = Number(verseMatch[1]);
+      const verseEnd = verseMatches[verseIndex + 1]?.index ?? body.length;
+      const text = stripPseudepigraphaHtml(body.slice(verseMatch.index + verseMatch[0].length, verseEnd));
+      if (text.length > 10) chapters.push({ chapter, verse, text, sourceUrl: source.url });
+    }
+  }
+  if (!chapters.length) throw new Error(`لم تُكتشف فقرات في ${source.slug}`);
   return chapters;
 }
 
@@ -579,6 +622,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'wikisource-api') return parseWikisourceChapters(content, source);
   if (source.kind === 'wikisource-book-api') return parseWikisourceBookChapters(content, source);
   if (source.kind === 'wikisource-collection') return parseWikisourceCollectionChapters(source);
+  if (source.kind === 'pseudepigrapha-html') return parsePseudepigraphaChapters(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
   if (source.kind === 'ocp-xml') return parseOcpChapters(content, source);
   const start = content.indexOf(source.anchor);
