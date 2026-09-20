@@ -469,7 +469,7 @@ function parsePseudepigraphaTwoColumnChapters(content, source) {
     if (!verseMatch || chapter < 1) continue;
     const anchorEnd = cell.indexOf('</A>', verseMatch.index) + 4;
     const text = stripHtml(cell.slice(anchorEnd));
-    if (text.length > 10) chapters.push({
+    if (text.length > 2) chapters.push({
       chapter,
       verse: Number(verseMatch[1]),
       text,
