@@ -450,6 +450,35 @@ const SOURCES = [
     notes: 'ترجمة تشارلز هـ. هول المنشورة سنة 1885؛ تحفظ الفصول الإحدى والعشرين كما يقسمها المصدر، وتعرض بوصفها كتابة كنسية مبكرة لا سفراً قانونياً.'
   },
   {
+    bookCode: 'DIAT',
+    slug: 'en-hogg-diatessaron',
+    nameAr: 'الترجمة الإنجليزية لدِيَاتِسَرون تاتيان',
+    nameEn: 'Hope W. Hogg English Diatessaron of Tatian',
+    abbreviation: 'DIAT-EN',
+    url: 'https://en.wikisource.org/wiki/Ante-Nicene_Fathers/Volume_IX/The_Diatessaron_of_Tatian/The_Diatessaron/Section_{chapter}',
+    kind: 'diatessaron-wikisource',
+    maxChapter: 53,
+    language: 'en',
+    originalLanguage: 'السريانية أو اليونانية مع شاهد عربي لاحق',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة هوب و. هوغ المنشورة في مجموعة آباء ما قبل نيقية؛ الأصل التوفيقي الكامل مفقود، والنص المنشور ترجمة إنجليزية عن الشاهد العربي. تحفظ الأقسام الثلاثة والخمسين، وتقسم الوحدات بحسب العلامات الرقمية الظاهرة في المصدر.'
+  },
+  {
+    bookCode: 'ODSO',
+    slug: 'en-zinner-mattison-odes-solomon',
+    nameAr: 'الترجمة الإنجليزية لأوديات سليمان',
+    nameEn: 'Samuel Zinner and Mark M. Mattison English Odes of Solomon',
+    abbreviation: 'ODSO-EN',
+    url: 'https://en.wikisource.org/w/api.php?action=parse&page=User%3ANebulousquasar%2FOdes_of_Solomon&prop=wikitext&format=json&origin=*',
+    kind: 'odes-solomon-wikisource',
+    maxChapter: 42,
+    witness: 'syriac',
+    language: 'en',
+    originalLanguage: 'السريانية واليونانية والقبطية في شواهد مختلفة',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة نُهرة 2021 المنسوبة إلى صموئيل زِنر للمواد السريانية ومارك م. ماتيسون للمواد القبطية واليونانية، وهي معلنة الملكية العامة. يحفظ السجل ٤٢ أوداً ويختار القسم السرياني عند وجود صيغتين؛ تُترك الصيغة القبطية المقابلة لسجل مقارنة مستقل لاحقاً.'
+  },
+  {
     bookCode: 'GTINF',
     slug: 'en-walker-infant-thomas-greek-a',
     nameAr: 'الترجمة الإنجليزية لإنجيل طفولة توما، الصيغة اليونانية الأولى',
@@ -767,6 +796,19 @@ function romanToNumber(value) {
   return total;
 }
 
+function numberToRoman(value) {
+  const digits = [[1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'], [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'], [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+  let remaining = value;
+  let result = '';
+  for (const [number, symbol] of digits) {
+    while (remaining >= number) {
+      result += symbol;
+      remaining -= number;
+    }
+  }
+  return result;
+}
+
 async function fetchText(url) {
   for (let attempt = 0; attempt < 4; attempt += 1) {
     const response = await fetch(url, {
@@ -904,6 +946,57 @@ async function parseWikisourceCollectionChapters(source) {
     const content = await fetchText(wikisourceApiUrl(page));
     chapters.push(...parseWikisourceCollectionPage(content, source, index + 1, page));
   }
+  return chapters;
+}
+
+async function parseDiatessaronWikisource(source) {
+  const chapters = [];
+  for (let chapter = 1; chapter <= source.maxChapter; chapter += 1) {
+    const roman = numberToRoman(chapter);
+    const page = `Ante-Nicene Fathers/Volume IX/The Diatessaron of Tatian/The Diatessaron/Section_${roman}`;
+    const content = await fetchText(wikisourceApiUrl(page));
+    let payload;
+    try {
+      payload = JSON.parse(content);
+    } catch {
+      throw new Error(`استجابة ويكي مصدر ليست بصيغة JSON في ${source.slug}، القسم ${chapter}`);
+    }
+    const raw = payload?.parse?.wikitext?.['*'];
+    if (!raw) throw new Error(`لم يُعثر على نص القسم ${chapter} في ${source.slug}`);
+    const marker = `[Section ${roman}]`;
+    const sectionStart = raw.indexOf(marker);
+    const section = raw.slice(sectionStart >= 0 ? sectionStart + marker.length : 0);
+    const markers = [...section.matchAll(/(?:^|\s)\[(\d+)\](?=\s|<ref|$)/g)];
+    const rows = markers.map((match, index) => {
+      const end = markers[index + 1]?.index ?? section.length;
+      const text = stripWikisourceMarkup(section.slice(match.index + match[0].length, end).replace(/\[Arabic,\s*p\.\s*\d+\]/gi, ' '));
+      return { chapter, verse: Number(match[1]), text, sourceUrl: wikisourceApiUrl(page) };
+    }).filter((row) => row.text.length > 20);
+    if (!rows.length) throw new Error(`لم تُكتشف وحدات القسم ${chapter} في ${source.slug}`);
+    chapters.push(...rows);
+  }
+  return chapters;
+}
+
+function parseOdesSolomonWikisource(content, source) {
+  const chapters = [];
+  const sections = content.split(/\{\{header\s*/i).slice(1);
+  for (const section of sections) {
+    const chapter = Number(section.match(/section\s*=\s*Ode\s+(\d+)/i)?.[1]);
+    if (!chapter || chapter > source.maxChapter) continue;
+    let body = section;
+    const witnessHeading = source.witness === 'syriac' ? 'Syriac text' : 'Coptic text';
+    const witnessIndex = body.search(new RegExp(`==${witnessHeading}==`, 'i'));
+    if (witnessIndex >= 0) body = body.slice(witnessIndex + witnessHeading.length + 4);
+    else if (/==\s*(?:Coptic|Syriac) text\s*==/i.test(body)) body = body.slice(0, body.search(/==\s*(?:Coptic|Syriac) text\s*==/i));
+    const rows = [...body.matchAll(/\{\{verse\|(?:chapter=\d+\|)?verse=(\d+)\}\}\s*([\s\S]*?)(?=\n\s*:?\{\{verse\||\n\s*==|$)/gi)]
+      .map((match) => ({ chapter, verse: Number(match[1]), text: stripWikisourceMarkup(match[2].replace(/^:+\s*/gm, ' ')), sourceUrl: 'https://en.wikisource.org/wiki/User:Nebulousquasar/Odes_of_Solomon' }))
+      .filter((row) => row.text.length > 8);
+    if (!rows.length) throw new Error(`لم تُكتشف وحدات الأود ${chapter} في ${source.slug}`);
+    chapters.push(...rows);
+  }
+  const seen = new Set(chapters.map((row) => row.chapter));
+  if (seen.size !== source.maxChapter) throw new Error(`اكتُشفت ${seen.size} أود فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
   return chapters;
 }
 
@@ -1625,6 +1718,8 @@ async function parseChapters(content, source) {
   if (source.kind === 'wikisource-api') return parseWikisourceChapters(content, source);
   if (source.kind === 'wikisource-book-api') return parseWikisourceBookChapters(content, source);
   if (source.kind === 'wikisource-collection') return parseWikisourceCollectionChapters(source);
+  if (source.kind === 'diatessaron-wikisource') return parseDiatessaronWikisource(source);
+  if (source.kind === 'odes-solomon-wikisource') return parseOdesSolomonWikisource(content, source);
   if (source.kind === 'pseudepigrapha-html') return parsePseudepigraphaChapters(content, source);
   if (source.kind === 'pseudepigrapha-chapter-html') return parsePseudepigraphaChapterHtml(content, source);
   if (source.kind === 'enoch3-collection') return parseEnoch3Chapters(source);
@@ -1706,7 +1801,7 @@ async function run() {
       source.language, source.url, source.sourceType, source.notes, 40 + index
     );
     const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
-    const content = ['structured-html', 'sacredthings-html', 'ertale-chapter-html'].includes(source.kind)
+    const content = ['structured-html', 'sacredthings-html', 'ertale-chapter-html', 'diatessaron-wikisource'].includes(source.kind)
       ? null
       : await fetchText(source.url);
     const parsedChapters = await parseChapters(content, source);
