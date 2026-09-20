@@ -785,7 +785,7 @@ async function parseErtaleChapteredHtml(source) {
     const url = source.url.replace('{chapter}', String(chapter));
     const content = await fetchText(url);
     const body = content.match(/<div\s+class="verses"[^>]*>([\s\S]*?)<\/div>\s*<\/main>/i)?.[1] || content;
-    const units = [...body.matchAll(/<div\s+class="verse"[^>]*>\s*<span\s+class="verse-num"[^>]*>(\d+)<\/span>\s*<span\s+class="verse-text"[^>]*>([\s\S]*?)<\/span>\s*<\/div>/gi)]
+    const units = [...body.matchAll(/<div\s+class="verse"[^>]*>[\s\S]*?<span\s+class="verse-num"[^>]*>(\d+)<\/span>[\s\S]*?<span\s+class="verse-text"[^>]*>([\s\S]*?)<\/span>/gi)]
       .map((match) => ({ chapter, verse: Number(match[1]), text: stripHtml(match[2]), sourceUrl: url }))
       .filter((row) => row.text.length > 20);
     if (!units.length) throw new Error(`لم تُكتشف وحدات الإصحاح ${chapter} في ${source.slug}`);
