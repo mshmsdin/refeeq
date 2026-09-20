@@ -49,6 +49,20 @@ const SOURCES = [
     notes: 'ترجمة مارغريت دنلوب غيبسون من السريانية، طبعة 1903، من نسخة أرشيفية معلنة الملكية العامة.'
   },
   {
+    bookCode: 'DID-ETH',
+    slug: 'en-harden-ethiopic-didascalia',
+    nameAr: 'الترجمة الإنجليزية للدسقولية الإثيوبية',
+    nameEn: 'J. M. Harden English Ethiopic Didascalia',
+    abbreviation: 'DID-ETH-EN',
+    url: 'https://ertale.com/bible/ethiopiancanon/didascalia/{chapter}/',
+    kind: 'ertale-chapter-html',
+    maxChapter: 43,
+    language: 'en',
+    originalLanguage: 'الجعزية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة ج. م. هاردن المنشورة سنة 1920، من الجعزية، ومعلنة الملكية العامة في المصدر؛ يحفظ كل إصحاح كوحدة واحدة لأن النثر لا يقدم تقسيم أعداد أصلياً ثابتاً، مع وسمها تقليداً إثيوبياً منفصلاً عن الدسقولية السريانية.'
+  },
+  {
     bookCode: '1MCE',
     slug: 'en-wikisource-1-meqabyan',
     nameAr: 'الترجمة الإنجليزية للمكابيان الإثيوبي الأول',
@@ -761,6 +775,21 @@ async function parseStructuredHtmlChapters(source) {
       .filter((row) => row.text.length > 10);
     if (!verses.length) throw new Error(`لم تُكتشف أعداد الإصحاح ${chapter} في ${source.slug}`);
     chapters.push(...verses);
+  }
+  return chapters;
+}
+
+async function parseErtaleChapteredHtml(source) {
+  const chapters = [];
+  for (let chapter = 1; chapter <= source.maxChapter; chapter += 1) {
+    const url = source.url.replace('{chapter}', String(chapter));
+    const content = await fetchText(url);
+    const body = content.match(/<div\s+class="verses"[^>]*>([\s\S]*?)<\/div>\s*<\/main>/i)?.[1] || content;
+    const units = [...body.matchAll(/<div\s+class="verse"[^>]*>\s*<span\s+class="verse-num"[^>]*>(\d+)<\/span>\s*<span\s+class="verse-text"[^>]*>([\s\S]*?)<\/span>\s*<\/div>/gi)]
+      .map((match) => ({ chapter, verse: Number(match[1]), text: stripHtml(match[2]), sourceUrl: url }))
+      .filter((row) => row.text.length > 20);
+    if (!units.length) throw new Error(`لم تُكتشف وحدات الإصحاح ${chapter} في ${source.slug}`);
+    chapters.push(...units);
   }
   return chapters;
 }
@@ -1529,6 +1558,7 @@ function parseOcpChapters(xml, source) {
 
 async function parseChapters(content, source) {
   if (source.kind === 'structured-html') return parseStructuredHtmlChapters(source);
+  if (source.kind === 'ertale-chapter-html') return parseErtaleChapteredHtml(source);
   if (source.kind === 'sacredthings-html') return parseSacredThingsChapters(source);
   if (source.kind === 'tau-ethiopic-html') return parseTauEthiopicChapters(source);
   if (source.kind === 'wikisource-api') return parseWikisourceChapters(content, source);
