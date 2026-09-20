@@ -337,6 +337,34 @@ const SOURCES = [
     notes: 'ترجمة إنجليزية قديمة منشورة في طبعة ويكي مصدر تعود إلى سنة 1898؛ تحفظ هنا في فصل واحد مع أعداد متتابعة من فقرات الصفحة، لأن تقسيمها المنشور لا يطابق تقسيماً حديثاً ثابتاً.'
   },
   {
+    bookCode: 'DID',
+    slug: 'en-hoole-didache',
+    nameAr: 'الترجمة الإنجليزية للديداخي',
+    nameEn: 'Charles H. Hoole English Didache',
+    abbreviation: 'DID-EN',
+    url: 'https://earlychristianwritings.com/text/didache-hoole.html',
+    kind: 'chaptered-html',
+    maxChapter: 16,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة تشارلز هـ. هول المنشورة سنة 1894؛ تحفظ الفصول الستة عشر، وتعرض بوصفها كتابة كنسية مبكرة لا سفراً قانونياً.'
+  },
+  {
+    bookCode: 'PJA',
+    slug: 'en-roberts-donaldson-protevangelium-james',
+    nameAr: 'الترجمة الإنجليزية لإنجيل يعقوب التمهيدي',
+    nameEn: 'Roberts-Donaldson English Protevangelium of James',
+    abbreviation: 'PJA-EN',
+    url: 'https://en.wikisource.org/wiki/Protevangelion_of_James_(Roberts-Donaldson_translation)',
+    kind: 'wikisource-numbered-paragraphs',
+    maxChapter: 24,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة ألكسندر ووكر ضمن طبعة الآباء قبل نيقية؛ تحفظ المقاطع الأربعة والعشرين المرقمة في المصدر، مع وسمها كنص طفولة أبوكريفي.'
+  },
+  {
     bookCode: 'SIBYLL',
     slug: 'en-terry-sibylline-oracles',
     nameAr: 'الترجمة الإنجليزية لأقوال العرافات',
@@ -789,6 +817,41 @@ function parseTestamentSolomonWikisource(content, source) {
   return paragraphs.map((text, index) => ({ chapter: 1, verse: index + 1, text, sourceUrl: source.url }));
 }
 
+function parseChapteredHtml(content, source) {
+  const headings = [...content.matchAll(/<h[1-6][^>]*>\s*CHAPTER\s+(\d+)\s*<\/h[1-6]>/gi)]
+    .map((match) => ({ chapter: Number(match[1]), index: match.index, start: match.index + match[0].length }))
+    .filter((heading) => heading.chapter >= 1 && heading.chapter <= source.maxChapter);
+  if (headings.length !== source.maxChapter) {
+    throw new Error(`اكتُشفت ${headings.length} إصحاحات فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  const chapters = [];
+  for (const [index, heading] of headings.entries()) {
+    const end = headings[index + 1]?.index ?? content.length;
+    const section = content.slice(heading.start, end);
+    for (const match of section.matchAll(/<p\b[^>]*>\s*(\d+):(\d+)\s+([\s\S]*?)<\/p>/gi)) {
+      const text = stripHtml(match[3]);
+      if (text.length > 2) chapters.push({ chapter: heading.chapter, verse: Number(match[2]), text, sourceUrl: source.url });
+    }
+    if (!chapters.some((row) => row.chapter === heading.chapter)) {
+      throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+    }
+  }
+  return chapters;
+}
+
+function parseWikisourceNumberedParagraphs(content, source) {
+  const start = content.indexOf('The Birth of Mary');
+  const section = content.slice(start >= 0 ? start : 0);
+  const rows = [...section.matchAll(/<p\b[^>]*>\s*(?:&#160;|\s)*(\d+)\.(?:&#160;|\s)+([\s\S]*?)<\/p>/gi)]
+    .map((match) => ({ chapter: Number(match[1]), verse: 1, text: stripHtml(match[2]), sourceUrl: source.url }))
+    .filter((row) => row.chapter >= 1 && row.chapter <= source.maxChapter && row.text.length > 8);
+  const chapters = new Map(rows.map((row) => [row.chapter, row]));
+  if (chapters.size !== source.maxChapter) {
+    throw new Error(`اكتُشفت ${chapters.size} مقاطع فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  return [...chapters.values()].sort((a, b) => a.chapter - b.chapter);
+}
+
 function parseNewAdventVersionChapters(content, source) {
   const versionLabel = `Version ${source.version}`;
   const nextLabel = source.version === 1 ? 'Version 2' : 'About this page';
@@ -1118,6 +1181,8 @@ async function parseChapters(content, source) {
   if (source.kind === 'wikisource-rendered-collection') return parseRenderedWikisourceCollectionChapters(source);
   if (source.kind === 'other-gospels-json') return parseOtherGospelsJson(content, source);
   if (source.kind === 'testament-solomon-wikisource-html') return parseTestamentSolomonWikisource(content, source);
+  if (source.kind === 'chaptered-html') return parseChapteredHtml(content, source);
+  if (source.kind === 'wikisource-numbered-paragraphs') return parseWikisourceNumberedParagraphs(content, source);
   if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
   if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
