@@ -1111,8 +1111,8 @@ function parseEarlyChristianFragmentHtml(content, source) {
 }
 
 function parseNewAdventChapteredHtml(content, source) {
-  const headings = [...content.matchAll(/<h2\b[^>]*id=["']chapter(\d+)["'][^>]*>[\s\S]*?<\/h2>/gi)]
-    .map((match) => ({ chapter: Number(match[1]), index: match.index, start: match.index + match[0].length }))
+  const headings = [...content.matchAll(/<h[1-6]\b[^>]*?(?:id=["']chapter(\d+)["'])?[^>]*>\s*Chapter\s+(\d+)\b[\s\S]*?<\/h[1-6]>/gi)]
+    .map((match) => ({ chapter: Number(match[1] || match[2]), index: match.index, start: match.index + match[0].length }))
     .filter((heading) => heading.chapter >= 1 && heading.chapter <= source.maxChapter);
   if (headings.length !== source.maxChapter) {
     throw new Error(`اكتُشف ${headings.length} فصلاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
