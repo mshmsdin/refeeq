@@ -175,6 +175,20 @@ const SOURCES = [
     notes: 'ترجمة آر. هـ. تشارلز المنشورة في مجموعة المنحولات والأبوكريفا سنة 1913، من نسخة منظمة تحفظ ترقيم الإصحاحات والفقرات كما يظهر في المصدر. لا توجد ترجمة عربية مدخلة في هذه المرحلة، وتُترك للمقارنة والترجمة اللاحقة.'
   },
   {
+    bookCode: '3BAR',
+    slug: 'en-wesley-center-3-baruch',
+    nameAr: 'الترجمة الإنجليزية لباروخ الثالث',
+    nameEn: 'Wesley Center English 3 Baruch',
+    abbreviation: '3BAR-EN',
+    url: 'https://www.pseudepigrapha.com/pseudepigrapha/3Baruch.html',
+    kind: 'pseudepigrapha-chapter-html',
+    maxChapter: 17,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'web-edition',
+    notes: 'ترجمة إنجليزية تاريخية للرؤيا اليونانية لباروخ الثالث في تحرير مركز ويسلي، من نص منظم يحفظ الفصول السبعة عشر. يحفظ المستورد وحدة نصية واحدة لكل فصل لأن المصدر يجمع أرقام الآيات داخل فقرات متصلة. يذكر المصدر قيداً تجارياً على النص، ولا توجد ترجمة عربية مدخلة في هذه المرحلة.'
+  },
+  {
     bookCode: 'ENO',
     slug: 'gez-dillmann-enoch',
     nameAr: 'النص الجعزي لأخنوخ الأول',
@@ -377,6 +391,28 @@ function parsePseudepigraphaChapters(content, source) {
   }
   if (!chapters.length) throw new Error(`لم تُكتشف فقرات في ${source.slug}`);
   return chapters;
+}
+
+function parsePseudepigraphaChapterHtml(content, source) {
+  const headingMatches = [...content.matchAll(/<span[^>]*color:\s*red[^>]*>[\s\S]*?<\/span>/gi)];
+  if (headingMatches.length !== source.maxChapter) {
+    throw new Error(`اكتُشف ${headingMatches.length} فصلاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+
+  return headingMatches.map((heading, index) => {
+    const end = headingMatches[index + 1]?.index ?? content.length;
+    const rawText = content.slice(heading.index, end)
+      .replace(/^\s*<span[^>]*color:\s*red[^>]*>[\s\S]*?<\/span>/i, '')
+      .replace(/\s+The (?:First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth|Eleventh|Twelfth|Thirteenth|Fourteenth|Fifteenth|Sixteenth|Seventeenth|Eighteenth|Nineteenth|Twentieth) Heaven\.\s*$/i, '')
+      .replace(/\s+Edited by Wesley Caspers[\s\S]*$/i, '');
+    const text = cleanText(decodeHtml(rawText
+      .replace(/<!--[\s\S]*?-->/g, ' ')
+      .replace(/<br\s*\/?\s*>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ')));
+    const chapter = index + 1;
+    if (text.length < 40) throw new Error(`لم يُكتشف نص الفصل ${chapter} في ${source.slug}`);
+    return { chapter, verse: 1, text, sourceUrl: source.url };
+  });
 }
 
 function parseWikisourceChapters(content, source) {
@@ -623,6 +659,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'wikisource-book-api') return parseWikisourceBookChapters(content, source);
   if (source.kind === 'wikisource-collection') return parseWikisourceCollectionChapters(source);
   if (source.kind === 'pseudepigrapha-html') return parsePseudepigraphaChapters(content, source);
+  if (source.kind === 'pseudepigrapha-chapter-html') return parsePseudepigraphaChapterHtml(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
   if (source.kind === 'ocp-xml') return parseOcpChapters(content, source);
   const start = content.indexOf(source.anchor);
