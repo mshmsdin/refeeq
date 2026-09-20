@@ -1645,7 +1645,7 @@ async function run() {
       source.language, source.url, source.sourceType, source.notes, 40 + index
     );
     const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
-    const content = ['structured-html', 'sacredthings-html'].includes(source.kind)
+    const content = ['structured-html', 'sacredthings-html', 'ertale-chapter-html'].includes(source.kind)
       ? null
       : await fetchText(source.url);
     const parsedChapters = await parseChapters(content, source);
