@@ -113,6 +113,7 @@ const SOURCES = [
     url: 'https://ertale.com/bible/ethiopiancanon/clement2/{chapter}/',
     kind: 'ertale-chapter-html',
     maxChapter: 68,
+    skipChapters: [23],
     language: 'en',
     originalLanguage: 'الجعزية مع أصل رؤيوي أقدم',
     sourceType: 'public-domain-text',
@@ -838,6 +839,10 @@ async function parseStructuredHtmlChapters(source) {
 async function parseErtaleChapteredHtml(source) {
   const chapters = [];
   for (let chapter = 1; chapter <= source.maxChapter; chapter += 1) {
+    if (source.skipChapters?.includes(chapter)) {
+      console.warn(`[Bible noncanonical import] جرى تجاوز الإصحاح ${chapter} في ${source.slug}: المصدر يعرض نصاً تالِفاً.`);
+      continue;
+    }
     const url = source.url.replace('{chapter}', String(chapter));
     const content = await fetchText(url);
     const body = content.match(/<div\s+class="verses"[^>]*>([\s\S]*?)<\/div>\s*<\/main>/i)?.[1] || content;
