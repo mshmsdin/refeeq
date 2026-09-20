@@ -365,6 +365,20 @@ const SOURCES = [
     notes: 'ترجمة ألكسندر ووكر ضمن طبعة الآباء قبل نيقية؛ تحفظ المقاطع الأربعة والعشرين المرقمة في المصدر، مع وسمها كنص طفولة أبوكريفي.'
   },
   {
+    bookCode: 'BARN',
+    slug: 'en-hoole-barnabas',
+    nameAr: 'الترجمة الإنجليزية لرسالة برنابا',
+    nameEn: 'Charles H. Hoole English Epistle of Barnabas',
+    abbreviation: 'BARN-EN',
+    url: 'https://en.wikisource.org/wiki/Epistle_of_Barnabas_(Hoole_translation)',
+    kind: 'chaptered-paragraph-html',
+    maxChapter: 21,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة تشارلز هـ. هول المنشورة سنة 1885؛ تحفظ الفصول الإحدى والعشرين كما يقسمها المصدر، وتعرض بوصفها كتابة كنسية مبكرة لا سفراً قانونياً.'
+  },
+  {
     bookCode: 'SIBYLL',
     slug: 'en-terry-sibylline-oracles',
     nameAr: 'الترجمة الإنجليزية لأقوال العرافات',
@@ -839,6 +853,28 @@ function parseChapteredHtml(content, source) {
   return chapters;
 }
 
+function parseChapteredParagraphHtml(content, source) {
+  const headings = [...content.matchAll(/<h[1-6][^>]*id=["']CHAPTER_(\d+)["'][^>]*>[\s\S]*?<\/h[1-6]>/gi)]
+    .map((match) => ({ chapter: Number(match[1]), index: match.index, start: match.index + match[0].length }))
+    .filter((heading) => heading.chapter >= 1 && heading.chapter <= source.maxChapter);
+  if (headings.length !== source.maxChapter) {
+    throw new Error(`اكتُشفت ${headings.length} إصحاحات فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  const chapters = [];
+  for (const [index, heading] of headings.entries()) {
+    const end = headings[index + 1]?.index ?? content.length;
+    const section = content.slice(heading.start, end);
+    for (const match of section.matchAll(/<p\b[^>]*>[\s\S]*?<b>\s*(\d+):(\d+)\s*<\/b>[\s\S]*?([\s\S]*?)<\/p>/gi)) {
+      const text = stripHtml(match[0].replace(/^[\s\S]*?<\/b>/i, '').replace(/<\/p>[\s\S]*$/i, ''));
+      if (text.length > 2) chapters.push({ chapter: heading.chapter, verse: Number(match[2]), text, sourceUrl: source.url });
+    }
+    if (!chapters.some((row) => row.chapter === heading.chapter)) {
+      throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+    }
+  }
+  return chapters;
+}
+
 function parseWikisourceNumberedParagraphs(content, source) {
   const start = content.indexOf('The Birth of Mary');
   const section = content.slice(start >= 0 ? start : 0);
@@ -1182,6 +1218,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'other-gospels-json') return parseOtherGospelsJson(content, source);
   if (source.kind === 'testament-solomon-wikisource-html') return parseTestamentSolomonWikisource(content, source);
   if (source.kind === 'chaptered-html') return parseChapteredHtml(content, source);
+  if (source.kind === 'chaptered-paragraph-html') return parseChapteredParagraphHtml(content, source);
   if (source.kind === 'wikisource-numbered-paragraphs') return parseWikisourceNumberedParagraphs(content, source);
   if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
   if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
