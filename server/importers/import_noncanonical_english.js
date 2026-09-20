@@ -309,6 +309,20 @@ const SOURCES = [
     notes: 'تحرير آر. هـ. تشارلز المنشور سنة 1913؛ الرسالة طويلة وغير مقسمة إلى إصحاحات ثابتة في المصدر، لذلك تحفظ هنا كوحدة واحدة، مع إمكانية إعادة تقسيم الفقرات ومقارنتها لاحقاً.'
   },
   {
+    bookCode: 'GIANTS',
+    slug: 'en-henning-manichaean-book-giants',
+    nameAr: 'الترجمة الإنجليزية لكتاب العمالقة المانوي',
+    nameEn: 'W. B. Henning English Manichaean Book of Giants',
+    abbreviation: 'GIANTS-EN',
+    url: 'https://othergospels.com/2giants/henning.json',
+    kind: 'other-gospels-json',
+    maxChapter: 10,
+    language: 'en',
+    originalLanguage: 'الآرامية واللغات الإيرانية في شواهد متعددة',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة وليم ب. هننغ المنشورة سنة 1943 للنسخة المانوية المجزأة؛ تحفظ هنا كتقليد ماني مستقل عن شواهد قمران الآرامية، ولا تدعي أنها نص كامل أو إعادة بناء نهائية.'
+  },
+  {
     bookCode: 'SIBYLL',
     slug: 'en-terry-sibylline-oracles',
     nameAr: 'الترجمة الإنجليزية لأقوال العرافات',
@@ -723,6 +737,33 @@ function parseApocryphonEzekielFragments(content, source) {
   return chapters;
 }
 
+function parseOtherGospelsJson(content, source) {
+  let payload;
+  try {
+    payload = JSON.parse(content);
+  } catch (error) {
+    throw new Error(`تعذر تحليل ملف JSON في ${source.slug}: ${error.message}`);
+  }
+  if (!Array.isArray(payload.chapters) || payload.chapters.length !== source.maxChapter) {
+    throw new Error(`اكتُشفت ${payload.chapters?.length || 0} أقسام فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  const chapters = [];
+  for (const [index, chapter] of payload.chapters.entries()) {
+    const body = Array.isArray(chapter.body) ? chapter.body : [];
+    let verse = 0;
+    for (const rawLine of body) {
+      const text = stripHtml(String(rawLine)
+        .replace(/<center>[\s\S]*?<\/center>/gi, ' ')
+        .replace(/\*\*\d+\.\*\*/g, ' '));
+      if (!text || text.startsWith('[「') || text.length <= 8) continue;
+      verse += 1;
+      chapters.push({ chapter: index + 1, verse, text, sourceUrl: source.url });
+    }
+    if (!verse) throw new Error(`لم تُكتشف وحدات القسم ${index + 1} في ${source.slug}`);
+  }
+  return chapters;
+}
+
 function parseNewAdventVersionChapters(content, source) {
   const versionLabel = `Version ${source.version}`;
   const nextLabel = source.version === 1 ? 'Version 2' : 'About this page';
@@ -1050,6 +1091,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'pseudepigrapha-single-html') return parsePseudepigraphaSingleHtml(content, source);
   if (source.kind === 'apocryphon-ezekiel-fragments-html') return parseApocryphonEzekielFragments(content, source);
   if (source.kind === 'wikisource-rendered-collection') return parseRenderedWikisourceCollectionChapters(source);
+  if (source.kind === 'other-gospels-json') return parseOtherGospelsJson(content, source);
   if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
   if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
