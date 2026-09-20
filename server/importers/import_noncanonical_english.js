@@ -270,15 +270,15 @@ const SOURCES = [
     bookCode: 'JOSEPH',
     slug: 'en-sparks-joseph-aseneth',
     nameAr: 'الترجمة الإنجليزية ليوسف وأسنات',
-    nameEn: 'H. F. D. Sparks English Joseph and Aseneth',
+    nameEn: 'The Firmament English Joseph and Aseneth',
     abbreviation: 'JOSEPH-EN',
-    url: 'https://www.pseudepigrapha.com/pseudepigrapha/TheStoryOfAsenath.html',
-    kind: 'pseudepigrapha-hdf-column-html',
+    url: 'https://www.thefirmament.org/scripture/joseph-and-aseneth/',
+    kind: 'firmament-joseph-aseneth-html',
     maxChapter: 29,
     language: 'en',
     originalLanguage: 'اليونانية',
     sourceType: 'web-edition',
-    notes: 'النص الإنجليزي المنسوب إلى تحرير هـ. ف. د. سباركس في المصدر، في ٢٩ إصحاحاً و٣٣٣ وحدة؛ يُدخل العمود الكامل ذي ترقيم HDF مستقلاً عن ملخص أو صيغة يوجين ماسون الأقصر، ويذكر المصدر أنه معاد لأغراض تعليمية فقط.'
+    notes: 'نص إنجليزي كامل في صفحة ويب واحدة من ٢٩ إصحاحاً و٣٥٩ وحدة؛ المترجم أو الطبعة غير معلنين بوضوح في الصفحة، لذلك يسجل كشاهد ويب يحتاج إلى توثيق ومقارنة لاحقين، ولا يخلط مع الصيغة الأقصر المنسوبة إلى يوجين ماسون.'
   },
   {
     bookCode: 'ENO',
@@ -565,6 +565,29 @@ function parsePseudepigraphaHdfColumnChapters(content, source) {
       chapters.push({ chapter: heading.chapter, verse, text, sourceUrl: source.url });
     }
     if (!verse) throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+  }
+  return chapters;
+}
+
+function parseFirmamentJosephAsenethChapters(content, source) {
+  const headings = [...content.matchAll(/<h2\b[^>]*id="h-chapter-(\d+)"[^>]*>\s*Chapter\s+\d+\s*<\/h2>/gi)].map((match) => ({
+    chapter: Number(match[1]),
+    index: match.index
+  }));
+  if (headings.length !== source.maxChapter) {
+    throw new Error(`اكتُشف ${headings.length} إصحاحاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  const chapters = [];
+  for (const [index, heading] of headings.entries()) {
+    const end = headings[index + 1]?.index ?? content.length;
+    const section = content.slice(heading.index, end);
+    const units = [...section.matchAll(new RegExp(`\\b${heading.chapter}:(\\d+)\\s+([“\\\"])([\\s\\S]*?)(?:[”\\\"])(?=<br\\s*/?>|<\\/p>)`, 'gi'))];
+    if (!units.length) throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+    for (const unit of units) {
+      const text = stripHtml(unit[3]);
+      if (text.length <= 2) continue;
+      chapters.push({ chapter: heading.chapter, verse: Number(unit[1]), text, sourceUrl: source.url });
+    }
   }
   return chapters;
 }
@@ -891,6 +914,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'enoch3-collection') return parseEnoch3Chapters(source);
   if (source.kind === 'pseudepigrapha-two-column-html') return parsePseudepigraphaTwoColumnChapters(content, source);
   if (source.kind === 'pseudepigrapha-hdf-column-html') return parsePseudepigraphaHdfColumnChapters(content, source);
+  if (source.kind === 'firmament-joseph-aseneth-html') return parseFirmamentJosephAsenethChapters(content, source);
   if (source.kind === 'new-advent-version-html') return parseNewAdventVersionChapters(content, source);
   if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
