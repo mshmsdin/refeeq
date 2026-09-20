@@ -934,7 +934,7 @@ function parseChapteredParagraphHtml(content, source) {
 
 function parseWikisourceRomanChapterHtml(content, source) {
   const headings = [...content.matchAll(/<p\b[^>]*>\s*CHAPTER\s+([IVXLCDM]+)\.?\s*<\/p>/gi)]
-    .map((match) => ({ chapter: romanToNumber(match[1].toUpperCase()), index: match.index, start: match.index + match[0].length }))
+    .map((match) => ({ chapter: romanToNumber(match[1].replace(/l/g, 'I').toUpperCase()), index: match.index, start: match.index + match[0].length }))
     .filter((heading) => heading.chapter >= 1 && heading.chapter <= source.maxChapter);
   if (headings.length !== source.maxChapter) {
     throw new Error(`اكتُشفت ${headings.length} إصحاحات فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
