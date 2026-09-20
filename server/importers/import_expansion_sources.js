@@ -72,6 +72,17 @@ const PESHITTA_FILES = [
   ['3JN', '64_3_Jean.usfm'], ['JUD', '65_Jude.usfm'], ['REV', '66_Apocalypse.usfm']
 ];
 
+const SAMARITAN_SOURCE = {
+  slug: 'en-samaritan-pentateuch',
+  name_ar: 'الترجمة الإنجليزية للتوراة السامرية',
+  name_en: 'Samaritan Pentateuch in English',
+  abbreviation: 'SAM-EN',
+  language: 'en',
+  url: 'https://gitlab.com/crosswire-bible-society/spe/-/raw/main/spe.osis.xml',
+  source_type: 'osis',
+  notes: 'ترجمة إنجليزية منشورة في وحدة جمعية كروس واير، مبنية على نص السامري ومعلنة في وصف الوحدة بوصفها ترجمة إنجليزية؛ تحفظ الأسفار الخمسة في سجلات مستقلة، ولا تستبدل النص السامري الأصلي أو الترجمة العربية المستقبلية.'
+};
+
 function download(url, destination) {
   return new Promise((resolve, reject) => {
     if (fs.existsSync(destination) && fs.statSync(destination).size > 100000) return resolve();
@@ -178,6 +189,27 @@ function parseUsfm(content, bookCode) {
   return rows;
 }
 
+function parseSamaritanOsis(content) {
+  const bookMap = { Gen: 'SAM-GEN', Exod: 'SAM-EXO', Lev: 'SAM-LEV', Num: 'SAM-NUM', Deut: 'SAM-DEU' };
+  const rows = [];
+  const pattern = /<verse\s+sID="([^"]+)\.(\d+)\.(\d+)"[^>]*\/>[\s\S]*?<verse\s+eID="\1\.\2\.\3"[^>]*\/>/gi;
+  for (const match of content.matchAll(pattern)) {
+    const osisBook = match[1];
+    const bookCode = bookMap[osisBook];
+    if (!bookCode) continue;
+    const text = decodeHtml(match[0]
+      .replace(/^[\s\S]*?\/>/, '')
+      .replace(/<verse\s+eID="[^"]+"[^>]*\/>[\s\S]*$/i, '')
+      .replace(/<note\b[\s\S]*?<\/note>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim());
+    if (text) rows.push({ bookCode, chapter: Number(match[2]), verse: Number(match[3]), text });
+  }
+  if (rows.length < 5000) throw new Error(`اكتُشفت ${rows.length} وحدة فقط في التوراة السامرية، والمتوقع أكثر من ٥٠٠٠`);
+  return rows;
+}
+
 async function run() {
   initDatabase();
   initBibleSchema();
@@ -187,7 +219,7 @@ async function run() {
   const insertTranslation = db.prepare(`
     INSERT INTO bible_translations
       (slug, name_ar, name_en, abbreviation, language, source_url, source_type, source_notes, site_scope, is_active, display_order)
-    VALUES (?, ?, ?, ?, ?, ?, 'vpl', ?, 'bible', 1, ?)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'bible', 1, ?)
     ON CONFLICT(slug) DO UPDATE SET
       name_ar=excluded.name_ar, name_en=excluded.name_en, abbreviation=excluded.abbreviation,
       source_url=excluded.source_url, source_notes=excluded.source_notes, site_scope='bible', is_active=1
@@ -204,7 +236,7 @@ async function run() {
   for (const [index, source] of SOURCES.entries()) {
     const translationId = insertTranslation.run(
       source.slug, source.name_ar, source.name_en, source.abbreviation, source.language || 'en',
-      source.url, source.notes, 20 + index
+      source.url, source.source_type || 'vpl', source.notes, 20 + index
     ).lastInsertRowid || db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
     const id = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id || translationId;
     const zipPath = path.join(CACHE_DIR, source.filename);
@@ -236,6 +268,36 @@ async function run() {
     console.log(`[Bible] ${source.slug}: ${rows.length} وحدة نصية`);
   }
 
+  const samaritanId = insertTranslation.run(
+    SAMARITAN_SOURCE.slug,
+    SAMARITAN_SOURCE.name_ar,
+    SAMARITAN_SOURCE.name_en,
+    SAMARITAN_SOURCE.abbreviation,
+    SAMARITAN_SOURCE.language,
+    SAMARITAN_SOURCE.url,
+    SAMARITAN_SOURCE.source_type,
+    SAMARITAN_SOURCE.notes,
+    26
+  ).lastInsertRowid || db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(SAMARITAN_SOURCE.slug).id;
+  const samaritanRows = parseSamaritanOsis(await fetchText(SAMARITAN_SOURCE.url));
+  const samaritanDbRows = samaritanRows.map((verse) => [
+    samaritanId, verse.bookCode, verse.chapter, verse.verse, verse.text,
+    normalizeArabicText(verse.text), SAMARITAN_SOURCE.url
+  ]);
+  for (let offset = 0; offset < samaritanDbRows.length; offset += 2000) insertMany(samaritanDbRows.slice(offset, offset + 2000));
+  const samaritanCounts = new Map();
+  for (const verse of samaritanRows) samaritanCounts.set(verse.bookCode, Math.max(samaritanCounts.get(verse.bookCode) || 0, verse.chapter));
+  for (const [bookCode, chapterCount] of samaritanCounts) {
+    db.prepare('UPDATE bible_books SET chapter_count = CASE WHEN chapter_count < ? THEN ? ELSE chapter_count END WHERE code=?').run(chapterCount, chapterCount, bookCode);
+    db.prepare(`
+      UPDATE bible_book_metadata
+      SET text_status='complete', english_status='available', original_language='السامرية', source_name=?, source_url=?, source_notes=?, updated_at=CURRENT_TIMESTAMP
+      WHERE book_code=?
+    `).run(SAMARITAN_SOURCE.name_en, SAMARITAN_SOURCE.url, SAMARITAN_SOURCE.notes, bookCode);
+  }
+  db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(samaritanId);
+  console.log(`[Bible] ${SAMARITAN_SOURCE.slug}: ${samaritanRows.length} وحدة نصية`);
+
   const peshittaSlug = 'syr-peshitta';
   const peshittaUrl = 'https://gitlab.com/crosswire-bible-society/peshitta/-/tree/master/usfm';
   const peshittaId = insertTranslation.run(
@@ -245,6 +307,7 @@ async function run() {
     'PESH-SYR',
     'syr',
     peshittaUrl,
+    'usfm',
     'الشاهد السرياني المنشور في ملفات يو إس إف إم لمشروع جمعية كروس واير؛ يحفظ هنا بوصفه تقليداً سريانياً موازياً، ولا يدعي تمثيل كل تاريخ البيشيطا أو كل صيغها المخطوطية.',
     23
   ).lastInsertRowid || db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(peshittaSlug).id;
