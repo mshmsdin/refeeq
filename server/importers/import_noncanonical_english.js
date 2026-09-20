@@ -209,6 +209,20 @@ const SOURCES = [
     ]
   },
   {
+    bookCode: 'ABR',
+    slug: 'en-pseudepigrapha-apocalypse-abraham',
+    nameAr: 'الترجمة الإنجليزية لرؤيا إبراهيم',
+    nameEn: 'English Apocalypse of Abraham',
+    abbreviation: 'ABR-EN',
+    url: 'https://www.pseudepigrapha.com/pseudepigrapha/Apocalypse_of_Abraham.html',
+    kind: 'pseudepigrapha-two-column-html',
+    maxChapter: 32,
+    language: 'en',
+    originalLanguage: 'السلافية الكنسية',
+    sourceType: 'web-edition',
+    notes: 'طبعة ويب تعرض ترجمتين إنجليزيتين مجهولتي المترجم؛ أُدخل العمود الأول وحده في ٣٢ إصحاحاً و٣٠٢ وحدة، مع إبقاء النص منفصلاً عن أي ترجمة عربية لاحقة.'
+  },
+  {
     bookCode: 'ENO',
     slug: 'gez-dillmann-enoch',
     nameAr: 'النص الجعزي لأخنوخ الأول',
@@ -439,6 +453,34 @@ function stripEnoch3Html(html) {
   return cleanText(decodeHtml(html
     .replace(/<sup[^>]*>[\s\S]*?<\/sup>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')));
+}
+
+function parsePseudepigraphaTwoColumnChapters(content, source) {
+  const chapters = [];
+  let chapter = 0;
+  for (const rowMatch of content.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const cell = rowMatch[1].match(/<td\b[^>]*>([\s\S]*?)<\/td>/i)?.[1] || '';
+    const chapterMatch = cell.match(/T1_C(\d+)"[^>]*>Chapter/i);
+    if (chapterMatch) {
+      chapter = Number(chapterMatch[1]);
+      continue;
+    }
+    const verseMatch = cell.match(/T1_C\d+_V(\d+)/i);
+    if (!verseMatch || chapter < 1) continue;
+    const anchorEnd = cell.indexOf('</A>', verseMatch.index) + 4;
+    const text = stripHtml(cell.slice(anchorEnd));
+    if (text.length > 10) chapters.push({
+      chapter,
+      verse: Number(verseMatch[1]),
+      text,
+      sourceUrl: source.url
+    });
+  }
+  const chaptersSeen = new Set(chapters.map((row) => row.chapter));
+  if (chaptersSeen.size !== source.maxChapter) {
+    throw new Error(`اكتُشف ${chaptersSeen.size} إصحاحاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  return chapters;
 }
 
 async function parseEnoch3Chapters(source) {
@@ -708,6 +750,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'pseudepigrapha-html') return parsePseudepigraphaChapters(content, source);
   if (source.kind === 'pseudepigrapha-chapter-html') return parsePseudepigraphaChapterHtml(content, source);
   if (source.kind === 'enoch3-collection') return parseEnoch3Chapters(source);
+  if (source.kind === 'pseudepigrapha-two-column-html') return parsePseudepigraphaTwoColumnChapters(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
   if (source.kind === 'ocp-xml') return parseOcpChapters(content, source);
   const start = content.indexOf(source.anchor);
