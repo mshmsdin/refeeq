@@ -189,6 +189,26 @@ const SOURCES = [
     notes: 'ترجمة إنجليزية تاريخية للرؤيا اليونانية لباروخ الثالث في تحرير مركز ويسلي، من نص منظم يحفظ الفصول السبعة عشر. يحفظ المستورد وحدة نصية واحدة لكل فصل لأن المصدر يجمع أرقام الآيات داخل فقرات متصلة. يذكر المصدر قيداً تجارياً على النص، ولا توجد ترجمة عربية مدخلة في هذه المرحلة.'
   },
   {
+    bookCode: 'ENO3',
+    slug: 'en-odeberg-3-enoch',
+    nameAr: 'الترجمة الإنجليزية لأخنوخ الثالث',
+    nameEn: 'Hugo Odeberg English 3 Enoch',
+    abbreviation: 'ENO3-EN',
+    url: 'https://www.thebookofenoch.net/3-enoch/',
+    kind: 'enoch3-collection',
+    maxChapter: 54,
+    language: 'en',
+    originalLanguage: 'العبرية',
+    sourceType: 'web-edition',
+    notes: 'طبعة ويب إنجليزية مبنية على تحرير هوغو أودبرغ لأخنوخ الثالث سنة 1928، وتعرض 54 قسماً مرقماً بما فيها الأقسام الحرفية 15B و22B و22C و48A–48D. تُحفظ فقرات كل قسم كوحدات مستقلة، ولا توجد ترجمة عربية مدخلة في هذه المرحلة.',
+    pages: [
+      '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '15B',
+      '16', '17', '18', '19', '20', '21', '22', '22B', '22C', '23', '24', '25', '26', '27', '28',
+      '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44',
+      '45', '46', '47', '48A', '48B', '48C', '48D'
+    ]
+  },
+  {
     bookCode: 'ENO',
     slug: 'gez-dillmann-enoch',
     nameAr: 'النص الجعزي لأخنوخ الأول',
@@ -413,6 +433,33 @@ function parsePseudepigraphaChapterHtml(content, source) {
     if (text.length < 40) throw new Error(`لم يُكتشف نص الفصل ${chapter} في ${source.slug}`);
     return { chapter, verse: 1, text, sourceUrl: source.url };
   });
+}
+
+function stripEnoch3Html(html) {
+  return cleanText(decodeHtml(html
+    .replace(/<sup[^>]*>[\s\S]*?<\/sup>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')));
+}
+
+async function parseEnoch3Chapters(source) {
+  const chapters = [];
+  for (const [index, label] of source.pages.entries()) {
+    const url = `${source.url}chapter-${label.toLowerCase()}/`;
+    const content = await fetchText(url);
+    const article = content.match(/<article[^>]*class="[^"]*verses[^"]*"[^>]*>([\s\S]*?)<section[^>]*class="[^"]*source[^"]*"/i)?.[1];
+    if (!article) throw new Error(`لم يُعثر على قسم القراءة في ${source.slug}، القسم ${label}`);
+    const rows = [...article.matchAll(/<p\s+id="verse-[^"]+"[^>]*>([\s\S]*?)<\/p>/gi)]
+      .map((match, verseIndex) => ({
+        chapter: index + 1,
+        verse: verseIndex + 1,
+        text: stripEnoch3Html(match[1]),
+        sourceUrl: url
+      }))
+      .filter((row) => row.text.length > 10);
+    if (!rows.length) throw new Error(`لم تُكتشف فقرات القسم ${label} في ${source.slug}`);
+    chapters.push(...rows);
+  }
+  return chapters;
 }
 
 function parseWikisourceChapters(content, source) {
@@ -660,6 +707,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'wikisource-collection') return parseWikisourceCollectionChapters(source);
   if (source.kind === 'pseudepigrapha-html') return parsePseudepigraphaChapters(content, source);
   if (source.kind === 'pseudepigrapha-chapter-html') return parsePseudepigraphaChapterHtml(content, source);
+  if (source.kind === 'enoch3-collection') return parseEnoch3Chapters(source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
   if (source.kind === 'ocp-xml') return parseOcpChapters(content, source);
   const start = content.indexOf(source.anchor);
