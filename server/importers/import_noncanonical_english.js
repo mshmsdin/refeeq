@@ -992,9 +992,10 @@ function parseOdesSolomonWikisource(content, source) {
     if (witnessIndex >= 0) body = body.slice(witnessIndex + witnessHeading.length + 4);
     else if (fallbackIndex >= 0) body = body.slice(fallbackIndex + 'Coptic text'.length + 4);
     else if (/==\s*(?:Coptic|Syriac) text\s*==/i.test(body)) body = body.slice(0, body.search(/==\s*(?:Coptic|Syriac) text\s*==/i));
-    const rows = [...body.matchAll(/\{\{verse\|(?:chapter=\d+\|)?verse=(\d+)\}\}\s*([\s\S]*?)(?=\n\s*:?\{\{verse\||\n\s*==|$)/gi)]
+    const parseRows = (value) => [...value.matchAll(/\{\{verse\|(?:chapter=\d+\|)?verse=(\d+)\}\}\s*([\s\S]*?)(?=\n\s*:?\{\{verse\||\n\s*==|$)/gi)]
       .map((match) => ({ chapter, verse: Number(match[1]), text: stripWikisourceMarkup(match[2].replace(/^:+\s*/gm, ' ')), sourceUrl: 'https://en.wikisource.org/wiki/User:Nebulousquasar/Odes_of_Solomon' }))
       .filter((row) => row.text.length > 2);
+    const rows = parseRows(body).length ? parseRows(body) : parseRows(section);
     if (!rows.length) throw new Error(`لم تُكتشف وحدات الأود ${chapter} في ${source.slug}`);
     chapters.push(...rows);
   }
