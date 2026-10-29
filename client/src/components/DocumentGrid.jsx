@@ -45,12 +45,13 @@ export default function DocumentGrid({
   activeCategory,
   onResetFilters,
   searchTerm,
-  activeTag
+  activeTag,
+  activeFilter
 }) {
   const totalPages = Math.ceil(total / limit) || 1;
   const hasSubfolders = subfolders && subfolders.length > 0;
   const hasDocuments = documents && documents.length > 0;
-  const isFilterActive = !!searchTerm || activeCategory !== 'all' || !!activeTag;
+  const isFilterActive = activeFilter !== 'all' || !!searchTerm || activeCategory !== 'all' || !!activeTag;
 
   if (isLoading) {
     return (
@@ -94,7 +95,8 @@ export default function DocumentGrid({
               const sfCat = sf.category ? DEBATE_CATEGORIES[sf.category] : null;
 
               return (
-                <div
+                <button
+                  type="button"
                   key={sf.id || sf.path}
                   onClick={() => onSelectFolder(sf.path, sf.id)}
                   className={`group p-3.5 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/70 hover:border-amber-500/50 transition-all duration-200 cursor-pointer flex items-center justify-between gap-3 shadow-xs hover:shadow-md hover:-translate-y-0.5 ${
@@ -121,7 +123,7 @@ export default function DocumentGrid({
                   </div>
 
                   <ChevronLeft className="w-4 h-4 text-slate-400 group-hover:text-amber-500 group-hover:-translate-x-1 transition-all shrink-0" />
-                </div>
+                </button>
               );
             })}
           </div>

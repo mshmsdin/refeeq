@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { recountArchiveFolders } from './archive_metadata.js';
 
 export function archiveDocumentHighWater(db) {
   let highWater = db.prepare('SELECT COALESCE(MAX(id), 0) AS c FROM documents').get().c;
@@ -110,19 +111,7 @@ export function applyArchiveRestore(db, manifest, prepared) {
     let linked = 0;
     for (const link of manifest.links) linked += insertLink.run(link.document_id, findFolder.get(link.folder_path).id, link.folder_path).changes;
     // Roll up distinct documents through real parent relationships, including aliases.
-    db.exec(`WITH RECURSIVE hierarchy(ancestor, descendant) AS (
-      SELECT id, id FROM folders
-      UNION ALL
-      SELECT h.ancestor, child.id FROM hierarchy h
-      JOIN folders parent ON parent.id = h.descendant
-      JOIN folders child ON child.parent_path = parent.path
-    ), membership(folder_id, document_id) AS (
-      SELECT f.id, d.id FROM folders f JOIN documents d ON d.folder_path = f.path
-      UNION SELECT folder_id, document_id FROM document_folders
-    ), totals AS (
-      SELECT h.ancestor, COUNT(DISTINCT m.document_id) AS c
-      FROM hierarchy h JOIN membership m ON m.folder_id = h.descendant GROUP BY h.ancestor
-    ) UPDATE folders SET file_count = COALESCE((SELECT c FROM totals WHERE ancestor = folders.id), 0)`);
+    recountArchiveFolders(db);
     return { inserted: prepared.missing.length, linked,
       documents_count: db.prepare('SELECT COUNT(*) AS c FROM documents').get().c,
       folders_count: db.prepare('SELECT COUNT(*) AS c FROM folders').get().c };

@@ -23,6 +23,7 @@ import { extractDistinctKeywords, normalizeArabicText } from './utils/arabic_nlp
 import { resolveImagePath, invalidateMediaIndex } from './utils/path_resolver.js';
 import { getBibleSeoContext } from './utils/bible_seo.js';
 import { prepareArchiveRestore, applyArchiveRestore, archiveDocumentHighWater } from './utils/archive_tree_sync.js';
+import { auditArchiveMetadata, repairArchiveMetadata, recountArchiveFolders } from './utils/archive_metadata.js';
 
 
 
@@ -426,6 +427,9 @@ app.get('/api/sects', (req, res) => {
       ...s,
       count: s.sect === 'all' ? s.count : (countsMap.get(s.sect) || 0)
     }));
+    for (const row of rows) {
+      if (!defaultSects.some(s => s.sect === row.sect)) result.push({sect:row.sect,name:row.sect,count:row.count});
+    }
 
     res.json({ success: true, sects: result });
   } catch (err) {
@@ -597,7 +601,9 @@ app.get('/api/documents', (req, res) => {
         extraWhere += ' AND d.sect = ?';
         extraParams.push(sect);
       }
-      if (category && category !== 'all') {
+      if (category === 'uncategorized') {
+        extraWhere += " AND (d.category IS NULL OR d.category = '')";
+      } else if (category && category !== 'all') {
         extraWhere += ' AND d.category = ?';
         extraParams.push(category);
       }
@@ -687,8 +693,8 @@ app.get('/api/documents', (req, res) => {
       params.push(sect);
     }
     if (category && category !== 'all') {
-      whereClauses.push('d.category = ?');
-      params.push(category);
+      if (category === 'uncategorized') whereClauses.push("(d.category IS NULL OR d.category='')");
+      else { whereClauses.push('d.category = ?'); params.push(category); }
     }
     if (tag) {
       whereClauses.push('d.id IN (SELECT document_id FROM document_tags WHERE tag = ?)');
@@ -920,6 +926,14 @@ app.post('/api/document/:id/tags', (req, res) => {
   }
 });
 
+app.delete('/api/document/:id/tag-ids/:tagId', (req, res) => {
+  try {
+    const result = getDb().prepare('DELETE FROM document_tags WHERE document_id=? AND id=?')
+      .run(Number(req.params.id), Number(req.params.tagId));
+    res.json({success:true, removed:result.changes});
+  } catch (err) { res.status(500).json({success:false,error:err.message}); }
+});
+
 app.delete('/api/document/:id/tags/:tag', (req, res) => {
   try {
     const docId = parseInt(req.params.id);
@@ -1073,6 +1087,20 @@ app.get('/api/sync/status', requireSyncAuth, (req, res) => {
 
 app.get('/api/sync/job-status', (req, res) => {
   res.json({ success: true, ...currentSyncJob });
+});
+
+app.get('/api/sync/audit', requireSyncAuth, (req,res) => {
+  try {res.json({success:true,...auditArchiveMetadata(getDb())});}
+  catch (err) {res.status(500).json({success:false,error:err.message});}
+});
+
+app.post('/api/sync/repair', requireSyncAuth, async (req,res) => {
+  try {
+    if (['downloading','extracting'].includes(currentSyncJob.status)) return res.status(409).json({success:false,error:'Media sync is running'});
+    const db=getDb();
+    await db.backup(`${getDbPath()}.before-metadata-repair-${Date.now()}.db`);
+    res.json({success:true,...repairArchiveMetadata(db,{rebuildSearch:true})});
+  } catch (err) {res.status(500).json({success:false,error:err.message});}
 });
 
 // Append missing archive records without replacing the live database or Bible data.
@@ -1664,8 +1692,14 @@ app.post('/api/ocr/process-single/:docId', (req, res) => {
 // 11. Rescan trigger
 app.post('/api/scan', (req, res) => {
   try {
-    const result = scanAndIndex();
-    res.json({ success: true, ...result });
+    // Reindex registered materials. Asset directories may contain duplicates,
+    // hashed filenames and book illustrations that are not standalone records.
+    const db = getDb();
+    db.transaction(() => {
+      recountArchiveFolders(db);
+      db.exec("INSERT INTO documents_fts(documents_fts) VALUES('rebuild')");
+    })();
+    res.json({ success: true, totalFiles:db.prepare('SELECT COUNT(*) AS c FROM documents').get().c });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }

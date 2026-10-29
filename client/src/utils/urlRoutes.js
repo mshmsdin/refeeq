@@ -107,6 +107,8 @@ export function parseCurrentRoute() {
       articleId = docId;
     } else if (/^v\d+$/i.test(part)) {
       videoId = parseInt(part.substring(1), 10);
+    } else if (part === parts[0]) {
+      try {sect = decodeURIComponent(part);} catch {sect = part;}
     }
   }
 

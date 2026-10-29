@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Navbar from './components/Navbar';
 import SidebarTree from './components/SidebarTree';
 import DocumentGrid from './components/DocumentGrid';
@@ -57,8 +57,14 @@ export default function App() {
   const [subfolders, setSubfolders] = useState([]);
   const [totalDocs, setTotalDocs] = useState(0);
   const [isLoadingDocs, setIsLoadingDocs] = useState(false);
+  const [loadError, setLoadError] = useState('');
+  const [reloadTick, setReloadTick] = useState(0);
+  const treeRequest = useRef(null);
+  const folderRequest = useRef(null);
+  const refreshDocuments = () => setReloadTick(value => value + 1);
 
   const [treeData, setTreeData] = useState([]);
+  const [treeError, setTreeError] = useState(false);
   const [sectsList, setSectsList] = useState([]);
   const [stats, setStats] = useState(null);
 
@@ -110,7 +116,9 @@ export default function App() {
   useEffect(() => {
     if (BIBLE_ONLY) return;
     if (initialRoute.folderId) {
-      fetch(`/api/folder/${initialRoute.folderId}`)
+      const controller = new AbortController();
+      folderRequest.current = controller;
+      fetch(`/api/folder/${initialRoute.folderId}`, {signal:controller.signal})
         .then((res) => res.json())
         .then((data) => {
           if (data && data.success && data.folder) {
@@ -122,8 +130,9 @@ export default function App() {
             }
           }
         })
-        .catch((err) => console.error('Error fetching initial folder:', err));
+        .catch(err => {if (err.name !== 'AbortError') showToast('تعذر تحميل المجلد');});
     }
+    return () => folderRequest.current?.abort();
   }, []);
 
   // Synchronize browser URL when activeSect, activeFolderId, or activeDocId changes
@@ -144,16 +153,22 @@ export default function App() {
   useEffect(() => {
   const handlePopState = () => {
       if (BIBLE_ONLY) return;
+      folderRequest.current?.abort();
+      const controller = new AbortController();
+      folderRequest.current = controller;
       const route = parseCurrentRoute();
+      setSearchTerm('');setDebouncedSearch('');setActiveCategory('all');setActiveTag('');setActiveFilter('all');setPage(1);
+      setActiveFolder('');setActiveFolderId(route.folderId || null);setActiveFolderCategory(null);
       setIsGuideView(route.page === 'guide');
       setActiveSect(route.sect || 'all');
       setActiveDocId(route.docId || null);
 
       if (route.folderId) {
-        fetch(`/api/folder/${route.folderId}`)
+        fetch(`/api/folder/${route.folderId}`, {signal:controller.signal})
           .then((res) => res.json())
           .then((data) => {
             if (data && data.success && data.folder) {
+              setActiveSect(data.folder.sect);
               setActiveFolder(data.folder.path);
               setActiveFolderId(data.folder.id);
               setActiveFolderCategory(data.folder.category || null);
@@ -174,18 +189,25 @@ export default function App() {
   // Fetch Tree & Stats on mount and when activeSect changes
   const fetchTreeAndStats = useCallback(() => {
     if (BIBLE_ONLY) return;
+    treeRequest.current?.abort();
+    setTreeData([]);
+    setTreeError(false);
+    setStats(null);
+    const controller = new AbortController();
+    treeRequest.current = controller;
+    const options = {signal:controller.signal};
     const sectParam = activeSect && activeSect !== 'all' ? `?sect=${encodeURIComponent(activeSect)}` : '';
 
-    fetch(`/api/tree${sectParam}`)
-      .then((res) => res.json())
+    fetch(`/api/tree${sectParam}`, options)
+      .then(res => {if (!res.ok) throw new Error('tree');return res.json();})
       .then((data) => {
         if (data && data.success && Array.isArray(data.tree)) {
           setTreeData(data.tree);
         }
       })
-      .catch((err) => console.error('Error fetching tree:', err));
+      .catch(err => {if (err.name !== 'AbortError') setTreeError(true);});
 
-    fetch(`/api/stats${sectParam}`)
+    fetch(`/api/stats${sectParam}`, options)
       .then((res) => res.json())
       .then((data) => {
         if (data && data.success) {
@@ -194,7 +216,7 @@ export default function App() {
       })
       .catch((err) => console.error('Error fetching stats:', err));
 
-    fetch('/api/sects')
+    fetch('/api/sects', options)
       .then((res) => res.json())
       .then((data) => {
         if (data && data.success && Array.isArray(data.sects)) {
@@ -206,6 +228,7 @@ export default function App() {
 
   useEffect(() => {
     fetchTreeAndStats();
+    return () => treeRequest.current?.abort();
   }, [fetchTreeAndStats]);
 
   // Fetch Favorites
@@ -233,7 +256,9 @@ export default function App() {
   // Fetch Documents whenever search, folder, sect, category, tag, filter, or page changes
   useEffect(() => {
     if (BIBLE_ONLY) return;
+    const controller = new AbortController();
     setIsLoadingDocs(true);
+    setLoadError('');
     const params = new URLSearchParams({
       page: page.toString(),
       limit: limit.toString(),
@@ -258,9 +283,10 @@ export default function App() {
       params.set('tag', activeTag);
     }
 
-    fetch(`/api/documents?${params.toString()}`)
-      .then((res) => res.json())
+    fetch(`/api/documents?${params.toString()}`, {signal:controller.signal})
+      .then((res) => { if (!res.ok) throw new Error('load'); return res.json(); })
       .then((data) => {
+        if (!data.success) throw new Error('load');
         if (data.success) {
           setDocuments(data.documents || []);
           setSubfolders(data.subfolders || []);
@@ -269,10 +295,12 @@ export default function App() {
         setIsLoadingDocs(false);
       })
       .catch((err) => {
-        console.error('Error fetching documents:', err);
+        if (err.name === 'AbortError') return;
+        setLoadError('تعذر تحميل المواد. تحقق من الاتصال ثم أعد المحاولة.');
         setIsLoadingDocs(false);
       });
-  }, [activeFolder, activeFolderId, debouncedSearch, activeSect, activeCategory, activeTag, activeFilter, page]);
+    return () => controller.abort();
+  }, [activeFolder, activeFolderId, debouncedSearch, activeSect, activeCategory, activeTag, activeFilter, page, reloadTick]);
 
   useEffect(() => {
     if (!BIBLE_ONLY) return;
@@ -314,7 +342,9 @@ export default function App() {
 
   // Handle switching sects
   const handleSelectSect = (sect) => {
+    folderRequest.current?.abort();
     setActiveSect(sect);
+    setActiveFilter('all');
     setActiveFolder('');
     setActiveFolderId(null);
     setActiveFolderCategory(null);
@@ -327,26 +357,22 @@ export default function App() {
 
   // Handle select folder from tree or breadcrumb
   const handleSelectFolder = (folderPath, folderId = null) => {
+    folderRequest.current?.abort();
+    if (folderPath.startsWith('sect:')) { handleSelectSect(folderPath.slice(5)); return; }
+    const find = nodes => {
+      for (const node of nodes) {
+        if ((folderId && node.id === folderId) || node.path === folderPath) return node;
+        const child = find(node.children || []);
+        if (child) return child;
+      }
+      return null;
+    };
+    const node = find(treeData);
     setActiveFolder(folderPath);
-    setActiveFolderId(folderId);
+    setActiveFolderId(node?.id || folderId);
+    setActiveFolderCategory(node?.category || null);
+    if (node?.sect) setActiveSect(node.sect);
     setPage(1);
-
-
-    if (folderId) {
-      fetch(`/api/folder/${folderId}`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data && data.success && data.folder) {
-            setActiveFolderCategory(data.folder.category || null);
-            if (data.folder.sect && data.folder.sect !== activeSect) {
-              setActiveSect(data.folder.sect);
-            }
-          }
-        })
-        .catch(() => {});
-    } else {
-      setActiveFolderCategory(null);
-    }
   };
 
   // Reset all active filters
@@ -384,6 +410,7 @@ export default function App() {
         if (data.success) {
           setActiveFolderCategory(newCat);
           fetchTreeAndStats();
+          refreshDocuments();
           setPage(1);
           showToast(`تم تصنيف المجلد كـ ${newCat ? DEBATE_CATEGORIES[newCat].name : 'بدون تصنيف'}`);
         }
@@ -407,6 +434,7 @@ export default function App() {
       .then((data) => {
         if (data.success) {
           fetchFavorites();
+          refreshDocuments();
           showToast(isFav ? 'تمت الإزالة من سلة البث' : 'تمت الإضافة إلى سلة البث والمناظرة 🔥');
         }
       })
@@ -417,6 +445,7 @@ export default function App() {
     Promise.all(favorites.map((f) => fetch(`/api/favorites/${f.id}`, { method: 'DELETE' })))
       .then(() => {
         fetchFavorites();
+        refreshDocuments();
         showToast('تم تفريغ سلة البث');
       })
       .catch((err) => console.error('Error clearing favorites:', err));
@@ -482,22 +511,20 @@ export default function App() {
         setIsScanning(false);
         if (data.success) {
           fetchTreeAndStats();
+          refreshDocuments();
           showToast(`اكتمل الفحص: ${data.totalFiles} ملف مفهرس`);
-        }
+        } else {showToast('تعذر تحديث الفهرس. حاول مرة أخرى.');}
       })
       .catch((err) => {
         setIsScanning(false);
-        console.error('Scan failed:', err);
+        showToast('تعذر تحديث الفهرس. حاول مرة أخرى.');
       });
   };
 
   // Compute parent folder path for breadcrumbs
   const getParentFolderPath = (p) => {
     if (!p) return '';
-    const parts = p.split(/[/\\\\]/);
-    if (parts.length <= 1) return '';
-    parts.pop();
-    return parts.join('/');
+    return p.replace(/[\\/][^\\/]+$/, '') === p ? '' : p.replace(/[\\/][^\\/]+$/, '');
   };
 
   const currentFolderCatMeta = activeFolderCategory ? DEBATE_CATEGORIES[activeFolderCategory] : null;
@@ -631,6 +658,11 @@ export default function App() {
         {/* Sidebar Folder Hierarchy */}
         <SidebarTree
           treeData={treeData}
+          activeSect={activeSect}
+          loadError={treeError}
+          onRetry={fetchTreeAndStats}
+          sectsList={sectsList}
+          onSelectSect={handleSelectSect}
           activeFolder={activeFolder}
           onSelectFolder={(folderPath, id) => handleSelectFolder(folderPath, id)}
           totalDocsCount={stats?.totalDocuments}
@@ -677,6 +709,7 @@ export default function App() {
                         onClick={() => handleSelectFolder(getParentFolderPath(activeFolder))}
                         className="px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-amber-500 border border-slate-200 dark:border-slate-700 btn-press text-xs font-bold"
                         title="المجلد الأعلى"
+                        aria-label="المجلد الأعلى"
                       >
                         ..
                       </button>
@@ -784,7 +817,7 @@ export default function App() {
               {activeCategory && activeCategory !== 'all' && (
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-xs font-bold">
                   <span className={DEBATE_CATEGORIES[activeCategory]?.dotClass} />
-                  <span>صنف: {DEBATE_CATEGORIES[activeCategory]?.name}</span>
+                  <span>صنف: {DEBATE_CATEGORIES[activeCategory]?.name || 'غير مصنف'}</span>
                   <button
                     onClick={() => setActiveCategory('all')}
                     className="hover:text-rose-500"
@@ -794,8 +827,9 @@ export default function App() {
                 </span>
               )}
 
+              {activeFilter !== 'all' && <span className="rounded-lg bg-slate-100 px-2 py-1 text-slate-700 dark:bg-slate-800 dark:text-slate-200">{activeFilter === 'favorites' ? 'المحفوظة في سلة البث' : 'مواد استُخرج نصها'}</span>}
               {/* Clear All Filters Button */}
-              {(debouncedSearch || activeTag || (activeCategory && activeCategory !== 'all')) && (
+              {(activeFilter !== 'all' || debouncedSearch || activeTag || (activeCategory && activeCategory !== 'all')) && (
                 <button
                   onClick={handleResetFilters}
                   className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 text-[11px] underline font-semibold"
@@ -812,9 +846,12 @@ export default function App() {
           </div>
 
           {/* Documents & Subfolders Grid View */}
-          <DocumentGrid
+          {loadError ? <div role="alert" className="p-6 text-slate-700 dark:text-slate-200">
+            <p>{loadError}</p><button className="archive-tool-option mt-3" onClick={refreshDocuments}>إعادة المحاولة</button>
+          </div> : <DocumentGrid
             documents={documents}
-            subfolders={subfolders}
+            subfolders={activeSect === 'all' && !activeFolder && !debouncedSearch && activeCategory === 'all' && !activeTag && activeFilter === 'all'
+              ? sectsList.filter(s => s.sect !== 'all').map(s => ({id:'sect:'+s.sect,path:'sect:'+s.sect,name:s.name || s.sect,file_count:s.count})) : subfolders}
             activeFolder={activeFolder}
             onSelectFolder={(folderPath, id) => handleSelectFolder(folderPath, id)}
             total={totalDocs}
@@ -833,7 +870,8 @@ export default function App() {
             onResetFilters={handleResetFilters}
             searchTerm={debouncedSearch}
             activeTag={activeTag}
-          />
+            activeFilter={activeFilter}
+          />}
         </main>
       </div>
 
@@ -850,6 +888,7 @@ export default function App() {
           onOpenProjector={(doc) => setProjectorDoc(doc)}
           onSelectTag={handleSelectTag}
           isFavorite={!!favoritesMap[activeDocId]}
+          onDocumentUpdated={() => {refreshDocuments();fetchTreeAndStats();}}
         />
       )}
 

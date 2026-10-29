@@ -181,10 +181,15 @@ export default function Navbar({
                 <MoreHorizontal className="w-4 h-4" />
               </button>
               {toolsOpen && <div id="archive-tools-panel" className="absolute end-0 top-full mt-2 z-40 w-56 rounded-xl border border-slate-500 bg-white dark:bg-slate-900 shadow-xl p-1.5 text-slate-700 dark:text-slate-200">
+                <label className="block px-2 py-2 text-xs">عرض المواد
+                  <select aria-label="عرض المواد" value={activeFilter} onChange={e => setActiveFilter(e.target.value)} className="mt-2 block w-full rounded-lg border border-slate-500 bg-white p-2 text-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                    <option value="all">جميع المواد</option><option value="favorites">المحفوظة في سلة البث</option><option value="ocr_completed">مواد استُخرج نصها</option>
+                  </select>
+                </label>
                 {onOpenFeatures && <button className="archive-tool-option" onClick={() => openTool(onOpenFeatures)}><CircleHelp className="w-4 h-4" />طريقة استخدام الموقع</button>}
                 <button className="archive-tool-option" onClick={() => openTool(onOpenCategoryGuide)}><Sparkles className="w-4 h-4" />دليل هجوم وإلزام ودفاع</button>
                 <button className="archive-tool-option" onClick={() => openTool(onOpenStats)}><BarChart3 className="w-4 h-4" />إحصائيات الأرشيف</button>
-                <button className="archive-tool-option" disabled={isScanning} onClick={() => openTool(onRescan)}><RefreshCw className={`w-4 h-4 ${isScanning ? 'animate-spin' : ''}`} />{isScanning ? 'جارٍ فحص الملفات...' : 'إعادة فحص الملفات'}</button>
+                <button className="archive-tool-option" disabled={isScanning} onClick={() => openTool(onRescan)}><RefreshCw className={`w-4 h-4 ${isScanning ? 'animate-spin' : ''}`} />{isScanning ? 'جارٍ تحديث الفهرس...' : 'تحديث الفهرس والأقسام'}</button>
               </div>}
             </div>
 
@@ -303,6 +308,7 @@ export default function Navbar({
               الكل
             </button>
 
+            <button aria-pressed={activeCategory === 'uncategorized'} onClick={() => setActiveCategory('uncategorized')} className="archive-tool-option whitespace-nowrap">غير مصنف</button>
             {/* Attack */}
             <button
               onClick={() => setActiveCategory(activeCategory === 'attack' ? 'all' : 'attack')}

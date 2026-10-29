@@ -41,9 +41,14 @@ export default function ImageViewerModal({
   copiedDocId,
   onOpenProjector,
   onSelectTag,
-  isFavorite
+  isFavorite,
+  onDocumentUpdated
 }) {
+  const currentDocId = useRef(docId);
+  currentDocId.current = docId;
   const [docData, setDocData] = useState(null);
+  const requestRef = useRef(null);
+  const [loadError, setLoadError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [isOCRProcessing, setIsOCRProcessing] = useState(false);
   const [zoom, setZoom] = useState(1);
@@ -113,7 +118,8 @@ export default function ImageViewerModal({
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
+        if (data.success && currentDocId.current === docId) {
+          onDocumentUpdated?.();
           loadDocumentDetails(docId);
           setSelectedText('');
         }
@@ -133,6 +139,11 @@ export default function ImageViewerModal({
 
   // Fetch document details, tags, folders, and OCR bounding boxes
   const loadDocumentDetails = (id) => {
+    requestRef.current?.abort();
+    const controller = new AbortController();
+    requestRef.current = controller;
+    setLoadError('');
+    setDocData(null);
     setIsLoading(true);
     setZoom(1);
     setPan({ x: 0, y: 0 });
@@ -140,16 +151,19 @@ export default function ImageViewerModal({
     setActiveImageIndex(0);
 
 
-    fetch(`/api/document/${id}`)
-      .then((res) => res.json())
+    fetch(`/api/document/${id}`, {signal:controller.signal})
+      .then(res => {if (!res.ok) throw new Error('load');return res.json();})
       .then((data) => {
-        if (data.success) {
+        if (controller.signal.aborted) return;
+        if (data.success && currentDocId.current === docId) {
           setDocData(data);
+        } else {throw new Error('load');
         }
         setIsLoading(false);
       })
       .catch((err) => {
-        console.error('Error loading document:', err);
+        if (err.name === 'AbortError') return;
+        setLoadError('تعذر تحميل الوثيقة');
         setIsLoading(false);
       });
   };
@@ -158,6 +172,7 @@ export default function ImageViewerModal({
     if (docId) {
       loadDocumentDetails(docId);
     }
+    return () => requestRef.current?.abort();
   }, [docId]);
 
   // Load all folders when folder picker is opened
@@ -194,7 +209,8 @@ export default function ImageViewerModal({
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
+        if (data.success && currentDocId.current === docId) {
+          onDocumentUpdated?.();
           setDocData((prev) => ({
             ...prev,
             folders: data.folders
@@ -214,7 +230,8 @@ export default function ImageViewerModal({
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
+        if (data.success && currentDocId.current === docId) {
+          onDocumentUpdated?.();
           setDocData((prev) => ({
             ...prev,
             folders: data.folders
@@ -253,7 +270,8 @@ export default function ImageViewerModal({
       .then((res) => res.json())
       .then((data) => {
         setIsOCRProcessing(false);
-        if (data.success) {
+        if (data.success && currentDocId.current === docId) {
+          onDocumentUpdated?.();
           setDocData((prev) => ({
             ...prev,
             document: data.document,
@@ -281,7 +299,8 @@ export default function ImageViewerModal({
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
+        if (data.success && currentDocId.current === docId) {
+          onDocumentUpdated?.();
           setDocData((prev) => ({
             ...prev,
             document: {
@@ -306,7 +325,8 @@ export default function ImageViewerModal({
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
+        if (data.success && currentDocId.current === docId) {
+          onDocumentUpdated?.();
           setDocData((prev) => ({
             ...prev,
             tags: data.tags
@@ -321,12 +341,13 @@ export default function ImageViewerModal({
   // Remove Tag
   const handleRemoveTag = (tagId) => {
     if (!docId) return;
-    fetch(`/api/document/${docId}/tags/${tagId}`, {
+    fetch(`/api/document/${docId}/tag-ids/${tagId}`, {
       method: 'DELETE'
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
+        if (data.success && currentDocId.current === docId) {
+          onDocumentUpdated?.();
           setDocData((prev) => ({
             ...prev,
             tags: prev.tags.filter((t) => t.id !== tagId)
@@ -369,7 +390,7 @@ export default function ImageViewerModal({
     const highlight = (str) => {
       if (!query || !query.trim() || !str) return str;
       const tokens = query.trim().split(/\s+/).filter(Boolean);
-      const regex = new RegExp(`(${tokens.join('|')})`, 'gi');
+      const regex = new RegExp(`(${tokens.map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')})`, 'gi');
       const parts = str.split(regex);
 
       return parts.map((part, i) => {
@@ -450,6 +471,7 @@ export default function ImageViewerModal({
 
   if (!docId) return null;
 
+  if (loadError) return <div role="dialog" aria-modal="true" aria-label="تحميل الوثيقة" className="fixed inset-0 z-50 flex items-center justify-center bg-white text-slate-700 dark:bg-slate-900 dark:text-slate-200"><div role="alert"><p>{loadError}</p><button className="archive-tool-option" onClick={()=>loadDocumentDetails(docId)}>إعادة المحاولة</button><button className="archive-tool-option" onClick={onClose}>إغلاق</button></div></div>;
   const doc = docData?.document;
   const docImages = (doc?.images && doc.images.length > 0) 
     ? doc.images 
