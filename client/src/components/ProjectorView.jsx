@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Maximize2, Minimize2, X, Copy, Check } from 'lucide-react';
+import { imageUrl as buildImageUrl } from '../utils/apiUrls';
 
 export default function ProjectorView({ doc, onClose, onCopyImage, copiedDocId }) {
   const [showControls, setShowControls] = useState(true);
@@ -27,7 +28,7 @@ export default function ProjectorView({ doc, onClose, onCopyImage, copiedDocId }
   const isImageFile = (p) => Boolean(p && typeof p === 'string' && /\.(jpe?g|png|webp|gif|bmp|svg)$/i.test(p));
   const imgPath = (doc.images && doc.images.find(isImageFile)) || (isImageFile(doc.relative_path) ? doc.relative_path : '') || (isImageFile(doc.full_path) ? doc.full_path : '') || (isImageFile(doc.filename) ? doc.filename : '');
   const hasImage = Boolean(imgPath);
-  const imageUrl = hasImage ? `/api/image/raw?path=${encodeURIComponent(imgPath)}` : '';
+  const imageUrl = hasImage ? buildImageUrl(imgPath) : '';
   const isCopied = copiedDocId === doc.id;
   const cleanText = (doc.ocr_text || '').replace(/!\[.*?\]\(.*?\)/g, '').trim();
 

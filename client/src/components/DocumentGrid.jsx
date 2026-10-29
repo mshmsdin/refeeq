@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 
 import { DEBATE_CATEGORIES } from '../utils/categories';
+import { imageUrl as buildImageUrl } from '../utils/apiUrls';
 
 export default function DocumentGrid({
   documents,
@@ -155,7 +156,7 @@ export default function DocumentGrid({
               const hasImage = Boolean(firstImage);
               const isAlbum = hasImage && ((doc.image_count && doc.image_count > 1) || (doc.images && doc.images.filter(isImageFile).length > 1));
               const albumCount = doc.image_count || (doc.images ? doc.images.filter(isImageFile).length : 1);
-              const imageUrl = hasImage ? `/api/image/raw?path=${encodeURIComponent(firstImage)}` : '';
+              const imageUrl = hasImage ? buildImageUrl(firstImage) : '';
               const docCat = doc.category ? DEBATE_CATEGORIES[doc.category] : null;
               const textSnippet = doc.ocr_text 
                 ? doc.ocr_text.replace(/!\[.*?\]\(.*?\)/g, '').replace(/#+\s*/g, '').trim()

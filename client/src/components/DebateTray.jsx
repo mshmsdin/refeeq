@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Flame, X, Trash2, Copy, Maximize2, Check, BookOpen, FileText } from 'lucide-react';
+import { imageUrl as buildImageUrl } from '../utils/apiUrls';
 
 export default function DebateTray({
   isOpen,
@@ -90,7 +91,7 @@ export default function DebateTray({
             const isImageFile = (p) => Boolean(p && typeof p === 'string' && /\.(jpe?g|png|webp|gif|bmp|svg)$/i.test(p));
             const imgPath = (doc.images && doc.images.find(isImageFile)) || (isImageFile(doc.relative_path) ? doc.relative_path : '') || (isImageFile(doc.full_path) ? doc.full_path : '') || (isImageFile(doc.filename) ? doc.filename : '');
             const hasImage = Boolean(imgPath);
-            const imageUrl = hasImage ? `/api/image/raw?path=${encodeURIComponent(imgPath)}` : '';
+            const imageUrl = hasImage ? buildImageUrl(imgPath) : '';
             const isCopied = copiedDocId === doc.id;
 
             return (

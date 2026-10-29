@@ -29,6 +29,7 @@ import {
 } from 'lucide-react';
 
 import { DEBATE_CATEGORIES } from '../utils/categories';
+import { imageUrl as buildImageUrl } from '../utils/apiUrls';
 
 export default function ImageViewerModal({
   docId,
@@ -386,7 +387,7 @@ export default function ImageViewerModal({
 
     return segments.map((seg, idx) => {
       if (seg.type === 'image') {
-        const rawUrl = `/api/image/raw?path=${encodeURIComponent(seg.src)}`;
+        const rawUrl = buildImageUrl(seg.src);
         return (
           <div key={idx} className="my-3 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-black/5 dark:bg-black/20 p-1 flex flex-col items-center select-none">
             <img 
@@ -456,7 +457,7 @@ export default function ImageViewerModal({
   const isAlbum = docImages.length > 1;
   const currentImageRel = docImages[activeImageIndex] || docImages[0] || doc?.relative_path || doc?.full_path;
   const hasImage = Boolean(currentImageRel && /\.(jpe?g|png|webp|gif|bmp)$/i.test(currentImageRel));
-  const imageUrl = hasImage ? `/api/image/raw?path=${encodeURIComponent(currentImageRel)}` : '';
+  const imageUrl = hasImage ? buildImageUrl(currentImageRel) : '';
   const isCopied = doc && copiedDocId === doc.id;
   const currentCat = doc?.category ? DEBATE_CATEGORIES[doc.category] : null;
 
@@ -1055,7 +1056,7 @@ export default function ImageViewerModal({
                   {/* Thumbnails Grid inside Left Sidebar */}
                   <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 pt-1">
                     {docImages.map((imgRel, idx) => {
-                      const thumbUrl = `/api/image/raw?path=${encodeURIComponent(imgRel)}`;
+                      const thumbUrl = buildImageUrl(imgRel);
                       const isActive = idx === activeImageIndex;
                       return (
                         <button

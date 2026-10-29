@@ -12,6 +12,7 @@ import FeaturesPage from './components/FeaturesPage';
 import { Tag as TagIcon, X, Compass, Folder, ChevronLeft, Link2, Check, Sparkles, RotateCcw, BookOpen } from 'lucide-react';
 import { parseCurrentRoute, buildRouteUrl, buildBibleUrl, pushRouteUrl } from './utils/urlRoutes';
 import { DEBATE_CATEGORIES } from './utils/categories';
+import { imageUrl as buildImageUrl } from './utils/apiUrls';
 
 const BIBLE_ONLY = import.meta.env.VITE_BIBLE_ONLY === 'true';
 
@@ -428,7 +429,7 @@ export default function App() {
         showToast('⚠️ لا يوجد مسار صورة لهذه الوثيقة');
         return;
       }
-      const imageUrl = `/api/image/raw?path=${encodeURIComponent(imgPath)}`;
+      const imageUrl = buildImageUrl(imgPath);
       const res = await fetch(imageUrl);
       const blob = await res.blob();
 
