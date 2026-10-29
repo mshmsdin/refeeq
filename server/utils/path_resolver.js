@@ -46,6 +46,11 @@ let lastIndexTime = 0;
 let isIndexing = false;
 const INDEX_TTL_MS = 5 * 60 * 1000; // refresh index at most once every 5 minutes
 
+export function invalidateMediaIndex() {
+  mediaIndex = null;
+  lastIndexTime = 0;
+}
+
 /**
  * Recursively scans directory and adds all files to the mediaIndex Map.
  */
@@ -168,6 +173,24 @@ export function resolveImagePath(inputPath) {
   // 3. Direct absolute path check
   if (path.isAbsolute(normalized) && safeExists(normalized)) {
     return path.resolve(normalized);
+  }
+
+  // Preserve the book's directory before looking up a generic basename such
+  // as image1.jpeg. Imported books often reuse those names across collections.
+  const storageMatch = normalized.match(/(?:^|\/)storage\/(.+)$/i);
+  if (storageMatch) {
+    const storagePaths = [`storage/${storageMatch[1]}`, storageMatch[1]];
+    for (const relativePath of storagePaths) {
+      for (const root of CANDIDATE_ROOTS) {
+        const candidate = path.join(root, ...relativePath.split('/'));
+        if (safeExists(candidate)) return path.resolve(candidate);
+      }
+    }
+    const index = getMediaIndex();
+    for (const relativePath of storagePaths) {
+      if (index.has(relativePath)) return index.get(relativePath);
+      if (index.has(relativePath.normalize('NFC'))) return index.get(relativePath.normalize('NFC'));
+    }
   }
 
   // 4. Extract relative part (strip media/ or drive letters)

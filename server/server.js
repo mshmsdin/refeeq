@@ -20,7 +20,7 @@ import zlib from 'zlib';
 import { pipeline } from 'stream/promises';
 import { Readable } from 'stream';
 import { extractDistinctKeywords, normalizeArabicText } from './utils/arabic_nlp.js';
-import { resolveImagePath } from './utils/path_resolver.js';
+import { resolveImagePath, invalidateMediaIndex } from './utils/path_resolver.js';
 import { getBibleSeoContext } from './utils/bible_seo.js';
 
 
@@ -1243,7 +1243,7 @@ app.post('/api/sync/finalize', requireSyncAuth, (req, res) => {
 
         // Invalidate and refresh media index
         try {
-          getMediaIndex();
+          invalidateMediaIndex();
         } catch (e) {}
 
         // Recalculate stats
@@ -1442,6 +1442,7 @@ app.post('/api/sync/pull-url', requireSyncAuth, async (req, res) => {
         }
 
         initDatabase();
+        invalidateMediaIndex();
 
         try {
           fs.unlinkSync(tempZip);
