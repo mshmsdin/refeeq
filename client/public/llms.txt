@@ -232,6 +232,7 @@ https://din.hk/rafeeq/robots.txt
 
 - `GET /api/sync/status`
 - `GET /api/sync/job-status`
+- `POST /api/sync/documents` إضافة سجلات وثائق مصوّرة ناقصة فقط بعد التحقق من وجود ملفاتها، مع نسخة احتياطية تلقائية، دون استبدال السجلات الموجودة أو بيانات البيبل.
 - `POST /api/sync/chunk-stream`
 - `POST /api/sync/chunk`
 - `POST /api/sync/finalize`

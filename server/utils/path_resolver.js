@@ -12,7 +12,7 @@ const MEDIA_EXT_REGEX = /\.(jpe?g|png|webp|gif|bmp|svg|pdf|ogg|mp3|mp4|wav)$/i;
 export function stripSymbols(str) {
   if (!str) return '';
   return str
-    .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE00}-\u{FE0F}]/gu, '') // emojis & symbols
+    .replace(/[\u{1F1E6}-\u{1F1FF}\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE00}-\u{FE0F}\u{200D}]/gu, '') // emojis, flags & joining marks
     .replace(/^[^\p{L}\p{N}]+/u, '') // leading non-alphanumeric
     .replace(/[\r\n\t]/g, '')
     .trim();

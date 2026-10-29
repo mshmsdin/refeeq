@@ -1073,6 +1073,65 @@ app.get('/api/sync/job-status', (req, res) => {
   res.json({ success: true, ...currentSyncJob });
 });
 
+// Append missing archive records without replacing the live database or Bible data.
+app.post('/api/sync/documents', requireSyncAuth, async (req, res) => {
+  try {
+    if (['downloading', 'extracting'].includes(currentSyncJob.status)) {
+      return res.status(409).json({ success: false, error: 'Wait for the media sync to finish' });
+    }
+    const documents = req.body.documents;
+    if (!Array.isArray(documents) || documents.length === 0 || documents.length > 1000) {
+      return res.status(400).json({ success: false, error: 'Expected 1 to 1000 documents' });
+    }
+    const db = getDb();
+    const exists = db.prepare('SELECT id FROM documents WHERE id = ? OR relative_path = ?');
+    const missing = [];
+    const seenIds = new Set();
+    const seenPaths = new Set();
+    for (const document of documents) {
+      if (!document || !Number.isSafeInteger(document.id) || document.id <= 0 ||
+          !['filename', 'relative_path', 'folder_path', 'folder_name', 'sect'].every(key =>
+            typeof document[key] === 'string' && document[key].trim().length > 0)) {
+        return res.status(400).json({ success: false, error: 'Invalid document metadata' });
+      }
+      if (exists.get(document.id, document.relative_path) || seenIds.has(document.id) || seenPaths.has(document.relative_path)) continue;
+      if (!resolveImagePath(document.relative_path)) {
+        return res.status(400).json({ success: false, error: `Media missing for document ${document.id}` });
+      }
+      missing.push(document);
+      seenIds.add(document.id);
+      seenPaths.add(document.relative_path);
+    }
+    if (missing.length === 0) return res.json({ success: true, inserted: 0, skipped: documents.length });
+    await db.backup(`${getDbPath()}.before-archive-sync-${Date.now()}.db`);
+    const insertFolder = db.prepare(`INSERT INTO folders (path, name, parent_path, sect)
+      VALUES (?, ?, ?, ?) ON CONFLICT(path) DO NOTHING`);
+    const insertDocument = db.prepare(`INSERT INTO documents
+      (id, filename, relative_path, full_path, folder_name, folder_path, sect, category, book_source, file_size)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
+    let inserted = 0;
+    db.transaction(() => {
+      for (const document of missing) {
+        // Recheck after the asynchronous backup in case another sync inserted it.
+        if (exists.get(document.id, document.relative_path)) continue;
+        const parent = document.folder_path.replace(/[\\/][^\\/]+$/, '');
+        insertFolder.run(document.folder_path, document.folder_name, parent === document.folder_path ? '' : parent, document.sect);
+        insertDocument.run(document.id, document.filename, document.relative_path,
+          resolveImagePath(document.relative_path), document.folder_name, document.folder_path,
+          document.sect, ['attack', 'obligation', 'defense'].includes(document.category) ? document.category : null,
+          typeof document.book_source === 'string' ? document.book_source : null,
+          fs.statSync(resolveImagePath(document.relative_path)).size);
+        inserted++;
+      }
+      db.prepare(`UPDATE folders SET file_count =
+        (SELECT COUNT(*) FROM documents WHERE documents.folder_path = folders.path)`).run();
+    })();
+    res.json({ success: true, inserted, skipped: documents.length - inserted });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 
 // 2. Upload Single Chunk as Raw Binary Stream (High-Performance)
 app.post('/api/sync/chunk-stream', requireSyncAuth, (req, res) => {
