@@ -22,6 +22,7 @@ import { Readable } from 'stream';
 import { extractDistinctKeywords, normalizeArabicText } from './utils/arabic_nlp.js';
 import { resolveImagePath, invalidateMediaIndex } from './utils/path_resolver.js';
 import { getBibleSeoContext } from './utils/bible_seo.js';
+import { prepareArchiveRestore, applyArchiveRestore, archiveDocumentHighWater } from './utils/archive_tree_sync.js';
 
 
 
@@ -1054,6 +1055,7 @@ app.get('/api/sync/status', requireSyncAuth, (req, res) => {
       db_size_bytes: fs.existsSync(dbFilePath) ? fs.statSync(dbFilePath).size : 0,
       documents_count: docCount,
       folders_count: folderCount,
+      next_document_id: archiveDocumentHighWater(db) + 1,
       archive_path: process.env.ARCHIVE_PATH || '/app/data/archive',
       media_path: process.env.MEDIA_PATH || '/app/data/media',
       tmp_sync_dir: getSyncTmpDir(),
@@ -1132,6 +1134,22 @@ app.post('/api/sync/documents', requireSyncAuth, async (req, res) => {
   }
 });
 
+
+// Restore a hierarchy and its missing image records without replacing Bible/OCR data.
+app.post('/api/sync/archive-tree', requireSyncAuth, async (req, res) => {
+  try {
+    if (['downloading', 'extracting'].includes(currentSyncJob.status)) {
+      return res.status(409).json({ success: false, error: 'Wait for the media sync to finish' });
+    }
+    const db = getDb();
+    const prepared = prepareArchiveRestore(db, req.body, resolveImagePath);
+    await db.backup(`${getDbPath()}.before-tree-restore-${Date.now()}.db`);
+    const result = applyArchiveRestore(db, req.body, prepared);
+    res.json({ success: true, ...result });
+  } catch (err) {
+    res.status(err.status || 500).json({ success: false, error: err.message });
+  }
+});
 
 // 2. Upload Single Chunk as Raw Binary Stream (High-Performance)
 app.post('/api/sync/chunk-stream', requireSyncAuth, (req, res) => {

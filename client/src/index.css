@@ -152,6 +152,36 @@
   @apply focus:outline-none focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500;
 }
 
+/* Archive navigation: readable search, keyboard focus, and touch targets. */
+.archive-navigation :focus-visible {
+  outline: 3px solid #92400e;
+  outline-offset: 3px;
+}
+.dark .archive-navigation :focus-visible { outline-color: #fcd34d; }
+.archive-search::placeholder { opacity: 1; }
+.archive-tool-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  text-align: start;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.archive-tool-option:hover { background: var(--bg-muted); }
+.archive-tool-option:disabled { cursor: wait; }
+.archive-folder-button:focus-visible { outline: 2px solid currentColor; outline-offset: -2px; }
+@media (forced-colors: active) {
+  .archive-navigation :focus-visible { outline-color: Highlight; }
+  .archive-navigation button, .archive-navigation input, .archive-navigation summary {
+    border: 1px solid ButtonText;
+  }
+  .archive-navigation [aria-pressed="true"] { outline: 2px solid Highlight; outline-offset: -2px; }
+}
+
 /* Bible Font & Luxury Manuscript Styling */
 .font-scheherazade,
 .scheherazade-font,

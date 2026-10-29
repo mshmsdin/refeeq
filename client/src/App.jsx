@@ -71,6 +71,7 @@ export default function App() {
   const [isStatsOpen, setIsStatsOpen] = useState(false);
   const [isCategoryGuideOpen, setIsCategoryGuideOpen] = useState(false);
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  const closeMobileSidebar = useCallback(() => setIsMobileSidebarOpen(false), []);
   const [isScanning, setIsScanning] = useState(false);
   const [copiedDocId, setCopiedDocId] = useState(null);
   const [copiedFolderLink, setCopiedFolderLink] = useState(false);
@@ -634,7 +635,7 @@ export default function App() {
           onSelectFolder={(folderPath, id) => handleSelectFolder(folderPath, id)}
           totalDocsCount={stats?.totalDocuments}
           isMobileOpen={isMobileSidebarOpen}
-          onCloseMobile={() => setIsMobileSidebarOpen(false)}
+          onCloseMobile={closeMobileSidebar}
         />
 
         {/* Center Main Content Grid */}
