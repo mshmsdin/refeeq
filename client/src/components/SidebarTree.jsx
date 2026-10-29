@@ -39,7 +39,6 @@ export default function SidebarTree({
   loadError,
   onRetry,
   sectsList,
-  onSelectSect,
   activeFolder,
   onSelectFolder,
   totalDocsCount,
@@ -97,8 +96,12 @@ export default function SidebarTree({
   };
 
   const filteredTree = useMemo(() => {
-    return filterNodes(treeData, filterText);
-  }, [treeData, filterText]);
+    const grouped = activeSect === 'all' ? sectsList.filter(s => s.sect !== 'all').map(s => ({
+      id:'sect:'+s.sect, path:'sect:'+s.sect, name:s.name || s.sect,
+      file_count:s.count, children:treeData.filter(node => node.sect === s.sect)
+    })) : treeData;
+    return filterNodes(grouped, filterText);
+  }, [treeData, filterText, activeSect, sectsList]);
 
   const content = (
     <div className="flex flex-col h-full select-none bg-white dark:bg-slate-900/90 backdrop-blur-md">
@@ -184,10 +187,7 @@ export default function SidebarTree({
         </button>
 
         {loadError && <div role="alert" className="p-3 text-sm text-slate-700 dark:text-slate-200">تعذر تحميل الأقسام<button className="archive-tool-option" onClick={onRetry}>إعادة تحميل الأقسام</button></div>}
-        {activeSect === 'all' ? sectsList.filter(s => s.sect !== 'all').map(section => <section key={section.sect}>
-          <button className="archive-tool-option font-bold" onClick={() => {onSelectSect(section.sect);onCloseMobile?.();}}>{section.name || section.sect} ({section.count.toLocaleString('ar-EG')})</button>
-          {filteredTree.filter(node => node.sect === section.sect).map(node => <TreeNode key={node.id} node={node} activeFolder={activeFolder} forceExpand={Boolean(filterText.trim())} onSelectFolder={(p,id)=>{onSelectFolder(p,id);onCloseMobile?.();}} />)}
-        </section>) : filteredTree.map((node) => (
+        {filteredTree.map((node) => (
           <TreeNode
             key={node.id || node.path}
             forceExpand={Boolean(filterText.trim())}

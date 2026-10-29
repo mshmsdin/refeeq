@@ -662,7 +662,6 @@ export default function App() {
           loadError={treeError}
           onRetry={fetchTreeAndStats}
           sectsList={sectsList}
-          onSelectSect={handleSelectSect}
           activeFolder={activeFolder}
           onSelectFolder={(folderPath, id) => handleSelectFolder(folderPath, id)}
           totalDocsCount={stats?.totalDocuments}
