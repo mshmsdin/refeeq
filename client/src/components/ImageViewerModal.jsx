@@ -54,7 +54,9 @@ export default function ImageViewerModal({
   const [zoom, setZoom] = useState(1);
   const [rotation, setRotation] = useState(0);
   const [invert, setInvert] = useState(false);
-  const [showOCRPanel, setShowOCRPanel] = useState(true);
+  const [showOCRPanel, setShowOCRPanel] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia('(min-width: 640px)').matches
+  );
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
@@ -853,7 +855,7 @@ export default function ImageViewerModal({
 
         {/* Right/Side: OCR Text & Metadata Panel (ONLY for image-based manuscripts) */}
         {hasImage && showOCRPanel && (
-          <div className="w-full sm:w-96 lg:w-[420px] bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col shrink-0 z-10 animate-fadeIn">
+          <div className="absolute inset-x-0 bottom-0 z-30 flex max-h-[58%] w-full flex-col rounded-t-2xl border-t border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900 sm:relative sm:inset-auto sm:z-10 sm:max-h-none sm:w-96 sm:shrink-0 sm:rounded-none sm:border-t-0 sm:border-r sm:shadow-none lg:w-[420px] animate-fadeIn">
             
             {/* Panel Header */}
             <div className="p-3.5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
@@ -889,7 +891,7 @@ export default function ImageViewerModal({
             </div>
 
             {/* Panel Content (Scrollable) */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 text-xs">
+            <div className="min-h-0 flex-1 space-y-4 overflow-y-auto p-3 text-xs sm:p-4">
               
               {/* Image Controls Toolbar (Embedded in Sidebar) */}
               <div className="flex flex-wrap items-center justify-between gap-1.5 p-2 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80">
