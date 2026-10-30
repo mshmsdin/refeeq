@@ -25,6 +25,7 @@ import { getBibleSeoContext } from './utils/bible_seo.js';
 import { prepareArchiveRestore, applyArchiveRestore, archiveDocumentHighWater } from './utils/archive_tree_sync.js';
 import { auditArchiveMetadata, repairArchiveMetadata, recountArchiveFolders } from './utils/archive_metadata.js';
 import { reorganizeChristianArchive } from './utils/christian_archive_reorganization.js';
+import { reorganizeNumberedImageAlbums } from './utils/image_album_reorganization.js';
 
 
 
@@ -1118,6 +1119,15 @@ app.post('/api/sync/reorganize-christian-archive', requireSyncAuth, async (req,r
     const db=getDb();
     await db.backup(`${getDbPath()}.before-christian-albums-${Date.now()}.db`);
     res.json({success:true,...reorganizeChristianArchive(db)});
+  } catch (err) {res.status(500).json({success:false,error:err.message});}
+});
+
+app.post('/api/sync/reorganize-image-albums', requireSyncAuth, async (req,res) => {
+  try {
+    if (['downloading','extracting'].includes(currentSyncJob.status)) return res.status(409).json({success:false,error:'Media sync is running'});
+    const db=getDb();
+    await db.backup(`${getDbPath()}.before-image-albums-${Date.now()}.db`);
+    res.json({success:true,...reorganizeNumberedImageAlbums(db)});
   } catch (err) {res.status(500).json({success:false,error:err.message});}
 });
 
