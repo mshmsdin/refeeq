@@ -64,6 +64,12 @@ export function initDatabase() {
       updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
 
+    CREATE TABLE IF NOT EXISTS document_aliases (
+      alias_id INTEGER PRIMARY KEY,
+      document_id INTEGER NOT NULL,
+      FOREIGN KEY(document_id) REFERENCES documents(id) ON DELETE CASCADE
+    );
+
     CREATE TABLE IF NOT EXISTS ocr_boxes (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       document_id INTEGER NOT NULL,

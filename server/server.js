@@ -24,6 +24,7 @@ import { resolveImagePath, invalidateMediaIndex } from './utils/path_resolver.js
 import { getBibleSeoContext } from './utils/bible_seo.js';
 import { prepareArchiveRestore, applyArchiveRestore, archiveDocumentHighWater } from './utils/archive_tree_sync.js';
 import { auditArchiveMetadata, repairArchiveMetadata, recountArchiveFolders } from './utils/archive_metadata.js';
+import { reorganizeChristianArchive } from './utils/christian_archive_reorganization.js';
 
 
 
@@ -761,7 +762,8 @@ app.get('/api/documents', (req, res) => {
 app.get('/api/document/:id', (req, res) => {
   try {
     const db = getDb();
-    const docId = parseInt(req.params.id, 10);
+    const requestedId = parseInt(req.params.id, 10);
+    const docId = db.prepare('SELECT document_id FROM document_aliases WHERE alias_id=?').get(requestedId)?.document_id || requestedId;
     const doc = db.prepare(`
       SELECT d.*, f.id as fav_id, f.notes as fav_notes
       FROM documents d
@@ -833,6 +835,7 @@ app.get('/api/document/:id', (req, res) => {
 
     res.json({
       success: true,
+      requested_id: requestedId,
       document: {
         ...doc,
         book_source: isPrivateImportSource(doc.book_source) ? null : doc.book_source,
@@ -1106,6 +1109,15 @@ app.post('/api/sync/repair', requireSyncAuth, async (req,res) => {
     const db=getDb();
     await db.backup(`${getDbPath()}.before-metadata-repair-${Date.now()}.db`);
     res.json({success:true,...repairArchiveMetadata(db,{rebuildSearch:true})});
+  } catch (err) {res.status(500).json({success:false,error:err.message});}
+});
+
+app.post('/api/sync/reorganize-christian-archive', requireSyncAuth, async (req,res) => {
+  try {
+    if (['downloading','extracting'].includes(currentSyncJob.status)) return res.status(409).json({success:false,error:'Media sync is running'});
+    const db=getDb();
+    await db.backup(`${getDbPath()}.before-christian-albums-${Date.now()}.db`);
+    res.json({success:true,...reorganizeChristianArchive(db)});
   } catch (err) {res.status(500).json({success:false,error:err.message});}
 });
 
