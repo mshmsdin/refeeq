@@ -45,6 +45,10 @@ const APP_BASE_PATH = (() => {
 const BIBLE_ONLY = process.env.BIBLE_ONLY === 'true';
 const PUBLIC_BASE_URL = (process.env.PUBLIC_BASE_URL || (BIBLE_ONLY ? 'https://wiki.din.hk/bible/' : 'https://din.hk/rafeeq/')).replace(/\/+$/, '/');
 
+function isPrivateImportSource(value) {
+  return typeof value === 'string' && /^chat\s*export(?:[_\s-]|$)/i.test(value.trim());
+}
+
 function escapeHtml(value) {
   return String(value ?? '')
     .replaceAll('&', '&amp;')
@@ -337,6 +341,7 @@ function attachTagsToDocuments(db, docs) {
 
     return {
       ...d,
+      book_source: isPrivateImportSource(d.book_source) ? null : d.book_source,
       images,
       image_count: hasRealImages ? (d.image_count || images.length) : 0,
       tags: tagsByDoc.get(d.id) || (d.ocr_text ? extractDistinctKeywords(d.ocr_text, d.filename, 6) : [])
@@ -371,7 +376,7 @@ app.get('/api/stats', (req, res) => {
       GROUP BY book_source 
       ORDER BY count DESC 
       LIMIT 15
-    `).all(...params);
+    `).all(...params).filter(row => !isPrivateImportSource(row.book_source));
 
     const sectsStats = db.prepare(`
       SELECT sect, COUNT(*) as count 
@@ -830,6 +835,7 @@ app.get('/api/document/:id', (req, res) => {
       success: true,
       document: {
         ...doc,
+        book_source: isPrivateImportSource(doc.book_source) ? null : doc.book_source,
         images,
         image_count: doc.image_count || (images ? images.length : 1),
         tags: tagsList

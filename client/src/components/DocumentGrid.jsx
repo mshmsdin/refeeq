@@ -113,7 +113,7 @@ export default function DocumentGrid({
                     </div>
 
                     <div className="min-w-0">
-                      <h4 className="text-xs font-bold text-slate-800 dark:text-slate-100 truncate group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                      <h4 className="line-clamp-2 whitespace-normal text-xs font-bold leading-5 text-slate-800 dark:text-slate-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                         {sf.name}
                       </h4>
                       <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium block">
@@ -175,9 +175,9 @@ export default function DocumentGrid({
                   {/* Top Metadata */}
                   <div className="space-y-1.5 mb-2.5">
                     <div className="flex items-center justify-between gap-1 text-[11px]">
-                      <span className="text-slate-500 dark:text-slate-400 flex items-center gap-1.5 truncate font-medium" title={doc.folder_name}>
+                      <span className="min-w-0 text-slate-500 dark:text-slate-400 flex items-start gap-1.5 font-medium" title={doc.folder_name}>
                         <Folder className="w-3 h-3 text-amber-500 shrink-0" />
-                        <span className="truncate">{doc.folder_name}</span>
+                        <span className="line-clamp-2 whitespace-normal">{doc.folder_name}</span>
                       </span>
 
                       <div className="flex items-center gap-1 shrink-0">
@@ -357,7 +357,7 @@ export default function DocumentGrid({
                   {/* Document Title */}
                   <div className="space-y-2">
                     <h4 
-                      className="text-xs font-bold text-slate-800 dark:text-slate-100 line-clamp-2 leading-relaxed group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors"
+                      className="text-xs font-bold text-slate-800 dark:text-slate-100 line-clamp-3 leading-relaxed group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors"
                       title={doc.filename}
                     >
                       {doc.filename}

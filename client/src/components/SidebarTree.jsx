@@ -21,7 +21,7 @@ function TreeNode({ node, activeFolder, onSelectFolder, level = 0, forceExpand =
         <button onClick={() => onSelectFolder(node.path, node.id)} aria-current={isSelected ? 'location' : undefined} title={node.path} className="archive-folder-button flex min-h-[40px] min-w-0 flex-1 items-center justify-between gap-2 rounded-lg py-2 pe-2 text-start text-[13px] font-semibold">
           <span className="flex min-w-0 items-center gap-2">
             {catMeta ? <span className={catMeta.dotClass} /> : isOpen ? <FolderOpen className="h-4 w-4 shrink-0" /> : <Folder className="h-4 w-4 shrink-0" />}
-            <span className="truncate">{node.name}</span>
+            <span className="line-clamp-2 whitespace-normal leading-5">{node.name}</span>
           </span>
           {node.file_count > 0 && <span className="shrink-0 rounded-full bg-slate-100 px-1.5 py-0.5 text-[11px] text-slate-600 dark:bg-slate-800 dark:text-slate-300">{node.file_count.toLocaleString('ar-EG')}</span>}
         </button>
