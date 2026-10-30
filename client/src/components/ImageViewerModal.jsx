@@ -542,7 +542,7 @@ export default function ImageViewerModal({
               {isAlbum && (
                 <span className="px-2 py-0.5 rounded-md bg-amber-500 text-slate-950 text-[10px] font-black flex items-center gap-1 shadow-xs shrink-0">
                   <Layers className="w-3 h-3" />
-                  <span>{activeImageIndex + 1} / {docImages.length}</span>
+                  <span dir="ltr">{activeImageIndex + 1} / {docImages.length}</span>
                 </span>
               )}
             </div>
