@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { 
   X, 
   ZoomIn, 
@@ -61,6 +61,17 @@ export default function ImageViewerModal({
   const [copiedText, setCopiedText] = useState(false);
   const [readerFontSize, setReaderFontSize] = useState(16);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  const selectAlbumImage = useCallback((index) => {
+    const imageCount = docData?.document?.images?.length || 1;
+    setActiveImageIndex(Math.min(Math.max(index, 0), imageCount - 1));
+    setZoom(1);
+    setPan({ x: 0, y: 0 });
+  }, [docData]);
+
+  const stepAlbumImage = useCallback((step) => {
+    selectAlbumImage(activeImageIndex + step);
+  }, [activeImageIndex, selectAlbumImage]);
 
   
   // Editor Tag state
@@ -244,8 +255,28 @@ export default function ImageViewerModal({
   // Keyboard navigation & Shortcuts
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
+      if (e.target?.closest?.('input, textarea, select, [contenteditable="true"]')) return;
       if (e.key === 'Escape') onClose();
+      if (e.altKey && e.key === 'ArrowRight' && docData?.prevDoc) {
+        e.preventDefault();
+        onNavigateDoc(docData.prevDoc.id);
+        return;
+      }
+      if (e.altKey && e.key === 'ArrowLeft' && docData?.nextDoc) {
+        e.preventDefault();
+        onNavigateDoc(docData.nextDoc.id);
+        return;
+      }
+      if (docData?.document?.images?.length > 1 && e.key === 'ArrowRight') {
+        e.preventDefault();
+        stepAlbumImage(-1);
+        return;
+      }
+      if (docData?.document?.images?.length > 1 && e.key === 'ArrowLeft') {
+        e.preventDefault();
+        stepAlbumImage(1);
+        return;
+      }
       if (e.key === 'ArrowRight' && docData?.prevDoc) onNavigateDoc(docData.prevDoc.id);
       if (e.key === 'ArrowLeft' && docData?.nextDoc) onNavigateDoc(docData.nextDoc.id);
       if (e.key === 'c' && (e.ctrlKey || e.metaKey) && docData?.document) {
@@ -260,7 +291,7 @@ export default function ImageViewerModal({
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [docData, onClose, onNavigateDoc, onCopyImage]);
+  }, [docData, onClose, onNavigateDoc, onCopyImage, stepAlbumImage]);
 
   // Run on-demand OCR
   const handleTriggerOCR = () => {
@@ -429,6 +460,7 @@ export default function ImageViewerModal({
   // Mouse Pan Handlers
   const handleMouseDown = (e) => {
     if (e.button !== 0) return;
+    if (e.target?.closest?.('button')) return;
     setIsDragging(true);
     setDragStart({ x: e.clientX - pan.x, y: e.clientY - pan.y });
   };
@@ -653,6 +685,34 @@ export default function ImageViewerModal({
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
+            )}
+
+            {isAlbum && (
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 rounded-2xl border border-slate-300 bg-white/95 px-2 py-1.5 text-slate-800 shadow-lg backdrop-blur-sm dark:border-slate-600 dark:bg-slate-900/95 dark:text-slate-100">
+                <button
+                  type="button"
+                  onClick={() => stepAlbumImage(-1)}
+                  disabled={activeImageIndex === 0}
+                  className="rounded-xl p-2 text-slate-700 transition-colors hover:bg-amber-100 hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600 disabled:cursor-not-allowed disabled:text-slate-400 dark:text-slate-100 dark:hover:bg-amber-400 dark:hover:text-slate-950 dark:focus-visible:ring-amber-300 dark:disabled:text-slate-500"
+                  title="الصورة السابقة (السهم الأيمن)"
+                  aria-label="الصورة السابقة"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+                <span aria-live="polite" className="min-w-20 text-center text-xs font-bold tabular-nums">
+                  صورة {activeImageIndex + 1} من {docImages.length}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => stepAlbumImage(1)}
+                  disabled={activeImageIndex === docImages.length - 1}
+                  className="rounded-xl p-2 text-slate-700 transition-colors hover:bg-amber-100 hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600 disabled:cursor-not-allowed disabled:text-slate-400 dark:text-slate-100 dark:hover:bg-amber-400 dark:hover:text-slate-950 dark:focus-visible:ring-amber-300 dark:disabled:text-slate-500"
+                  title="الصورة التالية (السهم الأيسر)"
+                  aria-label="الصورة التالية"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+              </div>
             )}
 
             {/* Image Container with Transforms */}
@@ -1083,8 +1143,8 @@ export default function ImageViewerModal({
                       return (
                         <button
                           key={idx}
-                          onClick={() => setActiveImageIndex(idx)}
-                          className={`group/thumb relative aspect-[3/4] rounded-xl overflow-hidden border-2 transition-all cursor-pointer bg-slate-100 dark:bg-slate-800 ${
+                          onClick={() => selectAlbumImage(idx)}
+                          className={`group/thumb relative aspect-[3/4] rounded-xl overflow-hidden border-2 transition-all cursor-pointer bg-slate-100 dark:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600 dark:focus-visible:ring-amber-300 ${
                             isActive
                               ? 'border-amber-500 ring-2 ring-amber-500/50 scale-[1.03] shadow-md'
                               : 'border-slate-200 dark:border-slate-700/80 opacity-70 hover:opacity-100 hover:border-slate-400'

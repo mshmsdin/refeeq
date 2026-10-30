@@ -237,15 +237,16 @@ export default function DocumentGrid({
 
 
                       {/* Hover Quick Action Buttons */}
-                      <div className="absolute inset-0 bg-slate-950/65 backdrop-blur-[2px] opacity-0 group-hover/img:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 p-2">
+                      <div className="pointer-events-none absolute inset-0 flex items-end justify-center gap-2 p-2 pb-3 opacity-100 transition-opacity duration-150 sm:items-center sm:pb-2 sm:opacity-0 sm:group-hover/img:opacity-100 group-focus-within/img:opacity-100">
                         {/* Copy Image */}
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
                             onCopyImage(doc);
                           }}
-                          className="p-2.5 rounded-xl bg-slate-900/90 text-slate-200 hover:bg-amber-500 hover:text-slate-950 shadow-md transition-all btn-press"
+                          className="pointer-events-auto rounded-xl border border-slate-300 bg-white/95 p-2.5 text-slate-700 shadow-md transition-colors hover:bg-amber-500 hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600 dark:border-slate-500 dark:bg-slate-900/95 dark:text-slate-100 dark:hover:bg-amber-400 dark:hover:text-slate-950 dark:focus-visible:ring-amber-300 btn-press"
                           title="نسخ الصورة للحافظة"
+                          aria-label="نسخ الصورة للحافظة"
                         >
                           {isCopied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                         </button>
@@ -256,12 +257,13 @@ export default function DocumentGrid({
                             e.stopPropagation();
                             onToggleFavorite(doc.id);
                           }}
-                          className={`p-2.5 rounded-xl shadow-md transition-all btn-press ${
+                          className={`pointer-events-auto rounded-xl border border-slate-300 p-2.5 shadow-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600 dark:border-slate-500 dark:focus-visible:ring-amber-300 btn-press ${
                             isFav
                               ? 'bg-amber-500 text-slate-950 font-bold'
-                              : 'bg-slate-900/90 text-slate-200 hover:bg-amber-500 hover:text-slate-950'
+                              : 'bg-white/95 text-slate-700 hover:bg-amber-500 hover:text-slate-950 dark:bg-slate-900/95 dark:text-slate-100 dark:hover:bg-amber-400 dark:hover:text-slate-950'
                           }`}
                           title={isFav ? 'إزالة من سلة البث' : 'إضافة إلى سلة البث والمناظرة'}
+                          aria-label={isFav ? 'إزالة من سلة البث' : 'إضافة إلى سلة البث والمناظرة'}
                         >
                           <Flame className={`w-4 h-4 ${isFav ? 'fill-current' : ''}`} />
                         </button>
@@ -272,8 +274,9 @@ export default function DocumentGrid({
                             e.stopPropagation();
                             onOpenProjector(doc);
                           }}
-                          className="p-2.5 rounded-xl bg-slate-900/90 text-slate-200 hover:bg-amber-500 hover:text-slate-950 shadow-md transition-all btn-press"
+                          className="pointer-events-auto rounded-xl border border-slate-300 bg-white/95 p-2.5 text-slate-700 shadow-md transition-colors hover:bg-amber-500 hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600 dark:border-slate-500 dark:bg-slate-900/95 dark:text-slate-100 dark:hover:bg-amber-400 dark:hover:text-slate-950 dark:focus-visible:ring-amber-300 btn-press"
                           title="عرض كامل على البروجكتر والبث (F)"
+                          aria-label="عرض كامل على البروجكتر والبث"
                         >
                           <Maximize2 className="w-4 h-4" />
                         </button>
