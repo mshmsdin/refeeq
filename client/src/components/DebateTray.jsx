@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Flame, X, Trash2, Copy, Maximize2, Check, BookOpen, FileText } from 'lucide-react';
+import { ShoppingBasket, X, Trash2, Copy, Maximize2, Check, BookOpen, FileText } from 'lucide-react';
 import { imageUrl as buildImageUrl } from '../utils/apiUrls';
 
 export default function DebateTray({
@@ -42,7 +42,7 @@ export default function DebateTray({
       <div className="p-3 bg-amber-500/10 dark:bg-amber-500/5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-bold">
-            <Flame className="w-4 h-4 fill-current" />
+            <ShoppingBasket className="w-4 h-4" />
           </div>
           <div>
             <h4 className="text-xs font-bold text-slate-800 dark:text-slate-100 flex items-center gap-1.5">
@@ -80,10 +80,10 @@ export default function DebateTray({
       <div className="max-h-80 overflow-y-auto p-2 space-y-1.5">
         {favorites.length === 0 ? (
           <div className="text-center py-8 px-4 text-xs text-slate-500 dark:text-slate-400 space-y-2">
-            <Flame className="w-8 h-8 mx-auto text-slate-300 dark:text-slate-700" />
+              <ShoppingBasket className="w-8 h-8 mx-auto text-slate-600 dark:text-slate-300" />
             <p className="font-semibold">السلة فارغة حالياً</p>
             <p className="text-[10px] leading-relaxed">
-              انقر على أيقونة الشعلة بجانب أي وثيقة لإضافتها هنا والوصول إليها بلمسة زر أثناء المناظرة.
+              انقر على أيقونة السلة بجانب أي وثيقة لإضافتها هنا والوصول إليها بسرعة أثناء البث.
             </p>
           </div>
         ) : (

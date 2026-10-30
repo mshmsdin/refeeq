@@ -5,6 +5,7 @@ import DocumentGrid from './components/DocumentGrid';
 import ImageViewerModal from './components/ImageViewerModal';
 import DebateTray from './components/DebateTray';
 import ProjectorView from './components/ProjectorView';
+import BroadcastMode from './components/BroadcastMode';
 import StatsModal from './components/StatsModal';
 import CategoryGuideModal from './components/CategoryGuideModal';
 import BibleSection from './components/BibleSection';
@@ -73,6 +74,7 @@ export default function App() {
 
   const [activeDocId, setActiveDocId] = useState(initialRoute.docId || null);
   const [projectorDoc, setProjectorDoc] = useState(null);
+  const [isBroadcastMode, setIsBroadcastMode] = useState(false);
   const [isDebateTrayOpen, setIsDebateTrayOpen] = useState(false);
   const [isStatsOpen, setIsStatsOpen] = useState(false);
   const [isCategoryGuideOpen, setIsCategoryGuideOpen] = useState(false);
@@ -580,8 +582,23 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col transition-colors">
 
-      {/* Bible Section — full-page takeover */}
-      {isGuideView ? (
+      {/* Broadcast mode replaces the archive chrome so only selected material is shown. */}
+      {isBroadcastMode ? (
+        <>
+          <BroadcastMode
+            sectsList={sectsList}
+            initialSect={activeSect}
+            onExit={() => { setProjectorDoc(null); setIsBroadcastMode(false); }}
+            onOpenDocument={setProjectorDoc}
+          />
+          {projectorDoc && <ProjectorView
+            doc={projectorDoc}
+            onClose={() => setProjectorDoc(null)}
+            onCopyImage={handleCopyImage}
+            copiedDocId={copiedDocId}
+          />}
+        </>
+      ) : isGuideView ? (
         <FeaturesPage
           theme={theme}
           onToggleTheme={toggleTheme}
@@ -640,6 +657,11 @@ export default function App() {
         onToggleTheme={toggleTheme}
         debateItemsCount={favorites.length}
         onOpenDebateTray={() => setIsDebateTrayOpen(true)}
+        onStartBroadcast={() => {
+          setIsDebateTrayOpen(false);
+          setActiveDocId(null);
+          setIsBroadcastMode(true);
+        }}
         onOpenStats={() => setIsStatsOpen(true)}
         onOpenCategoryGuide={() => setIsCategoryGuideOpen(true)}
         onRescan={handleRescan}
@@ -885,6 +907,7 @@ export default function App() {
           onCopyImage={handleCopyImage}
           copiedDocId={copiedDocId}
           onOpenProjector={(doc) => setProjectorDoc(doc)}
+          isProjectorOpen={Boolean(projectorDoc)}
           onSelectTag={handleSelectTag}
           isFavorite={!!favoritesMap[activeDocId]}
           onDocumentUpdated={() => {refreshDocuments();fetchTreeAndStats();}}

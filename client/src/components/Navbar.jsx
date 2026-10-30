@@ -3,7 +3,6 @@ import {
   Search, 
   X, 
   BookOpen, 
-  Flame, 
   RefreshCw, 
   BarChart3, 
   Sun, 
@@ -13,7 +12,9 @@ import {
   Menu,
   SlidersHorizontal,
   CircleHelp,
-  MoreHorizontal
+  MoreHorizontal,
+  MonitorPlay,
+  ShoppingBasket
 } from 'lucide-react';
 
 import { DEBATE_CATEGORIES } from '../utils/categories';
@@ -32,6 +33,7 @@ export default function Navbar({
   onToggleTheme,
   debateItemsCount,
   onOpenDebateTray,
+  onStartBroadcast,
   onOpenStats,
   onOpenCategoryGuide,
   onRescan,
@@ -209,13 +211,22 @@ export default function Navbar({
               aria-label="سلة البث"
               className="min-h-[44px] flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs shadow-md shadow-amber-500/20 transition-all btn-press"
             >
-              <Flame className="w-3.5 h-3.5 fill-current" />
+              <ShoppingBasket className="w-4 h-4" />
               <span className="hidden sm:inline">سلة البث</span>
               {debateItemsCount > 0 && (
                 <span className="min-w-[18px] h-[18px] px-1 bg-slate-950 text-amber-400 rounded-full flex items-center justify-center font-extrabold text-[10px] shadow-xs">
                   {debateItemsCount}
                 </span>
               )}
+            </button>
+
+            <button
+              onClick={onStartBroadcast}
+              className="min-h-[44px] flex items-center gap-1.5 rounded-xl border border-amber-700 bg-white px-3 py-1.5 text-xs font-black text-amber-900 transition-colors hover:bg-amber-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 dark:border-amber-500 dark:bg-slate-900 dark:text-amber-300 dark:hover:bg-slate-800"
+              title="اختر القسم والموضوع لبدء البث"
+            >
+              <MonitorPlay className="h-4 w-4" />
+              <span>بدء البث</span>
             </button>
           </div>
 

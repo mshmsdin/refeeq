@@ -40,6 +40,7 @@ export default function ImageViewerModal({
   onCopyImage,
   copiedDocId,
   onOpenProjector,
+  isProjectorOpen = false,
   onSelectTag,
   isFavorite,
   onDocumentUpdated
@@ -256,9 +257,19 @@ export default function ImageViewerModal({
 
   // Keyboard navigation & Shortcuts
   useEffect(() => {
+    if (isProjectorOpen) return undefined;
     const handleKeyDown = (e) => {
       if (e.target?.closest?.('input, textarea, select, [contenteditable="true"]')) return;
       if (e.key === 'Escape') onClose();
+      const documentImages = docData?.document?.images || [];
+      const isImageDocument = documentImages.length > 0 || /\.(jpe?g|png|webp|gif|bmp|svg)$/i.test(docData?.document?.relative_path || docData?.document?.full_path || '');
+      if (isImageDocument && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
+        if (documentImages.length > 1) {
+          e.preventDefault();
+          stepAlbumImage(e.key === 'ArrowRight' ? -1 : 1);
+        }
+        return;
+      }
       if (e.altKey && e.key === 'ArrowRight' && docData?.prevDoc) {
         e.preventDefault();
         onNavigateDoc(docData.prevDoc.id);
@@ -267,16 +278,6 @@ export default function ImageViewerModal({
       if (e.altKey && e.key === 'ArrowLeft' && docData?.nextDoc) {
         e.preventDefault();
         onNavigateDoc(docData.nextDoc.id);
-        return;
-      }
-      if (docData?.document?.images?.length > 1 && e.key === 'ArrowRight') {
-        e.preventDefault();
-        stepAlbumImage(-1);
-        return;
-      }
-      if (docData?.document?.images?.length > 1 && e.key === 'ArrowLeft') {
-        e.preventDefault();
-        stepAlbumImage(1);
         return;
       }
       if (e.key === 'ArrowRight' && docData?.prevDoc) onNavigateDoc(docData.prevDoc.id);
@@ -293,7 +294,7 @@ export default function ImageViewerModal({
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [docData, onClose, onNavigateDoc, onCopyImage, stepAlbumImage]);
+  }, [docData, onClose, onNavigateDoc, onCopyImage, stepAlbumImage, isProjectorOpen]);
 
   // Run on-demand OCR
   const handleTriggerOCR = () => {
@@ -512,7 +513,7 @@ export default function ImageViewerModal({
     : (doc?.relative_path ? [doc.relative_path] : (doc?.full_path ? [doc.full_path] : []));
   const isAlbum = docImages.length > 1;
   const currentImageRel = docImages[activeImageIndex] || docImages[0] || doc?.relative_path || doc?.full_path;
-  const hasImage = Boolean(currentImageRel && /\.(jpe?g|png|webp|gif|bmp)$/i.test(currentImageRel));
+  const hasImage = Boolean(currentImageRel && /\.(jpe?g|png|webp|gif|bmp|svg)$/i.test(currentImageRel));
   const imageUrl = hasImage ? buildImageUrl(currentImageRel) : '';
   const isCopied = doc && copiedDocId === doc.id;
   const currentCat = doc?.category ? DEBATE_CATEGORIES[doc.category] : null;
@@ -658,39 +659,18 @@ export default function ImageViewerModal({
         
         {/* Left/Main: Interactive Image Canvas OR Full Article Reader */}
         {hasImage ? (
-          <div 
+          <div className="relative flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden bg-slate-950 sm:flex-row">
+          <div
             ref={viewportRef}
-            className="relative flex min-h-0 min-w-0 flex-1 items-center justify-center overflow-hidden bg-slate-950"
+            className="relative order-1 flex min-h-0 min-w-0 flex-1 items-center justify-center overflow-hidden"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
             onDoubleClick={handleDoubleClick}
           >
-            {/* Navigation Arrows */}
-            {docData?.prevDoc && (
-              <button
-                onClick={() => onNavigateDoc(docData.prevDoc.id)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-2xl bg-slate-900/80 hover:bg-amber-500 text-slate-300 hover:text-slate-950 backdrop-blur-md border border-slate-800 shadow-xl transition-all active:scale-95"
-                title="الوثيقة السابقة (السهم الأيمن)"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            )}
-
-
-            {docData?.nextDoc && (
-              <button
-                onClick={() => onNavigateDoc(docData.nextDoc.id)}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-2xl bg-slate-900/80 hover:bg-amber-500 text-slate-300 hover:text-slate-950 backdrop-blur-md border border-slate-800 shadow-xl transition-all active:scale-95"
-                title="الوثيقة التالية (السهم الأيسر)"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-            )}
-
             {isAlbum && (
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 rounded-2xl border border-slate-300 bg-white/95 px-2 py-1.5 text-slate-800 shadow-lg backdrop-blur-sm dark:border-slate-600 dark:bg-slate-900/95 dark:text-slate-100">
+              <div className="absolute bottom-[4.75rem] left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-2xl border border-slate-300 bg-white/95 px-2 py-1.5 text-slate-800 shadow-lg backdrop-blur-sm dark:border-slate-600 dark:bg-slate-900/95 dark:text-slate-100 sm:bottom-4">
                 <button
                   type="button"
                   onClick={() => stepAlbumImage(-1)}
@@ -741,6 +721,27 @@ export default function ImageViewerModal({
                 />
               </div>
             )}
+            {isAlbum && (
+              <aside aria-label="صور الموضوع" className="absolute bottom-3 left-1/2 z-10 flex max-w-[calc(100%-1.5rem)] -translate-x-1/2 gap-1.5 overflow-x-auto rounded-xl border border-slate-600 bg-slate-950/90 p-1.5 sm:hidden">
+                {docImages.map((imgRel, idx) => (
+                  <button key={`${imgRel}-${idx}`} type="button" onClick={() => selectAlbumImage(idx)} aria-label={`عرض الصورة ${idx + 1} من ${docImages.length}`} aria-pressed={idx === activeImageIndex} className={`h-12 w-9 shrink-0 overflow-hidden rounded-md border-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 ${idx === activeImageIndex ? 'border-amber-400' : 'border-slate-500'}`}>
+                    <img src={buildImageUrl(imgRel)} alt="" loading="lazy" className="h-full w-full object-cover" />
+                  </button>
+                ))}
+              </aside>
+            )}
+          </div>
+
+          {isAlbum && (
+            <aside aria-label="صور الموضوع" className="order-2 hidden h-full w-[68px] shrink-0 flex-col gap-2 overflow-y-auto border-l border-slate-700 bg-slate-900 p-2 sm:flex">
+              {docImages.map((imgRel, idx) => (
+                <button key={`${imgRel}-${idx}`} type="button" onClick={() => selectAlbumImage(idx)} aria-label={`عرض الصورة ${idx + 1} من ${docImages.length}`} aria-pressed={idx === activeImageIndex} title={`الصورة ${idx + 1}`} className={`relative aspect-[3/4] w-full shrink-0 overflow-hidden rounded-lg border-2 bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 ${idx === activeImageIndex ? 'border-amber-400' : 'border-slate-600 hover:border-slate-300'}`}>
+                  <img src={buildImageUrl(imgRel)} alt="" loading="lazy" className="h-full w-full object-cover" />
+                  <span className="absolute bottom-1 right-1 rounded bg-slate-950 px-1 text-[9px] font-bold text-white">{idx + 1}</span>
+                </button>
+              ))}
+            </aside>
+          )}
           </div>
 
 
@@ -1123,48 +1124,6 @@ export default function ImageViewerModal({
                   ))}
                 </div>
               </div>
-
-              {/* Multi-Image Album Gallery Section in Left Sidebar */}
-              {isAlbum && (
-                <div className="space-y-2.5 pt-3 border-t border-slate-200 dark:border-slate-800">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
-                      <Layers className="w-3.5 h-3.5 text-amber-500" />
-                      <span>صور الألبوم / المنشور ({docImages.length} صور):</span>
-                    </span>
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500 text-slate-950">
-                      صورة {activeImageIndex + 1} من {docImages.length}
-                    </span>
-                  </div>
-
-                  {/* Thumbnails Grid inside Left Sidebar */}
-                  <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 pt-1">
-                    {docImages.map((imgRel, idx) => {
-                      const thumbUrl = buildImageUrl(imgRel);
-                      const isActive = idx === activeImageIndex;
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => selectAlbumImage(idx)}
-                          className={`group/thumb relative aspect-[3/4] rounded-xl overflow-hidden border-2 transition-all cursor-pointer bg-slate-100 dark:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600 dark:focus-visible:ring-amber-300 ${
-                            isActive
-                              ? 'border-amber-500 ring-2 ring-amber-500/50 scale-[1.03] shadow-md'
-                              : 'border-slate-200 dark:border-slate-700/80 opacity-70 hover:opacity-100 hover:border-slate-400'
-                          }`}
-                          title={`عرض صورة ${idx + 1}`}
-                        >
-                          <img src={thumbUrl} alt="" className="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform" />
-                          <span className={`absolute bottom-1 right-1 text-[9px] font-mono font-bold px-1.5 py-0.2 rounded-md shadow-sm ${
-                            isActive ? 'bg-amber-500 text-slate-950' : 'bg-slate-950/85 text-white'
-                          }`}>
-                            {idx + 1}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
 
             </div>
 

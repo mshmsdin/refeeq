@@ -72,9 +72,9 @@ const features = [
     icon: Flame,
     tone: 'orange',
     eyebrow: 'المناظرة والبث',
-    title: 'جهّز سلة المناظرة والبث',
-    description: 'أضف المواد المهمة إلى السلة لتبقى أمامك أثناء النقاش، ثم افتحها مباشرة أو اعرضها في نافذة كبيرة مناسبة للبث.',
-    tips: ['أضف أو أزل الوثيقة من زر اللهب', 'افتح المادة في شاشة العرض', 'افرغ السلة عند انتهاء المناظرة'],
+    title: 'جهّز سلة البث واعرض القسم',
+    description: 'اجمع موادك في السلة، أو ابدأ وضع بث مستقل واختر جميع الأرشيف أو قسماً عاماً أو موضوعاً فرعياً.',
+    tips: ['أضف أو أزل الوثيقة من زر السلة بجانب كل مادة', 'من زر «بدء البث» اختر القسم ثم الموضوع مثل العقيدة؛ تختفي أدوات الأرشيف أثناء العرض', 'افتح أي مادة لعرض صورتها من دون لوحة OCR أو بيانات التوثيق', 'تظهر صور الموضوع المصغرة في جانب الشاشة؛ الأسهم ولوحة المفاتيح تقلب صور الموضوع المفتوح فقط', 'افرغ السلة عند انتهاء المناظرة'],
   },
   {
     icon: MonitorPlay,
@@ -266,7 +266,7 @@ export default function FeaturesPage({ theme, onToggleTheme, onBack, onOpenBible
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500/12 text-orange-600 dark:text-orange-300"><Flame className="h-5 w-5" /></span>
               <h2 className="text-lg font-black">للمناظرة والبث</h2>
             </div>
-            <p className="text-sm leading-8 text-slate-600 dark:text-slate-300">أضف الأدلة إلى سلة المناظرة، رتّبها أمامك، ثم افتح أي مادة في العرض الكبير لتكون جاهزة للمشاركة مع المشاهدين.</p>
+            <p className="text-sm leading-8 text-slate-600 dark:text-slate-300">أضف الأدلة إلى سلة البث، أو ابدأ وضع البث واختر القسم والموضوع. يعرض وضع البث المواد وحدها، وتفتح كل مادة في عارض صور مستقل.</p>
           </div>
           <div className="app-card p-6">
             <div className="mb-4 flex items-center gap-3">
