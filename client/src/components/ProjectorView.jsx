@@ -108,7 +108,7 @@ export default function ProjectorView({ doc, onClose, onCopyImage, copiedDocId }
           </article>
         )}
 
-        {images.length > 1 && <div aria-live="polite" className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-lg border border-slate-700 bg-slate-950/90 px-3 py-1.5 text-xs font-bold text-white sm:bottom-5">صورة <span dir="ltr" className="inline-block">{activeImageIndex + 1}</span> من <span dir="ltr" className="inline-block">{images.length}</span></div>}
+        {images.length > 1 && <div aria-live="polite" className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-lg border border-slate-700 bg-slate-950/90 px-3 py-1.5 text-xs font-bold text-white sm:bottom-5"><span>صورة</span> <span dir="ltr" className="inline-block">{activeImageIndex + 1} / {images.length}</span></div>}
       </section>
     </div>
   );
