@@ -682,7 +682,7 @@ export default function ImageViewerModal({
                   <ChevronRight className="h-5 w-5" />
                 </button>
                 <span aria-live="polite" className="min-w-20 text-center text-xs font-bold tabular-nums">
-                  صورة {activeImageIndex + 1} من {docImages.length}
+                  صورة <span dir="ltr" className="inline-block">{activeImageIndex + 1}</span> من <span dir="ltr" className="inline-block">{docImages.length}</span>
                 </span>
                 <button
                   type="button"
