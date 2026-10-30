@@ -654,13 +654,13 @@ export default function ImageViewerModal({
       </div>
 
       {/* Main Body: Image Canvas OR Single-Board Full Article Reader */}
-      <div className="flex-1 flex min-h-0 relative overflow-hidden">
+      <div className="flex-1 flex min-h-0 min-w-0 flex-col relative overflow-hidden sm:flex-row">
         
         {/* Left/Main: Interactive Image Canvas OR Full Article Reader */}
         {hasImage ? (
           <div 
             ref={viewportRef}
-            className="flex-1 bg-slate-950 relative flex items-center justify-center overflow-hidden"
+            className="relative flex min-h-0 min-w-0 flex-1 items-center justify-center overflow-hidden bg-slate-950"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -735,7 +735,7 @@ export default function ImageViewerModal({
                   ref={imageRef}
                   src={imageUrl}
                   alt={doc?.filename}
-                  className="max-w-full max-h-[85vh] object-contain shadow-2xl rounded-lg"
+                  className="max-h-full max-w-full rounded-lg object-contain shadow-2xl sm:max-h-[85vh]"
                   style={{ filter: invert ? 'invert(1) hue-rotate(180deg)' : 'none' }}
                   draggable={false}
                 />
@@ -855,7 +855,7 @@ export default function ImageViewerModal({
 
         {/* Right/Side: OCR Text & Metadata Panel (ONLY for image-based manuscripts) */}
         {hasImage && showOCRPanel && (
-          <div className="absolute inset-x-0 bottom-0 z-30 flex max-h-[58%] w-full flex-col rounded-t-2xl border-t border-slate-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900 sm:relative sm:inset-auto sm:z-10 sm:max-h-none sm:w-96 sm:shrink-0 sm:rounded-none sm:border-t-0 sm:border-r sm:shadow-none lg:w-[420px] animate-fadeIn">
+          <div className="relative z-30 flex min-h-0 max-h-[44%] w-full shrink-0 flex-col overflow-hidden border-t border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-900 sm:z-10 sm:max-h-none sm:w-96 sm:border-t-0 sm:border-r sm:shadow-none lg:w-[420px] animate-fadeIn">
             
             {/* Panel Header */}
             <div className="p-3.5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
