@@ -483,16 +483,57 @@ function QuickNavigator({ books, onNavigate }) {
 // ─────────────────────────────────────────────────────────
 //  Bible Search Box (with Multi-Translation Selection)
 // ─────────────────────────────────────────────────────────
+const SEARCH_COLLECTION_OPTIONS = [
+  { slug: 'old-testament', label: 'العهد القديم' },
+  { slug: 'new-testament', label: 'العهد الجديد' },
+  { slug: 'apocrypha', label: 'الأبوكريفا' }
+];
+
+function SearchCollectionOptions({ selectedCollections, onToggleCollection }) {
+  return (
+    <div className="flex flex-wrap items-center gap-2 mt-3 px-1 text-sm" aria-label="نطاق الأسفار في البحث">
+      <span className="font-bold text-[#735535] dark:text-slate-300 ml-1">نطاق البحث:</span>
+      {SEARCH_COLLECTION_OPTIONS.map(option => {
+        const checked = selectedCollections.includes(option.slug);
+        return (
+          <button
+            key={option.slug}
+            type="button"
+            role="checkbox"
+            aria-checked={checked}
+            onClick={() => onToggleCollection(option.slug)}
+            className={`inline-flex items-center gap-1.5 rounded-xl border px-3 py-1.5 font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d6e47] ${
+              checked
+                ? 'border-[#8d6e47] bg-[#efe8dc] text-[#322010] shadow-sm dark:border-[#b58a43] dark:bg-slate-800 dark:text-[#f8f3ea]'
+                : 'border-[#ddcfb8] bg-white/80 text-[#735535] hover:border-[#b58a43] dark:border-slate-700 dark:bg-[#111a2e] dark:text-slate-400'
+            }`}
+          >
+            {checked ? (
+              <CheckSquare className="h-4 w-4 text-[#8d6e47] dark:text-[#c2a578]" />
+            ) : (
+              <Square className="h-4 w-4 text-[#aa8e67] dark:text-slate-500" />
+            )}
+            <span>{option.label}</span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 function BibleSearchBox({
   onSubmit,
   initialQuery = '',
   translations = [],
   selectedTranslations = ['all'],
+  selectedCollections = ['old-testament', 'new-testament'],
   onToggleTranslation,
-  onSelectAllTranslations
+  onToggleCollection,
+  onSelectAllTranslations,
+  onSelectDefaultTranslation
 }) {
   const [q, setQ] = useState(initialQuery);
-  const isAllSelected = selectedTranslations.includes('all') || selectedTranslations.length === translations.length;
+  const isAllSelected = selectedTranslations.includes('all') || (!selectedTranslations.includes('default') && selectedTranslations.length === translations.length);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -523,6 +564,18 @@ function BibleSearchBox({
       {translations.length > 0 && (
         <div className="flex flex-wrap items-center gap-1.5 mt-2.5 px-1 text-xs">
           <span className="font-bold text-[#735535] dark:text-slate-300 ml-1">البحث في:</span>
+
+          <button
+            type="button"
+            onClick={onSelectDefaultTranslation}
+            className={`px-3 py-1 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
+              selectedTranslations.includes('default')
+                ? 'bg-gradient-to-r from-[#8d6e47] to-[#735535] text-[#fdfbf7] border-[#735535] shadow-sm'
+                : 'bg-white/80 dark:bg-[#152238] text-[#5c4127] dark:text-slate-300 border-[#ddcfb8] dark:border-slate-700 hover:border-[#b58a43]'
+            }`}
+          >
+            ترجمة مناسبة لكل سفر
+          </button>
           
           <button
             type="button"
@@ -560,6 +613,7 @@ function BibleSearchBox({
           })}
         </div>
       )}
+      <SearchCollectionOptions selectedCollections={selectedCollections} onToggleCollection={onToggleCollection} />
     </form>
   );
 }
@@ -571,14 +625,17 @@ function BibleSearchBox({
 function SearchResults({
   query,
   selectedTranslations,
+  selectedCollections,
   translations,
   onToggleTranslation,
+  onToggleCollection,
   onSelectAllTranslations,
+  onSelectDefaultTranslation,
   onOpenVerse,
   onBack
 }) {
   const [page, setPage] = useState(1);
-  const { result, loading, error } = useBibleSearch(query, selectedTranslations, { page });
+  const { result, loading, error } = useBibleSearch(query, selectedTranslations, { page, collections: selectedCollections });
   const LIMIT = 30;
 
   if (loading && !result) {
@@ -621,12 +678,24 @@ function SearchResults({
       {translations.length > 0 && (
         <div className="mb-4 pb-3 border-b border-[#ddcfb8]/60 dark:border-slate-800 flex flex-wrap items-center gap-1.5 text-xs">
           <span className="font-bold text-[#735535] dark:text-slate-300 ml-1">تصفية حسب الترجمة:</span>
+
+          <button
+            type="button"
+            onClick={onSelectDefaultTranslation}
+            className={`px-3 py-1 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
+              selectedTranslations.includes('default')
+                ? 'bg-gradient-to-r from-[#8d6e47] to-[#735535] text-[#fdfbf7] border-[#735535] shadow-sm'
+                : 'bg-white/80 dark:bg-[#152238] text-[#5c4127] dark:text-slate-300 border-[#ddcfb8] dark:border-slate-700 hover:border-[#b58a43]'
+            }`}
+          >
+            ترجمة مناسبة لكل سفر
+          </button>
           
           <button
             type="button"
             onClick={onSelectAllTranslations}
             className={`px-3 py-1 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
-              selectedTranslations.includes('all') || selectedTranslations.length === translations.length
+              selectedTranslations.includes('all') || (!selectedTranslations.includes('default') && selectedTranslations.length === translations.length)
                 ? 'bg-gradient-to-r from-[#8d6e47] to-[#735535] text-[#fdfbf7] border-[#735535] shadow-sm'
                 : 'bg-white/80 dark:bg-[#152238] text-[#5c4127] dark:text-slate-300 border-[#ddcfb8] dark:border-slate-700 hover:border-[#b58a43]'
             }`}
@@ -635,7 +704,7 @@ function SearchResults({
           </button>
 
           {translations.map(t => {
-            const isAll = selectedTranslations.includes('all') || selectedTranslations.length === translations.length;
+            const isAll = selectedTranslations.includes('all') || (!selectedTranslations.includes('default') && selectedTranslations.length === translations.length);
             const isSelected = !isAll && selectedTranslations.includes(t.slug);
             return (
               <button
@@ -659,6 +728,8 @@ function SearchResults({
           })}
         </div>
       )}
+
+      <SearchCollectionOptions selectedCollections={selectedCollections} onToggleCollection={onToggleCollection} />
 
       {results.length === 0 ? (
         <div className="text-center py-16 text-[#8d6e47]">
@@ -1640,8 +1711,11 @@ function BibleLanding({
   translations,
   books,
   searchTranslations,
+  searchCollections,
   onToggleSearchTranslation,
+  onToggleSearchCollection,
   onSelectAllSearchTranslations,
+  onSelectDefaultSearchTranslation,
   onSearch,
   onQuickNavigate,
   onOpenChapter,
@@ -1680,8 +1754,11 @@ function BibleLanding({
         onSubmit={onSearch}
         translations={translations}
         selectedTranslations={searchTranslations}
+        selectedCollections={searchCollections}
         onToggleTranslation={onToggleSearchTranslation}
+        onToggleCollection={onToggleSearchCollection}
         onSelectAllTranslations={onSelectAllSearchTranslations}
+        onSelectDefaultTranslation={onSelectDefaultSearchTranslation}
       />
 
       {/* Fast Selector / Quick Jumper */}
@@ -1820,7 +1897,8 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
   const { books } = useBooks();
 
   const [selectedTranslations, setSelectedTranslations] = useState(['ar-svd']);
-  const [searchTranslations, setSearchTranslations] = useState(['all']);
+  const [searchTranslations, setSearchTranslations] = useState(['default']);
+  const [searchCollections, setSearchCollections] = useState(['old-testament', 'new-testament']);
 
   // Modal focus state
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -1912,10 +1990,10 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
   // Search translations selection handlers
   const handleToggleSearchTranslation = useCallback((slug) => {
     setSearchTranslations(prev => {
-      let list = prev.filter(s => s !== 'all');
+      let list = prev.filter(s => s !== 'all' && s !== 'default');
       if (list.includes(slug)) {
         list = list.filter(s => s !== slug);
-        if (list.length === 0) return ['all'];
+        if (list.length === 0) return ['default'];
         return list;
       } else {
         return [...list, slug];
@@ -1925,6 +2003,19 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
 
   const handleSelectAllSearchTranslations = useCallback(() => {
     setSearchTranslations(['all']);
+  }, []);
+
+  const handleSelectDefaultSearchTranslation = useCallback(() => {
+    setSearchTranslations(['default']);
+  }, []);
+
+  const handleToggleSearchCollection = useCallback((slug) => {
+    setSearchCollections(prev => {
+      if (prev.includes(slug)) {
+        return prev.length > 1 ? prev.filter(item => item !== slug) : prev;
+      }
+      return [...prev, slug];
+    });
   }, []);
 
   // Update browser URL & Title
@@ -2126,8 +2217,11 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
             translations={translations}
             books={books}
             searchTranslations={searchTranslations}
+            searchCollections={searchCollections}
             onToggleSearchTranslation={handleToggleSearchTranslation}
+            onToggleSearchCollection={handleToggleSearchCollection}
             onSelectAllSearchTranslations={handleSelectAllSearchTranslations}
+            onSelectDefaultSearchTranslation={handleSelectDefaultSearchTranslation}
             onSearch={handleSearch}
             onQuickNavigate={handleQuickNavigate}
             onOpenChapter={openChapter}
@@ -2143,17 +2237,23 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
                 initialQuery={searchQuery}
                 translations={translations}
                 selectedTranslations={searchTranslations}
+                selectedCollections={searchCollections}
                 onToggleTranslation={handleToggleSearchTranslation}
+                onToggleCollection={handleToggleSearchCollection}
                 onSelectAllTranslations={handleSelectAllSearchTranslations}
+                onSelectDefaultTranslation={handleSelectDefaultSearchTranslation}
               />
               <QuickNavigator books={books} onNavigate={handleQuickNavigate} />
             </div>
             <SearchResults
               query={searchQuery}
               selectedTranslations={searchTranslations}
+              selectedCollections={searchCollections}
               translations={translations}
               onToggleTranslation={handleToggleSearchTranslation}
+              onToggleCollection={handleToggleSearchCollection}
               onSelectAllTranslations={handleSelectAllSearchTranslations}
+              onSelectDefaultTranslation={handleSelectDefaultSearchTranslation}
               onOpenVerse={openVerseModal}
               onBack={() => setView('landing')}
             />

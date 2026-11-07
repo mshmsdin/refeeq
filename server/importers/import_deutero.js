@@ -18,6 +18,8 @@ import { fileURLToPath } from 'url';
 import { initDatabase, getDb } from '../db/schema.js';
 import { initBibleSchema } from '../db/bible_schema.js';
 import { normalizeArabicText } from '../utils/arabic_nlp.js';
+import { resolveSourceChapter } from './chapter_mapping.js';
+import { selectBooks } from './source_selection.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CACHE_DIR = path.join(__dirname, '..', 'cache', 'deutero-html');
@@ -35,6 +37,7 @@ const BOOK_SOURCES = [
   { code: 'BAR', bookId: 32, chapters: 6,  name: 'باروخ' },
   { code: '1MA', bookId: 48, chapters: 16, name: 'المكابيين الأول' },
   { code: '2MA', bookId: 49, chapters: 15, name: 'المكابيين الثاني' },
+  { code: 'DAG', bookId: 35, chapters: 3, sourceChapters: [3, 13, 14], name: 'تتمة دانيال اليونانية' },
 ];
 
 function fetchUrl(url) {
@@ -152,6 +155,8 @@ function extractVerses(html) {
 }
 
 async function run() {
+  const onlyCode = process.argv.find((argument) => argument.startsWith('--only='))?.slice('--only='.length);
+  const selectedBooks = selectBooks(BOOK_SOURCES, onlyCode);
   initDatabase();
   initBibleSchema();
   const db = getDb();
@@ -187,12 +192,12 @@ async function run() {
 
   let totalBooks = 0, totalVerses = 0, errors = [];
 
-  for (const book of BOOK_SOURCES) {
+  for (const book of selectedBooks) {
     let bookVerses = 0;
     console.log(`\n[DC] ${book.code} — ${book.name} (${book.chapters} chapters)`);
 
     for (let ch = 1; ch <= book.chapters; ch++) {
-      const sourceChapter = (book.sourceChapterStart || 1) + ch - 1;
+      const sourceChapter = resolveSourceChapter(book, ch);
       const url = `${BASE_URL}?book=${book.bookId}&chapter=${sourceChapter}`;
       const cacheKey = `${book.code}_${book.bookId}_ch${sourceChapter}`;
       let html;

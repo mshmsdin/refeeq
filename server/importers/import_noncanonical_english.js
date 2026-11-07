@@ -7,6 +7,9 @@
 import { getDb, initDatabase } from '../db/schema.js';
 import { initBibleSchema } from '../db/bible_schema.js';
 import { normalizeArabicText } from '../utils/arabic_nlp.js';
+import { selectSources } from './source_selection.js';
+import { fetchText } from './source_fetch.js';
+import { pathToFileURL } from 'node:url';
 
 const SOURCES = [
   {
@@ -809,27 +812,6 @@ function numberToRoman(value) {
   return result;
 }
 
-async function fetchText(url) {
-  for (let attempt = 0; attempt < 4; attempt += 1) {
-    const response = await fetch(url, {
-      headers: {
-        Accept: 'application/json,text/html,text/plain;q=0.9,*/*;q=0.8',
-        'User-Agent': 'Rafeeq-Bible-Importer/1.0 (https://wiki.din.hk/bible/)'
-      }
-    });
-    if (response.ok) return response.text();
-    if (response.status !== 429 || attempt === 3) {
-      throw new Error(`HTTP ${response.status} for ${url}`);
-    }
-    const retryAfter = Number(response.headers.get('retry-after'));
-    const waitSeconds = Number.isFinite(retryAfter) && retryAfter > 0
-      ? Math.min(retryAfter, 20)
-      : 3 * (attempt + 1);
-    await new Promise((resolve) => setTimeout(resolve, waitSeconds * 1000));
-  }
-  throw new Error(`تعذر جلب المصدر ${url}`);
-}
-
 function cleanText(text) {
   return text
     .replace(/\s+/g, ' ')
@@ -978,9 +960,18 @@ async function parseDiatessaronWikisource(source) {
   return chapters;
 }
 
-function parseOdesSolomonWikisource(content, source) {
+export function parseOdesSolomonWikisource(content, source) {
+  let payload;
+  try {
+    payload = JSON.parse(content);
+  } catch {
+    throw new Error(`استجابة ويكي مصدر ليست بصيغة JSON في ${source.slug}`);
+  }
+  const wikitext = payload?.parse?.wikitext?.['*'];
+  if (!wikitext) throw new Error(`لم يُعثر على النص في ${source.slug}`);
+
   const chapters = [];
-  const sections = content.split(/\{\{header\s*/i).slice(1);
+  const sections = wikitext.split(/\{\{header\s*/i).slice(1);
   for (const section of sections) {
     const chapterMatch = section.match(/title=[^\n]*\bOde\s+(\d+)/i) || section.match(/section\s*=\s*Ode\s+(\d+)/i);
     const chapter = Number(chapterMatch?.[1]);
@@ -1773,6 +1764,8 @@ async function parseChapters(content, source) {
 }
 
 async function run() {
+  const onlySlug = process.argv.find((argument) => argument.startsWith('--only='))?.slice('--only='.length);
+  const selectedSources = selectSources(SOURCES, onlySlug);
   initDatabase();
   initBibleSchema();
   const db = getDb();
@@ -1799,7 +1792,7 @@ async function run() {
     db.prepare('UPDATE bible_translations SET is_active=0 WHERE id=?').run(legacyEthiopic.id);
   }
 
-  for (const [index, source] of SOURCES.entries()) {
+  for (const [index, source] of selectedSources.entries()) {
     insertTranslation.run(
       source.slug, source.nameAr, source.nameEn, source.abbreviation,
       source.language, source.url, source.sourceType, source.notes, 40 + index
@@ -1828,7 +1821,9 @@ async function run() {
   }
 }
 
-run().catch((error) => {
-  console.error('[Bible noncanonical import]', error.message);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  run().catch((error) => {
+    console.error('[Bible noncanonical import]', error.message);
+    process.exit(1);
+  });
+}

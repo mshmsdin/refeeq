@@ -84,7 +84,8 @@ export function getBooks(collectionSlug) {
       SELECT DISTINCT bv.book_code, bt.slug
       FROM bible_verses bv
       JOIN bible_translations bt ON bv.translation_id = bt.id
-      WHERE ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope')}
+      WHERE bt.is_active = 1 AND ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope')}
+      ORDER BY bt.display_order, bt.id
     `).all();
     for (const r of transRows) {
       if (!transMap.has(r.book_code)) transMap.set(r.book_code, []);
@@ -138,7 +139,8 @@ export function getBook(code) {
     SELECT DISTINCT bt.slug
     FROM bible_verses bv
     JOIN bible_translations bt ON bv.translation_id = bt.id
-    WHERE bv.book_code = ? AND ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope')}
+    WHERE bv.book_code = ? AND bt.is_active = 1 AND ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope')}
+    ORDER BY bt.display_order, bt.id
   `).all(code);
 
   const canonInfo = getCanonInfoForBook(code);
@@ -402,7 +404,7 @@ function _getNextBook(db, translationId, bookCode) {
  * Search verses by text (normalized Arabic) or resolve a reference.
  * Returns { type: 'reference'|'text', reference?, results?, total }
  */
-export function searchBible({ query, translationIds, bookCode, collectionSlug, page = 1, limit = 30 }) {
+export function searchBible({ query, translationIds, defaultTranslationPerBook = false, bookCode, collectionSlug, collectionSlugs = [], page = 1, limit = 30 }) {
   const db = getDb();
   const offset = (page - 1) * limit;
 
@@ -420,10 +422,26 @@ export function searchBible({ query, translationIds, bookCode, collectionSlug, p
   const params = [];
   where.push(SITE_SCOPE_SQL.replaceAll('site_scope', 'bc.site_scope'));
   where.push(SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope'));
+  where.push('bt.is_active = 1');
 
   if (translationIds && translationIds.length > 0) {
     where.push(`bv.translation_id IN (${translationIds.map(() => '?').join(',')})`);
     params.push(...translationIds);
+  }
+
+  if (defaultTranslationPerBook) {
+    where.push(`bv.translation_id = (
+      SELECT bv_default.translation_id
+      FROM bible_verses bv_default
+      JOIN bible_translations bt_default ON bt_default.id = bv_default.translation_id
+      WHERE bv_default.book_code = bv.book_code
+        AND bt_default.is_active = 1
+        AND ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt_default.site_scope')}
+      GROUP BY bv_default.translation_id
+      ORDER BY CASE WHEN bt_default.language = 'ar' THEN 0 ELSE 1 END,
+        bt_default.display_order, bt_default.id
+      LIMIT 1
+    )`);
   }
 
   if (bookCode) {
@@ -436,6 +454,20 @@ export function searchBible({ query, translationIds, bookCode, collectionSlug, p
     if (col) {
       where.push('bb.collection_id = ?');
       params.push(col.id);
+    }
+  }
+
+  if (collectionSlugs.length > 0) {
+    const placeholders = collectionSlugs.map(() => '?').join(',');
+    const collectionIds = db.prepare(`
+      SELECT id FROM bible_collections
+      WHERE slug IN (${placeholders}) AND ${SITE_SCOPE_SQL}
+    `).all(...collectionSlugs).map(row => row.id);
+    if (collectionIds.length > 0) {
+      where.push(`bb.collection_id IN (${collectionIds.map(() => '?').join(',')})`);
+      params.push(...collectionIds);
+    } else {
+      where.push('1 = 0');
     }
   }
 

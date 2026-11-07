@@ -137,6 +137,7 @@ export function useBibleSearch(query, translations, opts = {}) {
   const abortRef = useRef(null);
 
   const transKey = Array.isArray(translations) ? translations.join(',') : (translations || 'all');
+  const collectionsKey = Array.isArray(opts.collections) ? opts.collections.join(',') : '';
 
   const search = useCallback((q, trans, options = {}) => {
     if (!q || !q.trim()) { setResult(null); return; }
@@ -148,6 +149,9 @@ export function useBibleSearch(query, translations, opts = {}) {
     const params = new URLSearchParams({ q: q.trim(), translations: transValue, page: options.page || 1 });
     if (options.book) params.set('book', options.book);
     if (options.collection) params.set('collection', options.collection);
+    if (Array.isArray(options.collections) && options.collections.length > 0) {
+      params.set('collections', options.collections.join(','));
+    }
     fetch(`${API}/search?${params}`, { signal: abortRef.current.signal })
       .then(r => r.json())
       .then(d => { setResult(d); setLoading(false); })
@@ -156,7 +160,7 @@ export function useBibleSearch(query, translations, opts = {}) {
 
   useEffect(() => {
     if (query) search(query, translations, opts);
-  }, [query, transKey, opts.page]);
+  }, [query, transKey, opts.page, collectionsKey]);
 
   return { result, loading, error, search };
 }

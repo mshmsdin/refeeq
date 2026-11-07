@@ -2022,12 +2022,13 @@ app.get('/api/bible/variants', (req, res) => {
 app.get('/api/bible/search', (req, res) => {
   try {
     const db = getDb();
-    const { q, translations, translation, book, collection, page = 1, limit = 30 } = req.query;
+    const { q, translations, translation, book, collection, collections, page = 1, limit = 30 } = req.query;
     if (!q || !q.trim()) return res.status(400).json({ success: false, error: 'q required' });
 
     const rawSlugs = (translations || translation || 'all').split(',').map(s => s.trim()).filter(Boolean);
+    const defaultTranslationPerBook = rawSlugs.includes('default');
     let translationIds = null;
-    if (!rawSlugs.includes('all')) {
+    if (!rawSlugs.includes('all') && !defaultTranslationPerBook) {
       const transRows = db.prepare(`SELECT id FROM bible_translations WHERE slug IN (${rawSlugs.map(() => '?').join(',')})`).all(...rawSlugs);
       translationIds = transRows.map(r => r.id);
     }
@@ -2035,8 +2036,10 @@ app.get('/api/bible/search', (req, res) => {
     const result = searchBible({
       query: q.trim(),
       translationIds,
+      defaultTranslationPerBook,
       bookCode: book ? book.toUpperCase() : null,
       collectionSlug: collection || null,
+      collectionSlugs: collections ? collections.split(',').map(slug => slug.trim()).filter(Boolean) : [],
       page: parseInt(page),
       limit: parseInt(limit)
     });
