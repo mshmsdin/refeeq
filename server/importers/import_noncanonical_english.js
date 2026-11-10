@@ -369,6 +369,20 @@ const SOURCES = [
     notes: 'ترجمة آر. هـ. تشارلز للنص اللاتيني من طبعة 1913، في ٥٧ إصحاحاً؛ يسجلها الموقع مستقلة عن رؤيا موسى اليونانية والصيغ السلافية والأرمنية والقبطية التي تحتاج إلى سجلات مقارنة لاحقة.'
   },
   {
+    bookCode: 'APMO',
+    slug: 'en-wells-apocalypse-moses',
+    nameAr: 'رؤيا موسى (الصيغة اليونانية)',
+    nameEn: 'The Apocalypse of Moses (Wells, Charles 1913)',
+    abbreviation: 'APMO-EN',
+    url: 'https://www.ccel.org/c/charles/otpseudepig/apcmose.htm',
+    kind: 'apocalypse-moses-html',
+    maxChapter: 43,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-text',
+    notes: 'ترجمة ويليامز ويلز ضمن طبعة تشارلز الأكاديمية المنشورة سنة 1913؛ النص هو الصيغة اليونانية من حياة آدم وحواء، مستقل عن حياة آدم وحواء اللاتينية (TADAM) وعن وصية/صعود موسى (MOS).'
+  },
+  {
     bookCode: 'ARIST',
     slug: 'en-charles-letter-aristeas',
     nameAr: 'الترجمة الإنجليزية لرسالة أريستاس',
@@ -1162,6 +1176,47 @@ function parsePseudepigraphaSingleHtml(content, source) {
   return [{ chapter: 1, verse: 1, text, sourceUrl: source.url }];
 }
 
+function parseApocalypseMosesHtml(content, source) {
+  const headings = [...content.matchAll(/\b([ivxlcdm]+)\s+1(?:,\d+)?\s+/gi)]
+    .map((match) => ({ chapter: romanToNumber(match[1].toUpperCase()), index: match.index, start: match.index + match[0].length }));
+  const chapterNumbers = new Set(headings.map((heading) => heading.chapter));
+  if (headings.length !== source.maxChapter || chapterNumbers.size !== source.maxChapter) {
+    throw new Error(`اكتُشفت ${chapterNumbers.size} إصحاحات فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  const rows = [];
+  for (const [index, heading] of headings.entries()) {
+    const section = content.slice(heading.start, headings[index + 1]?.index ?? content.length)
+      .replace(/<br\s*\/?>/gi, '\n')
+      .replace(/<\/p\s*>/gi, '\n')
+      .replace(/<p\b[^>]*>/gi, '\n')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/&nbsp;/gi, ' ')
+      .replace(/&#39;|&rsquo;|&lsquo;/gi, "'")
+      .replace(/&quot;|&ldquo;|&rdquo;/gi, '"')
+      .replace(/&amp;/gi, '&')
+      .replace(/\r/g, '')
+      .split('\n')
+      .map((line) => line.replace(/\s+/g, ' ').trim())
+      .filter(Boolean);
+    let verse = 1;
+    const firstText = section.shift()?.replace(/^1\s+/, '').trim();
+    if (firstText) rows.push({ chapter: heading.chapter, verse: verse++, text: firstText, sourceUrl: source.url });
+    for (const line of section) {
+      const numbered = line.match(/^(\d{1,2})\s+(.+)$/);
+      if (numbered) {
+        verse = Number(numbered[1]);
+        rows.push({ chapter: heading.chapter, verse, text: numbered[2], sourceUrl: source.url });
+      } else if (rows.at(-1)?.chapter === heading.chapter) {
+        rows.at(-1).text += ` ${line}`;
+      }
+    }
+    if (!rows.some((row) => row.chapter === heading.chapter)) {
+      throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+    }
+  }
+  return rows;
+}
+
 function parseRenderedWikisourceCollectionBook(content, source, chapter, page, pageUrl) {
   const lines = [...content.matchAll(/<span\b[^>]*class="[^"]*ws-poem-line[^"]*"[^>]*>([\s\S]*?)(?=<span\b[^>]*class="[^"]*ws-poem-break|<span\b[^>]*class="[^"]*ws-poem-line|<\/div>)/gi)]
     .map((match) => stripHtml(match[1]))
@@ -1723,6 +1778,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'firmament-joseph-aseneth-html') return parseFirmamentJosephAsenethChapters(content, source);
   if (source.kind === 'vita-adae-eve-html') return parseVitaAdaeEveChapters(content, source);
   if (source.kind === 'pseudepigrapha-single-html') return parsePseudepigraphaSingleHtml(content, source);
+  if (source.kind === 'apocalypse-moses-html') return parseApocalypseMosesHtml(content, source);
   if (source.kind === 'apocryphon-ezekiel-fragments-html') return parseApocryphonEzekielFragments(content, source);
   if (source.kind === 'wikisource-rendered-collection') return parseRenderedWikisourceCollectionChapters(source);
   if (source.kind === 'other-gospels-json') return parseOtherGospelsJson(content, source);
@@ -1786,6 +1842,14 @@ async function run() {
     ON CONFLICT(translation_id, book_code, chapter, verse)
     DO UPDATE SET text=excluded.text, search_text=excluded.search_text, source_url=excluded.source_url, imported_at=CURRENT_TIMESTAMP
   `);
+  const insertBookSource = db.prepare(`
+    INSERT INTO bible_book_sources
+      (book_code, label_ar, label_en, language, availability_status, source_type, source_url, notes)
+    VALUES (?, ?, ?, ?, 'available', ?, ?, ?)
+    ON CONFLICT(book_code, label_ar, language, source_url) DO UPDATE SET
+      label_en=excluded.label_en, availability_status='available',
+      source_type=excluded.source_type, notes=excluded.notes
+  `);
   const insertMany = db.transaction((rows) => rows.forEach((row) => insertVerse.run(...row)));
   const legacyEthiopic = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get('gez-ocp-enoch');
   if (legacyEthiopic) {
@@ -1816,6 +1880,7 @@ async function run() {
           source_name=?, source_url=?, source_notes=?, updated_at=CURRENT_TIMESTAMP
       WHERE book_code=?
     `).run(source.originalLanguage || '', source.language, source.nameEn, source.url, source.notes, source.bookCode);
+    insertBookSource.run(source.bookCode, source.nameAr, source.nameEn, source.language, source.sourceType, source.url, source.notes);
     db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(translationId);
     console.log(`[Bible] ${source.slug}: ${new Set(parsedChapters.map((row) => row.chapter)).size} إصحاحاً، ${rows.length} وحدة`);
   }

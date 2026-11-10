@@ -228,11 +228,11 @@ function _seedExpansionCatalog(db) {
     ON CONFLICT(book_code) DO UPDATE SET
       canonicality_status=excluded.canonicality_status,
       textual_tradition=excluded.textual_tradition,
-      original_language=excluded.original_language,
+      original_language=CASE WHEN bible_book_metadata.text_status='complete' THEN bible_book_metadata.original_language ELSE excluded.original_language END,
       summary_ar=excluded.summary_ar,
-      source_name=excluded.source_name,
-      source_url=excluded.source_url,
-      source_notes=excluded.source_notes,
+      source_name=CASE WHEN bible_book_metadata.text_status='complete' THEN bible_book_metadata.source_name ELSE excluded.source_name END,
+      source_url=CASE WHEN bible_book_metadata.text_status='complete' THEN bible_book_metadata.source_url ELSE excluded.source_url END,
+      source_notes=CASE WHEN bible_book_metadata.text_status='complete' THEN bible_book_metadata.source_notes ELSE excluded.source_notes END,
       updated_at=CURRENT_TIMESTAMP
   `);
   const insertSource = db.prepare(`
@@ -257,7 +257,7 @@ function _seedExpansionCatalog(db) {
     ['2MCE', 'المكابيون الإثيوبي الثاني', 'Ethiopian Maccabees II', 'مك-إ2', 'ethiopian-canon', 2, 0, 'ethiopic', 'الجعزية', 'عمل إثيوبي مستقل.'],
     ['3MCE', 'المكابيون الإثيوبي الثالث', 'Ethiopian Maccabees III', 'مك-إ3', 'ethiopian-canon', 3, 0, 'ethiopic', 'الجعزية', 'عمل إثيوبي مستقل.'],
     ['EZRS', 'عزرا سوتوئيل', 'Ezra Sutuel', 'عز-س', 'ethiopian-canon', 4, 0, 'ethiopic', 'الجعزية', 'يعرض منفصلاً عن عزرا الثاني كاملاً؛ يتاح شاهد إنجليزي موازٍ للأصحاحات 3–14 المقابلة لمتن 4 عزرا، وليس نصاً جعزياً.'],
-    ['TAGS', 'تغسات', 'Tegsat', 'تغ', 'ethiopian-canon', 5, 0, 'ethiopic', 'الجعزية', 'مدخل إثيوبي يحتاج إلى فحص الطبعة والوحدات قبل النشر.'],
+    ['TAGS', 'تغسات (أمثال ٢٥–٣١)', 'Tegsat / Proverbs 25–31', 'تغ', 'ethiopian-canon', 5, 7, 'ethiopic', 'نص موازٍ عربي من ترجمة سميث وفاندايك؛ ليس شاهداً جعزياً', 'تقسيم إثيوبي تقليدي لآخر أمثال سليمان، ويعرض هنا النص العربي المقابل للفصول ٢٥–٣١ من أمثال سميث وفاندايك؛ لم يُستورد نص جعزي لهذا المدخل بعد.'],
     ['SIRE', 'يشوع بن سيراخ الإثيوبي', 'Ethiopic Sirach', 'سي-إ', 'ethiopian-canon', 6, 0, 'ethiopic', 'الجعزية/الأمهرية بحسب الطبعة', 'يتاح شاهد إنجليزي موازٍ من نسخة الملك جيمس القانونية العامة، لا يمثل النص الجعزي ولا يستبدل مراجعة ابن سيراخ الإثيوبية.'],
     ['JOSB', 'يوسف بن غوريون الإثيوبي', 'Josephus Ben Gorion', 'يوس-غ', 'ethiopian-canon', 7, 0, 'ethiopic', 'الجعزية', 'نص تاريخي إثيوبي يحتاج إلى وصف مستقل ولا ينسب تلقائياً إلى يوسيفوس.'],
     ['SIN', 'السينودس الإثيوبي', 'Ethiopian Synodos', 'سين', 'ethiopian-canon', 8, 0, 'ethiopic', 'الجعزية', 'مجموعة كتب كنسية، ستقسم إلى وحدات مستقلة عند إدخال النص.'],
@@ -271,7 +271,7 @@ function _seedExpansionCatalog(db) {
     ['CLE1', 'رسالة إكليمندس الأولى', '1 Clement', 'إك1', 'church-writings', 4, 0, 'greek', 'اليونانية', 'كتابة كنسية مبكرة.'],
     ['CLE2', 'رسالة إكليمندس الثانية', '2 Clement', 'إك2', 'church-writings', 5, 0, 'greek', 'اليونانية', 'كتابة كنسية مبكرة.'],
     // Jewish pseudepigrapha and related works.
-    ['MOS', 'صعود موسى', 'Assumption of Moses / Testament of Moses', 'ص-م', 'pseudepigrapha', 1, 0, 'moses', 'اللاتينية مع إعادة بناء نقدية', 'يُحفظ أساساً في شاهد لاتيني واحد، وتختلف تسمية العمل وتكوينه في الدراسات.'],
+    ['MOS', 'وصية موسى (المعروفة تقليدياً بصعود موسى)', 'Testament of Moses / Assumption of Moses', 'وص-م', 'pseudepigrapha', 1, 0, 'moses', 'اللاتينية بوسيط يوناني عن أصل سامي محتمل', 'النص المتبقي اثنا عشر إصحاحاً من مخطوط لاتيني واحد، وينقطع قبل الخاتمة؛ لا يحفظ مشهد صعود موسى نفسه. اسم «صعود موسى» تقليدي ومختلف عليه في الدراسات.'],
     ['ENO2', 'أخنوخ الثاني', '2 Enoch', 'أخ2', 'pseudepigrapha', 2, 0, 'slavonic', 'السلافية الكنسية', 'نص منحول مستقل عن أخنوخ الأول.'],
     ['ENO3', 'أخنوخ الثالث', '3 Enoch', 'أخ3', 'pseudepigrapha', 3, 0, 'hebrew', 'العبرية', 'نص رؤيوي يهودي متأخر.'],
     ['GIANTS', 'سفر العمالقة', 'Book of Giants', 'عمال', 'pseudepigrapha', 4, 0, 'aramaic', 'الآرامية مع شواهد قمران', 'نص مجزأ يعتمد على شواهد متعددة.'],
@@ -297,6 +297,7 @@ function _seedExpansionCatalog(db) {
     ['GNIC', 'إنجيل نيقوديموس (أعمال بيلاطس)', 'Gospel of Nicodemus', 'نيقو', 'apocrypha', 13, 0, 'greek', 'اليونانية واللاتينية', 'نص مركب من أعمال بيلاطس وأجزاء لاحقة.'],
     ['HERM', 'راعي هرماس', 'Shepherd of Hermas', 'هرماس', 'church-writings', 8, 0, 'greek', 'اليونانية واللاتينية', 'كتابة كنسية مبكرة ذات شواهد متعددة.'],
     ['ASC', 'صعود إشعياء', 'Ascension of Isaiah', 'ص-إش', 'pseudepigrapha', 18, 0, 'ethiopic', 'الجعزية مع شواهد أقدم', 'عمل مركب محفوظ بصورة بارزة في التقليد الإثيوبي.'],
+    ['APMO', 'رؤيا موسى (الصيغة اليونانية)', 'Apocalypse of Moses', 'رؤ-مو', 'pseudepigrapha', 19, 0, 'greek', 'اليونانية', 'صيغة يونانية من حياة آدم وحواء؛ مستقلة عن حياة آدم وحواء اللاتينية وعن وصية/صعود موسى.'],
     ['GPE', 'إنجيل بطرس', 'Gospel of Peter', 'بطرس-أ', 'apocrypha', 30, 0, 'greek', 'اليونانية مع شواهد مجزأة', 'نص مسيحي أبوكريفي مجزأ.'],
     ['GJUD', 'إنجيل يهوذا', 'Gospel of Judas', 'يهوذا-أ', 'apocrypha', 31, 0, 'coptic', 'القبطية', 'نص غنوصي محفوظ في مخطوط قبطي.'],
     ['GMA', 'إنجيل مريم', 'Gospel of Mary', 'مريم-أ', 'apocrypha', 32, 0, 'coptic', 'القبطية واليونانية', 'النص محفوظ بصورة مجزأة.'],
@@ -391,6 +392,20 @@ function _seedExpansionCatalog(db) {
       `المصدر المسجل للعمل: ${book.name_ar}`
     );
   }
+
+  // Tegsat is the Ethiopian division of Proverbs 25–31, not the Teezaz section of Synodos.
+  db.prepare(`
+    UPDATE bible_books
+    SET name_ar='تغسات (أمثال ٢٥–٣١)', name_en='Tegsat / Proverbs 25–31', chapter_count=7
+    WHERE code='TAGS'
+  `).run();
+  db.prepare(`
+    UPDATE bible_book_metadata
+    SET original_language='العبرية',
+        summary_ar='تقسيم إثيوبي تقليدي لآخر أمثال سليمان؛ المتاح هنا نص سميث وفاندايك العربي المقابل للفصول ٢٥–٣١، وليس شاهداً جعزياً.',
+        updated_at=CURRENT_TIMESTAMP
+    WHERE book_code='TAGS'
+  `).run();
 
   db.prepare(`
     UPDATE bible_book_metadata

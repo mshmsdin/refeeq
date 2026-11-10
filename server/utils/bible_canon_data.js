@@ -528,6 +528,16 @@ export function getCanonInfoForBook(code, collectionSlug = null) {
     };
   }
 
+  if (collectionSlug === 'pseudepigrapha') {
+    return {
+      is_disputed: true,
+      category_name: 'نصوص يهودية ومسيحية قديمة غير قانونية',
+      accepted_by: [],
+      rejected_by: ['لا تُدرج ضمن الأسفار القانونية في معظم التقاليد المسيحية؛ وتختلف مكانتها أو حفظها بين الكنائس والتقاليد.'],
+      notes: 'عمل ديني قديم خارج أسفار العهد القديم القانونية الأولى. لا يعني وصفه بأنه غير قانوني حكماً على قيمته التاريخية أو الأدبية، ويُعرض شاهده بحسب لغته ومصدره.'
+    };
+  }
+
   // Old Testament Protocanonical Books (39 books)
   return {
     is_disputed: false,
