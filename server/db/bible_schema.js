@@ -392,6 +392,40 @@ function _seedExpansionCatalog(db) {
     );
   }
 
+  db.prepare(`
+    UPDATE bible_book_metadata
+    SET summary_ar=COALESCE((
+          SELECT notes FROM bible_book_sources
+          WHERE book_code=bible_book_metadata.book_code
+            AND availability_status='available' AND source_type='parallel-text'
+          ORDER BY id DESC LIMIT 1
+        ), summary_ar),
+        source_name=COALESCE((
+          SELECT COALESCE(label_en, label_ar) FROM bible_book_sources
+          WHERE book_code=bible_book_metadata.book_code
+            AND availability_status='available' AND source_type='parallel-text'
+          ORDER BY id DESC LIMIT 1
+        ), source_name),
+        source_url=COALESCE((
+          SELECT source_url FROM bible_book_sources
+          WHERE book_code=bible_book_metadata.book_code
+            AND availability_status='available' AND source_type='parallel-text'
+          ORDER BY id DESC LIMIT 1
+        ), source_url),
+        source_notes=COALESCE((
+          SELECT notes FROM bible_book_sources
+          WHERE book_code=bible_book_metadata.book_code
+            AND availability_status='available' AND source_type='parallel-text'
+          ORDER BY id DESC LIMIT 1
+        ), source_notes),
+        updated_at=CURRENT_TIMESTAMP
+    WHERE EXISTS (
+      SELECT 1 FROM bible_book_sources
+      WHERE book_code=bible_book_metadata.book_code
+        AND availability_status='available' AND source_type='parallel-text'
+    )
+  `).run();
+
   // لا نعلن توفر نص لمجرد وجوده في الفهرس؛ الحالة تُشتق من الوحدات الموجودة فعلياً.
   db.prepare(`
     UPDATE bible_book_metadata
