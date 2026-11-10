@@ -868,9 +868,9 @@ export const SOURCES = [
   {
     bookCode: 'VIRGINAP', slug: 'en-rutherford-apocalypse-virgin',
     nameAr: 'ترجمة رذرفورد الإنجليزية لرؤيا العذراء', nameEn: 'Andrew Rutherford English Apocalypse of the Virgin', abbreviation: 'VIRGINAP-EN',
-    url: 'https://www.tertullian.org/fathers2/ANF-10/anf10-14.htm', kind: 'pseudepigrapha-single-html', maxChapter: 1,
+    url: 'https://www.newadvent.org/fathers/1005.htm', kind: 'new-advent-numbered-sections-html', maxChapter: 1,
     language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text',
-    notes: 'ترجمة أندرو رذرفورد من مخطوط من القرن الحادي عشر كما تصف المقدمة؛ النص متصل بلا تقسيم فصول ثابت، فيحفظ فصلاً واحداً.'
+    notes: 'ترجمة أندرو رذرفورد المنشورة سنة ١٨٩٦ في آباء ما قبل نيقية، المجلد ٩؛ النص الكامل مقسم إلى ٣٠ فقرة مرقمة ويحفظ كسجل فصل واحد.'
   }
 ];
 
@@ -1265,6 +1265,30 @@ function parsePseudepigraphaSingleHtml(content, source) {
   const text = stripHtml(body.replace(/^[\s\S]*?<\/b>/i, ''));
   if (text.length < 1000) throw new Error(`لم يُكتشف نص كافٍ في ${source.slug}`);
   return [{ chapter: 1, verse: 1, text, sourceUrl: source.url }];
+}
+
+function parseNewAdventNumberedSections(content, source) {
+  const paragraphs = [...content.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)];
+  const sections = [];
+  let current = null;
+  for (const paragraph of paragraphs) {
+    const html = paragraph[1];
+    const plain = stripHtml(html);
+    if (/^(?:About this page|Contact information|CONTACT US\b)/i.test(plain)) break;
+    const heading = plain.match(/^(\d{1,2})\.\s*(.*)$/);
+    if (heading && Number(heading[1]) === (current ? current.number + 1 : sections.length + 1)) {
+      if (current) sections.push(current);
+      current = { number: Number(heading[1]), text: heading[2] };
+    } else if (current) {
+      const text = stripHtml(html);
+      if (text) current.text = `${current.text} ${text}`.trim();
+    }
+  }
+  if (current) sections.push(current);
+  if (sections.length !== 30 || sections.some((section, index) => section.number !== index + 1 || section.text.length < 20)) {
+    throw new Error(`اكتُشفت ${sections.length} أقسام مرقمة فقط في ${source.slug}، والمتوقع ٣٠`);
+  }
+  return sections.map((section) => ({ chapter: 1, verse: section.number, text: section.text, sourceUrl: source.url }));
 }
 
 function parseApocalypseMosesHtml(content, source) {
@@ -1802,6 +1826,13 @@ const OCP_RAW_BASE = 'https://raw.githubusercontent.com/OnlineCriticalPseudepigr
 
 export const ADDITIONAL_SOURCES = [
   {
+    bookCode: 'APZEPH', slug: 'en-intertextual-apocalypse-zephaniah',
+    nameAr: 'الشذرات الإنجليزية لرؤيا صفنيا', nameEn: 'Public-domain English Apocalypse of Zephaniah fragments', abbreviation: 'APZEPH-EN',
+    url: 'https://intertextual.bible/read/apocalypse-of-zephaniah', kind: 'intertextual-paged-chapters-html', maxChapter: 14,
+    language: 'en', originalLanguage: 'القبطية', sourceType: 'public-domain-text', incomplete: true,
+    notes: 'عرض رقمي مبني على ترجمتي شتايندورف ١٨٩٩ وويلسون ١٨٨٥ المعلنتين ملكاً عاماً. يحفظ ١٤ مقطعاً/فصلاً من الشذرات القبطية، وبعض الوحدات نفسها ناقصة بعلامات حذف؛ لا يمثل نصاً كاملاً ولا ترتيباً مخطوطياً محققاً.'
+  },
+  {
     bookCode: 'TSTADAM', slug: 'syr-ocp-testament-adam',
     nameAr: 'الشاهد السرياني لوصية آدم', nameEn: 'OCP Syriac Testament of Adam', abbreviation: 'TSTADAM-SYR',
     url: TESTAMENT_ADAM_OCP_URL, kind: 'ocp-xml', maxChapter: 3, language: 'syr', versionLanguage: 'Syriac',
@@ -1966,6 +1997,25 @@ function parseIntertextualBookSections(content, source) {
   return chapters;
 }
 
+async function parseIntertextualPagedChapters(source) {
+  const chapters = [];
+  for (let chapter = 1; chapter <= source.maxChapter; chapter += 1) {
+    const content = await fetchText(`${source.url}/${chapter}`);
+    const section = content.match(new RegExp(`<section\\b(?=[^>]*class="[^"]*\\bchapter-section\\b")(?=[^>]*data-chapter="${chapter}")[^>]*>([\\s\\S]*?)<\\/section>`, 'i'))?.[1];
+    if (!section) throw new Error(`لم يُعثر على الفصل ${chapter} في ${source.slug}`);
+    const verses = [...section.matchAll(/<span\b(?=[^>]*class="[^"]*\bverse-span\b")(?=[^>]*data-verse="(\d+):(\d+)")[^>]*>([\s\S]*?)<\/span>/gi)];
+    if (!verses.length) throw new Error(`لا توجد وحدات في الفصل ${chapter} من ${source.slug}`);
+    for (const verse of verses) {
+      const parsedChapter = Number(verse[1]);
+      const number = Number(verse[2]);
+      const text = cleanText(decodeHtml(verse[3].replace(/<[^>]+>/g, ' ')));
+      if (parsedChapter !== chapter || text.length < 5) throw new Error(`وحدة غير صالحة في الفصل ${chapter} من ${source.slug}`);
+      chapters.push({ chapter, verse: number, text, sourceUrl: `${source.url}/${chapter}` });
+    }
+  }
+  return chapters;
+}
+
 async function parseChapters(content, source) {
   if (source.kind === 'structured-html') return parseStructuredHtmlChapters(source);
   if (source.kind === 'ertale-chapter-html') return parseErtaleChapteredHtml(source);
@@ -1979,6 +2029,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'odes-solomon-wikisource') return parseOdesSolomonWikisource(content, source);
   if (source.kind === 'pseudepigrapha-html') return parsePseudepigraphaChapters(content, source);
   if (source.kind === 'intertextual-book-sections-html') return parseIntertextualBookSections(content, source);
+  if (source.kind === 'intertextual-paged-chapters-html') return parseIntertextualPagedChapters(source);
   if (source.kind === 'pseudepigrapha-chapter-html') return parsePseudepigraphaChapterHtml(content, source);
   if (source.kind === 'enoch3-collection') return parseEnoch3Chapters(source);
   if (source.kind === 'pseudepigrapha-two-column-html') return parsePseudepigraphaTwoColumnChapters(content, source);
@@ -1986,6 +2037,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'firmament-joseph-aseneth-html') return parseFirmamentJosephAsenethChapters(content, source);
   if (source.kind === 'vita-adae-eve-html') return parseVitaAdaeEveChapters(content, source);
   if (source.kind === 'pseudepigrapha-single-html') return parsePseudepigraphaSingleHtml(content, source);
+  if (source.kind === 'new-advent-numbered-sections-html') return parseNewAdventNumberedSections(content, source);
   if (source.kind === 'apocalypse-moses-html') return parseApocalypseMosesHtml(content, source);
   if (source.kind === 'apocryphon-ezekiel-fragments-html') return parseApocryphonEzekielFragments(content, source);
   if (source.kind === 'wikisource-rendered-collection') return parseRenderedWikisourceCollectionChapters(source);
@@ -2113,7 +2165,7 @@ async function run() {
       source.language, source.url, source.sourceType, source.notes, 40 + index
     );
     const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
-    const content = ['structured-html', 'sacredthings-html', 'ertale-chapter-html', 'diatessaron-wikisource'].includes(source.kind)
+    const content = ['structured-html', 'sacredthings-html', 'ertale-chapter-html', 'diatessaron-wikisource', 'intertextual-paged-chapters-html'].includes(source.kind)
       ? null
       : await fetchText(source.url);
     const parsedChapters = await parseChapters(content, source);
