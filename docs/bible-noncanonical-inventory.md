@@ -118,6 +118,9 @@
 
 - [مشروع ناسكال لفهرسة الأدب المسيحي المنحول](https://www.nasscal.com/e-clavis-christian-apocrypha/)؛ [توضيح نطاق الفهرس وعدد مدخلاته](https://www.nasscal.com/category/e-clavis/).
 - [مشروع النصوص النقدية الرقمية OCP، وملفات الطبعات الإلكترونية المفتوحة](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/tree/master/static/docs).
+- [رؤيا العذراء في طبعة رذرفورد القديمة](https://www.newadvent.org/fathers/1005.htm).
+- [رؤيا صفنيا: النص الإنجليزي المبني على ترجمتي شتايندورف وويلسون، مع بيان أنه شذري وملك عام](https://intertextual.bible/read/apocalypse-of-zephaniah/1).
+- [مدخل وصية إسحاق](https://earlyjewishwritings.com/testisaac.html) و[مدخل وصية يعقوب](https://earlyjewishwritings.com/testjacob.html): يبينان أن الترجمة الأكاديمية/النص الكامل غير متاحين عبرهما؛ النسخ الرقمية الحديثة التي ظهرت أثناء البحث لا يتضح ترخيص إعادة نشرها.
 - [موسوعة الكتاب المقدس: الأدب المنحول للعهد القديم، مع التنبيه إلى عدم وجود قائمة نهائية](https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Pseudepigrapha?height=500&iframe=true&width=500).
 - [جيمس تشارلزورث، الأسفار المنحولة للعهد القديم، المجلد الأول، فهرس الأعمال](https://www.rexresearch1.com/DeadSeaScrolls/OldTestamentPseudepigrapha1Charlesworth.pdf).
 - [دار إيردمانز، الأسفار المنحولة للعهد القديم: نصوص غير قانونية إضافية، المجلد الأول](https://www.eerdmans.com/9780802885876/old-testament-pseudepigrapha-vol-1/)؛ [مراجعة أكاديمية ومثال على تنوع الأعمال](https://onlinelibrary.wiley.com/doi/full/10.1111/rsr.12303).
