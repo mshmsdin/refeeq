@@ -10,7 +10,7 @@ import { normalizeArabicText } from '../utils/arabic_nlp.js';
 import { fetchText } from './source_fetch.js';
 import { pathToFileURL } from 'node:url';
 
-const SOURCES = [
+export const SOURCES = [
   {
     bookCode: 'ENO',
     slug: 'en-charles-enoch',
@@ -116,10 +116,11 @@ const SOURCES = [
     kind: 'ertale-chapter-html',
     maxChapter: 68,
     skipChapters: [23],
+    incomplete: true,
     language: 'en',
     originalLanguage: 'الجعزية مع أصل رؤيوي أقدم',
     sourceType: 'public-domain-text',
-    notes: 'ترجمة م. ر. جيمس المنشورة سنة 1924؛ هذا السجل هو الكتاب الثاني من إكليمندس الإثيوبي، وهو صيغة إثيوبية لرؤيا بطرس، ولا يخلط مع رسالة إكليمندس الأولى أو الثانية.'
+    notes: 'ترجمة م. ر. جيمس المنشورة سنة 1924؛ هذا السجل هو الكتاب الثاني من إكليمندس الإثيوبي، وهو صيغة إثيوبية لرؤيا بطرس، ولا يخلط مع رسالة إكليمندس الأولى أو الثانية. النص جزئي لأن الفصل 23 تالف أو مفقود في المصدر الرقمي.'
   },
   {
     bookCode: '1MCE',
@@ -812,6 +813,55 @@ const SOURCES = [
     originalLanguage: 'اللاتينية',
     sourceType: 'tei-xml',
     notes: 'الشاهد اللاتيني الإلكتروني من Online Critical Pseudepigrapha، مع حفظ التقسيم الإصحاحي والعددي للشاهد.'
+  },
+  {
+    bookCode: 'ADAMCON', slug: 'en-malan-conflict-adam-eve',
+    nameAr: 'ترجمة سليمان مالان الإنجليزية لصراع آدم وحواء', nameEn: 'S. C. Malan English Conflict of Adam and Eve', abbreviation: 'ADAMCON-EN',
+    url: 'https://www.pseudepigrapha.com/pseudepigrapha/ConflictOfAdamEve/AdamEveConflict.html', kind: 'numbered-html-chapters', maxChapter: 112,
+    language: 'en', originalLanguage: 'الجعزية بوسيط عربي', sourceType: 'public-domain-text',
+    notes: 'ترجمة سليمان مالان المنشورة سنة 1882 عن التقليد الإثيوبي. يضم العمل أربعة كتب؛ حفظت عناوين الفصول الـ112 كما تظهر في النسخة، مع توحيد الترقيم المتتابع عبر الكتب.'
+  },
+  {
+    bookCode: 'JASHER', slug: 'en-wikisource-sefer-hayashar-1840',
+    nameAr: 'ترجمة 1840 الإنجليزية لصيغة كتاب ياشر الوسيطة', nameEn: 'English Sefer ha-Yashar 1840', abbreviation: 'JASHER-EN',
+    url: 'https://en.wikisource.org/wiki/Sefer_Ha-yashar,_or,_the_Book_of_Jasher_(1840)',
+    kind: 'wikisource-jasher', maxChapter: 91, language: 'en', originalLanguage: 'العبرية', sourceType: 'public-domain-text',
+    notes: 'طبعة إنجليزية تاريخية للنص اليهودي الوسيط Sefer ha-Yashar. هذا ليس كتاب ياشر القديم المفقود المذكور في يشوع 10:13 وصموئيل الثاني 1:18.'
+  },
+  {
+    bookCode: 'AHIKAR', slug: 'en-charles-story-ahikar',
+    nameAr: 'ترجمة تشارلز الإنجليزية لقصة أخيقار', nameEn: 'R. H. Charles English Story of Ahikar', abbreviation: 'AHIKAR-EN',
+    url: 'https://www.pseudepigrapha.com/pseudepigrapha/ahikar.htm', kind: 'pseudepigrapha-single-html', maxChapter: 1,
+    language: 'en', originalLanguage: 'الآرامية مع صيغ سريانية وعربية', sourceType: 'public-domain-text',
+    notes: 'نص إنجليزي تاريخي لقصة أخيقار وأمثاله؛ لا يقدم المصدر تقسيم فصول موحداً، لذا يحفظ النص الكامل في فصل واحد دون اختراع ترقيم.'
+  },
+  {
+    bookCode: 'ZOSIMUS', slug: 'en-craigie-narrative-zosimus',
+    nameAr: 'ترجمة كريغي الإنجليزية لرواية زوسيموس', nameEn: 'W. A. Craigie English Narrative of Zosimus', abbreviation: 'ZOSIMUS-EN',
+    url: 'https://www.tertullian.org/fathers2/ANF-10/anf10-23.htm', kind: 'roman-html-chapters', maxChapter: 21,
+    language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text',
+    notes: 'ترجمة و. أ. كريغي في آباء ما قبل نيقية، المجلد العاشر؛ تحفظ الفصول الرومانية الـ21 وتعرض بوصفها رواية رؤيوية عن أرض المباركين.'
+  },
+  {
+    bookCode: 'SEDRACH', slug: 'en-rutherford-apocalypse-sedrach',
+    nameAr: 'ترجمة رذرفورد الإنجليزية لرؤيا سدراخ', nameEn: 'Andrew Rutherford English Apocalypse of Sedrach', abbreviation: 'SEDRACH-EN',
+    url: 'https://www.tertullian.org/fathers2/ANF-10/anf10-17.htm', kind: 'roman-html-chapters', maxChapter: 16,
+    language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text',
+    notes: 'ترجمة أندرو رذرفورد المنشورة ضمن آباء ما قبل نيقية؛ تحفظ أقسام النص الستة عشر، وهو عمل مسيحي متأخر لا سفر قانوني.'
+  },
+  {
+    bookCode: 'RESEZ', slug: 'en-anf-word-revelation-esdras',
+    nameAr: 'النص الإنجليزي لكلمة ورؤيا عزرا', nameEn: 'English Word and Revelation of Esdras', abbreviation: 'RESEZ-EN',
+    url: 'https://www.tertullian.org/fathers2/ANF-08/anf08-106.htm', kind: 'pseudepigrapha-single-html', maxChapter: 1,
+    language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text',
+    notes: 'نص قصير من مجموعة آباء ما قبل نيقية، محفوظ كوحدة واحدة لأن الطبعة لا تقسمه إلى فصول؛ مستقل عن عزرا الثاني ورؤيا عزرا اليونانية.'
+  },
+  {
+    bookCode: 'VIRGINAP', slug: 'en-rutherford-apocalypse-virgin',
+    nameAr: 'ترجمة رذرفورد الإنجليزية لرؤيا العذراء', nameEn: 'Andrew Rutherford English Apocalypse of the Virgin', abbreviation: 'VIRGINAP-EN',
+    url: 'https://www.tertullian.org/fathers2/ANF-10/anf10-14.htm', kind: 'pseudepigrapha-single-html', maxChapter: 1,
+    language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text',
+    notes: 'ترجمة أندرو رذرفورد من مخطوط من القرن الحادي عشر كما تصف المقدمة؛ النص متصل بلا تقسيم فصول ثابت، فيحفظ فصلاً واحداً.'
   }
 ];
 
@@ -954,6 +1004,25 @@ async function parseWikisourceCollectionChapters(source) {
   for (const [index, page] of source.pages.entries()) {
     const content = await fetchText(wikisourceApiUrl(page));
     chapters.push(...parseWikisourceCollectionPage(content, source, index + 1, page));
+  }
+  return chapters;
+}
+
+async function parseWikisourceJasherChapters(source) {
+  const chapters = [];
+  for (let chapter = 1; chapter <= source.maxChapter; chapter += 1) {
+    const page = `Sefer_Ha-yashar,_or,_the_Book_of_Jasher_(1840)/Chapter_${chapter}`;
+    const url = `https://en.wikisource.org/w/api.php?action=parse&page=${encodeURIComponent(page)}&prop=text&format=json&origin=*`;
+    const content = await fetchText(url);
+    let payload;
+    try { payload = JSON.parse(content); } catch { throw new Error(`استجابة ويكي مصدر غير صالحة للفصل ${chapter}`); }
+    const html = payload?.parse?.text?.['*'];
+    if (!html) throw new Error(`لم يُعثر على نص الفصل ${chapter} في ${source.slug}`);
+    const rows = [...html.matchAll(/<span class="wst-verse[^\"]*" id="[^"]+"><sup>(\d+)<\/sup><\/span>([\s\S]*?)<\/p>/gi)]
+      .map((match) => ({ chapter, verse: Number(match[1]), text: stripHtml(match[2]), sourceUrl: url }))
+      .filter((row) => row.text.length > 10);
+    if (!rows.length) throw new Error(`لم تُكتشف وحدات الفصل ${chapter} في ${source.slug}`);
+    chapters.push(...rows);
   }
   return chapters;
 }
@@ -1344,7 +1413,7 @@ function parseChapteredParagraphHtml(content, source) {
   for (const [index, heading] of headings.entries()) {
     const end = headings[index + 1]?.index ?? content.length;
     const section = content.slice(heading.start, end);
-    for (const match of section.matchAll(/<p\b[^>]*>[\s\S]*?<b>\s*(\d+):(\d+)\s*<\/b>[\s\S]*?([\s\S]*?)<\/p>/gi)) {
+    for (const match of section.matchAll(/<p\b[^>]*>[\s\S]*?<b\b[^>]*>\s*(\d+):(\d+)\s*<\/b>[\s\S]*?([\s\S]*?)<\/p>/gi)) {
       const text = stripHtml(match[0].replace(/^[\s\S]*?<\/b>/i, '').replace(/<\/p>[\s\S]*$/i, ''));
       if (text.length > 2) chapters.push({ chapter: heading.chapter, verse: Number(match[2]), text, sourceUrl: source.url });
     }
@@ -1451,10 +1520,12 @@ function parseNewAdventChapteredHtml(content, source) {
 }
 
 function parseWikisourceNumberedParagraphs(content, source) {
-  const start = content.indexOf('The Birth of Mary');
+  const start = content.indexOf('The Birth of Mary the Holy');
   const section = content.slice(start >= 0 ? start : 0);
-  const rows = [...section.matchAll(/<p\b[^>]*>\s*(?:&#160;|\s)*(\d+)\.(?:&#160;|\s)+([\s\S]*?)<\/p>/gi)]
-    .map((match) => ({ chapter: Number(match[1]), verse: 1, text: stripHtml(match[2]), sourceUrl: source.url }))
+  const rows = [...section.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
+    .map((match) => stripHtml(match[1]).match(/^\s*(\d+)\.\s+([\s\S]+)$/))
+    .filter(Boolean)
+    .map((match) => ({ chapter: Number(match[1]), verse: 1, text: match[2], sourceUrl: source.url }))
     .filter((row) => row.chapter >= 1 && row.chapter <= source.maxChapter && row.text.length > 8);
   const chapters = new Map(rows.map((row) => [row.chapter, row]));
   if (chapters.size !== source.maxChapter) {
@@ -1802,6 +1873,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'wikisource-api') return parseWikisourceChapters(content, source);
   if (source.kind === 'wikisource-book-api') return parseWikisourceBookChapters(content, source);
   if (source.kind === 'wikisource-collection') return parseWikisourceCollectionChapters(source);
+  if (source.kind === 'wikisource-jasher') return parseWikisourceJasherChapters(source);
   if (source.kind === 'diatessaron-wikisource') return parseDiatessaronWikisource(source);
   if (source.kind === 'odes-solomon-wikisource') return parseOdesSolomonWikisource(content, source);
   if (source.kind === 'pseudepigrapha-html') return parsePseudepigraphaChapters(content, source);
@@ -1831,6 +1903,8 @@ async function parseChapters(content, source) {
   if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
   if (source.kind === 'ocp-xml') return parseOcpChapters(content, source);
+  if (source.kind === 'numbered-html-chapters') return parseNumberedHtmlChapters(content, source);
+  if (source.kind === 'roman-html-chapters') return parseRomanHtmlChapters(content, source);
   const start = content.indexOf(source.anchor);
   if (start < 0) throw new Error(`لم يُعثر على بداية النص في ${source.slug}`);
   const body = content.slice(start);
@@ -1852,6 +1926,38 @@ async function parseChapters(content, source) {
     verse: 1,
     text: cleanText(body.slice(heading.start, headings[index + 1]?.start || body.length))
   })).filter((row) => row.text.length > 40);
+}
+
+function parseNumberedHtmlChapters(content, source) {
+  const body = content.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || content;
+  const plain = decodeHtml(body.replace(/<\/(?:p|h[1-6]|tr|td|li)>/gi, '\n').replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, ' '));
+  const headings = [...plain.matchAll(/(?:^|\n)\s*CHAPTER\s+([IVXLCDM]+)\s*\./gim)];
+  if (headings.length !== source.maxChapter) {
+    throw new Error(`اكتُشف ${headings.length} عنوان فصل فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  return headings.map((heading, index) => {
+    const sectionStart = heading.index + heading[0].length;
+    const sectionEnd = headings[index + 1]?.index ?? plain.length;
+    const text = cleanText(plain.slice(sectionStart, sectionEnd));
+    if (text.length < 40) throw new Error(`نص الفصل ${index + 1} قصير في ${source.slug}`);
+    return { chapter: index + 1, verse: 1, text, sourceUrl: source.url };
+  });
+}
+
+function parseRomanHtmlChapters(content, source) {
+  const body = content.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || content;
+  const rows = [];
+  for (const paragraph of body.matchAll(/<p\b[^>]*>\s*([IVXLCDM]+)\.\s+([\s\S]*?)<\/p>/gi)) {
+    const number = romanToNumber(paragraph[1].toUpperCase());
+    if (number < 1 || number > source.maxChapter) continue;
+    const text = stripHtml(paragraph[2]);
+    if (text.length > 20) rows.push({ chapter: number, verse: 1, text, sourceUrl: source.url });
+  }
+  const seen = new Set(rows.map((row) => row.chapter));
+  if (seen.size !== source.maxChapter) {
+    throw new Error(`اكتُشفت ${seen.size} فصول فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  return rows.sort((a, b) => a.chapter - b.chapter);
 }
 
 async function run() {
@@ -1912,11 +2018,11 @@ async function run() {
       .run(source.maxChapter, source.maxChapter, source.bookCode);
     db.prepare(`
       UPDATE bible_book_metadata
-      SET text_status='complete', original_language=COALESCE(NULLIF(?, ''), original_language),
+      SET text_status=CASE WHEN ?=1 THEN 'partial' ELSE 'complete' END, original_language=COALESCE(NULLIF(?, ''), original_language),
           english_status=CASE WHEN ?='en' THEN 'available' ELSE english_status END,
           source_name=?, source_url=?, source_notes=?, updated_at=CURRENT_TIMESTAMP
       WHERE book_code=?
-    `).run(source.originalLanguage || '', source.language, source.nameEn, source.url, source.notes, source.bookCode);
+    `).run(source.incomplete ? 1 : 0, source.originalLanguage || '', source.language, source.nameEn, source.url, source.notes, source.bookCode);
     insertBookSource.run(source.bookCode, source.nameAr, source.nameEn, source.language, source.sourceType, source.url, source.notes);
     db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(translationId);
     console.log(`[Bible] ${source.slug}: ${new Set(parsedChapters.map((row) => row.chapter)).size} إصحاحاً، ${rows.length} وحدة`);

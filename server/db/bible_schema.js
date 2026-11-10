@@ -228,11 +228,11 @@ function _seedExpansionCatalog(db) {
     ON CONFLICT(book_code) DO UPDATE SET
       canonicality_status=excluded.canonicality_status,
       textual_tradition=excluded.textual_tradition,
-      original_language=CASE WHEN bible_book_metadata.text_status='complete' THEN bible_book_metadata.original_language ELSE excluded.original_language END,
+      original_language=CASE WHEN bible_book_metadata.text_status IN ('complete','partial') THEN bible_book_metadata.original_language ELSE excluded.original_language END,
       summary_ar=excluded.summary_ar,
-      source_name=CASE WHEN bible_book_metadata.text_status='complete' THEN bible_book_metadata.source_name ELSE excluded.source_name END,
-      source_url=CASE WHEN bible_book_metadata.text_status='complete' THEN bible_book_metadata.source_url ELSE excluded.source_url END,
-      source_notes=CASE WHEN bible_book_metadata.text_status='complete' THEN bible_book_metadata.source_notes ELSE excluded.source_notes END,
+      source_name=CASE WHEN bible_book_metadata.text_status IN ('complete','partial') THEN bible_book_metadata.source_name ELSE excluded.source_name END,
+      source_url=CASE WHEN bible_book_metadata.text_status IN ('complete','partial') THEN bible_book_metadata.source_url ELSE excluded.source_url END,
+      source_notes=CASE WHEN bible_book_metadata.text_status IN ('complete','partial') THEN bible_book_metadata.source_notes ELSE excluded.source_notes END,
       updated_at=CURRENT_TIMESTAMP
   `);
   const insertSource = db.prepare(`
@@ -306,6 +306,13 @@ function _seedExpansionCatalog(db) {
     ['APOL', 'أعمال بولس', 'Acts of Paul', 'أع-بول', 'apocrypha', 34, 0, 'greek', 'اليونانية', 'نص مركب وشواهده متعددة.'],
     ['APET', 'أعمال بطرس', 'Acts of Peter', 'أع-بط', 'apocrypha', 35, 0, 'greek', 'اليونانية واللاتينية', 'نص أبوكريفي متعدد الشواهد.'],
     ['APEP', 'رؤيا بطرس', 'Apocalypse of Peter', 'رؤ-بط', 'apocrypha', 36, 0, 'greek', 'اليونانية والإثيوبية', 'شواهد متعددة ولا تدمج آلياً.'],
+    ['ADAMCON', 'صراع آدم وحواء مع الشيطان', 'Conflict of Adam and Eve with Satan', 'صراع-آ', 'pseudepigrapha', 20, 0, 'ethiopic', 'الجعزية بوسيط عربي', 'عمل مسيحي شرقي من أربعة كتب، يروي حياة آدم وحواء بعد الخروج من الجنة ويمتد إلى تاريخ الأجيال اللاحقة؛ الترجمة الإنجليزية لسليمان مالان سنة 1882.'],
+    ['JASHER', 'كتاب ياشر (الصيغة الوسيطة)', 'Sefer ha-Yashar (medieval)', 'ياشر', 'pseudepigrapha', 21, 0, 'hebrew', 'العبرية', 'رواية تفسيرية يهودية من العصور الوسطى مترجمة في طبعة 1840؛ ليست كتاب ياشر المفقود المشار إليه في يشوع وصموئيل.'],
+    ['AHIKAR', 'قصة أخيقار', 'Story of Ahikar', 'أخي', 'pseudepigrapha', 22, 0, 'aramaic', 'الآرامية مع صيغ شرقية لاحقة', 'حكاية أخلاقية عن أخيقار وحكمه وأمثاله، معروفة في تقاليد آرامية وشرقية متعددة.'],
+    ['ZOSIMUS', 'رواية زوسيموس عن أرض المباركين', 'Narrative of Zosimus', 'زوس', 'pseudepigrapha', 23, 0, 'greek', 'اليونانية مع صيغ شرقية', 'رؤيا ورحلة أخروية تروي زيارة ناسك لأرض المباركين؛ النص الإنجليزي من طبعة آباء ما قبل نيقية.'],
+    ['SEDRACH', 'رؤيا سدراخ', 'Apocalypse of Sedrach', 'سدراخ', 'pseudepigrapha', 24, 0, 'greek', 'اليونانية', 'رؤيا مسيحية متأخرة تناقش التوبة والشفاعة والموت؛ النص الإنجليزي من طبعة آباء ما قبل نيقية.'],
+    ['RESEZ', 'كلمة ورؤيا عزرا', 'Word and Revelation of Esdras', 'رؤ-عز', 'pseudepigrapha', 25, 0, 'greek', 'اليونانية', 'نص رؤيوي قصير مختلف عن عزرا الثاني وعن رؤيا عزرا اليونانية؛ محفوظ في مجموعة كتابات قديمة.'],
+    ['VIRGINAP', 'رؤيا العذراء مريم', 'Apocalypse of the Virgin', 'رؤ-مريم', 'apocrypha', 40, 0, 'greek', 'اليونانية', 'رؤيا مسيحية متأخرة تصف جولة في العقوبات والشفاعة؛ نصها الإنجليزي من طبعة آباء ما قبل نيقية.'],
   ];
 
   const sourceDefaults = {
@@ -445,7 +452,14 @@ function _seedExpansionCatalog(db) {
   // لا نعلن توفر نص لمجرد وجوده في الفهرس؛ الحالة تُشتق من الوحدات الموجودة فعلياً.
   db.prepare(`
     UPDATE bible_book_metadata
-    SET text_status = CASE WHEN EXISTS (
+    SET text_status = CASE
+        WHEN bible_book_metadata.book_code='CLE-ETH' AND NOT EXISTS (
+          SELECT 1 FROM bible_verses bv
+          JOIN bible_translations bt ON bt.id = bv.translation_id
+          WHERE bv.book_code = bible_book_metadata.book_code AND bv.chapter=23
+            AND bt.is_active = 1 AND (bt.site_scope = 'both' OR bt.site_scope = 'bible')
+        ) THEN 'partial'
+        WHEN EXISTS (
           SELECT 1 FROM bible_verses bv
           JOIN bible_translations bt ON bt.id = bv.translation_id
           WHERE bv.book_code = bible_book_metadata.book_code
