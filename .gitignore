@@ -31,6 +31,7 @@ Thumbs.db
 server/db/library.db
 server/db/library.db-shm
 server/db/library.db-wal
+server/cache/deutero-html/
 
 # Temporary / Scratch
 scratch/

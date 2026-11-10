@@ -7,7 +7,6 @@
 import { getDb, initDatabase } from '../db/schema.js';
 import { initBibleSchema } from '../db/bible_schema.js';
 import { normalizeArabicText } from '../utils/arabic_nlp.js';
-import { selectSources } from './source_selection.js';
 import { fetchText } from './source_fetch.js';
 import { pathToFileURL } from 'node:url';
 
@@ -1820,8 +1819,10 @@ async function parseChapters(content, source) {
 }
 
 async function run() {
-  const onlySlug = process.argv.find((argument) => argument.startsWith('--only='))?.slice('--only='.length);
-  const selectedSources = selectSources(SOURCES, onlySlug);
+  const onlySlugs = process.argv.flatMap((argument) => argument.startsWith('--only=') ? argument.slice('--only='.length).split(',') : []).map((slug) => slug.trim()).filter(Boolean);
+  const selectedSources = onlySlugs.length ? SOURCES.filter((source) => onlySlugs.includes(source.slug)) : SOURCES;
+  const unknownSlugs = onlySlugs.filter((slug) => !selectedSources.some((source) => source.slug === slug));
+  if (unknownSlugs.length) throw new Error(`مصادر غير معروفة: ${unknownSlugs.join(', ')}`);
   initDatabase();
   initBibleSchema();
   const db = getDb();

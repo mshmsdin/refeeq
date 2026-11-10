@@ -572,7 +572,7 @@ function _seedBooks(db) {
     ['3MA','المكابيين الثالث','3 Maccabees','3مك',DC,12,7],
     ['4MA','المكابيين الرابع','4 Maccabees','4مك',DC,13,18],
     ['DAG','دانيال (يوناني)','Daniel (Greek additions)','داي',DC,14,3],
-    ['ESG','أستير (يوناني)','Esther (Greek)','أسي',DC,15,10],
+    ['ESG','إضافات أستير اليونانية','Greek Additions to Esther','أسي',DC,15,7],
     // Apocrypha / Pseudepigrapha (Ethiopian Canon)
     ['ENO','أخنوخ الأول','1 Enoch','أخ',AP,1,108],
     ['JUB','اليوبيلات','Book of Jubilees','يوب',AP,2,50],
@@ -580,6 +580,8 @@ function _seedBooks(db) {
   ];
 
   for (const b of books) insertBook.run(...b);
+  // يحتوي مصدر الترجمة المتاح إضافات أستير اليونانية السبعة فقط، لا السفر اليوناني كاملاً.
+  db.prepare("UPDATE bible_books SET name_ar='إضافات أستير اليونانية', name_en='Greek Additions to Esther', chapter_count=7 WHERE code='ESG'").run();
 
   // Seed aliases
   _seedAliases(db);
