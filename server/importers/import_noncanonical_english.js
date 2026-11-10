@@ -12,6 +12,67 @@ import { pathToFileURL } from 'node:url';
 
 export const SOURCES = [
   {
+    bookCode: 'IGNEPH', slug: 'en-anf-ephesians', nameAr: 'الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى أفسس', nameEn: 'ANF English Ignatius to the Ephesians', abbreviation: 'IGNEPH-EN',
+    url: 'https://www.newadvent.org/fathers/0104.htm', kind: 'complete-letter-html', maxChapter: 21, language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text',
+    notes: 'الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى أفسس، 21 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.'
+  },
+  {
+    bookCode: 'IGNMAG', slug: 'en-anf-magnesians', nameAr: 'الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى مغنيسية', nameEn: 'ANF English Ignatius to the Magnesians', abbreviation: 'IGNMAG-EN',
+    url: 'https://www.newadvent.org/fathers/0105.htm', kind: 'complete-letter-html', maxChapter: 15, language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text',
+    notes: 'الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى مغنيسية، 15 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.'
+  },
+  {
+    bookCode: 'IGNTRA', slug: 'en-anf-trallians', nameAr: 'الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى ترالس', nameEn: 'ANF English Ignatius to the Trallians', abbreviation: 'IGNTRA-EN',
+    url: 'https://www.newadvent.org/fathers/0106.htm', kind: 'complete-letter-html', maxChapter: 13, language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text',
+    notes: 'الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى ترالس، 13 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.'
+  },
+  {
+    bookCode: 'IGNROM', slug: 'en-anf-romans', nameAr: 'الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى رومية', nameEn: 'ANF English Ignatius to the Romans', abbreviation: 'IGNROM-EN',
+    url: 'https://www.newadvent.org/fathers/0107.htm', kind: 'complete-letter-html', maxChapter: 10, language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text',
+    notes: 'الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى رومية، 10 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.'
+  },
+  {
+    bookCode: 'IGNPHI', slug: 'en-anf-philadelphians', nameAr: 'الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى فيلادلفية', nameEn: 'ANF English Ignatius to the Philadelphians', abbreviation: 'IGNPHI-EN',
+    url: 'https://www.newadvent.org/fathers/0108.htm', kind: 'complete-letter-html', maxChapter: 11, language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text',
+    notes: 'الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى فيلادلفية، 11 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.'
+  },
+  {
+    bookCode: 'IGNSMY', slug: 'en-anf-smyrnaeans', nameAr: 'الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى سميرنا', nameEn: 'ANF English Ignatius to the Smyrnaeans', abbreviation: 'IGNSMY-EN',
+    url: 'https://www.newadvent.org/fathers/0109.htm', kind: 'complete-letter-html', maxChapter: 13, language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text',
+    notes: 'الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى سميرنا، 13 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.'
+  },
+  {
+    bookCode: 'IGNPOL', slug: 'en-anf-polycarp', nameAr: 'الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى بوليكاربوس', nameEn: 'ANF English Ignatius to Polycarp', abbreviation: 'IGNPOL-EN',
+    url: 'https://www.newadvent.org/fathers/0110.htm', kind: 'complete-letter-html', maxChapter: 8, language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text',
+    notes: 'الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى بوليكاربوس، 8 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.'
+  },
+  {
+    bookCode: 'POLPHI', slug: 'en-anf-polycarp-philippians', nameAr: 'الترجمة الإنجليزية القديمة: رسالة بوليكاربوس إلى أهل فيلبي', nameEn: 'ANF English Polycarp to the Philippians', abbreviation: 'POLPHI-EN',
+    url: 'https://www.newadvent.org/fathers/0136.htm', kind: 'complete-letter-html', maxChapter: 14, language: 'en', originalLanguage: 'اليونانية مع ختام محفوظ باللاتينية', sourceType: 'public-domain-text',
+    notes: 'الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة بوليكاربوس إلى أهل فيلبي، 14 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. الفصول الأخيرة محفوظة باللاتينية، ولا تدعي الإضافة وجود أصل يوناني كامل. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.'
+  },
+  {
+    bookCode: 'EPISTAP', slug: 'en-james-epistle-apostles', nameAr: 'ترجمة جيمس الإنجليزية لرسالة الرسل', nameEn: 'M. R. James English Epistle of the Apostles', abbreviation: 'EPISTAP-EN',
+    url: 'https://en.wikisource.org/wiki/The_Apocryphal_New_Testament_(1924)/Epistles/The_Epistle_of_the_Apostles?action=render', kind: 'epistle-apostles-html', maxChapter: 51,
+    language: 'en', originalLanguage: 'الجعزية والقبطية مع أصل يوناني مفترض', sourceType: 'public-domain-text',
+    notes: 'ترجمة مونتاغيو رودس جيمس، العهد الجديد الأبوكريفي، أكسفورد، ١٩٢٤، الصفحات ٤٨٥–٥٠٣؛ ٥١ قسماً. تعتمد النسخة الجعزية الكاملة مع مقارنة الشاهد القبطي الجزئي واللاتيني. كل قسم فصل مستقل؛ تعليقات المقارنة في النص محفوظة، وحواشي الطبعة في رابط المصدر. لا تشمل وصية الجليل المستقلة التي يقتبس المترجم منها جملة في مقدمته.'
+  },
+  {
+    bookCode: 'LAOD', slug: 'en-james-laodiceans',
+    nameAr: 'ترجمة جيمس الإنجليزية للرسالة إلى اللاودكيين', nameEn: 'M. R. James English Epistle to the Laodiceans', abbreviation: 'LAOD-EN',
+    url: 'https://en.wikisource.org/wiki/The_Apocryphal_New_Testament_(1924)/Epistles/The_Epistle_to_the_Laodiceans?action=render',
+    kind: 'strict-numbered-paragraphs', maxChapter: 1, maxUnits: 20,
+    language: 'en', originalLanguage: 'اللاتينية', sourceType: 'public-domain-text',
+    notes: 'ترجمة مونتاغيو رودس جيمس من اللاتينية، العهد الجديد الأبوكريفي، أكسفورد، ١٩٢٤، الصفحتان ٤٧٨–٤٧٩؛ عشرون عدداً متصلة، في فصل واحد. الترجمة القديمة ملك عام. رسالة منسوبة إلى بولس، ولا تعني إضافتها إثبات نسبتها إليه.'
+  },
+  {
+    bookCode: 'ACTTHOM', slug: 'en-james-acts-thomas',
+    nameAr: 'ترجمة جيمس الإنجليزية لأعمال توما', nameEn: 'M. R. James English Acts of Thomas', abbreviation: 'ACTTHOM-EN',
+    url: 'http://www.gnosis.org/library/actthom.htm', kind: 'acts-thomas-html', maxChapter: 14,
+    language: 'en', originalLanguage: 'السريانية واليونانية', sourceType: 'public-domain-text',
+    notes: 'ترجمة مونتاغيو رودس جيمس، العهد الجديد الأبوكريفي، أكسفورد، ١٩٢٤. النص الرقمي المصحح لدى مكتبة الجمعية الغنوصية؛ ١٧٠ قسماً مرقماً موزعة على الأجزاء الثلاثة عشر والاستشهاد. تحفظ أرقام الأقسام الأصلية عبر الأجزاء، وتعليقات الطبعة والقراءات البديلة. النص القديم ملك عام؛ لا تشمل الإضافة مقدمات محرري الموقع الحديثة.'
+  },
+  {
     bookCode: 'ENO',
     slug: 'en-charles-enoch',
     nameAr: 'ترجمة تشارلز الإنجليزية لسفر أخنوخ الأول',
@@ -908,6 +969,10 @@ function cleanText(text) {
 function decodeHtml(text) {
   return text
     .replace(/&nbsp;/gi, ' ')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&aelig;/g, 'æ')
+    .replace(/&AElig;/g, 'Æ')
     .replace(/&amp;/gi, '&')
     .replace(/&quot;/gi, '"')
     .replace(/&#39;|&apos;/gi, "'")
@@ -1268,7 +1333,8 @@ function parsePseudepigraphaSingleHtml(content, source) {
 }
 
 function parseNewAdventNumberedSections(content, source) {
-  const paragraphs = [...content.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)];
+  const body = content.split(/<h[1-6]\b[^>]*>\s*About this page\s*<\/h[1-6]>/i)[0];
+  const paragraphs = [...body.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)];
   const sections = [];
   let current = null;
   for (const paragraph of paragraphs) {
@@ -1285,10 +1351,11 @@ function parseNewAdventNumberedSections(content, source) {
     }
   }
   if (current) sections.push(current);
-  if (sections.length !== 30 || sections.some((section, index) => section.number !== index + 1 || section.text.length < 20)) {
-    throw new Error(`اكتُشفت ${sections.length} أقسام مرقمة فقط في ${source.slug}، والمتوقع ٣٠`);
+  const expected = source.maxUnits || 30;
+  if (sections.length !== expected || sections.some((section, index) => section.number !== index + 1 || section.text.length < 20)) {
+    throw new Error(`اكتُشفت ${sections.length} أقسام مرقمة فقط في ${source.slug}، والمتوقع ${expected}`);
   }
-  return sections.map((section) => ({ chapter: 1, verse: section.number, text: section.text, sourceUrl: source.url }));
+  return sections.map((section) => ({ chapter: source.asChapters ? section.number : 1, verse: source.asChapters ? 1 : section.number, text: section.text, sourceUrl: source.url }));
 }
 
 function parseApocalypseMosesHtml(content, source) {
@@ -2016,7 +2083,73 @@ async function parseIntertextualPagedChapters(source) {
   return chapters;
 }
 
+export function parseActsThomas(content, source) {
+  const start = content.indexOf('The First Act:');
+  const end = content.lastIndexOf('</blockquote>');
+  if (start < 0 || end < 0) throw new Error('لم توجد حدود نص أعمال توما');
+  // The first heading opens before start; begin with its following paragraph.
+  const section = content.slice(content.indexOf('</p>', start) + 4, end);
+  const isPartTitle = (text) => /^(?:The \w+ Act:|Act the Third:|\[THE MARTYRDOM)/.test(text);
+  const allParagraphs = [...section.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map((match) => stripHtml(match[1]));
+  const titles = [stripHtml(content.slice(start, content.indexOf('</p>', start))), ...allParagraphs.filter(isPartTitle)];
+  if (titles.length !== 14) throw new Error('عناوين أجزاء أعمال توما غير مكتملة');
+  const paragraphs = allParagraphs.filter((text) => text && !isPartTitle(text));
+  let plain = '1 ' + paragraphs.join('\n').replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');
+  for (const number of [7, 32, 43, 45, 48]) {
+    plain = plain.replace(new RegExp(` ${number} (?=And|What|Jesu)`), `\n${number} `);
+  }
+  const headings = [...plain.matchAll(/(?:^|\n)(\d+)\.?\s+/g)];
+  if (headings.length !== 170 || headings.some((m, i) => Number(m[1]) !== i + 1)) {
+    throw new Error('أعمال توما لا تحتوي تسلسلاً كاملاً من ١ إلى ١٧٠');
+  }
+  if (!plain.includes('The acts of Judas Thomas the apostle are completed')) throw new Error('خاتمة أعمال توما مفقودة');
+  const starts = [1, 17, 30, 39, 42, 51, 62, 68, 82, 119, 134, 139, 150, 159];
+  return headings.map((heading, index) => {
+    const number = Number(heading[1]);
+    let text = cleanText(plain.slice(heading.index + heading[0].length, headings[index + 1]?.index ?? plain.length));
+    if (text.length < 40) throw new Error(`قسم أعمال توما ${number} قصير`);
+    const chapter = starts.filter((start) => start <= number).length;
+    if (number === starts[chapter - 1]) text = titles[chapter - 1] + '\n\n' + text;
+    return { chapter, verse: number, text, sourceUrl: source.url };
+  });
+}
+
 async function parseChapters(content, source) {
+  if (source.kind === 'complete-letter-html') {
+    const body = content.split(/<h[1-6]\b[^>]*>\s*About this page\s*<\/h[1-6]>/i)[0];
+    const headings = [...body.matchAll(/<h[1-6]\b[^>]*>\s*Chapter\s+(\d+)\.([\s\S]*?)<\/h[1-6]>/gi)];
+    if (headings.length !== source.maxChapter || headings.some((m, i) => Number(m[1]) !== i + 1)) throw new Error(`فصول الرسالة غير مكتملة في ${source.slug}`);
+    const paragraphs = (section) => [...section.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map((m) => stripHtml(m[1])).filter(Boolean).join('\n\n');
+    const greetingStart = body.search(/<h[1-6]\b[^>]*>Greeting<\/h[1-6]>/i);
+    if (greetingStart < 0) throw new Error(`تحية الرسالة مفقودة في ${source.slug}`);
+    const greeting = paragraphs(body.slice(greetingStart, headings[0].index));
+    return headings.map((m, i) => {
+      const text = [i === 0 ? greeting : '', stripHtml(m[0]), paragraphs(body.slice(m.index + m[0].length, headings[i+1]?.index ?? body.length))].filter(Boolean).join('\n\n');
+      if (text.length < 40) throw new Error(`فصل الرسالة ${i+1} فارغ في ${source.slug}`);
+      return {chapter: i + 1, verse: 1, text, sourceUrl: source.url};
+    });
+  }
+  if (source.kind === 'epistle-apostles-html') {
+    const sanitized = content.replace(/\sdata-[\w-]+=(?:"[^"]*"|'[^']*')/gi, '').replace(/<sup\b[^>]*>[\s\S]*?<\/sup>/gi, '').replace(/<(style|script)\b[^>]*>[\s\S]*?<\/\1>/gi, '');
+    const paragraphs = [...sanitized.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map((m) => stripHtml(m[1]).replace(/[\u200b\ufeff]/g, '').trim());
+    const start = paragraphs.findIndex((p) => /^1 The book which Jesus Christ/.test(p));
+    const end = paragraphs.findIndex((p, i) => i > start && p === 'Footnotes');
+    if (start < 0 || end < 0) throw new Error('حدود نص رسالة الرسل غير متاحة');
+    let plain = paragraphs.slice(start, end).join('\n').replace(/&lt;/gi, '<').replace(/&gt;/gi, '>');
+    for (const n of [41, 43, 44]) plain = plain.replace(new RegExp(` ${n} (?=He|And|On)`), `\n${n} `);
+    const headings = [...plain.matchAll(/(?:^|\n)(\d+)\s+/g)];
+    if (headings.length !== 51 || headings.some((m, i) => Number(m[1]) !== i + 1)) throw new Error('فصول رسالة الرسل غير مكتملة');
+    return headings.map((m, i) => ({chapter: i + 1, verse: 1, text: cleanText(plain.slice(m.index + m[0].length, headings[i+1]?.index ?? plain.length)), sourceUrl: source.url}));
+  }
+  if (source.kind === 'strict-numbered-paragraphs') {
+    const sanitized = content.replace(/\sdata-[\w-]+=(?:"[^"]*"|'[^']*')/gi, '');
+    const rows = [...sanitized.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
+      .map((m) => stripHtml(m[1]).replace(/[\u200b\ufeff]/g, '').trim().match(/^(\d+)\s+([\s\S]+)$/))
+      .filter(Boolean).map((m) => ({chapter: 1, verse: Number(m[1]), text: m[2], sourceUrl: source.url}));
+    if (rows.length !== source.maxUnits || rows.some((row, i) => row.verse !== i + 1 || !row.text.trim())) throw new Error(`تسلسل الأعداد غير مكتمل في ${source.slug}`);
+    return rows;
+  }
+  if (source.kind === 'acts-thomas-html') return parseActsThomas(content, source);
   if (source.kind === 'structured-html') return parseStructuredHtmlChapters(source);
   if (source.kind === 'ertale-chapter-html') return parseErtaleChapteredHtml(source);
   if (source.kind === 'sacredthings-html') return parseSacredThingsChapters(source);
