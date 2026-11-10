@@ -211,11 +211,21 @@ function parseSamaritanOsis(content) {
 }
 
 async function run() {
+  const bookArg = process.argv.find((argument) => argument.startsWith('--books='))?.slice('--books='.length);
+  const sourceArg = process.argv.find((argument) => argument.startsWith('--sources='))?.slice('--sources='.length);
+  const requestedBooks = bookArg ? new Set(bookArg.split(',').map((code) => code.trim().toUpperCase()).filter(Boolean)) : null;
+  const requestedSources = sourceArg ? new Set(sourceArg.split(',').map((slug) => slug.trim()).filter(Boolean)) : null;
   initDatabase();
   initBibleSchema();
   const db = getDb();
   fs.mkdirSync(CACHE_DIR, { recursive: true });
   const validBooks = new Set(db.prepare('SELECT code FROM bible_books').all().map((row) => row.code));
+  const unknownBooks = [...(requestedBooks || [])].filter((code) => !validBooks.has(code));
+  const selectedSources = SOURCES.filter((source) => !requestedSources || requestedSources.has(source.slug));
+  const unknownSources = [...(requestedSources || [])].filter((slug) => !selectedSources.some((source) => source.slug === slug));
+  if (unknownBooks.length) throw new Error(`أسفار غير معروفة: ${unknownBooks.join(', ')}`);
+  if (unknownSources.length) throw new Error(`مصادر غير معروفة: ${unknownSources.join(', ')}`);
+  const importedBooks = new Set();
   const insertTranslation = db.prepare(`
     INSERT INTO bible_translations
       (slug, name_ar, name_en, abbreviation, language, source_url, source_type, source_notes, site_scope, is_active, display_order)
@@ -233,7 +243,7 @@ async function run() {
   `);
   const insertMany = db.transaction((rows) => rows.forEach((row) => insertVerse.run(...row)));
 
-  for (const [index, source] of SOURCES.entries()) {
+  for (const [index, source] of selectedSources.entries()) {
     const translationId = insertTranslation.run(
       source.slug, source.name_ar, source.name_en, source.abbreviation, source.language || 'en',
       source.url, source.source_type || 'vpl', source.notes, 20 + index
@@ -244,7 +254,8 @@ async function run() {
     const zip = new AdmZip(zipPath);
     const entry = zip.getEntries().find((item) => item.entryName.endsWith('_vpl.txt') || item.entryName.endsWith('.txt'));
     if (!entry) throw new Error(`لم يوجد ملف نصي بصيغة VPL داخل ${source.filename}`);
-    const parsed = parseVpl(zip.readAsText(entry), validBooks);
+    const parsed = parseVpl(zip.readAsText(entry), validBooks)
+      .filter((verse) => !requestedBooks || requestedBooks.has(verse.bookCode));
     const rows = parsed.map((verse) => [
       id, verse.bookCode, verse.chapter, verse.verse, verse.text,
       normalizeArabicText(verse.text), source.url
@@ -252,6 +263,7 @@ async function run() {
     for (let offset = 0; offset < rows.length; offset += 2000) insertMany(rows.slice(offset, offset + 2000));
     const chaptersByBook = new Map();
     for (const verse of parsed) {
+      importedBooks.add(verse.bookCode);
       chaptersByBook.set(verse.bookCode, Math.max(chaptersByBook.get(verse.bookCode) || 0, verse.chapter));
     }
     const updateBook = db.prepare('UPDATE bible_books SET chapter_count = CASE WHEN chapter_count < ? THEN ? ELSE chapter_count END WHERE code = ?');
@@ -268,6 +280,7 @@ async function run() {
     console.log(`[Bible] ${source.slug}: ${rows.length} وحدة نصية`);
   }
 
+  if (!requestedBooks) {
   const samaritanId = insertTranslation.run(
     SAMARITAN_SOURCE.slug,
     SAMARITAN_SOURCE.name_ar,
@@ -332,8 +345,9 @@ async function run() {
   for (let offset = 0; offset < peshittaRows.length; offset += 2000) insertMany(peshittaRows.slice(offset, offset + 2000));
   db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(peshittaId);
   console.log(`[Bible] ${peshittaSlug}: ${peshittaRows.length} وحدة نصية`);
+  }
 
-  for (const source of HTML_SOURCES) {
+  for (const source of HTML_SOURCES.filter((item) => !requestedBooks || requestedBooks.has(item.bookCode))) {
     const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get('en-web')?.id;
     if (!translationId) throw new Error('لم توجد ترجمة en-web قبل استيراد المصادر الإضافية');
     const parsed = parseHtmlVerses(await fetchText(source.url));
@@ -342,6 +356,7 @@ async function run() {
       normalizeArabicText(verse.text), source.url
     ]);
     insertMany(rows);
+    importedBooks.add(source.bookCode);
     db.prepare('UPDATE bible_books SET chapter_count = CASE WHEN chapter_count < 1 THEN 1 ELSE chapter_count END WHERE code=?').run(source.bookCode);
     db.prepare(`
       UPDATE bible_book_metadata
@@ -351,6 +366,8 @@ async function run() {
     db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(translationId);
     console.log(`[Bible] en-web/${source.bookCode}: ${rows.length} وحدة نصية`);
   }
+  const missingBooks = [...(requestedBooks || [])].filter((code) => !importedBooks.has(code));
+  if (missingBooks.length) throw new Error(`لم تُستورد نصوص للأسفار المطلوبة: ${missingBooks.join(', ')}`);
 }
 
 run().catch((error) => {

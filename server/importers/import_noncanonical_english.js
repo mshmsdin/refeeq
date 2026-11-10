@@ -234,18 +234,32 @@ const SOURCES = [
     ]
   },
   {
+    bookCode: '4BAR',
+    slug: 'en-kraft-4-baruch-longer',
+    nameAr: 'الترجمة الإنجليزية الأطول لباروخ الرابع',
+    nameEn: 'Kraft and Purintun English 4 Baruch (Longer Version)',
+    abbreviation: '4BAR-EN-L',
+    url: 'https://intertextual.bible/read/4-baruch/1',
+    kind: 'intertextual-book-sections-html',
+    maxChapter: 9,
+    language: 'en',
+    originalLanguage: 'اليونانية',
+    sourceType: 'public-domain-noncommercial',
+    notes: 'طبعة مركز تحليل النصوص بالحاسوب (جامعة بنسلفانيا)، تحرير روبرت كرافت، ١٥ ديسمبر ١٩٨٧؛ النسخة الأطول مبنية على ترجمة روبرت كرافت وآن إليزابيث بورنتن المنشورة سنة ١٩٧٢. يصرح المصدر بإتاحتها للاستخدام غير التجاري بشرط إرفاق هذا التنبيه كاملاً مع كل نسخة موزعة والإبلاغ عن الأخطاء والتصحيحات والمشكلات إلى الموزع: English Translation of the Longer and Shorter Versions of the Paraleipomena Jeremiou: Public Domain CATSS edition by Robert A. Kraft, 15 Dec 1987. Filesize uncompressed: about 48 K. Freely available for non-commercial use provided that this header is included in its entirety with any copy distributed and that errors/corrections or other problems are reported to the distributor: Center for Computer Analysis of Texts Religious Studies / Cohen Hall, University of Pennsylvania, Philadelphia PA 19104-6304 USA. The Longer Version is based on Paraleipomena Jeremiou: An English Translation, by Robert Kraft and Ann Elizabeth Purintun (Seminar Papers of the Society of Biblical Literature for 1971, vol. 2; SBL, 1971, 327-346), which appeared in slightly revised form in their 1972 edition of Paraleipomena Jeremiou (Texts and Translations 1: Pseudepigrapha Series 1; Missoula Montana: Scholars Press for the SBL, 1972). The Shorter Version was translated by William Newby and edited for electronic publication by Robert Kraft. Both Versions were included on the Experimental CD-ROM #1 published by the Packard Humanities Institute in cooperation with CCAT in December 1987.'
+  },
+  {
     bookCode: '2BAR',
     slug: 'en-charles-2-baruch',
     nameAr: 'الترجمة الإنجليزية لباروخ الثاني',
     nameEn: 'R. H. Charles English 2 Baruch',
     abbreviation: '2BAR-EN',
-    url: 'https://www.pseudepigrapha.com/pseudepigrapha/2Baruch.html',
-    kind: 'pseudepigrapha-html',
-    maxChapter: 85,
+    url: 'https://intertextual.bible/read/2-baruch/1',
+    kind: 'intertextual-book-sections-html',
+    maxChapter: 87,
     language: 'en',
     originalLanguage: 'السريانية مع شواهد يونانية وآرامية',
     sourceType: 'public-domain-text',
-    notes: 'ترجمة آر. هـ. تشارلز المنشورة في مجموعة المنحولات والأبوكريفا سنة 1913، من نسخة منظمة تحفظ ترقيم الإصحاحات والفقرات كما يظهر في المصدر. لا توجد ترجمة عربية مدخلة في هذه المرحلة، وتُترك للمقارنة والترجمة اللاحقة.'
+    notes: 'نص كامل مبني على ترجمة آر. هـ. تشارلز المنشورة سنة 1913 والمعلنة ملكاً عاماً في المصدر؛ يتضمن 87 إصحاحاً. لا توجد ترجمة عربية مدخلة في هذه المرحلة، وتُترك للمقارنة والترجمة اللاحقة.'
   },
   {
     bookCode: '3BAR',
@@ -1759,6 +1773,27 @@ function parseOcpChapters(xml, source) {
   return chapters;
 }
 
+function parseIntertextualBookSections(content, source) {
+  const sections = [...content.matchAll(/<section\b(?=[^>]*class="[^"]*\bchapter-section\b")(?=[^>]*data-chapter="(\d+)")[^>]*>([\s\S]*?)<\/section>/gi)];
+  if (sections.length !== source.maxChapter) {
+    throw new Error(`اكتُشف ${sections.length} فصلاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  const chapters = [];
+  for (const section of sections) {
+    const chapter = Number(section[1]);
+    const verses = [...section[2].matchAll(/<span\b(?=[^>]*class="[^"]*\bverse-span\b")(?=[^>]*data-verse="(\d+):(\d+)")[^>]*>([\s\S]*?)<\/span>/gi)];
+    if (!verses.length) throw new Error(`لا توجد وحدات نصية في الفصل ${chapter} من ${source.slug}`);
+    for (const verse of verses) {
+      const parsedChapter = Number(verse[1]);
+      const number = Number(verse[2]);
+      const text = cleanText(decodeHtml(verse[3].replace(/<[^>]+>/g, ' ')));
+      if (parsedChapter !== chapter || text.length < 10) throw new Error(`وحدة غير صالحة في الفصل ${chapter} من ${source.slug}`);
+      chapters.push({ chapter, verse: number, text, sourceUrl: source.url });
+    }
+  }
+  return chapters;
+}
+
 async function parseChapters(content, source) {
   if (source.kind === 'structured-html') return parseStructuredHtmlChapters(source);
   if (source.kind === 'ertale-chapter-html') return parseErtaleChapteredHtml(source);
@@ -1770,6 +1805,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'diatessaron-wikisource') return parseDiatessaronWikisource(source);
   if (source.kind === 'odes-solomon-wikisource') return parseOdesSolomonWikisource(content, source);
   if (source.kind === 'pseudepigrapha-html') return parsePseudepigraphaChapters(content, source);
+  if (source.kind === 'intertextual-book-sections-html') return parseIntertextualBookSections(content, source);
   if (source.kind === 'pseudepigrapha-chapter-html') return parsePseudepigraphaChapterHtml(content, source);
   if (source.kind === 'enoch3-collection') return parseEnoch3Chapters(source);
   if (source.kind === 'pseudepigrapha-two-column-html') return parsePseudepigraphaTwoColumnChapters(content, source);

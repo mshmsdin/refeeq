@@ -277,6 +277,7 @@ function _seedExpansionCatalog(db) {
     ['GIANTS', 'سفر العمالقة', 'Book of Giants', 'عمال', 'pseudepigrapha', 4, 0, 'aramaic', 'الآرامية مع شواهد قمران', 'نص مجزأ يعتمد على شواهد متعددة.'],
     ['2BAR', 'باروخ الثاني', '2 Baruch', 'با2', 'pseudepigrapha', 5, 0, 'syriac', 'السريانية', 'رؤيا يهودية مستقلة عن باروخ الكتابي.'],
     ['3BAR', 'باروخ الثالث', '3 Baruch', 'با3', 'pseudepigrapha', 6, 0, 'greek', 'اليونانية', 'رؤيا مستقلة.'],
+    ['4BAR', 'باروخ الرابع (بقيّة كلمات إرميا)', '4 Baruch', 'با4', 'pseudepigrapha', 6.5, 0, 'greek', 'اليونانية', 'الرواية اليونانية من تتمة إرميا؛ تختلف عن الرواية الحبشية في الفصل التاسع.'],
     ['ABR', 'رؤيا إبراهيم', 'Apocalypse of Abraham', 'رؤا-إ', 'pseudepigrapha', 7, 0, 'slavonic', 'السلافية', 'نص رؤيوي يهودي محفوظ في تقليد لاحق.'],
     ['AABR', 'وصية إبراهيم', 'Testament of Abraham', 'وص-إ', 'pseudepigrapha', 8, 0, 'greek', 'اليونانية', 'عمل أدبي مستقل.'],
     ['TADAM', 'حياة آدم وحواء', 'Life of Adam and Eve', 'ح-آ', 'pseudepigrapha', 9, 0, 'greek', 'اليونانية واللاتينية', 'نص متعدد الصيغ واللغات.'],
