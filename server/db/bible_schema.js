@@ -281,6 +281,14 @@ function _seedExpansionCatalog(db) {
     ['ABR', 'رؤيا إبراهيم', 'Apocalypse of Abraham', 'رؤا-إ', 'pseudepigrapha', 7, 0, 'slavonic', 'السلافية', 'نص رؤيوي يهودي محفوظ في تقليد لاحق.'],
     ['AABR', 'وصية إبراهيم', 'Testament of Abraham', 'وص-إ', 'pseudepigrapha', 8, 0, 'greek', 'اليونانية', 'عمل أدبي مستقل.'],
     ['TADAM', 'حياة آدم وحواء', 'Life of Adam and Eve', 'ح-آ', 'pseudepigrapha', 9, 0, 'greek', 'اليونانية واللاتينية', 'نص متعدد الصيغ واللغات.'],
+    ['TSTADAM', 'وصية آدم', 'Testament of Adam', 'وص-آد', 'pseudepigrapha', 9.5, 0, 'syriac', 'السريانية واليونانية', 'عمل مستقل عن حياة آدم وحواء ورؤيا موسى؛ تحفظ الشواهد السريانية واليونانية وترجماتهما منفصلة بحسب طبعة مشروع النصوص النقدية الرقمية.'],
+    ['APDAN', 'رؤيا دانيال اليونانية', 'Greek Apocalypse of Daniel', 'رؤ-دا', 'pseudepigrapha', 26, 0, 'greek', 'اليونانية', 'طبعة نقدية رقمية للشاهد اليوناني؛ يبدأ النص المتاح بالفصل الثاني من سفر دانيال، ويعرض هنا بترقيم داخلي متصل من ١ إلى ١٣.'],
+    ['APEZRA', 'رؤيا عزرا اليونانية', 'Greek Apocalypse of Ezra', 'رؤ-عز-ي', 'pseudepigrapha', 27, 0, 'greek', 'اليونانية', 'شاهد يوناني مستقل، لا يخلط مع عزرا الثاني أو كلمة ورؤيا عزرا.'],
+    ['REVEZRA', 'رؤيا صفات السنة المنسوبة إلى عزرا', 'Revelation of Ezra on the Qualities of the Year', 'عز-سنة', 'pseudepigrapha', 28, 0, 'latin', 'اللاتينية', 'نص لاتيني قصير من مجموعة OCP، مستقل عن الرؤى المعروفة المنسوبة إلى عزرا.'],
+    ['VISEL', 'رؤيا إيليا', 'Vision of Elijah', 'رؤ-إي', 'pseudepigrapha', 29, 0, 'latin', 'اللاتينية', 'شاهد لاتيني رقمي من طبعة دي بروين؛ لا يدمج مع رؤيا إيليا اليونانية المختلفة.'],
+    ['NARMOS', 'رواية موسى ويشوع', 'Narrative of Moses and Joshua', 'روا-مو', 'pseudepigrapha', 30, 0, 'greek', 'اليونانية', 'نص يوناني مستقل محفوظ في طبعة نقدية رقمية؛ يعرض كوحدة واحدة بحسب تقسيم الشاهد.'],
+    ['AMRAM', 'رؤى عمرام', 'Visions of Amram', 'عم-رؤ', 'pseudepigrapha', 31, 0, 'aramaic', 'الآرامية', 'شاهد آرامي مجزأ من مخطوطات البحر الميت مع ترجمة إنجليزية موازية؛ تحفظ النسختان منفصلتين.'],
+    ['CONFESD', 'اعتراف عزرا', 'Confessio Esdrae', 'اع-عز', 'pseudepigrapha', 32, 0, 'latin', 'اللاتينية', 'نص لاتيني قصير مستقل من مجموعة OCP؛ لا يخلط مع عزرا الثاني أو رؤيا عزرا.'],
     ['TJOB', 'وصية أيوب', 'Testament of Job', 'وص-أي', 'pseudepigrapha', 10, 0, 'greek', 'اليونانية', 'عمل منحول مستقل.'],
     ['TSOL', 'وصية سليمان', 'Testament of Solomon', 'وص-س', 'pseudepigrapha', 11, 0, 'greek', 'اليونانية', 'عمل منحول مستقل.'],
     ['T12', 'وصايا الآباء الاثني عشر', 'Testaments of the Twelve Patriarchs', 'وص12', 'pseudepigrapha', 12, 0, 'greek', 'اليونانية', 'مجموعة وصايا، لا سفر واحداً بسيطاً.'],
@@ -487,6 +495,7 @@ function _seedExpansionCatalog(db) {
           WHERE bv.book_code = bible_book_metadata.book_code AND bv.chapter=23
             AND bt.is_active = 1 AND (bt.site_scope = 'both' OR bt.site_scope = 'bible')
         ) THEN 'partial'
+        WHEN bible_book_metadata.text_status='partial' THEN 'partial'
         WHEN EXISTS (
           SELECT 1 FROM bible_verses bv
           JOIN bible_translations bt ON bt.id = bv.translation_id

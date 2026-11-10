@@ -419,6 +419,7 @@ export const SOURCES = [
     url: 'https://othergospels.com/2giants/henning.json',
     kind: 'other-gospels-json',
     maxChapter: 10,
+    incomplete: true,
     language: 'en',
     originalLanguage: 'الآرامية واللغات الإيرانية في شواهد متعددة',
     sourceType: 'public-domain-text',
@@ -576,6 +577,7 @@ export const SOURCES = [
     kind: 'earlychristian-gospel-mary-html',
     maxChapter: 9,
     chapterLabels: [4, 5, 8, 9],
+    incomplete: true,
     language: 'en',
     originalLanguage: 'القبطية واليونانية',
     sourceType: 'web-edition',
@@ -589,7 +591,9 @@ export const SOURCES = [
     abbreviation: 'GJUD-EN',
     url: 'https://www.gospels.net/judas',
     kind: 'gospels-net-paragraph-html',
+    maxChapter: 1,
     maxUnits: 71,
+    incomplete: true,
     language: 'en',
     originalLanguage: 'القبطية',
     sourceType: 'public-domain-text',
@@ -605,6 +609,7 @@ export const SOURCES = [
     kind: 'earlychristian-fragment-html',
     startMarker: 'GOSPEL OF PETER',
     maxChapter: 1,
+    incomplete: true,
     language: 'en',
     originalLanguage: 'اليونانية',
     sourceType: 'web-edition',
@@ -620,6 +625,7 @@ export const SOURCES = [
     kind: 'earlychristian-fragment-html',
     startMarker: 'THE ACTS OF PAUL',
     maxChapter: 1,
+    incomplete: true,
     language: 'en',
     originalLanguage: 'اليونانية والقبطية مع شواهد لاتينية',
     sourceType: 'web-edition',
@@ -635,6 +641,7 @@ export const SOURCES = [
     kind: 'earlychristian-fragment-html',
     startMarker: 'THE ACTS OF PETER',
     maxChapter: 1,
+    incomplete: true,
     language: 'en',
     originalLanguage: 'اليونانية واللاتينية',
     sourceType: 'web-edition',
@@ -650,6 +657,7 @@ export const SOURCES = [
     kind: 'earlychristian-fragment-html',
     startMarker: 'THE APOCALYPSE OF PETER',
     maxChapter: 1,
+    incomplete: true,
     language: 'en',
     originalLanguage: 'اليونانية والجعزية',
     sourceType: 'web-edition',
@@ -767,6 +775,7 @@ export const SOURCES = [
     url: 'https://greekdoc.com/DOCUMENTS/pseudepigrapha/ap-ezekiel.html',
     kind: 'apocryphon-ezekiel-fragments-html',
     maxChapter: 5,
+    incomplete: true,
     language: 'en',
     originalLanguage: 'اليونانية واللاتينية مع أصل آرامي محتمل',
     sourceType: 'fragmentary-web-edition',
@@ -817,9 +826,9 @@ export const SOURCES = [
   {
     bookCode: 'ADAMCON', slug: 'en-malan-conflict-adam-eve',
     nameAr: 'ترجمة سليمان مالان الإنجليزية لصراع آدم وحواء', nameEn: 'S. C. Malan English Conflict of Adam and Eve', abbreviation: 'ADAMCON-EN',
-    url: 'https://www.pseudepigrapha.com/pseudepigrapha/ConflictOfAdamEve/AdamEveConflict.html', kind: 'numbered-html-chapters', maxChapter: 112,
+    url: 'https://www.pseudepigrapha.com/pseudepigrapha/ConflictOfAdamEve/AdamEveConflict.html', kind: 'numbered-html-chapters', maxChapter: 105,
     language: 'en', originalLanguage: 'الجعزية بوسيط عربي', sourceType: 'public-domain-text',
-    notes: 'ترجمة سليمان مالان المنشورة سنة 1882 عن التقليد الإثيوبي. يضم العمل أربعة كتب؛ حفظت عناوين الفصول الـ112 كما تظهر في النسخة، مع توحيد الترقيم المتتابع عبر الكتب.'
+    notes: 'ترجمة سليمان مالان المنشورة سنة 1882 عن التقليد الإثيوبي. يضم العمل أربعة كتب؛ النسخة الرقمية تعرض 105 عناوين فصول فعلية، وقد أزيل تكرار طباعي متتالٍ في عنوان الفصل 26.'
   },
   {
     bookCode: 'JASHER', slug: 'en-wikisource-sefer-hayashar-1840',
@@ -1788,8 +1797,100 @@ async function parseTauEthiopicChapters(source) {
   return chapters;
 }
 
+const TESTAMENT_ADAM_OCP_URL = 'https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/TAdam.xml';
+const OCP_RAW_BASE = 'https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/';
+
+export const ADDITIONAL_SOURCES = [
+  {
+    bookCode: 'TSTADAM', slug: 'syr-ocp-testament-adam',
+    nameAr: 'الشاهد السرياني لوصية آدم', nameEn: 'OCP Syriac Testament of Adam', abbreviation: 'TSTADAM-SYR',
+    url: TESTAMENT_ADAM_OCP_URL, kind: 'ocp-xml', maxChapter: 3, language: 'syr', versionLanguage: 'Syriac',
+    originalLanguage: 'السريانية', sourceType: 'open-critical-edition',
+    notes: 'النص السرياني في الطبعة النقدية الرقمية لمشروع OCP؛ يحفظ شاهداً مستقلاً، ولا يخلط مع حياة آدم وحواء أو رؤيا موسى.'
+  },
+  {
+    bookCode: 'TSTADAM', slug: 'en-ocp-syriac-testament-adam',
+    nameAr: 'الترجمة الإنجليزية للشاهد السرياني لوصية آدم', nameEn: 'OCP English Translation of Syriac Testament of Adam', abbreviation: 'TSTADAM-SYR-EN',
+    url: TESTAMENT_ADAM_OCP_URL, kind: 'ocp-xml', maxChapter: 3, language: 'en', versionLanguage: 'English', versionIndex: 0,
+    originalLanguage: 'السريانية', sourceType: 'open-critical-translation',
+    notes: 'ترجمة OCP الإنجليزية للشاهد السرياني؛ تحفظ منفصلة عن ترجمة الشاهد اليوناني وعن النص السرياني.'
+  },
+  {
+    bookCode: 'TSTADAM', slug: 'grc-ocp-testament-adam',
+    nameAr: 'الشاهد اليوناني لوصية آدم', nameEn: 'OCP Greek Testament of Adam', abbreviation: 'TSTADAM-GRC',
+    url: TESTAMENT_ADAM_OCP_URL, kind: 'ocp-xml', maxChapter: 2, language: 'grc', versionLanguage: 'Greek',
+    originalLanguage: 'اليونانية', sourceType: 'open-critical-edition',
+    notes: 'الشاهد اليوناني في طبعة OCP النقدية، بتقسيم مستقل من ١٣ فصلاً؛ يختلف في بنية وحداته عن الشاهد السرياني.'
+  },
+  {
+    bookCode: 'TSTADAM', slug: 'en-ocp-greek-testament-adam',
+    nameAr: 'الترجمة الإنجليزية للشاهد اليوناني لوصية آدم', nameEn: 'OCP English Translation of Greek Testament of Adam', abbreviation: 'TSTADAM-GRC-EN',
+    url: TESTAMENT_ADAM_OCP_URL, kind: 'ocp-xml', maxChapter: 2, language: 'en', versionLanguage: 'English', versionIndex: 1,
+    originalLanguage: 'اليونانية', sourceType: 'open-critical-translation',
+    notes: 'ترجمة OCP الإنجليزية للشاهد اليوناني؛ تحفظ مستقلة عن الترجمة الموازية للشاهد السرياني.'
+  },
+  {
+    bookCode: 'APDAN', slug: 'grc-ocp-apocalypse-daniel',
+    nameAr: 'الشاهد اليوناني لرؤيا دانيال', nameEn: 'OCP Greek Apocalypse of Daniel', abbreviation: 'APDAN-GRC',
+    url: `${OCP_RAW_BASE}ApDan.xml`, kind: 'ocp-xml', maxChapter: 13, chapterOffset: -1, language: 'grc', versionLanguage: 'Greek',
+    originalLanguage: 'اليونانية', sourceType: 'open-critical-edition',
+    notes: 'طبعة OCP للشاهد اليوناني، وتحفظ الفصول ٢–١٤ من المصدر بترقيم العرض الداخلي ١–١٣.'
+  },
+  {
+    bookCode: 'APEZRA', slug: 'grc-ocp-greek-apocalypse-ezra',
+    nameAr: 'الشاهد اليوناني لرؤيا عزرا', nameEn: 'OCP Greek Apocalypse of Ezra', abbreviation: 'APEZRA-GRC',
+    url: `${OCP_RAW_BASE}ApEzra.xml`, kind: 'ocp-xml', maxChapter: 7, language: 'grc', versionLanguage: 'Greek',
+    originalLanguage: 'اليونانية', sourceType: 'open-critical-edition',
+    notes: 'نص يوناني من طبعة نقدية OCP، منفصل عن عزرا الثاني ورؤيا عزرا اللاتينية.'
+  },
+  {
+    bookCode: 'REVEZRA', slug: 'la-ocp-revelation-qualities-year-ezra',
+    nameAr: 'الشاهد اللاتيني لرؤيا صفات السنة المنسوبة إلى عزرا', nameEn: 'OCP Latin Revelation of Ezra on the Qualities of the Year', abbreviation: 'REVEZRA-LA',
+    url: `${OCP_RAW_BASE}RevEsdr.xml`, kind: 'ocp-xml', maxChapter: 1, language: 'la', versionLanguage: 'Latin',
+    originalLanguage: 'اللاتينية', sourceType: 'open-critical-edition',
+    notes: 'نص قصير من طبعة ميركاتي 1901 كما رقمنته OCP؛ يحفظ مستقلاً عن بقية رؤى عزرا.'
+  },
+  {
+    bookCode: 'VISEL', slug: 'la-ocp-vision-elijah',
+    nameAr: 'الشاهد اللاتيني لرؤيا إيليا', nameEn: 'OCP Latin Vision of Elijah', abbreviation: 'VISEL-LA',
+    url: `${OCP_RAW_BASE}VisEl.xml`, kind: 'ocp-xml', maxChapter: 1, language: 'la', versionLanguage: 'Latin',
+    originalLanguage: 'اللاتينية', sourceType: 'open-critical-edition',
+    notes: 'شاهد لاتيني من طبعة دي بروين 1925، مستقل عن النص اليوناني الآخر المعروف برؤيا إيليا.'
+  },
+  {
+    bookCode: 'NARMOS', slug: 'grc-ocp-narrative-moses-joshua',
+    nameAr: 'الشاهد اليوناني لرواية موسى ويشوع', nameEn: 'OCP Greek Narrative of Moses and Joshua', abbreviation: 'NARMOS-GRC',
+    url: `${OCP_RAW_BASE}NarrMois.xml`, kind: 'ocp-xml', maxChapter: 1, language: 'grc', versionLanguage: 'Greek',
+    originalLanguage: 'اليونانية', sourceType: 'open-critical-edition',
+    notes: 'النص اليوناني المحرر في طبعة فاسيليف 1893؛ صفحة واحدة طويلة تضم 154 وحدة مصدرية.'
+  },
+  {
+    bookCode: 'AMRAM', slug: 'arc-ocp-visions-amram',
+    nameAr: 'الشاهد الآرامي لرؤى عمرام', nameEn: 'OCP Aramaic Visions of Amram', abbreviation: 'AMRAM-ARC',
+    url: `${OCP_RAW_BASE}Amram.xml`, kind: 'ocp-xml', maxChapter: 2, incomplete: true, language: 'arc', versionLanguage: 'Aramaic',
+    originalLanguage: 'الآرامية', sourceType: 'open-critical-edition',
+    notes: 'شاهد آرامي من مخطوطات البحر الميت في طبعة OCP؛ وحداته مجزأة ولا تمثل كتاباً متصلاً كاملاً.'
+  },
+  {
+    bookCode: 'AMRAM', slug: 'en-ocp-visions-amram',
+    nameAr: 'الترجمة الإنجليزية لرؤى عمرام', nameEn: 'OCP English Translation of Visions of Amram', abbreviation: 'AMRAM-EN',
+    url: `${OCP_RAW_BASE}Amram.xml`, kind: 'ocp-xml', maxChapter: 2, incomplete: true, language: 'en', versionLanguage: 'English',
+    originalLanguage: 'الآرامية', sourceType: 'open-critical-translation',
+    notes: 'ترجمة OCP الإنجليزية للشواهد الآرامية المجزأة؛ تعرض منفصلة عن النص الأصلي.'
+  },
+  {
+    bookCode: 'CONFESD', slug: 'la-ocp-confession-esdras',
+    nameAr: 'الشاهد اللاتيني لاعتراف عزرا', nameEn: 'OCP Latin Confession of Esdras', abbreviation: 'CONFESD-LA',
+    url: `${OCP_RAW_BASE}ConfEsdr.xml`, kind: 'ocp-xml', maxChapter: 1, language: 'la', versionLanguage: 'Latin',
+    originalLanguage: 'اللاتينية', sourceType: 'open-critical-edition',
+    notes: 'نص لاتيني قصير من طبعة بنسلي 1895؛ مستقل عن عزرا الثاني وكلمة ورؤيا عزرا.'
+  }
+];
+
 function parseOcpChapters(xml, source) {
-  const version = xml.match(new RegExp(`<version\\b[^>]*language="${source.language === 'gez' ? 'Ethiopic' : 'Latin'}"[\\s\\S]*?<\\/version>`, 'i'))?.[0];
+  const versionLanguage = source.versionLanguage || (source.language === 'gez' ? 'Ethiopic' : 'Latin');
+  const versions = [...xml.matchAll(new RegExp(`<version\\b[^>]*language="${versionLanguage}"[\\s\\S]*?<\\/version>`, 'gi'))];
+  const version = versions[source.versionIndex || 0]?.[0];
   if (!version) throw new Error(`لم يُعثر على النسخة اللغوية في ${source.slug}`);
   const textStart = version.indexOf('<text>');
   if (textStart < 0) throw new Error(`لم يُعثر على قسم النص في ${source.slug}`);
@@ -1931,7 +2032,13 @@ async function parseChapters(content, source) {
 function parseNumberedHtmlChapters(content, source) {
   const body = content.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || content;
   const plain = decodeHtml(body.replace(/<\/(?:p|h[1-6]|tr|td|li)>/gi, '\n').replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, ' '));
-  const headings = [...plain.matchAll(/(?:^|\n)\s*CHAPTER\s+([IVXLCDM]+)\s*\./gim)];
+  const candidates = [...plain.matchAll(/(?:^|\n)\s*CHAPTER\s+([IVXLCDM]+)\s*\./gim)];
+  const headings = candidates.filter((heading, index) => {
+    const previous = candidates[index - 1];
+    if (!previous || previous[1].toUpperCase() !== heading[1].toUpperCase()) return true;
+    const between = plain.slice(previous.index + previous[0].length, heading.index).trim();
+    return between.length >= 20;
+  });
   if (headings.length !== source.maxChapter) {
     throw new Error(`اكتُشف ${headings.length} عنوان فصل فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
   }
@@ -1962,7 +2069,8 @@ function parseRomanHtmlChapters(content, source) {
 
 async function run() {
   const onlySlugs = process.argv.flatMap((argument) => argument.startsWith('--only=') ? argument.slice('--only='.length).split(',') : []).map((slug) => slug.trim()).filter(Boolean);
-  const selectedSources = onlySlugs.length ? SOURCES.filter((source) => onlySlugs.includes(source.slug)) : SOURCES;
+  const allSources = [...SOURCES, ...ADDITIONAL_SOURCES];
+  const selectedSources = onlySlugs.length ? allSources.filter((source) => onlySlugs.includes(source.slug)) : allSources;
   const unknownSlugs = onlySlugs.filter((slug) => !selectedSources.some((source) => source.slug === slug));
   if (unknownSlugs.length) throw new Error(`مصادر غير معروفة: ${unknownSlugs.join(', ')}`);
   initDatabase();
@@ -2010,7 +2118,7 @@ async function run() {
       : await fetchText(source.url);
     const parsedChapters = await parseChapters(content, source);
     const rows = parsedChapters.map((chapter) => [
-      translationId, source.bookCode, chapter.chapter, chapter.verse, chapter.text,
+      translationId, source.bookCode, chapter.chapter + (source.chapterOffset || 0), chapter.verse, chapter.text,
       normalizeArabicText(chapter.text), chapter.sourceUrl || source.url
     ]);
     insertMany(rows);
