@@ -538,6 +538,66 @@ export function getCanonInfoForBook(code, collectionSlug = null) {
     };
   }
 
+  if (collectionSlug === 'ethiopian-canon') {
+    return {
+      is_disputed: true,
+      category_name: 'التقليد الإثيوبي والكتابات الكنسية',
+      accepted_by: ['تحفظها التقاليد الكنسية الإثيوبية ضمن مجموعات قانونية موسعة أو كتب كنسية بحسب العمل والقائمة المعتمدة.'],
+      rejected_by: ['لا تدخل هذه الأعمال جميعاً في قوائم الأسفار المتداولة لدى سائر الكنائس المسيحية.'],
+      notes: 'تصنيف المجموعة لا يثبت قانونية كل عمل على حدة؛ تُراجع هوية الشاهد ومكانته في التقليد الإثيوبي الخاص به.'
+    };
+  }
+
+  if (collectionSlug === 'church-writings') {
+    return {
+      is_disputed: true,
+      category_name: 'الكتابات الكنسية المسيحية المبكرة',
+      accepted_by: [],
+      rejected_by: ['لا تدرجها قوائم أسفار العهد الجديد القانونية لدى معظم الكنائس المسيحية.'],
+      notes: 'كتابات تاريخية أو تعليمية مستقلة؛ وجودها في المكتبة لا يجعلها جزءاً من أسفار العهد الجديد.'
+    };
+  }
+
+  if (collectionSlug === 'deuterocanon') {
+    return {
+      is_disputed: true,
+      category_name: 'الأسفار القانونية الثانية',
+      accepted_by: ['الكنائس الكاثوليكية والأرثوذكسية، مع اختلاف قوائمها التفصيلية.'],
+      rejected_by: ['التقليد البروتستانتي لا يعدها ضمن الأسفار القانونية الأولى.'],
+      notes: 'تختلف مكانة هذه المجموعة بين التقاليد والطبعات؛ راجع الشاهد والطبعة المحددين لكل سفر.'
+    };
+  }
+
+  if (collectionSlug === 'apocrypha') {
+    return {
+      is_disputed: true,
+      category_name: 'نصوص أبوكريفية',
+      accepted_by: [],
+      rejected_by: ['لا تعدها معظم التقاليد المسيحية من أسفار القانون الكتابي.'],
+      notes: 'نصوص مستقلة محفوظة لأهميتها التاريخية أو الأدبية؛ تختلف أسماؤها وحدودها ومكانتها بين التقاليد.'
+    };
+  }
+
+  if (collectionSlug === 'textual-traditions') {
+    return {
+      is_disputed: false,
+      category_name: 'شواهد وترجمات نصية موازية',
+      accepted_by: [],
+      rejected_by: [],
+      notes: 'هذا التصنيف يصف الشاهد أو الترجمة الموازية، ولا يحكم وحده على قانونية الأسفار التي ينقلها.'
+    };
+  }
+
+  if (collectionSlug !== 'old-testament') {
+    return {
+      is_disputed: true,
+      category_name: 'نص قديم خارج التصنيفات القانونية المحددة',
+      accepted_by: [],
+      rejected_by: [],
+      notes: 'لم يثبت لهذا المدخل تصنيف كنسي محدد؛ لا يُعرض كسفر قانوني قبل مراجعة مصدره وتقليده.'
+    };
+  }
+
   // Old Testament Protocanonical Books (39 books)
   return {
     is_disputed: false,

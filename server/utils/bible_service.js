@@ -143,7 +143,7 @@ export function getBook(code) {
     ORDER BY bt.display_order, bt.id
   `).all(code);
 
-  const canonInfo = getCanonInfoForBook(code);
+  const canonInfo = getCanonInfoForBook(code, book.collection_slug);
 
   const metadata = db.prepare('SELECT * FROM bible_book_metadata WHERE book_code = ?').get(code) || null;
   const sources = db.prepare('SELECT * FROM bible_book_sources WHERE book_code = ? ORDER BY id').all(code);
