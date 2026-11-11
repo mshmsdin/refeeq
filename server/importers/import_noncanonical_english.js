@@ -1895,6 +1895,28 @@ const OCP_RAW_BASE = 'https://raw.githubusercontent.com/OnlineCriticalPseudepigr
 
 export const ADDITIONAL_SOURCES = [
   {
+    bookCode: 'TAISAAC', slug: 'en-box-gaselee-testament-isaac',
+    nameAr: 'ترجمة غاسيل الإنجليزية لوصية إسحاق',
+    nameEn: 'S. Gaselee English Testament of Isaac', abbreviation: 'TAISAAC-EN',
+    url: 'https://earlychurch.gospelstudies.org.uk/pdf/e-books/box_g-h/testament-of-abraham_box.pdf', kind: 'reviewed-text-file',
+    textFile: new URL('./data/testament_isaac_box_gaselee_1927.txt', import.meta.url),
+    expectedSha256: '446d1af5512c8fd77edcc2622519b269736a50556d884251e1cdf24b707c9ea1',
+    expectedWordCount: 4413, maxChapter: 1, incomplete: true,
+    language: 'en', originalLanguage: 'القبطية البحيرية', sourceType: 'public-domain-text',
+    notes: 'ترجمة س. غاسيل لوصية إسحاق عن الشاهد القبطي البحيري في مخطوط الفاتيكان القبطي ٦١، ضمن كتاب ج. هـ. بوكس الصادر عن جمعية نشر المعرفة المسيحية سنة ١٩٢٧، الصفحات ٥٥–٧٥. سجل الكتاب الرقمي يعلن الطبعة ملكاً عاماً. أُفرغ متن الترجمة في الصفحات ٥٧–٧٥، وأضيفت ملاحظة منفصلة تلخص فجوات الشاهد التي يذكرها غاسيل، من دون استكمال الكلمات المفقودة. الحالة جزئية بسبب فجوات المصدر، لا بسبب نقص التفريغ.'
+  },
+  {
+    bookCode: 'TAJACOB', slug: 'en-box-gaselee-testament-jacob',
+    nameAr: 'ترجمة غاسيل الإنجليزية لوصية يعقوب',
+    nameEn: 'S. Gaselee English Testament of Jacob', abbreviation: 'TAJACOB-EN',
+    url: 'https://earlychurch.gospelstudies.org.uk/pdf/e-books/box_g-h/testament-of-abraham_box.pdf', kind: 'reviewed-text-file',
+    textFile: new URL('./data/testament_jacob_box_gaselee_1927.txt', import.meta.url),
+    expectedSha256: 'a093a55e75281c8f925083f2d3c6757a80ceceb4ad5c8e721e39caa249f96662',
+    expectedWordCount: 3650, maxChapter: 1, incomplete: true,
+    language: 'en', originalLanguage: 'القبطية البحيرية', sourceType: 'public-domain-text',
+    notes: 'ترجمة س. غاسيل لوصية يعقوب عن الشاهد القبطي البحيري في مخطوط الفاتيكان القبطي ٦١، ضمن كتاب ج. هـ. بوكس الصادر سنة ١٩٢٧، الصفحات ٧٦–٨٩؛ يسجل الفهرس الرقمي الطبعة ملكاً عاماً. أُفرغ متن الترجمة في الصفحات المحددة، وأضيفت ملاحظة منفصلة تصف السقط كما أثبته المحقق من دون استكماله. هذا شاهد واحد لا يمثل الروايات العربية أو الإثيوبية، وحالته جزئية بسبب فجوات النص القبطي.'
+  },
+  {
     bookCode: 'APJAMES', slug: 'en-harris-syriac-revelation-james',
     nameAr: 'رؤيا يعقوب الرسول السريانية: ترجمة هاريس',
     nameEn: 'J. Rendel Harris English Syriac Revelation of James the Apostle', abbreviation: 'APJAMES-EN',

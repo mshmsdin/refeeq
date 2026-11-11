@@ -273,7 +273,7 @@ export default function FeaturesPage({ theme, onToggleTheme, onBack, onOpenBible
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/12 text-blue-600 dark:text-blue-300"><Languages className="h-5 w-5" /></span>
               <h2 className="text-lg font-black">للبحث المقارن</h2>
             </div>
-            <p className="text-sm leading-8 text-slate-600 dark:text-slate-300">استخدم قسم البيبل للانتقال إلى المرجع، البحث في الأعداد، مقارنة الترجمات ونسخ النص مع توثيقه. تعرض النسخة المستقلة شواهد الأسفار ومصادرها وطبعاتها، ومنها رؤيا يعقوب الرسول السريانية بترجمة هاريس، ورؤيا عزرا اللاتينية بترجمة OCP الإنجليزية. إكليمندس الإثيوبي متاح جزئياً فقط: الموجود مقتطف من رؤيا بطرس داخل الكتاب الثاني، وليس الكتاب كاملاً. ويمكن فتح النسخة المستقلة من <a className="font-bold text-blue-600 hover:underline" href="https://wiki.din.hk/bible/" target="_blank" rel="noreferrer">wiki.din.hk/bible</a>.</p>
+            <p className="text-sm leading-8 text-slate-600 dark:text-slate-300">استخدم قسم البيبل للانتقال إلى المرجع، البحث في الأعداد، مقارنة الترجمات ونسخ النص مع توثيقه. تعرض النسخة المستقلة شواهد الأسفار ومصادرها وطبعاتها، ومنها رؤيا يعقوب الرسول السريانية بترجمة هاريس، وترجمتا إسحاق ويعقوب الإنجليزية عن شاهد قبطي بحيري مع بيان فجواته، ورؤيا عزرا اللاتينية بترجمة OCP الإنجليزية. إكليمندس الإثيوبي متاح جزئياً فقط: الموجود مقتطف من رؤيا بطرس داخل الكتاب الثاني، وليس الكتاب كاملاً. ويمكن فتح النسخة المستقلة من <a className="font-bold text-blue-600 hover:underline" href="https://wiki.din.hk/bible/" target="_blank" rel="noreferrer">wiki.din.hk/bible</a>.</p>
           </div>
         </section>
 
