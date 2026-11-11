@@ -1952,6 +1952,17 @@ export const ADDITIONAL_SOURCES = [
     notes: 'ترجمة صموئيل زينر الإنجليزية لكتاب إيليا العبري (سفر إلياهو)، شاهد عبري متأخر مستقل عن رؤيا إيليا القبطية واليونانية واللاتينية. أُهديت نصوص مبادرة النصوص المفتوحة إلى الملك العام بحسب سياسة صفحة المبادرة؛ استُخدم متن الترجمة وحده دون المقدمة أو التعليقات. حُفظت الوحدات الخمس والعشرون وإحالاتها وخاتمتها.'
   },
   {
+    bookCode: 'APDANC', slug: 'en-pearse-coptic-apocalypse-daniel-public-domain',
+    nameAr: 'ترجمة روجر بيرس الإنجليزية عن الفرنسية لرؤيا دانيال القبطية',
+    nameEn: 'Roger Pearse Public-Domain English Coptic Apocalypse of Daniel', abbreviation: 'APDANC-EN',
+    url: 'https://www.tertullian.org/fathers/apocalypse_of_daniel_coptic_02_text.htm', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/coptic_apocalypse_daniel_pearse_public_domain.json', import.meta.url),
+    expectedSha256: '9c0912d88cc3baf33c9909a13353e3f5768a1be05f600f6231488680ea9b7c06',
+    expectedUnitCount: 28, expectedWordCount: 1839, maxChapter: 1, incomplete: false,
+    language: 'en', originalLanguage: 'القبطية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'النص الكامل للرؤيا الرابعة عشرة لدانيال كما في الشاهد القبطي، في ترجمة روجر بيرس الإنجليزية المنشورة سنة ٢٠٠٩ عن ترجمة فريدريك ماكلير الفرنسية لعام ١٨٩٦؛ يصف بيرس ترجمته بأنها تقريبية ومنخفضة القيمة العلمية، لذا لا تُعرض على أنها ترجمة مباشرة عن القبطية أو طبعة علمية. حُفظ المتن المرقم ١–٢٨ في ٢٨ وحدة، واستُبعدت مقدمة بيرس والحواشي التفسيرية. يصرح المصدر بأن الملف ومادته ملك عام.'
+  },
+  {
     bookCode: 'APADAM', slug: 'en-zinner-apocalypse-adam-public-domain',
     nameAr: 'ترجمة زينر الإنجليزية لرؤيا آدم',
     nameEn: 'Samuel Zinner Public-Domain English Apocalypse of Adam', abbreviation: 'APADAM-EN',
