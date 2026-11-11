@@ -8,6 +8,7 @@ test('imports all surviving James 1917 chapters without hiding the manuscript ga
   const source = ADDITIONAL_SOURCES.find((item) => item.slug === 'en-james-biblical-antiquities');
   assert.ok(source, 'missing Pseudo-Philo source metadata');
   assert.equal(source.incomplete, true, 'the shared lacunae and lost ending must remain partial');
+  assert.equal(source.siteScope, 'both');
   assert.equal(source.maxChapter, 65);
   const rawText = await readFile(source.textFile, 'utf8');
   const rows = parseReviewedChapterText(rawText, source);

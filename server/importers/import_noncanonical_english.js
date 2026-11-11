@@ -1948,7 +1948,7 @@ export const ADDITIONAL_SOURCES = [
     expectedChapterCount: 63,
     expectedChapters: [...Array.from({ length: 42 }, (_, index) => index + 1), 44, 45, 46, ...Array.from({ length: 18 }, (_, index) => index + 48)],
     maxChapter: 65, incomplete: true,
-    language: 'en', originalLanguage: 'اللاتينية، بترجمة إنجليزية', sourceType: 'public-domain-text',
+    language: 'en', originalLanguage: 'اللاتينية، بترجمة إنجليزية', sourceType: 'public-domain-text', siteScope: 'both',
     notes: 'ترجمة م. ر. جيمس عن اللاتينية، طبعة ١٩١٧؛ النص الرقمي من تفريغ جامعة بنسلفانيا لطبعة الكتاب مع حذف التعليقات التحريرية المضافة باللون الأحمر وحواشي المحقق من المتن. تسجل المقدمة فجوة ٣٧:١/٢ وسقطاً عند ٣٧:٥/٣٨:١، وخاتمة ضائعة؛ كما لا تتوفر في الطبعة فصول ٤٣ و٤٧. لذلك تحفظ الفصول الـ٦٣ المتبقية بأرقامها الأصلية ويظل العمل جزئياً. المصدر الرقمي يجيز الاستخدام غير التجاري بشرط إبقاء هذا الإسناد: “Scanned at sacred-texts.com, May 2004. John Bruno Hare, redactor.” طبعة ١٩١٧ معلنة ملكاً عاماً.'
   },
   {
@@ -2363,15 +2363,17 @@ async function run() {
   initDatabase();
   initBibleSchema();
   const db = getDb();
+  const updateExistingSourceScope = db.prepare('UPDATE bible_translations SET site_scope=? WHERE slug=?');
+  for (const source of allSources) updateExistingSourceScope.run(source.siteScope || 'both', source.slug);
   const insertTranslation = db.prepare(`
     INSERT INTO bible_translations
       (slug, name_ar, name_en, abbreviation, language, source_url, source_type, source_notes, site_scope, is_active, display_order)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'bible', 1, ?)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
     ON CONFLICT(slug) DO UPDATE SET
       name_ar=excluded.name_ar, name_en=excluded.name_en, abbreviation=excluded.abbreviation,
       language=excluded.language,
       source_url=excluded.source_url, source_type=excluded.source_type, source_notes=excluded.source_notes,
-      site_scope='bible', is_active=1
+      site_scope=excluded.site_scope, is_active=1
   `);
   const insertVerse = db.prepare(`
     INSERT INTO bible_verses
@@ -2397,7 +2399,7 @@ async function run() {
   for (const [index, source] of selectedSources.entries()) {
     insertTranslation.run(
       source.slug, source.nameAr, source.nameEn, source.abbreviation,
-      source.language, source.url, source.sourceType, source.notes, 40 + index
+      source.language, source.url, source.sourceType, source.notes, source.siteScope || 'both', 40 + index
     );
     const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
     const content = ['reviewed-text-file', 'reviewed-chapter-text-file'].includes(source.kind)
