@@ -65,3 +65,27 @@ test('preserves available parallel source details after schema initialization', 
     source_notes: 'Test provenance'
   });
 });
+
+test('keeps Ethiopic Clement partial without treating page 23 as an ancient chapter', () => {
+  initBibleSchema();
+  const db = getDb();
+  db.prepare("UPDATE bible_book_metadata SET text_status='complete' WHERE book_code='CLE-ETH'").run();
+  db.prepare(`
+    INSERT OR IGNORE INTO bible_translations
+      (slug, name_ar, name_en, abbreviation, language, site_scope, is_active)
+    VALUES ('clement-schema-test', 'اختبار', 'Clement Test', 'CLT', 'en', 'bible', 1)
+  `).run();
+  const translation = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get('clement-schema-test');
+  db.prepare(`
+    INSERT OR REPLACE INTO bible_verses
+      (translation_id, book_code, chapter, verse, text, search_text, source_url)
+    VALUES (?, 'CLE-ETH', 1, 1, 'Excerpt text', 'Excerpt text', 'https://example.org/clement')
+  `).run(translation.id);
+
+  initBibleSchema();
+
+  const metadata = db.prepare('SELECT text_status, summary_ar FROM bible_book_metadata WHERE book_code=?').get('CLE-ETH');
+  assert.equal(metadata.text_status, 'partial');
+  assert.match(metadata.summary_ar, /المقتطف الإنجليزي المتاح/);
+  assert.match(metadata.summary_ar, /لا دليلاً على فصل قديم مفقود/);
+});

@@ -9,6 +9,8 @@ import { initBibleSchema } from '../db/bible_schema.js';
 import { normalizeArabicText } from '../utils/arabic_nlp.js';
 import { fetchText } from './source_fetch.js';
 import { pathToFileURL } from 'node:url';
+import { readFile } from 'node:fs/promises';
+import { parseReviewedText } from './reviewed_text_source.js';
 
 export const SOURCES = [
   {
@@ -170,8 +172,8 @@ export const SOURCES = [
   {
     bookCode: 'CLE-ETH',
     slug: 'en-james-ethiopic-clement-2',
-    nameAr: 'الترجمة الإنجليزية لإكليمندس الإثيوبي: الكتاب الثاني',
-    nameEn: 'M. R. James English Ethiopic Clement Book II',
+    nameAr: 'مقتطف إنجليزي من رؤيا بطرس الإثيوبية في الكتاب الثاني لإكليمندس',
+    nameEn: 'M. R. James Ethiopic Apocalypse of Peter excerpt in Clement Book II',
     abbreviation: 'CLE-ETH-EN',
     url: 'https://ertale.com/bible/ethiopiancanon/clement2/{chapter}/',
     kind: 'ertale-chapter-html',
@@ -181,7 +183,7 @@ export const SOURCES = [
     language: 'en',
     originalLanguage: 'الجعزية مع أصل رؤيوي أقدم',
     sourceType: 'public-domain-text',
-    notes: 'ترجمة م. ر. جيمس المنشورة سنة 1924؛ هذا السجل هو الكتاب الثاني من إكليمندس الإثيوبي، وهو صيغة إثيوبية لرؤيا بطرس، ولا يخلط مع رسالة إكليمندس الأولى أو الثانية. النص جزئي لأن الفصل 23 تالف أو مفقود في المصدر الرقمي.'
+    notes: 'ترجمة م. ر. جيمس، طبعة ١٩٢٤. هذا مقتطف من رؤيا بطرس الإثيوبية المحفوظة ضمن الكتاب الثاني لإكليمندس؛ ليس نص الكتاب الثاني كاملاً. المصدر الرقمي يقسم المقتطف إلى ٦٨ صفحة/مقطعاً، والصفحة ٢٣ لا تعرض إلا بقايا تعرف ضوئي على الحروف، فلا يثبت ذلك فقد فصل قديم. جيمس يقول إن الكتاب الإثيوبي يتواصل بعد المقتطف بنص لاحق لم يترجمه هنا. يُحفظ السجل جزئياً ولا تُخترع الصفحة التالفة.'
   },
   {
     bookCode: '1MCE',
@@ -1893,6 +1895,17 @@ const OCP_RAW_BASE = 'https://raw.githubusercontent.com/OnlineCriticalPseudepigr
 
 export const ADDITIONAL_SOURCES = [
   {
+    bookCode: 'APJAMES', slug: 'en-harris-syriac-revelation-james',
+    nameAr: 'رؤيا يعقوب الرسول السريانية: ترجمة هاريس',
+    nameEn: 'J. Rendel Harris English Syriac Revelation of James the Apostle', abbreviation: 'APJAMES-EN',
+    url: 'https://archive.org/details/cu31924029295819', kind: 'reviewed-text-file',
+    textFile: new URL('./texts/revelation-james-syriac-harris-1900.txt', import.meta.url),
+    expectedSha256: '317a7008b1e29a1fcb47d93ffa6d8baaac1020e65b49231db23e7fc470c4ebba',
+    expectedWordCount: 603, maxChapter: 1,
+    language: 'en', originalLanguage: 'السريانية', sourceType: 'public-domain-text',
+    notes: 'ترجمة ج. ريندل هاريس، طبعة ١٩٠٠، الصفحتان ٣٣–٣٤؛ مخطوط جامعة هارفرد السرياني ٩٣، الورقتان ٥٣ظ–٥٤و (هاريس ٨٥ سابقاً). راجعنا كل كلمة على صورة الصفحتين الممسوحتين. هذا عمل مستقل عن رؤيا يعقوب القبطية في مكتبة نجع حمادي، ولا يُدمج معها. نص الطبعة القديمة ملك عام.'
+  },
+  {
     bookCode: 'APZEPH', slug: 'en-intertextual-apocalypse-zephaniah',
     nameAr: 'الشذرات الإنجليزية لرؤيا صفنيا', nameEn: 'Public-domain English Apocalypse of Zephaniah fragments', abbreviation: 'APZEPH-EN',
     url: 'https://intertextual.bible/read/apocalypse-of-zephaniah', kind: 'intertextual-paged-chapters-html', maxChapter: 14,
@@ -2149,6 +2162,7 @@ async function parseChapters(content, source) {
     if (rows.length !== source.maxUnits || rows.some((row, i) => row.verse !== i + 1 || !row.text.trim())) throw new Error(`تسلسل الأعداد غير مكتمل في ${source.slug}`);
     return rows;
   }
+  if (source.kind === 'reviewed-text-file') return parseReviewedText(content, source);
   if (source.kind === 'acts-thomas-html') return parseActsThomas(content, source);
   if (source.kind === 'structured-html') return parseStructuredHtmlChapters(source);
   if (source.kind === 'ertale-chapter-html') return parseErtaleChapteredHtml(source);
@@ -2298,9 +2312,11 @@ async function run() {
       source.language, source.url, source.sourceType, source.notes, 40 + index
     );
     const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
-    const content = ['structured-html', 'sacredthings-html', 'ertale-chapter-html', 'diatessaron-wikisource', 'intertextual-paged-chapters-html'].includes(source.kind)
-      ? null
-      : await fetchText(source.url);
+    const content = source.kind === 'reviewed-text-file'
+      ? await readFile(source.textFile, 'utf8')
+      : ['structured-html', 'sacredthings-html', 'ertale-chapter-html', 'diatessaron-wikisource', 'intertextual-paged-chapters-html'].includes(source.kind)
+        ? null
+        : await fetchText(source.url);
     const parsedChapters = await parseChapters(content, source);
     const rows = parsedChapters.map((chapter) => [
       translationId, source.bookCode, chapter.chapter + (source.chapterOffset || 0), chapter.verse, chapter.text,

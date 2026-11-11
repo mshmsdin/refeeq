@@ -314,6 +314,7 @@ function _seedExpansionCatalog(db) {
     ['APOL', 'أعمال بولس', 'Acts of Paul', 'أع-بول', 'apocrypha', 34, 0, 'greek', 'اليونانية', 'نص مركب وشواهده متعددة.'],
     ['APET', 'أعمال بطرس', 'Acts of Peter', 'أع-بط', 'apocrypha', 35, 0, 'greek', 'اليونانية واللاتينية', 'نص أبوكريفي متعدد الشواهد.'],
     ['APEP', 'رؤيا بطرس', 'Apocalypse of Peter', 'رؤ-بط', 'apocrypha', 36, 0, 'greek', 'اليونانية والإثيوبية', 'شواهد متعددة ولا تدمج آلياً.'],
+    ['APJAMES', 'رؤيا يعقوب الرسول السريانية', 'Syriac Revelation of James the Apostle', 'رؤ-يع', 'apocrypha', 37, 0, 'syriac', 'السريانية والإنجليزية', 'عمل رؤيوي مستقل محفوظ في مخطوط سرياني؛ لا يخلط برؤيا يعقوب الأولى أو الثانية القبطيتين.'],
     ['ADAMCON', 'صراع آدم وحواء مع الشيطان', 'Conflict of Adam and Eve with Satan', 'صراع-آ', 'pseudepigrapha', 20, 0, 'ethiopic', 'الجعزية بوسيط عربي', 'عمل مسيحي شرقي من أربعة كتب، يروي حياة آدم وحواء بعد الخروج من الجنة ويمتد إلى تاريخ الأجيال اللاحقة؛ الترجمة الإنجليزية لسليمان مالان سنة 1882.'],
     ['JASHER', 'كتاب ياشر (الصيغة الوسيطة)', 'Sefer ha-Yashar (medieval)', 'ياشر', 'pseudepigrapha', 21, 0, 'hebrew', 'العبرية', 'رواية تفسيرية يهودية من العصور الوسطى مترجمة في طبعة 1840؛ ليست كتاب ياشر المفقود المشار إليه في يشوع وصموئيل.'],
     ['AHIKAR', 'قصة أخيقار', 'Story of Ahikar', 'أخي', 'pseudepigrapha', 22, 0, 'aramaic', 'الآرامية مع صيغ شرقية لاحقة', 'حكاية أخلاقية عن أخيقار وحكمه وأمثاله، معروفة في تقاليد آرامية وشرقية متعددة.'],
@@ -445,7 +446,7 @@ function _seedExpansionCatalog(db) {
       WHEN 'SEDRACH' THEN 'رؤيا مسيحية متأخرة في حوار حول الموت والرحمة والخلاص. يحفظ الشاهد الإنجليزي ١٦ قسماً مرقماً.'
       WHEN 'RESEZ' THEN 'قطعة قصيرة بعنوان كلمة ورؤيا عزرا من مجموعة آباء ما قبل نيقية. حُفظ النص كاملاً في قسم واحد، وهو مستقل عن سفر عزرا الثاني ورؤيا عزرا اليونانية.'
       WHEN 'JASHER' THEN 'رواية يهودية وسيطة أعيدت صياغتها في طبعة إنجليزية تاريخية من ٩١ فصلاً. ليست كتاب ياشر القديم المفقود المشار إليه في يشوع وصموئيل؛ وحداتها النصية محفوظة بترقيم الطبعة.'
-      WHEN 'CLE-ETH' THEN 'الكتاب الثاني من إكليمندس الإثيوبي، وهو شاهد جعزي مستقل عن رسالتي إكليمندس الأولى والثانية. النص الإنجليزي جزئي: الفصل ٢٣ تالف أو مفقود في المصدر الرقمي.'
+      WHEN 'CLE-ETH' THEN 'الكتاب الثاني من إكليمندس الإثيوبي أوسع من المقتطف الإنجليزي المتاح. ما استورد هنا مقتطف من رؤيا بطرس الإثيوبية داخل هذا الكتاب؛ الصفحة الرقمية ٢٣ تحوي بقايا تعرف ضوئي على الحروف، لا دليلاً على فصل قديم مفقود. يبقى الكتاب جزئياً.'
       ELSE summary_ar END,
       updated_at=CURRENT_TIMESTAMP
     WHERE book_code IN ('DIDAS','DID-ETH','SIN','COV1','COV2','DID','BARN','PJA','DIAT','ODSO','GTINF','GTH','CLE1','CLE2','HERM','AHIKAR','ZOSIMUS','SEDRACH','RESEZ','JASHER','CLE-ETH')
@@ -503,12 +504,7 @@ function _seedExpansionCatalog(db) {
   db.prepare(`
     UPDATE bible_book_metadata
     SET text_status = CASE
-        WHEN bible_book_metadata.book_code='CLE-ETH' AND NOT EXISTS (
-          SELECT 1 FROM bible_verses bv
-          JOIN bible_translations bt ON bt.id = bv.translation_id
-          WHERE bv.book_code = bible_book_metadata.book_code AND bv.chapter=23
-            AND bt.is_active = 1 AND (bt.site_scope = 'both' OR bt.site_scope = 'bible')
-        ) THEN 'partial'
+        WHEN bible_book_metadata.book_code='CLE-ETH' THEN 'partial'
         WHEN bible_book_metadata.text_status='partial' THEN 'partial'
         WHEN EXISTS (
           SELECT 1 FROM bible_verses bv
