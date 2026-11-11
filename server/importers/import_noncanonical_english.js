@@ -2054,6 +2054,13 @@ export const ADDITIONAL_SOURCES = [
     notes: 'نص قصير من طبعة ميركاتي 1901 كما رقمنته OCP؛ يحفظ مستقلاً عن بقية رؤى عزرا.'
   },
   {
+    bookCode: 'REVEZRA', slug: 'en-ocp-revelation-qualities-year-ezra',
+    nameAr: 'الترجمة الإنجليزية لرؤيا صفات السنة المنسوبة إلى عزرا', nameEn: 'OCP English Revelation of Ezra on the Qualities of the Year', abbreviation: 'REVEZRA-EN',
+    url: `${OCP_RAW_BASE}RevEsdr.xml`, kind: 'ocp-xml', maxChapter: 1, expectedUnits: 7, readingMss: 'Trans', language: 'en', versionLanguage: 'Latin',
+    originalLanguage: 'اللاتينية', sourceType: 'open-critical-translation',
+    notes: 'الترجمة الإنجليزية المضمنة في الطبعة الرقمية النقدية OCP تحت الشاهد Trans، مقترنة بالنص اللاتيني من طبعة ميركاتي 1901. حُفظت وحداتها السبع في فصل واحد وبترقيم المصدر. ترخيص مستودع OCP: CC BY 4.0، مع نسبة التحرير والمصدر.'
+  },
+  {
     bookCode: 'VISEL', slug: 'la-ocp-vision-elijah',
     nameAr: 'الشاهد اللاتيني لرؤيا إيليا', nameEn: 'OCP Latin Vision of Elijah', abbreviation: 'VISEL-LA',
     url: `${OCP_RAW_BASE}VisEl.xml`, kind: 'ocp-xml', maxChapter: 1, language: 'la', versionLanguage: 'Latin',
@@ -2118,7 +2125,7 @@ export const ADDITIONAL_SOURCES = [
   }
 ];
 
-function parseOcpChapters(xml, source) {
+export function parseOcpChapters(xml, source) {
   const versionLanguage = source.versionLanguage || (source.language === 'gez' ? 'Ethiopic' : 'Latin');
   const versions = [...xml.matchAll(new RegExp(`<version\\b[^>]*language="${versionLanguage}"[\\s\\S]*?<\\/version>`, 'gi'))];
   const version = versions[source.versionIndex || 0]?.[0];
@@ -2126,7 +2133,7 @@ function parseOcpChapters(xml, source) {
   const textStart = version.indexOf('<text>');
   if (textStart < 0) throw new Error(`لم يُعثر على قسم النص في ${source.slug}`);
   const body = version.slice(textStart);
-  const tokenPattern = /<div\s+number="(\d+)"\s*>|<\/div\s*>|<unit\b[^>]*>|<\/unit\s*>|<reading\b[^>]*option="(\d+)"[^>]*>([\s\S]*?)<\/reading\s*>/gi;
+  const tokenPattern = /<div\s+number="(\d+)"\s*>|<\/div\s*>|<unit\b[^>]*>|<\/unit\s*>|<reading\b([^>]*)>([\s\S]*?)<\/reading\s*>/gi;
   const chapters = [];
   let depth = 0;
   let currentChapter = null;
@@ -2160,18 +2167,28 @@ function parseOcpChapters(xml, source) {
       continue;
     }
     if (match[0].startsWith('</unit')) {
-      const selected = currentUnitReadings.find((reading) => reading.option === 0) || currentUnitReadings[0];
+      const selected = source.readingMss
+        ? currentUnitReadings.find((reading) => reading.mss.split(/\s+/).includes(source.readingMss))
+        : currentUnitReadings.find((reading) => reading.option === 0) || currentUnitReadings[0];
+      if (source.readingMss && !selected) {
+        throw new Error(`لم يُعثر على الشاهد ${source.readingMss} في ${source.slug}`);
+      }
       if (selected) currentParts.push(decodeHtml(selected.text));
       currentUnitReadings = [];
       continue;
     }
     if (match[2] !== undefined) {
-      currentUnitReadings.push({ option: Number(match[2]), text: match[3] });
+      const option = match[2].match(/\boption="(\d+)"/i)?.[1];
+      const mss = match[2].match(/\bmss="([^"]*)"/i)?.[1] || '';
+      currentUnitReadings.push({ option: option === undefined ? null : Number(option), mss, text: match[3] });
     }
   }
   const chaptersSeen = new Set(chapters.map((row) => row.chapter));
   if (chaptersSeen.size !== source.maxChapter) {
     throw new Error(`اكتُشف ${chaptersSeen.size} إصحاحاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  if (source.expectedUnits && chapters.length !== source.expectedUnits) {
+    throw new Error(`اكتُشفت ${chapters.length} وحدة فقط في ${source.slug}، والمتوقع ${source.expectedUnits}`);
   }
   return chapters;
 }
