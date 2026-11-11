@@ -1941,6 +1941,17 @@ export const ADDITIONAL_SOURCES = [
     notes: 'ترجمة ر. هـ. تشارلز في كتابه عن الأسفار القانونية الثانية والمنحولات، المجلد الثاني، طبعة أكسفورد ١٩١٣، الملحق الثاني، الصفحات المطبوعة ٣٦٤–٣٦٧؛ روجع التفريغ على صور الصفحات في نسخة الأرشيف. جُمعت المقاطع في أربعة أقسام بحسب عناوين الشواهد في الطبعة، لا بوصفها فصولاً أصلية: شذرتان آراميتان من مجموعة كامبردج، شذرات آرامية من مجموعة بودلي، استمرار يوناني موسوم في المصدر، ثم بقية شذرات كامبردج. أُبقيت علامات السقط والاستدراك المطبوعة بين الأقواس، وأرقام الشواهد في عناوين الأقسام. هذه ترجمة إنجليزية لنصوص مجزأة، وليست تفريغاً آرامياً أو يونانياً أصلياً، ولا تتمة كاملة لوصية لاوي؛ تبقى الحالة جزئية. الطبعة التاريخية ١٩١٣ ملك عام.'
   },
   {
+    bookCode: 'SEELI', slug: 'en-othergospels-sefer-elijah-zinner-public-domain',
+    nameAr: 'ترجمة صموئيل زينر الإنجليزية لكتاب إيليا العبري',
+    nameEn: 'Samuel Zinner Public-Domain English Sefer Elijah', abbreviation: 'SEELI-EN',
+    url: 'https://othergospels.com/elijah/', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/sefer_elijah_zinner_public_domain.json', import.meta.url),
+    expectedSha256: 'e4528266ea2769723c774f5855de901f618c232ad4c65554c18172907743fa20',
+    expectedUnitCount: 25, expectedWordCount: 1888, maxChapter: 1, incomplete: false,
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'ترجمة صموئيل زينر الإنجليزية لكتاب إيليا العبري (سفر إلياهو)، شاهد عبري متأخر مستقل عن رؤيا إيليا القبطية واليونانية واللاتينية. أُهديت نصوص مبادرة النصوص المفتوحة إلى الملك العام بحسب سياسة صفحة المبادرة؛ استُخدم متن الترجمة وحده دون المقدمة أو التعليقات. حُفظت الوحدات الخمس والعشرون وإحالاتها وخاتمتها.'
+  },
+  {
     bookCode: 'APADAM', slug: 'en-zinner-apocalypse-adam-public-domain',
     nameAr: 'ترجمة زينر الإنجليزية لرؤيا آدم',
     nameEn: 'Samuel Zinner Public-Domain English Apocalypse of Adam', abbreviation: 'APADAM-EN',
