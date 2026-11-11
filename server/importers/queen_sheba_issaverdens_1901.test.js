@@ -18,4 +18,3 @@ test('imports only the 1901 printed English witness and keeps its lacunae marked
   assert.match(row.text, /\.\s*\.\s*\./, 'the translator\'s printed lacunae must not be reconstructed');
   assert.match(source.notes, /الصفحات ٢١١–٢١٥/);
 });
-
