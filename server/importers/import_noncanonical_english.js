@@ -1900,7 +1900,7 @@ export const ADDITIONAL_SOURCES = [
     nameEn: 'J. Rendel Harris English Syriac Revelation of James the Apostle', abbreviation: 'APJAMES-EN',
     url: 'https://archive.org/details/cu31924029295819', kind: 'reviewed-text-file',
     textFile: new URL('./texts/revelation-james-syriac-harris-1900.txt', import.meta.url),
-    expectedSha256: '317a7008b1e29a1fcb47d93ffa6d8baaac1020e65b49231db23e7fc470c4ebba',
+    expectedSha256: '40f845f39673b1dabe665e68cc77cf2bb90fdd455a37a0afd3388c4079adec74',
     expectedWordCount: 603, maxChapter: 1,
     language: 'en', originalLanguage: 'السريانية', sourceType: 'public-domain-text',
     notes: 'ترجمة ج. ريندل هاريس، طبعة ١٩٠٠، الصفحتان ٣٣–٣٤؛ مخطوط جامعة هارفرد السرياني ٩٣، الورقتان ٥٣ظ–٥٤و (هاريس ٨٥ سابقاً). راجعنا كل كلمة على صورة الصفحتين الممسوحتين. هذا عمل مستقل عن رؤيا يعقوب القبطية في مكتبة نجع حمادي، ولا يُدمج معها. نص الطبعة القديمة ملك عام.'
