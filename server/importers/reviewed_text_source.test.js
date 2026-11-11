@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { parseReviewedText } from './reviewed_text_source.js';
+import { parseReviewedText, parseReviewedUnitText } from './reviewed_text_source.js';
 
 const text = 'The first sentence has enough words to be meaningful.\nThe final sentence records the ending of this witness.';
 const source = {
@@ -26,4 +26,24 @@ test('rejects reviewed text that differs from the recorded edition file', () => 
 test('accepts Windows line endings without changing the reviewed words', () => {
   const windowsText = text.replace(/\n/g, '\r\n');
   assert.equal(parseReviewedText(windowsText, source)[0].text, text);
+});
+
+test('preserves a reviewed witness range that begins at a source verse other than one', () => {
+  const unitsText = JSON.stringify([
+    { chapter: 1, verse: 20, text: 'O Lord, hear this prayer and remember your servant.' },
+    { chapter: 1, verse: 21, text: 'Let your mercy remain with your people forever.' },
+  ]);
+  const unitSource = {
+    slug: 'reviewed-offset-units-test',
+    expectedSha256: createHash('sha256').update(unitsText).digest('hex'),
+    expectedWordCount: 17,
+    expectedUnitCount: 2,
+    expectedFirstVerse: 20,
+    maxChapter: 1,
+    url: 'https://example.invalid/source',
+  };
+
+  const rows = parseReviewedUnitText(unitsText, unitSource);
+
+  assert.deepEqual(rows.map(({ chapter, verse }) => [chapter, verse]), [[1, 20], [1, 21]]);
 });

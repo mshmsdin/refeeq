@@ -2089,6 +2089,16 @@ export const ADDITIONAL_SOURCES = [
     notes: 'نص لاتيني قصير من طبعة بنسلي 1895، وهو عزرا الثاني ٨:٢٠–٣٦ معروض كعمل مستقل في فصل واحد؛ تُحفظ أرقام الأعداد الأصلية ٢٠–٣٦. لا يخلط مع كلمة ورؤيا عزرا.'
   },
   {
+    bookCode: 'CONFESD', slug: 'en-web-confession-esdras',
+    nameAr: 'الشاهد الإنجليزي الموازي لاعتراف عزرا من البيبل العالمي الكلاسيكي', nameEn: 'WEB Classic parallel text for Confessio Esdrae', abbreviation: 'CONFESD-EN-WEB',
+    url: 'https://ebible.org/Scriptures/eng-web_vpl.zip', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/confessio_esdras_web_classic.json', import.meta.url),
+    expectedSha256: '8f81ed51a338d561fa2a56216aa0ccec24addfe591e60003ed64c65c43109d09',
+    expectedWordCount: 369, expectedUnitCount: 17, expectedFirstVerse: 20, maxChapter: 1,
+    language: 'en', versionLanguage: 'English', sourceType: 'public-domain-parallel-translation',
+    notes: 'مقطع إنجليزي من World English Bible Classic، 4 Esdras 8:20–36، محفوظ كترجمة موازية لاعتراف عزرا مع إبقاء الأعداد ٢٠–٣٦. لا يُدّعى أنه ترجمة حرفية مستقلة للشاهد اللاتيني الليتورجي؛ إنه المقطع المقابل في نص عزرا الرابع. النص ملك عام، ومصدره يسمح بإعادة النشر والتوزيع. المصدر الرقمي: eng-web_vpl.zip؛ بيان الحقوق: https://www.ebible.org/eng-web/copyright.htm.'
+  },
+  {
     bookCode: 'VISZEZRA', slug: 'en-ocp-latin-vision-ezra',
     nameAr: 'الترجمة الإنجليزية لرؤيا عزرا اللاتينية', nameEn: 'OCP English Vision of Ezra (Latin witness)', abbreviation: 'VISZEZRA-EN',
     url: `${OCP_RAW_BASE}Esdl.xml`, kind: 'ocp-flat-xml', maxChapter: 1, expectedUnits: 113, language: 'en', versionLanguage: 'English',

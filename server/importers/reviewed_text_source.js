@@ -62,17 +62,19 @@ export function parseReviewedUnitText(rawText, source) {
     throw new Error(`عدد الوحدات لا يطابق النسخة المدققة في ${source.slug}`);
   }
   const chapterVerses = new Map();
+  const expectedFirstVerse = source.expectedFirstVerse ?? 1;
   for (const unit of units) {
     if (!Number.isInteger(unit.chapter) || unit.chapter < 1 || unit.chapter > source.maxChapter
       || !Number.isInteger(unit.verse) || unit.verse < 1
       || typeof unit.text !== 'string' || unit.text.trim().length < 10) {
       throw new Error(`بيانات إحدى الوحدات غير صالحة في ${source.slug}`);
     }
-    const expectedVerse = (chapterVerses.get(unit.chapter) || 0) + 1;
+    const chapterUnitCount = chapterVerses.get(unit.chapter) || 0;
+    const expectedVerse = chapterUnitCount + expectedFirstVerse;
     if (unit.verse !== expectedVerse) {
       throw new Error(`تسلسل الوحدات غير مكتمل في الفصل ${unit.chapter} من ${source.slug}`);
     }
-    chapterVerses.set(unit.chapter, unit.verse);
+    chapterVerses.set(unit.chapter, chapterUnitCount + 1);
   }
   const wordCount = units.reduce((count, unit) => count + unit.text.trim().split(/\s+/u).filter(Boolean).length, 0);
   if (wordCount !== source.expectedWordCount) {
