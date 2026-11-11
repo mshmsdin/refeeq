@@ -1897,6 +1897,20 @@ const OCP_RAW_BASE = 'https://raw.githubusercontent.com/OnlineCriticalPseudepigr
 
 export const ADDITIONAL_SOURCES = [
   {
+    bookCode: 'SEVDAN', slug: 'en-project-seventh-vision-daniel',
+    nameAr: 'ترجمة إنجليزية جديدة للرؤيا السابعة لدانيال عن الترجمة الألمانية التاريخية',
+    nameEn: 'Project English Translation of Daniel’s Seventh Vision from the 1892 German Edition',
+    abbreviation: 'SEVDAN-EN',
+    url: 'https://archive.org/download/WienerZeitschriftFrDieKundeDesMorgenlandes/bd6.pdf',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/seventh_vision_daniel_project_translation.json', import.meta.url),
+    expectedSha256: '64fa8bb27cb4fc5fa96276d104ea58fbc3e5071ecb5e04574a7a3776d3d0cfb1',
+    expectedUnitCount: 14, expectedVerseNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+    expectedWordCount: 4506, maxChapter: 1, incomplete: false,
+    language: 'en', originalLanguage: 'الأرمنية (بوسيط الترجمة الألمانية)', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'ترجمة إنجليزية جديدة أعدها المشروع عن ترجمة غريغوريس كاليمكيار الألمانية المنشورة سنة ١٨٩٢ في «دراسات في معرفة الشرق»، المجلد السادس، الصفحات المطبوعة ٢٢٧–٢٤٠. قُسم النص النثري المتتابع إلى ١٤ وحدة لتسهيل عرضه، وتغطي الصفحات المطبوعة المذكورة؛ ويصرح المصدر بخاتمة الصلاة وكلمة Amen. هذه ترجمة عن الألمانية وليست مباشرة عن الأرمنية، وتمثل هذا الشاهد فقط لا جميع روايات دانيال. أُبقيت علامتا المحقق على موضع القراءة الأرمنية غير المحسوم وكلمة الطريق التي علّمها بالشك. الترجمة الألمانية التاريخية للكاليمكيار (١٨٦٢–١٩١٧) ضمن الملك العام، والنص الإنجليزي ترجمة مشروع جديدة.'
+  },
+  {
     bookCode: 'QEZRA', slug: 'en-questions-ezra-arm-short',
     nameAr: 'ترجمة إنجليزية جديدة للرواية الأرمنية الأقصر من أسئلة عزرا',
     nameEn: 'Project English Translation of Armenian Questions of Ezra, Recension B',
