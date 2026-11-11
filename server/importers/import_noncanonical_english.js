@@ -10,7 +10,7 @@ import { normalizeArabicText } from '../utils/arabic_nlp.js';
 import { fetchText } from './source_fetch.js';
 import { pathToFileURL } from 'node:url';
 import { readFile } from 'node:fs/promises';
-import { parseReviewedText } from './reviewed_text_source.js';
+import { parseReviewedText, parseReviewedChapterText } from './reviewed_text_source.js';
 
 export const SOURCES = [
   {
@@ -1939,6 +1939,19 @@ export const ADDITIONAL_SOURCES = [
     notes: 'ترجمة ج. ريندل هاريس، طبعة ١٩٠٠، الصفحتان ٣٣–٣٤؛ مخطوط جامعة هارفرد السرياني ٩٣، الورقتان ٥٣ظ–٥٤و (هاريس ٨٥ سابقاً). راجعنا كل كلمة على صورة الصفحتين الممسوحتين. هذا عمل مستقل عن رؤيا يعقوب القبطية في مكتبة نجع حمادي، ولا يُدمج معها. نص الطبعة القديمة ملك عام.'
   },
   {
+    bookCode: 'PSLAB', slug: 'en-james-biblical-antiquities',
+    nameAr: 'ترجمة جيمس الإنجليزية للآثار الكتابية المنحولة',
+    nameEn: 'M. R. James English Biblical Antiquities of Pseudo-Philo', abbreviation: 'PSLAB-EN',
+    url: 'https://ccat.sas.upenn.edu/rak/publics/pseudepig/LAB.html', kind: 'reviewed-chapter-text-file',
+    textFile: new URL('./data/pseudo_philo_james_1917.json', import.meta.url),
+    expectedSha256: 'e8f4ce9a731700b7e2213208fb9deadfb175074142c504798e8b41cb849dee6f',
+    expectedChapterCount: 63,
+    expectedChapters: [...Array.from({ length: 42 }, (_, index) => index + 1), 44, 45, 46, ...Array.from({ length: 18 }, (_, index) => index + 48)],
+    maxChapter: 65, incomplete: true,
+    language: 'en', originalLanguage: 'اللاتينية، بترجمة إنجليزية', sourceType: 'public-domain-text',
+    notes: 'ترجمة م. ر. جيمس عن اللاتينية، طبعة ١٩١٧؛ النص الرقمي من تفريغ جامعة بنسلفانيا لطبعة الكتاب مع حذف التعليقات التحريرية المضافة باللون الأحمر وحواشي المحقق من المتن. تسجل المقدمة فجوة ٣٧:١/٢ وسقطاً عند ٣٧:٥/٣٨:١، وخاتمة ضائعة؛ كما لا تتوفر في الطبعة فصول ٤٣ و٤٧. لذلك تحفظ الفصول الـ٦٣ المتبقية بأرقامها الأصلية ويظل العمل جزئياً. المصدر الرقمي يجيز الاستخدام غير التجاري بشرط إبقاء هذا الإسناد: “Scanned at sacred-texts.com, May 2004. John Bruno Hare, redactor.” طبعة ١٩١٧ معلنة ملكاً عاماً.'
+  },
+  {
     bookCode: 'APZEPH', slug: 'en-intertextual-apocalypse-zephaniah',
     nameAr: 'الشذرات الإنجليزية لرؤيا صفنيا', nameEn: 'Public-domain English Apocalypse of Zephaniah fragments', abbreviation: 'APZEPH-EN',
     url: 'https://intertextual.bible/read/apocalypse-of-zephaniah', kind: 'intertextual-paged-chapters-html', maxChapter: 14,
@@ -2201,6 +2214,8 @@ export function parseActsThomas(content, source) {
 }
 
 async function parseChapters(content, source) {
+  if (source.kind === 'reviewed-text-file') return parseReviewedText(content, source);
+  if (source.kind === 'reviewed-chapter-text-file') return parseReviewedChapterText(content, source);
   if (source.kind === 'complete-letter-html') {
     const body = content.split(/<h[1-6]\b[^>]*>\s*About this page\s*<\/h[1-6]>/i)[0];
     const headings = [...body.matchAll(/<h[1-6]\b[^>]*>\s*Chapter\s+(\d+)\.([\s\S]*?)<\/h[1-6]>/gi)];
@@ -2235,7 +2250,6 @@ async function parseChapters(content, source) {
     if (rows.length !== source.maxUnits || rows.some((row, i) => row.verse !== i + 1 || !row.text.trim())) throw new Error(`تسلسل الأعداد غير مكتمل في ${source.slug}`);
     return rows;
   }
-  if (source.kind === 'reviewed-text-file') return parseReviewedText(content, source);
   if (source.kind === 'acts-thomas-html') return parseActsThomas(content, source);
   if (source.kind === 'structured-html') return parseStructuredHtmlChapters(source);
   if (source.kind === 'ertale-chapter-html') return parseErtaleChapteredHtml(source);
@@ -2386,7 +2400,7 @@ async function run() {
       source.language, source.url, source.sourceType, source.notes, 40 + index
     );
     const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
-    const content = source.kind === 'reviewed-text-file'
+    const content = ['reviewed-text-file', 'reviewed-chapter-text-file'].includes(source.kind)
       ? await readFile(source.textFile, 'utf8')
       : ['structured-html', 'sacredthings-html', 'ertale-chapter-html', 'diatessaron-wikisource', 'intertextual-paged-chapters-html'].includes(source.kind)
         ? null
