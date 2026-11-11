@@ -219,6 +219,11 @@ function _seedExpansionCatalog(db) {
       (code, name_ar, name_en, abbreviation_ar, collection_id, canonical_order, chapter_count)
     VALUES (?, ?, ?, ?, ?, ?, ?)
   `);
+  const syncBookCatalog = db.prepare(`
+    UPDATE bible_books SET name_ar=?, name_en=?, abbreviation_ar=?, collection_id=?, canonical_order=?,
+      chapter_count=CASE WHEN ?>0 THEN ? ELSE chapter_count END
+    WHERE code=?
+  `);
   const insertAlias = db.prepare('INSERT OR IGNORE INTO bible_book_aliases (book_code, alias) VALUES (?, ?)');
   const insertMetadata = db.prepare(`
     INSERT INTO bible_book_metadata
@@ -360,6 +365,7 @@ function _seedExpansionCatalog(db) {
 
   for (const [code, nameAr, nameEn, abbr, collection, order, chapterCount, tradition, language, summary] of records) {
     insertBook.run(code, nameAr, nameEn, abbr, colMap[collection], order, chapterCount);
+    syncBookCatalog.run(nameAr, nameEn, abbr, colMap[collection], order, chapterCount, chapterCount, code);
     insertAlias.run(code, nameAr);
     insertAlias.run(code, nameEn);
     const [sourceName, sourceUrl] = sourceDefaults[tradition] || ['مصدر يحتاج إلى تثبيت', null];
