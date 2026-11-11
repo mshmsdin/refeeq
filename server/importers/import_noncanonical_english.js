@@ -1995,6 +1995,13 @@ export const ADDITIONAL_SOURCES = [
     url: `${OCP_RAW_BASE}ConfEsdr.xml`, kind: 'ocp-xml', maxChapter: 1, language: 'la', versionLanguage: 'Latin',
     originalLanguage: 'اللاتينية', sourceType: 'open-critical-edition',
     notes: 'نص لاتيني قصير من طبعة بنسلي 1895؛ مستقل عن عزرا الثاني وكلمة ورؤيا عزرا.'
+  },
+  {
+    bookCode: 'VISZEZRA', slug: 'en-ocp-latin-vision-ezra',
+    nameAr: 'الترجمة الإنجليزية لرؤيا عزرا اللاتينية', nameEn: 'OCP English Vision of Ezra (Latin witness)', abbreviation: 'VISZEZRA-EN',
+    url: `${OCP_RAW_BASE}Esdl.xml`, kind: 'ocp-flat-xml', maxChapter: 1, expectedUnits: 113, language: 'en', versionLanguage: 'English',
+    originalLanguage: 'اللاتينية', sourceType: 'open-critical-translation',
+    notes: 'ترجمة OCP الإنجليزية للشاهد اللاتيني في الطبعة الرقمية النقدية لرؤيا عزرا. النص المنشور يتضمن 113 وحدة مرقمة في فصل واحد وينتهي بعبارة الختام؛ أرقام الوحدات الأصلية محفوظة مع وجود أربع قفزات في الترقيم (17 و42 و65 و66) كما في ملف الطبعة. وحدات اللاتينية والإنجليزية متطابقة في الترقيم؛ لا تدل القفزات وحدها على نص مفقود. مستودع OCP مرخص بنسبة العمل للمصدر 4.0.'
   }
 ];
 
@@ -2052,6 +2059,39 @@ function parseOcpChapters(xml, source) {
   const chaptersSeen = new Set(chapters.map((row) => row.chapter));
   if (chaptersSeen.size !== source.maxChapter) {
     throw new Error(`اكتُشف ${chaptersSeen.size} إصحاحاً فقط في ${source.slug}، والمتوقع ${source.maxChapter}`);
+  }
+  return chapters;
+}
+
+function parseOcpFlatChapter(xml, source) {
+  const versions = [...xml.matchAll(new RegExp(`<version\\b[^>]*language="${source.versionLanguage}"[\\s\\S]*?<\\/version>`, 'gi'))];
+  const version = versions[source.versionIndex || 0]?.[0];
+  if (!version) throw new Error(`لم يُعثر على النسخة اللغوية في ${source.slug}`);
+  const start = version.indexOf('<div number="Document Body">');
+  const explicit = version.indexOf('<div number="Explicit">', start);
+  if (start < 0 || explicit < 0) throw new Error(`لم يُعثر على متن الفصل وخاتمته في ${source.slug}`);
+  const body = version.slice(start, explicit);
+  const chapters = [...body.matchAll(/<div\s+number="(\d+)"\s*>([\s\S]*?)<\/div\s*>/gi)].map((match) => {
+    const unit = match[2].match(/<unit\b[^>]*>([\s\S]*?)<\/unit\s*>/i)?.[1];
+    const readings = unit ? [...unit.matchAll(/<reading\b[^>]*option="(\d+)"[^>]*>([\s\S]*?)<\/reading\s*>/gi)] : [];
+    const selected = readings.find((reading) => Number(reading[1]) === 0) || readings[0];
+    const text = selected ? cleanText(decodeHtml(selected[2])) : '';
+    return { chapter: 1, verse: Number(match[1]), text, sourceUrl: source.url };
+  }).filter((row) => row.text.length > 2);
+  if (chapters.length !== source.expectedUnits) {
+    throw new Error(`اكتُشف ${chapters.length} وحدة فقط في ${source.slug}، والمتوقع ${source.expectedUnits}`);
+  }
+  const witnessVersion = [...xml.matchAll(/<version\b[^>]*>[\s\S]*?<\/version>/gi)][0]?.[0];
+  const witnessStart = witnessVersion?.indexOf('<div number="Document Body">') ?? -1;
+  const witnessEnd = witnessVersion?.indexOf('<div number="Explicit">', witnessStart) ?? -1;
+  const witnessNumbers = witnessStart >= 0 && witnessEnd > witnessStart
+    ? [...witnessVersion.slice(witnessStart, witnessEnd).matchAll(/<div\s+number="(\d+)"\s*>/gi)].map((match) => Number(match[1]))
+    : [];
+  if (witnessNumbers.length !== chapters.length || witnessNumbers.some((number, index) => number !== chapters[index].verse)) {
+    throw new Error(`لا تتطابق وحدات الإنجليزية مع ترقيم الشاهد اللاتيني في ${source.slug}`);
+  }
+  if (!version.includes('HERE ENDS THE LEGEND OF THE BLESSED PROPHET EZRA')) {
+    throw new Error(`لا تظهر خاتمة الشاهد في ${source.slug}`);
   }
   return chapters;
 }
@@ -2203,6 +2243,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'wesley-testament-html') return parseWesleyTestamentChapters(content, source);
   if (source.kind === 'viachrista-html') return parseViaChristaChapters(content, source);
   if (source.kind === 'ocp-xml') return parseOcpChapters(content, source);
+  if (source.kind === 'ocp-flat-xml') return parseOcpFlatChapter(content, source);
   if (source.kind === 'numbered-html-chapters') return parseNumberedHtmlChapters(content, source);
   if (source.kind === 'roman-html-chapters') return parseRomanHtmlChapters(content, source);
   const start = content.indexOf(source.anchor);
