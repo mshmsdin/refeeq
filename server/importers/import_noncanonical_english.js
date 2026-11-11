@@ -1917,6 +1917,17 @@ export const ADDITIONAL_SOURCES = [
     notes: 'ترجمة س. غاسيل لوصية يعقوب عن الشاهد القبطي البحيري في مخطوط الفاتيكان القبطي ٦١، ضمن كتاب ج. هـ. بوكس الصادر سنة ١٩٢٧، الصفحات ٧٦–٨٩؛ يسجل الفهرس الرقمي الطبعة ملكاً عاماً. أُفرغ متن الترجمة في الصفحات المحددة، وأضيفت ملاحظة منفصلة تصف السقط كما أثبته المحقق من دون استكماله. هذا شاهد واحد لا يمثل الروايات العربية أو الإثيوبية، وحالته جزئية بسبب فجوات النص القبطي.'
   },
   {
+    bookCode: 'QSB', slug: 'en-issaverdens-queen-solomon',
+    nameAr: 'ترجمة إيسافردنس الإنجليزية لأسئلة ملكة سبأ وسليمان',
+    nameEn: 'J. Issaverdens English Questions of the Queen of Sheba and Solomon', abbreviation: 'QSB-EN',
+    url: 'https://archive.org/details/cu31924091353445', kind: 'reviewed-text-file',
+    textFile: new URL('./data/queen_sheba_issaverdens_1901.txt', import.meta.url),
+    expectedSha256: '6c346fd6457bcbfcd0d8bc80f17d220079d56182a79e49780b9c264134730a46',
+    expectedWordCount: 930, maxChapter: 1, incomplete: true,
+    language: 'en', originalLanguage: 'الأرمنية', sourceType: 'public-domain-text',
+    notes: 'ترجمة ج. إيسافردنس الإنجليزية في كتابه عن التقليد الأرمني، طبعة ١٩٠١، الصفحات ٢١١–٢١٥؛ رقمها الرقمي يذكر عدم وجود قيود حقوق معروفة في الولايات المتحدة. يترجم النص شاهداً أرمنياً، ويضم اختلافات الشواهد كما يشرح المؤلف. أُفرغت الأسئلة والأجوبة المنشورة مع إبقاء الحذف المطبوع بالنقاط كما هو؛ النص جزئي ولا يملأ الأجزاء المحذوفة، ولا يمثل الترجمة الأكاديمية الحديثة المحمية الحقوق أو الشاهد السرياني.'
+  },
+  {
     bookCode: 'APJAMES', slug: 'en-harris-syriac-revelation-james',
     nameAr: 'رؤيا يعقوب الرسول السريانية: ترجمة هاريس',
     nameEn: 'J. Rendel Harris English Syriac Revelation of James the Apostle', abbreviation: 'APJAMES-EN',
