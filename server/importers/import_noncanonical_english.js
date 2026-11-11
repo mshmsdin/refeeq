@@ -10,7 +10,7 @@ import { normalizeArabicText } from '../utils/arabic_nlp.js';
 import { fetchText } from './source_fetch.js';
 import { pathToFileURL } from 'node:url';
 import { readFile } from 'node:fs/promises';
-import { parseReviewedText, parseReviewedChapterText } from './reviewed_text_source.js';
+import { parseReviewedText, parseReviewedChapterText, parseReviewedUnitText } from './reviewed_text_source.js';
 
 export const SOURCES = [
   {
@@ -1930,6 +1930,28 @@ export const ADDITIONAL_SOURCES = [
     notes: 'ترجمة ج. إيسافردنس الإنجليزية في كتابه عن التقليد الأرمني، طبعة ١٩٠١، الصفحات ٢١١–٢١٥؛ رقمها الرقمي يذكر عدم وجود قيود حقوق معروفة في الولايات المتحدة. يترجم النص شاهداً أرمنياً، ويضم اختلافات الشواهد كما يشرح المؤلف. أُفرغت الأسئلة والأجوبة المنشورة مع إبقاء الحذف المطبوع بالنقاط كما هو؛ النص جزئي ولا يملأ الأجزاء المحذوفة، ولا يمثل الترجمة الأكاديمية الحديثة المحمية الحقوق أو الشاهد السرياني.'
   },
   {
+    bookCode: 'ARL', slug: 'en-charles-aramaic-levi-fragments-1913',
+    nameAr: 'ترجمة تشارلز الإنجليزية لشذرات وثيقة لاوي الآرامية',
+    nameEn: 'R. H. Charles English Translation of Aramaic Levi Fragments', abbreviation: 'ARL-EN',
+    url: 'https://archive.org/details/apocryphapseudep02charuoft', kind: 'reviewed-chapter-text-file',
+    textFile: new URL('./data/aramaic_levi_charles_1913.json', import.meta.url),
+    expectedSha256: '04e69320d4079c56cda50d9e21fcade764e90fe5ddc8009ce044e81bd061f9bb',
+    expectedChapterCount: 4, expectedChapters: [1, 2, 3, 4], expectedWordCount: 2686, maxChapter: 4, incomplete: true,
+    language: 'en', originalLanguage: 'الآرامية واليونانية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'ترجمة ر. هـ. تشارلز في كتابه عن الأسفار القانونية الثانية والمنحولات، المجلد الثاني، طبعة أكسفورد ١٩١٣، الملحق الثاني، الصفحات المطبوعة ٣٦٤–٣٦٧؛ روجع التفريغ على صور الصفحات في نسخة الأرشيف. جُمعت المقاطع في أربعة أقسام بحسب عناوين الشواهد في الطبعة، لا بوصفها فصولاً أصلية: شذرتان آراميتان من مجموعة كامبردج، شذرات آرامية من مجموعة بودلي، استمرار يوناني موسوم في المصدر، ثم بقية شذرات كامبردج. أُبقيت علامات السقط والاستدراك المطبوعة بين الأقواس، وأرقام الشواهد في عناوين الأقسام. هذه ترجمة إنجليزية لنصوص مجزأة، وليست تفريغاً آرامياً أو يونانياً أصلياً، ولا تتمة كاملة لوصية لاوي؛ تبقى الحالة جزئية. الطبعة التاريخية ١٩١٣ ملك عام.'
+  },
+  {
+    bookCode: 'APADAM', slug: 'en-zinner-apocalypse-adam-public-domain',
+    nameAr: 'ترجمة زينر الإنجليزية لرؤيا آدم',
+    nameEn: 'Samuel Zinner Public-Domain English Apocalypse of Adam', abbreviation: 'APADAM-EN',
+    url: 'https://www.luminescence-llc.net/the-apocalypse-of-adam', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/apocalypse_adam_zinner_public_domain.json', import.meta.url),
+    expectedSha256: '9515a3cf238c52b17cfcb81359d2ef9ab3c862e8190d250d4a06de0c551b9916',
+    expectedUnitCount: 49, expectedWordCount: 3070, maxChapter: 1, incomplete: true,
+    language: 'en', originalLanguage: 'القبطية الصعيدية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'ترجمة صموئيل زينر عن القبطية، حررها مارك ماتيسون، وقد أُهديت إلى الملك العام بنص صريح من صفحة المصدر. أُفرغ المتن الباقي من مخطوط نجع حمادي الخامس، النص الخامس، في فصل واحد و٤٩ وحدة فقرةً فقرة، مع حفظ أرقام صفحات المخطوط والعلامات المطبوعة للفجوات والتصحيحات. العمل جزئي لأن الشاهد القبطي يتضمن فجوات ظاهرة؛ لم تُملأ. تذكر الصفحة نفسها خطأً أن الأساس هو المخطوط الأول، مع أن عنوانها ورقم النص والروابط إلى صفحات المخطوط تشير إلى الخامس، النص الخامس؛ لذلك لم نعتمد ذلك الوصف الخاطئ.'
+  },
+  {
     bookCode: 'APJAMES', slug: 'en-harris-syriac-revelation-james',
     nameAr: 'رؤيا يعقوب الرسول السريانية: ترجمة هاريس',
     nameEn: 'J. Rendel Harris English Syriac Revelation of James the Apostle', abbreviation: 'APJAMES-EN',
@@ -2218,6 +2240,7 @@ export function parseActsThomas(content, source) {
 async function parseChapters(content, source) {
   if (source.kind === 'reviewed-text-file') return parseReviewedText(content, source);
   if (source.kind === 'reviewed-chapter-text-file') return parseReviewedChapterText(content, source);
+  if (source.kind === 'reviewed-unit-text-file') return parseReviewedUnitText(content, source);
   if (source.kind === 'complete-letter-html') {
     const body = content.split(/<h[1-6]\b[^>]*>\s*About this page\s*<\/h[1-6]>/i)[0];
     const headings = [...body.matchAll(/<h[1-6]\b[^>]*>\s*Chapter\s+(\d+)\.([\s\S]*?)<\/h[1-6]>/gi)];
@@ -2404,7 +2427,7 @@ async function run() {
       source.language, source.url, source.sourceType, source.notes, source.siteScope || 'both', 40 + index
     );
     const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
-    const content = ['reviewed-text-file', 'reviewed-chapter-text-file'].includes(source.kind)
+    const content = ['reviewed-text-file', 'reviewed-chapter-text-file', 'reviewed-unit-text-file'].includes(source.kind)
       ? await readFile(source.textFile, 'utf8')
       : ['structured-html', 'sacredthings-html', 'ertale-chapter-html', 'diatessaron-wikisource', 'intertextual-paged-chapters-html'].includes(source.kind)
         ? null
