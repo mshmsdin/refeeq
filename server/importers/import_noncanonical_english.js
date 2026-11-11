@@ -867,6 +867,7 @@ export const SOURCES = [
     url: 'https://www.sacredthings.org/docs/assumption-1/',
     kind: 'sacredthings-html',
     maxChapter: 12,
+    incomplete: true,
     language: 'en',
     originalLanguage: 'اللاتينية مع إعادة بناء نقدية',
     sourceType: 'html',
@@ -881,10 +882,11 @@ export const SOURCES = [
     url: 'https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Mois.xml',
     kind: 'ocp-xml',
     maxChapter: 12,
+    incomplete: true,
     language: 'la',
     originalLanguage: 'اللاتينية',
     sourceType: 'tei-xml',
-    notes: 'الشاهد اللاتيني الإلكتروني من Online Critical Pseudepigrapha، مع حفظ التقسيم الإصحاحي والعددي للشاهد.'
+    notes: 'الشاهد اللاتيني الإلكتروني من Online Critical Pseudepigrapha، وهو الباقي من مخطوط لاتيني واحد؛ يحفظ اثني عشر فصلاً وينقطع قبل الخاتمة، مع حفظ التقسيم الإصحاحي والعددي للشاهد.'
   },
   {
     bookCode: 'ADAMCON', slug: 'en-malan-conflict-adam-eve',
