@@ -2094,6 +2094,17 @@ export const ADDITIONAL_SOURCES = [
     url: `${OCP_RAW_BASE}Esdl.xml`, kind: 'ocp-flat-xml', maxChapter: 1, expectedUnits: 113, language: 'en', versionLanguage: 'English',
     originalLanguage: 'اللاتينية', sourceType: 'open-critical-translation',
     notes: 'ترجمة OCP الإنجليزية للشاهد اللاتيني في الطبعة الرقمية النقدية لرؤيا عزرا. النص المنشور يتضمن 113 وحدة مرقمة في فصل واحد وينتهي بعبارة الختام؛ أرقام الوحدات الأصلية محفوظة مع وجود أربع قفزات في الترقيم (17 و42 و65 و66) كما في ملف الطبعة. وحدات اللاتينية والإنجليزية متطابقة في الترقيم؛ لا تدل القفزات وحدها على نص مفقود. مستودع OCP مرخص بنسبة العمل للمصدر 4.0.'
+  },
+  {
+    bookCode: 'APEZRA', slug: 'en-walker-greek-apocalypse-ezra-1885',
+    nameAr: 'ترجمة ووكر الإنجليزية لرؤيا عزرا اليونانية',
+    nameEn: 'A. Walker English Greek Apocalypse of Ezra', abbreviation: 'APEZRA-EN-ANF',
+    url: 'https://www.tertullian.org/fathers2/ANF-08/anf08-106.htm', kind: 'reviewed-text-file',
+    textFile: new URL('./texts/greek-apocalypse-ezra-walker-anf-1885.txt', import.meta.url),
+    expectedSha256: '856efa5eac8c34e65c010248bf4abd3cd556f6e9f87ed1e38dbfebecaa31ab53',
+    expectedWordCount: 3297, maxChapter: 1,
+    language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'ترجمة أ. ووكر الإنجليزية في آباء ما قبل نيقية، المجلد الثامن، طبعة ١٨٨٥، الصفحات ٥٧١–٥٧٤؛ النص الرقمي من نسخة الطبعة المنشورة لدى ترتليان. الترجمة مبنية على نص تيشندورف اليوناني، وتحفظ هنا كشاهد إنجليزي مستقل في فصل واحد لأن الطبعة لا تقسمه إلى فصول أو أعداد. لا تدّعي هذه الترجمة مطابقة سطرية لتقسيم OCP الحديث؛ النص الإنجليزي الكامل المتاح محفوظ من دون حواشي الطبعة.'
   }
 ];
 
