@@ -1897,6 +1897,20 @@ const OCP_RAW_BASE = 'https://raw.githubusercontent.com/OnlineCriticalPseudepigr
 
 export const ADDITIONAL_SOURCES = [
   {
+    bookCode: 'SHEM', slug: 'en-mingana-book-shem-1917',
+    nameAr: 'ترجمة منغانا الإنجليزية لكتاب سام بن نوح عن بداية السنة',
+    nameEn: 'Alphonse Mingana English Translation of the Book of Shem, Son of Noah',
+    abbreviation: 'SHEM-EN',
+    url: 'https://archive.org/download/someearlyjudaeoc00ming/someearlyjudaeoc00ming.pdf',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/book_shem_mingana_1917.json', import.meta.url),
+    expectedSha256: '3450158e81794a55582441519be0b7af0cb5bbf96fba8309a9195fd342f838aa',
+    expectedUnitCount: 12, expectedVerseNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    expectedWordCount: 1925, maxChapter: 1, incomplete: true,
+    language: 'en', originalLanguage: 'السريانية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'ترجمة ألفونس منغانا الإنجليزية المنشورة سنة ١٩١٧ للنص المنسوب إلى سام بن نوح، في «وثائق يهودية مسيحية مبكرة من مكتبة جون رايلاندز»، الصفحات ٢٠–٢٩. يذكر المحقق أن شاهده المخطوط جون رايلاندز السرياني ٤٤ (وكان مرقماً ١٦٥)، وأنه لا يسبق القرن الخامس عشر، وأن نسخه رديء كثير السقط والاضطراب. فرغت الأقسام الاثني عشر المطبوعة بحسب البروج عن صفحات الطبعة ٢٤–٢٩، وقورنت بصور الصفحات؛ أبقيت مواضع الفقد بعلامة […] ولم أستكمل أي كلمة مفقودة. الترجمة المنشورة في ١٩١٧ للباحث المتوفى سنة ١٩٣٧ ضمن الملك العام في الاتحاد الأوروبي؛ هذا استيراد للترجمة الإنجليزية لا تفريغ للأصل السرياني، وحالة الشاهد «جزئي» بسبب فجوات المخطوط والقراءات غير المحسومة. [الكتاب المصور وبيانات النشر](https://archive.org/details/someearlyjudaeoc00ming).'
+  },
+  {
     bookCode: 'SEVDAN', slug: 'en-project-seventh-vision-daniel',
     nameAr: 'ترجمة إنجليزية جديدة للرؤيا السابعة لدانيال عن الترجمة الألمانية التاريخية',
     nameEn: 'Project English Translation of Daniel’s Seventh Vision from the 1892 German Edition',
