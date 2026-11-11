@@ -2084,9 +2084,9 @@ export const ADDITIONAL_SOURCES = [
   {
     bookCode: 'CONFESD', slug: 'la-ocp-confession-esdras',
     nameAr: 'الشاهد اللاتيني لاعتراف عزرا', nameEn: 'OCP Latin Confession of Esdras', abbreviation: 'CONFESD-LA',
-    url: `${OCP_RAW_BASE}ConfEsdr.xml`, kind: 'ocp-xml', maxChapter: 1, language: 'la', versionLanguage: 'Latin',
+    url: `${OCP_RAW_BASE}ConfEsdr.xml`, kind: 'ocp-xml', maxChapter: 1, chapterOffset: -7, replaceExistingVerses: true, language: 'la', versionLanguage: 'Latin',
     originalLanguage: 'اللاتينية', sourceType: 'open-critical-edition',
-    notes: 'نص لاتيني قصير من طبعة بنسلي 1895؛ مستقل عن عزرا الثاني وكلمة ورؤيا عزرا.'
+    notes: 'نص لاتيني قصير من طبعة بنسلي 1895، وهو عزرا الثاني ٨:٢٠–٣٦ معروض كعمل مستقل في فصل واحد؛ تُحفظ أرقام الأعداد الأصلية ٢٠–٣٦. لا يخلط مع كلمة ورؤيا عزرا.'
   },
   {
     bookCode: 'VISZEZRA', slug: 'en-ocp-latin-vision-ezra',
@@ -2448,7 +2448,12 @@ async function run() {
       label_en=excluded.label_en, availability_status='available',
       source_type=excluded.source_type, notes=excluded.notes
   `);
-  const insertMany = db.transaction((rows) => rows.forEach((row) => insertVerse.run(...row)));
+  const insertMany = db.transaction((rows, replaceExisting) => {
+    if (replaceExisting) {
+      db.prepare('DELETE FROM bible_verses WHERE translation_id=? AND book_code=?').run(...replaceExisting);
+    }
+    rows.forEach((row) => insertVerse.run(...row));
+  });
   const legacyEthiopic = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get('gez-ocp-enoch');
   if (legacyEthiopic) {
     db.prepare('UPDATE bible_translations SET is_active=0 WHERE id=?').run(legacyEthiopic.id);
@@ -2470,7 +2475,7 @@ async function run() {
       translationId, source.bookCode, chapter.chapter + (source.chapterOffset || 0), chapter.verse, chapter.text,
       normalizeArabicText(chapter.text), chapter.sourceUrl || source.url
     ]);
-    insertMany(rows);
+    insertMany(rows, source.replaceExistingVerses ? [translationId, source.bookCode] : null);
     db.prepare('UPDATE bible_books SET chapter_count = CASE WHEN chapter_count < ? THEN ? ELSE chapter_count END WHERE code=?')
       .run(source.maxChapter, source.maxChapter, source.bookCode);
     db.prepare(`
