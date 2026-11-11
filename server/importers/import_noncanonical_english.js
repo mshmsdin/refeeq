@@ -2068,6 +2068,16 @@ export const ADDITIONAL_SOURCES = [
     notes: 'شاهد لاتيني من طبعة دي بروين 1925، مستقل عن النص اليوناني الآخر المعروف برؤيا إيليا.'
   },
   {
+    bookCode: 'VISEL', slug: 'en-project-vision-elijah-latin',
+    nameAr: 'ترجمة إنجليزية لشاهد رؤيا إيليا اللاتيني', nameEn: 'Project English Translation of the Latin Vision of Elijah', abbreviation: 'VISEL-EN',
+    url: `${OCP_RAW_BASE}VisEl.xml`, kind: 'reviewed-unit-text-file', maxChapter: 1, incomplete: false, language: 'en', versionLanguage: 'English',
+    originalLanguage: 'اللاتينية', sourceType: 'open-critical-translation',
+    textFile: new URL('./data/vision_elijah_latin_project_english.json', import.meta.url),
+    expectedSha256: 'eb82decc7bd908894dcb51a2974ef0fe13f40bd13da84388751a18032eb7ab83',
+    expectedUnitCount: 11, expectedWordCount: 220,
+    notes: 'ترجمة إنجليزية جديدة أعدها المشروع مباشرة عن وحدات شاهد OCP اللاتيني الكامل الإحدى عشرة؛ حُفظ اللفظ اللاتيني الملتبس بعلامة صريحة ولم يُستكمل بالتخمين. بيانات الطبعة تنسب النص إلى دي بروين 1925، المجلد 37، ص 58، الأسطر 400–417. ملفات OCP النصية متاحة بموجب تراخيص مفتوحة معلنة على موقع المشروع.'
+  },
+  {
     bookCode: 'NARMOS', slug: 'grc-ocp-narrative-moses-joshua',
     nameAr: 'الشاهد اليوناني لرواية موسى ويشوع', nameEn: 'OCP Greek Narrative of Moses and Joshua', abbreviation: 'NARMOS-GRC',
     url: `${OCP_RAW_BASE}NarrMois.xml`, kind: 'ocp-xml', maxChapter: 1, language: 'grc', versionLanguage: 'Greek',
