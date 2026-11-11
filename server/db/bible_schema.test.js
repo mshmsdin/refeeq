@@ -27,6 +27,22 @@ test('retains specific expansion summaries after repeated initialization', () =>
   assert.doesNotMatch(thomas.summary_ar + ephesians.summary_ar, /مدخل موسع/);
 });
 
+test('registers Questions of Ezra separately from the other Ezra works', () => {
+  initBibleSchema();
+  const db = getDb();
+  const book = db.prepare(`
+    SELECT bb.name_ar, bc.slug, bb.canonical_order
+    FROM bible_books bb JOIN bible_collections bc ON bc.id = bb.collection_id
+    WHERE bb.code = 'QEZRA'
+  `).get();
+
+  assert.deepEqual(book, {
+    name_ar: 'أسئلة عزرا',
+    slug: 'pseudepigrapha',
+    canonical_order: 8.8
+  });
+});
+
 test('preserves available parallel source details after schema initialization', () => {
   initBibleSchema();
   const db = getDb();
