@@ -1939,6 +1939,20 @@ export const ADDITIONAL_SOURCES = [
     notes: 'ترجمة إنجليزية جديدة أُعدت عن الرواية الأرمنية الأقصر B من «هايْسمَفورك» المطبوع بالقسطنطينية سنة ١٧٣٠، الصفحتين ٤٢٤–٤٢٥. يقابل التفريغ الأرمني المنشور ثلاثة شواهد، بينها طبعة ١٧٣٠ ومخطوط أكسفورد ومخطوط فيينا، ويعرض الرواية إلى خاتمتها. حفظت الترجمة الوحدات الأربع عشرة وترقيمها، ولم تُنسخ ترجمة ستون الإنجليزية المحمية الحقوق. النص الأرمني القديم ملك عام؛ تبقى مقابلة صورة الصفحة الأصلية مباشرةً مطلوبة لأن خادم النسخة الرقمية متقطع. [التفريغ الأرمني ومقابلة الشواهد](https://arar.sci.am/Content/268347/MayqlStoun.pdf)؛ [طبعة ستون الإنجليزية للمراجعة العلمية](https://www.rexresearch1.com/DeadSeaScrolls/OldTestamentPseudepigrapha1Charlesworth.pdf).'
   },
   {
+    bookCode: 'QEZRA', slug: 'en-issaverdens-questions-ezra-1901',
+    nameAr: 'ترجمة إيسافردنس الإنجليزية الجزئية لأسئلة عزرا، الرواية الأرمنية الأطول',
+    nameEn: 'James Issaverdens English Translation of Questions of Ezra, Recension A (Partial)',
+    abbreviation: 'QEZRA-A-EN',
+    url: 'https://archive.org/download/cu31924091353445/cu31924091353445.pdf',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/questions_ezra_issaverdens_1901.json', import.meta.url),
+    expectedSha256: '0d4a25dc0472864c6ab6396bc75fd3039fd7ca945a0a78ace2582d71b5ebcf9f',
+    expectedUnitCount: 6, expectedVerseNumbers: [1, 2, 3, 4, 5, 6],
+    expectedWordCount: 1223, maxChapter: 1, incomplete: true,
+    language: 'en', originalLanguage: 'الأرمنية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'ترجمة جايمس إيسافردنس الإنجليزية المنشورة سنة ١٩٠١، الصفحات المطبوعة ٦٩٧–٧٠٣، عن الرواية الأرمنية الأطول في مخطوط طقسي رقم ٥٧٠ المؤرخ سنة ١٢٠٨. فُرغ النص المنشور كاملاً إلى ست وحدات موضوعية وقورنت الصفحات المصورة؛ ينتهي النص في منتصف الكلام. يصرح المترجم بفقد ورقتين، واهتراء هوامش ست ورقات أخرى، وفقد بقية الأسئلة؛ لذلك الحالة جزئية، ولم يُستكمل المفقود. توفي المترجم سنة ١٩٠٢ بحسب فهرس المكتبة الرقمية الأرمنية، والترجمة ضمن الملك العام في الاتحاد الأوروبي. هذا سجل إنجليزي للرواية A؛ لا يتضمن بعد تفريغ الأصل الأرمني. [الكتاب المصور وبيانات طبعة ١٩٠١](https://archive.org/details/cu31924091353445)؛ [سيرة المترجم وبيان وفاته](https://digilib.aua.am/book/4850/5350/27803/ՆԱՄԱԿԱՆԻ?lang=am).'
+  },
+  {
     bookCode: 'TAISAAC', slug: 'en-box-gaselee-testament-isaac',
     nameAr: 'ترجمة غاسيل الإنجليزية لوصية إسحاق',
     nameEn: 'S. Gaselee English Testament of Isaac', abbreviation: 'TAISAAC-EN',
