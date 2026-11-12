@@ -2,6 +2,7 @@
 // Run via: import { initBibleSchema } from './bible_schema.js'; initBibleSchema();
 
 import { getDb } from './schema.js';
+import { normalizeArabicText } from '../utils/arabic_nlp.js';
 
 export function initBibleSchema() {
   const db = getDb();
@@ -221,6 +222,65 @@ export function initBibleSchema() {
         source_notes=?, updated_at=CURRENT_TIMESTAMP
     WHERE book_code='GIANTS'
   `).run(giantsRightsNote);
+
+  // Repair known stale import artifacts against the checked source text.
+  const legacyTextFixes = [
+    ['en-odeberg-3-enoch', 'ENO3', 4, 7, text => text.replace('&lt;', '<')],
+    ['en-wikisource-testament-solomon', 'TSOL', 1, 31, text => text.replace(' [ 52 ] , ​ [ 52 ] thou', ' [ 52 ] , ​ thou')],
+    ['en-wikisource-testament-solomon', 'TSOL', 1, 47, text => text.replace('turn them to … . [ 71 ]', 'turn them to …. [ 71 ]')],
+    ['en-wikisource-testament-solomon', 'TSOL', 1, 126, text => text.replace('Ameleouth — I then', 'Ameleouth —I then')],
+    ['en-wikisource-testament-solomon', 'TSOL', 1, 129, text => text.replace('​ [ 141 ] 128.', '​ 128.')],
+  ];
+  const getLegacyVerse = db.prepare(`
+    SELECT bv.id, bv.text FROM bible_verses bv
+    JOIN bible_translations bt ON bt.id=bv.translation_id
+    WHERE bt.slug=? AND bv.book_code=? AND bv.chapter=? AND bv.verse=?
+  `);
+  const updateLegacyVerse = db.prepare('UPDATE bible_verses SET text=?, search_text=? WHERE id=?');
+  for (const [slug, bookCode, chapter, verse, fixText] of legacyTextFixes) {
+    const row = getLegacyVerse.get(slug, bookCode, chapter, verse);
+    if (!row) continue;
+    const text = fixText(row.text);
+    if (text !== row.text) updateLegacyVerse.run(text, normalizeArabicText(text), row.id);
+  }
+  const tadam = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get('en-charles-life-adam-eve');
+  if (tadam) {
+    const chapter29 = db.prepare(`
+      SELECT verse, text, source_url FROM bible_verses
+      WHERE translation_id=? AND book_code='TADAM' AND chapter=29 ORDER BY verse
+    `).all(tadam.id);
+    const brokenVerse2 = chapter29.find((row) => row.verse === 2);
+    const shiftedVerse3 = chapter29.find((row) => row.verse === 3);
+    if (chapter29.length === 9 && brokenVerse2?.text.includes('/td') &&
+        shiftedVerse3?.text.startsWith('The Lord will appear in a flame of fire.')) {
+      const sourceUrl = shiftedVerse3.source_url;
+      const repairChapter29 = db.transaction(() => {
+        for (let verse = 9; verse >= 3; verse -= 1) {
+          db.prepare(`
+            UPDATE bible_verses SET verse=verse+1
+            WHERE translation_id=? AND book_code='TADAM' AND chapter=29 AND verse=?
+          `).run(tadam.id, verse);
+        }
+        const correctedVerse2 = 'Listen, my son Seth, even to the rest of the secrets and sacraments that shall be, which were revealed to me, when I had eaten of the tree of the knowledge, and knew and perceived what will come to pass in this age;';
+        db.prepare(`
+          UPDATE bible_verses SET text=?, search_text=?, imported_at=CURRENT_TIMESTAMP
+          WHERE translation_id=? AND book_code='TADAM' AND chapter=29 AND verse=2
+        `).run(correctedVerse2, normalizeArabicText(correctedVerse2), tadam.id);
+        const missingVerse3 = 'What God intends to do to his creation, the race of men, [in the times to come].';
+        db.prepare(`
+          INSERT INTO bible_verses (translation_id, book_code, chapter, verse, text, search_text, source_url)
+          VALUES (?, 'TADAM', 29, 3, ?, ?, ?)
+        `).run(tadam.id, missingVerse3, normalizeArabicText(missingVerse3), sourceUrl);
+      });
+      repairChapter29();
+    }
+  }
+  db.prepare(`
+    DELETE FROM bible_verses
+    WHERE translation_id=(SELECT id FROM bible_translations WHERE slug='en-charles-2-baruch')
+      AND book_code='2BAR' AND chapter=37 AND verse=2
+      AND text='And I indeed awoke and arose. 38-40. Interpretation of the Vision'
+  `).run();
 
   console.log('[Bible] Schema initialized.');
 }

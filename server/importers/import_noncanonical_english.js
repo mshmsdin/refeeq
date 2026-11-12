@@ -440,10 +440,12 @@ export const SOURCES = [
     url: 'https://onthewaytoithaca.wordpress.com/apocrypha-collection/vita-adae-et-evae-en/',
     kind: 'vita-adae-eve-html',
     maxChapter: 57,
+    replaceExistingVerses: true,
+    expectedUnits: 168,
     language: 'en',
     originalLanguage: 'اليونانية واللاتينية مع صيغ موازية',
     sourceType: 'public-domain-text',
-    notes: 'ترجمة آر. هـ. تشارلز للنص اللاتيني من طبعة 1913، في ٥٧ إصحاحاً؛ يسجلها الموقع مستقلة عن رؤيا موسى اليونانية والصيغ السلافية والأرمنية والقبطية التي تحتاج إلى سجلات مقارنة لاحقة.'
+    notes: 'ترجمة آر. هـ. تشارلز للنص اللاتيني من طبعة 1913. استخرجت خلايا الجدول الـ١٦٨ في ٥٧ إصحاحاً، ورقمتها بحسب ترتيب الظهور لأن المصدر يكرر بعض الأرقام ويحوي خلايا غير مغلقة في مواضع؛ لا تخلط مع رؤيا موسى اليونانية أو الصيغ السلافية والأرمنية والقبطية.'
   },
   {
     bookCode: 'APMO',
@@ -1320,13 +1322,22 @@ function parseVitaAdaeEveChapters(content, source) {
     const end = headings[index + 1]?.index ?? content.length;
     const section = content.slice(heading.index, end);
     let verse = 0;
-    for (const match of section.matchAll(/<td\b[^>]*>\s*(\d+)\s*<\/td>\s*<td\b[^>]*>([\s\S]*?)<\/td>/gi)) {
-      const text = stripHtml(match[2]);
-      if (text.length <= 2) continue;
+    const units = [...section.matchAll(/<td\b[^>]*>\s*(\d+)\s*<\/td>\s*<td\b[^>]*>/gi)];
+    for (const [unitIndex, unit] of units.entries()) {
+      const unitEnd = units[unitIndex + 1]?.index ?? section.length;
+      let textHtml = section.slice(unit.index + unit[0].length, unitEnd);
+      const rowEnd = textHtml.search(/<\/tr\s*>/i);
+      if (rowEnd >= 0) textHtml = textHtml.slice(0, rowEnd);
+      textHtml = textHtml.replace(/(?:&lt;)?\/td&gt;\s*(?:<br\s*\/?>)?\s*$/i, '');
+      const text = stripHtml(textHtml);
+      if (text.length <= 2) throw new Error(`نص الوحدة ${heading.chapter}:${verse + 1} فارغ في ${source.slug}`);
       verse += 1;
       chapters.push({ chapter: heading.chapter, verse, text, sourceUrl: source.url });
     }
-    if (!verse) throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+    if (verse === 0) throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
+  }
+  if (source.expectedUnits && chapters.length !== source.expectedUnits) {
+    throw new Error(`اكتُشفت ${chapters.length} وحدة في ${source.slug}، والمتوقع ${source.expectedUnits}`);
   }
   return chapters;
 }
