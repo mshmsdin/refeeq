@@ -2058,6 +2058,32 @@ export const ADDITIONAL_SOURCES = [
     notes: 'ترجمة ر. هـ. تشارلز في كتابه عن الأسفار القانونية الثانية والمنحولات، المجلد الثاني، طبعة أكسفورد ١٩١٣، الملحق الثاني، الصفحات المطبوعة ٣٦٤–٣٦٧؛ روجع التفريغ على صور الصفحات في نسخة الأرشيف. جُمعت المقاطع في أربعة أقسام بحسب عناوين الشواهد في الطبعة، لا بوصفها فصولاً أصلية: شذرتان آراميتان من مجموعة كامبردج، شذرات آرامية من مجموعة بودلي، استمرار يوناني موسوم في المصدر، ثم بقية شذرات كامبردج. أُبقيت علامات السقط والاستدراك المطبوعة بين الأقواس، وأرقام الشواهد في عناوين الأقسام. هذه ترجمة إنجليزية لنصوص مجزأة، وليست تفريغاً آرامياً أو يونانياً أصلياً، ولا تتمة كاملة لوصية لاوي؛ تبقى الحالة جزئية. الطبعة التاريخية ١٩١٣ ملك عام.'
   },
   {
+    bookCode: 'APOCEL', slug: 'grc-psi-i-7-apocalypse-elijah-1912',
+    nameAr: 'الشاهد اليوناني الشذري من رؤيا إيليا (PSI I 7)',
+    nameEn: 'PSI I 7 Greek Papyrus Fragment of the Apocalypse of Elijah', abbreviation: 'APOCEL-GR',
+    url: 'https://archive.org/details/papirigrecielati01sociuoft/page/16/mode/1up',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/apocalypse_elijah_psi_1912_greek.json', import.meta.url),
+    expectedSha256: 'dcb07bf1b20c2e7370bd84d49497fc19121933c297bc280526838fa411ebc125',
+    expectedUnitCount: 7, expectedVerseNumbers: [1, 2, 3, 4, 5, 6, 7],
+    expectedWordCount: 24, maxChapter: 1, incomplete: true,
+    language: 'greek', originalLanguage: 'اليونانية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'تفريغ الأسطر السبعة على ظهر البردية PSI I 7، كما طبعه إرمينيغيلدو بستللي في Papiri greci e latini، المجلد الأول، فلورنسا ١٩١٢، ص ١٦؛ قوبلت الكلمات بصورة الصفحة وحُفظت مواضع الفقد، مع توحيد علامة الفجوة إلى […]. الأقواس تحفظ الاستدراك والسقط في الطبعة، والفهرس البحثي الحديث يصف هذا الوجه بأنه نهاية رؤيا إيليا. لم أستورد الأسطر الخمسة على الوجه الآخر لأن المحرر نفسه لم يستطع تحديد موضعها ولا إثبات أنها من النص نفسه. المتن هنا شذرة من نهاية عمل أكبر، وليس سفراً كاملاً ولا فصولاً أصلية؛ أرقام الوحدات تسلسلية للعرض فقط. طبعة بستللي عامة الحقوق: توفي سنة ١٩٢٧، ويؤكد سجل الأرشيف الحكومي الإيطالي ذلك. [الطبعة المصورة، ص ١٦](https://archive.org/details/papirigrecielati01sociuoft/page/16/mode/1up)؛ [وصف البردية وسبعة أسطر الوجه الخلفي](https://4care-skos.mf.no/4care-artefacts/493/)؛ [سجل وفاة بستللي](https://siusa-archivi.cultura.gov.it/cgi-bin/pagina.pl?Chiave=50473&TipoPag=prodpersona).'
+  },
+  {
+    bookCode: 'APOCEL', slug: 'ar-psi-i-7-apocalypse-elijah-editorial-parallel-1912',
+    nameAr: 'صياغة عربية تفسيرية لشرح بستللي عن النص القبطي الموازي',
+    nameEn: 'Arabic Rendering of Pistelli’s German Explanation of the Coptic Parallel', abbreviation: 'APOCEL-AR',
+    url: 'https://archive.org/details/papirigrecielati01sociuoft/page/16/mode/1up',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/apocalypse_elijah_psi_1912_ar.json', import.meta.url),
+    expectedSha256: 'f28e17ad72fc8f9fd74a2238927e3150d3f9c1fffb5bf20a7cdda2e752ac4f17',
+    expectedUnitCount: 7, expectedVerseNumbers: [1, 2, 3, 4, 5, 6, 7],
+    expectedWordCount: 31, maxChapter: 1, incomplete: true,
+    language: 'ar', originalLanguage: 'اليونانية؛ وهذه الصياغة تتبع شرحاً ألمانياً للنص القبطي الموازي', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'صياغة عربية لمعنى الشرح الألماني للنص القبطي الموازي الذي يورده بستللي سنة ١٩١٢ عن طبعة شتايندورف، وليست ترجمة حرفية للبردية اليونانية. وُضعت علامة […] حول ما يورده الشرح ولا تحفظه الأسطر اليونانية بوضوح؛ لذلك لا يجوز استعمالها لتكميل الشذرة أو دمجها في شاهد يوناني كامل. أُبقيت في سبع وحدات عرضية لموازاة مواضع الأسطر، وحالة العمل جزئية.'
+  },
+  {
     bookCode: 'SEELI', slug: 'en-othergospels-sefer-elijah-zinner-public-domain',
     nameAr: 'ترجمة صموئيل زينر الإنجليزية لكتاب إيليا العبري',
     nameEn: 'Samuel Zinner Public-Domain English Sefer Elijah', abbreviation: 'SEELI-EN',
