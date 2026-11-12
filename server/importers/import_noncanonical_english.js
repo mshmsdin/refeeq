@@ -2149,9 +2149,9 @@ export const ADDITIONAL_SOURCES = [
   {
     bookCode: 'NARMOS', slug: 'grc-ocp-narrative-moses-joshua',
     nameAr: 'الشاهد اليوناني لرواية موسى ويشوع', nameEn: 'OCP Greek Narrative of Moses and Joshua', abbreviation: 'NARMOS-GRC',
-    url: `${OCP_RAW_BASE}NarrMois.xml`, kind: 'ocp-xml', maxChapter: 1, language: 'grc', versionLanguage: 'Greek',
+    url: `${OCP_RAW_BASE}NarrMois.xml`, kind: 'ocp-xml', maxChapter: 1, expectedUnits: 152, incomplete: true, language: 'grc', versionLanguage: 'Greek',
     originalLanguage: 'اليونانية', sourceType: 'open-critical-edition',
-    notes: 'النص اليوناني المحرر في طبعة فاسيليف 1893؛ صفحة واحدة طويلة تضم 154 وحدة مصدرية.'
+    notes: 'التفريغ اليوناني الرقمي من ملف المشروع المنسوب إلى طبعة فاسيلييف ١٨٩٣. بمقابلته على صور الصفحات ٢٥٧–٢٦٤ ظهر تشويش وأخطاء تعرف آلي في مواضع كثيرة، كما يستبعد المستورد وحدتين قصيرتين من أصل ١٥٤ وحدة مصدرية. لذلك يعرض ١٥٢ وحدة محفوظة كشاهد أولي جزئي قيد المقابلة، ولا يصفها بأنها تفريغ كامل موثوق أو ترجمة.'
   },
   {
     bookCode: 'AMRAM', slug: 'arc-ocp-visions-amram',

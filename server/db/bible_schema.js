@@ -223,6 +223,21 @@ export function initBibleSchema() {
     WHERE book_code='GIANTS'
   `).run(giantsRightsNote);
 
+  const narmosReviewNote = 'التفريغ الرقمي المنسوب إلى طبعة فاسيلييف ١٨٩٣، ١٥٢ وحدة محفوظة من ١٥٤ وحدة مصدرية. أظهرت مقابلة صور الصفحات ٢٥٧–٢٦٤ تشويشاً وأخطاء تعرف آلي في مواضع كثيرة؛ لذلك هذا شاهد أولي جزئي قيد المقابلة، وليس تفريغاً كاملاً موثوقاً أو ترجمة.';
+  db.prepare(`
+    UPDATE bible_book_metadata
+    SET text_status='partial', english_status='planned', source_notes=?, updated_at=CURRENT_TIMESTAMP
+    WHERE book_code='NARMOS'
+  `).run(narmosReviewNote);
+  db.prepare(`
+    UPDATE bible_translations SET source_notes=?, updated_at=CURRENT_TIMESTAMP
+    WHERE slug='grc-ocp-narrative-moses-joshua'
+  `).run(narmosReviewNote);
+  db.prepare(`
+    UPDATE bible_book_sources SET notes=?
+    WHERE book_code='NARMOS' AND language='grc'
+  `).run(narmosReviewNote);
+
   // Repair known stale import artifacts against the checked source text.
   const legacyTextFixes = [
     ['en-odeberg-3-enoch', 'ENO3', 4, 7, text => text.replace('&lt;', '<')],
