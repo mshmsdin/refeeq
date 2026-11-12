@@ -869,9 +869,9 @@ export const SOURCES = [
     maxChapter: 12,
     incomplete: true,
     language: 'en',
-    originalLanguage: 'اللاتينية مع إعادة بناء نقدية',
-    sourceType: 'html',
-    notes: 'نص إنجليزي منسوب إلى طبعة آر. هـ. تشارلز، مع التنبيه إلى أن المخطوط الباقي ناقص وأن الاسم الأكاديمي الشائع هو وصية موسى.'
+    originalLanguage: 'اللاتينية',
+    sourceType: 'public-domain-translation',
+    notes: 'ترجمة ر. هـ. تشارلز عن اللاتينية في طبعة ١٨٩٧؛ انتهت مدة حمايتها الأوروبية بعد ٧٠ سنة من وفاة المؤلف سنة ١٩٣١. تعرض صفحة المصدر الإصحاحات الباقية، مع إبقاء الانقطاع قبل الخاتمة وعدم استكماله.'
   },
   {
     bookCode: 'MOS',
@@ -882,11 +882,12 @@ export const SOURCES = [
     url: 'https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Mois.xml',
     kind: 'ocp-xml',
     maxChapter: 12,
+    expectedUnits: 134,
     incomplete: true,
     language: 'la',
     originalLanguage: 'اللاتينية',
     sourceType: 'tei-xml',
-    notes: 'الشاهد اللاتيني الإلكتروني من Online Critical Pseudepigrapha، وهو الباقي من مخطوط لاتيني واحد؛ يحفظ اثني عشر فصلاً وينقطع قبل الخاتمة، مع حفظ التقسيم الإصحاحي والعددي للشاهد.'
+    notes: 'الشاهد اللاتيني المحرر إلكترونياً في مشروع النصوص النقدية الرقمية المفتوحة، وفق طبعة أ. م. تشيرياني (١٨٦١)، وملفاته متاحة برخصة المشاع الإبداعي: النسب ٤٫٠. يحفظ الشاهد الباقي اثني عشر إصحاحاً و١٣٤ وحدة، وينقطع قبل الخاتمة؛ سُجل جزئياً ولم تُستكمل الفجوة.'
   },
   {
     bookCode: 'ADAMCON', slug: 'en-malan-conflict-adam-eve',
@@ -2507,15 +2508,16 @@ function parseRomanHtmlChapters(content, source) {
 
 async function run() {
   const onlySlugs = process.argv.flatMap((argument) => argument.startsWith('--only=') ? argument.slice('--only='.length).split(',') : []).map((slug) => slug.trim()).filter(Boolean);
-  const allSources = [...SOURCES, ...ADDITIONAL_SOURCES];
+  const declaredSources = [...SOURCES, ...ADDITIONAL_SOURCES];
+  const blockedSlugs = onlySlugs.filter((slug) => declaredSources.some((source) => source.slug === slug && source.importEligible === false));
+  if (blockedSlugs.length) throw new Error(`مصادر لم يثبت إذن إعادة نشرها: ${blockedSlugs.join(', ')}`);
+  const allSources = declaredSources.filter((source) => source.importEligible !== false);
   const selectedSources = onlySlugs.length ? allSources.filter((source) => onlySlugs.includes(source.slug)) : allSources;
   const unknownSlugs = onlySlugs.filter((slug) => !selectedSources.some((source) => source.slug === slug));
   if (unknownSlugs.length) throw new Error(`مصادر غير معروفة: ${unknownSlugs.join(', ')}`);
   initDatabase();
   initBibleSchema();
   const db = getDb();
-  const updateExistingSourceScope = db.prepare('UPDATE bible_translations SET site_scope=? WHERE slug=?');
-  for (const source of allSources) updateExistingSourceScope.run(source.siteScope || 'both', source.slug);
   const insertTranslation = db.prepare(`
     INSERT INTO bible_translations
       (slug, name_ar, name_en, abbreviation, language, source_url, source_type, source_notes, site_scope, is_active, display_order)
