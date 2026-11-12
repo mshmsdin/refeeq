@@ -1912,6 +1912,11 @@ const BALAAM_DEIR_ALLA_LOCATIONS = [
   ...Array.from({ length: 16 }, (_, index) => [1, index + 1]),
   ...Array.from({ length: 17 }, (_, index) => [2, index + 2]),
 ];
+const APDAN_GREEK_UNIT_LOCATIONS = [
+  [1, 1, 4], [1, 9, 17], [2, 1, 17], [3, 1, 10], [3, 12, 14], [4, 1, 12], [4, 14, 18],
+  [5, 1, 4], [5, 8, 11], [6, 2, 2], [6, 4, 6], [6, 11, 14], [7, 1, 7], [8, 1, 27],
+  [9, 1, 7], [10, 1, 11], [11, 1, 13], [12, 1, 13], [13, 1, 16],
+].flatMap(([chapter, start, end]) => Array.from({ length: end - start + 1 }, (_, index) => [chapter, start + index]));
 
 export const ADDITIONAL_SOURCES = [
   {
@@ -2193,6 +2198,18 @@ export const ADDITIONAL_SOURCES = [
     url: `${OCP_RAW_BASE}ApDan.xml`, kind: 'ocp-xml', maxChapter: 13, chapterOffset: -1, language: 'grc', versionLanguage: 'Greek',
     originalLanguage: 'اليونانية', sourceType: 'open-critical-edition',
     notes: 'طبعة OCP للشاهد اليوناني، وتحفظ الفصول ٢–١٤ من المصدر بترقيم العرض الداخلي ١–١٣.'
+  },
+  {
+    bookCode: 'APDAN', slug: 'en-project-apocalypse-daniel-greek',
+    nameAr: 'ترجمة إنجليزية جديدة عن الشاهد اليوناني لرؤيا دانيال',
+    nameEn: 'Project English Translation of the Greek Apocalypse of Daniel', abbreviation: 'APDAN-EN',
+    url: `${OCP_RAW_BASE}ApDan.xml`, kind: 'reviewed-unit-text-file', maxChapter: 13, incomplete: false,
+    textFile: new URL('./data/apocalypse_daniel_greek_project_english.json', import.meta.url),
+    expectedSha256: 'be5ebc409838afdc39eca4c64ccadb3bf3241dca961614d30ecd5497a58db195',
+    expectedUnitCount: 170, expectedUnitLocations: APDAN_GREEK_UNIT_LOCATIONS, expectedWordCount: 2482,
+    language: 'en', versionLanguage: 'English', originalLanguage: 'اليونانية',
+    sourceType: 'project-translation', siteScope: 'both',
+    notes: 'ترجمة إنجليزية جديدة أُعدت للمشروع مباشرة عن وحدات الشاهد اليوناني المنشورة في OCP، لا عن ترجمة زرفوس المحمية أو الترجمة التجارية الحديثة. تغطي الوحدات الـ١٧٠ نفسها، وتحفظ فجوات ترقيم الشاهد كما هي. تشير الأقواس التحريرية في موضعين إلى غموض اللفظ اليوناني ولا تستكمل ما لا يقوله المصدر. ملفات OCP متاحة بتراخيص مفتوحة؛ وتُنشر ترجمة المشروع برخصة المشاع الإبداعي النسب ٤٫٠ مع نسبة مصدر النص.'
   },
   {
     bookCode: 'APEZRA', slug: 'grc-ocp-greek-apocalypse-ezra',
