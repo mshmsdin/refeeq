@@ -1937,7 +1937,7 @@ export const ADDITIONAL_SOURCES = [
     url: 'https://oriental-world.org.ua/index.php/journal/article/download/765/755/',
     kind: 'reviewed-unit-text-file',
     textFile: new URL('./data/balaam_deir_alla_2025_ar.json', import.meta.url),
-    expectedSha256: '357880867a7c2b55b42ffe64046d76be6932a030a69d33b7e85cbaff195fe673',
+    expectedSha256: 'bee1fc8ce5ec3fc08284ef4bfc2e5310894a7f7e8762fae77d7afac1519af298',
     expectedUnitCount: 33, expectedUnitLocations: BALAAM_DEIR_ALLA_LOCATIONS,
     expectedWordCount: 380, maxChapter: 2, incomplete: true,
     language: 'ar', originalLanguage: 'الآرامية القديمة؛ وسيط الترجمة أوكراني',
