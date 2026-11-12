@@ -476,6 +476,7 @@ export const SOURCES = [
   {
     bookCode: 'GIANTS',
     slug: 'en-henning-manichaean-book-giants',
+    importEligible: false,
     nameAr: 'الترجمة الإنجليزية لكتاب العمالقة المانوي',
     nameEn: 'W. B. Henning English Manichaean Book of Giants',
     abbreviation: 'GIANTS-EN',
@@ -485,8 +486,8 @@ export const SOURCES = [
     incomplete: true,
     language: 'en',
     originalLanguage: 'الآرامية واللغات الإيرانية في شواهد متعددة',
-    sourceType: 'public-domain-text',
-    notes: 'ترجمة وليم ب. هننغ المنشورة سنة 1943 للنسخة المانوية المجزأة؛ تحفظ هنا كتقليد ماني مستقل عن شواهد قمران الآرامية، ولا تدعي أنها نص كامل أو إعادة بناء نهائية.'
+    sourceType: 'rights-unresolved-eu',
+    notes: 'ترجمة وليم ب. هننغ المنشورة سنة 1943 للنسخة المانوية المجزأة؛ يحفظها السجل كشاهد جزئي مستقل عن شواهد قمران الآرامية. يصف موقع المصدر الترجمة بأنها ملك عام دون تحديد النطاق الجغرافي؛ توفي هننغ سنة 1967، وبموجب مدة الحماية الأوروبية البالغة 70 سنة بعد الوفاة لا أعتمد هذا الادعاء وحده لإعادة النشر في الاتحاد الأوروبي. أوقف الاستيراد من هذا المصدر حتى إثبات إذن صالح أو انتهاء الحماية.'
   },
   {
     bookCode: 'TSOL',

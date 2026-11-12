@@ -200,6 +200,28 @@ export function initBibleSchema() {
   _seedBooks(db);
   _seedExpansionCatalog(db);
 
+  // Keep the fragmentary Henning translation out of distribution until EU reuse rights are established.
+  const giantsRightsNote = 'ترجمة وليم ب. هننغ المنشورة سنة 1943 للشواهد المانوية المجزأة. يصف موقع المصدر الترجمة بأنها ملك عام دون تحديد النطاق الجغرافي؛ توفي هننغ سنة 1967، لذلك لا يُعتمد هذا الادعاء وحده لإعادة النشر في الاتحاد الأوروبي. يلزم إثبات إذن صالح أو انتهاء مدة الحماية قبل إعادة التفعيل.';
+  db.prepare(`
+    UPDATE bible_translations
+    SET is_active=0, source_type='rights-unresolved-eu', source_notes=?, updated_at=CURRENT_TIMESTAMP
+    WHERE slug='en-henning-manichaean-book-giants'
+  `).run(giantsRightsNote);
+  db.prepare(`
+    UPDATE bible_book_metadata
+    SET text_status='partial',
+        english_status=CASE WHEN EXISTS (
+          SELECT 1 FROM bible_verses bv
+          JOIN bible_translations bt ON bt.id=bv.translation_id
+          WHERE bv.book_code='GIANTS' AND bt.language='en' AND bt.is_active=1
+            AND (bt.site_scope='both' OR bt.site_scope='bible')
+        ) THEN 'available' ELSE 'planned' END,
+        source_name='W. B. Henning English Manichaean Book of Giants',
+        source_url='https://othergospels.com/2giants/henning.json',
+        source_notes=?, updated_at=CURRENT_TIMESTAMP
+    WHERE book_code='GIANTS'
+  `).run(giantsRightsNote);
+
   console.log('[Bible] Schema initialized.');
 }
 
