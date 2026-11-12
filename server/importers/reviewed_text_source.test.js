@@ -68,3 +68,24 @@ test('preserves explicitly recorded gaps in a reviewed single-chapter witness', 
 
   assert.deepEqual(rows.map(({ chapter, verse }) => [chapter, verse]), [[1, 1], [1, 2], [1, 4]]);
 });
+
+test('preserves source chapter and line numbers when a multi-chapter witness has missing lines', () => {
+  const unitsText = JSON.stringify([
+    { chapter: 1, verse: 1, text: 'the source witness begins with a fragment.' },
+    { chapter: 1, verse: 2, text: 'the next source line preserves the reading.' },
+    { chapter: 2, verse: 2, text: 'the surviving line retains its source number.' },
+  ]);
+  const unitSource = {
+    slug: 'reviewed-multi-chapter-gapped-units-test',
+    expectedSha256: createHash('sha256').update(unitsText).digest('hex'),
+    expectedWordCount: 21,
+    expectedUnitCount: 3,
+    expectedUnitLocations: [[1, 1], [1, 2], [2, 2]],
+    maxChapter: 2,
+    url: 'https://example.invalid/source',
+  };
+
+  const rows = parseReviewedUnitText(unitsText, unitSource);
+
+  assert.deepEqual(rows.map(({ chapter, verse }) => [chapter, verse]), [[1, 1], [1, 2], [2, 2]]);
+});

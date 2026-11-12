@@ -1908,8 +1908,42 @@ async function parseTauEthiopicChapters(source) {
 
 const TESTAMENT_ADAM_OCP_URL = 'https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/TAdam.xml';
 const OCP_RAW_BASE = 'https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/';
+const BALAAM_DEIR_ALLA_LOCATIONS = [
+  ...Array.from({ length: 16 }, (_, index) => [1, index + 1]),
+  ...Array.from({ length: 17 }, (_, index) => [2, index + 2]),
+];
 
 export const ADDITIONAL_SOURCES = [
+  {
+    bookCode: 'BALAAM', slug: 'arc-deir-alla-balaam-2025',
+    nameAr: 'تفريغ نقش بلعام بحروف عبرية (الآرامية القديمة)',
+    nameEn: 'Deir Alla Balaam Inscription West Semitic Transcription',
+    abbreviation: 'BALAAM-ARC',
+    url: 'https://oriental-world.org.ua/index.php/journal/article/download/765/755/',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/balaam_deir_alla_2025_arc.json', import.meta.url),
+    expectedSha256: '0a095e4c24ee4cfac06e81d662206f6f38e4c0fd952b2e86b129781c914fe8e7',
+    expectedUnitCount: 33, expectedUnitLocations: BALAAM_DEIR_ALLA_LOCATIONS,
+    expectedWordCount: 338, maxChapter: 2, incomplete: true,
+    language: 'arc', originalLanguage: 'الآرامية أو لهجة كنعانية سامية شمالية غربية (التصنيف محل خلاف)',
+    sourceType: 'cc-by-4.0', siteScope: 'both',
+    notes: 'تفريغ إعادة بناء تركيبي الشاهدين الأول والثاني، ٣٣ سطراً محفوظاً/مستعاداً في دراسة دميترو تسولين وأناستاسيا أوريخوفا، «نقوش بلعام من دير علا» (عالم الشرق، ٢٠٢٥، العدد ١، ص ٩٧–١١٦، DOI: 10.15407/orientw2025.01.097). يعرض المصدر اللغة السامية الشمالية الغربية بحروف عبرية مربعة، لا بخط النقش الأصلي؛ ويتبع ترتيب هاكيت مع مواضع قليلة من قراءة ليفين. يبدأ التركيب الثاني من السطر ٢ لأن السطر ١ غير معروض/مفقود، وتحفظ الأقواس الفجوات وإعادات البناء. الدراسة مرخصة برخصة المشاع الإبداعي النسب ٤٫٠؛ ينسب التفريغ إلى المؤلفين والطبعة. لا يساوي هذا النص عملاً كاملاً: الشاهد مكسور، وتصنيف لغته وبعض قراءاته موضع خلاف. [الدراسة المفتوحة ونص الأسطر](https://oriental-world.org.ua/index.php/journal/article/download/765/755/)؛ [بيانات النشر](https://doi.org/10.15407/orientw2025.01.097).'
+  },
+  {
+    bookCode: 'BALAAM', slug: 'ar-deir-alla-balaam-2025',
+    nameAr: 'ترجمة عربية عن الترجمة الأوكرانية المشروحة لنقش بلعام',
+    nameEn: 'Arabic Rendering from the Annotated Ukrainian Translation of the Deir Alla Balaam Inscription',
+    abbreviation: 'BALAAM-AR',
+    url: 'https://oriental-world.org.ua/index.php/journal/article/download/765/755/',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/balaam_deir_alla_2025_ar.json', import.meta.url),
+    expectedSha256: '357880867a7c2b55b42ffe64046d76be6932a030a69d33b7e85cbaff195fe673',
+    expectedUnitCount: 33, expectedUnitLocations: BALAAM_DEIR_ALLA_LOCATIONS,
+    expectedWordCount: 380, maxChapter: 2, incomplete: true,
+    language: 'ar', originalLanguage: 'الآرامية القديمة؛ وسيط الترجمة أوكراني',
+    sourceType: 'cc-by-4.0-derivative-translation', siteScope: 'both',
+    notes: 'صياغة عربية للمقاطع المتاحة، أُعدت عن الترجمة الأوكرانية الحرفية والحرة في دراسة دميترو تسولين وأناستاسيا أوريخوفا، لا عن اللغة القديمة مباشرة. أبقينا الأسطر المفقودة ومواضع إعادة البناء والخلاف ظاهرة ولم نخترع نصاً للسقط. الدراسة الأصلية منشورة برخصة المشاع الإبداعي النسب ٤٫٠؛ ينسب العمل للمؤلفين والطبعة، وهذه الصياغة العربية ترجمة مشتقة من ترجمتهم الأوكرانية. [الدراسة المفتوحة والترجمة وتعليقات القراءة](https://oriental-world.org.ua/index.php/journal/article/download/765/755/)؛ [بيانات النشر](https://doi.org/10.15407/orientw2025.01.097).'
+  },
   {
     bookCode: 'SHEM', slug: 'en-mingana-book-shem-1917',
     nameAr: 'ترجمة منغانا الإنجليزية لكتاب سام بن نوح عن بداية السنة',

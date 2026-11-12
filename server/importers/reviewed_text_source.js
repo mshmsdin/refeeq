@@ -63,6 +63,12 @@ export function parseReviewedUnitText(rawText, source) {
   }
   const chapterVerses = new Map();
   const expectedFirstVerse = source.expectedFirstVerse ?? 1;
+  if (source.expectedUnitLocations && (!Array.isArray(source.expectedUnitLocations)
+    || source.expectedUnitLocations.length !== units.length
+    || source.expectedUnitLocations.some(([chapter, verse]) => !Number.isInteger(chapter) || chapter < 1
+      || chapter > source.maxChapter || !Number.isInteger(verse) || verse < 1))) {
+    throw new Error(`ترقيم مواضع الوحدات المصدرية غير صالح في ${source.slug}`);
+  }
   if (source.expectedVerseNumbers && (!Array.isArray(source.expectedVerseNumbers)
     || source.expectedVerseNumbers.length !== units.length
     || source.expectedVerseNumbers.some((verse) => !Number.isInteger(verse) || verse < 1))) {
@@ -75,13 +81,15 @@ export function parseReviewedUnitText(rawText, source) {
       throw new Error(`بيانات إحدى الوحدات غير صالحة في ${source.slug}`);
     }
     const chapterUnitCount = chapterVerses.get(unit.chapter) || 0;
-    const expectedVerse = source.expectedVerseNumbers
+    const expectedLocation = source.expectedUnitLocations?.[index];
+    const expectedChapter = expectedLocation?.[0] ?? 1;
+    const expectedVerse = expectedLocation?.[1] ?? (source.expectedVerseNumbers
       ? source.expectedVerseNumbers[index]
-      : chapterUnitCount + expectedFirstVerse;
-    if (source.expectedVerseNumbers && unit.chapter !== 1) {
+      : chapterUnitCount + expectedFirstVerse);
+    if (source.expectedVerseNumbers && !source.expectedUnitLocations && unit.chapter !== 1) {
       throw new Error(`ترقيم الوحدات المصدرية يدعم فصلاً واحداً فقط في ${source.slug}`);
     }
-    if (unit.verse !== expectedVerse) {
+    if (unit.chapter !== expectedChapter || unit.verse !== expectedVerse) {
       throw new Error(`تسلسل الوحدات غير مكتمل في الفصل ${unit.chapter} من ${source.slug}`);
     }
     chapterVerses.set(unit.chapter, chapterUnitCount + 1);
