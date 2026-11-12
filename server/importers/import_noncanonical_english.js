@@ -2058,6 +2058,18 @@ export const ADDITIONAL_SOURCES = [
     notes: 'ترجمة ر. هـ. تشارلز في كتابه عن الأسفار القانونية الثانية والمنحولات، المجلد الثاني، طبعة أكسفورد ١٩١٣، الملحق الثاني، الصفحات المطبوعة ٣٦٤–٣٦٧؛ روجع التفريغ على صور الصفحات في نسخة الأرشيف. جُمعت المقاطع في أربعة أقسام بحسب عناوين الشواهد في الطبعة، لا بوصفها فصولاً أصلية: شذرتان آراميتان من مجموعة كامبردج، شذرات آرامية من مجموعة بودلي، استمرار يوناني موسوم في المصدر، ثم بقية شذرات كامبردج. أُبقيت علامات السقط والاستدراك المطبوعة بين الأقواس، وأرقام الشواهد في عناوين الأقسام. هذه ترجمة إنجليزية لنصوص مجزأة، وليست تفريغاً آرامياً أو يونانياً أصلياً، ولا تتمة كاملة لوصية لاوي؛ تبقى الحالة جزئية. الطبعة التاريخية ١٩١٣ ملك عام.'
   },
   {
+    bookCode: 'ARL', slug: 'aramaic-levi-cambridge-pass-arendzen-1900',
+    nameAr: 'التفريغ الآرامي المطبوع لشذرات كامبردج من وثيقة لاوي (١٩٠٠)',
+    nameEn: 'Pass and Arendzen Aramaic Cambridge Genizah Fragment (1900)', abbreviation: 'ARL-ARC',
+    url: 'https://www.jstor.org/stable/1450696', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/aramaic_levi_pass_arendzen_1900.json', import.meta.url),
+    expectedSha256: '371b2a0ed3858f31cf6815ea7c8c57f3fe2bd6decbcacbf9da15e7eeb55b97ce',
+    expectedUnitCount: 2, expectedUnitLocations: [[1, 1], [4, 1]],
+    expectedWordCount: 616, maxChapter: 4, incomplete: true,
+    language: 'aramaic', originalLanguage: 'الآرامية اليهودية الأدبية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'تفريغ آرامي بالحروف العبرية عن النص المطبوع في مقال هـ. ليونارد باس وج. أرندتسن، «شذرة من نص آرامي لوصية لاوي»، مجلة المراجعة اليهودية الفصلية، المجلد ١٢، العدد ٤، ١٩٠٠، الصفحات ٦٥١–٦٦١؛ قوبلت الأسطر الظاهرة بصور الصفحات المطبوعة. الشاهد هو مخطوط كامبردج ذي الرمز تي إس ١٦٫٩٤، وتصفه معاجم الآرامية بأنه يحوي ستة أعمدة. يعرض هذا التفريغ الأعمدة الستة المطبوعة في المقال، لا صورة المخطوط؛ وحُفظت الفجوات والاستدراكات والعلامات التحريرية ولم يُستكمل السقط. يقتصر على الشاهد الكامبردجي ولا يضم شذرات بودلي أو قمران، ولا يجعل وثيقة لاوي كاملة. المقال موسوم للإتاحة المفتوحة للقراءة على جيستور، لكن ذلك ليس رخصة إعادة نشر. أُدرج التفريغ استناداً إلى استنتاج الملكية العامة في الاتحاد الأوروبي من انتهاء مدة الحماية بعد وفاة آخر المؤلفين سنة ١٩٥٤ (حياة المؤلف زائد ٧٠ سنة، انقضت بنهاية ٢٠٢٤)؛ هذا استنتاج حقوقي إقليمي وليس ترخيصاً صريحاً أو حكماً عالمياً. [المقال المفتوح وصوره](https://www.jstor.org/stable/1450696)؛ [بيانات المخطوط والأعمدة الستة](https://cal.huc.edu/get_file_info.php?coord=81405001)؛ [نعي باس في كلية سانت جونز، كامبردج](https://www.joh.cam.ac.uk/sites/default/files/Eagle/Eagle%20Chapters/Obituaries/Obituary_1930s.pdf)؛ [بيانات أرندتسن ووفاته](https://en.wikisource.org/wiki/Author:John_Peter_Arendzen)؛ [مدة الحماية الأوروبية](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32006L0116).'
+  },
+  {
     bookCode: 'APOCEL', slug: 'grc-psi-i-7-apocalypse-elijah-1912',
     nameAr: 'الشاهد اليوناني الشذري من رؤيا إيليا (PSI I 7)',
     nameEn: 'PSI I 7 Greek Papyrus Fragment of the Apocalypse of Elijah', abbreviation: 'APOCEL-GR',
