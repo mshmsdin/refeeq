@@ -1943,6 +1943,7 @@ export const ADDITIONAL_SOURCES = [
     nameAr: 'ترجمة إنجليزية جديدة للرواية الأرمنية الأقصر من أسئلة عزرا',
     nameEn: 'Project English Translation of Armenian Questions of Ezra, Recension B',
     abbreviation: 'QEZRA-B-EN',
+    importEligible: false,
     url: 'http://greenstone.flib.sci.am/gsdl/collect/armenian/Books/yasmavurq_1730_index.html',
     kind: 'reviewed-unit-text-file',
     textFile: new URL('./data/questions_ezra_arm_short_project_translation.json', import.meta.url),
@@ -1950,7 +1951,7 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 14, expectedVerseNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
     expectedWordCount: 309, maxChapter: 1, incomplete: false,
     language: 'en', originalLanguage: 'الأرمنية', sourceType: 'original-translation', siteScope: 'both',
-    notes: 'ترجمة إنجليزية جديدة أُعدت عن الرواية الأرمنية الأقصر B من «هايْسمَفورك» المطبوع بالقسطنطينية سنة ١٧٣٠، الصفحتين ٤٢٤–٤٢٥. يقابل التفريغ الأرمني المنشور ثلاثة شواهد، بينها طبعة ١٧٣٠ ومخطوط أكسفورد ومخطوط فيينا، ويعرض الرواية إلى خاتمتها. حفظت الترجمة الوحدات الأربع عشرة وترقيمها، ولم تُنسخ ترجمة ستون الإنجليزية المحمية الحقوق. النص الأرمني القديم ملك عام؛ تبقى مقابلة صورة الصفحة الأصلية مباشرةً مطلوبة لأن خادم النسخة الرقمية متقطع. [التفريغ الأرمني ومقابلة الشواهد](https://arar.sci.am/Content/268347/MayqlStoun.pdf)؛ [طبعة ستون الإنجليزية للمراجعة العلمية](https://www.rexresearch1.com/DeadSeaScrolls/OldTestamentPseudepigrapha1Charlesworth.pdf).'
+    notes: 'مصدر هذه الترجمة هو تفريغ حديث يقابل ثلاثة شواهد أرمنية، وينسب حقوق النشر إلى ماتيناداران ومايكل ستون؛ لم يثبت إذن إعادة استخدام التفريغ أو ترجمة مبنية عليه. لذلك هذا السجل محفوظ محلياً لكنه معطل وغير مؤهل للاستيراد أو النشر. طبعة «هايْسمَفورك» بالقسطنطينية ١٧٣٠ قديمة، إلا أن صورة الصفحتين ٤٢٤–٤٢٥ لم تُراجع مباشرةً بعد. يلزم استخراج النص من صورة الطبعة الأصلية، ثم إعداد ترجمة مستقلة عنها. [التفريغ الحديث وإشعار الحقوق](https://arar.sci.am/Content/268347/MayqlStoun.pdf)؛ [سجل الطبعة المصورة لعام ١٧٣٠](http://greenstone.flib.sci.am/gsdl/cgi-bin/library.cgi?a=d&c=armenian&d=HASHd07852dab7379797248cf8).'
   },
   {
     bookCode: 'QEZRA', slug: 'en-issaverdens-questions-ezra-1901',
