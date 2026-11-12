@@ -1956,7 +1956,19 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 12, expectedVerseNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     expectedWordCount: 1925, maxChapter: 1, incomplete: true,
     language: 'en', originalLanguage: 'السريانية', sourceType: 'public-domain-text', siteScope: 'both',
-    notes: 'ترجمة ألفونس منغانا الإنجليزية المنشورة سنة ١٩١٧ للنص المنسوب إلى سام بن نوح، في «وثائق يهودية مسيحية مبكرة من مكتبة جون رايلاندز»، الصفحات ٢٠–٢٩. يذكر المحقق أن شاهده المخطوط جون رايلاندز السرياني ٤٤ (وكان مرقماً ١٦٥)، وأنه لا يسبق القرن الخامس عشر، وأن نسخه رديء كثير السقط والاضطراب. فرغت الأقسام الاثني عشر المطبوعة بحسب البروج عن صفحات الطبعة ٢٤–٢٩، وقورنت بصور الصفحات؛ أبقيت مواضع الفقد بعلامة […] ولم أستكمل أي كلمة مفقودة. الترجمة المنشورة في ١٩١٧ للباحث المتوفى سنة ١٩٣٧ ضمن الملك العام في الاتحاد الأوروبي؛ هذا استيراد للترجمة الإنجليزية لا تفريغ للأصل السرياني، وحالة الشاهد «جزئي» بسبب فجوات المخطوط والقراءات غير المحسومة. [الكتاب المصور وبيانات النشر](https://archive.org/details/someearlyjudaeoc00ming).'
+    notes: 'ترجمة ألفونس منغانا الإنجليزية المنشورة سنة ١٩١٧ للنص الذي تسميه الطبعة «كتاب سام بن نوح»، في «وثائق يهودية مسيحية مبكرة من مكتبة جون رايلاندز»، الصفحات ٢٠–٢٩. يذكر المحقق أن شاهده المخطوط جون رايلاندز السرياني ٤٤ (وكان مرقماً ١٦٥)، وأنه لا يسبق القرن الخامس عشر، وأن نسخه رديء كثير السقط والاضطراب. فرغت الأقسام الاثني عشر المطبوعة بحسب البروج عن صفحات الطبعة ٢٤–٢٩، وقورنت بصور الصفحات؛ أبقيت مواضع الفقد بعلامة […] ولم أستكمل أي كلمة مفقودة. أشار بار إيلان في دراسة سنة ٢٠١٢ إلى أن نسبة هذا النص إلى سام قد تكون نتيجة خطأ ناسخ، وأنه ليس منحولاً؛ لذا يحفظ المشروع عنوان الطبعة ولا يحسم النسبة. الترجمة المنشورة في ١٩١٧ للباحث المتوفى سنة ١٩٣٧ ضمن الملك العام في الاتحاد الأوروبي؛ هذا سجل للترجمة الإنجليزية، وحالة الشاهد «جزئي» بسبب فجوات المخطوط والقراءات غير المحسومة. [الكتاب المصور وبيانات النشر](https://archive.org/details/someearlyjudaeoc00ming)؛ [دراسة بار إيلان](https://poj.peeters-leuven.be/content.php?id=3009275&journal_code=ARAM&url=article.php).'
+  },
+  {
+    bookCode: 'SHEM', slug: 'syr-mingana-book-shem-1917',
+    nameAr: 'التفريغ السرياني لكتاب سام بن نوح في طبعة منغانا',
+    nameEn: 'Alphonse Mingana Syriac Text of the Book of Shem, Son of Noah', abbreviation: 'SHEM-SYR',
+    url: 'https://biblicalstudies.org.uk/pdf/bjrl/004_059.pdf', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/book_shem_mingana_1917_syriac.json', import.meta.url),
+    expectedSha256: 'b435849792385eacb733054436af97ca5af0f183296db75227a6955f896d5d61',
+    expectedUnitCount: 8, expectedVerseNumbers: [1, 2, 3, 4, 5, 6, 7, 8],
+    expectedWordCount: 1073, maxChapter: 1, incomplete: true,
+    language: 'syr', originalLanguage: 'السريانية (لغة الشاهد؛ الأصل التاريخي غير محسوم)', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'تفريغ آلي لمتن النص السرياني المطبوع في طبعة منغانا ١٩١٧، الصفحات ٥٢–٥٩، عن المخطوط الوحيد جون رايلاندز السرياني ٤٤، الورقات ٨١ب–٨٣ب؛ الحواشي النقدية غير مضمّنة. تمثل كل وحدة صفحة مطبوعة، لا إصحاحاً أو عدداً أصلياً. قورنت الصفحات المتكررة مع إعادة النشر في نشرة جون رايلاندز صفحةً صفحة؛ الصفحة المطبوعة ٥٨، المفقودة من صور النسخة الأولى، استعيدت من الصفحة ١١٤ في إعادة النشر وتطابقت محاولتا التعرّف بدقتين. لم تُملأ مواضع السقط، ولا يُعدّ هذا التفريغ نصاً نقدياً جديداً؛ تبقى حالة الشاهد جزئية بسبب عيوب المخطوط وبعض أخطاء القراءة التي لم تُحسم. ويرى بار إيلان في دراسة سنة ٢٠١٢ أن نسبة الكتاب إلى سام قائمة على خطأ ناسخ وأنه ليس منحولاً؛ يورد المشروع النسبة لأنها عنوان الطبعة لا حكماً عليها. [النص السرياني المعاد نشره](https://biblicalstudies.org.uk/pdf/bjrl/004_059.pdf)؛ [فهرس المخطوط الوحيد وصوره](https://www.digitalcollections.manchester.ac.uk/view/MS-SYRIAC-00044)؛ [دراسة بار إيلان](https://poj.peeters-leuven.be/content.php?id=3009275&journal_code=ARAM&url=article.php).'
   },
   {
     bookCode: 'SEVDAN', slug: 'en-project-seventh-vision-daniel',
@@ -1978,14 +1990,14 @@ export const ADDITIONAL_SOURCES = [
     nameEn: 'Project English Translation of Armenian Questions of Ezra, Recension B',
     abbreviation: 'QEZRA-B-EN',
     importEligible: false,
-    url: 'http://greenstone.flib.sci.am/gsdl/collect/armenian/Books/yasmavurq_1730_index.html',
+    url: 'http://greenstone.flib.sci.am/gsdl/collect/armenian/Books/yasmavurq_1730/book/index.html',
     kind: 'reviewed-unit-text-file',
     textFile: new URL('./data/questions_ezra_arm_short_project_translation.json', import.meta.url),
     expectedSha256: '48cf41de7d5e36637e3e11b999a16be9521b32b745a756d6a160c062397d2a64',
     expectedUnitCount: 14, expectedVerseNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
     expectedWordCount: 309, maxChapter: 1, incomplete: false,
     language: 'en', originalLanguage: 'الأرمنية', sourceType: 'original-translation', siteScope: 'both',
-    notes: 'مصدر هذه الترجمة هو تفريغ حديث يقابل ثلاثة شواهد أرمنية، وينسب حقوق النشر إلى ماتيناداران ومايكل ستون؛ لم يثبت إذن إعادة استخدام التفريغ أو ترجمة مبنية عليه. لذلك هذا السجل محفوظ محلياً لكنه معطل وغير مؤهل للاستيراد أو النشر. طبعة «هايْسمَفورك» بالقسطنطينية ١٧٣٠ قديمة، إلا أن صورة الصفحتين ٤٢٤–٤٢٥ لم تُراجع مباشرةً بعد. يلزم استخراج النص من صورة الطبعة الأصلية، ثم إعداد ترجمة مستقلة عنها. [التفريغ الحديث وإشعار الحقوق](https://arar.sci.am/Content/268347/MayqlStoun.pdf)؛ [سجل الطبعة المصورة لعام ١٧٣٠](http://greenstone.flib.sci.am/gsdl/cgi-bin/library.cgi?a=d&c=armenian&d=HASHd07852dab7379797248cf8).'
+    notes: 'مصدر هذه الترجمة هو تفريغ حديث يقابل ثلاثة شواهد أرمنية، وينسب حقوق النشر إلى ماتيناداران ومايكل ستون؛ لم يثبت إذن إعادة استخدام التفريغ أو ترجمة مبنية عليه. لذلك هذا السجل محفوظ محلياً لكنه معطل وغير مؤهل للاستيراد أو النشر. جُلبت صور الصفحتين ٤٢٤–٤٢٥ من طبعة «هايْسمَفورك» بالقسطنطينية ١٧٣٠ وفُحصتا؛ لا تزال الترجمة غير مفعلة لأن التفريغ الآلي للأرمنية المطبوعة أخفق في إنتاج نص دقيق، وحقوق التفريغ الحديث وترجمته غير محسومة. يلزم تفريغ متخصص أو ترجمة مستقلة موثوقة عن الطبعة القديمة. [التفريغ الحديث وإشعار الحقوق](https://arar.sci.am/Content/268347/MayqlStoun.pdf)؛ [سجل الطبعة المصورة لعام ١٧٣٠](http://greenstone.flib.sci.am/gsdl/cgi-bin/library.cgi?a=d&c=armenian&d=HASHd07852dab7379797248cf8).'
   },
   {
     bookCode: 'QEZRA', slug: 'en-issaverdens-questions-ezra-1901',
