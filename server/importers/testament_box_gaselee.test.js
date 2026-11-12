@@ -13,6 +13,7 @@ test('imports the 1927 Isaac and Jacob witnesses as complete transcriptions with
   for (const [slug, opening, ending, sourcePages] of expected) {
     const source = ADDITIONAL_SOURCES.find((item) => item.slug === slug);
     assert.ok(source, `missing source metadata for ${slug}`);
+    assert.equal(source.url, 'https://gospelstudies.org.uk/earlychurch/pdf/e-books/box_g-h/testament-of-abraham_box.pdf');
     assert.equal(source.incomplete, true, `${slug} must preserve the source's documented textual gaps`);
     const rawText = await readFile(source.textFile, 'utf8');
     const [row] = parseReviewedText(rawText, source);
