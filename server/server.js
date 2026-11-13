@@ -8,6 +8,7 @@ import AdmZip from 'adm-zip';
 import { initDatabase, getDb, closeDb, getDbPath } from './db/schema.js';
 import { initBibleSchema } from './db/bible_schema.js';
 import { ensureMotaMuseImported } from './db/mota_muse_startup_import.js';
+import { ensureGiantsImported } from './db/giants_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -42,6 +43,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Mota Muse import failed:', error.message);
+}
+try {
+  if (await ensureGiantsImported()) {
+    console.log('[Bible startup] Imported licensed Qumran and English Giants witnesses from reviewed local files.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Giants import failed:', error.message);
 }
 
 const app = express();

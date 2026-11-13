@@ -98,5 +98,5 @@ export function parseReviewedUnitText(rawText, source) {
   if (wordCount !== source.expectedWordCount) {
     throw new Error(`عدد كلمات الوحدات غير مطابق في ${source.slug}: ${wordCount}`);
   }
-  return units.map((unit) => ({ ...unit, text: unit.text.trim(), sourceUrl: source.url }));
+  return units.map((unit) => ({ ...unit, text: unit.text.trim(), sourceUrl: unit.sourceUrl || source.url }));
 }

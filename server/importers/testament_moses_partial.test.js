@@ -8,6 +8,6 @@ test('keeps the surviving Latin Testament of Moses witnesses marked partial', ()
   for (const source of witnesses) {
     assert.equal(source.maxChapter, 12);
     assert.equal(source.incomplete, true);
-    assert.match(source.notes, /ناقص|ينقطع قبل الخاتمة/);
+    assert.match(source.notes, /ناقص|(?:ينقطع|الانقطاع) قبل الخاتمة/);
   }
 });

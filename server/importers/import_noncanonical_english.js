@@ -1920,6 +1920,32 @@ const APDAN_GREEK_UNIT_LOCATIONS = [
 
 export const ADDITIONAL_SOURCES = [
   {
+    bookCode: 'GIANTS', slug: 'en-jewishmythology-4q531-2026',
+    nameAr: 'ترجمة إنجليزية تجريبية لشذرات ٤ق٥٣١ من سفر العمالقة',
+    nameEn: 'JewishMythology Beta English Translation of Book of Giants 4Q531 Excerpts',
+    abbreviation: 'GIANTS-4Q531-EN',
+    url: 'https://jewishmythology.com/myths/mahaway-flew-beyond-the-firmament-to-beg-enoch-for-mercy',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/giants_jewishmythology_english_2026.json', import.meta.url),
+    expectedSha256: 'ca858556e38f7cc7e1ee710b5aa1cb91c8c37c272d217bf03f23c7846bacf986',
+    expectedUnitCount: 2, expectedWordCount: 126, maxChapter: 1, incomplete: true,
+    language: 'en', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'ترجمة إنجليزية تجريبية معلنة (Beta) لمقطعين فقط من الشاهد 4Q531: الشظية 1، الأسطر 1–8، والشظيتان 2+3، الأسطر 1–10. ليست ترجمة لسفر العمالقة كاملاً ولا تغطي شواهده الأخرى. صفحة المصدر تنسب النص الآرامي إلى تفريغ قمران الرقمي (CC-BY-SA 4.0)، وتعلن صراحة أن الترجمة التجريبية مشتقة ومرخصة أيضاً برخصة CC-BY-SA 4.0؛ حُفظت الأقواس وعلامات الحذف كما في المصدر. [النص والترجمة والرخصة](https://jewishmythology.com/myths/mahaway-flew-beyond-the-firmament-to-beg-enoch-for-mercy)؛ [بيان الرخصة](https://jewishmythology.com/about).'
+  },
+  {
+    bookCode: 'GIANTS', slug: 'arc-qdr-book-giants-2026',
+    nameAr: 'تفريغ آرامي مرخص لشواهد قمرانية من سفر العمالقة',
+    nameEn: 'Qumran-Digital Aramaic Book of Giants Manuscript Lines',
+    abbreviation: 'GIANTS-QDR-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcription-index/latest/index.html',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/giants_qdr_aramaic_2026.json', import.meta.url),
+    expectedSha256: '8672a461903f749a9366b7c46e3a6925e5c6cad985a72408221916c745c91d65',
+    expectedUnitCount: 602, expectedWordCount: 3996, maxChapter: 1, incomplete: true,
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ ٦٠٢ سطراً آرامياً مرخصاً برخصة CC-BY-SA 4.0 من صفحات قُمران الرقمي للشواهد 1Q23 و1Q24 و2Q26 و4Q203 و4Q530 و4Q531 و4Q532 و4Q533 و6Q8؛ كل وحدة سطر شاهد مستقل مع معرّف الشظية ورابط موضعه، ولا تمثل الأسطر متناً متصلاً أو ترتيباً قصصياً موحداً. نسبة 1Q24 و4Q533 إلى سفر العمالقة غير محسومة في بعض الفهارس، لذا أُبقيا شاهدين مرشحين منفصلين ولا يُحسم انتسابهما بهذا الإدراج. حُفظت رموز السقط وإعادة البناء كما في التفريغ. السفر كله جزئي؛ لا يُستكمل من ترجمة هننغ المانوية ذات الحقوق غير المحسومة. [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html)؛ [صفحة شاهد 4Q531 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q531/2026-10-06/index.html?v=2026-10-06).'
+  },
+  {
     bookCode: 'BALAAM', slug: 'arc-deir-alla-balaam-2025',
     nameAr: 'تفريغ نقش بلعام بحروف عبرية (الآرامية القديمة)',
     nameEn: 'Deir Alla Balaam Inscription West Semitic Transcription',
