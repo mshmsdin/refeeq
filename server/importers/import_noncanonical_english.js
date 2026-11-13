@@ -1950,6 +1950,34 @@ export const ADDITIONAL_SOURCES = [
     notes: 'صياغة عربية للمقاطع المتاحة، أُعدت عن الترجمة الأوكرانية الحرفية والحرة في دراسة دميترو تسولين وأناستاسيا أوريخوفا، لا عن اللغة القديمة مباشرة. أبقينا الأسطر المفقودة ومواضع إعادة البناء والخلاف ظاهرة ولم نخترع نصاً للسقط. الدراسة الأصلية منشورة برخصة المشاع الإبداعي النسب ٤٫٠؛ ينسب العمل للمؤلفين والطبعة، وهذه الصياغة العربية ترجمة مشتقة من ترجمتهم الأوكرانية. [الدراسة المفتوحة والترجمة وتعليقات القراءة](https://oriental-world.org.ua/index.php/journal/article/download/765/755/)؛ [بيانات النشر](https://doi.org/10.15407/orientw2025.01.097).'
   },
   {
+    bookCode: 'MOTA-MUSE', slug: 'gez-opensiddur-mota-muse-2019',
+    nameAr: 'النص الجعزي لموتى موسى في مشروع السِّدور المفتوح',
+    nameEn: 'Open Siddur Ge’ez Text of Mota Muse',
+    abbreviation: 'MOTA-GEZ',
+    url: 'https://opensiddur.org/readings-and-sourcetexts/readings/jewish-readings/shivah-badar-readings/mota-muse-the-book-of-the-passing-of-mosheh/',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/mota_muse_opensiddur_geez_2019.json', import.meta.url),
+    expectedSha256: '4c0f02b092f37b2a8baac5ff0628bb600f7881e679b04614aa8f2b708ebd6df6',
+    expectedUnitCount: 15, expectedVerseNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    expectedWordCount: 2200, maxChapter: 1, incomplete: true,
+    language: 'gez', originalLanguage: 'الجعزية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'نقلٌ للنص الجعزي كما يورده مشروع السِّدور المفتوح، مقسماً إلى ١٥ وحدة عرض متتابعة لا إلى أعداد قديمة. صفحة المشروع تنشر النص في ٢٦ تشرين الثاني ٢٠١٩ برخصة CC BY-SA 4.0 (المشاع الإبداعي النسب بالمثل ٤٫٠)، وتنسب الترجمة العبرية إلى جاك فايطلوفيتش (Jacques Faïtlovitch)، وتعرّف إسحاق غانتويرك ماير (Isaac Gantwerk Mayer) مترجماً إنجليزياً لهذا النص؛ ولا تعيّن مؤلف النص الأصلي. راجع الطبعة الإثيوبية المصورة لفايطلوفيتش سنة ١٩٠٦؛ وتصف مقدمتها مخطوط هذا الشاهد بأنه غير صحيح وغير كامل. لذلك السجل جزئي، ولا يستكمل مواضع مفقودة. عند إعادة الاستخدام: انسب النص إلى مشروع السِّدور المفتوح وفايطلوفيتش حيث تنطبق النسبة، أرفق رابط المصدر والرخصة، وصرّح بأن النص قُسم إلى وحدات عرض. [النص والرخصة](https://opensiddur.org/readings-and-sourcetexts/readings/jewish-readings/shivah-badar-readings/mota-muse-the-book-of-the-passing-of-mosheh/)؛ [الطبعة الإثيوبية المصورة ١٩٠٦](https://archive.org/details/motamuselamortdemoisejacquesfaitlovitch1906).'
+  },
+  {
+    bookCode: 'MOTA-MUSE', slug: 'en-opensiddur-mota-muse-mayer-2019',
+    nameAr: 'ترجمة ماير الإنجليزية لموتى موسى عن العبرية',
+    nameEn: 'Isaac Gantwerk Mayer English Translation of Mota Muse via Hebrew',
+    abbreviation: 'MOTA-EN',
+    url: 'https://opensiddur.org/readings-and-sourcetexts/readings/jewish-readings/shivah-badar-readings/mota-muse-the-book-of-the-passing-of-mosheh/',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/mota_muse_opensiddur_english_2019.json', import.meta.url),
+    expectedSha256: '8a66f4eedc98b2c4b095ea4ac2540a1e390a896a49b67160296c9dab51156b43',
+    expectedUnitCount: 15, expectedVerseNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    expectedWordCount: 2068, maxChapter: 1, incomplete: true,
+    language: 'en', originalLanguage: 'الجعزية، بوسيط ترجمة فايطلوفيتش العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'ترجمة إسحاق غانتويرك ماير (Isaac Gantwerk Mayer) الإنجليزية المنشورة في مشروع السِّدور المفتوح سنة ٢٠١٩؛ يذكر المشروع صراحة أنها مترجمة عن العبرية التي ترجمها جاك فايطلوفيتش (Jacques Faïtlovitch) عن الجعزية، وليست ترجمة إنجليزية مباشرة عن الجعزية. رُتبت فقرات الصفحة في ١٥ وحدة عرض، وأزيل شرح الحواشي من المتن مع إبقاء أرقام الإحالة؛ النص متاح برخصة CC BY-SA 4.0 (المشاع الإبداعي النسب بالمثل ٤٫٠)، ويجب حفظ النسبة والرابط والرخصة وبيان التقسيم. مقدمة طبعة فايطلوفيتش ١٩٠٦ تصف مخطوط الشاهد بأنه غير صحيح وغير كامل؛ لذا حالة هذا الشاهد جزئية ولا تُختلق خاتمة أو مادة مفقودة. [النص والرخصة وبيان سلسلة الترجمة](https://opensiddur.org/readings-and-sourcetexts/readings/jewish-readings/shivah-badar-readings/mota-muse-the-book-of-the-passing-of-mosheh/)؛ [الطبعة الإثيوبية المصورة ١٩٠٦](https://archive.org/details/motamuselamortdemoisejacquesfaitlovitch1906).'
+  },
+  {
     bookCode: 'SHEM', slug: 'en-mingana-book-shem-1917',
     nameAr: 'ترجمة منغانا الإنجليزية لكتاب سام بن نوح عن بداية السنة',
     nameEn: 'Alphonse Mingana English Translation of the Book of Shem, Son of Noah',
