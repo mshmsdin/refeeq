@@ -2195,6 +2195,42 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ الشذرة العبرية 1Q19bis، المجموعة 2، في ستة أسطر ظاهرة؛ تحفظ أرقام الشاهد والمجموعة والسطر وروابط مواضعها المباشرة. لا تتضمن صفحة مشروع قمران الرقمي ترجمة إنجليزية، كما أن صلة الشذرة بكتاب نوح المستقل ليست محسومة؛ لذلك تعرض منفصلة عن 1Q19 ولا تدمج به. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب النص إلى مشروع قمران الرقمي المبني على بيانات مشروع معجم سابق ونص مارتن أبيغ. أُدرج الأصل العبري المرخص وحده، وحالة الشاهد جزئية. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q19bis/2024-07-30/index.html?v=2024-07-30)؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
   },
   {
+    bookCode: 'BNOAH', slug: 'arc-qdr-4q534-birth-noah-2026',
+    nameAr: 'تفريغ الشاهد القمراني 4Q534 (شذرات ولادة نوح)',
+    nameEn: 'Qumran Digital Aramaic 4Q534 Birth of Noah Witness', abbreviation: '4Q534-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q534/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/birth_of_noah_4q534_qumran_digital.json', import.meta.url),
+    expectedSha256: 'd155bf7c9c4f51484de03d0c9b8f9750e7d9f580372bc6ef443d34cd124bdcee',
+    expectedUnitCount: 51, expectedWordCount: 500, maxChapter: 7, incomplete: true,
+    expectedChapterVerseNumbers: [[...Array(17)].map((_, index) => index + 1), [...Array(21)].map((_, index) => index + 1), [1], [1, 2], [1], [1, 2], [...Array(7)].map((_, index) => index + 1)],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ ٥١ سطراً ظاهراً من الشاهد الآرامي 4Q534 في سبع مجموعات عرض، مع حفظ علامات الشظايا والأسطر الأصلية وروابط مواضع كل سطر. المجموعات ليست فصولاً أصلية والنص غير متصل. بعض الباحثين ينسبون شخصية الشاهد إلى نوح، لكن الهوية غير يقينية، كما أن ضم الشواهد 4Q534 و4Q535 و4Q536 إلى مؤلف واحد ليس قطعياً؛ لذلك تسجل منفصلة وبحالة جزئية. صفحة قمران الرقمي تعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، ولا تقدم ترجمة إنجليزية مرخصة. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q534/2026-10-06/index.html?v=2026-10-06)؛ [دليل المخطوطات الآرامية بقمران، طبعة بريِل المفتوحة](https://brill.com/display/book/9789004513815/9789004513815_webready_content_text.pdf).'
+  },
+  {
+    bookCode: 'BNOAH', slug: 'arc-qdr-4q535-birth-noah-2026',
+    nameAr: 'تفريغ الشاهد القمراني 4Q535 (شذرات ولادة نوح)',
+    nameEn: 'Qumran Digital Aramaic 4Q535 Birth of Noah Witness', abbreviation: '4Q535-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q535/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/birth_of_noah_4q535_qumran_digital.json', import.meta.url),
+    expectedSha256: '4f6e07459bba00b2c9bf2be11d5a72bfcb956bfcdaf3b6937f1c7df2f4572156',
+    expectedUnitCount: 12, expectedWordCount: 107, maxChapter: 3, incomplete: true,
+    expectedChapterVerseNumbers: [[1, 2], [1, 2, 3, 4], [1, 2, 3, 4, 5, 6]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ ١٢ سطراً ظاهراً من الشاهد الآرامي 4Q535 في ثلاث مجموعات عرض، مع حفظ علامات الشظايا والأسطر الأصلية وروابط مواضع كل سطر. المجموعات ليست فصولاً أصلية، والشاهد منفصل عن 4Q534 و4Q536 ولا يثبت وحده نصاً متصلاً أو هوية نوح. تسميته ضمن شذرات ولادة نوح فرضية تصنيفية؛ العلاقة بين الشواهد موضع نقاش، لذلك يسجل منفرداً وبحالة جزئية. صفحة قمران الرقمي تعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، ولا تقدم ترجمة إنجليزية مرخصة. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q535/2026-10-06/index.html?v=2026-10-06)؛ [دليل المخطوطات الآرامية بقمران، طبعة بريِل المفتوحة](https://brill.com/display/book/9789004513815/9789004513815_webready_content_text.pdf).'
+  },
+  {
+    bookCode: 'BNOAH', slug: 'arc-qdr-4q536-birth-noah-2026',
+    nameAr: 'تفريغ الشاهد القمراني 4Q536 (شذرات ولادة نوح)',
+    nameEn: 'Qumran Digital Aramaic 4Q536 Birth of Noah Witness', abbreviation: '4Q536-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q536/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/birth_of_noah_4q536_qumran_digital.json', import.meta.url),
+    expectedSha256: '6845c801096aef0f397409efc0d263bbdb64413a6e6645a67c09ea2077337f3a',
+    expectedUnitCount: 25, expectedWordCount: 260, maxChapter: 4, incomplete: true,
+    expectedChapterVerseNumbers: [[1, 2, 3, 4], [...Array(13)].map((_, index) => index + 1), [7, 8, 9, 10, 11, 12, 13], [1]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ ٢٥ سطراً ظاهراً من الشاهد الآرامي 4Q536 في أربع مجموعات عرض، مع حفظ علامات الشظايا والأسطر الأصلية وروابط مواضع كل سطر، بما فيها الترقيم الأصلي 7–13 في المجموعة الثالثة. المجموعات ليست فصولاً أصلية والنص غير متصل. علاقة 4Q536 بالشاهدين 4Q534 و4Q535 وترابط أجزاء المجموعة غير محسوم؛ لذلك يسجل الشاهد منفرداً وبحالة جزئية. صفحة قمران الرقمي تعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، ولا تقدم ترجمة إنجليزية مرخصة. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q536/2026-10-06/index.html?v=2026-10-06)؛ [دليل المخطوطات الآرامية بقمران، طبعة بريِل المفتوحة](https://brill.com/display/book/9789004513815/9789004513815_webready_content_text.pdf).'
+  },
+  {
     bookCode: 'APLEV540', slug: 'arc-qdr-apocryphon-levi-a-2026',
     nameAr: 'تفريغ الشاهد القمراني 4Q540 (منحول لاوي أ)', nameEn: 'Qumran Digital 4Q540 Aramaic Fragment Witness', abbreviation: '4Q540-ARC',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q540/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
