@@ -10,6 +10,7 @@ import { initBibleSchema } from './db/bible_schema.js';
 import { ensureMotaMuseImported } from './db/mota_muse_startup_import.js';
 import { ensureGiantsImported } from './db/giants_startup_import.js';
 import { ensureAramaicLeviQumranImported } from './db/aramaic_levi_startup_import.js';
+import { ensureQumranLeviApocryphaImported } from './db/qumran_levi_apocrypha_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -58,6 +59,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Aramaic Levi Qumran import failed:', error.message);
+}
+try {
+  if (await ensureQumranLeviApocryphaImported()) {
+    console.log('[Bible startup] Imported licensed Qumran Levi Apocryphon fragment witnesses from reviewed local files.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran Levi Apocryphon import failed:', error.message);
 }
 
 const app = express();

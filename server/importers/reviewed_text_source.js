@@ -74,6 +74,16 @@ export function parseReviewedUnitText(rawText, source) {
     || source.expectedVerseNumbers.some((verse) => !Number.isInteger(verse) || verse < 1))) {
     throw new Error(`ترقيم الوحدات المصدرية غير صالح في ${source.slug}`);
   }
+  if (source.expectedChapterVerseNumbers && (!Array.isArray(source.expectedChapterVerseNumbers)
+    || source.expectedChapterVerseNumbers.length !== source.maxChapter
+    || source.expectedChapterVerseNumbers.some((verses) => !Array.isArray(verses) || !verses.length
+      || verses.some((verse) => !Number.isInteger(verse) || verse < 1))
+    || source.expectedChapterVerseNumbers.reduce((count, verses) => count + verses.length, 0) !== units.length)) {
+    throw new Error(`ترقيم وحدات الشواهد المتعددة غير صالح في ${source.slug}`);
+  }
+  const expectedChapterVerseLocations = source.expectedChapterVerseNumbers?.flatMap(
+    (verses, chapterIndex) => verses.map((verse) => [chapterIndex + 1, verse])
+  );
   for (const [index, unit] of units.entries()) {
     if (!Number.isInteger(unit.chapter) || unit.chapter < 1 || unit.chapter > source.maxChapter
       || !Number.isInteger(unit.verse) || unit.verse < 1
@@ -82,8 +92,9 @@ export function parseReviewedUnitText(rawText, source) {
     }
     const chapterUnitCount = chapterVerses.get(unit.chapter) || 0;
     const expectedLocation = source.expectedUnitLocations?.[index];
-    const expectedChapter = expectedLocation?.[0] ?? 1;
-    const expectedVerse = expectedLocation?.[1] ?? (source.expectedVerseNumbers
+    const expectedChapterVerseLocation = expectedChapterVerseLocations?.[index];
+    const expectedChapter = expectedLocation?.[0] ?? expectedChapterVerseLocation?.[0] ?? 1;
+    const expectedVerse = expectedLocation?.[1] ?? expectedChapterVerseLocation?.[1] ?? (source.expectedVerseNumbers
       ? source.expectedVerseNumbers[index]
       : chapterUnitCount + expectedFirstVerse);
     if (source.expectedVerseNumbers && !source.expectedUnitLocations && unit.chapter !== 1) {

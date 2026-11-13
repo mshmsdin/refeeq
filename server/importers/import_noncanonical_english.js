@@ -2142,6 +2142,28 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ ٢٨١ سطراً آرامياً من الشواهد القمرانية 1Q21 و4Q213 و4Q213a و4Q213b و4Q214 و4Q214a و4Q214b، كما نشرتها صفحات قمران الرقمي المؤرخة ٦ أكتوبر ٢٠٢٦. كل سطر محفوظ كوحدة منفصلة مع اسم الشاهد والشظية والسطر ورابط مباشر إلى موضعه. صفحات المشروع تعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠؛ ينسب العمل إلى مشروع قمران الرقمي والجهة الأكاديمية الممولة، مع ذكر أن بياناته مبنية على عمل مشروع سابق ونص مارتن أبيغ. هذه الشواهد مجزأة ولا تمثل وثيقة لاوي كاملة أو إعادة بناء متصلة؛ وتبقى منفصلة عن ترجمة تشارلز وشاهد كامبردج من الجنيزة. [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html)؛ [تفريغ 1Q21](https://lexicon.qumran-digital.org/transcriptions/1Q21/2026-10-06/index.html?v=2026-10-06)؛ [تفريغ 4Q213](https://lexicon.qumran-digital.org/transcriptions/4Q213/2026-10-06/index.html?v=2026-10-06)؛ [تفريغ 4Q214](https://lexicon.qumran-digital.org/transcriptions/4Q214/2026-10-06/index.html?v=2026-10-06).'
   },
   {
+    bookCode: 'APLEV540', slug: 'arc-qdr-apocryphon-levi-a-2026',
+    nameAr: 'تفريغ الشاهد القمراني 4Q540 (منحول لاوي أ)', nameEn: 'Qumran Digital 4Q540 Aramaic Fragment Witness', abbreviation: '4Q540-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q540/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/aramaic_levi_apocryphon_a_4q540_2026.json', import.meta.url),
+    expectedSha256: '1880ddb24fbd71b2ee9c8f7ba89044ce68a93c242dd212117c4f3b115e21d79b',
+    expectedUnitCount: 9, expectedWordCount: 94, maxChapter: 3, incomplete: true,
+    expectedChapterVerseNumbers: [[1, 2, 3, 4, 5, 6], [1, 2], [1]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الشاهد الآرامي 4Q540 كما نشره مشروع قمران الرقمي بتاريخ ٦ أكتوبر ٢٠٢٦، مع حفظ الأسطر التسعة الظاهرة في الشظايا الثلاث وروابطها المباشرة؛ والأقسام الثلاثة وحدات عرض وليست فصولاً أصلية. يصفه الفهرس الحديث بمنحول لاوي أ، لكن الشاهد شذري شديد الاقتضاب ولا يتيح بناء نص متصل أو ترجمة موثوقة؛ لذلك لا يُدمج مع وثيقة لاوي 1Q21 و4Q213–214 ولا يوصف بأنه سفر مكتمل. وجدت ترجمتين إنجليزيتين مساعدتين لهذين الشاهدين في صفحتي تينمو لعام ٢٠٢٦، لكنهما لا تعرضان رخصة لإعادة النشر؛ ومجموعة أوبن ديد سي الإنجليزية مرخصة لغير التجاري فقط. لذلك لم تُنسخ أي ترجمة، وأُدرج الأصل الآرامي المرخص وحده. [ترجمة 4Q540 في تينمو](https://tianmu.org/good-work-library/judean/dead-sea-scrolls/testaments-and-apocrypha/apocryphon-of-levi-a)؛ [ترجمة 4Q541 في تينمو](https://tianmu.org/good-work-library/judean/dead-sea-scrolls/testaments-and-apocrypha/apocryphon-of-levi)؛ [رخصة مجموعة أوبن ديد سي](https://opendeadsea.org/about/). [ترجمة 4Q540 في تينمو](https://tianmu.org/good-work-library/judean/dead-sea-scrolls/testaments-and-apocrypha/apocryphon-of-levi-a)؛ [ترجمة 4Q541 في تينمو](https://tianmu.org/good-work-library/judean/dead-sea-scrolls/testaments-and-apocrypha/apocryphon-of-levi)؛ [رخصة أوبن ديد سي غير التجارية](https://opendeadsea.org/about/). يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب التفريغ إلى مشروع قمران الرقمي الممول من مؤسسة الأبحاث الألمانية، ويذكر اعتماد بياناته على مشروع معجم قمران السابق المبني على عمل مارتن أبيغ. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q540/2026-10-06/index.html?v=2026-10-06)؛ [مشروع قمران الرقمي](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
+  },
+  {
+    bookCode: 'APLEV541', slug: 'arc-qdr-apocryphon-levi-b-2026',
+    nameAr: 'تفريغ الشاهد القمراني 4Q541 (منحول لاوي ب؟)', nameEn: 'Qumran Digital 4Q541 Aramaic Fragment Witness', abbreviation: '4Q541-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q541/2026-05-21/index.html', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/aramaic_levi_apocryphon_b_4q541_2026.json', import.meta.url),
+    expectedSha256: 'cc5c2c39d1a31e3ff4e1e0cbb49abffbe2434ab7853213b0530bbc46787e6e95',
+    expectedUnitCount: 118, expectedWordCount: 947, maxChapter: 31, incomplete: true,
+    expectedChapterVerseNumbers: [[2, 3, 4], [1, 2, 3, 4, 5], [3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8], [1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6], [1, 2, 3], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5, 6, 7], [3, 4, 5, 6, 7], [1, 2, 3, 4], [1, 2], [1, 2, 3], [1, 2, 3, 4], [1, 2, 3], [1, 2, 3], [1, 2, 3, 4], [1, 2, 3], [1, 2, 3], [1, 2], [1, 2, 3], [1, 2], [1, 2], [1], [1], [8], [1, 2, 3, 4, 5, 6], [1]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الشاهد الآرامي 4Q541 كما نشره مشروع قمران الرقمي بتاريخ ٢١ مايو ٢٠٢٦، مع حفظ الأسطر الـ١١٨ الظاهرة في ٣١ مجموعة عرض للشظايا وترقيم كل سطر ورابطه المباشر؛ وهذه المجموعات ليست فصولاً أصلية. تسمية «منحول لاوي ب» ترد مع علامة استفهام في بعض الفهارس؛ وعلاقة هذا الشاهد بـ4Q540 وبوثيقة لاوي الأوسع موضع نقاش، لذلك يُحفظ هنا كسجل مستقل ولا يُعاد بناء نص موحد. النص شذري ولا يمثل عملاً كاملاً، ولم أعثر في هذا المصدر على ترجمة إنجليزية معلنة الرخصة؛ لذا أُدرج الأصل الآرامي وحده. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب التفريغ إلى مشروع قمران الرقمي الممول من مؤسسة الأبحاث الألمانية، ويذكر اعتماد بياناته على مشروع معجم قمران السابق المبني على عمل مارتن أبيغ. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q541/2026-05-21/index.html)؛ [مشروع قمران الرقمي](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
+  },
+  {
     bookCode: 'APOCEL', slug: 'grc-psi-i-7-apocalypse-elijah-1912',
     nameAr: 'الشاهد اليوناني الشذري من رؤيا إيليا (PSI I 7)',
     nameEn: 'PSI I 7 Greek Papyrus Fragment of the Apocalypse of Elijah', abbreviation: 'APOCEL-GR',

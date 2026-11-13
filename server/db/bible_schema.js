@@ -410,6 +410,8 @@ function _seedExpansionCatalog(db) {
     ['AMRAM', 'رؤى عمرام', 'Visions of Amram', 'عم-رؤ', 'pseudepigrapha', 31, 0, 'aramaic', 'الآرامية', 'شاهد آرامي مجزأ من مخطوطات البحر الميت مع ترجمة إنجليزية موازية؛ تحفظ النسختان منفصلتين.'],
     ['PSLAB', 'الآثار الكتابية المنحولة لفيلو', 'Biblical Antiquities of Pseudo-Philo', 'آث-فيل', 'pseudepigrapha', 31.5, 0, 'latin', 'اللاتينية مع ترجمة إنجليزية', 'ترجمة جيمس الإنجليزية عن اللاتينية (١٩١٧): ٦٣ من ٦٥ فصلاً محفوظة في هذا التفريغ؛ فصول ٤٣ و٤٧ غير موجودة، وتثبت المقدمة فجوات في ٣٧ وبداية ٣٨ وخاتمة مفقودة. لذلك حالة النص جزئية.'],
     ['ARL', 'وثيقة لاوي الآرامية (شذرات)', 'Aramaic Levi Document (fragments)', 'لاوي-آ', 'pseudepigrapha', 31.7, 0, 'aramaic', 'الآرامية واليونانية مع ترجمة إنجليزية', 'تتوفر ترجمة تشارلز الإنجليزية لشذرات آرامية ويونانية، وتفريغ كامبردج المطبوع من سنة ١٩٠٠، و٢٨١ سطراً آرامياً من الشواهد القمرانية السبعة 1Q21 و4Q213 و4Q213a و4Q213b و4Q214 و4Q214a و4Q214b. تحفظ سجلات المصادر مستقلة، ولا تمثل مجموعة الشذرات الوثيقة كاملة.'],
+    ['APLEV540', 'شذرات الشاهد القمراني 4Q540 (منحول لاوي أ)', '4Q540 Aramaic Apocryphon of Levi A fragments', '4ق540', 'pseudepigrapha', 31.8, 0, 'aramaic', 'الآرامية', 'تسعة أسطر من ثلاث شظايا في تفريغ قمران الرقمي؛ الأقسام الثلاثة وحدات عرض وليست فصولاً أصلية. تسمية «منحول لاوي أ» فهرسية؛ الشاهد مقتضب وجزئي ولا يمثل سفراً مكتملاً أو ترجمة. يحفظ مستقلاً عن وثيقة لاوي وعن 4Q541.'],
+    ['APLEV541', 'شذرات الشاهد القمراني 4Q541 (منحول لاوي ب؟)', '4Q541 Aramaic Apocryphon of Levi B fragments', '4ق541', 'pseudepigrapha', 31.9, 0, 'aramaic', 'الآرامية', '١١٨ سطراً من ٣١ مجموعة عرض لشظايا تفريغ قمران الرقمي؛ ليست فصولاً أصلية. تسمية «منحول لاوي ب» غير يقينية، وعلاقته بـ4Q540 وبوثيقة لاوي محل نقاش؛ يحفظ مستقلاً ولا يمثل نصاً كاملاً أو ترجمة.'],
     ['CONFESD', 'اعتراف عزرا', 'Confessio Esdrae', 'اع-عز', 'pseudepigrapha', 32, 0, 'latin', 'اللاتينية', 'نص لاتيني قصير مستقل من مجموعة OCP؛ لا يخلط مع عزرا الثاني أو رؤيا عزرا.'],
     ['SHEM', 'كتاب سام بن نوح', 'Book of Shem Son of Noah', 'سام-نوح', 'pseudepigrapha', 32.1, 0, 'syriac', 'السريانية مع ترجمة إنجليزية', 'عنوان طبعة منغانا ١٩١٧ ينسب الرسالة إلى سام بن نوح، لكن دراسة علمية سنة ٢٠١٢ ترى أن النسبة نتجت عن خطأ ناسخ وأن النص ليس منحولاً. يتوفر تفريغ آلي سرياني وترجمة إنجليزية عن شاهد واحد في مخطوط جون رايلاندز السرياني ٤٤. وحدات التفريغ السرياني تمثل صفحات الطبعة لا أعداداً أصلية؛ في المخطوط فجوات وقراءات مضطربة، ولا تزال بعض قراءات التفريغ الآلي بحاجة إلى مراجعة، لذلك حالة الشاهد جزئية.'],
     ['BALAAM', 'نقش بلعام من دير علا', 'Balaam Inscription from Deir Alla', 'بل-دير', 'pseudepigrapha', 32.2, 0, 'aramaic', 'الآرامية القديمة بحروف عبرية مع ترجمة عربية', 'نقش سامي شمالي غربي متضرر من تركيبي دير علا؛ تصنيفه اللغوي وترتيب بعض شظاياه وقراءاته موضع خلاف. السطر الأول من التركيب الثاني غير محفوظ في التفريغ المنشور، والنص جزئي.'],
@@ -462,18 +464,19 @@ function _seedExpansionCatalog(db) {
   ];
 
   // Approximate order by the earliest story era represented, not by composition date.
-  // Long retellings are grouped near their opening era; undated stories remain late.
+  // Start with Adam, then Enoch and the flood/Noah traditions; long retellings stay near their opening era.
+  // The Levi-related witnesses follow the patriarchal-era Levi material and remain separate fragment records.
   const pseudepigraphaStoryOrder = new Map([
     ['TADAM', 1], ['APMO', 2], ['TSTADAM', 3], ['APADAM', 4], ['ADAMCON', 5],
     ['PSLAB', 6], ['JASHER', 7], ['ENO2', 8], ['GIANTS', 9], ['ENO3', 10], ['SHEM', 11],
     ['ABR', 12], ['AABR', 13], ['TAISAAC', 14], ['TAJACOB', 15], ['ARL', 16],
-    ['T12', 17], ['JOSEPH', 18], ['TJOB', 19], ['AMRAM', 20], ['MOS', 21],
-    ['MOTA-MUSE', 22], ['NARMOS', 23], ['BALAAM', 24], ['TSOL', 25], ['QSB', 26],
-    ['SEELI', 27], ['VISEL', 28], ['APOCEL', 29], ['AHIKAR', 30], ['ASC', 31],
-    ['APZEPH', 32], ['APOEZ', 33], ['APDAN', 34], ['APDANC', 35], ['SEVDAN', 36],
-    ['2BAR', 37], ['3BAR', 38], ['4BAR', 39], ['RESEZ', 40], ['QEZRA', 41],
-    ['REVEZRA', 42], ['APEZRA', 43], ['VISZEZRA', 44], ['CONFESD', 45],
-    ['ARIST', 46], ['PSOL', 47], ['SIBYLL', 48], ['ZOSIMUS', 49], ['SEDRACH', 50]
+    ['APLEV540', 17], ['APLEV541', 18], ['T12', 19], ['JOSEPH', 20], ['TJOB', 21], ['AMRAM', 22], ['MOS', 23],
+    ['MOTA-MUSE', 24], ['NARMOS', 25], ['BALAAM', 26], ['TSOL', 27], ['QSB', 28],
+    ['SEELI', 29], ['VISEL', 30], ['APOCEL', 31], ['AHIKAR', 32], ['ASC', 33],
+    ['APZEPH', 34], ['APOEZ', 35], ['APDAN', 36], ['APDANC', 37], ['SEVDAN', 38],
+    ['2BAR', 39], ['3BAR', 40], ['4BAR', 41], ['RESEZ', 42], ['QEZRA', 43],
+    ['REVEZRA', 44], ['APEZRA', 45], ['VISZEZRA', 46], ['CONFESD', 47],
+    ['ARIST', 48], ['PSOL', 49], ['SIBYLL', 50], ['ZOSIMUS', 51], ['SEDRACH', 52]
   ]);
 
   const sourceDefaults = {

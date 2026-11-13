@@ -39,7 +39,7 @@ test('registers Questions of Ezra separately from the other Ezra works', () => {
   assert.deepEqual(book, {
     name_ar: 'أسئلة عزرا',
     slug: 'pseudepigrapha',
-    canonical_order: 41
+    canonical_order: 43
   });
 });
 
@@ -53,19 +53,35 @@ test('orders Old Testament pseudepigrapha approximately by story era', () => {
   `).all().map(({ canonical_order }) => canonical_order);
   const orders = Object.fromEntries(db.prepare(`
     SELECT code, canonical_order FROM bible_books
-    WHERE code IN ('TADAM', 'SHEM', 'ABR', 'MOS', 'MOTA-MUSE', 'TSOL', '2BAR')
+    WHERE code IN ('TADAM', 'APMO', 'ENO2', 'GIANTS', 'ENO3', 'SHEM', 'ABR', 'MOS', 'MOTA-MUSE', 'TSOL', '2BAR')
   `).all().map(({ code, canonical_order }) => [code, canonical_order]));
 
-  assert.deepEqual(allOrders, Array.from({ length: 50 }, (_, index) => index + 1));
+  assert.deepEqual(allOrders, Array.from({ length: 52 }, (_, index) => index + 1));
   assert.deepEqual(orders, {
     TADAM: 1,
+    APMO: 2,
+    ENO2: 8,
+    GIANTS: 9,
+    ENO3: 10,
     SHEM: 11,
     ABR: 12,
-    MOS: 21,
-    'MOTA-MUSE': 22,
-    TSOL: 25,
-    '2BAR': 37
+    MOS: 23,
+    'MOTA-MUSE': 24,
+    TSOL: 27,
+    '2BAR': 39
   });
+
+  const leviApocrypha = db.prepare(`
+    SELECT code, canonical_order FROM bible_books
+    WHERE code IN ('ARL', 'APLEV540', 'APLEV541', 'T12')
+    ORDER BY canonical_order
+  `).all();
+  assert.deepEqual(leviApocrypha, [
+    { code: 'ARL', canonical_order: 16 },
+    { code: 'APLEV540', canonical_order: 17 },
+    { code: 'APLEV541', canonical_order: 18 },
+    { code: 'T12', canonical_order: 19 }
+  ]);
 });
 
 test('preserves available parallel source details after schema initialization', () => {
