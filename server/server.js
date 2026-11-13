@@ -14,6 +14,7 @@ import { ensureQumranLeviTraditionImported } from './db/qumran_levi_tradition_st
 import { ensureQumranAmramImported } from './db/qumran_amram_startup_import.js';
 import { ensureNoahQumranImported } from './db/noah_qumran_startup_import.js';
 import { ensureBirthOfNoahImported } from './db/birth_of_noah_startup_import.js';
+import { ensureGenesisApocryphonImported } from './db/genesis_apocryphon_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -90,6 +91,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Birth of Noah Qumran import failed:', error.message);
+}
+try {
+  if (await ensureGenesisApocryphonImported()) {
+    console.log('[Bible startup] Imported the licensed Aramaic 1Q20 Genesis Apocryphon witness.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Genesis Apocryphon import failed:', error.message);
 }
 
 const app = express();

@@ -9,6 +9,7 @@ import { initBibleSchema } from '../db/bible_schema.js';
 import { normalizeArabicText } from '../utils/arabic_nlp.js';
 import { fetchText } from './source_fetch.js';
 import { pathToFileURL } from 'node:url';
+import { readFileSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { parseReviewedText, parseReviewedChapterText, parseReviewedUnitText } from './reviewed_text_source.js';
 
@@ -1947,6 +1948,10 @@ const QUMRAN_AMRAM_SOURCES = QUMRAN_AMRAM_WITNESS_DATA.map((witness) => {
   };
 });
 
+const GENESIS_APOCRYPHON_TEXT_FILE = new URL('./data/genesis_apocryphon_1q20_qumran_digital_2026.json', import.meta.url);
+const GENESIS_APOCRYPHON_EXPECTED_LOCATIONS = JSON.parse(readFileSync(GENESIS_APOCRYPHON_TEXT_FILE, 'utf8'))
+  .map(({ chapter, verse }) => [chapter, verse]);
+
 export const ADDITIONAL_SOURCES = [
   {
     bookCode: 'GIANTS', slug: 'en-jewishmythology-4q531-2026',
@@ -2229,6 +2234,18 @@ export const ADDITIONAL_SOURCES = [
     expectedChapterVerseNumbers: [[1, 2, 3, 4], [...Array(13)].map((_, index) => index + 1), [7, 8, 9, 10, 11, 12, 13], [1]],
     language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
     notes: 'تفريغ ٢٥ سطراً ظاهراً من الشاهد الآرامي 4Q536 في أربع مجموعات عرض، مع حفظ علامات الشظايا والأسطر الأصلية وروابط مواضع كل سطر، بما فيها الترقيم الأصلي 7–13 في المجموعة الثالثة. المجموعات ليست فصولاً أصلية والنص غير متصل. علاقة 4Q536 بالشاهدين 4Q534 و4Q535 وترابط أجزاء المجموعة غير محسوم؛ لذلك يسجل الشاهد منفرداً وبحالة جزئية. صفحة قمران الرقمي تعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، ولا تقدم ترجمة إنجليزية مرخصة. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q536/2026-10-06/index.html?v=2026-10-06)؛ [دليل المخطوطات الآرامية بقمران، طبعة بريِل المفتوحة](https://brill.com/display/book/9789004513815/9789004513815_webready_content_text.pdf).'
+  },
+  {
+    bookCode: 'GENAP', slug: 'arc-qdr-1q20-genesis-apocryphon-2026',
+    nameAr: 'تفريغ الشاهد القمراني 1Q20 (أبوكريفون التكوين)',
+    nameEn: 'Qumran Digital Aramaic Genesis Apocryphon 1Q20', abbreviation: '1Q20-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/1Q20/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: GENESIS_APOCRYPHON_TEXT_FILE,
+    expectedSha256: 'db9821bef3133e546c456e1d6516ce606c255a2822aa0490176e55bbc26781d7',
+    expectedUnitCount: 494, expectedUnitLocations: GENESIS_APOCRYPHON_EXPECTED_LOCATIONS,
+    expectedWordCount: 7788, maxChapter: 23, incomplete: true,
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ آرامي لـ٤٩٤ سطراً من الشاهد القمراني 1Q20 كما نشره مشروع قمران الرقمي في ٦ أكتوبر ٢٠٢٦. حُفظ ترقيم الأعمدة ٠–١٧ و١٩–٢٢ والأسطر الظاهرة، مع رابط مباشر لكل سطر؛ العمود ١٨ غير موجود في المصدر ولم يُستكمل. أرقام الفصول في واجهة العرض تنظيمية فقط وليست فصولاً أصلية، والصفحة تعرض النص كشاهد مخطوط لا كترجمة. الشاهد ناقص بطبيعته، لذلك حالة العمل جزئية. تنص صفحة المصدر على رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتذكر أن بيانات التفريغ مبنية على عمل مشروع معجم قمران السابق ونص مارتن أبيغ. لم أعثر في المصدر على ترجمة إنجليزية معلنة الرخصة لإعادة النشر؛ لذلك أُدرج الأصل الآرامي وحده. [تفريغ الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q20/2026-10-06/index.html?v=2026-10-06)؛ [فهرس تفريغات قمران الرقمي](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
   },
   {
     bookCode: 'APLEV540', slug: 'arc-qdr-apocryphon-levi-a-2026',
