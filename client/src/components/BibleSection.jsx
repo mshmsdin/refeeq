@@ -244,25 +244,9 @@ function TranslationSelectorChips({
       </div>
 
       <div className="flex flex-wrap items-center gap-1.5">
-        {translations.map(t => {
-          const isAvailable = availableSlugs.includes(t.slug);
+        {translations.filter(t => availableSlugs.includes(t.slug)).map(t => {
           const isSelected = selectedSlugs.includes(t.slug);
           const isPrimary = primarySlug === t.slug;
-
-          if (!isAvailable) {
-            return (
-              <div
-                key={t.slug}
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl border border-dashed border-red-300 dark:border-red-900/50 bg-red-50/50 dark:bg-red-950/20 text-[#aa8e67] dark:text-slate-500 text-xs font-medium select-none cursor-not-allowed opacity-60"
-                title={`الترجمة (${t.name_ar}) غير متوفرة لهذا السفر`}
-              >
-                <div className="w-3.5 h-3.5 rounded flex items-center justify-center bg-red-500/10 text-red-500 shrink-0">
-                  <X className="w-3 h-3 stroke-[2.5]" />
-                </div>
-                <span>{t.name_ar}</span>
-              </div>
-            );
-          }
 
           return (
             <div
@@ -1480,24 +1464,9 @@ function VerseFocusModal({
             {/* Right: Four Translations with Direct Switch and Comparison Checkboxes */}
             <div className="flex flex-wrap items-center gap-1.5">
               <span className="text-xs font-bold text-[#735535] dark:text-slate-300 ml-1">الترجمات:</span>
-              {translations.map(t => {
-                const availableSlugs = bookInfo?.available_translations || [];
-                const isAvailable = availableSlugs.includes(t.slug);
+              {translations.filter(t => (bookInfo?.available_translations || []).includes(t.slug)).map(t => {
                 const isSelected = selectedTranslations.includes(t.slug);
                 const isPrimary = primarySlug === t.slug;
-
-                if (!isAvailable) {
-                  return (
-                    <div
-                      key={t.slug}
-                      className="flex items-center gap-1 px-2.5 py-1 rounded-xl border border-dashed border-red-300 dark:border-red-900/50 bg-red-50/50 dark:bg-red-950/20 text-[#aa8e67] dark:text-slate-500 text-xs font-medium opacity-60 select-none cursor-not-allowed"
-                      title={`الترجمة (${t.name_ar}) غير متوفرة لهذا السفر`}
-                    >
-                      <X className="w-3 h-3 text-red-500 stroke-[2.5]" />
-                      <span>{t.name_ar}</span>
-                    </div>
-                  );
-                }
 
                 return (
                   <div

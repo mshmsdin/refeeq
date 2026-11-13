@@ -382,6 +382,7 @@ function _seedExpansionCatalog(db) {
     // Jewish pseudepigrapha and related works.
     ['MOS', 'وصية موسى (المعروفة تقليدياً بصعود موسى)', 'Testament of Moses / Assumption of Moses', 'وص-م', 'pseudepigrapha', 1, 0, 'moses', 'اللاتينية بوسيط يوناني عن أصل سامي محتمل', 'النص المتبقي اثنا عشر إصحاحاً من مخطوط لاتيني واحد، وينقطع قبل الخاتمة؛ لا يحفظ مشهد صعود موسى نفسه. اسم «صعود موسى» تقليدي ومختلف عليه في الدراسات.'],
     ['ENO2', 'أخنوخ الثاني', '2 Enoch', 'أخ2', 'pseudepigrapha', 2, 0, 'slavonic', 'السلافية الكنسية', 'نص منحول مستقل عن أخنوخ الأول.'],
+    ['NOAH', 'شذرات قمرانية مرتبطة بتقاليد نوح (النسبة غير محسومة)', 'Qumran Fragments Associated with Noah Traditions', 'نوح-ق', 'pseudepigrapha', 2.5, 0, 'hebrew', 'العبرية', 'شاهدان عبريان مجزآن هما 1Q19 و1Q19bis؛ صلتهما بكتاب مستقل لنوح موضع نقاش. يحفظ كل شاهد في ترجمة مستقلة ولا يمثلان نصاً كاملاً.'],
     ['ENO3', 'أخنوخ الثالث', '3 Enoch', 'أخ3', 'pseudepigrapha', 3, 0, 'hebrew', 'العبرية', 'نص رؤيوي يهودي متأخر.'],
     ['GIANTS', 'سفر العمالقة', 'Book of Giants', 'عمال', 'pseudepigrapha', 4, 0, 'aramaic', 'الآرامية مع شواهد قمران', 'نص مجزأ يعتمد على شواهد متعددة.'],
     ['2BAR', 'باروخ الثاني', '2 Baruch', 'با2', 'pseudepigrapha', 5, 0, 'syriac', 'السريانية', 'رؤيا يهودية مستقلة عن باروخ الكتابي.'],
@@ -469,7 +470,7 @@ function _seedExpansionCatalog(db) {
   // The Levi-related witnesses follow the patriarchal-era Levi material and remain separate fragment records.
   const pseudepigraphaStoryOrder = new Map([
     ['TADAM', 1], ['APMO', 2], ['TSTADAM', 3], ['APADAM', 4], ['ADAMCON', 5],
-    ['PSLAB', 6], ['JASHER', 7], ['ENO2', 8], ['GIANTS', 9], ['ENO3', 10], ['SHEM', 11],
+    ['PSLAB', 6], ['JASHER', 7], ['ENO2', 8], ['NOAH', 8.5], ['GIANTS', 9], ['ENO3', 10], ['SHEM', 11],
     ['ABR', 12], ['AABR', 13], ['TAISAAC', 14], ['TAJACOB', 15], ['ARL', 16],
     ['APLEV540', 17], ['APLEV541', 18], ['QAHAT', 19], ['T12', 20], ['JOSEPH', 21], ['TJOB', 22], ['AMRAM', 23], ['MOS', 24],
     ['MOTA-MUSE', 25], ['NARMOS', 26], ['BALAAM', 27], ['TSOL', 28], ['QSB', 29],

@@ -2171,6 +2171,30 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ ٢٨١ سطراً آرامياً من الشواهد القمرانية 1Q21 و4Q213 و4Q213a و4Q213b و4Q214 و4Q214a و4Q214b، كما نشرتها صفحات قمران الرقمي المؤرخة ٦ أكتوبر ٢٠٢٦. كل سطر محفوظ كوحدة منفصلة مع اسم الشاهد والشظية والسطر ورابط مباشر إلى موضعه. صفحات المشروع تعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠؛ ينسب العمل إلى مشروع قمران الرقمي والجهة الأكاديمية الممولة، مع ذكر أن بياناته مبنية على عمل مشروع سابق ونص مارتن أبيغ. هذه الشواهد مجزأة ولا تمثل وثيقة لاوي كاملة أو إعادة بناء متصلة؛ وتبقى منفصلة عن ترجمة تشارلز وشاهد كامبردج من الجنيزة. [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html)؛ [تفريغ 1Q21](https://lexicon.qumran-digital.org/transcriptions/1Q21/2026-10-06/index.html?v=2026-10-06)؛ [تفريغ 4Q213](https://lexicon.qumran-digital.org/transcriptions/4Q213/2026-10-06/index.html?v=2026-10-06)؛ [تفريغ 4Q214](https://lexicon.qumran-digital.org/transcriptions/4Q214/2026-10-06/index.html?v=2026-10-06).'
   },
   {
+    bookCode: 'NOAH', slug: 'he-qdr-1q19-noah-fragments-2026',
+    nameAr: 'التفريغ العبري لشذرات الشاهد القمراني 1Q19',
+    nameEn: 'Qumran Digital Hebrew 1Q19 Fragments', abbreviation: '1Q19-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/1Q19/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/noah_1q19_qumran_digital.json', import.meta.url),
+    expectedSha256: 'dd106fbdafcfdc1aed2325fdc1af806d2595d680cfbed1a0c33a5a45561a360d',
+    expectedUnitCount: 42, expectedWordCount: 342, maxChapter: 19, incomplete: true,
+    expectedChapterVerseNumbers: [[1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6, 7], [1], [1, 2, 3], [1, 2, 3], [1], [1, 2, 3], [1], [1], [1, 2], [1], [1, 2, 3], [1, 2, 3], [1], [1, 2], [1], [1], [1], [1]],
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الشاهد العبري 1Q19 في ٤٢ سطراً موزعة على ١٩ مجموعة شظايا بحسب صفحة مشروع قمران الرقمي؛ أرقام المجموعات والأسطر الأصلية محفوظة في النص، مع رابط مباشر لكل سطر. لا تمثل هذه التقسيمات فصولاً أصلية ولا نصاً متصلاً. تسمية «كتاب نوح» تفسيرية ومختلف عليها، لذلك يسجل هنا شاهداً مرتبطاً بتقاليد نوح من دون الجزم بهوية العمل. تنص صفحة التفريغ على رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب بياناتها إلى مشروع قمران الرقمي، مع بيان اعتمادها على مشروع معجم سابق ونص مارتن أبيغ. لا تتضمن الصفحة ترجمة إنجليزية؛ أُدرج الأصل العبري المرخص وحده، وتبقى الحالة جزئية. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q19/2026-10-06/index.html?v=2026-10-06)؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
+  },
+  {
+    bookCode: 'NOAH', slug: 'he-qdr-1q19bis-noah-fragments-2024',
+    nameAr: 'التفريغ العبري لشذرة الشاهد القمراني 1Q19bis',
+    nameEn: 'Qumran Digital Hebrew 1Q19bis Fragment', abbreviation: '1Q19bis-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/1Q19bis/2024-07-30/index.html?v=2024-07-30', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/noah_1q19bis_qumran_digital.json', import.meta.url),
+    expectedSha256: '9184bf5930ce27adcc1bf85a9e65792167e60ab74554ceaf882a9995f596e794',
+    expectedUnitCount: 6, expectedVerseNumbers: [1, 2, 3, 4, 5, 6],
+    expectedWordCount: 48, maxChapter: 1, incomplete: true,
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الشذرة العبرية 1Q19bis، المجموعة 2، في ستة أسطر ظاهرة؛ تحفظ أرقام الشاهد والمجموعة والسطر وروابط مواضعها المباشرة. لا تتضمن صفحة مشروع قمران الرقمي ترجمة إنجليزية، كما أن صلة الشذرة بكتاب نوح المستقل ليست محسومة؛ لذلك تعرض منفصلة عن 1Q19 ولا تدمج به. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب النص إلى مشروع قمران الرقمي المبني على بيانات مشروع معجم سابق ونص مارتن أبيغ. أُدرج الأصل العبري المرخص وحده، وحالة الشاهد جزئية. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q19bis/2024-07-30/index.html?v=2024-07-30)؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
+  },
+  {
     bookCode: 'APLEV540', slug: 'arc-qdr-apocryphon-levi-a-2026',
     nameAr: 'تفريغ الشاهد القمراني 4Q540 (منحول لاوي أ)', nameEn: 'Qumran Digital 4Q540 Aramaic Fragment Witness', abbreviation: '4Q540-ARC',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q540/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
