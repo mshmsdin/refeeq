@@ -2301,6 +2301,42 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ ١٨ سطراً آرامياً من عمودي الشاهد القمراني 4Q246، مع حفظ علامات الحذف والترميم والتحرير كما يعرضها مشروع قمران الرقمي ورابط موضع كل سطر. عمودا المخطوط مجموعتا عرض وليسا فصلين أدبيين؛ الشاهد نفسه جزئي، ولا تُستكمل أجزاؤه المفقودة. يسمى أحياناً «أبوكريفون دانيال الآرامي» أو «نص ابن الله»، لكن هذه تسميات وصفية لا تثبت عنوان العمل أو نسبته إلى دانيال. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ ويذكر أن التفريغ مبني على عمل مشروع سابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية مرخصة بإعادة النشر؛ لذا أدرج الأصل الآرامي فقط. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q246/2026-10-06/index.html?v=2026-10-06)؛ [دراسة مفتوحة تعرض ترجمة اجتهادية وتبين اختلاف الآراء](https://oi-idb-static.uchicago.edu/multimedia/1024/saoc66.pdf).'
   },
   {
+    bookCode: 'Q243', slug: 'arc-qdr-4q243-pseudo-daniel-a-2026',
+    nameAr: 'شاهد منحول دانيال أ القمراني (4Q243)',
+    nameEn: 'Qumran Digital Aramaic Pseudo-Daniel A 4Q243', abbreviation: '4Q243-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q243/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/pseudo_daniel_4q243_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: '575da8dbe29ff1dc961fe147862e4da00f44091ad9d70cf38fe7b5c733fea4ce',
+    expectedUnitCount: 128, expectedWordCount: 1138, maxChapter: 43, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4],[1,2],[1,2],[1],[1,2],[1,2,3,4],[1,2,3],[1,2,3,4],[1,2],[1,2,3,4],[1,2,3],[1,2,3],[1,2,3,4,5],[1,2,3,4],[1,2,3],[1],[1,2,3,4],[1,2,3,4,5],[1,2,3,4,5],[1,2],[2,3],[1,2,3,4],[1,2,3],[1,2,3],[1,2,3],[1,2,3,4],[1,2,3,4,5],[1,2,3,4,5],[1,2,3],[1,2,3],[1,2,3],[1],[1,2],[1,2],[1,2],[1,2],[1,2],[1,2],[1,2,3],[1,2,3],[1,2],[1,2],[1,2,3,4]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الشاهد الآرامي 4Q243 المعروف تقليدياً بمنحول دانيال أ: ١٢٨ سطراً في ٤٣ مجموعة عرض، مع اسم المجموعة ورقم السطر ورابط موضع المصدر لكل سطر. المجموعات ليست فصولاً أدبية، والنص شذري جزئي. يضم الباحثون عادة 4Q243 و4Q244 إلى تقليد أو تأليف واحد محفوظ في نسختين؛ هنا يسجل كل مخطوط مستقلاً حفظاً لهوية الشاهد. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب بياناته إلى مشروع سابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر؛ أدرج الأصل الآرامي فقط. [تفريغ 4Q243 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q243/2026-10-06/index.html?v=2026-10-06)؛ [دراسة أكاديمية عن 4Q243–244 وكتاب دانيال](https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/04/06/31/2020040631/2020040631.pdf).'
+  },
+  {
+    bookCode: 'Q244', slug: 'arc-qdr-4q244-pseudo-daniel-b-2026',
+    nameAr: 'شاهد منحول دانيال ب القمراني (4Q244)',
+    nameEn: 'Qumran Digital Aramaic Pseudo-Daniel B 4Q244', abbreviation: '4Q244-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q244/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/pseudo_daniel_4q244_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: 'c2ae9ae8fb74114448f4a8689b138118979ee2919afdfd8ef38e1d45a5739219',
+    expectedUnitCount: 35, expectedWordCount: 326, maxChapter: 13, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5],[1,2,3],[3,4],[1,2,3,4,5,6],[1],[1],[1,2,3,4],[1,2,3],[1,2],[1,2],[1,2,3,4],[1],[1]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الشاهد الآرامي 4Q244 المعروف تقليدياً بمنحول دانيال ب: ٣٥ سطراً في ١٣ مجموعة عرض. يحفظ منفصلاً عن مخطوط 4Q243 مع أنهما ينتميان في الغالب إلى تأليف واحد؛ فالمجموعات العرضية ليست فصولاً، والنص شذري جزئي. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب بياناته إلى مشروع سابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر؛ أدرج الأصل الآرامي فقط. [تفريغ 4Q244 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q244/2026-10-06/index.html?v=2026-10-06)؛ [دراسة أكاديمية عن 4Q243–244 وكتاب دانيال](https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/04/06/31/2020040631/2020040631.pdf).'
+  },
+  {
+    bookCode: 'Q245', slug: 'arc-qdr-4q245-pseudo-daniel-c-2026',
+    nameAr: 'شاهد منحول دانيال ج القمراني (4Q245)',
+    nameEn: 'Qumran Digital Aramaic Pseudo-Daniel C 4Q245', abbreviation: '4Q245-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q245/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/pseudo_daniel_4q245_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: '151e1c6ecf861457e8fa20d8342a878226296197da4d4979e5da2432fd1ccc96',
+    expectedUnitCount: 25, expectedWordCount: 215, maxChapter: 5, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9,10,11,12,13],[9,10],[1,2,3,4,5,6],[1,2],[1,2]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الشاهد الآرامي 4Q245 المعروف تقليدياً بمنحول دانيال ج: ٢٥ سطراً في خمس مجموعات عرض، منها قائمتان نسبيتان. الشاهد شذري جزئي. علاقته بـ4Q243 و4Q244 محل نقاش، لذلك يحفظ في سجل مستقل ولا يضم إليهما. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب بياناته إلى مشروع سابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر؛ أدرج الأصل الآرامي فقط. [تفريغ 4Q245 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q245/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن تميز 4Q245 وعلاقته غير المحسومة بالآخرين](https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/71/99/89/2020719989/2020719989.pdf).'
+  },
+  {
     bookCode: 'APLEV540', slug: 'arc-qdr-apocryphon-levi-a-2026',
     nameAr: 'تفريغ الشاهد القمراني 4Q540 (منحول لاوي أ)', nameEn: 'Qumran Digital 4Q540 Aramaic Fragment Witness', abbreviation: '4Q540-ARC',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q540/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
