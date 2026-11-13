@@ -470,7 +470,8 @@ function QuickNavigator({ books, onNavigate }) {
 const SEARCH_COLLECTION_OPTIONS = [
   { slug: 'old-testament', label: 'العهد القديم' },
   { slug: 'new-testament', label: 'العهد الجديد' },
-  { slug: 'apocrypha', label: 'الأبوكريفا' }
+  { slug: 'deuterocanon', label: 'أبوكريفا العهد القديم' },
+  { slug: 'pseudepigrapha', label: 'المنحولات والرؤى القديمة' }
 ];
 
 function SearchCollectionOptions({ selectedCollections, onToggleCollection }) {
@@ -546,8 +547,9 @@ function BibleSearchBox({
 
       {/* Translation Selection Chips for Search */}
       {translations.length > 0 && (
-        <div className="flex flex-wrap items-center gap-1.5 mt-2.5 px-1 text-xs">
-          <span className="font-bold text-[#735535] dark:text-slate-300 ml-1">البحث في:</span>
+        <div className="mt-2.5 px-1 text-xs">
+          <div className="flex flex-wrap items-center gap-1.5">
+          <span className="font-bold text-[#735535] dark:text-slate-300 ml-1">الترجمة:</span>
 
           <button
             type="button"
@@ -573,6 +575,10 @@ function BibleSearchBox({
             كافة الترجمات (الكل)
           </button>
 
+          </div>
+          <details className="mt-2">
+            <summary className="inline-flex cursor-pointer list-none items-center rounded-lg px-2 py-1 font-bold text-[#735535] hover:bg-[#efe8dc] dark:text-slate-300 dark:hover:bg-slate-800">اختيار ترجمة محددة</summary>
+            <div className="mt-2 flex flex-wrap items-center gap-1.5">
           {translations.map(t => {
             const isSelected = !isAllSelected && selectedTranslations.includes(t.slug);
             return (
@@ -595,6 +601,8 @@ function BibleSearchBox({
               </button>
             );
           })}
+            </div>
+          </details>
         </div>
       )}
       <SearchCollectionOptions selectedCollections={selectedCollections} onToggleCollection={onToggleCollection} />
@@ -660,8 +668,9 @@ function SearchResults({
 
       {/* Translation Filter Chips */}
       {translations.length > 0 && (
-        <div className="mb-4 pb-3 border-b border-[#ddcfb8]/60 dark:border-slate-800 flex flex-wrap items-center gap-1.5 text-xs">
-          <span className="font-bold text-[#735535] dark:text-slate-300 ml-1">تصفية حسب الترجمة:</span>
+        <div className="mb-4 pb-3 border-b border-[#ddcfb8]/60 dark:border-slate-800 text-xs">
+          <div className="flex flex-wrap items-center gap-1.5">
+          <span className="font-bold text-[#735535] dark:text-slate-300 ml-1">الترجمة:</span>
 
           <button
             type="button"
@@ -687,6 +696,10 @@ function SearchResults({
             كافة الترجمات (الكل)
           </button>
 
+          </div>
+          <details className="mt-2">
+            <summary className="inline-flex cursor-pointer list-none rounded-lg px-2 py-1 font-bold text-[#735535] hover:bg-[#efe8dc] dark:text-slate-300 dark:hover:bg-slate-800">اختيار ترجمة محددة</summary>
+            <div className="mt-2 flex flex-wrap items-center gap-1.5">
           {translations.map(t => {
             const isAll = selectedTranslations.includes('all') || (!selectedTranslations.includes('default') && selectedTranslations.length === translations.length);
             const isSelected = !isAll && selectedTranslations.includes(t.slug);
@@ -710,6 +723,8 @@ function SearchResults({
               </button>
             );
           })}
+            </div>
+          </details>
         </div>
       )}
 
@@ -784,6 +799,7 @@ function ChapterReader({
   book,
   chapter,
   onOpenVerseModal,
+  onOpenCollection,
   onNavigateChapter,
   translations
 }) {
@@ -879,16 +895,16 @@ function ChapterReader({
               <BookOpen className="w-4 h-4" />
             </div>
             <div>
-              <div className="flex items-center gap-1.5 text-xs font-bold text-[#735535] dark:text-slate-300">
+              <div className="flex flex-wrap items-center gap-1.5 text-xs font-bold text-[#735535] dark:text-slate-300">
                 <span>البيبل</span>
                 <ChevronLeft className="w-3 h-3 text-[#aa8e67]" />
-                <span className="bg-[#efe8dc] dark:bg-slate-800 text-[#46301b] dark:text-[#f8f3ea] px-2 py-0.5 rounded text-[11px] font-bold">
+                <button type="button" onClick={() => onOpenCollection(bookInfo?.collection_slug)} className="rounded bg-[#efe8dc] px-2 py-0.5 text-[11px] font-bold text-[#46301b] transition-colors hover:bg-[#e7dac4] hover:text-[#8d6e47] dark:bg-slate-800 dark:text-[#f8f3ea] dark:hover:bg-slate-700" title="فتح مجموعة الأسفار">
                   {bookInfo?.collection_name_ar || 'الأسفار'}
-                </span>
+                </button>
                 <ChevronLeft className="w-3 h-3 text-[#aa8e67]" />
-                <span className="bg-[#f0e6d2] dark:bg-slate-700 text-[#322010] dark:text-[#fdfbf7] px-2 py-0.5 rounded text-[11px] font-extrabold font-mono">
-                  [{bookInfo?.book_number || bookInfo?.id}] {bookInfo?.code}
-                </span>
+                <span className="font-extrabold text-[#322010] dark:text-slate-100">{bookInfo?.name_ar}</span>
+                <ChevronLeft className="w-3 h-3 text-[#aa8e67]" />
+                <span className="rounded bg-[#f0e6d2] px-2 py-0.5 text-[11px] font-extrabold text-[#322010] dark:bg-slate-700 dark:text-[#fdfbf7]">الإصحاح {chapter}</span>
               </div>
               <h1 className="text-base sm:text-lg font-black text-[#322010] dark:text-slate-100 flex items-center gap-2 mt-0.5 scheherazade-font">
                 {bookInfo?.name_ar} — الإصحاح {chapter}
@@ -1573,7 +1589,7 @@ function VerseFocusModal({
 // ─────────────────────────────────────────────────────────
 //  Books Grid for a Collection
 // ─────────────────────────────────────────────────────────
-function BooksGrid({ collectionSlug, onOpenChapter }) {
+function BooksGrid({ collectionSlug, onOpenChapter, translations }) {
   const { books, loading } = useBooks(collectionSlug);
 
   if (loading) {
@@ -1609,15 +1625,20 @@ function BooksGrid({ collectionSlug, onOpenChapter }) {
                 <span className="text-[#b58a43] dark:text-[#c2a578] font-bold font-mono text-xs bg-[#b58a43]/10 dark:bg-[#b58a43]/20 px-2 py-0.5 rounded-lg shrink-0">
                   {b.book_number || b.id}
                 </span>
-                <span className="font-bold text-sm sm:text-base text-[#322010] dark:text-slate-100 group-hover:text-[#8d6e47] dark:group-hover:text-[#c2a578] transition-colors truncate">
+                <span className="font-bold text-sm sm:text-base leading-relaxed text-[#322010] dark:text-slate-100 group-hover:text-[#8d6e47] dark:group-hover:text-[#c2a578] transition-colors line-clamp-2">
                   {b.name_ar}
                 </span>
               </div>
 
-              <div className="flex items-center gap-2 mt-2 text-xs text-[#8d6e47] dark:text-slate-400">
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mt-2 text-xs text-[#8d6e47] dark:text-slate-400">
                 <span className="font-medium">
                   {b.chapter_count || 0} {b.chapter_count === 1 ? 'إصحاح واحد' : 'إصحاحاً'}
                 </span>
+                {isReady && (
+                  <span className="basis-full text-[11px] leading-relaxed text-slate-600 dark:text-slate-300">
+                    اللغات: {[...new Set((b.available_translations || []).map(slug => translations.find(t => t.slug === slug)?.language).filter(Boolean))].map(language => ({ en: 'الإنجليزية', ar: 'العربية', la: 'اللاتينية', syr: 'السريانية', gez: 'الجعزية', grc: 'اليونانية', arc: 'الآرامية' }[language] || language)).join('، ') || 'متاحة'}
+                  </span>
+                )}
                 {!isReady && <span className="font-bold text-slate-500 dark:text-slate-400">مدخل فهرسي</span>}
                 {isDeutero && (
                   <span className="text-[10px] text-[#735535] dark:text-[#d5be98] bg-[#f0e6d2] dark:bg-slate-800 px-1.5 py-0.2 rounded-md font-bold">
@@ -1764,36 +1785,36 @@ function BibleLanding({
       )}
 
       {/* New Testament Quick Grid */}
-      <div>
+      <section className="rounded-3xl border border-blue-200/70 bg-blue-50/50 p-4 sm:p-5 dark:border-blue-900/60 dark:bg-blue-950/15">
         <h2 className="text-base font-extrabold text-[#322010] dark:text-slate-100 mb-3">
           أسفار العهد الجديد (الأناجيل والرسائل والرؤيا):
         </h2>
-        <BooksGrid collectionSlug="new-testament" onOpenChapter={onOpenChapter} />
-      </div>
+        <BooksGrid collectionSlug="new-testament" onOpenChapter={onOpenChapter} translations={translations} />
+      </section>
 
       {/* Old Testament Quick Grid */}
-      <div>
+      <section className="rounded-3xl border border-amber-200/70 bg-amber-50/50 p-4 sm:p-5 dark:border-amber-900/60 dark:bg-amber-950/15">
         <h2 className="text-base font-extrabold text-[#322010] dark:text-slate-100 mb-3">
           أسفار العهد القديم:
         </h2>
-        <BooksGrid collectionSlug="old-testament" onOpenChapter={onOpenChapter} />
-      </div>
+        <BooksGrid collectionSlug="old-testament" onOpenChapter={onOpenChapter} translations={translations} />
+      </section>
 
       {/* Deuterocanon Quick Grid */}
-      <div>
+      <section className="rounded-3xl border border-violet-200/70 bg-violet-50/50 p-4 sm:p-5 dark:border-violet-900/60 dark:bg-violet-950/15">
         <h2 className="text-base font-extrabold text-[#322010] dark:text-slate-100 mb-3">
           الأسفار القانونية الثانية (المختلف عليها):
         </h2>
-        <BooksGrid collectionSlug="deuterocanon" onOpenChapter={onOpenChapter} />
-      </div>
+        <BooksGrid collectionSlug="deuterocanon" onOpenChapter={onOpenChapter} translations={translations} />
+      </section>
 
       {/* Apocrypha / Ethiopian Canon Quick Grid */}
-      <div>
+      <section className="rounded-3xl border border-emerald-200/70 bg-emerald-50/50 p-4 sm:p-5 dark:border-emerald-900/60 dark:bg-emerald-950/15">
         <h2 className="text-base font-extrabold text-[#322010] dark:text-slate-100 mb-3 flex items-center gap-2">
           <span>نصوص أبوكريفية وتقاليد إثيوبية وكنسية (أخنوخ، اليوبيلات، المكابيان الإثيوبي، وصية موسى، الدسقولية):</span>
         </h2>
-        <BooksGrid collectionSlug="pseudepigrapha" onOpenChapter={onOpenChapter} />
-      </div>
+        <BooksGrid collectionSlug="pseudepigrapha" onOpenChapter={onOpenChapter} translations={translations} />
+      </section>
     </div>
   );
 }
@@ -2084,6 +2105,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
   }, [openChapter]);
 
   const openCollection = useCallback((slug) => {
+    setIsModalOpen(false);
     setCurrentCollection(slug);
     setView('collection');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2120,6 +2142,15 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
           {/* Breadcrumb path */}
           {(view === 'chapter' || view === 'book') && currentBook && (
             <>
+              <ChevronLeft className="w-3.5 h-3.5 text-[#aa8e67]" />
+              <button
+                type="button"
+                onClick={() => openCollection(currentBookObj?.collection_slug)}
+                className="text-xs sm:text-sm font-bold text-[#5c4127] transition-colors hover:text-[#8d6e47] dark:text-slate-300"
+                title="فتح مجموعة الأسفار"
+              >
+                {currentBookObj?.collection_name_ar || 'المجموعة'}
+              </button>
               <ChevronLeft className="w-3.5 h-3.5 text-[#aa8e67]" />
               <button
                 onClick={() => {
@@ -2254,6 +2285,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
             book={currentBook}
             chapter={currentChapter}
             onOpenVerseModal={openVerseModal}
+            onOpenCollection={openCollection}
             onNavigateChapter={(b, ch) => openChapter(b, ch)}
             translations={translations}
           />
