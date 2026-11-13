@@ -39,7 +39,32 @@ test('registers Questions of Ezra separately from the other Ezra works', () => {
   assert.deepEqual(book, {
     name_ar: 'أسئلة عزرا',
     slug: 'pseudepigrapha',
-    canonical_order: 8.8
+    canonical_order: 41
+  });
+});
+
+test('orders Old Testament pseudepigrapha approximately by story era', () => {
+  initBibleSchema();
+  const db = getDb();
+  const allOrders = db.prepare(`
+    SELECT canonical_order FROM bible_books
+    WHERE collection_id=(SELECT id FROM bible_collections WHERE slug='pseudepigrapha')
+    ORDER BY canonical_order
+  `).all().map(({ canonical_order }) => canonical_order);
+  const orders = Object.fromEntries(db.prepare(`
+    SELECT code, canonical_order FROM bible_books
+    WHERE code IN ('TADAM', 'SHEM', 'ABR', 'MOS', 'MOTA-MUSE', 'TSOL', '2BAR')
+  `).all().map(({ code, canonical_order }) => [code, canonical_order]));
+
+  assert.deepEqual(allOrders, Array.from({ length: 50 }, (_, index) => index + 1));
+  assert.deepEqual(orders, {
+    TADAM: 1,
+    SHEM: 11,
+    ABR: 12,
+    MOS: 21,
+    'MOTA-MUSE': 22,
+    TSOL: 25,
+    '2BAR': 37
   });
 });
 

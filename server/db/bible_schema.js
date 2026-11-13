@@ -461,6 +461,21 @@ function _seedExpansionCatalog(db) {
     ['POLPHI', 'رسالة بوليكاربوس إلى أهل فيلبي', 'Polycarp to the Philippians', 'POLPHI', 'church-writings', 37, 0, 'greek', 'اليونانية مع ختام محفوظ باللاتينية', 'رسالة بوليكاربوس إلى مسيحيي فيلبي؛ تتناول الإيمان والسلوك والعطاء والتحذير من محبة المال، وتشير إلى إغناطيوس ورسائله. تحفظ ١٤ فصلاً، مع أجزاء أخيرة محفوظة باللاتينية.'],
   ];
 
+  // Approximate order by the earliest story era represented, not by composition date.
+  // Long retellings are grouped near their opening era; undated stories remain late.
+  const pseudepigraphaStoryOrder = new Map([
+    ['TADAM', 1], ['APMO', 2], ['TSTADAM', 3], ['APADAM', 4], ['ADAMCON', 5],
+    ['PSLAB', 6], ['JASHER', 7], ['ENO2', 8], ['GIANTS', 9], ['ENO3', 10], ['SHEM', 11],
+    ['ABR', 12], ['AABR', 13], ['TAISAAC', 14], ['TAJACOB', 15], ['ARL', 16],
+    ['T12', 17], ['JOSEPH', 18], ['TJOB', 19], ['AMRAM', 20], ['MOS', 21],
+    ['MOTA-MUSE', 22], ['NARMOS', 23], ['BALAAM', 24], ['TSOL', 25], ['QSB', 26],
+    ['SEELI', 27], ['VISEL', 28], ['APOCEL', 29], ['AHIKAR', 30], ['ASC', 31],
+    ['APZEPH', 32], ['APOEZ', 33], ['APDAN', 34], ['APDANC', 35], ['SEVDAN', 36],
+    ['2BAR', 37], ['3BAR', 38], ['4BAR', 39], ['RESEZ', 40], ['QEZRA', 41],
+    ['REVEZRA', 42], ['APEZRA', 43], ['VISZEZRA', 44], ['CONFESD', 45],
+    ['ARIST', 46], ['PSOL', 47], ['SIBYLL', 48], ['ZOSIMUS', 49], ['SEDRACH', 50]
+  ]);
+
   const sourceDefaults = {
     sam: ['Biblia Arabica', 'https://biblia-arabica.com/bibl/IZFNRHBX'],
     lxx: ['eBible Brenton Septuagint', 'https://ebible.org/eng-Brenton/'],
@@ -478,8 +493,9 @@ function _seedExpansionCatalog(db) {
   };
 
   for (const [code, nameAr, nameEn, abbr, collection, order, chapterCount, tradition, language, summary] of records) {
-    insertBook.run(code, nameAr, nameEn, abbr, colMap[collection], order, chapterCount);
-    syncBookCatalog.run(nameAr, nameEn, abbr, colMap[collection], order, chapterCount, chapterCount, code);
+    const catalogOrder = collection === 'pseudepigrapha' ? (pseudepigraphaStoryOrder.get(code) ?? order) : order;
+    insertBook.run(code, nameAr, nameEn, abbr, colMap[collection], catalogOrder, chapterCount);
+    syncBookCatalog.run(nameAr, nameEn, abbr, colMap[collection], catalogOrder, chapterCount, chapterCount, code);
     insertAlias.run(code, nameAr);
     insertAlias.run(code, nameEn);
     const [sourceName, sourceUrl] = sourceDefaults[tradition] || ['مصدر يحتاج إلى تثبيت', null];

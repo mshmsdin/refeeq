@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { ADDITIONAL_SOURCES } from './import_noncanonical_english.js';
 import { parseReviewedUnitText } from './reviewed_text_source.js';
 
-test('imports the complete published Ge’ez witness and its licensed English translation as partial', async () => {
+test('imports all published Ge’ez page units and its licensed English translation as partial', async () => {
   const sources = [
     ['gez-opensiddur-mota-muse-2019', 'gez', /^ይትባረክ/u, /ወቀበርዎ ፡ ላእክት/u],
     ['en-opensiddur-mota-muse-mayer-2019', 'en', /^Blessed be/u, /Mosheh died and the angels buried him\./u]
