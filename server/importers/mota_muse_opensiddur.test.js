@@ -4,6 +4,11 @@ import { readFile } from 'node:fs/promises';
 import { ADDITIONAL_SOURCES } from './import_noncanonical_english.js';
 import { parseReviewedUnitText } from './reviewed_text_source.js';
 
+test('makes the targeted importer callable by the startup migration', async () => {
+  const importer = await import('./import_noncanonical_english.js');
+  assert.equal(typeof importer.run, 'function');
+});
+
 test('imports all published Ge’ez page units and its licensed English translation as partial', async () => {
   const sources = [
     ['gez-opensiddur-mota-muse-2019', 'gez', /^ይትባረክ/u, /ወቀበርዎ ፡ ላእክት/u],

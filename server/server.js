@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 import AdmZip from 'adm-zip';
 import { initDatabase, getDb, closeDb, getDbPath } from './db/schema.js';
 import { initBibleSchema } from './db/bible_schema.js';
+import { ensureMotaMuseImported } from './db/mota_muse_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -35,6 +36,13 @@ const __dirname = path.dirname(__filename);
 // Initialize DB schema
 initDatabase();
 initBibleSchema();
+try {
+  if (await ensureMotaMuseImported()) {
+    console.log('[Bible startup] Imported both Mota Muse witnesses from reviewed local files.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Mota Muse import failed:', error.message);
+}
 
 const app = express();
 const PORT = process.env.PORT || 3001;

@@ -1960,6 +1960,7 @@ export const ADDITIONAL_SOURCES = [
     expectedSha256: '4c0f02b092f37b2a8baac5ff0628bb600f7881e679b04614aa8f2b708ebd6df6',
     expectedUnitCount: 15, expectedVerseNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
     expectedWordCount: 2200, maxChapter: 1, incomplete: true,
+    replaceExistingVerses: true,
     language: 'gez', originalLanguage: 'الجعزية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
     notes: 'نقلٌ للنص الجعزي كما يورده مشروع السِّدور المفتوح، مقسماً إلى ١٥ وحدة عرض متتابعة لا إلى أعداد قديمة. صفحة المشروع تنشر النص في ٢٦ تشرين الثاني ٢٠١٩ برخصة CC BY-SA 4.0 (المشاع الإبداعي النسب بالمثل ٤٫٠)، وتنسب الترجمة العبرية إلى جاك فايطلوفيتش (Jacques Faïtlovitch)، وتعرّف إسحاق غانتويرك ماير (Isaac Gantwerk Mayer) مترجماً إنجليزياً لهذا النص؛ ولا تعيّن مؤلف النص الأصلي. راجع الطبعة الإثيوبية المصورة لفايطلوفيتش سنة ١٩٠٦؛ وتصف مقدمتها مخطوط هذا الشاهد بأنه غير صحيح وغير كامل. لذلك السجل جزئي، ولا يستكمل مواضع مفقودة. عند إعادة الاستخدام: انسب النص إلى مشروع السِّدور المفتوح وفايطلوفيتش حيث تنطبق النسبة، أرفق رابط المصدر والرخصة، وصرّح بأن النص قُسم إلى وحدات عرض. [النص والرخصة](https://opensiddur.org/readings-and-sourcetexts/readings/jewish-readings/shivah-badar-readings/mota-muse-the-book-of-the-passing-of-mosheh/)؛ [الطبعة الإثيوبية المصورة ١٩٠٦](https://archive.org/details/motamuselamortdemoisejacquesfaitlovitch1906).'
   },
@@ -1974,6 +1975,7 @@ export const ADDITIONAL_SOURCES = [
     expectedSha256: '8a66f4eedc98b2c4b095ea4ac2540a1e390a896a49b67160296c9dab51156b43',
     expectedUnitCount: 15, expectedVerseNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
     expectedWordCount: 2068, maxChapter: 1, incomplete: true,
+    replaceExistingVerses: true,
     language: 'en', originalLanguage: 'الجعزية، بوسيط ترجمة فايطلوفيتش العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
     notes: 'ترجمة إسحاق غانتويرك ماير (Isaac Gantwerk Mayer) الإنجليزية المنشورة في مشروع السِّدور المفتوح سنة ٢٠١٩؛ يذكر المشروع صراحة أنها مترجمة عن العبرية التي ترجمها جاك فايطلوفيتش (Jacques Faïtlovitch) عن الجعزية، وليست ترجمة إنجليزية مباشرة عن الجعزية. رُتبت فقرات الصفحة في ١٥ وحدة عرض، وأزيل شرح الحواشي من المتن مع إبقاء أرقام الإحالة؛ النص متاح برخصة CC BY-SA 4.0 (المشاع الإبداعي النسب بالمثل ٤٫٠)، ويجب حفظ النسبة والرابط والرخصة وبيان التقسيم. مقدمة طبعة فايطلوفيتش ١٩٠٦ تصف مخطوط الشاهد بأنه غير صحيح وغير كامل؛ لذا حالة هذا الشاهد جزئية ولا تُختلق خاتمة أو مادة مفقودة. [النص والرخصة وبيان سلسلة الترجمة](https://opensiddur.org/readings-and-sourcetexts/readings/jewish-readings/shivah-badar-readings/mota-muse-the-book-of-the-passing-of-mosheh/)؛ [الطبعة الإثيوبية المصورة ١٩٠٦](https://archive.org/details/motamuselamortdemoisejacquesfaitlovitch1906).'
   },
@@ -2649,8 +2651,10 @@ function parseRomanHtmlChapters(content, source) {
   return rows.sort((a, b) => a.chapter - b.chapter);
 }
 
-async function run() {
-  const onlySlugs = process.argv.flatMap((argument) => argument.startsWith('--only=') ? argument.slice('--only='.length).split(',') : []).map((slug) => slug.trim()).filter(Boolean);
+export async function run(requestedSlugs = null, { initializeDatabase = true } = {}) {
+  const onlySlugs = requestedSlugs === null
+    ? process.argv.flatMap((argument) => argument.startsWith('--only=') ? argument.slice('--only='.length).split(',') : []).map((slug) => slug.trim()).filter(Boolean)
+    : requestedSlugs.map((slug) => String(slug).trim()).filter(Boolean);
   const declaredSources = [...SOURCES, ...ADDITIONAL_SOURCES];
   const blockedSlugs = onlySlugs.filter((slug) => declaredSources.some((source) => source.slug === slug && source.importEligible === false));
   if (blockedSlugs.length) throw new Error(`مصادر لم يثبت إذن إعادة نشرها: ${blockedSlugs.join(', ')}`);
@@ -2658,8 +2662,10 @@ async function run() {
   const selectedSources = onlySlugs.length ? allSources.filter((source) => onlySlugs.includes(source.slug)) : allSources;
   const unknownSlugs = onlySlugs.filter((slug) => !selectedSources.some((source) => source.slug === slug));
   if (unknownSlugs.length) throw new Error(`مصادر غير معروفة: ${unknownSlugs.join(', ')}`);
-  initDatabase();
-  initBibleSchema();
+  if (initializeDatabase) {
+    initDatabase();
+    initBibleSchema();
+  }
   const db = getDb();
   const insertTranslation = db.prepare(`
     INSERT INTO bible_translations
