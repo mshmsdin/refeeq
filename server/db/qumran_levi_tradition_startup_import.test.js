@@ -9,7 +9,7 @@ const testDbPath = join(tmpdir(), `qumran-levi-apocrypha-${randomUUID()}.sqlite`
 process.env.DB_PATH = testDbPath;
 const { getDb, initDatabase } = await import('./schema.js');
 const { initBibleSchema } = await import('./bible_schema.js');
-const { ensureQumranLeviApocryphaImported } = await import('./qumran_levi_apocrypha_startup_import.js');
+const { ensureQumranLeviTraditionImported } = await import('./qumran_levi_tradition_startup_import.js');
 const { ADDITIONAL_SOURCES } = await import('../importers/import_noncanonical_english.js');
 
 initDatabase();
@@ -19,12 +19,13 @@ after(() => {
   for (const suffix of ['', '-wal', '-shm']) rmSync(testDbPath + suffix, { force: true });
 });
 
-test('imports and repairs both Qumran Levi fragment witnesses without merging them', async () => {
-  assert.equal(await ensureQumranLeviApocryphaImported(), true);
+test('imports and repairs the Qumran Levi tradition witnesses without merging them', async () => {
+  assert.equal(await ensureQumranLeviTraditionImported(), true);
   const db = getDb();
   const expected = [
     { slug: 'arc-qdr-apocryphon-levi-a-2026', book: 'APLEV540', units: 9, chapters: 3 },
-    { slug: 'arc-qdr-apocryphon-levi-b-2026', book: 'APLEV541', units: 118, chapters: 31 }
+    { slug: 'arc-qdr-apocryphon-levi-b-2026', book: 'APLEV541', units: 118, chapters: 31 },
+    { slug: 'arc-qdr-testament-qahat-2026', book: 'QAHAT', units: 39, chapters: 5 }
   ];
   for (const item of expected) {
     const translation = db.prepare(`
@@ -51,12 +52,15 @@ test('imports and repairs both Qumran Levi fragment witnesses without merging th
   `).get();
   db.prepare('UPDATE bible_verses SET text=? WHERE id=?').run('stale', stale.id);
   const sourceDefinition = ADDITIONAL_SOURCES.find(({ slug }) => slug === 'arc-qdr-apocryphon-levi-a-2026');
+  const qahatSource = ADDITIONAL_SOURCES.find(({ slug }) => slug === 'arc-qdr-testament-qahat-2026');
   db.prepare("UPDATE bible_book_metadata SET source_notes='stale' WHERE book_code='APLEV540'").run();
   db.prepare("UPDATE bible_book_sources SET notes='stale' WHERE book_code='APLEV540' AND source_url=?").run(sourceDefinition.url);
-  assert.equal(await ensureQumranLeviApocryphaImported(), true);
+  db.prepare("UPDATE bible_book_metadata SET source_notes='stale' WHERE book_code='QAHAT'").run();
+  assert.equal(await ensureQumranLeviTraditionImported(), true);
   assert.notEqual(db.prepare('SELECT text FROM bible_verses WHERE id=?').get(stale.id).text, 'stale');
   assert.equal(db.prepare("SELECT source_notes FROM bible_book_metadata WHERE book_code='APLEV540'").get().source_notes, sourceDefinition.notes);
   assert.equal(db.prepare("SELECT notes FROM bible_book_sources WHERE book_code='APLEV540' AND source_url=?").get(sourceDefinition.url).notes, sourceDefinition.notes);
-  assert.equal(await ensureQumranLeviApocryphaImported(), false);
-  assert.equal(db.prepare("SELECT COUNT(*) AS count FROM bible_verses WHERE book_code IN ('APLEV540','APLEV541')").get().count, 127);
+  assert.equal(db.prepare("SELECT source_notes FROM bible_book_metadata WHERE book_code='QAHAT'").get().source_notes, qahatSource.notes);
+  assert.equal(await ensureQumranLeviTraditionImported(), false);
+  assert.equal(db.prepare("SELECT COUNT(*) AS count FROM bible_verses WHERE book_code IN ('APLEV540','APLEV541','QAHAT')").get().count, 166);
 });

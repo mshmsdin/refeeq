@@ -5,7 +5,8 @@ import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
 const SOURCES = [
   { slug: 'arc-qdr-apocryphon-levi-a-2026', bookCode: 'APLEV540', units: 9, chapters: 3 },
-  { slug: 'arc-qdr-apocryphon-levi-b-2026', bookCode: 'APLEV541', units: 118, chapters: 31 }
+  { slug: 'arc-qdr-apocryphon-levi-b-2026', bookCode: 'APLEV541', units: 118, chapters: 31 },
+  { slug: 'arc-qdr-testament-qahat-2026', bookCode: 'QAHAT', units: 39, chapters: 5 }
 ];
 
 function getSourceState(db, source, sourceDefinition) {
@@ -50,7 +51,7 @@ async function sourceUnitsMatch(db, translationId, sourceDefinition) {
   return JSON.stringify(actual) === JSON.stringify(expected);
 }
 
-export async function ensureQumranLeviApocryphaImported() {
+export async function ensureQumranLeviTraditionImported() {
   const db = getDb();
   const sourcesToImport = [];
   for (const source of SOURCES) {

@@ -2164,6 +2164,17 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ الشاهد الآرامي 4Q541 كما نشره مشروع قمران الرقمي بتاريخ ٢١ مايو ٢٠٢٦، مع حفظ الأسطر الـ١١٨ الظاهرة في ٣١ مجموعة عرض للشظايا وترقيم كل سطر ورابطه المباشر؛ وهذه المجموعات ليست فصولاً أصلية. تسمية «منحول لاوي ب» ترد مع علامة استفهام في بعض الفهارس؛ وعلاقة هذا الشاهد بـ4Q540 وبوثيقة لاوي الأوسع موضع نقاش، لذلك يُحفظ هنا كسجل مستقل ولا يُعاد بناء نص موحد. النص شذري ولا يمثل عملاً كاملاً، ولم أعثر في هذا المصدر على ترجمة إنجليزية معلنة الرخصة؛ لذا أُدرج الأصل الآرامي وحده. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب التفريغ إلى مشروع قمران الرقمي الممول من مؤسسة الأبحاث الألمانية، ويذكر اعتماد بياناته على مشروع معجم قمران السابق المبني على عمل مارتن أبيغ. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q541/2026-05-21/index.html)؛ [مشروع قمران الرقمي](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
   },
   {
+    bookCode: 'QAHAT', slug: 'arc-qdr-testament-qahat-2026',
+    nameAr: 'تفريغ الشاهد القمراني 4Q542 (وصية قهات)', nameEn: 'Qumran Digital 4Q542 Aramaic Testament of Qahat', abbreviation: '4Q542-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q542/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/testament_qahat_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: 'dc2174c5eeb7374cf47511f42f9f05fc598bb0ccb44295b5b6e921361abbd03d',
+    expectedUnitCount: 39, expectedWordCount: 451, maxChapter: 5, incomplete: true,
+    expectedChapterVerseNumbers: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], [5, 6, 7, 8, 9, 10, 11, 12, 13], [1], [11, 12, 13]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ ٣٩ سطراً ظاهراً من الشاهد الآرامي 4Q542، في خمسة أقسام عرض بحسب تقسيم صفحة التفريغ، لا خمسة فصول أصلية؛ حُفظت أرقام السطر الأصلية وروابط الموضع. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب العمل إلى مشروع قمران الرقمي، ويذكر اعتماد بياناته على مشروع معجم قمران السابق المبني على عمل مارتن أبيغ. يُعرف النص باسم «وصية قهات»، ويصور انتقال تعاليم وتراث الكهنوت من لاوي إلى قهات ثم ابنه عمرام. وتوجد فرضية علمية بأن 4Q542 و4Q547 قد يكونان جزءين من اللفافة نفسها، أو أن النص المعنون وصية قهات قسم من رؤى عمرام؛ لم يُحسم ذلك، لذلك يظل هذا الشاهد في سجل مستقل. عُثر على ترجمة إنجليزية في صفحة مشروع تينمو، لكنها لا تعرض رخصة لإعادة النشر؛ لذا يُدرج الأصل الآرامي المرخص فقط، مع إبقاء الشاهد جزئياً وعدم ملء السقط. [صفحة 4Q542 ورخصتها](https://lexicon.qumran-digital.org/transcriptions/4Q542/2026-10-06/index.html?v=2026-10-06)؛ [الترجمة الإنجليزية غير المرخصة لإعادة النشر](https://tianmu.org/good-work-library/judean/dead-sea-scrolls/testaments-and-apocrypha/testament-of-qahat)؛ [دراسة علاقة 4Q542 و4Q547](https://brill.com/view/journals/jsj/52/1/article-p27_2.pdf).'
+  },
+  {
     bookCode: 'APOCEL', slug: 'grc-psi-i-7-apocalypse-elijah-1912',
     nameAr: 'الشاهد اليوناني الشذري من رؤيا إيليا (PSI I 7)',
     nameEn: 'PSI I 7 Greek Papyrus Fragment of the Apocalypse of Elijah', abbreviation: 'APOCEL-GR',
