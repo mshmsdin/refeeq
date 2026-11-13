@@ -2131,6 +2131,17 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ آرامي بالحروف العبرية عن النص المطبوع في مقال هـ. ليونارد باس وج. أرندتسن، «شذرة من نص آرامي لوصية لاوي»، مجلة المراجعة اليهودية الفصلية، المجلد ١٢، العدد ٤، ١٩٠٠، الصفحات ٦٥١–٦٦١؛ قوبلت الأسطر الظاهرة بصور الصفحات المطبوعة. الشاهد هو مخطوط كامبردج ذي الرمز تي إس ١٦٫٩٤، وتصفه معاجم الآرامية بأنه يحوي ستة أعمدة. يعرض هذا التفريغ الأعمدة الستة المطبوعة في المقال، لا صورة المخطوط؛ وحُفظت الفجوات والاستدراكات والعلامات التحريرية ولم يُستكمل السقط. يقتصر على الشاهد الكامبردجي ولا يضم شذرات بودلي أو قمران، ولا يجعل وثيقة لاوي كاملة. المقال موسوم للإتاحة المفتوحة للقراءة على جيستور، لكن ذلك ليس رخصة إعادة نشر. أُدرج التفريغ استناداً إلى استنتاج الملكية العامة في الاتحاد الأوروبي من انتهاء مدة الحماية بعد وفاة آخر المؤلفين سنة ١٩٥٤ (حياة المؤلف زائد ٧٠ سنة، انقضت بنهاية ٢٠٢٤)؛ هذا استنتاج حقوقي إقليمي وليس ترخيصاً صريحاً أو حكماً عالمياً. [المقال المفتوح وصوره](https://www.jstor.org/stable/1450696)؛ [بيانات المخطوط والأعمدة الستة](https://cal.huc.edu/get_file_info.php?coord=81405001)؛ [نعي باس في كلية سانت جونز، كامبردج](https://www.joh.cam.ac.uk/sites/default/files/Eagle/Eagle%20Chapters/Obituaries/Obituary_1930s.pdf)؛ [بيانات أرندتسن ووفاته](https://en.wikisource.org/wiki/Author:John_Peter_Arendzen)؛ [مدة الحماية الأوروبية](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32006L0116).'
   },
   {
+    bookCode: 'ARL', slug: 'arc-qdr-aramaic-levi-2026',
+    nameAr: 'تفريغ قمران الرقمي للشواهد الآرامية من وثيقة لاوي',
+    nameEn: 'Qumran-Digital Aramaic Levi Manuscript Lines', abbreviation: 'ARL-QDR-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcription-index/latest/index.html', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/aramaic_levi_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: '3923847635556cb3841ebfc3de3206830f5399e0429b3c99e20d00381ce045c7',
+    expectedUnitCount: 281, expectedWordCount: 2403, maxChapter: 1, incomplete: true,
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ ٢٨١ سطراً آرامياً من الشواهد القمرانية 1Q21 و4Q213 و4Q213a و4Q213b و4Q214 و4Q214a و4Q214b، كما نشرتها صفحات قمران الرقمي المؤرخة ٦ أكتوبر ٢٠٢٦. كل سطر محفوظ كوحدة منفصلة مع اسم الشاهد والشظية والسطر ورابط مباشر إلى موضعه. صفحات المشروع تعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠؛ ينسب العمل إلى مشروع قمران الرقمي والجهة الأكاديمية الممولة، مع ذكر أن بياناته مبنية على عمل مشروع سابق ونص مارتن أبيغ. هذه الشواهد مجزأة ولا تمثل وثيقة لاوي كاملة أو إعادة بناء متصلة؛ وتبقى منفصلة عن ترجمة تشارلز وشاهد كامبردج من الجنيزة. [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html)؛ [تفريغ 1Q21](https://lexicon.qumran-digital.org/transcriptions/1Q21/2026-10-06/index.html?v=2026-10-06)؛ [تفريغ 4Q213](https://lexicon.qumran-digital.org/transcriptions/4Q213/2026-10-06/index.html?v=2026-10-06)؛ [تفريغ 4Q214](https://lexicon.qumran-digital.org/transcriptions/4Q214/2026-10-06/index.html?v=2026-10-06).'
+  },
+  {
     bookCode: 'APOCEL', slug: 'grc-psi-i-7-apocalypse-elijah-1912',
     nameAr: 'الشاهد اليوناني الشذري من رؤيا إيليا (PSI I 7)',
     nameEn: 'PSI I 7 Greek Papyrus Fragment of the Apocalypse of Elijah', abbreviation: 'APOCEL-GR',
