@@ -21,22 +21,24 @@ after(() => {
   for (const suffix of ['', '-wal', '-shm']) rmSync(testDbPath + suffix, { force: true });
 });
 
-test('imports separate partial 4Q225 and 4Q226 witnesses, repairs drift, and avoids duplicates', async () => {
+test('imports separate partial 4Q225, 4Q226, and 4Q227 witnesses, repairs drift, and avoids duplicates', async () => {
   assert.equal(await ensurePseudoJubileesImported(), true);
   const db = getDb();
   assert.deepEqual(db.prepare(`
     SELECT code, canonical_order FROM bible_books
-    WHERE code IN ('ABR', 'PSJUBA', 'PSJUBB', 'AABR') ORDER BY canonical_order
+    WHERE code IN ('ABR', 'PSJUBA', 'PSJUBB', 'PSJUBC', 'AABR') ORDER BY canonical_order
   `).all(), [
     { code: 'ABR', canonical_order: 12 },
     { code: 'PSJUBA', canonical_order: 12.5 },
     { code: 'PSJUBB', canonical_order: 12.6 },
+    { code: 'PSJUBC', canonical_order: 12.7 },
     { code: 'AABR', canonical_order: 13 }
   ]);
 
   const expectedWitnesses = [
     { witness: '4Q225', slug: 'he-qdr-4q225-pseudo-jubilees-a-2026', bookCode: 'PSJUBA', units: 49, groups: 5 },
-    { witness: '4Q226', slug: 'he-qdr-4q226-pseudo-jubilees-b-2026', bookCode: 'PSJUBB', units: 64, groups: 14 }
+    { witness: '4Q226', slug: 'he-qdr-4q226-pseudo-jubilees-b-2026', bookCode: 'PSJUBB', units: 64, groups: 14 },
+    { witness: '4Q227', slug: 'he-qdr-4q227-pseudo-jubilees-c-2026', bookCode: 'PSJUBC', units: 12, groups: 2 }
   ];
   for (const item of expectedWitnesses) {
     const source = ADDITIONAL_SOURCES.find(({ slug }) => slug === item.slug);
@@ -66,5 +68,5 @@ test('imports separate partial 4Q225 and 4Q226 witnesses, repairs drift, and avo
   assert.equal(await ensurePseudoJubileesImported(), true);
   assert.match(db.prepare("SELECT text FROM bible_verses WHERE translation_id=? AND book_code='PSJUBA' AND chapter=1 AND verse=1").get(first.id).text, /^‹4Q225 frg\. 1, line 1›/u);
   assert.equal(await ensurePseudoJubileesImported(), false);
-  assert.equal(db.prepare("SELECT COUNT(*) AS count FROM bible_verses WHERE book_code IN ('PSJUBA','PSJUBB')").get().count, 113);
+  assert.equal(db.prepare("SELECT COUNT(*) AS count FROM bible_verses WHERE book_code IN ('PSJUBA','PSJUBB','PSJUBC')").get().count, 125);
 });

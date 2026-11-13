@@ -2277,6 +2277,18 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ عبراني لـ٦٤ سطراً من أربعة عشر قسماً للشظايا في الشاهد القمراني 4Q226، مع أسماء الشظايا وترقيم الأسطر الأصلية وروابطها المباشرة. هذه الأقسام ليست فصولاً أصلية، والشاهد جزئي. يعرفه بعض الفهارس تقليدياً باسم «منحول اليوبيلات ب»، لكن صلته الأدبية بـ4Q225 محل نقاش: يتقاطعان في ذكر أمانة إبراهيم وبركته ونسله، ولا يثبت ذلك وحده أنهما نسختان من كتاب واحد. لذلك يبقى سجل 4Q226 مستقلاً ولا يضم إلى 4Q225 أو إلى سفر اليوبيلات. صفحة قمران الرقمي تعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتذكر أصل بياناتها في مشروع معجم قمران السابق ونص مارتن أبيغ. لا تعرض الصفحة ترجمة إنجليزية مرخصة لإعادة النشر؛ أُدرج الأصل العبري وحده. [تفريغ الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q226/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن تميّز الشاهدين وعلاقتهما](https://www.brepolsonline.net/doi/10.1163/9789004221352_006)؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
   },
   {
+    bookCode: 'PSJUBC', slug: 'he-qdr-4q227-pseudo-jubilees-c-2026',
+    nameAr: 'تفريغ الشاهد العبري 4Q227 (منحول اليوبيلات ج تقليدياً)',
+    nameEn: 'Qumran Digital Hebrew 4Q227 Pseudo-Jubilees C Witness', abbreviation: '4Q227-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q227/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/pseudo_jubilees_4q227_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: '02d059e8e07a1caff854d66fc653811c775a5bca5de513aa544f1a29133c9e4a',
+    expectedUnitCount: 12, expectedWordCount: 126, maxChapter: 2, incomplete: true,
+    expectedChapterVerseNumbers: [[1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6]],
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبراني لـ١٢ سطراً في شظيتين من الشاهد القمراني 4Q227، مع ترقيم الأسطر الأصلي ورابط مباشر لكل سطر. الشظايا قليلة ومنفصلة، وحالة النص جزئية. يسميه بعض الفهارس تقليدياً «منحول اليوبيلات ج»، لكن هويته وصلته بـ4Q225 و4Q226 وبسفر اليوبيلات غير محسومة؛ الشظية الثانية تذكر أخنوخ والملائكة وستة يوبيلات، أما الأولى فتذكر موسى ولا يظهر فيها توازٍ واضح مع 4Q225 أو 4Q226. لذلك يحفظ مستقلاً ولا يدمج مع الشاهدين. صفحة قمران الرقمي تعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب التفريغ إلى نص سابق لمشروع معجم قمران ومارتن أبيغ. لا تعرض الصفحة ترجمة إنجليزية مرخصة لإعادة النشر؛ أُدرج الأصل العبري وحده. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q227/2026-10-06/index.html?v=2026-10-06)؛ [دراسة تناقش الشظيتين وعلاقتهما باليوبيلات](https://brill.com/previewpdf/book/edcoll/9789004221352/B9789004221352_006.xml).'
+  },
+  {
     bookCode: 'APLEV540', slug: 'arc-qdr-apocryphon-levi-a-2026',
     nameAr: 'تفريغ الشاهد القمراني 4Q540 (منحول لاوي أ)', nameEn: 'Qumran Digital 4Q540 Aramaic Fragment Witness', abbreviation: '4Q540-ARC',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q540/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',

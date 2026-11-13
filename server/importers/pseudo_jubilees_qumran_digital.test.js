@@ -6,13 +6,15 @@ import { parseReviewedUnitText } from './reviewed_text_source.js';
 
 const EXPECTED = [
   { witness: '4Q225', slug: 'he-qdr-4q225-pseudo-jubilees-a-2026', bookCode: 'PSJUBA', counts: [12, 14, 14, 4, 5], words: 631 },
-  { witness: '4Q226', slug: 'he-qdr-4q226-pseudo-jubilees-b-2026', bookCode: 'PSJUBB', counts: [8, 5, 6, 4, 3, 9, 8, 4, 4, 3, 2, 3, 3, 2], words: 606 }
+  { witness: '4Q226', slug: 'he-qdr-4q226-pseudo-jubilees-b-2026', bookCode: 'PSJUBB', counts: [8, 5, 6, 4, 3, 9, 8, 4, 4, 3, 2, 3, 3, 2], words: 606 },
+  { witness: '4Q227', slug: 'he-qdr-4q227-pseudo-jubilees-c-2026', bookCode: 'PSJUBC', counts: [6, 6], words: 126 }
 ];
 
-test('preserves the separate licensed 4Q225 and 4Q226 Hebrew fragment witnesses', async () => {
+test('preserves the separate licensed 4Q225, 4Q226, and 4Q227 Hebrew fragment witnesses', async () => {
   const sources = ADDITIONAL_SOURCES.filter(({ slug }) => EXPECTED.some((item) => item.slug === slug));
   assert.deepEqual(sources.map(({ slug }) => slug), EXPECTED.map(({ slug }) => slug));
-  assert.notEqual(sources[0].bookCode, sources[1].bookCode, 'related scrolls remain separate catalog records');
+  assert.equal(new Set(sources.map(({ bookCode }) => bookCode)).size, EXPECTED.length,
+    'related scrolls remain separate catalog records');
 
   for (const expected of EXPECTED) {
     const source = sources.find(({ slug }) => slug === expected.slug);

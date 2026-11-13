@@ -5,7 +5,8 @@ import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
 const WITNESSES = [
   { slug: 'he-qdr-4q225-pseudo-jubilees-a-2026', bookCode: 'PSJUBA', units: 49, chapters: 5 },
-  { slug: 'he-qdr-4q226-pseudo-jubilees-b-2026', bookCode: 'PSJUBB', units: 64, chapters: 14 }
+  { slug: 'he-qdr-4q226-pseudo-jubilees-b-2026', bookCode: 'PSJUBB', units: 64, chapters: 14 },
+  { slug: 'he-qdr-4q227-pseudo-jubilees-c-2026', bookCode: 'PSJUBC', units: 12, chapters: 2 }
 ];
 
 function getSourceState(db, witness, definition) {
@@ -51,11 +52,12 @@ export async function ensurePseudoJubileesImported() {
       (SELECT canonical_order FROM bible_books WHERE code='ABR') AS previous,
       (SELECT canonical_order FROM bible_books WHERE code='PSJUBA') AS first_witness,
       (SELECT canonical_order FROM bible_books WHERE code='PSJUBB') AS second_witness,
+      (SELECT canonical_order FROM bible_books WHERE code='PSJUBC') AS third_witness,
       (SELECT canonical_order FROM bible_books WHERE code='AABR') AS next
   `).get();
   if (!order || order.previous !== 12 || order.first_witness !== 12.5
-    || order.second_witness !== 12.6 || order.next !== 13) {
-    throw new Error('يجب أن يبقى شاهدا 4Q225 و4Q226 بعد روايات إبراهيم وقبل وصيته في الترتيب القصصي');
+    || order.second_witness !== 12.6 || order.third_witness !== 12.7 || order.next !== 13) {
+    throw new Error('يجب أن تبقى شواهد 4Q225 و4Q226 و4Q227 بعد روايات إبراهيم وقبل وصيته في المجموعة، مع عدم حسم ترتيبها القصصي');
   }
 
   const sourcesToImport = [];
