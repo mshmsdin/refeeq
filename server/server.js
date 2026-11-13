@@ -11,6 +11,7 @@ import { ensureMotaMuseImported } from './db/mota_muse_startup_import.js';
 import { ensureGiantsImported } from './db/giants_startup_import.js';
 import { ensureAramaicLeviQumranImported } from './db/aramaic_levi_startup_import.js';
 import { ensureQumranLeviTraditionImported } from './db/qumran_levi_tradition_startup_import.js';
+import { ensureQumranAmramImported } from './db/qumran_amram_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -66,6 +67,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Qumran Levi tradition import failed:', error.message);
+}
+try {
+  if (await ensureQumranAmramImported()) {
+    console.log('[Bible startup] Imported seven licensed Qumran Visions of Amram manuscript witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran Amram import failed:', error.message);
 }
 
 const app = express();

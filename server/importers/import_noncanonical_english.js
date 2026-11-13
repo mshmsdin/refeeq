@@ -1918,6 +1918,35 @@ const APDAN_GREEK_UNIT_LOCATIONS = [
   [9, 1, 7], [10, 1, 11], [11, 1, 13], [12, 1, 13], [13, 1, 16],
 ].flatMap(([chapter, start, end]) => Array.from({ length: end - start + 1 }, (_, index) => [chapter, start + index]));
 
+const QUMRAN_AMRAM_WITNESS_DATA = [
+  { witness: '4Q543', version: '2026-10-06', lineCounts: [10,9,3,4,9,2,2,1,2,4,4,5,3,3,3,2,3,3,3,2,3,2,3,2,3,2,5,2,3,2,2,2,2,1,1,1,2,1,1,2,1,3], words: 955, sha256: 'dee9f3c2aa156cac58d83986649a1058cb13788b884e567070218435a532ff00' },
+  { witness: '4Q544', version: '2026-10-06', lineCounts: [15,6,3], words: 417, sha256: '8511456ecfcb3be83cd262235f76f2cbbced5da37badec2b4c6653cb246fc121' },
+  { witness: '4Q545', version: '2026-05-21', lineCounts: [19,16,3,4,7,5,4,2,3,7,2,2,2], words: 688, sha256: '7aca030b9dd5bb203ee56cee442a4b89922c147912da968dccef4adba1f58e77' },
+  { witness: '4Q546', version: '2026-10-06', lineCounts: [4,4,5,4,3,3,6,5,7,1,6,8,5,5,6,4,5,2,2,2,2,2,3,1,2,2,4], words: 814, sha256: 'd64f1284eb40d5239a18a76e2abe365f27967ae7e6964538c44f759621446c0a' },
+  { witness: '4Q547', version: '2026-10-06', lineCounts: [13,7,5,3,4,5,5,6,12], words: 593, sha256: '2d0858e24fcaec937541dba0d26db4207c877ec04f0e23b2c799eb0594f1854b' },
+  { witness: '4Q548', version: '2026-10-06', lineCounts: [3,16,4], words: 254, sha256: 'fbf262569d483ce97bb1a99e8f18b25ed317e9c3c8844230c5173545878664fb' },
+  { witness: '4Q549', version: '2026-10-06', lineCounts: [3,11], words: 129, sha256: 'b8a4f65ed7afb6fd9774d66b91168d629cb1b26b706744fdf5a4a5974fca1f47' }
+];
+
+const QUMRAN_AMRAM_SOURCES = QUMRAN_AMRAM_WITNESS_DATA.map((witness) => {
+  const url = `https://lexicon.qumran-digital.org/transcriptions/${witness.witness}/${witness.version}/index.html`;
+  return {
+    bookCode: 'AMRAM', slug: `arc-qdr-visions-amram-${witness.witness.toLowerCase()}-2026`,
+    nameAr: `الشاهد الآرامي لمخطوط ${witness.witness} من رؤى عمرام`,
+    nameEn: `Qumran Digital ${witness.witness} Visions of Amram`,
+    abbreviation: `AMRAM-${witness.witness}`,
+    url, kind: 'reviewed-unit-text-file',
+    textFile: new URL(`./data/visions_amram_${witness.witness.toLowerCase()}_2026.json`, import.meta.url),
+    expectedSha256: witness.sha256,
+    expectedUnitCount: witness.lineCounts.reduce((sum, count) => sum + count, 0),
+    expectedWordCount: witness.words,
+    expectedChapterVerseNumbers: witness.lineCounts.map((count) => Array.from({ length: count }, (_, index) => index + 1)),
+    maxChapter: witness.lineCounts.length, incomplete: true,
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: `تفريغ ${witness.lineCounts.reduce((sum, count) => sum + count, 0)} سطراً آرامياً من مخطوط ${witness.witness} في رؤى عمرام، من إصدار ${witness.version} لمشروع قمران الرقمي، المرخص برخصة المشاع الإبداعي النسب بالمثل ٤٫٠. كل وحدة سطر واحد مرتبط مباشرة بمعرّفه في المصدر، ومجموعات العرض ليست فصولاً أصلية. هذا شاهد مخطوط مستقل ومجزأ؛ لا يدمج مع المخطوطات الأخرى ولا يمثل النص كاملاً. [التفريغ والرخصة](${url})`
+  };
+});
+
 export const ADDITIONAL_SOURCES = [
   {
     bookCode: 'GIANTS', slug: 'en-jewishmythology-4q531-2026',
@@ -2370,6 +2399,7 @@ export const ADDITIONAL_SOURCES = [
     originalLanguage: 'الآرامية', sourceType: 'open-critical-translation',
     notes: 'ترجمة OCP الإنجليزية للشواهد الآرامية المجزأة؛ تعرض منفصلة عن النص الأصلي.'
   },
+  ...QUMRAN_AMRAM_SOURCES,
   {
     bookCode: 'CONFESD', slug: 'la-ocp-confession-esdras',
     nameAr: 'الشاهد اللاتيني لاعتراف عزرا', nameEn: 'OCP Latin Confession of Esdras', abbreviation: 'CONFESD-LA',
