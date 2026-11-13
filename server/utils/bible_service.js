@@ -17,6 +17,10 @@ export function getTranslations() {
   return getDb().prepare(`
     SELECT * FROM bible_translations
     WHERE is_active = 1 AND ${SITE_SCOPE_SQL}
+      AND EXISTS (
+        SELECT 1 FROM bible_verses bv
+        WHERE bv.translation_id = bible_translations.id
+      )
     ORDER BY display_order, id
   `).all();
 }

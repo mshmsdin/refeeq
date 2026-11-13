@@ -15,6 +15,7 @@ import { ensureQumranAmramImported } from './db/qumran_amram_startup_import.js';
 import { ensureNoahQumranImported } from './db/noah_qumran_startup_import.js';
 import { ensureBirthOfNoahImported } from './db/birth_of_noah_startup_import.js';
 import { ensureGenesisApocryphonImported } from './db/genesis_apocryphon_startup_import.js';
+import { ensurePseudoJubileesImported } from './db/pseudo_jubilees_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -98,6 +99,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Genesis Apocryphon import failed:', error.message);
+}
+try {
+  if (await ensurePseudoJubileesImported()) {
+    console.log('[Bible startup] Imported the separate licensed Hebrew 4Q225 and 4Q226 witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Pseudo-Jubilees witness import failed:', error.message);
 }
 
 const app = express();
