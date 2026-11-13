@@ -2289,6 +2289,18 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ عبراني لـ١٢ سطراً في شظيتين من الشاهد القمراني 4Q227، مع ترقيم الأسطر الأصلي ورابط مباشر لكل سطر. الشظايا قليلة ومنفصلة، وحالة النص جزئية. يسميه بعض الفهارس تقليدياً «منحول اليوبيلات ج»، لكن هويته وصلته بـ4Q225 و4Q226 وبسفر اليوبيلات غير محسومة؛ الشظية الثانية تذكر أخنوخ والملائكة وستة يوبيلات، أما الأولى فتذكر موسى ولا يظهر فيها توازٍ واضح مع 4Q225 أو 4Q226. لذلك يحفظ مستقلاً ولا يدمج مع الشاهدين. صفحة قمران الرقمي تعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب التفريغ إلى نص سابق لمشروع معجم قمران ومارتن أبيغ. لا تعرض الصفحة ترجمة إنجليزية مرخصة لإعادة النشر؛ أُدرج الأصل العبري وحده. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q227/2026-10-06/index.html?v=2026-10-06)؛ [دراسة تناقش الشظيتين وعلاقتهما باليوبيلات](https://brill.com/previewpdf/book/edcoll/9789004221352/B9789004221352_006.xml).'
   },
   {
+    bookCode: 'Q246', slug: 'arc-qdr-4q246-aramaic-apocalypse-2026',
+    nameAr: 'تفريغ الشاهد الآرامي 4Q246 (أبوكريفون دانيال)',
+    nameEn: 'Qumran Digital Aramaic Apocalypse 4Q246', abbreviation: '4Q246-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q246/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/aramaic_apocalypse_4q246_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: '18a1618dfe95e07610e813b285353369c3740ab58985d79950e5a9fb3c2cb24a',
+    expectedUnitCount: 18, expectedWordCount: 227, maxChapter: 2, incomplete: true,
+    expectedChapterVerseNumbers: [[1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ ١٨ سطراً آرامياً من عمودي الشاهد القمراني 4Q246، مع حفظ علامات الحذف والترميم والتحرير كما يعرضها مشروع قمران الرقمي ورابط موضع كل سطر. عمودا المخطوط مجموعتا عرض وليسا فصلين أدبيين؛ الشاهد نفسه جزئي، ولا تُستكمل أجزاؤه المفقودة. يسمى أحياناً «أبوكريفون دانيال الآرامي» أو «نص ابن الله»، لكن هذه تسميات وصفية لا تثبت عنوان العمل أو نسبته إلى دانيال. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ ويذكر أن التفريغ مبني على عمل مشروع سابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية مرخصة بإعادة النشر؛ لذا أدرج الأصل الآرامي فقط. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q246/2026-10-06/index.html?v=2026-10-06)؛ [دراسة مفتوحة تعرض ترجمة اجتهادية وتبين اختلاف الآراء](https://oi-idb-static.uchicago.edu/multimedia/1024/saoc66.pdf).'
+  },
+  {
     bookCode: 'APLEV540', slug: 'arc-qdr-apocryphon-levi-a-2026',
     nameAr: 'تفريغ الشاهد القمراني 4Q540 (منحول لاوي أ)', nameEn: 'Qumran Digital 4Q540 Aramaic Fragment Witness', abbreviation: '4Q540-ARC',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q540/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',

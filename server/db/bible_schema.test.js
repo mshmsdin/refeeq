@@ -53,7 +53,7 @@ test('orders Old Testament pseudepigrapha approximately by story era', () => {
   `).all().map(({ canonical_order }) => canonical_order);
   const orders = Object.fromEntries(db.prepare(`
     SELECT code, canonical_order FROM bible_books
-    WHERE code IN ('TADAM', 'APMO', 'ENO2', 'NOAH', 'BNOAH', 'GENAP', 'PSJUBA', 'PSJUBB', 'PSJUBC', 'GIANTS', 'ENO3', 'SHEM', 'ABR', 'MOS', 'MOTA-MUSE', 'TSOL', '2BAR', 'QEZRA')
+    WHERE code IN ('TADAM', 'APMO', 'ENO2', 'NOAH', 'BNOAH', 'GENAP', 'PSJUBA', 'PSJUBB', 'PSJUBC', 'GIANTS', 'ENO3', 'SHEM', 'ABR', 'MOS', 'MOTA-MUSE', 'TSOL', 'APDAN', 'Q246', '2BAR', 'QEZRA')
   `).all().map(({ code, canonical_order }) => [code, canonical_order]));
 
   assert.deepEqual(allOrders, [...allOrders].sort((left, right) => left - right));
@@ -75,6 +75,8 @@ test('orders Old Testament pseudepigrapha approximately by story era', () => {
     MOS: 24,
     'MOTA-MUSE': 25,
     TSOL: 28,
+    APDAN: 37,
+    Q246: 37.5,
     '2BAR': 40,
     QEZRA: 44
   });

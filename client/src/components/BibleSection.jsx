@@ -386,7 +386,7 @@ function QuickNavigator({ books, onNavigate }) {
                 ) : (
                   filteredBooks.map(b => {
                     const isDeutero = b.collection_slug === 'deuterocanon';
-                    const isApocrypha = b.collection_slug === 'apocrypha';
+                    const isApocrypha = ['apocrypha', 'pseudepigrapha'].includes(b.collection_slug);
                     return (
                       <button
                         key={b.code}
@@ -1592,7 +1592,7 @@ function BooksGrid({ collectionSlug, onOpenChapter }) {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 font-scheherazade">
       {books.map(b => {
         const isDeutero = b.collection_slug === 'deuterocanon';
-        const isApocrypha = b.collection_slug === 'apocrypha';
+        const isApocrypha = ['apocrypha', 'pseudepigrapha'].includes(b.collection_slug);
         const isReady = (b.available_translations || []).length > 0;
         const isCatalogOnly = !isReady && b.metadata?.text_status === 'not_imported';
 
@@ -1792,7 +1792,7 @@ function BibleLanding({
         <h2 className="text-base font-extrabold text-[#322010] dark:text-slate-100 mb-3 flex items-center gap-2">
           <span>نصوص أبوكريفية وتقاليد إثيوبية وكنسية (أخنوخ، اليوبيلات، المكابيان الإثيوبي، وصية موسى، الدسقولية):</span>
         </h2>
-        <BooksGrid collectionSlug="apocrypha" onOpenChapter={onOpenChapter} />
+        <BooksGrid collectionSlug="pseudepigrapha" onOpenChapter={onOpenChapter} />
       </div>
     </div>
   );
