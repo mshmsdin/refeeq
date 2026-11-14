@@ -2741,6 +2741,50 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ الأسطر الـ١٩ الظاهرة في صفحة قمران الرقمي، موزعة بحسب المصدر على أربع مجموعات عرض: frg. 1 (٣ أسطر)، frg. 2–3 (٧)، frg. 4 (٦)، وfrg. 5 (٣). مجموعات العرض ليست فصولاً أصلية، والخمس شظايا أجزاء متناثرة لا تمثل العمل كاملاً؛ حُفظت الأقواس والفجوات والقراءات كما يعرضها المصدر مع رابط مباشر لكل سطر. أطلق المحررون تقليدياً على النص «وصية يوسف» أو «أبوكريفون يوسف ب»، وشخصية يوسف مرجحة من ذكر يعقوب وإسماعيل وقصة بيعه، لكن الدراسات تختلف في تحديد المتكلم وفي وصف النوع الأدبي، ولا يذكر الجزء المحفوظ سياق الموت؛ لذلك يبقى سجلاً مستقلاً بعنوان المخطوط 4Q539، لا يدمج مع «يوسف وأسنات» أو وصية يوسف اليونانية ضمن وصايا الآباء الاثني عشر. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، ويذكر أن التفريغ مبني على نص مشروع معجم قمران السابق المعتمد على نص مارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأُدرج الأصل الآرامي فقط. [التفريغ والرخصة](https://qumran.alexschapiro.com/transcriptions/4Q539/2025-08-25/index.html?v=2025-08-25)؛ [دراسة تصنيف 4Q539](https://www.asau.ru/files/pdf/2344049.pdf).'
   },
   {
+    bookCode: 'APM1Q29', slug: 'heb-qdr-1q29-apocryphon-moses-2026',
+    nameAr: 'شاهد 1Q29 من تقليد أبوكريفون موسى', nameEn: 'Qumran 1Q29 Apocryphon of Moses Witness', abbreviation: '1Q29',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/1Q29/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/qumran_apocryphon_moses_1q29_2026.json', import.meta.url),
+    expectedSha256: 'c138d4137a46b52e8dd31df3f57f7f35dc39fe8247a592030b6f4239f0dd6371',
+    expectedUnitCount: 30, expectedWordCount: 232, maxChapter: 8, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7],[1,2,3,4,5],[1,2,3,4,5,6],[1,2,3,4,5,6,7],[1,2],[1],[1],[1]],
+    language: 'hbo', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري مرخص لـ٣٠ سطراً في ثماني مجموعات عرض. تشير تقاطعات الشواهد والدراسات إلى تقليد يُسمى «أبوكريفون موسى»، لكن نسبة جميع المخطوطات إلى تأليف واحد ليست يقينية؛ لذلك يحفظ 1Q29 مستقلاً، وتبقى حالته جزئية. المجموعات ليست فصولاً أصلية، وحُفظت الأقواس وعلامات التلف كما في التفريغ من دون استكمال. تنسب صفحة قمران الرقمي بياناتها إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ، وتعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠. لم أجد ترجمة مفتوحة الحقوق ضمن المصادر التي فُحصت، فأُدرج الأصل العبري فقط. [التفريغ والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q29/2026-10-06/index.html?v=2026-10-06)؛ [فهرس الشواهد القمرانية](https://lexicon.qumran-digital.org/transcription-index/latest/index.html)؛ [دراسة تصنيف الشواهد](https://orion-bibliography.huji.ac.il/node/65422).'
+  },
+  {
+    bookCode: 'APM4Q375', slug: 'heb-qdr-4q375-apocryphon-moses-2026',
+    nameAr: 'شاهد 4Q375 من تقليد أبوكريفون موسى', nameEn: 'Qumran 4Q375 Apocryphon of Moses Witness A', abbreviation: '4Q375',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q375/2026-05-21/index.html?v=2026-05-21', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/qumran_apocryphon_moses_4q375_2026.json', import.meta.url),
+    expectedSha256: '87915b925441d6b9de8630a50fc62e17ae3f059c6f9fe8fc5d599c0646871d90',
+    expectedUnitCount: 16, expectedWordCount: 201, maxChapter: 2, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7]],
+    language: 'hbo', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري مرخص لـ١٦ سطراً من شظايا 4Q375 ضمن مجموعتي عرض، لا فصول أصلية. يقارن هذا المخطوط عادةً بـ4Q376 و1Q29 و4Q408 ضمن تقليد «أبوكريفون موسى»، مع بقاء تعيين التأليف وحدوده موضع بحث؛ لذا يُسجل الشاهد مستقلاً وجزئياً ولا يعاد بناء النص. حُفظت قراءات المصدر وفجواته، وتعلن صفحة قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب التفريغ إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ. لم أجد ترجمة مفتوحة الحقوق ضمن المصادر التي فُحصت، فأُدرج الأصل العبري فقط. [التفريغ والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q375/2026-05-21/index.html?v=2026-05-21)؛ [دراسة الشواهد](https://orion-bibliography.huji.ac.il/node/65422).'
+  },
+  {
+    bookCode: 'APM4Q376', slug: 'heb-qdr-4q376-apocryphon-moses-2026',
+    nameAr: 'شاهد 4Q376 من تقليد أبوكريفون موسى', nameEn: 'Qumran 4Q376 Apocryphon of Moses Witness B', abbreviation: '4Q376',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q376/2024-04-29/index.html?v=2024-04-29', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/qumran_apocryphon_moses_4q376_2024.json', import.meta.url),
+    expectedSha256: '262db80bc36eb23d7d252b1e9311c3b68548089ddccd9f1fe10039099f920ba2',
+    expectedUnitCount: 12, expectedWordCount: 144, maxChapter: 4, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3],[1,2,3,4],[1,2,3],[1,2]],
+    language: 'hbo', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري مرخص لـ١٢ سطراً في أربع مجموعات عرض لشاهد 4Q376. تتقاطع بعض أسطره مع 1Q29 و4Q408، ويُدرج في الدراسات ضمن تقليد أبوكريفون موسى؛ لا يحسم ذلك وحده وحدة العمل أو ترتيب شظاياه. يحفظ المشروع المخطوط مستقلاً وبحالة جزئية، مع الأقواس وعلامات السقط من دون ملئها. تعلن صفحة قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب التفريغ إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ. لم أجد ترجمة مفتوحة الحقوق ضمن المصادر التي فُحصت، فأُدرج الأصل العبري فقط. [التفريغ والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q376/2024-04-29/index.html)؛ [دراسة الشواهد](https://orion-bibliography.huji.ac.il/node/65422).'
+  },
+  {
+    bookCode: 'APM4Q408', slug: 'heb-qdr-4q408-apocryphon-moses-2026',
+    nameAr: 'شاهد 4Q408 من تقليد أبوكريفون موسى', nameEn: 'Qumran 4Q408 Apocryphon of Moses Witness C', abbreviation: '4Q408',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q408/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/qumran_apocryphon_moses_4q408_2026.json', import.meta.url),
+    expectedSha256: '4a4057ed45d140ab16673f89f85561e4fd2e5851e2515a5fac40602c44e43015',
+    expectedUnitCount: 57, expectedWordCount: 479, maxChapter: 17, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3],[1,2,3,4,5],[1,2,3,4,5,6,7,8,9,10,11],[1,2,3],[1,2],[1,2],[1,2],[1,2,3],[1,2],[1,2,3,4],[1,2,3,4,5,6,7],[1,2,3],[1,2],[1],[1,2],[1,2,3],[1,2]],
+    language: 'hbo', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري مرخص لـ٥٧ سطراً في ١٧ مجموعة عرض من 4Q408. تتقاطع بعض أجزائه مع 1Q29 و4Q376؛ ويجمعها بعض الباحثين ضمن «أبوكريفون موسى» من دون أن يجعل ذلك النص الموجود كاملاً أو نسبة الوحدة الأدبية يقينية. يحفظ المشروع كل مخطوط مستقلاً وجزئياً مع أرقام الأسطر وعلامات التلف، ولا يدمج الشواهد أو يعيد بناء الفجوات. تعلن صفحة قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب التفريغ إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ. لم أجد ترجمة مفتوحة الحقوق ضمن المصادر التي فُحصت، فأُدرج الأصل العبري فقط. [التفريغ والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q408/2026-10-06/index.html?v=2026-10-06)؛ [دراسة الشواهد](https://orion-bibliography.huji.ac.il/node/65422).'
+  },
+  {
     bookCode: 'APOCEL', slug: 'grc-psi-i-7-apocalypse-elijah-1912',
     nameAr: 'الشاهد اليوناني الشذري من رؤيا إيليا (PSI I 7)',
     nameEn: 'PSI I 7 Greek Papyrus Fragment of the Apocalypse of Elijah', abbreviation: 'APOCEL-GR',

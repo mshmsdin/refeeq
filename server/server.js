@@ -30,6 +30,7 @@ import { ensureQumranWordsEzekielImported } from './db/qumran_words_ezekiel_star
 import { ensureQumranApocryphonJeremiahImported } from './db/qumran_apocryphon_jeremiah_startup_import.js';
 import { ensureQumranJeremiahAbImported } from './db/qumran_jeremiah_ab_startup_import.js';
 import { ensureQumranApocryphonJoshuaImported } from './db/qumran_apocryphon_joshua_startup_import.js';
+import { ensureApocryphonMosesImported } from './db/qumran_apocryphon_moses_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -218,6 +219,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Apocryphon of Joshua import failed:', error.message);
+}
+try {
+  if (await ensureApocryphonMosesImported()) {
+    console.log('[Bible startup] Imported four licensed partial Hebrew Qumran Apocryphon of Moses witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Apocryphon of Moses witness import failed:', error.message);
 }
 
 const app = express();
