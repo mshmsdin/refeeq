@@ -28,6 +28,7 @@ seededDb.prepare(`
   INSERT INTO bible_verses (translation_id, book_code, chapter, verse, text, search_text, source_url)
   VALUES (?, 'SIRE', 1, 1, 'English witness fixture', 'english witness fixture', 'https://ebible.org/Scriptures/eng-kjv_vpl.zip')
 `).run(englishId);
+seededDb.prepare("UPDATE bible_book_metadata SET original_language='غير محددة' WHERE book_code='SIRE'").run();
 after(() => {
   getDb().close();
   for (const suffix of ['', '-wal', '-shm']) rmSync(testDbPath + suffix, { force: true });
@@ -71,6 +72,7 @@ test('imports the complete licensed Ge\'ez Sirach witness without replacing the 
   `).get(SIRACH_GEEZ_SOURCE.url).count, 1);
   assert.equal(db.prepare(`SELECT summary_ar FROM bible_book_metadata WHERE book_code='SIRE'`).get().summary_ar,
     'يتاح سفر يشوع بن سيراخ بشاهد جعزي كامل من بيتا مصاحفت: ٥١ فصلاً و١٣٦٦ وحدة بحسب ترتيب سطور المصدر. أرقام العرض متسلسلة، وأرقام المصدر الأصلية محفوظة في ملف الاستيراد لأن بعض الفصول تحوي فجوات وتكراراً في الترقيم. تبقى ترجمة الملك جيمس الإنجليزية شاهداً مستقلاً متاحاً.');
+  assert.equal(db.prepare(`SELECT original_language FROM bible_book_metadata WHERE book_code='SIRE'`).get().original_language, 'الجعزية');
 
   initBibleSchema();
   assert.equal(await ensureSirachGeezImported(), false);

@@ -20,6 +20,7 @@ function getState(db) {
       (SELECT source_name FROM bible_book_metadata WHERE book_code='SIRE') AS book_source_name,
       (SELECT source_url FROM bible_book_metadata WHERE book_code='SIRE') AS book_source_url,
       (SELECT source_notes FROM bible_book_metadata WHERE book_code='SIRE') AS book_source_notes,
+      (SELECT original_language FROM bible_book_metadata WHERE book_code='SIRE') AS original_language,
       (SELECT text_status FROM bible_book_metadata WHERE book_code='SIRE') AS text_status
     FROM bible_translations bt
     LEFT JOIN bible_verses bv ON bv.translation_id=bt.id AND bv.book_code='SIRE'
@@ -42,7 +43,8 @@ function isReady(state) {
     && state.source_type === 'cc-by-sa-4.0' && state.unit_count === 1366 && state.chapter_count === 51
     && state.source_record_ready === 1 && state.summary_ar === SUMMARY
     && state.book_source_name === SOURCE_NAME && state.book_source_url === SIRACH_GEEZ_SOURCE.url
-    && state.book_source_notes === SIRACH_GEEZ_SOURCE.notes && state.text_status === 'complete';
+    && state.book_source_notes === SIRACH_GEEZ_SOURCE.notes && state.original_language === 'الجعزية'
+    && state.text_status === 'complete';
 }
 
 export async function ensureSirachGeezImported() {
@@ -54,7 +56,7 @@ export async function ensureSirachGeezImported() {
   await importNoncanonicalSources([SIRACH_GEEZ_SOURCE.slug], { initializeDatabase: false });
   db.prepare(`
     UPDATE bible_book_metadata
-    SET summary_ar=?, source_name=?, source_url=?, source_notes=?, text_status='complete',
+    SET summary_ar=?, source_name=?, source_url=?, source_notes=?, original_language='الجعزية', text_status='complete',
       updated_at=CURRENT_TIMESTAMP
     WHERE book_code='SIRE'
   `).run(SUMMARY, SOURCE_NAME, SIRACH_GEEZ_SOURCE.url, SIRACH_GEEZ_SOURCE.notes);
