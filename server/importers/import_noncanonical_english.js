@@ -2430,7 +2430,7 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 42, expectedWordCount: 342, maxChapter: 19, incomplete: true,
     expectedChapterVerseNumbers: [[1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6, 7], [1], [1, 2, 3], [1, 2, 3], [1], [1, 2, 3], [1], [1], [1, 2], [1], [1, 2, 3], [1, 2, 3], [1], [1, 2], [1], [1], [1], [1]],
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: 'تفريغ الشاهد العبري 1Q19 في ٤٢ سطراً موزعة على ١٩ مجموعة شظايا بحسب صفحة مشروع قمران الرقمي؛ أرقام المجموعات والأسطر الأصلية محفوظة في النص، مع رابط مباشر لكل سطر. لا تمثل هذه التقسيمات فصولاً أصلية ولا نصاً متصلاً. تسمية «كتاب نوح» تفسيرية ومختلف عليها، لذلك يسجل هنا شاهداً مرتبطاً بتقاليد نوح من دون الجزم بهوية العمل. تنص صفحة التفريغ على رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب بياناتها إلى مشروع قمران الرقمي، مع بيان اعتمادها على مشروع معجم سابق ونص مارتن أبيغ. لا تتضمن الصفحة ترجمة إنجليزية؛ أُدرج الأصل العبري المرخص وحده، وتبقى الحالة جزئية. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q19/2026-10-06/index.html?v=2026-10-06)؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
+    notes: 'تفريغ الشاهد العبري 1Q19 في ٤٢ سطراً موزعة على ١٩ مجموعة شظايا بحسب صفحة مشروع قمران الرقمي؛ أرقام المجموعات والأسطر الأصلية محفوظة في النص، مع رابط مباشر لكل سطر. لا تمثل هذه التقسيمات فصولاً أصلية ولا نصاً متصلاً. تسمية «كتاب نوح» تفسيرية ومختلف عليها، لذلك يسجل هنا شاهداً مرتبطاً بتقاليد نوح من دون الجزم بهوية العمل. تنص صفحة التفريغ على رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب بياناتها إلى مشروع قمران الرقمي، مع بيان اعتمادها على مشروع معجم سابق ونص مارتن أبيغ. أضيفت ترجمة إنجليزية تحريرية للأسطر المقروءة في سجل مستقل، وتبقى حالة الشاهد جزئية. [صفحة الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/1Q19/2026-10-06/index.html?v=2026-10-06)؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
   },
   {
     bookCode: 'NOAH', slug: 'he-qdr-1q19bis-noah-fragments-2024',
@@ -2442,7 +2442,32 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 6, expectedVerseNumbers: [1, 2, 3, 4, 5, 6],
     expectedWordCount: 48, maxChapter: 1, incomplete: true,
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: 'تفريغ الشذرة العبرية 1Q19bis، المجموعة 2، في ستة أسطر ظاهرة؛ تحفظ أرقام الشاهد والمجموعة والسطر وروابط مواضعها المباشرة. لا تتضمن صفحة مشروع قمران الرقمي ترجمة إنجليزية، كما أن صلة الشذرة بكتاب نوح المستقل ليست محسومة؛ لذلك تعرض منفصلة عن 1Q19 ولا تدمج به. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب النص إلى مشروع قمران الرقمي المبني على بيانات مشروع معجم سابق ونص مارتن أبيغ. أُدرج الأصل العبري المرخص وحده، وحالة الشاهد جزئية. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q19bis/2024-07-30/index.html?v=2024-07-30)؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
+    notes: 'تفريغ الشذرة العبرية 1Q19bis، المجموعة 2، في ستة أسطر ظاهرة؛ تحفظ أرقام الشاهد والمجموعة والسطر وروابط مواضعها المباشرة. أضيفت ترجمة إنجليزية تحريرية للأسطر المقروءة في سجل مستقل. صلة الشذرة بكتاب نوح المستقل ليست محسومة؛ لذلك تعرض منفصلة عن 1Q19 ولا تدمج به. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب النص إلى مشروع قمران الرقمي المبني على بيانات مشروع معجم سابق ونص مارتن أبيغ. يبقى الشاهد جزئياً. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q19bis/2024-07-30/index.html?v=2024-07-30)؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
+  },
+  {
+    bookCode: 'NOAH', slug: 'en-project-1q19-noah-fragments-2026',
+    nameAr: 'ترجمة إنجليزية تحريرية لشذرات الشاهد 1Q19',
+    nameEn: 'Project English Rendering of the 1Q19 Noah-Related Fragments', abbreviation: '1Q19-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/1Q19/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/noah_1q19_english_2026.json', import.meta.url),
+    expectedSha256: 'bb21b6249dca7101b08784a0adb8af3ac40b171e7656c06987540a2077a4ea37',
+    expectedUnitCount: 42, expectedWordCount: 302, maxChapter: 19, incomplete: true,
+    expectedChapterVerseNumbers: [[1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6, 7], [1], [1, 2, 3], [1, 2, 3], [1], [1, 2, 3], [1], [1], [1, 2], [1], [1, 2, 3], [1, 2, 3], [1], [1, 2], [1], [1], [1], [1]],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'ترجمة إنجليزية تحريرية أُعدت مباشرة عن التفريغ العبري المرخص لشذرات 1Q19، مع إبقاء علامات السقط وعدم استكمال الألفاظ المفقودة. تقابل القراءات مع الطبعة الأكاديمية ودراسة بهيرو للتحقق من حدود المقروء؛ لم تُنسخ ترجمة منشورة. لا تمثل هذه الوحدات سوى ٤٢ سطراً من شواهد مجزأة، ولا تثبت وجود كتاب نوح كامل أو صلة كل السطور بعمل واحد. أُجيزت الترجمة بموجب رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، مع نسبة التفريغ إلى مشروع «قمران الرقمي: النص والمعجم» (مشروع مؤسسة الأبحاث الألمانية 465277421) وبيانات مارتن أبيغ/مشروع معجم قمران. [تفريغ الأصل ورخصته](https://lexicon.qumran-digital.org/transcriptions/1Q19/2026-10-06/index.html?v=2026-10-06)؛ [الطبعة الأكاديمية المقارنة](https://www.kinder-noah.de/Dead_Sea_Scrolls.pdf)؛ [دراسة تقويم قراءات الشاهد](https://discovery.ucl.ac.uk/id/eprint/10057768/1/Bhayro_thesis.pdf)؛ [الرخصة](https://creativecommons.org/licenses/by-sa/4.0/).'
+  },
+  {
+    bookCode: 'NOAH', slug: 'en-project-1q19bis-noah-fragments-2026',
+    nameAr: 'ترجمة إنجليزية تحريرية لشذرة الشاهد 1Q19bis',
+    nameEn: 'Project English Rendering of the 1Q19bis Fragment', abbreviation: '1Q19BIS-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/1Q19bis/2024-07-30/index.html?v=2024-07-30',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/noah_1q19bis_english_2026.json', import.meta.url),
+    expectedSha256: 'e92d1e6e6b10f60bc57938fef58f4b3b0a3594235e07818e2b34874a3c963aca',
+    expectedUnitCount: 6, expectedWordCount: 46, expectedVerseNumbers: [1, 2, 3, 4, 5, 6], maxChapter: 1, incomplete: true,
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'ترجمة إنجليزية تحريرية أُعدت مباشرة عن التفريغ العبري المرخص للشذرة 1Q19bis، مع إبقاء السقط ومواضع عدم اليقين. تقابل القراءات مع الطبعة الأكاديمية ودراسة بهيرو؛ لا تُدمج الشذرة مع 1Q19 لأن وحدة العمل بينهما غير محسومة، ولا تثبت وحدها كتاب نوح كاملاً. أُجيزت الترجمة بموجب رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، مع نسبة التفريغ إلى مشروع «قمران الرقمي: النص والمعجم» (مشروع مؤسسة الأبحاث الألمانية 465277421) وبيانات مارتن أبيغ/مشروع معجم قمران. [تفريغ الأصل ورخصته](https://lexicon.qumran-digital.org/transcriptions/1Q19bis/2024-07-30/index.html?v=2024-07-30)؛ [الطبعة الأكاديمية المقارنة](https://www.kinder-noah.de/Dead_Sea_Scrolls.pdf)؛ [دراسة تقويم قراءات الشاهد](https://discovery.ucl.ac.uk/id/eprint/10057768/1/Bhayro_thesis.pdf)؛ [الرخصة](https://creativecommons.org/licenses/by-sa/4.0/).'
   },
   {
     bookCode: 'BNOAH', slug: 'arc-qdr-4q534-birth-noah-2026',

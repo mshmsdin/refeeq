@@ -4,13 +4,15 @@ import { ADDITIONAL_SOURCES, run as importNoncanonicalSources } from '../importe
 import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
 const WITNESSES = [
-  { slug: 'he-qdr-1q19-noah-fragments-2026', units: 42, chapters: 19 },
-  { slug: 'he-qdr-1q19bis-noah-fragments-2024', units: 6, chapters: 1 }
+  { slug: 'he-qdr-1q19-noah-fragments-2026', language: 'he', units: 42, chapters: 19, displayOrder: 40 },
+  { slug: 'he-qdr-1q19bis-noah-fragments-2024', language: 'he', units: 6, chapters: 1, displayOrder: 41 },
+  { slug: 'en-project-1q19-noah-fragments-2026', language: 'en', units: 42, chapters: 19, displayOrder: 38 },
+  { slug: 'en-project-1q19bis-noah-fragments-2026', language: 'en', units: 6, chapters: 1, displayOrder: 39 }
 ];
 
 function getSourceState(db, witness, definition) {
   return db.prepare(`
-    SELECT bt.id, bt.language, bt.is_active, bt.site_scope, bt.source_type,
+    SELECT bt.id, bt.language, bt.is_active, bt.site_scope, bt.source_type, bt.display_order,
       COUNT(bv.id) AS unit_count, COUNT(DISTINCT bv.chapter) AS chapter_count,
       bbm.text_status,
       EXISTS (
@@ -27,9 +29,10 @@ function getSourceState(db, witness, definition) {
 }
 
 function sourceIsReady(state, witness, definition) {
-  return state && state.language === 'he' && state.is_active === 1 && state.site_scope === 'both'
+  return state && state.language === witness.language && state.is_active === 1 && state.site_scope === 'both'
     && state.source_type === 'cc-by-sa-4.0' && state.unit_count === witness.units
     && state.chapter_count === witness.chapters && state.text_status === 'partial'
+    && state.display_order === witness.displayOrder
     && state.source_record_ready === 1;
 }
 
@@ -71,6 +74,7 @@ export async function ensureNoahQumranImported() {
   await importNoncanonicalSources(sourcesToImport.map(({ slug }) => slug), { initializeDatabase: false });
   for (const witness of sourcesToImport) {
     const definition = ADDITIONAL_SOURCES.find(({ slug }) => slug === witness.slug);
+    db.prepare('UPDATE bible_translations SET display_order=? WHERE slug=?').run(witness.displayOrder, witness.slug);
     const imported = getSourceState(db, witness, definition);
     if (!sourceIsReady(imported, witness, definition) || !await sourceUnitsMatch(db, imported.id, definition)) {
       throw new Error(`تعذر تثبيت الشاهد القمراني الموثق ${witness.slug}`);
