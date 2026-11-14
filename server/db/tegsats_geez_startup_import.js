@@ -19,7 +19,9 @@ function getState(db) {
       (SELECT summary_ar FROM bible_book_metadata WHERE book_code='TAGS') AS summary_ar,
       (SELECT source_name FROM bible_book_metadata WHERE book_code='TAGS') AS book_source_name,
       (SELECT source_url FROM bible_book_metadata WHERE book_code='TAGS') AS book_source_url,
-      (SELECT source_notes FROM bible_book_metadata WHERE book_code='TAGS') AS book_source_notes
+      (SELECT source_notes FROM bible_book_metadata WHERE book_code='TAGS') AS book_source_notes,
+      (SELECT text_status FROM bible_book_metadata WHERE book_code='TAGS') AS text_status,
+      (SELECT arabic_status FROM bible_book_metadata WHERE book_code='TAGS') AS arabic_status
     FROM bible_translations bt
     LEFT JOIN bible_verses bv ON bv.translation_id=bt.id AND bv.book_code='TAGS'
     WHERE bt.slug=? GROUP BY bt.id
@@ -31,7 +33,8 @@ function isReady(state) {
     && state.source_type === 'cc-by-sa-4.0' && state.unit_count === 161 && state.chapter_count === 6
     && state.source_record_ready === 1 && state.summary_ar === SUMMARY
     && state.book_source_name === 'بيتا مصاحفت؛ الكتاب المقدس الإثيوبي المطبوع'
-    && state.book_source_url === TEGSAT_SOURCE.url && state.book_source_notes === BOOK_SOURCE_NOTES;
+    && state.book_source_url === TEGSAT_SOURCE.url && state.book_source_notes === BOOK_SOURCE_NOTES
+    && state.text_status === 'complete' && state.arabic_status === 'available';
 }
 
 async function unitsMatch(db, translationId) {
@@ -53,7 +56,8 @@ export async function ensureTegsatGeezImported() {
   await importNoncanonicalSources([TEGSAT_SOURCE.slug], { initializeDatabase: false });
   db.prepare(`
     UPDATE bible_book_metadata
-    SET summary_ar=?, source_name=?, source_url=?, source_notes=?, updated_at=CURRENT_TIMESTAMP
+    SET summary_ar=?, source_name=?, source_url=?, source_notes=?, text_status='complete',
+      arabic_status='available', updated_at=CURRENT_TIMESTAMP
     WHERE book_code='TAGS'
   `).run(SUMMARY, 'بيتا مصاحفت؛ الكتاب المقدس الإثيوبي المطبوع', TEGSAT_SOURCE.url, BOOK_SOURCE_NOTES);
   state = getState(db);
