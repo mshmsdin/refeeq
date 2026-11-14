@@ -18,6 +18,7 @@ import { ensureGenesisApocryphonImported } from './db/genesis_apocryphon_startup
 import { ensurePseudoJubileesImported } from './db/pseudo_jubilees_startup_import.js';
 import { ensureQumran4Q246Imported } from './db/qumran_4q246_startup_import.js';
 import { ensureQumranPseudoDanielImported } from './db/qumran_pseudo_daniel_startup_import.js';
+import { ensureQumran4Q521Imported } from './db/qumran_4q521_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -122,6 +123,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Qumran Pseudo-Daniel witness import failed:', error.message);
+}
+try {
+  if (await ensureQumran4Q521Imported()) {
+    console.log('[Bible startup] Imported the licensed Hebrew 4Q521 witness.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran 4Q521 witness import failed:', error.message);
 }
 
 const app = express();
