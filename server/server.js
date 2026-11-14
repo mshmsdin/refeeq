@@ -15,6 +15,7 @@ import { ensureQumranLeviTraditionImported } from './db/qumran_levi_tradition_st
 import { ensureQumranAmramImported } from './db/qumran_amram_startup_import.js';
 import { ensureNoahQumranImported } from './db/noah_qumran_startup_import.js';
 import { ensureBirthOfNoahImported } from './db/birth_of_noah_startup_import.js';
+import { ensureQumranEnochImported } from './db/enoch_qumran_startup_import.js';
 import { ensureGenesisApocryphonImported } from './db/genesis_apocryphon_startup_import.js';
 import { ensurePseudoJubileesImported } from './db/pseudo_jubilees_startup_import.js';
 import { ensureQumran4Q246Imported } from './db/qumran_4q246_startup_import.js';
@@ -108,6 +109,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Birth of Noah Qumran import failed:', error.message);
+}
+try {
+  if (await ensureQumranEnochImported()) {
+    console.log('[Bible startup] Imported nine licensed Aramaic Qumran Enoch manuscript witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran Enoch import failed:', error.message);
 }
 try {
   if (await ensureGenesisApocryphonImported()) {
