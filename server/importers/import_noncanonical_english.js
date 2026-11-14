@@ -2313,6 +2313,18 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ عبري مرخص للشاهد القمراني 4Q521، الذي يسميه الفهرس «الرؤيا المسيانية»: ١٠٣ أسطر محفوظة في ١٦ مجموعة عرض، مع رقم كل سطر الأصلي ورابط موضعه. هذه ليست فصولاً أدبية، والمخطوط شذري؛ لذلك تُحفظ الأسطر كشاهد جزئي مستقل ولا تُستكمل الفجوات. حُفظت علامات السياق المكسور والقراءات البديلة والحروف المشطوبة والمضافة كما يعرضها المصدر. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل العبري وحده. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q521/2026-05-21/index.html?v=2026-05-21).'
   },
   {
+    bookCode: 'Q242', slug: 'arc-qdr-4q242-prayer-nabonidus-2026',
+    nameAr: 'الشاهد القمراني «صلاة نابونيد» (4Q242)',
+    nameEn: 'Qumran Digital Aramaic Prayer of Nabonidus 4Q242', abbreviation: '4Q242-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q242/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/prayer_nabonidus_4q242_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: 'a76c0597cbb2321d172a43b6c16741e8548aed389087d19491f604c78bd377f4',
+    expectedUnitCount: 14, expectedWordCount: 194, maxChapter: 2, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الشاهد القمراني الآرامي 4Q242 في ١٤ سطراً من شظايا ١–٣ والشظية ٤، مع حفظ أرقام السطور الأصلية ورابط مصدر كل سطر. يُعرف النص عادةً باسم «صلاة نابونيد» من استهلاله الذي يذكر صلاة ملك بابل ومرضه؛ لكن النص الباقي شذري ولا يضم العمل كاملاً. حفظت علامات السياق المكسور وإضافات المحرر المرتفعة كما يعرضها التفريغ. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب بياناته إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل الآرامي وحده. [تفريغ 4Q242 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q242/2026-10-06/index.html?v=2026-10-06)؛ [طبعة علمية للشظايا](https://brill.com/previewpdf/book/9789004369887/BP000025.xml).'
+  },
+  {
     bookCode: 'Q243', slug: 'arc-qdr-4q243-pseudo-daniel-a-2026',
     nameAr: 'شاهد منحول دانيال أ القمراني (4Q243)',
     nameEn: 'Qumran Digital Aramaic Pseudo-Daniel A 4Q243', abbreviation: '4Q243-ARC',
