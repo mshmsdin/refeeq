@@ -2177,6 +2177,20 @@ const LIVES_OF_PROPHETS_SOURCES = [
 ];
 
 export const ADDITIONAL_SOURCES = [
+  {
+    bookCode: 'TAGS', slug: 'gez-betamasaheft-tegsats-2026',
+    nameAr: 'النص الجعزي لتغسات من بيتا مصاحفت',
+    nameEn: 'Beta maṣāḥǝft Geʿez Tegsat Salomon', abbreviation: 'TAGS-GEZ',
+    url: 'https://github.com/BetaMasaheft/Works/blob/2574a6c84ed477af76122a6b112df3bbf45a96f5/2001-3000/LIT2396Tagsas.xml',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/tegsat_betamasaheft_geez_2026.json', import.meta.url),
+    expectedSha256: 'a7cbb58fccbaf2aeb47a0d4f3d16206b6662bae8637aa2bd82a68a8729288c74',
+    expectedUnitCount: 161, expectedWordCount: 1590, maxChapter: 6, incomplete: false,
+    expectedChapterVerseNumbers: [27, 29, 28, 29, 28, 20].map((count) => Array.from({ length: count }, (_, index) => index + 1)),
+    preserveBookMetadata: true,
+    language: 'gez', originalLanguage: 'الجعزية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'نص جعزي كامل لتغسات (أمثال ٢٥–٣١) بحسب ملف بيتا مصاحفت «Tagśāṣa Salomon»، المرقم LIT2396Tagsas، والمثبت عند نسخة مستودع الأعمال بتاريخ ٢٠٢٦-٠٨-١٤. يصرح سجل تي إي آي بأن مادته نص الكتاب المقدس الإثيوبي المطبوع الصادر عن كنيسة التوحيد الإثيوبية، وأنه رُقمن عن طبعات فولغاتا حديثة بواسطة فريق بيتا مصاحفت. يتبع الشاهد تقسيمه الإثيوبي الخاص إلى ٦ فصول و١٦١ وحدة، ولا يطابق تقسيم فان دايك العربي ذي الفصول السبعة؛ حُفظ الترقيمان كما في الشاهد. الملف وبياناته مرخصة برخصة المشاع الإبداعي النسب بالمثل ٤٫٠. الشواهد المذكورة في السجل: مخطوطا المكتبة البريطانية أددشنل ١٦١٨٦ و١٦١٨٩. [ملف المصدر المثبت ورخصته](https://github.com/BetaMasaheft/Works/blob/2574a6c84ed477af76122a6b112df3bbf45a96f5/2001-3000/LIT2396Tagsas.xml)؛ [سجل بيتا مصاحفت](https://betamasaheft.awhamburg.de/works/LIT2396Tagsas/main).'
+  },
   ...LIVES_OF_PROPHETS_SOURCES,
   ...QUMRAN_ENOCH_WITNESSES,
   ...APOCRYPHON_JOSHUA_WITNESSES,

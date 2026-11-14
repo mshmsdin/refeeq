@@ -193,8 +193,8 @@ export function initBibleSchema() {
     ['pseudepigrapha',      'المنحولات والرؤى القديمة', 'Pseudepigrapha',      'pseudepigrapha',8, 'bible'],
   ];
   for (const c of collections) insertCollection.run(...c);
-  db.prepare("UPDATE bible_collections SET site_scope = 'both' WHERE slug IN ('old-testament','new-testament','apocrypha','pseudepigrapha')").run();
-  db.prepare("UPDATE bible_collections SET site_scope = 'bible' WHERE slug NOT IN ('old-testament','new-testament','apocrypha','pseudepigrapha')").run();
+  db.prepare("UPDATE bible_collections SET site_scope = 'both' WHERE slug IN ('old-testament','new-testament','apocrypha','pseudepigrapha','ethiopian-canon')").run();
+  db.prepare("UPDATE bible_collections SET site_scope = 'bible' WHERE slug NOT IN ('old-testament','new-testament','apocrypha','pseudepigrapha','ethiopian-canon')").run();
   db.prepare("UPDATE bible_translations SET site_scope = 'bible' WHERE slug IN ('ar-jesuit-dc','ar-apocrypha')").run();
 
   // Seed books (66 canonical + deuterocanon)
@@ -658,7 +658,7 @@ function _seedExpansionCatalog(db) {
   db.prepare(`
     UPDATE bible_book_metadata
     SET original_language='العبرية',
-        summary_ar='تقسيم إثيوبي تقليدي لآخر أمثال سليمان؛ المتاح هنا نص سميث وفاندايك العربي المقابل للفصول ٢٥–٣١، وليس شاهداً جعزياً.',
+        summary_ar='تغسات هو القسم الإثيوبي من أمثال ٢٥–٣١. يتاح نص جعزي كامل من طبعة الكتاب المقدس الإثيوبي المطبوع، في ٦ فصول و١٦١ وحدة وفق تقسيم الشاهد؛ كما يتاح تقسيم عربي من فان دايك في ٧ فصول و٢٠٢ عدد. ترقيم النسختين مختلف ومحفوظ كما في كل مصدر.',
         updated_at=CURRENT_TIMESTAMP
     WHERE book_code='TAGS'
   `).run();
