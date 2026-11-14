@@ -2178,6 +2178,22 @@ const LIVES_OF_PROPHETS_SOURCES = [
 
 export const ADDITIONAL_SOURCES = [
   {
+    bookCode: 'SIRE', slug: 'gez-betamasaheft-sirach-2026',
+    nameAr: 'النص الجعزي ليشوع بن سيراخ من بيتا مصاحفت',
+    nameEn: 'Beta maṣāḥǝft Geʿez Sirach', abbreviation: 'سير-جع',
+    url: 'https://github.com/BetaMasaheft/Works/blob/aebe046e35d7f201e4e1993a37630b631bc5d324/2001-3000/LIT2358Sirach.xml',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/sirach_betamasaheft_geez_2026.json', import.meta.url),
+    expectedSha256: 'd9e757e9b286b6bf3ac060d09162ddd45a036b60119105556ecb411c278b831d',
+    expectedUnitCount: 1366, expectedWordCount: 13224, maxChapter: 51, incomplete: false,
+    chapterCounts: [30,18,29,30,15,37,36,19,18,30,34,18,25,27,20,28,30,31,26,30,28,24,26,32,25,20,29,25,28,40,31,26,13,31,24,31,31,34,34,29,23,24,33,23,26,20,25,25,16,29,30],
+    expectedChapterVerseNumbers: [30,18,29,30,15,37,36,19,18,30,34,18,25,27,20,28,30,31,26,30,28,24,26,32,25,20,29,25,28,40,31,26,13,31,24,31,31,34,34,29,23,24,33,23,26,20,25,25,16,29,30]
+      .map((count) => Array.from({ length: count }, (_, index) => index + 1)),
+    minUnitTextLength: 10, preserveBookMetadata: true,
+    language: 'gez', originalLanguage: 'الجعزية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'النص الجعزي ليشوع بن سيراخ من سجل بيتا مصاحفت LIT2358Sirach، والمصدر يصفه بأنه نص الكتاب المقدس الإثيوبي المطبوع، رقمن من طبعات فولغاتا حديثة وحُوّل إلى تي إي آي بواسطة فريق بيتا مصاحفت. يضم التفريغ ٥١ فصلاً و١٣٦٦ وحدة، وتعلن صفحة المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠. أرقام الوحدات في العرض متسلسلة داخل الفصل؛ أرقام المصدر الأصلية محفوظة في ملف البيانات لأن بعض الفصول فيها فجوات أو تكرار في الترقيم. هذا الشاهد الجعزي مستقل عن ترجمة الملك جيمس الإنجليزية الموجودة للسفر. [ملف المصدر المثبت ورخصته](https://github.com/BetaMasaheft/Works/blob/aebe046e35d7f201e4e1993a37630b631bc5d324/2001-3000/LIT2358Sirach.xml)؛ [سجل بيتا مصاحفت](https://betamasaheft.awhamburg.de/works/LIT2358Sirach/main).'
+  },
+  {
     bookCode: 'TAGS', slug: 'gez-betamasaheft-tegsats-2026',
     nameAr: 'النص الجعزي لتغسات من بيتا مصاحفت',
     nameEn: 'Beta maṣāḥǝft Geʿez Tegsat Salomon', abbreviation: 'TAGS-GEZ',

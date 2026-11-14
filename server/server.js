@@ -35,6 +35,7 @@ import { ensureQumranApocryphonJoshuaImported } from './db/qumran_apocryphon_jos
 import { ensureApocryphonMosesImported } from './db/qumran_apocryphon_moses_startup_import.js';
 import { ensureTegsatGeezImported } from './db/tegsats_geez_startup_import.js';
 import { ensureMeqabyanGeezImported } from './db/meqabyan_geez_startup_import.js';
+import { ensureSirachGeezImported } from './db/sirach_geez_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -87,6 +88,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Ge\'ez Meqabyan import failed:', error.message);
+}
+try {
+  if (await ensureSirachGeezImported()) {
+    console.log('[Bible startup] Imported complete Beta maṣāḥǝft Ge\'ez Sirach source.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Ge\'ez Sirach import failed:', error.message);
 }
 try {
   if (await ensureActsJohnImported()) {
