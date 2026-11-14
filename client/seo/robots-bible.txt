@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /bible/wallet/
 Allow: /bible/
 Allow: /bible/llms.txt
 Allow: /bible/sitemap.xml

@@ -42,6 +42,18 @@ function withAppBase(path) {
   return `${APP_BASE}${normalized}` || '/';
 }
 
+export function readBibleTranslations() {
+  const raw = new URLSearchParams(window.location.search).get('translations');
+  if (!raw) return [];
+  const list = raw.split(',');
+  return list.length <= 100 && list.every(slug => /^[a-z0-9-]{1,100}$/.test(slug))
+    ? [...new Set(list)] : [];
+}
+
+export function buildBibleWalletUrl(token) {
+  return withAppBase(`${BIBLE_ONLY ? '' : '/bible'}/wallet/${encodeURIComponent(token)}`);
+}
+
 /**
  * Parses current URL path into state
  * Supports:
@@ -71,8 +83,17 @@ export function parseCurrentRoute() {
   }
   const fullPath = pathname.replace(/^\/+|\/+$/g, '');
 
+  const walletParts = fullPath.split('/');
+  const walletPrefix = BIBLE_ONLY ? 0 : 1;
+  if ((BIBLE_ONLY || walletParts[0] === 'bible') && walletParts[walletPrefix] === 'wallet') {
+    return { page: 'bible', bibleWallet: walletParts[walletPrefix + 1] || 'invalid', sect: 'all', folderId: null, docId: null, articleId: null, videoId: null };
+  }
+
   if (BIBLE_ONLY) {
     const bibleParts = fullPath === 'bible' ? [] : fullPath.split('/').filter(Boolean);
+    if (bibleParts[0] === 'search') {
+      return { page: 'bible', bibleSearch: new URLSearchParams(window.location.search).get('q') || '', sect: 'all', folderId: null, docId: null, articleId: null, videoId: null };
+    }
     if (bibleParts[0] === CANON_ROUTE) {
       return { page: 'bible', bibleCanon: true, sect: 'all', folderId: null, docId: null, articleId: null, videoId: null };
     }
@@ -104,6 +125,9 @@ export function parseCurrentRoute() {
   // Bible routes
   if (parts[0] === 'bible' && parts[1] === CANON_ROUTE) {
     return { page: 'bible', bibleCanon: true, sect: 'all', folderId: null, docId: null, articleId: null, videoId: null };
+  }
+  if (parts[0] === 'bible' && parts[1] === 'search') {
+    return { page: 'bible', bibleSearch: new URLSearchParams(window.location.search).get('q') || '', sect: 'all', folderId: null, docId: null, articleId: null, videoId: null };
   }
   if (parts[0] === 'bible' && parts[1] === SCAN_ROUTE) {
     return { page: 'bible', bibleScan: parseScanParts(parts.slice(2)), sect: 'all', folderId: null, docId: null, articleId: null, videoId: null };
@@ -147,12 +171,25 @@ export function parseCurrentRoute() {
 /**
  * Generates Bible URL
  */
-export function buildBibleUrl({ book, chapter, verse } = {}) {
+export function buildBibleUrl({ book, chapter, verse, translations } = {}) {
   const routePrefix = BIBLE_ONLY ? '' : '/bible';
-  if (!book) return withAppBase(routePrefix || '/');
-  if (!chapter) return withAppBase(`${routePrefix}/${book}`);
-  if (!verse) return withAppBase(`${routePrefix}/${book}/${chapter}`);
-  return withAppBase(`${routePrefix}/${book}/${chapter}/${verse}`);
+  let path = routePrefix || '/';
+  if (book) path = `${routePrefix}/${book}${chapter ? `/${chapter}${verse ? `/${verse}` : ''}` : ''}`;
+  const url = withAppBase(path);
+  return book && translations?.length ? `${url}?translations=${encodeURIComponent(translations.join(','))}` : url;
+}
+
+export function buildBibleSearchUrl(query) {
+  const routePrefix = BIBLE_ONLY ? '' : '/bible';
+  const url = withAppBase(`${routePrefix}/search`);
+  return `${url}?q=${encodeURIComponent(String(query || '').trim())}`;
+}
+
+export function pushBibleSearchUrl(query) {
+  const newUrl = buildBibleSearchUrl(query);
+  if (`${window.location.pathname}${window.location.search}` !== newUrl) {
+    window.history.pushState(null, '', newUrl);
+  }
 }
 
 export function buildScanUrl({ slug, page, query } = {}) {
@@ -216,7 +253,7 @@ export function pushRouteUrl(params) {
 
 export function pushBibleUrl(params) {
   const newUrl = buildBibleUrl(params);
-  if (window.location.pathname !== newUrl) {
+  if (`${window.location.pathname}${window.location.search}` !== newUrl) {
     window.history.pushState(null, '', newUrl);
   }
 }

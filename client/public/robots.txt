@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /rafeeq/bible/wallet/
 Allow: /rafeeq/
 Allow: /rafeeq/f1
 Allow: /rafeeq/bible

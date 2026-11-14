@@ -30,4 +30,5 @@
   <url>
     <loc>https://din.hk/rafeeq/llms.txt</loc>
   </url>
+  <!-- Temporary wallet capability links are intentionally excluded from indexing. -->
 </urlset>

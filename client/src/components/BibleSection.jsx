@@ -10,7 +10,10 @@ import {
   BookMarked, CheckSquare, Square, Info, Award, Scroll, Bookmark,
   CheckCircle2, XCircle, Landmark, FileText
 } from 'lucide-react';
-import { parseCurrentRoute, pushBibleUrl, pushCanonUrl, pushScanUrl } from '../utils/urlRoutes';
+import { parseCurrentRoute, pushBibleUrl, pushBibleSearchUrl, pushCanonUrl, pushScanUrl, buildBibleWalletUrl, readBibleTranslations } from '../utils/urlRoutes';
+import { useBibleWallet } from '../utils/useBibleWallet';
+import BibleWallet, { BibleWalletControls } from './BibleWallet';
+import { orderVerseResults } from '../utils/bible_comparison';
 import ScanBookViewer from './ScanBookViewer';
 import CanonTable from './CanonTable';
 import {
@@ -625,6 +628,7 @@ function SearchResults({
   onToggleCollection,
   onSelectAllTranslations,
   onSelectDefaultTranslation,
+  onOpenChapter,
   onOpenVerse,
   onBack
 }) {
@@ -743,11 +747,16 @@ function SearchResults({
             {results.map((r, i) => (
               <div
                 key={i}
-                onClick={() => onOpenVerse(r.book_code, r.chapter, r.verse)}
-                className="verse-card p-4 sm:p-5 rounded-2xl border border-[#ddcfb8] dark:border-slate-800 bg-white/70 dark:bg-[#152238] hover:border-[#b58a43] transition-all cursor-pointer group"
+                className="verse-card p-4 sm:p-5 rounded-2xl border border-[#ddcfb8] dark:border-slate-800 bg-white/70 dark:bg-[#152238] hover:border-[#b58a43] transition-all group"
               >
                 <div className="flex items-start justify-between gap-3">
-                  <div className="flex-1">
+                  <button
+                    type="button"
+                    onClick={() => onOpenChapter(r.book_code, r.chapter)}
+                    aria-label={`فتح إصحاح ${r.book_name} ${r.chapter} كاملاً`}
+                    title="فتح الإصحاح كاملاً"
+                    className="min-w-0 flex-1 rounded-lg text-right focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d6e47]"
+                  >
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-xs font-bold text-[#735535] dark:text-[#d5be98] bg-[#f0e6d2] dark:bg-slate-800 px-2.5 py-0.5 rounded-md border border-[#ddcfb8]/60 dark:border-slate-700">
                         {r.book_name} {r.chapter}:{r.verse}
@@ -757,8 +766,16 @@ function SearchResults({
                     <p className="scheherazade-font text-lg sm:text-xl text-[#322010] dark:text-slate-100 select-text py-0.5" style={{ lineHeight: 2.2 }}>
                       {highlightText(r.text, query)}
                     </p>
-                  </div>
-                  <ArrowLeft className="w-4 h-4 text-[#aa8e67] group-hover:text-[#b58a43] shrink-0 mt-1 transition-colors" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onOpenVerse(r.book_code, r.chapter, r.verse)}
+                    aria-label={`فتح العدد ${r.book_name} ${r.chapter}:${r.verse} وحده`}
+                    title="فتح العدد وحده"
+                    className="shrink-0 mt-1 rounded-lg p-2 text-[#aa8e67] hover:bg-[#f0e6d2] hover:text-[#b58a43] dark:hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d6e47] transition-colors"
+                  >
+                    <ArrowLeft className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
             ))}
@@ -1311,7 +1328,8 @@ function VerseFocusModal({
   onSwitchPrimary,
   onToggleCheckbox,
   translations,
-  onNavigateVerse
+  onNavigateVerse,
+  walletControls
 }) {
   const { data, compareResults, loading, error } = useVerse(
     selectedTranslations, book, chapter, verse
@@ -1365,9 +1383,7 @@ function VerseFocusModal({
   const primaryTrans = translations.find(t => t.slug === primarySlug) || translations.find(t => t.slug === selectedTranslations[0]);
 
   // Filter compare results by user selection
-  const displayResults = (compareResults || []).filter(r =>
-    selectedTranslations.includes(r.translation_slug)
-  );
+  const displayResults = orderVerseResults(compareResults, selectedTranslations);
 
   const primaryVerseObj = displayResults.find(r => r.translation_slug === primarySlug) || displayResults[0] || (data?.verses && data.verses[0]);
 
@@ -1385,12 +1401,13 @@ function VerseFocusModal({
   };
 
   return (
-    <div className="fixed inset-0 bg-[#322010]/60 dark:bg-black/80 backdrop-blur-md z-50 flex flex-col items-center justify-center p-3 sm:p-4 overflow-y-auto font-scheherazade animate-fadeIn" dir="rtl">
+    <div className="fixed inset-0 bg-[#322010]/60 dark:bg-black/80 backdrop-blur-md z-50 flex flex-col items-center justify-start p-3 sm:p-4 overflow-y-auto font-scheherazade animate-fadeIn" dir="rtl">
       
-      <div className="max-w-3xl w-full flex flex-col gap-3.5 my-auto relative">
+      <div className="max-w-3xl w-full shrink-0 flex flex-col gap-3.5 my-auto relative">
         
         {/* Modal Top Bar */}
-        <div className="flex items-center justify-between px-1">
+        <div className="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-2 rounded-2xl bg-[#efe8dc]/95 p-2 shadow-sm backdrop-blur dark:bg-[#111a2e]/95">
+          {walletControls}
           <div className="flex items-center gap-2 text-xs font-bold text-[#46301b] dark:text-slate-200 bg-[#efe8dc]/95 dark:bg-[#152238]/95 backdrop-blur px-3 py-1.5 rounded-xl border border-[#ddcfb8] dark:border-slate-700 shadow-sm">
             <BookOpen className="w-3.5 h-3.5 text-[#b58a43]" />
             <span>{bookInfo?.collection_name_ar || 'البيبل'}</span>
@@ -1446,7 +1463,7 @@ function VerseFocusModal({
           {/* Stacked Additional Translations (when multiple selected) */}
           {displayResults.length > 1 && (
             <div className="mt-4 pt-4 border-t border-[#ddcfb8]/60 dark:border-slate-800 space-y-3">
-              {displayResults.slice(1).map((r, i) => (
+              {displayResults.filter(r => r !== primaryVerseObj).map((r, i) => (
                 <div key={i} className="bg-white/80 dark:bg-[#111a2e]/80 p-3.5 rounded-2xl border border-[#ddcfb8] dark:border-slate-800">
                   <div className="flex items-center justify-between mb-1.5 pb-1 border-b border-[#f8f3ea] dark:border-slate-800">
                     <span className="text-xs font-bold text-[#8d6e47] dark:text-[#c2a578]">
@@ -1957,11 +1974,13 @@ function BookView({ translation, book, onOpenChapter, onOpenScan, onBack }) {
 // ─────────────────────────────────────────────────────────
 //  Main Bible Section Router
 // ─────────────────────────────────────────────────────────
-export default function BibleSection({ initialBook, initialChapter, initialVerse, initialScan, initialCanon }) {
+export default function BibleSection({ initialBook, initialChapter, initialVerse, initialScan, initialCanon, initialWallet, initialSearch }) {
   const { translations } = useTranslations();
   const { books } = useBooks();
+  const wallet = useBibleWallet(initialWallet);
+  const readerReturn = useRef(null);
 
-  const [selectedTranslations, setSelectedTranslations] = useState(() => (
+  const [selectedTranslations, setSelectedTranslations] = useState(() => readBibleTranslations().length ? readBibleTranslations() : (
     String(initialBook || '').toUpperCase() === '1ES'
       ? ['ar-mohammad-1es', 'grc-brenton-1es']
       : ['ar-svd']
@@ -1986,8 +2005,10 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
 
   // View state: 'landing' | 'collection' | 'book' | 'chapter' | 'search'
   const [view, setView] = useState(() => {
+    if (initialWallet) return 'wallet';
     if (initialCanon) return 'canon';
     if (initialScan) return 'scan';
+    if (initialSearch) return 'search';
     if (initialBook && initialChapter) return 'chapter';
     if (initialBook) return 'book';
     return 'landing';
@@ -1997,7 +2018,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
   const [currentChapter, setCurrentChapter] = useState(initialChapter || null);
   const [currentCollection, setCurrentCollection] = useState(null);
   const [currentScan, setCurrentScan] = useState(initialScan || null);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(initialSearch || '');
 
   // Keep the reader state synchronized with the browser Back/Forward buttons.
   useEffect(() => {
@@ -2006,6 +2027,14 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
       const nextBook = route.bibleBook || null;
       const nextChapter = route.bibleChapter || null;
       const nextVerse = route.bibleVerse || null;
+      const routeTranslations = readBibleTranslations();
+      if (routeTranslations.length) setSelectedTranslations(routeTranslations);
+      if (route.bibleWallet) {
+        wallet.selectToken(route.bibleWallet);
+        setIsModalOpen(false);
+        setView('wallet');
+        return;
+      }
       if (route.bibleCanon) {
         setIsModalOpen(false);
         setView('canon');
@@ -2015,6 +2044,16 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
         setCurrentScan(route.bibleScan);
         setIsModalOpen(false);
         setView('scan');
+        return;
+      }
+      if (route.bibleSearch) {
+        setCurrentBook(null);
+        setCurrentChapter(null);
+        setCurrentCollection(null);
+        setSearchQuery(route.bibleSearch);
+        setIsModalOpen(false);
+        setView('search');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
       setCurrentBook(nextBook);
@@ -2103,17 +2142,35 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
 
   // Update browser URL & Title
   useEffect(() => {
+    if (view === 'wallet') {
+      if (wallet.token) {
+        const path = buildBibleWalletUrl(wallet.token);
+        if (window.location.pathname !== path) {
+          if (/\/wallet\//.test(window.location.pathname)) window.history.replaceState(null, '', path);
+          else window.history.pushState(null, '', path);
+        }
+      }
+      document.title = 'المحفظة المؤقتة — البيبل';
+      upsertMeta('name', 'robots', 'noindex, nofollow, noarchive');
+      upsertMeta('name', 'referrer', 'no-referrer');
+      return;
+    }
+    upsertMeta('name', 'robots', 'index, follow');
     if (view === 'canon') {
       pushCanonUrl();
     } else if (view === 'scan' && currentScan) {
       pushScanUrl({ slug: currentScan.slug, page: currentScan.page, query: currentScan.query });
-    } else if (view === 'landing' || view === 'search' || view === 'collection' || view === 'book') {
+    } else if (view === 'book') {
+      pushBibleUrl({ book: currentBook, translations: selectedTranslations });
+    } else if (view === 'search') {
+      pushBibleSearchUrl(searchQuery);
+    } else if (view === 'landing' || view === 'collection') {
       pushBibleUrl({});
     } else if (view === 'chapter') {
       if (isModalOpen && modalVerse) {
-        pushBibleUrl({ book: currentBook, chapter: currentChapter, verse: modalVerse });
+        pushBibleUrl({ book: currentBook, chapter: currentChapter, verse: modalVerse, translations: selectedTranslations });
       } else {
-        pushBibleUrl({ book: currentBook, chapter: currentChapter });
+        pushBibleUrl({ book: currentBook, chapter: currentChapter, translations: selectedTranslations });
       }
     }
 
@@ -2130,6 +2187,8 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
         ? `جدول اعتماد الأسفار عند اليهود والنصارى - ${titleSuffix}`
         : view === 'scan' && currentScan
         ? `صفحات الترجمة العربية للتوراة السامريين${currentScan.page ? ` — صفحة ${currentScan.page}` : ''} - ${titleSuffix}`
+        : view === 'search'
+        ? `نتائج البحث عن «${searchQuery}» - ${titleSuffix}`
         : titleSuffix;
     const summary = currentBookObj?.metadata?.summary_ar || 'موسوعة نصية لتصفح البيبل، قراءة الشواهد، البحث، والمقارنة بين الترجمات والتقاليد النصية.';
     const description = view === 'landing'
@@ -2146,7 +2205,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
       chapter: currentChapter,
       verse: isModalOpen ? modalVerse : null
     });
-  }, [view, currentBook, currentChapter, isModalOpen, modalVerse, books, currentScan]);
+  }, [view, currentBook, currentChapter, isModalOpen, modalVerse, books, currentScan, selectedTranslations, wallet.token, searchQuery]);
 
   // Auto-switch selected translations when navigating to a book if current selection is not available for that book
   useEffect(() => {
@@ -2194,6 +2253,11 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
     setModalVerse(verse);
     setIsModalOpen(true);
   }, [books]);
+
+  const openSearchVerse = useCallback((book, chapter, verse) => {
+    setView('chapter');
+    openVerseModal(book, chapter, verse);
+  }, [openVerseModal]);
 
   const handleQuickNavigate = useCallback((bookCode, ch, v) => {
     if (v) {
@@ -2243,6 +2307,21 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
 
   const currentBookObj = books.find(b => b.code === currentBook);
   const primarySlug = selectedTranslations[0] || 'ar-svd';
+  const currentSnapshot = () => ({ book: currentBook, chapter: view === 'book' ? null : currentChapter,
+    verse: isModalOpen ? modalVerse : null, translations: [...selectedTranslations] });
+  const openWallet = () => {
+    if (view !== 'wallet') readerReturn.current = (view === 'book' || view === 'chapter') ? currentSnapshot() : null;
+    setIsModalOpen(false); setView('wallet'); window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  const openWalletItem = snapshot => {
+    setSelectedTranslations([...snapshot.translations]); setCurrentBook(snapshot.book);
+    setCurrentChapter(snapshot.chapter); setModalVerse(snapshot.verse || 1);
+    setIsModalOpen(Boolean(snapshot.verse)); setView(snapshot.chapter ? 'chapter' : 'book');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  const walletControls = <BibleWalletControls wallet={wallet} onOpen={openWallet}
+    onAdd={() => wallet.add(currentSnapshot())}
+    canAdd={Boolean(currentBook && (view === 'book' || view === 'chapter') && (!wallet.data || wallet.data.isEditor || wallet.expired))} />;
 
   return (
     <div className="min-h-screen bg-[#f6f1e7] dark:bg-[#0b1120] text-[#322010] dark:text-slate-100 font-scheherazade scheherazade-font bible-scope">
@@ -2305,6 +2384,8 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
 
           <div className="flex-1" />
 
+          {walletControls}
+
           {/* Inline quick search */}
           {view !== 'landing' && (
             <form
@@ -2336,6 +2417,9 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
 
       {/* Main Container */}
       <div className="max-w-5xl mx-auto px-3 sm:px-6 py-6">
+        {view === 'wallet' && <BibleWallet wallet={wallet} onOpenItem={openWalletItem}
+          onBack={() => { if (readerReturn.current) openWalletItem(readerReturn.current); else setView('landing'); }}
+          onDeleted={() => { setIsModalOpen(false); setView('landing'); }} />}
         {view === 'landing' && (
           <BibleLanding
             translations={translations}
@@ -2379,7 +2463,8 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
               onToggleCollection={handleToggleSearchCollection}
               onSelectAllTranslations={handleSelectAllSearchTranslations}
               onSelectDefaultTranslation={handleSelectDefaultSearchTranslation}
-              onOpenVerse={openVerseModal}
+              onOpenChapter={openChapter}
+              onOpenVerse={openSearchVerse}
               onBack={() => setView('landing')}
             />
           </div>
@@ -2451,8 +2536,14 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
             setCurrentChapter(ch);
             setModalVerse(v);
           }}
+          walletControls={walletControls}
         />
       )}
+
+      {(wallet.message || (wallet.error && view !== 'wallet')) && <div role={wallet.error ? 'alert' : 'status'}
+        className="fixed bottom-5 left-1/2 z-[90] w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 rounded-2xl border border-[#ddcfb8] bg-[#322010] px-5 py-3 text-center text-sm leading-relaxed text-white shadow-xl" dir="rtl">
+        {wallet.error || wallet.message}
+      </div>}
 
     </div>
   );

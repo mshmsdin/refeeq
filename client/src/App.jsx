@@ -575,6 +575,8 @@ export default function App() {
             initialVerse={initialRoute.bibleVerse}
             initialScan={initialRoute.bibleScan}
             initialCanon={initialRoute.bibleCanon}
+            initialWallet={initialRoute.bibleWallet}
+            initialSearch={initialRoute.bibleSearch}
           />
         </main>
       </div>
@@ -636,6 +638,8 @@ export default function App() {
             initialVerse={initialRoute.bibleVerse}
             initialScan={initialRoute.bibleScan}
             initialCanon={initialRoute.bibleCanon}
+            initialWallet={initialRoute.bibleWallet}
+            initialSearch={initialRoute.bibleSearch}
           />
         </>
       ) : (

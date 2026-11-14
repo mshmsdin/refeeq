@@ -12,4 +12,5 @@
   <url><loc>https://wiki.din.hk/bible/canon</loc></url>
   <url><loc>https://wiki.din.hk/bible/scans/sam-ar-shehadeh/10</loc></url>
   <url><loc>https://wiki.din.hk/bible/llms.txt</loc></url>
+  <!-- Temporary wallet capability links are intentionally excluded from indexing. -->
 </urlset>

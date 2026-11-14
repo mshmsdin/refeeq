@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 import AdmZip from 'adm-zip';
 import { initDatabase, getDb, closeDb, getDbPath } from './db/schema.js';
 import { initBibleSchema } from './db/bible_schema.js';
+import { createBibleWalletRouter } from './routes/bible_wallet.js';
 import { ensureMotaMuseImported } from './db/mota_muse_startup_import.js';
 import { ensureGiantsImported } from './db/giants_startup_import.js';
 import { ensureAramaicLeviQumranImported } from './db/aramaic_levi_startup_import.js';
@@ -256,7 +257,9 @@ app.use(express.json({ limit: '60mb' }));
 app.use(express.urlencoded({ limit: '60mb', extended: true }));
 
 if (process.env.NODE_ENV !== 'test') {
-  app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
+  app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev', {
+    skip: req => /\/wallets?(?:\/|\?|$)/.test(req.url)
+  }));
 }
 
 // Rewrite the configured base path so API routes, media, and health work under any deployment path.
@@ -273,6 +276,15 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+// Wallet capabilities must not be cached, indexed, or sent as referrers.
+app.use((req, res, next) => {
+  if (/\/wallets?(?:\/|\?|$)/.test(req.path)) {
+    res.set({ 'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer', 'X-Robots-Tag': 'noindex, nofollow, noarchive' });
+  }
+  next();
+});
+app.use('/api/bible/wallets', createBibleWalletRouter(getDb, { scope: BIBLE_ONLY ? 'bible' : 'rafeeq' }));
 
 // Serve media files with custom handler that correctly resolves Arabic/emoji filenames
 // Priority: env var → relative to server dir (works in Docker) → Windows dev path
