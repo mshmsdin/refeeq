@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":9,\"source_ref\":\"9:4\",\"text\":\"and he hath sent me to bring you out of the water and give you the nourishment which you had in paradise, and for which you are crying\"},{\"chapter\":9,\"source_ref\":\"9:5\",\"text\":\"out. Now come out of the water and I will conduct you to the place where your victual hath been made ready.'\"},{\"chapter\":10,\"source_ref\":\"10:1\",\"text\":\"But Eve heard and believed and went out of the water of the river, and her flesh was (trembling)\"},{\"chapter\":10,\"source_ref\":\"10:2\",\"text\":\"like grass, from the chill of the water. And when she had gone out, she fell on the earth and the devil raised her up and led her to Adam.\"},{\"chapter\":10,\"source_ref\":\"10:3\",\"text\":\"But when Adam had seen her and the devil with her, he wept and cried aloud and said: 'O Eve, Eve, where is the labour of thy penitence\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "ebe9f473-1cf8-4c2e-8905-7cfb1f71e1e6",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 9:4, 9:5, 10:1, 10:2, 10:3.",
+  "tenant_id": "rafeeq-bible-translation"
+}

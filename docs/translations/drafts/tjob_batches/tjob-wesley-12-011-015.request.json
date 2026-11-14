@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "a483daff-c32b-4140-818d-4908e691f8b4",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":12,\"verses\":[{\"chapter\":12,\"verse\":11,\"text\":\"Then held Nahor (Nereos) his brother and his seven sons, with the rest of the people and the poor, the orphans and the feeble ones, a great mourning over him, saying:\"},{\"chapter\":12,\"verse\":12,\"text\":\"\\\"Woe unto us, for today has been taken from us the strength of the feeble, the light of the blind, the father of the orphans;\"},{\"chapter\":12,\"verse\":13,\"text\":\"The receiver of strangers has been taken off the leader of the erring, the cover of the naked. the shield of the widows. Who would not mourn for the man of God!\"},{\"chapter\":12,\"verse\":14,\"text\":\"And as they were mourning in this and in that form, they would not suffer him to be put into the grave.\"},{\"chapter\":12,\"verse\":15,\"text\":\"After three days, however, he was finally put into the grave, like one in sweet slumber, and he received the name of the good (beautiful) who will remain renowned throughout all generations of the world.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter."
+}

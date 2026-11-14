@@ -1,0 +1,18 @@
+{
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "request_id": "b4144eaf-f9b6-4b56-bcd8-47d74e06df33",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي كأعداد صحيحة بأرقام 0-9 فقط، بلا فاصلة أو كلمة ملحقة، وعنصراً واحداً لكل وحدة.",
+      "role": "system"
+    },
+    {
+      "content": "{\"verses\":[{\"verse\":36,\"chapter\":4,\"text\":\"To them, Jeremiel the archangel answered, ‘When the number is fulfilled of those who are like you. For he has weighed the world in the balance.\"},{\"verse\":37,\"chapter\":4,\"text\":\"By measure, he has measured the times. By number, he has counted the seasons. He won’t move or stir them until that measure is fulfilled.’”\"},{\"verse\":38,\"chapter\":4,\"text\":\"Then I answered, “O sovereign Lord, all of us are full of ungodliness.\"},{\"verse\":39,\"chapter\":4,\"text\":\"Perhaps it is for our sakes that the threshing time of the righteous is kept back—because of the sins of those who dwell on the earth.”\"},{\"verse\":40,\"chapter\":4,\"text\":\"So he answered me, “Go your way to a woman with child, and ask of her when she has fulfilled her nine months, if her womb may keep the baby any longer within her.”\"}],\"book_code\":\"2ES\",\"chapter\":4}",
+      "role": "user"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 36,37,38,39,40 in this chapter.",
+  "service_key": "bible-translation"
+}

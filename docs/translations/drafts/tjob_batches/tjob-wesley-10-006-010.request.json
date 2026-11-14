@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "8f672279-89cc-4d8d-900a-aa52b30a06c3",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":10,\"verses\":[{\"chapter\":10,\"verse\":6,\"text\":\"Then, imbued with the spirit of Satan. Elihu spoke hard words which are written down in the records left of Elihu.\"},{\"chapter\":10,\"verse\":7,\"text\":\"And after he had ended, God appeared to me in a storm and in clouds, and spoke. blaming Elihu and showing me that he who had spoken was not a man, but a wild beast.\"},{\"chapter\":10,\"verse\":8,\"text\":\"And when God had finished speaking to me, the Lord spoke to Eliphaz: \\\"Thou and thy friends have sinned in that ye have not spoken the truth concerning my servant Job.\"},{\"chapter\":10,\"verse\":9,\"text\":\"Therefore rise up and make him bring a sin-offering for you in order that your sins may be forgiven; for were it not for him, I would have destroyed you.\"},{\"chapter\":10,\"verse\":10,\"text\":\"And so they brought to me all that belonged to a sacrifice, and I took it and brought for them a sin-offering, and the Lord received it favorably and forgave them their wrong.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter."
+}

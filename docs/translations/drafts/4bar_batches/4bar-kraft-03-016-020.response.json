@@ -1,0 +1,37 @@
+{
+  "request_id": "d0149c1c-1627-4845-8c41-9bb2640ff442",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"لكن اترك باروخ هنا إلى أن أتكلم معه.\",\n      \"verse\": 16\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"ولما قال هذه الأمور، ترك الرب إرميا وصعد إلى السماء.\",\n      \"verse\": 17\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"أما إرميا وباروخ فدكلا المكان المقدس، وأخذا آنية خدمة الهيكل واستودعاها الأرض كما أمرهما الرب.\",\n      \"verse\": 18\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"وفي الحال ابتلعتها الأرض.\",\n      \"verse\": 19\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"وجلس كلاهما وبكيا.\",\n      \"verse\": 20\n    }\n  ]\n}",
+  "usage": {
+    "input": 255,
+    "output": 255,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.000714,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 255,
+      "outputTokens": 255,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.000714,
+      "latencyMs": 1039
+    }
+  ]
+}

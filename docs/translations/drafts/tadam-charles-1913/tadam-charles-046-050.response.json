@@ -1,0 +1,37 @@
+{
+  "request_id": "e4a451cc-7b80-424c-b799-6e334f78b170",
+  "content": "{\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":18,\"verse\":2,\"text_ar\":\"وهناك أكون حتى أموت'. وابتأت تسير نحو النواحي الغربية وتنوح\"},{\"chapter\":18,\"verse\":3,\"text_ar\":\"وتبكي بمرارة وتئن بصوت عال. وأقامت هناك خيمة، بينما كان في بطنها نسل عمره ثلاثة أشهر.\"},{\"chapter\":19,\"verse\":1,\"text_ar\":\"ولما اقترب وقت ولادتها، أخذت تتوجع من الآلام، وهي\"},{\"chapter\":19,\"verse\":2,\"text_ar\":\"صرخت بصوت عال إلى الرب وقالت: 'ارحمني يا رب، أَعنّي'. فلم تُستجب ولم تُحط بها\"},{\"chapter\":19,\"verse\":3,\"text_ar\":\"رحمة الله. وقالت لنفسها: 'من يخبر سيدي آدم؟ أبتَهِل إليكم يا منيرَي السماء، متى رجعتم إلى الشرق، فاحملوا رسالة إلى سيدي آدم'.\"}]}",
+  "usage": {
+    "input": 374,
+    "output": 236,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0007022,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 374,
+      "outputTokens": 236,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0007022,
+      "latencyMs": 1271
+    }
+  ]
+}

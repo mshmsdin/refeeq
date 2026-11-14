@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "5c59faa4-a36f-4177-9e34-d49d62a1ec66",
+    "content":  "{\"book_code\": \"2ES\", \"verses\": [{\"chapter\": 9, \"text_ar\": \"وَأَمَّا الَّذينَ اسْتَهَظَمُوا شَريعَتي، وَبَينَ ما كَانَت لَهُمُ الحُريَّةُ وَالبابُ مَفتوحًا للتَّوبَةِ، فَأَنَّهُم لَم يَرسُمُوا، بَلِ اسْتَقَلُّوا بذلك\", \"verse\": 11}, {\"chapter\": 9, \"text_ar\": \"فَلَيَعْلَمُوا ذلكَ في العَذابِ بَعدَ المَوتِ\", \"verse\": 12}, {\"chapter\": 9, \"text_ar\": \"لِذَلِكَ فَلا تَتَمَهَّلْ الآنَ عَينَكَ في كَيفِيَّةِ عَذابِ الأَشرارِ، بَلِ اطْلُبْ كَيشَّى نَجاةُ الصَّالِحينَ، لَهُمُ الدُّنيا، وَبِهِم خُلِقَت\", \"verse\": 13}, {\"chapter\": 9, \"text_ar\": \"فَأَجَبْتُ قَائِلا: \", \"verse\": 14}, {\"chapter\": 9, \"text_ar\": \"لأَنِّي قُلْتُ مَن قَبلُ، وَأَتَكَلَّمُ الآنَ، وَسَأَقولُهُ مَن بَعدُ، إِنَّ الَّذينَ هَلَكوا أكثرُ مِمَّن يَنجوا. \", \"verse\": 15}]}",
+    "usage":  {
+                  "input":  302,
+                  "output":  340,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+    "provider":  "Groq Paid",
+    "model":  "qwen/qwen3.8-27b",
+    "estimatedCost":  0.0016016,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+                         "provider":  "Groq Paid",
+                         "model":  "qwen/qwen3.8-27b",
+                         "status":  "success",
+                         "inputPrice":  "0.8000000000",
+                         "outputPrice":  "4.0000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.8000000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  302,
+                         "outputTokens":  340,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016016,
+                         "latencyMs":  844
+                     }
+                 ]
+}

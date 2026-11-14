@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":4,\"verses\":[{\"chapter\":4,\"text\":\"How then can your mind comprehend the way of the Most High? How can he who is already worn out with the corrupted world understand incorruption?â€‌ When I heard these things, I fell on my face\",\"verse\":11},{\"chapter\":4,\"text\":\"and said to him, â€œIt would have been better if we werenâ€™t here at all, than that we should come here and live in the midst of ungodliness, and suffer, and not know why.â€‌\",\"verse\":12},{\"chapter\":4,\"text\":\"He answered me, and said, â€œA forest of the trees of the field went out, and took counsel together,\",\"verse\":13},{\"chapter\":4,\"text\":\"and said, â€کCome! Letâ€™s go and make war against the sea, that it may depart away before us, and that we may make ourselves more forests.â€™\",\"verse\":14},{\"chapter\":4,\"text\":\"The waves of the sea also in like manner took counsel together, and said, â€کCome! Letâ€™s go up and subdue the forest of the plain, that there also we may gain more territory.â€™\",\"verse\":15},{\"chapter\":4,\"text\":\"The counsel of the wood was in vain, for the fire came and consumed it.\",\"verse\":16},{\"chapter\":4,\"text\":\"Likewise also the counsel of the waves of the sea, for the sand stood up and stopped them.\",\"verse\":17},{\"chapter\":4,\"text\":\"If you were judge now between these two, which would you justify, or which would you condemn?â€‌\",\"verse\":18},{\"chapter\":4,\"text\":\"I answered and said, â€œIt is a foolish counsel that they both have taken, for the ground is given to the wood, and the place of the sea is given to bear its waves.â€‌\",\"verse\":19},{\"chapter\":4,\"text\":\"Then answered he me, and said, â€œYou have given a right judgment. Why donâ€™t you judge your own case?\",\"verse\":20}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "00b4e94a-308a-41e7-a3c8-1536cdc31c60",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15,16,17,18,19,20 in this chapter."
+}

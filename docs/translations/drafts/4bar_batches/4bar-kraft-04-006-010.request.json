@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":4,\"verses\":[{\"chapter\":4,\"verse\":6,\"text\":\"6 While Jeremiah was still weeping for the people, they brought him out with the people and dragged them into Babylon.\"},{\"chapter\":4,\"verse\":7,\"text\":\"7 But Baruch put dust on his head and sat and cried out this lament, saying: “\"},{\"chapter\":4,\"verse\":8,\"text\":\"8 But do not let the lawless people boast and say: ‘We were strong enough to take the city of God by our strength.’\"},{\"chapter\":4,\"verse\":9,\"text\":\"9 And God will pity us and cause us to return to our city, but you will not survive!\"},{\"chapter\":4,\"verse\":10,\"text\":\"10 Blessed are our ancestors, Abraham, Isaac and Jacob,\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "a0925c40-0b47-4f27-9184-0187765beed7",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

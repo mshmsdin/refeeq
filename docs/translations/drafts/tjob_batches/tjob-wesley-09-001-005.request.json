@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "5af9a5ea-4f93-481c-891f-6f52fba7ac0d",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":9,\"verses\":[{\"chapter\":9,\"verse\":1,\"text\":\"And when I spoke thus to them, behold, there my wife Sitis came running, dressed in rags. from the service of the master by whom she was employed as slave though she had been forbidden to leave, lest the kings, on seeing her, might take her as captive.\"},{\"chapter\":9,\"verse\":2,\"text\":\"And when she came, she threw herself prostrate to their feet, crying and saying: Remember. Eliphaz and ye other friends, what I was once with you, and how I have changed, how I am now dressed to meet you\"},{\"chapter\":9,\"verse\":3,\"text\":\"Then the kings broke forth in great weeping and, being in double perplexity, they kept silent. But Eliphaz took his purple mantle and cast it about her to wrap herself up with it.\"},{\"chapter\":9,\"verse\":4,\"text\":\"But she asked him saying: \\\"I ask as favor of you, my Lords, that you order your soldiers that they should dig among the ruins of our house which fell upon my children, so that their bones could be brought in a perfect state to the tombs.\"},{\"chapter\":9,\"verse\":5,\"text\":\"Fir as we have, owing to our misfortune, no power at all, and so we may at least see their bones.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5 in this chapter."
+}

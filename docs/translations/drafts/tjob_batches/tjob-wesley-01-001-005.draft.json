@@ -1,0 +1,71 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 1,
+  "range": "1-5",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "427115fe-ca65-45b3-bbe4-89d5606ba784",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 296,
+      "outputTokens": 301,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008412999999999999,
+      "latencyMs": 1258
+    }
+  ],
+  "usage": {
+    "input": 296,
+    "output": 301,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0008412999999999999,
+  "verses": [
+    {
+      "verse": 1,
+      "text_ar": "في اليوم الذي مرض فيه وعلم أنه سيتعين عليه مغادرة مسكنه الجسدي، دعا بنيه السبعة وبناته الثلاث معاً وكلمهم هكذا:",
+      "chapter": 1
+    },
+    {
+      "verse": 2,
+      "text_ar": "اصنعوا دائرة حول لي، يا أولادي، واسمعوا، فإني أخبركم بما صنعه الرب معي وكل ما حدث لي.",
+      "chapter": 1
+    },
+    {
+      "verse": 3,
+      "text_ar": "لأني أنا أيوب أبوكم.",
+      "chapter": 1
+    },
+    {
+      "verse": 4,
+      "text_ar": "فاعلموا إذن يا أولادي أنكم جيل مختار واحذروا لمولدكم النبيل.",
+      "chapter": 1
+    },
+    {
+      "verse": 5,
+      "text_ar": "لأني من بني عيسو. وأخي هو ناحور، وأمكم هي دينة. بها صرتُ أباكم.",
+      "chapter": 1
+    }
+  ]
+}

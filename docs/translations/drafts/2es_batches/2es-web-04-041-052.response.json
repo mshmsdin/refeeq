@@ -1,0 +1,51 @@
+{
+  "request_id": "824a9511-c283-400e-9edd-322925c93257",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 4,\n      \"verse\": 41,\n      \"text_ar\": \"فقلت: «لا يا رب، لا يمكن ذلك». فقال لي: «في الهاوية، مخادع النفوس تشبه الرحم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 42,\n      \"text_ar\": \"لأنه تماماً كما تسارع المرأة المخاض إلى التخلص من ألم وجع الولادة، هكذا تسارع هذه الأماكن لتقديم تلك الأمور التي سُلِّمت إليها منذ البدء.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 43,\n      \"text_ar\": \"حينئذٍ ستُرَى تلك الأشياء التي تشتهي أن تراها».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 44,\n      \"text_ar\": \"فأجبت: «إن كنتُ قد وجدتُ نعمةً في عينيك، وإن كان ذلك ممكناً، وإن كنتُ مستحقاً،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 45,\n      \"text_ar\": \"فأرني هذا أيضاً، أهناك المزيد ليأتي أكثر ممَّا مضى، أم أن الجزء الأعظم قد عبر علينا؟\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 46,\n      \"text_ar\": \"فإن ما مضى أنا أعرفه، لكني لا أعرف ما سيأتي».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 47,\n      \"text_ar\": \"فقال لي: «قف على يميني، وسأفسر لك المثل».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 48,\n      \"text_ar\": \"فوقفتُ ونظرتُ ورأيتُ تنوراً حارقاً يمر أمامي. وحدث أنه عندما مرَّ اللهيب نظرتُ فرأيتُ أن الدخان قد بقي.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 49,\n      \"text_ar\": \"وبعد هذا، مرَّ سحاب مائي أمام وجهي، وأرسل مطراً كثيراً مع عاصفة. وعندما انقضى المطر العاصف، ظلت القطرات باقية فيه».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 50,\n      \"text_ar\": \"ثم قال لي: «تأمل في نفسك؛ فكما أن المطر أكثر من القطرات، والنار أعظم من الدخان، هكذا كانت الكمية التي مضت أعظم بكثير، ولكن القطرات والدخان قد بقيا».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 51,\n      \"text_ar\": \"حينئذٍ صليتُ وقلتُ: «أتراني أعيش حتى ذلك الزمان؟ أم من سيكون حياً في تلك الأيام؟»\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 52,\n      \"text_ar\": \"فأجابني: «أما عن الآيات التي سألتني عنها، فربما أخبرك عنها جزئياً، لكني لم أُرْسَل لأخبرك عن حياتك، لأني لا أعرف».\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 605,
+    "output": 944,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0025415,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "error",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 52
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 605,
+      "outputTokens": 944,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0025415,
+      "latencyMs": 3440
+    }
+  ]
+}

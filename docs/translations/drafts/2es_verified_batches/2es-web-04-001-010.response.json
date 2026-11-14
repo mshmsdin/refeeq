@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "58e973af-cc0a-4def-81e3-0177afc507ee",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فأجابني الملاك الذي أرسل إلي، والذي كان اسمه أوريئيل،\",\n      \"verse\": 1\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"وقال لي: لقد قصر فهمك تماماً في أمر هذا العالم، فهل تظن أنك تستطيع أن تدرك طريق العلي؟\",\n      \"verse\": 2\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فقلت: نعم يا سيدي. فأجابني: لقد أرسلت لأريك ثلاثة طرق، وأعرض عليك ثلاثة أمور.\",\n      \"verse\": 3\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فإن استطعت أن تحل لي واحداً منها، فسأريك أيضاً الطريق الذي تشتهي أن تراه، وأعلمك لماذا القلب شرير.\",\n      \"verse\": 4\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فقلت: تكلم يا سيدي. فقال لي: اذهب، زن لي وزن النار، أو قس لي نفخة الريح، أو استرجع لي اليوم الذي مضى.\",\n      \"verse\": 5\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فأجبت وقلت: من من بني البشر يستطيع أن يفعل هذا، حتى تسألني عن مثل هذه الأمور؟\",\n      \"verse\": 6\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فقال لي: لو سألتك: كم مسكناً في قلب البحر؟ أو كم ينبوعاً في رأس غماقة الهاء؟ أو كم مجرى مائياً فوق الجلد؟ أو ما هي مخارج الجهاء؟ أو ما هي مداخل الفردوس؟\",\n      \"verse\": 7\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"لربما قلت لي: لم أنزل قط إلى الغماقة، ولا إلى الجهاء بعد، ولا صعدت إلى السماء قط.\",\n      \"verse\": 8\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"ولكن الآن لم أسالك إلا عن النار والريح واليوم، وهي أمور اختبرتها ولا يمكنك أن تنفصل عنها، ومع ذلك لم تعطني عنها أي جواب.\",\n      \"verse\": 9\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"ثم قال لي أيضاً: لا يمكنك أن تفهم أمور الخاصة التي نشأت معها.\",\n      \"verse\": 10\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  608,
+                  "output":  644,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0017924,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  608,
+                         "outputTokens":  644,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017924,
+                         "latencyMs":  2048
+                     }
+                 ]
+}

@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "a4b53bc5-c656-4107-a77d-9695b7506fa9",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":12,\"text\":\"the beast to Seth: 'Behold, I stand off from the image of God.' And he went to his lair.\",\"source_ref\":\"12:2\"},{\"chapter\":13,\"text\":\"And Seth went with Eve near paradise, and I they wept there, and prayed God to send his angel and give them the oil of mercy. And God\",\"source_ref\":\"13:1\"},{\"chapter\":13,\"text\":\"sent the archangel Michael and he spake to Seth: 'Seth, man of God, weary not thyself with prayers and entreaties concerning the tree which floweth with oil to anoint thy father Adam. For it shall not be thine now, but in the end of the times.\",\"source_ref\":\"13:2\"},{\"chapter\":13,\"text\":\"Then shall all flesh be raised up from Adam till that great day,-all that shall be of the holy people. Then shall the delights of paradise be given to them and God shall be in their midst. And they shall no longer sin before his face, for the evil heart shall be taken from them and there shall be given them a heart understanding the good and to serve God only. But do thou go back to thy father. For the\",\"source_ref\":\"13:3\"},{\"chapter\":13,\"text\":\"term of his life hath been fulfilled and he will live three days from to-day and will die. But when his soul is departing, thou shalt behold the awful (scene of) his passing.'\",\"source_ref\":\"13:6\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 12:2, 13:1, 13:2, 13:3, 13:6.",
+  "application_id": "rafeeq-bible-translation"
+}

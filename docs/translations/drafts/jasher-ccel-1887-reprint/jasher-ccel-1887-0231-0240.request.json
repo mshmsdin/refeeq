@@ -1,0 +1,17 @@
+{
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "d9635a16-92d7-4cbd-8e77-52b78171bb36",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"chapter\":7,\"source_ref\":\"7:21\",\"verse\":21,\"text\":\"These are the sons of Yoktan; Almodad, Shelaf, Chazarmoveth, Yerach, Hadurom, Ozel, Diklah, Obal, Abimael, Sheba, Ophir, Havilah and Jobab; all these are the sons of Yoktan.\"},{\"chapter\":7,\"source_ref\":\"7:22\",\"verse\":22,\"text\":\"And Peleg his brother begat Yen, and Yen begat Serug, and Serug begat Nahor and Nahor begat Terah, and Terah was thirty-eight years old, and he begat Haran and Nahor.\"},{\"chapter\":7,\"source_ref\":\"7:23\",\"verse\":23,\"text\":\"And Cush the son of Ham, the son of Noah, took a wife in those days in his old age, and she bare a son, and they called his name Nimrod, saying, At that time the sons of men again began to rebel and transgress against God, and the child grew up, and his father loved him exceedingly, for he was the son of his old age.\"},{\"chapter\":7,\"source_ref\":\"7:24\",\"verse\":24,\"text\":\"And the garments of skin which God made for Adam and his wife, when they went out of the garden, were given to Cush.\"},{\"chapter\":7,\"source_ref\":\"7:25\",\"verse\":25,\"text\":\"For after the death of Adam and his wife, the garments were given to Enoch, the son of Jared, and when Enoch was taken up to God, he gave them to Methuselah, his son.\"},{\"chapter\":7,\"source_ref\":\"7:26\",\"verse\":26,\"text\":\"And at the death of Methuselah, Noah took them and brought them to the ark, and they were with him until he went out of the ark.\"},{\"chapter\":7,\"source_ref\":\"7:27\",\"verse\":27,\"text\":\"And in their going out, Ham stole those garments from Noah his father, and he took them and hid them from his brothers.\"},{\"chapter\":7,\"source_ref\":\"7:28\",\"verse\":28,\"text\":\"And when Ham begat his first born Cush, he gave him the garments in secret, and they were with Cush many days.\"},{\"chapter\":7,\"source_ref\":\"7:29\",\"verse\":29,\"text\":\"And Cush also concealed them from his sons and brothers, and when Cush had begotten Nimrod, he gave him those garments through his love for him, and Nimrod grew up, and when he was twenty years old he put on those garments.\"},{\"chapter\":7,\"source_ref\":\"7:30\",\"verse\":30,\"text\":\"And Nimrod became strong when he put on the garments, and God gave him might and strength, and he was a mighty hunter in the earth, yea, he was a mighty hunter in the field, and he hunted the animals and he built altars, and he offered upon them the animals before the Lord.\"}]}"
+    }
+  ]
+}

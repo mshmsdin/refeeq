@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":10,\"verses\":[{\"chapter\":10,\"text\":\"The woman who appeared to you a little while ago, whom you saw mourning, and began to comfort her,\",\"verse\":41},{\"chapter\":10,\"text\":\"but now you no longer see the likeness of the woman, but a city under construction appeared to you,\",\"verse\":42},{\"chapter\":10,\"text\":\"and she told you of the death of her son, this is the interpretation:\",\"verse\":43},{\"chapter\":10,\"text\":\"This woman, whom you saw, is Zion, whom you now see as a city being built.\",\"verse\":44},{\"chapter\":10,\"text\":\"She told you that she had been barren for thirty years because there were three thousand years in the world in which there was no offering as yet offered in her.\",\"verse\":45},{\"chapter\":10,\"text\":\"And it came to pass after three thousand years that Solomon built the city and offered offerings. It was then that the barren bore a son.\",\"verse\":46},{\"chapter\":10,\"text\":\"She told you that she nourished him with great care. That was the dwelling in Jerusalem.\",\"verse\":47},{\"chapter\":10,\"text\":\"When she said to you, â€کMy son died when he entered into his marriage chamber, and that misfortune befell her,â€™ this was the destruction that came to Jerusalem.\",\"verse\":48},{\"chapter\":10,\"text\":\"Behold, you saw her likeness, how she mourned for her son, and you began to comfort her for what has happened to her. These were the things to be opened to you.\",\"verse\":49},{\"chapter\":10,\"text\":\"For now the Most High, seeing that you are sincerely grieved and suffer from your whole heart for her, has shown you the brightness of her glory and the attractiveness of her beauty.\",\"verse\":50}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "588731d0-9ae4-463d-9257-4e9870d56717",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 41,42,43,44,45,46,47,48,49,50 in this chapter."
+}

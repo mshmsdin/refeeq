@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"4BAR\",\"chapter\":8,\"verses\":[{\"chapter\":8,\"text\":\"1 And the day came when the Lord brought the people out of Babylon.\",\"verse\":1},{\"chapter\":8,\"text\":\"2 And the Lord said to Jeremiah: “Get up with the people and come to the Jordan and say to the people: ‘Let anyone who wants the Lord abandon the works of Babylon.\",\"verse\":2},{\"chapter\":8,\"text\":\"3 As for the men who took wives from them and the women who took husbands from them, those who listen to you will cross over, and you take them into Jerusalem; but those who do not listen to you, do not lead them there.’”\",\"verse\":3},{\"chapter\":8,\"text\":\"4 And Jeremiah spoke these words to the people, and they got up and came to the Jordan to cross over.\",\"verse\":4},{\"chapter\":8,\"text\":\"5 As he told them the words that the Lord had spoken to him, half of those who had taken spouses from them did not want to listen to Jeremiah, but said to him: “We will never abandon our wives, but we will bring them back with us into our city.”\",\"verse\":5}]}"
+    }
+  ],
+  "tenant_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "6a7e3ede-456f-4045-ae78-a21f1c9f0d6b",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5 in this chapter.",
+  "application_id": "rafeeq-bible-translation"
+}

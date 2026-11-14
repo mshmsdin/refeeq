@@ -1,0 +1,51 @@
+{
+  "request_id": "42186438-db6f-4e34-aa6f-1bcdc42b421c",
+  "content": "{\n  \"book_code\": \"JASHER\",\n  \"verses\": [\n    {\n      \"chapter\": 6,\n      \"verse\": 28,\n      \"source_ref\": \"6:28\",\n      \"text_ar\": \"وكان الفُلك يطفو على سطح المياه، وكان يُقذف في المياه بحيث تدور جميع المخلوقات الحية داخله كالحساء في قدر.\"\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 29,\n      \"source_ref\": \"6:29\",\n      \"text_ar\": \"وشعور بالقلق الشديد أصاب جميع المخلوقات الحية التي في الفُلك، وكان الفُلك كأنه سيتكسر.\"\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 30,\n      \"source_ref\": \"6:30\",\n      \"text_ar\": \"ارتعبت جميع المخلوقات الحية التي في الفُلك، وصاحت الأسود، وزئرت الثيران، وعوت الذئاب، وتكلم كل مخلوق حي في الفُلك ونحى بلغته الخاصة، فت وصلت أصواتهم إلى مسافة كبيرة، فبكى نوح وأبناؤه في مشكلاتهم؛ كانوا خائفين كثيرًا أنهم وصلوا إلى أبواب الموت.\"\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 31,\n      \"source_ref\": \"6:31\",\n      \"text_ar\": \"فصلى نوح إلى الرب، وناحه بسببه، وقال: يا رب أعننا، فلا قوة لنا على تحمل هذا الشر الذي أحاط بنا، فالأمواج قد أحاطتنا، والفيضانات المخيفة أرعبتنا، وفخاخ الموت قُدمت أمامنا؛ أجبنا يا رب، أجبنا، أنر وجهك نحونا وكن رحيماً بنا، فدنا وانقذنا.\"\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 32,\n      \"source_ref\": \"6:32\",\n      \"text_ar\": \"فاستمع الرب لصوت نوح، وتذكره الرب.\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 619,
+    "output": 776,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 619,
+      "outputTokens": 776,
+      "cachedTokens": 256,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 2088
+    }
+  ]
+}

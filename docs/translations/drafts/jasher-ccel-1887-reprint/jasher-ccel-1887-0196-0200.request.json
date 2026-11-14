@@ -1,0 +1,17 @@
+{
+  "messages": [
+    {
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
+      "role": "system"
+    },
+    {
+      "content": "{\"units\":[{\"source_ref\":\"6:28\",\"chapter\":6,\"text\":\"And the ark floated upon the face of the waters, and it was tossed upon the waters so that all the living creatures within were turned about like pottage in a cauldron.\",\"verse\":28},{\"source_ref\":\"6:29\",\"chapter\":6,\"text\":\"And great anxiety seized all the living creatures that were in the ark, and the ark was like to be broken.\",\"verse\":29},{\"source_ref\":\"6:30\",\"chapter\":6,\"text\":\"And all the living creatures that were in the ark were terrified, and the lions roared, and the oxen lowed, and the wolves howled, and every living creature in the ark spoke and lamented in its own language, so that their voices reached to a great distance, and Noah and his sons cried and wept in their troubles; they were greatly afraid that they had reached the gates of death.\",\"verse\":30},{\"source_ref\":\"6:31\",\"chapter\":6,\"text\":\"And Noah prayed unto the Lord, and cried unto him on account of this, and he said, O Lord help us, for we have no strength to bear this evil that has encompassed us, for the waves of the waters have surrounded us, mischievous torrents have terrified us, the snares of death have come before us; answer us, O Lord, answer us, light up thy countenance toward us and be gracious to us, redeem us and deliver us.\",\"verse\":31},{\"source_ref\":\"6:32\",\"chapter\":6,\"text\":\"And the Lord hearkened to the voice of Noah, and the Lord remembered him.\",\"verse\":32}],\"book_code\":\"JASHER\"}",
+      "role": "user"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "e5d87605-5996-4504-8344-daee72c8635e",
+  "service_key": "bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "tenant_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,17 @@
+{
+  "messages": [
+    {
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
+      "role": "system"
+    },
+    {
+      "content": "{\"units\":[{\"source_ref\":\"6:23\",\"chapter\":6,\"text\":\"But now you come and tell me this on account of the troubles of your souls, now also the Lord will not listen to you, neither will he give ear to you on this day, so that you will not now succeed in your wishes.\",\"verse\":23},{\"source_ref\":\"6:24\",\"chapter\":6,\"text\":\"And the sons of men approached in order to break into the ark, to come in on account of the rain, for they could not bear the rain upon them.\",\"verse\":24},{\"source_ref\":\"6:25\",\"chapter\":6,\"text\":\"And the Lord sent all the beasts and animals that stood round the ark. And the beasts overpowered them and drove them from that place, and every man went his way and they again scattered themselves upon the face of the earth.\",\"verse\":25},{\"source_ref\":\"6:26\",\"chapter\":6,\"text\":\"And the rain was still descending upon the earth, and it descended forty days and forty nights, and the waters prevailed greatly upon the earth; and all flesh that was upon the earth or in the waters died, whether men, animals, beasts, creeping things or birds of the air, and there only remained Noah and those that were with him in the ark.\",\"verse\":26},{\"source_ref\":\"6:27\",\"chapter\":6,\"text\":\"And the waters prevailed and they greatly increased upon the earth, and they lifted up the ark and it was raised from the earth.\",\"verse\":27}],\"book_code\":\"JASHER\"}",
+      "role": "user"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "bf0fbea9-e34a-43b1-a5c7-931eafb5a3ef",
+  "service_key": "bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "tenant_id": "rafeeq-bible-translation"
+}

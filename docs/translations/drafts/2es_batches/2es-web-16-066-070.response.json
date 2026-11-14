@@ -1,0 +1,51 @@
+{
+  "request_id": "b7c12906-0a40-47ee-8bfd-55889ba8c9d0",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 16,\n      \"verse\": 66,\n      \"text_ar\": \"ماذا ستفعلون؟ أو كيف ستخفون خطاياكم أمام الله وملائكته؟\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 67,\n      \"text_ar\": \"ها إن الله هو الحاقد. فخافوه، وانتهوا عن الخطيئة، ونسَوا إثمكم، فلا تكرروا ارتكابها. فسيقوم الله بإرشادكم، وينجّيكم من كل شر.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 68,\n      \"text_ar\": \"لأنها، ها إن غضباً حارقاً من سواد كثير قد أشتعل عليكم، وسينالون منكم بعدد، وسيسخّروكم لتأكلوا مما ذُبح للأوثان.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 69,\n      \"text_ar\": \"فالموافقون لهم سيكونون موضع شتم وازدراء، وسيُداسون تحت الأقدام.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 70,\n      \"text_ar\": \"لأنه سيكون في أماكن مختلفة، وفي المدن المجاورة، انتفاضة عظيمة على الذين يتقون الرب.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 335,
+    "output": 391,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+  "provider": "Groq Paid",
+  "model": "qwen/qwen3.8-27b",
+  "estimatedCost": 0.001832,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "success",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 335,
+      "outputTokens": 391,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.001832,
+      "latencyMs": 863
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  4,
+    "range":  "41-50",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "082603f9-72c5-4e78-9859-4582bc477190",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  541,
+                         "outputTokens":  597,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016547999999999999,
+                         "latencyMs":  2299
+                     }
+                 ],
+    "usage":  {
+                  "input":  541,
+                  "output":  597,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0016547999999999999,
+    "verses":  [
+                   {
+                       "chapter":  4,
+                       "text_ar":  "ثم قلت لا يا سيد هكذا لا يكون فقال لي في الجحيم مخادع النفوس مثل البطن",
+                       "verse":  41
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "لأنه كما أن المرأة الحامل تسرع أن تنجو من ألم المخاض هكذا هذه الأماكن تسرع أن تسلم ما أودع فيها منذ البداءة",
+                       "verse":  42
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "وحينئذ يرى لك ما تشتهي أن تراه",
+                       "verse":  43
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فأجبت قلت إن كنت قد وجدت نعمة في عينيك وإن كان ممكنا وإن كنت مستحقا",
+                       "verse":  44
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فأرني هذا أيضا هل ما بقي أكثر مما مضى أم انقضى منا القسم الأعظم",
+                       "verse":  45
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "لأني أعرف ما مضى ولكني لا أعرف ما سيأتي",
+                       "verse":  46
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فقال لي قف عن يمني فأفسر لك المثل",
+                       "verse":  47
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فوقفت ونظرت وإذا أتون نار ملتهبة يمر أمامي وحدث لما مضى اللهب أني نظرت فرأيت الدخان باقيا",
+                       "verse":  48
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "وبعد هذا عبر أمامي سحاب ماء وأنزل مطرا كثيرا بعاصفة ولما انقضت العاصفة بقيت منه القطرات",
+                       "verse":  49
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فقال لي تأمل في نفسك كما أن المطر أكثر من القطرات والنار أعظم من الدخان هكذا القسم الذي مضى كان أعظم بكثير أما القطرات والدخان فبقيا",
+                       "verse":  50
+                   }
+               ]
+}

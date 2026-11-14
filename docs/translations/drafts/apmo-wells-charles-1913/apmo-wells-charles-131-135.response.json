@@ -1,0 +1,51 @@
+{
+  "request_id": "fca9f4c6-5ee9-4475-863c-32dc3abd545b",
+  "content": "{\n  \"book_code\": \"APMO\",\n  \"verses\": [\n    {\n      \"chapter\": 37,\n      \"verse\": 4,\n      \"text_ar\": \"وبقي هناك ثلاث ساعات مستلقيًا، ثم امتدّ الأب لكل شيء، الجالس على عرشه المقدس، مدَّ يده وأخذ آدم وسلمه إلى رئيس الملائكة ميخائيل قائلاً: «ارفعه إلى الجنة إلى السماء الثالثة، واتركه هناك حتى ذلك اليوم المخيف من حسابي، الذي سأُجريه في العالم». ثم أخذ ميخائيل آدم وتركه\"\n    },\n    {\n      \"chapter\": 37,\n      \"verse\": 6,\n      \"text_ar\": \"حيث أخبره الله.\"\n    },\n    {\n      \"chapter\": 38,\n      \"verse\": 1,\n      \"text_ar\": \"ولكن بعد كل ذلك، سأل رئيس الملائكة عن ترتيب بقايا الجسد. وقال الله\"\n    },\n    {\n      \"chapter\": 38,\n      \"verse\": 2,\n      \"text_ar\": \"أمر أن يجتمع جميع الملائكة في حضوره، كلٌ في ترتيبه، فتجمعوا جميعًا، بعضهم يحمل مبخرة في يده، وآخرون بوقًا. فظهر 'رب الجنود' وجلبته أربع رياح، وحملته الشُعبان على الرياح، والملائكة من السماء ترافقه وجاؤوا إلى الأرض حيث كان جسد آدم.\"\n    },\n    {\n      \"chapter\": 38,\n      \"verse\": 3,\n      \"text_ar\": \"وبذلك\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 571,
+    "output": 429,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 571,
+      "outputTokens": 429,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1257
+    }
+  ]
+}

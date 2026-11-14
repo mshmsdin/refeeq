@@ -1,0 +1,70 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  11,
+    "range":  "6-10",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "ffb41b4e-bd1d-4ef9-b0a1-5ed5546a4828",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  290,
+                         "outputTokens":  294,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.000822,
+                         "latencyMs":  1300
+                     }
+                 ],
+    "usage":  {
+                  "input":  290,
+                  "output":  294,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.000822,
+    "verses":  [
+                   {
+                       "chapter":  11,
+                       "text_ar":  "ورأيت كيف أن كل الأشياء تحت السماء خضعت لها، ولم يتكلم أحد ضدها - كلا، ولا مخلوق واحد على الأرض.",
+                       "verse":  6
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "ورأيت، وإذا النسر قد نهض على مخالبه، ووجه صوته إلى أجنحته قائلاً:",
+                       "verse":  7
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "لا تسهروا كلكم في وقت واحد. ليدر كل واحد في مكانه الخاص وليحرس بالتناوب؛",
+                       "verse":  8
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "ولكن لتُحفظ الرؤوس للنهاية.",
+                       "verse":  9
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "ورأيت، وإذا الصوت لم يخرج من رؤوسها، بل من وسط جسدها.",
+                       "verse":  10
+                   }
+               ]
+}

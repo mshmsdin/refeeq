@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 71,
+  "batch_end": 75,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "e1d5e103-2e91-45bb-8bdb-dd7c70b8654f",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 388,
+      "outputTokens": 362,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010214,
+      "latencyMs": 1611
+    }
+  ],
+  "usage": {
+    "input": 388,
+    "output": 362,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0010214,
+  "units": [
+    {
+      "chapter": 21,
+      "source_ref": "21:5",
+      "text_ar": "له: «لا تخف، لأنه متى أكلت عرفت الخير والشر». وبسرعة أقنعته، فأكل وللوقت انفتحت عيناه وهو أيضاً عرف عريه."
+    },
+    {
+      "chapter": 21,
+      "source_ref": "21:6",
+      "text_ar": "وقال لي: «أيتها المرأة الشريرة! ماذا فعلتِ بي حتى حرمتِني من مجد الله؟»"
+    },
+    {
+      "chapter": 22,
+      "source_ref": "22:1",
+      "text_ar": "وفي تلك الساعة عينها، سمعنا رئيس الملكة ميخائيل ينفخ ببوقه ويدعو"
+    },
+    {
+      "chapter": 22,
+      "source_ref": "22:2",
+      "text_ar": "الملائكة قائلاً: «هكذا يقول الرب، هلمّوا معي إلى الفردوس واسمعوا الدينونة التي أُدين بها آدم»."
+    },
+    {
+      "chapter": 22,
+      "source_ref": "22:3",
+      "text_ar": "ولما ظهر الله في الفردوس، راكباً على مركبة كروبيمه مع الملائكة المتقدمين أمامه والمرتلين بتسابيح التسبيح، فإن جميع نباتات الفردوس، سواء تلك التي لنصيب أبيكم"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  9,
+    "range":  "31-40",
+    "status":  "machine_translated_structured",
+    "provider":  "Groq Paid",
+    "model":  "qwen/qwen3.8-27b",
+    "request_id":  "32c2aeb1-69ea-4e4f-908a-e69652403392",
+    "failovers":  2,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "error",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "errorCode":  "503",
+                         "estimatedCost":  null,
+                         "latencyMs":  4458
+                     },
+                     {
+                         "modelId":  "05dfb509-43ee-4357-a629-e560369080e7",
+                         "provider":  "Gemini",
+                         "model":  "gemini-3.8-flash",
+                         "status":  "skipped",
+                         "errorCode":  "quota",
+                         "estimatedCost":  null,
+                         "latencyMs":  0,
+                         "inputPrice":  "0.7500000000",
+                         "outputPrice":  "3.7500000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0750000000",
+                         "imagePrice":  "0.0000000000"
+                     },
+                     {
+                         "modelId":  "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+                         "provider":  "Groq Paid",
+                         "model":  "qwen/qwen3.8-27b",
+                         "status":  "success",
+                         "inputPrice":  "0.8000000000",
+                         "outputPrice":  "4.0000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.8000000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  567,
+                         "outputTokens":  752,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0034616,
+                         "latencyMs":  3708
+                     }
+                 ],
+    "usage":  {
+                  "input":  567,
+                  "output":  752,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0034616,
+    "verses":  [
+                   {
+                       "chapter":  9,
+                       "text_ar":  "فَانْظُرْ، إِنِّي زَرَعْتُ شَرِيعَتِي فِيكُم، فَسَتُـثْمِرُ فِيكُم، وَتَتَمَجَّدُونَ فِيهَا إِلَى الأَبَدِ.",
+                       "verse":  31
+                   },
+                   {
+                       "chapter":  9,
+                       "text_ar":  "وَأَسْلافُنَا الَّذِينَ قَبِلُوا الشَّرِيعَةَ لَمْ يَحْفَظُوهَا، وَلَا أَحَلُّوا الأَحْكَامَ. وَمَا هَلَكَ ثَمَرُ الشَّرِيعَةِ، لأَنَّهَا لَمْ تَسْتَطِعْ ذَلِكَ، لِأَنَّهَا كَانَتْ لَكُمْ.",
+                       "verse":  32
+                   },
+                   {
+                       "chapter":  9,
+                       "text_ar":  "وَمَا هَلَكَ الَّذِينَ قَبِلُوهَا، لأَنَّهُمْ لَمْ يَحْفَظُوا مَا زُرِعَ فِيهِمْ.",
+                       "verse":  33
+                   },
+                   {
+                       "chapter":  9,
+                       "text_ar":  "فَانْظُرْ، إِنَّهُ طَرِيقٌ عِنْدَمَا تَسْتَقْبِلُ الأَرْضُ الْبِذْرَ، أَوِ الْبَحْرُ سَفِينَةً، أَوْ أَيَّ مِيضَةٍ طَعَامًا أَوْ شَرَابًا، وَإِذَا حَصَلَ أَنْ مَا زُرِعَ، أَوْ مَا أُقِيمَ،",
+                       "verse":  34
+                   },
+                   {
+                       "chapter":  9,
+                       "text_ar":  "أَوِ الأَشْيَاءُ الَّتِي قُبِلَتْ تَنْتَهِي، فَتَنْتَهِي هَذِهِ، لَكِنَّ الأِمْعَاءَ تَبْقَى. عِنْدَنَا لاَ يَحْدُثُ ذَلِكَ.",
+                       "verse":  35
+                   },
+                   {
+                       "chapter":  9,
+                       "text_ar":  "لأَنَّاتُنَا الَّذِينَ قَبِلْنَا الشَّرِيعَةَ نَهْلِكُ بِالْخَطِيَّةِ، مَعَ قَلْبِنَا الَّذِي قَبِلَهَا.",
+                       "verse":  36
+                   },
+                   {
+                       "chapter":  9,
+                       "text_ar":  "وَلَكِنْ الشَّرِيعَةَ لاَ تَهْلِكُ، بَلْ تَبْقَى فِي مَجْدِهَا.",
+                       "verse":  37
+                   },
+                   {
+                       "chapter":  9,
+                       "text_ar":  "لَمَّا نَطَقْتُ بِهَذِهِ الأُمُورِ فِي قَلْبِي، اطَّلَعْتُ بَعَيْنِي، وَرَأَيْتُ عَنِ يَمِينِي امْرَأَةً، وَإِذَا هِيَ هَائِمَةٌ، وَتَبْكِي بِصَوْتٍ عَظِيمٍ، وَفُضُلَتْ فِي نَفْسِهَا. سُودَ ثِيَابُهَا، وَعَلَى رَأْسِهَا رَمَادٌ.",
+                       "verse":  38
+                   },
+                   {
+                       "chapter":  9,
+                       "text_ar":  "ثُمَّ أَرَحْتُ أَفْكَارِي فِي شُغْلِي، وَأَقْبَلْتُ إِلَيْهَا،",
+                       "verse":  39
+                   },
+                   {
+                       "chapter":  9,
+                       "text_ar":  " وَقُلْتُ لَهَا: «لِمَاذَا تَبْكِينَ؟ لِمَاذَا فَضِلْتِ فِي نَفْسِكِ؟»",
+                       "verse":  40
+                   }
+               ]
+}

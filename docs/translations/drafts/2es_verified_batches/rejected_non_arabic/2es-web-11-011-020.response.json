@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "44766a80-f670-49cd-b995-e969171ce561",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"I counted her wings that were near the others, and behold, there were eight of them.\",\n      \"verse\": 11\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"I saw, and behold, on the right side one wing arose and reigned over all the earth.\",\n      \"verse\": 12\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"When it reigned, the end of it came, and it disappeared, so that its place appeared no more. The next wing rose up and reigned, and it ruled a long time.\",\n      \"verse\": 13\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"It happened that when it reigned, its end came also, so that it disappeared, like the first.\",\n      \"verse\": 14\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"Behold, a voice came to it, and said,\",\n      \"verse\": 15\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"Listen, you who have ruled over the earth all this time! I proclaim this to you, before you disappear,\",\n      \"verse\": 16\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"none after you will rule as long as you, not even half as long.\",\n      \"verse\": 17\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"Then the third arose, and ruled as the others before, and it also disappeared.\",\n      \"verse\": 18\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"So it went with all the wings one after another, as every one ruled, and then disappeared.\",\n      \"verse\": 19\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"I saw, and behold, in process of time the wings that followed were set up on the right side, that they might rule also. Some of them ruled, but in a while they disappeared.\",\n      \"verse\": 20\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  468,
+                  "output":  558,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0015354000000000001,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  468,
+                         "outputTokens":  558,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0015354000000000001,
+                         "latencyMs":  1854
+                     }
+                 ]
+}

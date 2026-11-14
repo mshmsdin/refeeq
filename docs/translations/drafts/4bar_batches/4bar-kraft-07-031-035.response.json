@@ -1,0 +1,37 @@
+{
+  "request_id": "0010be5f-fad3-4acd-af89-1dcea66cd5af",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لكنني تذكرت أيام الأعياد التي احتفلنا بها في أورشليم قبل سبينا؛ وعندما تذكرت، أنينتُ، وعدتُ إلى بيتي نادحاً وباكياً.\",\n      \"verse\": 31\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"والآن، إذن، صلِّ في المكان الذي أنت فيه وأبيمالك، من أجل هذا الشعب، لكي يسمعوا صوتي وأحكام فمي، حتى نتمكن من الخروج من هنا.\",\n      \"verse\": 32\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لأني أقول لك إن طوال الوقت الذي أمضيناه هنا جعلوها تحت سيطرتهم، قائلين: «أنشدوا لنا نشيداً من أناشيد صيون ـ نشيد إلهكم».\",\n      \"verse\": 33\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"فنرد عليهم: «كيف يمكننا أن ننشد لكم ونحن في أرض غريبة؟»\",\n      \"verse\": 34\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وبعد هذا، ربط إرميا الرسالة بعنق النسر، قائلاً: «اذهب بسلام، وليحفظ الرب كلا منا».\",\n      \"verse\": 35\n    }\n  ]\n}",
+  "usage": {
+    "input": 352,
+    "output": 371,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010331,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 352,
+      "outputTokens": 371,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010331,
+      "latencyMs": 1426
+    }
+  ]
+}

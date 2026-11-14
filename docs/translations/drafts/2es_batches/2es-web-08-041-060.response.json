@@ -1,0 +1,65 @@
+{
+  "request_id": "9a8e3fda-6d31-4986-9bad-36126fbf493b",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":8,\"verse\":41,\"text_ar\":\"لأنه كما يبذر الفلاح أزاريب كثيرة في الأرض، ويغرس أشجاراً عديدة، ومع ذلك فإن كل ما يُبذر لا يرتفع في أوانه، ولا كل ما يُغرس يؤصل، هكذا أيضاً فإن الذين يُبذرون في العالم لن يخلصوا جميعهم.»\",\"review_notes_ar\":[]},{\"chapter\":8,\"verse\":42,\"text_ar\":\"فأجبت وقلت: «إن كنت قد وجدت نعمة، فدعني أتكلم أمامك.\",\"review_notes_ar\":[]},{\"chapter\":8, \"verse\":43, \"text_ar\": \"إن بذار الفلاح إن لم ترتفع لأنه لم يتلق مطرك في أوانه، أو إن تلفت بغزارة المطر وهلكت،\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 44, \"text_ar\": \"هكذا الإنسان أيضاً، الذي صُنع بيديك ودُعي صورتك الخاصة لأنه صُنع مثلك، والذي من أجله خلقت كل الأشياء، بل وجعلته شبه بذار الفلاح.\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 45, \"text_ar\": \"لا تغضب علينا، بل اشفق على شعك وارحم ميراثك، لأنك ترحم خليقتك الخاصة.»\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 46, \"text_ar\": \"فأجابني وقال: «الأمور الحاضرة هي للذين يعيشون الآن، والأمور الآتية هي للذين سيعيشون فيما بعد.\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 47, \"text_ar\": \"لأنك تقصر كثيراً عن أن تستطيع أن تحب خليقتي أكثر مني. لكنك قارنت نفسك بالظالمين. لا تفعل ذلك!\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 48, \"text_ar\": \"ومع ذلك، في هذا ستكون مُعجَباً به أمام العلي،\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 49, \"text_ar\": \"في أنك تواضعت، كما يليق بك، ولم تحسب نفسك بين الأبرار لكي تُمجَّد كثيراً.\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 50, \"text_ar\": \"لأن بلايا قاسية كثيرة ستقع على الساكنين في العالم في الأزمنة الأخيرة، لأنهم سلكوا في كبرياء عظيمة.\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 51, \"text_ar\": \"ولكن افهم لنفسك، وللذين يستفسرون عن مجد أمثالك،\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 52, \"text_ar\": \"لأن الفردوس قد فتح لكم. شجرة الحياة مغروسة. الزمان الآت معدّ. الوفرة مهيأة. مدينة مبنية. الراحة مسموح بها. الصلاح مُكمَّل، والحكمة مُكمَّلة سلفاً.\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 53, \"text_ar\": \"أصل الشر مختوم عنكم. الضعف مُزال عنكم، والموت مخفي. الجحيم والفساد قد هربا إلى النسيان.\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 54, \"text_ar\": \"الأحزان قد زالت، وفي النهاية، كنز الخلود مُعلَن.\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 55, \"text_ar\": \"لذلك لا تسأل بعد أسئلة عن كثرة الهالكين.\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 56, \"text_ar\": \"لأنه لما نالوا الحرية، احتقروا العلي، وازددروا شريعته، وتركوا طرقه.\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 57, \"text_ar\": \"بل وداسوا أبراره،\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 58, \"text_ar\": \"وقالوا في قلبهم إنه ليس هناك إله - مع معرفتهم أنهم لا بد أن يموتوا.\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 59, \"text_ar\": \"فإنه كما أن الأمور التي قلتها ستقبلك، هكذا العطش والألم المعدّان لهم. لأن العلي لم يشأ أن يُهلك البشر،\", \"review_notes_ar\": []}, {\"chapter\": 8, \"verse\": 60, \"text_ar\": \"بل إن المخلوقين أنفسهم دنسوا اسم صانعهم، وكانوا ناكرين للجميل لمن أعدّ لهم الحياة.»\", \"review_notes_ar\": []}]}",
+  "usage": {
+    "input": 891,
+    "output": 1201,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0032698000000000002,
+  "estimatedCostCurrency": "USD",
+  "failovers": 2,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "05dfb509-43ee-4357-a629-e560369080e7",
+      "provider": "Gemini",
+      "model": "gemini-3.8-flash",
+      "status": "error",
+      "inputPrice": "0.7500000000",
+      "outputPrice": "3.7500000000",
+      "currency": "USD",
+      "cachedPrice": "0.0750000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "502",
+      "estimatedCost": null,
+      "latencyMs": 30004
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 891,
+      "outputTokens": 1201,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0032698000000000002,
+      "latencyMs": 3553
+    }
+  ]
+}

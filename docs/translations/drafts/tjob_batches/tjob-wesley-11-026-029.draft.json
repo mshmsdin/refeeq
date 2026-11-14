@@ -1,0 +1,66 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 11,
+  "range": "26-29",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "178fa0e9-54f4-465e-a4fd-c312a0fd4f48",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 330,
+      "outputTokens": 316,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.000889,
+      "latencyMs": 1583
+    }
+  ],
+  "usage": {
+    "input": 330,
+    "output": 316,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.000889,
+  "verses": [
+    {
+      "chapter": 11,
+      "text_ar": "وأخذت فمها يتكلم بلهجة الحكام السماويين (الأرخبون)، ورنّمت بتسبيحة عمل الموضع العالي، ومن أراد أن يعرف عمل السموات فليطلع على ترانيم كاسيا.",
+      "verse": 26
+    },
+    {
+      "chapter": 11,
+      "text_ar": "حينئذٍ تنطقت الابنة الأخرى التي تدعى قرن أمالثيا (قرن الكحل)، وتكلم فمها بلغة أهل الأعالي، لأن قلبها تحوّل وارتفع فوق الأمور العالمية.",
+      "verse": 27
+    },
+    {
+      "chapter": 11,
+      "text_ar": "تكلمت بلهجة الكروبيم، مرتلة تسبيح حاكم القوات الكونية (الفضائل) وممجدة مجده.",
+      "verse": 28
+    },
+    {
+      "chapter": 11,
+      "text_ar": "ومن أراد أن يتبع آثار «مجد الآب» سيجدها مكتوبة في صلوات قرن أمالثيا.",
+      "verse": 29
+    }
+  ]
+}

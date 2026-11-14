@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "838a01c9-a167-4ffd-9279-777bd3fa6048",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":4,\"verses\":[{\"chapter\":4,\"verse\":21,\"text\":\"And my fellow-citizens, seeing that what was said by him had become true, came and pursued me, and robbed me of all that was in my house.\"},{\"chapter\":4,\"verse\":22,\"text\":\"And I saw with mine own eyes the pillage of my house, and men without culture and without honor sat at my table and on my couches, and I could not remonstrate against them.\"},{\"chapter\":4,\"verse\":23,\"text\":\"For I was exhausted like a woman with her loins let loose from multitude of pains, remembering chiefly that this warfare had been predicted to me by the Lord through His angel.\"},{\"chapter\":4,\"verse\":24,\"text\":\"And I became like one who, when seeing the rough sea and the adverse winds, while the lading of the vessel in mid-ocean is too heavy, casts the burden into the sea, saying:\"},{\"chapter\":4,\"verse\":25,\"text\":\"\\\"I wish to destroy all this only in order to come safely into the city so that I may take as profit the rescued ship and the best of my things.\\\"\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24,25 in this chapter."
+}

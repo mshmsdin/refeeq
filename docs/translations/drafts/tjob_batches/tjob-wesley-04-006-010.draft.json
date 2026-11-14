@@ -1,0 +1,71 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 4,
+  "range": "6-10",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "030d84fe-e25b-4f21-a809-f4af327e0f68",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 289,
+      "outputTokens": 314,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008717,
+      "latencyMs": 1353
+    }
+  ],
+  "usage": {
+    "input": 289,
+    "output": 314,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0008717,
+  "verses": [
+    {
+      "chapter": 4,
+      "text_ar": "فأحضرت ثيرانًا تقدمات للكاهن على المذبح قائلًا: «ليت أبنائي لا يفتكرون قط بالشر نحو الله في قلوبهم.»",
+      "verse": 6
+    },
+    {
+      "chapter": 4,
+      "text_ar": "وفيما كنت أعيش على هذه السيرة، لم يطقِ المضلُّ أن يرى الصلاح الذي يصنعه، فطلب حرب الله ضدي.",
+      "verse": 7
+    },
+    {
+      "chapter": 4,
+      "text_ar": "وأتى عليَّ بقسوة.",
+      "verse": 8
+    },
+    {
+      "chapter": 4,
+      "text_ar": "أولًا أحرق العدد الكبير من الغنم، ثم الجمال، ثم أحرق البقر وجميع قطيعي؛ أو سُبيْت لا من الأعداء فقط بل ومن أولئك الذين نالوا إحسانات مني.",
+      "verse": 9
+    },
+    {
+      "chapter": 4,
+      "text_ar": "وأتى الرعاة وأخبروني بذلك.",
+      "verse": 10
+    }
+  ]
+}

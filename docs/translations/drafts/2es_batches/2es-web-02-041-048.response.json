@@ -1,0 +1,51 @@
+{
+  "request_id": "e5770de1-3303-47dc-ad32-c6ab148ee16d",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":2,\"verse\":41,\"text_ar\":\"قد تَمَّ عددُ أبنَائِكِ الَّذينَ تَشتَاقُونَ إليهم. أُطلُبوا قُدرَةَ الرَّبِّ لكَيْ يَتَقَدَّسَ شَعبُكُم المَدعُوُّ مُنذُ البَدءِ.\",\"review_notes_ar\":[]},{\"chapter\":2,\"verse\":42,\"text_ar\":\"رَأيتُ أنا عَزرا عَلى جَبَلِ صِهیُونَ جَمعاً كَبيراً لم أستَطِع أن أُحصِيَهُ، وكانوا جَميعاً يُسَبِّحونَ الرَّبَّ بأناشيدَ.\",\"review_notes_ar\":[]},{\"chapter\":2,\"verse\":43,\"text_ar\":\"وفي وَسَطِهِم كانَ شَابٌّ عالِي القامَةِ، أطوَلَ مِن جَميعِ الباقينَ، وكانَ يَضَعُ تيجانَاً عَلى رَأسِ كُلِّ واحِدٍ مِنهُم، وكانَ هو أرفَعَ مِنهُم. فَتَعَجَّبتُ جِدّاً مِن هذا.\",\"review_notes_ar\":[]},{\"chapter\":2,\"verse\":44,\"text_ar\":\"فَسَألتُ المَلاكَ وَقُلتُ: «ما هؤلاءِ يا سَيِّدي؟»\",\"review_notes_ar\":[]},{\"chapter\":2,\"verse\":45,\"text_ar\":\"فَأجابَ وَقالَ لي: «هؤلاءِ هُم الَّذينَ خَلَعُوا اللِّباسَ المائِتَ وَلَبِسوا غَيرَ المائتِ، وَاعتَرَفوا بِاسمِ اللهِ. والآنَ هُم مُتَوَّجونَ ويَنالونَ سَعَفَ النَّخيلِ».\",\"review_notes_ar\":[]},{\"chapter\":2,\"verse\":46,\"text_ar\":\"فَقُلتُ عِندَئِذٍ لِلمَلَكِ: «مَن هو الشَّابُّ الَّذي يَضَعُ التِّيجانَ عَلَيهِم ويُعطيهِم السَّعَفَ في أيديهِم؟»\",\"review_notes_ar\":[]},{\"chapter\":2,\"verse\":47,\"text_ar\":\"فأجابَ وقالَ لي: «هو ابنُ اللهِ الَّذي اعتَرَفوا بِهِ في العالَمِ». فحينَئِذٍ بَدأتُ أُسَبِّحُ أولئكَ الَّذينَ وقَفوا بِبُسولَةٍ عَظيمَةٍ مِن أجلِ اسمِ الرَّبِّ.\",\"review_notes_ar\":[]},{\"chapter\":2,\"verse\":48,\"text_ar\":\"ثُمَّ قالَ لي المَلَكُ: «اِذهَبْ في طَريقِكَ، وَأَخبِرْ شَعبي بِأُمورٍ كَهذهِ، وَبِعَجائِبِ الرَّبِّ الإلهِ العَظيمَةِ الَّتي رَأيتَها».\",\"review_notes_ar\":[]}]}",
+  "usage": {
+    "input": 472,
+    "output": 738,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0019866,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 472,
+      "outputTokens": 738,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0019866,
+      "latencyMs": 2554
+    }
+  ]
+}

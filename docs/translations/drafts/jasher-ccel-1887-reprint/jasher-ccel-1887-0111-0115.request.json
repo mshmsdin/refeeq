@@ -1,0 +1,17 @@
+{
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "messages": [
+    {
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
+      "role": "system"
+    },
+    {
+      "content": "{\"units\":[{\"source_ref\":\"3:38\",\"text\":\"And all those kings went to the place and they found the earth there filled with snow, and upon the snow were large stones of snow, and one said to the other, Come, let us break through the snow and see, perhaps the men that remained with Enoch are dead, and are now under the stones of snow, and they searched but could not find him, for he had ascended into heaven.\",\"chapter\":3,\"verse\":38},{\"source_ref\":\"4:1\",\"text\":\"And all the days that Enoch lived upon earth, were three hundred and sixty-five years.\",\"chapter\":4,\"verse\":1},{\"source_ref\":\"4:2\",\"text\":\"And when Enoch had ascended into heaven, all the kings of the earth rose and took Methuselah his son and anointed him, and they caused him to reign over them in the place of his father.\",\"chapter\":4,\"verse\":2},{\"source_ref\":\"4:3\",\"text\":\"And Methuselah acted uprightly in the sight of God, as his father Enoch had taught him, and he likewise during the whole of his life taught the sons of men wisdom, knowledge and the fear of God, and he did not turn from the good way either to the right or to the left.\",\"chapter\":4,\"verse\":3},{\"source_ref\":\"4:4\",\"text\":\"But in the latter days of Methuselah, the sons of men turned from the Lord, they corrupted the earth, they robbed and plundered each other, and they rebelled against God and they transgressed, and they corrupted their ways, and would not hearken to the voice of Methuselah, but rebelled against him.\",\"chapter\":4,\"verse\":4}],\"book_code\":\"JASHER\"}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "request_id": "148e2503-a0c6-4c5f-b7a4-e1b4b1fe2f4d",
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation"
+}

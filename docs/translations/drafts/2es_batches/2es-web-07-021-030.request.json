@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":7,\"book_code\":\"2ES\",\"verses\":[{\"verse\":21,\"chapter\":7,\"text\":\"For God strictly commanded those who came, even as they came, what they should do to live, and what they should observe to avoid punishment.\"},{\"verse\":22,\"chapter\":7,\"text\":\"Nevertheless, they weren’t obedient to him, but spoke against him and imagined for themselves vain things.\"},{\"verse\":23,\"chapter\":7,\"text\":\"They made cunning plans of wickedness, and said moreover of the Most High that he doesn’t exist, and they didn’t know his ways.\"},{\"verse\":24,\"chapter\":7,\"text\":\"They despised his law and denied his covenants. They haven’t been faithful to his statutes, and haven’t performed his works.\"},{\"verse\":25,\"chapter\":7,\"text\":\"Therefore, Esdras, for the empty are empty things, and for the full are the full things.\"},{\"verse\":26,\"chapter\":7,\"text\":\"For behold, the time will come, and it will be, when these signs of which I told you before will come to pass, that the bride will appear, even the city coming forth, and she will be seen who now is withdrawn from the earth.\"},{\"verse\":27,\"chapter\":7,\"text\":\"Whoever is delivered from the foretold evils will see my wonders.\"},{\"verse\":28,\"chapter\":7,\"text\":\"For my son Jesus will be revealed with those who are with him, and those who remain will rejoice four hundred years.\"},{\"verse\":29,\"chapter\":7,\"text\":\"After these years my son Christ will die, along with all of those who have the breath of life.\"},{\"verse\":30,\"chapter\":7,\"text\":\"Then the world will be turned into the old silence seven days, like as in the first beginning, so that no human will remain.\"}]}"
+    }
+  ],
+  "request_id": "0dd14b64-410a-4c9f-956f-b001294153b5",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 21,22,23,24,25,26,27,28,29,30 in this chapter.",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "tenant_id": "rafeeq-bible-translation"
+}

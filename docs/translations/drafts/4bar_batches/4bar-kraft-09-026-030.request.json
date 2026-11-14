@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":9,\"verses\":[{\"chapter\":9,\"verse\":26,\"text\":\"26 And he set it up and said: “Light of the ages, make this stone become like me in appearance, until I have described to Baruch and Abimelech everything I saw.”\"},{\"chapter\":9,\"verse\":27,\"text\":\"27 Then the stone, by God’s command, took on the appearance of Jeremiah.\"},{\"chapter\":9,\"verse\":28,\"text\":\"28 And they were stoning the stone, supposing that it was Jeremiah!\"},{\"chapter\":9,\"verse\":29,\"text\":\"29 But Jeremiah told Baruch and to Abimelech all the mysteries he had seen, and at once he stood among the people, wanting to complete his ministry.\"},{\"chapter\":9,\"verse\":30,\"text\":\"30 Then the stone cried out, saying: “Foolish children of Israel, why do you stone me, supposing that I am Jeremiah? Look, Jeremiah is standing among you!”\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "a2b2e908-c913-46ec-a83c-1130af523fb0",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 26,27,28,29,30 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "5a211587-b7bd-4774-afff-830b0e84fd29",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"verse\": 1,\n      \"text_ar\": \"فقال له آدم: «حين صنعنا الله، أنا وأمك التي بسببها أنا أيضا أموت، أعطانا سلطانا لنأكل من كل شجرة في الفردوس، وأما تلك وحدها فأوصانا أن لا نأكل منها، ومن خلالها سنموت. واقتربت الساعة لكي يصعد الملائكة\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 2,\n      \"text_ar\": \"الذين كانوا يحرسون أمك ليسجدوا للرب، وكنت بعيداً عنها، وعلم العدو أنها وحدها فأعطاها، وأكلت من الشجرة التي قيل لها ألا تأكل منها.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 3,\n      \"text_ar\": \"ثم أعطتني أنا أيضاً لأكل».\"\n    },\n    {\n      \"chapter\": 8,\n      \"verse\": 1,\n      \"text_ar\": \"«وغضب الله علينا، ودخل الرب الفردوس ودعاني بصوت مهيب وقال: \\\"يا آدم، أين أنت؟ ولماذا تختفي عن وجهي؟ أليست الدار قادرة أن تختفي عن بانيها؟\\\" وقال لي: \\\"بما أنك تركت عهدي، فقد جلبت على جسدك اثنتين وسبعين ضربة؛ ووجع الضربة الأولى هو ألم في العينين، والضربة الثانية علة في السمع، وهكذا تباعاً ستصيبك كل الضربات\\\"».\"\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 1,\n      \"text_ar\": \"وفيما قال هذا لبنيه، تنهد آدم بمرارة وقال: «ماذا أفعل؟ إني في ضيق شديد». وبكت حواء وقالت: «يا سيدي»\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 495,
+    "output": 475,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.001336,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 495,
+      "outputTokens": 475,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.001336,
+      "latencyMs": 1700
+    }
+  ]
+}

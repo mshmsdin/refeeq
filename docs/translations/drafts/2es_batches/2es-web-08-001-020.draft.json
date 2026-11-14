@@ -1,0 +1,179 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 8,
+  "range": "1-20",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "0c9dbe7e-eecb-4012-9086-b304222ef185",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 900,
+      "outputTokens": 1508,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.00404,
+      "latencyMs": 5065
+    }
+  ],
+  "usage": {
+    "input": 900,
+    "output": 1508,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.00404,
+  "verses": [
+    {
+      "chapter": 8,
+      "verse": 1,
+      "text_ar": "فأجابني قائلاً: «إن العلي قد صنع هذا العالم للكثيرين، أما العالم الآتي فللقليلين.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 2,
+      "text_ar": "والآن سأضرب لك مثلاً يا عزرا: كما أنك لو سألت الأرض لَقَالَتْ لك إنها تعطي طميًا كثيراً تُصنع منه الأواني الخزفية، ولكنها تعطي غباراً قليلاً يُستخرج منه الذهب؛ وهكذا أيضاً هو حال العالم الحاضر.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 3,
+      "text_ar": "لقد خُلق الكثيرون، ولكن قليلين هم الذين سيخلصون».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 4,
+      "text_ar": "فأجبت: «فلتشرب نفسي من الفهم حتى تكتفي، وليهتم قلبي بابتلاع الحكمة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 5,
+      "text_ar": "لأنك جئت إلى هنا بغير إرادتك، وترحل كرهاً عنها، إذ لم تُعْطَ سوى وقت قصير لتعيشه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 6,
+      "text_ar": "أيها الرب الذي فوقنا، امنح عبدك أن نصلي أمامك، وأعطنا زرعاً لقلوبنا وفهماً لفهمنا، لكي ينمو منه ثمرٌ يحيى به كل فاسد يحمل شبه إنسان.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 7,
+      "text_ar": "لأنك وحدك الموجود، ونحن جميعاً صنعة يديك، كما قلت.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 8,
+      "text_ar": "إذ تمنح الحياة للجسد المصوَّر الآن في الرحم وتُعطيه أعضاءه، تُحفظ خليقتك في النار والماء، وتدوم صنعَتُك تسعة أشهر كخليقتك التي تُخلق فيه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 9,
+      "text_ar": "ولكن الذي يحفظ والذي يُحفظ، كلاهما سيُحفظان بعنايتك. وعندما يُخرج الرحم ثانيةً ما نما فيه،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 10,
+      "text_ar": "أمرتَ أن يُعطى اللبن من أجزاء الجسد، أي من الثديين، وهو ثمر الثديين،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 11,
+      "text_ar": "لكي يُغذى الجسد المصوَّر لفترة، وبعد ذلك تهديه برحمتك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 12,
+      "text_ar": "نعم، لقد ربَّيتَه ببرك، وثقفتَه بناموسك، وأدَّبتَه بحكمك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 13,
+      "text_ar": "تميتُه كخليقتك، وتُحييه كعملك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 14,
+      "text_ar": "فإن كنتَ تهلك ببساطة وبفجأة مَن صُوِّر بمشقة عظيمة بأمرك، فلأي غرض صُنِع؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 15,
+      "text_ar": "والآن سأتكلم. أما عن الإنسان عموماً فأنت أعلم، ولكن عن شعبك الذي أحزن من أجله،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 16,
+      "text_ar": "وعن ميراثك الذي من أجله أنوح، وعن إسرائيل الذي تثقل نفسي بشأنه، وعن نسل يعقوب الذي أكتئب من أجله،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 17,
+      "text_ar": "لذلك أشرع في الصلاة أمامك عن نفسي وعنهم؛ لأني أرى زلاتنا نحن الساكنين في الأرض،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 18,
+      "text_ar": "ولكني سمعت عن سرعة الدينونة الآتية.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 19,
+      "text_ar": "لذلك اسمع صوتي، وافهم كلامي، وسأتكلم أمامك». كانت هذه بداية كلمات عزرا، قبل أن يُرفع. وقال:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 20,
+      "text_ar": "«أيها الرب، أنت الذي تثبت إلى الأبد، عيناك مرتفعتان، ومظالك في الهواء،",
+      "review_notes_ar": []
+    }
+  ]
+}

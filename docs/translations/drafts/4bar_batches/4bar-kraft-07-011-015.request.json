@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":7,\"verses\":[{\"chapter\":7,\"verse\":11,\"text\":\"11 And do not turn aside to the right or to the left, but go straight as a speeding arrow in the power of God,⁠ a and the glory of the Lord will be with you the entire way.”\"},{\"chapter\":7,\"verse\":12,\"text\":\"12 Then the eagle took flight and went away to Babylon with the letter tied to his neck, and when he arrived he rested on a post outside the city in a desert place.\"},{\"chapter\":7,\"verse\":13,\"text\":\"13 And he kept silent until Jeremiah came along, for he and some of the people were coming out to bury a corpse outside the city.\"},{\"chapter\":7,\"verse\":14,\"text\":\"14 For Jeremiah had petitioned King Nebuchadnezzar, saying: ““Give me a place where I may bury those of my people who have died.”” And the king gave it to him.\"},{\"chapter\":7,\"verse\":15,\"text\":\"15 And as they were coming out with the body, and weeping, they came to where the eagle was.\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "e20dc3fb-1ec4-4dec-a0ee-4630974e6b31",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

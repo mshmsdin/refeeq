@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "87b81091-cdae-4d94-b75d-1cdbc6d8eefe",
+    "content":  "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":7,\"text_ar\":\"ولا صيف ولا ربيع ولا حر ولا شتاء ولا صقيع ولا برد ولا برد ولا مطر ولا ندى\",\"verse\":41},{\"chapter\":7,\"text_ar\":\"ولا ظهر ولا ليل ولا فجر ولا إشراق ولا ضياء ولا نور إلا بهاء مجد العلي وحده الذي به يرى الجميع الأمور الموضوعة أمامهم\",\"verse\":42},{\"chapter\":7,\"text_ar\":\"وسوف تدوم كأنها أسبوع سنين\",\"verse\":43},{\"chapter\":7,\"text_ar\":\"هذا هو حكمي وترتيبه المرسوم ولكني أريتك هذه الأشياء وحدك\",\"verse\":44},{\"chapter\":7,\"text_ar\":\"فأجبت وقلت يا رب لقد قلت حينئذ وأقول الآن طوبى للذين هم أحياء الآن وحفظوا وصاياك\",\"verse\":45}]}",
+    "usage":  {
+                  "input":  300,
+                  "output":  205,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0006025,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  300,
+                         "outputTokens":  205,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0006025,
+                         "latencyMs":  1211
+                     }
+                 ]
+}

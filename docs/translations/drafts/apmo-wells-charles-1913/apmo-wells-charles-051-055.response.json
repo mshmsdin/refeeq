@@ -1,0 +1,37 @@
+{
+  "request_id": "be95e71e-047b-40e4-a334-46ecfcbfe915",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 16,\n      \"verse\": 5,\n      \"text_ar\": \"قال له إبليس: «لا تخف، بل كن إناثتي وسأتكلم من فمك بكلمات لأخدعه».\"\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 1,\n      \"text_ar\": \"وفي الحال شنق نفسه من سور الفردوس، ولما صعد الملائكة إلى\"\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 2,\n      \"text_ar\": \"عبادة الله، ظهر الشيطان حينئذ في هيئة ملاك ورتل الترانيم مثل الملائكة. وأنا انحنيت على السور ورأيته مثل ملاك. فقال لي: «أأنت حواء؟» وقلت\"\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 3,\n      \"text_ar\": \"له: «أنا هي». «ماذا تفعلين في الفردوس؟» وقلت له: «أقامنا الله لنحرس ونأكل منه».\"\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 4,\n      \"text_ar\": \"فأجاب إبليس على فم الحية: «تنعمان حسناً ولكنكما لا تأكلان».\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 375,
+    "output": 349,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.000985,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 375,
+      "outputTokens": 349,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.000985,
+      "latencyMs": 1332
+    }
+  ]
+}

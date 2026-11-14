@@ -1,0 +1,37 @@
+{
+  "request_id": "98e29591-b93d-4ffb-a9be-ca6297d38fbb",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 3,\n      \"verse\": 3,\n      \"text_ar\": \"أجاب آدم: «كفّي يا حواء عن مثل هذا الكلام لعلّ الله لا يجلب علينا لعنة أخرى. كيف يُعقل أن أمدّ يدي على جسدي الخاص؟ كلا، بل لنقم ونبحث عن شيء لنعيش به لئلا نفشل».\"\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 1,\n      \"text_ar\": \"وسارا وبحثا لمدة تسعة أيام، فلم يجعدا شيئاً مما كانا قد اعتدنا أن يمتلكاه في الفردوس، بل وجدا فقط طعاماً\"\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 2,\n      \"text_ar\": \"للحيوانات والبهائم لتأكله؛\"\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 3,\n      \"text_ar\": \"أما نحن فكنا نأكل طعام الملائكة. لكنه لعادل وحق أن نحزن أمام وجه الله الذي صنعنا. فلنتتب توبة عظيمة: فلعل الرب يتحنن علينا ويرحمنا ويعطينا نصيباً من شيء لقوتنا.\"\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 1,\n      \"text_ar\": \"وقالت حواء لآدم: «ما هي التوبة؟ أخبرني، أي نوع من التوبة يجب أن أصنع؟ دعنا لا نضع على أنفسنا تعباً عظيماً لا نستטיع احتماله، لئلا لا يستمع الرب إلى صلواتنا، ويصرف وجهه عنا، لأننا لم\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 455,
+    "output": 424,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0011965,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 455,
+      "outputTokens": 424,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011965,
+      "latencyMs": 2307
+    }
+  ]
+}

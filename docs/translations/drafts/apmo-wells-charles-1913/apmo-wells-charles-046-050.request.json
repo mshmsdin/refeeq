@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "76a45a41-e672-44f0-9712-5ea21295ce0c",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":15,\"text\":\"allotted to us from God. Now I guarded in my lot, the west and the south. But the devil went to Adam's lot, where the male creatures were. [For God divided the creatures; all the males he gave to your father and all the females he gave to me.]\",\"source_ref\":\"15:3\"},{\"chapter\":16,\"text\":\"And the devil spake to the serpent saying, Rise up, come to me and I will tell thee a word\",\"source_ref\":\"16:1\"},{\"chapter\":16,\"text\":\"whereby thou mayst have profit.\\\" And he arose and came to him. And the devil saith to him:\",\"source_ref\":\"16:2\"},{\"chapter\":16,\"text\":\"\\\"I hear that thou art wiser than all the beasts, and I have come to counsel thee. Why dost thou eat of Adam's tares and not of paradise? Rise up and we will cause him to be cast out of paradise, even\",\"source_ref\":\"16:3\"},{\"chapter\":16,\"text\":\"as we were cast out through him.\\\" The serpent saith to him, \\\"I fear lest the Lord be wroth with\",\"source_ref\":\"16:4\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 15:3, 16:1, 16:2, 16:3, 16:4.",
+  "application_id": "rafeeq-bible-translation"
+}

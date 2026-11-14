@@ -1,0 +1,18 @@
+{
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "9964d682-b07a-4514-89e5-504cf699195b",
+  "service_key": "bible-translation-gemini-test",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 76,77,78 in this chapter.",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي كأعداد صحيحة بأرقام 0-9 فقط، بلا فاصلة أو كلمة ملحقة، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"verses\":[{\"chapter\":16,\"verse\":76,\"text\":\"You who keep my commandments and precepts,” says the Lord God, “don’t let your sins weigh you down, and don’t let your iniquities lift themselves up.”\"},{\"chapter\":16,\"verse\":77,\"text\":\"Woe to those who are choked with their sins and covered with their iniquities, like a field is choked with bushes, and its path covered with thorns, that no one may travel through!\"},{\"chapter\":16,\"verse\":78,\"text\":\"It is shut off and given up to be consumed by fire.\"}],\"chapter\":16,\"book_code\":\"2ES\"}"
+    }
+  ]
+}

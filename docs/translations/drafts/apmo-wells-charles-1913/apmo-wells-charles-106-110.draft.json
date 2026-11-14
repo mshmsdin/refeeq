@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 106,
+  "batch_end": 110,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "a859240e-e225-428b-bf12-1245272d4099",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 514,
+      "outputTokens": 513,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0014367,
+      "latencyMs": 2881
+    }
+  ],
+  "usage": {
+    "input": 514,
+    "output": 513,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0014367,
+  "units": [
+    {
+      "chapter": 31,
+      "source_ref": "31:2",
+      "text_ar": "بعد يوم واحد من المرض الذي ألمَّ به، قالت له: «كيف تموت وأنا أحيش، أو كم عسى أن أعيش بعد أن تموت؟ أخبرني». وأما آدم فقال لها: «لا تهتمي بهذا، فإنك لن تبقي بعدي، بل كلانا سنموت معًا، وتضطجع هي في موضعي. ولكن متى متُّ، فدهنوني ولا يلمسني أحد إلى أن"
+    },
+    {
+      "chapter": 31,
+      "source_ref": "31:3",
+      "text_ar": "يتكلم ملاك الرب بشيء من أمري؛ فإن الله لن ينساني، بل سيطلب خليقته الخاصة. والآن قومي بالأحرى وصلي إلى الله حتى أسلم روحي إلى يديه اللتين أعطتاها لي؛ فنحن لا نعلم كيف نلقى صانعنا، أهو ساخط علينا، أم هو رحوم وينوي أن يشفق علينا ويقبلنا»."
+    },
+    {
+      "chapter": 31,
+      "source_ref": "31:4",
+      "text_ar": "وقامت حواء وخرجت إلى الخارج ووقعت على الأرض وأخذت تقول: «لقد خطئت يا الله، لقد خطئت يا إله الكل، لقد خطئت إليك. لقد خطئت إلى الملائكة المختارين، لقد خطئت إلى الكروبيم، لقد خطئت إلى عرشك المخوف غير المتزعزع، لقد خطئت أمامك، وكل خطيئة قد ابتدأت بفعلي في الخليقة»."
+    },
+    {
+      "chapter": 32,
+      "source_ref": "32:1",
+      "text_ar": "وهكذا صلت حواء على ركبتيها؛ وإذا بملاك البشرية يأتي إليها وأقامها،"
+    },
+    {
+      "chapter": 32,
+      "source_ref": "32:3",
+      "text_ar": "وهكذا صلت حواء على ركبتيها؛ (و) هوذا ملاك البشرية أتى إليها، وأقامها،"
+    }
+  ]
+}

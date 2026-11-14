@@ -1,0 +1,37 @@
+{
+  "request_id": "09d7b098-33cd-49da-a6a6-09dbf70633c4",
+  "content": "{\"book_code\":\"4BAR\",\"verses\":[{\"chapter\":4,\"text_ar\":\"وفيما كان إرميا لا يزال يبكي على الشعب، أخرجوه مع الشعب وجروهم إلى بابل.\",\"verse\":6},{\"chapter\":4,\"text_ar\":\"أما باروخ فوضع تراباً على رأسه وجلس وصرخ بهذه المراثي قائلاً:\",\"verse\":7},{\"chapter\":4,\"text_ar\":\"ولكن لا تدع الشعب الآثم يفتخر ويقول: «لقد كنا أقوياء بما يكفي لنأخذ مدينة الله بقوتنا».\",\"verse\":8},{\"chapter\":4,\"text_ar\":\"والله سيرحمنا ويجعلنا نعود إلى مدينتنا، أما أنتم فلن نجوا!\",\"verse\":9},{\"chapter\":4,\"text_ar\":\"طوبى لآبائنا، إبراهيم وإسحاق ويعقوب،\",\"verse\":10}]}",
+  "usage": {
+    "input": 271,
+    "output": 205,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0005937999999999999,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 271,
+      "outputTokens": 205,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0005937999999999999,
+      "latencyMs": 1787
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "26737520-6464-4176-af07-5f54ca718794",
+  "content": "{\"book_code\":\"TJOB\",\"verses\":[{\"chapter\":10,\"verse\":1,\"text_ar\":\"كرروا ذلك مرارًا وتكرارًا، فأنا أُصِبُ عارًا لأنني ارتكبت العديد من الخطيئة، ولم يبقَ لي أمل، لكنني ردّيت على هؤلاء الرجال بحماس الجدل بنفسي.\"},{\"chapter\":10,\"verse\":2,\"text_ar\":\"وبدأوا يغضبون، مستعدين للانفصال بروح الغضب. لكن إيليهو دعاهم ليقفون قليلاً حتى يريهم ما هو.\"},{\"chapter\":10,\"verse\":3,\"text_ar\":\"«لأنك» قال، «لقد قضيت أيامًا عديدة، سمحت لِعِبْرَةٍ بأن يفتخر بأنه عادل. لكنني لن أتحمل ذلك بعد الآن».\"},{\"chapter\":10,\"verse\":4,\"text_ar\":\"منذ البداية كنت أبكي عليه، أتذكر سعادته السابقة. لكن الآن يتكلم بفخر، وبفخر متهور يقول إنه يجلس على عرشه في السماء.\"},{\"chapter\":10,\"verse\":5,\"text_ar\":\"لذلك، اسمعني، وسأخبرك ما هو سبب مصيره.\"}]}",
+  "usage": {
+    "input": 534,
+    "output": 315,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-20b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 534,
+      "outputTokens": 315,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 509
+    }
+  ]
+}

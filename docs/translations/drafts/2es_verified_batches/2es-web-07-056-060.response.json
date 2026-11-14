@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "1b3f1e28-a1e6-4299-99f0-ceac1d1425c6",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"ولكن الفضة أكثر وفرة من الذهب، والنحاس من الفضة، والحديد من النحاس، والرصاص من الحديد، والطين من الرصاص.\",\n      \"verse\": 56\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"فاحكم إذن أي الأشياء هي الثمينة والمرغوبة، وما هو وفير وما هو نادر؟\",\n      \"verse\": 57\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"فقلت: «يا رب السيد، إن ما هو وفير هو أقل قيمة، لأن ما هو أكثر ندرة هو أكثر ثمنًا».\",\n      \"verse\": 58\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"فأجابني: «زن في نفسك الأشياء التي فكرت فيها، لأن من يمتلك ما يصعب الحصول عليه يفرح بالذي يمتلك ما هو وفير.\",\n      \"verse\": 59\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وهكذا هو الدينونة التي وعدت بها؛ فإني سأفرح بالقليلين الذين سيخلصون، لأن هؤلاء هم الذين جعلوا مجدي يسود الآن، وبهم يُكرم اسمي الآن».\",\n      \"verse\": 60\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  332,
+                  "output":  354,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0009846,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  332,
+                         "outputTokens":  354,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0009846,
+                         "latencyMs":  1387
+                     }
+                 ]
+}

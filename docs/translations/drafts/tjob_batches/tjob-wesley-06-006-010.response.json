@@ -1,0 +1,79 @@
+{
+  "request_id": "f187ef9f-a60c-4098-ac0c-795ef8ea8278",
+  "content": "{\"book_code\": \"TJOB\", \"verses\": [{\"chapter\": 6, \"text_ar\": \"لإنفجار عن الخبز لم يعد مسموحاً لي فيه، وإذ لم أستطع أن آخذ طعامي وأقسمه بيننا، تأملت في قلبي أنّه ليس العدلَ أن تتألمي وتصمتي من الجوع.\", \"verse\": 6}, {\"chapter\": 6, \"text_ar\": \"فتجرأت فذهبت إلى السوق بغير خجل، ولما قال لي بائع الخبز: «اعطني مالاً، ولك الخبز»، كشفته حال معونتنا.\", \"verse\": 7}, {\"chapter\": 6, \"text_ar\": \"فسمعت يقول: «إن لم يكن معك مال، فإليّ شعر رأسك، ولك ثلاثة أقراص من الخبز لتعيشوا عليها ثلاثة أيام».\", \"verse\": 8}, {\"chapter\": 6, \"text_ar\": \"فانصاع إلى الضيم وقيل له: «قم اقطع شعري!» فقوم، وقصّ بها شعر راسي في السوق غبرةً، والجماعة واقفة معجوبة.\", \"verse\": 9}, {\"chapter\": 6, \"text_ar\": \"فمن الذي لا يعجب ويخبر: «أهذه ستيس زوجة أيوب، كان لها أربعة عشر حجاباً تتغطى بها جحور جوّان، وأبواب في أبواب، فكان مشرفاً مستشرفاً عليها، ثمّا انظروا الآن إنها تبدّل شعرها بالخبز!»»\", \"verse\": 10}]}",
+  "usage": {
+    "input": 421,
+    "output": 348,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+  "provider": "Groq Paid",
+  "model": "qwen/qwen3.8-27b",
+  "estimatedCost": 0.0017288,
+  "estimatedCostCurrency": "USD",
+  "failovers": 3,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "05dfb509-43ee-4357-a629-e560369080e7",
+      "provider": "Gemini",
+      "model": "gemini-3.8-flash",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.7500000000",
+      "outputPrice": "3.7500000000",
+      "currency": "USD",
+      "cachedPrice": "0.0750000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "success",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 421,
+      "outputTokens": 348,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0017288,
+      "latencyMs": 853
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "5a1dc004-4920-4aa5-82d5-879a33f27594",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وفي اليوم الثاني صنعت أيضا روح الفلك وأمرته أن يقسم ويفصل المياه، لكي يصعد جزء منها ويبقى الآخر تحته.\",\n      \"verse\": 41\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وفي اليوم الثالث أمرت أن تجتمع المياه في الجزء السابع من الأرض. وجففت ستة أجزاء وأبقيتها، لكي يخدمك منها ما يُزرع ويُفلح.\",\n      \"verse\": 42\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"لأنه ما إن خرجت كلمتك حتى تم العمل.\",\n      \"verse\": 43\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وفوراً نبتت ثمار عظيمة لا تُحصى، بمذاقات كثيرة لطيفة، وأزهار بألوان لا تُبارى، وعطور ذات رائحة زكية جداً. وقد تم ذلك في اليوم الثالث.\",\n      \"verse\": 44\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وفي اليوم الرابع أمرت أن تشرق الشمس، ويعطي القمر ضوءه، وتكون النجوم في نظامها؛\",\n      \"verse\": 45\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وأعطيتها أمراً لخدمة البشرية التي كان سيوُجد.\",\n      \"verse\": 46\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وفي اليوم الخامس قلت للجزء السابع، حيث جُمِعت المياه، أن ينتج كائنات حية وطيوراً وأسماكاً؛ وهكذا كان.\",\n      \"verse\": 47\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"حيث أنتج الماء الأبكم وعديم الحياة أشياء حية كما وُصي، لكي تسبح الأمم أعمالك العجيبة.\",\n      \"verse\": 48\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"ثم حفظت كائنين حيّين. أحدهما سميته بهيموث، والآخر سميته لواياثان.\",\n      \"verse\": 49\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وفصلت الواحد عن الآخر؛ لأن الجزء السابع، أعني حيث جُمِعت المياه، لم يكن ليحتويهما معاً.\",\n      \"verse\": 50\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  533,
+                  "output":  630,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0017349000000000002,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  533,
+                         "outputTokens":  630,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017349000000000002,
+                         "latencyMs":  2271
+                     }
+                 ]
+}

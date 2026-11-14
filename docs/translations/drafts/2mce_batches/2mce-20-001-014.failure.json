@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "attempted_at": "2026-11-14T12:05:34.7178457Z",
+  "error": "All eligible providers failed",
+  "http": 503
+}

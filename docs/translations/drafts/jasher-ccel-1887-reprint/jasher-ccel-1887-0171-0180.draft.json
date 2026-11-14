@@ -1,0 +1,170 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 171,
+  "batch_end": 180,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-20b",
+  "request_id": "c484466a-69b4-4e8b-99b8-e71d611024ae",
+  "failovers": 5,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "99274687-1d7c-4d9e-a6f4-aab3765418ca",
+      "provider": "Mistral",
+      "model": "mistral-small-2603",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.1500000000",
+      "outputPrice": "0.6000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0150000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "05dfb509-43ee-4357-a629-e560369080e7",
+      "provider": "Gemini",
+      "model": "gemini-3.8-flash",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.7500000000",
+      "outputPrice": "3.7500000000",
+      "currency": "USD",
+      "cachedPrice": "0.0750000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 868,
+      "outputTokens": 658,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1065
+    }
+  ],
+  "usage": {
+    "input": 868,
+    "output": 658,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "text_ar": "جاء الرب في اليوم التالي، وتوافدت الحيوانات والوحوش والطيور بأعداد كبيرة، واحتووا على السفينة.",
+      "chapter": 6,
+      "source_ref": "6:3"
+    },
+    {
+      "text_ar": "ذهب نوح وجلس عند باب السفينة، ومن جميع الكائنات التي تراجعت أمامه، أحضرها إلى السفينة، وكل ما وقف أمامه تركه على الأرض.",
+      "chapter": 6,
+      "source_ref": "6:4"
+    },
+    {
+      "text_ar": "جاءت أسرة نمر، مع صغريها الذكر والأنثى، وتراجعت الثلاثة أمام نوح، وارتفعت الصغار على الأنثى وهاجمتها، وجعلتها تهرب من مكانها، وغادرت، ثم عادوا إلى أماكنهم وتراجعت على الأرض أمام نوح.",
+      "chapter": 6,
+      "source_ref": "6:5"
+    },
+    {
+      "text_ar": "هربت الأسرة، وقفت في مكان الأسود.",
+      "chapter": 6,
+      "source_ref": "6:6"
+    },
+    {
+      "text_ar": "رأى نوح هذا، واندهش بشدة، ونهوضاً أخذ الصغار، وأحضرهم إلى السفينة.",
+      "chapter": 6,
+      "source_ref": "6:7"
+    },
+    {
+      "text_ar": "أحضر نوح إلى السفينة من جميع المخلوقات الحية التي على الأرض، حتى لا يتبقى أي واحد إلا ما أحضره إلى السفينة.",
+      "chapter": 6,
+      "source_ref": "6:8"
+    },
+    {
+      "text_ar": "جاء نوح زوجين زوجين إلى السفينة، ولكن من الحيوانات النقية والطيور النقية، أحضر سبعة أزواج، كما أمره الله.",
+      "chapter": 6,
+      "source_ref": "6:9"
+    },
+    {
+      "text_ar": "لا تزال جميع الحيوانات والوحوش والطيور موجودة، واحتووا على السفينة في كل مكان، ولم تنزل الأمطار حتى سبع أيام بعد ذلك.",
+      "chapter": 6,
+      "source_ref": "6:10"
+    },
+    {
+      "text_ar": "وفي ذلك اليوم، جعل الرب الأرض كلها ترتع، وانطفأ الشمس، وتحدت أسس العالم، وتحركت الأرض بقوة، وأضاءت الرعود، وانفجرت العواصف، وانطلقت الأنهار، كأنها لم تعرفها السكان من قبل؛ فعل الله هذا الفعل العظيم، لتخويف أبناء البشر، حتى لا يتكرر الشر على الأرض.",
+      "chapter": 6,
+      "source_ref": "6:11"
+    },
+    {
+      "text_ar": "ولم يتراجع أبناؤ البشر عن طرقهم الشريرة، وزاد غضب الرب في ذلك الوقت، ولم يوجهوا قلوبهم إلى كل ذلك.",
+      "chapter": 6,
+      "source_ref": "6:12"
+    }
+  ]
+}

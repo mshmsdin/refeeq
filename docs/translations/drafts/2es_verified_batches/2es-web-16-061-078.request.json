@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78 in this chapter.",
+  "request_id": "91fb5c27-a0c9-4741-bb0f-74abaef8c024",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":16,\"book_code\":\"2ES\",\"verses\":[{\"chapter\":16,\"text\":\"He formed man, and put a heart in the midst of the body, and gave him breath, life, and understanding,\",\"verse\":61},{\"chapter\":16,\"text\":\"yes, the spirit of God Almighty. He who made all things and searches out hidden things in hidden places,\",\"verse\":62},{\"chapter\":16,\"text\":\"surely he knows your imagination, and what you think in your hearts. Woe to those who sin, and try to hide their sin!\",\"verse\":63},{\"chapter\":16,\"text\":\"Because the Lord will exactly investigate all your works, and he will put you all to shame.\",\"verse\":64},{\"chapter\":16,\"text\":\"When your sins are brought out before men, you will be ashamed, and your own iniquities will stand as your accusers in that day.\",\"verse\":65},{\"chapter\":16,\"text\":\"What will you do? Or how will you hide your sins before God and his angels?\",\"verse\":66},{\"chapter\":16,\"text\":\"Behold, God is the judge. Fear him! Stop sinning, and forget your iniquities, to never again commit them. So will God lead you out, and deliver you from all suffering.\",\"verse\":67},{\"chapter\":16,\"text\":\"For, behold, the burning wrath of a great multitude is kindled over you, and they will take away some of you, and feed you with that which is sacrificed to idols.\",\"verse\":68},{\"chapter\":16,\"text\":\"Those who consent to them will be held in derision and in contempt, and be trodden under foot.\",\"verse\":69},{\"chapter\":16,\"text\":\"For there will be in various places, and in the next cities, a great insurrection against those who fear the Lord.\",\"verse\":70},{\"chapter\":16,\"text\":\"They will be like mad men, sparing none, but spoiling and destroying those who still fear the Lord.\",\"verse\":71},{\"chapter\":16,\"text\":\"For they will destroy and plunder their goods, and throw them out of their houses.\",\"verse\":72},{\"chapter\":16,\"text\":\"Then the trial of my elect will be made known, even as the gold that is tried in the fire.\",\"verse\":73},{\"chapter\":16,\"text\":\"Hear, my elect ones, says the Lord: “Behold, the days of suffering are at hand, and I will deliver you from them.\",\"verse\":74},{\"chapter\":16,\"text\":\"Don’t be afraid, and don’t doubt, for God is your guide.\",\"verse\":75},{\"chapter\":16,\"text\":\"You who keep my commandments and precepts,” says the Lord God, “don’t let your sins weigh you down, and don’t let your iniquities lift themselves up.”\",\"verse\":76},{\"chapter\":16,\"text\":\"Woe to those who are choked with their sins and covered with their iniquities, like a field is choked with bushes, and its path covered with thorns, that no one may travel through!\",\"verse\":77},{\"chapter\":16,\"text\":\"It is shut off and given up to be consumed by fire.\",\"verse\":78}]}"
+    }
+  ]
+}

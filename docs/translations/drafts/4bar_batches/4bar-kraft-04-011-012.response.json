@@ -1,0 +1,51 @@
+{
+  "request_id": "699f8a6b-5fc8-4001-ba2f-37fd251750d7",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 4,\n      \"verse\": 11,\n      \"text_ar\": \"عندما قال ذلك، خرج باروخ من المدينة يبكي ويقول:\"\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 12,\n      \"text_ar\": \"وبقي في قبر، بينما جاء إليه الملائكة وشرحوا له كل ما كشفه له الرب عبرهم.\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 348,
+    "output": 250,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 348,
+      "outputTokens": 250,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 667
+    }
+  ]
+}

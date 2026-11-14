@@ -1,0 +1,37 @@
+{
+  "request_id": "edeb2aa6-a5c4-4ba9-a47a-bc8f2f0c0cd9",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 25,\n      \"verse\": 3,\n      \"text_ar\": \"الحياة، من بلاياك القاسية وضيقتك. بل تعترفين وتقولين: «يا رب، يا رب، خلّصني، و»\"\n    },\n    {\n      \"chapter\": 25,\n      \"verse\": 4,\n      \"text_ar\": \"لن أعود إلى خطيئة الجسد». ولهذا السبب، من أقوالكِ وحدكِ أيدينكِ، بسبب العداوة التي زرعها العدو فيكِ».\"\n    },\n    {\n      \"chapter\": 26,\n      \"verse\": 1,\n      \"text_ar\": \"لكنه التفت إلى الحية [بغضب شديد] وقال: «بما أنكِ فعلتِ هذا، وأصبحتِ إناءً ناكراً للجميلة حتى خدعتِ القلوب البريئة، فملعونة أنتِ بين جميع الوحوش.\"\n    },\n    {\n      \"chapter\": 26,\n      \"verse\": 2,\n      \"text_ar\": \"تُحرمين من الطعام الذي كنتِ تأكلينه وتقتاتين على التراب كل أيام\"\n    },\n    {\n      \"chapter\": 26,\n      \"verse\": 3,\n      \"text_ar\": \"حياتكِ: على صدركِ وبطنكِ تمشين وتُسلبين الأيدي والأرجل. ولن يُبقى لكِ أذن ولا جناح، ولا عضو واحد من كل ما به أوقعتِهم في\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 403,
+    "output": 393,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0011034,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 403,
+      "outputTokens": 393,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011034,
+      "latencyMs": 1908
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 13,
+  "range": "41-58",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "93335446-3fda-46b9-aa29-2e3c525698bd",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 779,
+      "outputTokens": 1271,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0034111999999999996,
+      "latencyMs": 3459
+    }
+  ],
+  "usage": {
+    "input": 779,
+    "output": 1271,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0034111999999999996,
+  "verses": [
+    {
+      "chapter": 13,
+      "verse": 41,
+      "text_ar": "ولكنهم تشاوروا فيما بينهم قائلين: «لنترك جموع الأمم ولنخرج إلى منطقة أبعد لم يسبق للبشر أن سكنوها،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 42,
+      "text_ar": "لكي يحفظوا هناك فرائضهم التي لم يحفظوها في أرضهم».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 43,
+      "text_ar": "فدخلوا عبر المضائق الضيقة لنهر الفرات،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 44,
+      "text_ar": "لأن العلي صنع لهم حينئذ آيات، وحبس ينابيع النهر حتى عبروا.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 45,
+      "text_ar": "لأنه كان في تلك الأرض طريق طويل يقطع، أي سنة ونصف. وتسمى تلك المنطقة «أرسارت».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 46,
+      "text_ar": "ثم سكنوا هناك إلى الزمان الأخير. والآن عندما يبدأون بالعودة،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 47,
+      "text_ar": "يحبس العلي ينابيع النهر مرة أخرى لكي يعبروا. ولذلك رأيت الجموع مجتمعة بسلام.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 48,
+      "text_ar": "أما الذين يبقون من شعبك فهو أولئك الذين توجدون داخل تخومي المقدسة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 49,
+      "text_ar": "إذن، عندما يهلك جموع الأمم المجتمعة، فإنه سيدافع عن الشعب الباقي.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 50,
+      "text_ar": "حينئذ سيريهم عجائب كثيرة جداً».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 51,
+      "text_ar": "فقلت: «أيها السيد الرب، فسر لي هذا: لماذا رأيت ذلك الإنسان صاعداً من وسط البحر؟»",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 52,
+      "text_ar": "فقال لي: «كما أنه لا يستطيع أحد أن يستقصي أو يعرف ما في أعماق البحر، هكذا لا يستطيع أحد على الأرض أن يرى ابني أو أولئك الذين معه، إلا في زمن يومه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 53,
+      "text_ar": "هذا هو تفسير الحلم الذي رأيته، ولهذا وحدك نلت الاستنارة بهذا،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 54,
+      "text_ar": "لأنك تركت طرقك الخاصة، وكرست اجتهادك لطرقي، وبحثت عن شريعتي.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 55,
+      "text_ar": "لقد نظمت حياتك بالحكمة، ودعوت الفهم أمك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 56,
+      "text_ar": "لذلك أريتك هذا، لأن هناك مكافأة مدخرة عند العلي. ويكون، بعد ثلاثة أيام أخر، أني سأكلمك بأمور أخرى، وأعلن لك أموراً عظيمة وعجيبة».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 57,
+      "text_ar": "فخرجت ومضيت إلى الحقل، ومجرت وشكرت العلي جداً بسبب عجائبه التي صنعها شيئاً فشيئاً،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 58,
+      "text_ar": "وبأنه يدبر الزمان، وما يحدث في أوقاتها. فجلست هناك ثلاثة أيام.",
+      "review_notes_ar": []
+    }
+  ]
+}

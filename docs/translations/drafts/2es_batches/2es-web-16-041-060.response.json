@@ -1,0 +1,37 @@
+{
+  "request_id": "b9e1fff8-88a6-4b25-83eb-665531d770f0",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 16,\n      \"verse\": 41,\n      \"text_ar\": \"البائع فلْيَكُنْ كالهارب، والمشتري كالخاسر.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 42,\n      \"text_ar\": \"والتاجر كالذي لا يربح شيئاً، والباني كالذي لن يسكن فيه،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 43,\n      \"text_ar\": \"والزارع كالذي لن يحصد، وكذلك مقلم الكروم كالذي لن يجني العنب،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 44,\n      \"text_ar\": \" والمتزوجون كالذين لن يكون لهم أطفال، والذين لا يتزوجون كالارامل.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 45,\n      \"text_ar\": \"لذلك، فإن الذين يتعبون، يتعبون باطلاً؛\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 46,\n      \"text_ar\": \"فإن الغرباء سيحصدون ثمارهم، وينهبون ممتلكاتهم، ويهدمون بيوتهم، ويأبون أطفالهم سبايا، لأنه في السبي والجوع سيُحبل بأطفالهم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 47,\n      \"text_ar\": \"والذين يمارسون التجارة، إنما يفعلون ذلك ليُنهبوا فقط. وكلما زادوا في تزيين مدنهم، وبيوتهم، وممتلكاتهم، وأشخاصهم،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 48,\n      \"text_ar\": \"كلما أبغضتهم أكثر بسبب خطاياهم، يقول الرب.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 49,\n      \"text_ar\": \"وكما أن المرأة المحترمة والفضلى تبغض الزانية،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 50,\n      \"text_ar\": \"هكذا ستُبغض البّرية الإثم حين تتزين، وستوبخها وجهاً لوجه عندما يأتي ذاك الذي سيدفع عن الذي يفحص باجتهاد كل خطيئة على الأرض.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 51,\n      \"text_ar\": \"لذلك لا تكونوا مثلها ولا مثل أعمالها.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 52,\n      \"text_ar\": \"لأنه بعد قليل جداً، سَيُزال الإثم من الأرض، ويملُك البر علينا.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 53,\n      \"text_ar\": \"فلا يقل الخاطئ إنه لم يخطئ؛ لأن الله سيحرق جمر نار على رأس من يقول: «إنني لم أخطئ أمام الله ومجده».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 54,\n      \"text_ar\": \"هوذا، الرب يعلم جميع أعمال البشر، وتخيلاتهم، وأفكارهم، وقلوبهم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 55,\n      \"text_ar\": \"هو قال: «لتُصنع الأرض» فصنعت، «ليُصنع السحاب» فصُنع.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 56,\n      \"text_ar\": \"بكلمته ثبتت النجوم، وهو يعرف عدد النجوم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 57,\n      \"text_ar\": \"وهو يفحص اللجج وكنوزها، وقد قاس البحر وما يحويه.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 58,\n      \"text_ar\": \"وقد حصر البحر في وسط المياه، وبكلمته علق الأرض فوق المياه.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 59,\n      \"text_ar\": \"وبسط السماء كقبة، وأسسها فوق المياه.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 60,\n      \"text_ar\": \"وصنع ينابيع مياه في البرية وبكلاود على قمم الجبال ليرسل أنهاراً من المرتفعات لتروي الأرض.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 837,
+    "output": 1383,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0037086,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 837,
+      "outputTokens": 1383,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0037086,
+      "latencyMs": 3146
+    }
+  ]
+}

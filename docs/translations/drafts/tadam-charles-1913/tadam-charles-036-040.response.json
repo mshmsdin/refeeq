@@ -1,0 +1,37 @@
+{
+  "request_id": "c55130c7-8c26-4378-9dda-84e82ac0c9e7",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 14,\n      \"verse\": 3,\n      \"text_ar\": \"للرب. فأجبتُ: \\\"ليس لي حاجةٌ لأن أسجد لآدَمَ\\\". ولما دأب ميخائيل على حثي على السجود، قلتُ له: \\\"لماذا تحثني؟ لن أسجد لكائن أدنى وأصغر مني. أنا أقدمُ منه في الخليقة، فقبل أن يُصنع قُدْتُ أنا خُلقْتُ. ومن واجبه هو أن يسجد لي\\\".\"\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 1,\n      \"text_ar\": \"فلما سمع الملائكة الذين تحت إمرتي بهذا، أبوا أن يسجُدوا له. فقال ميخائيل: \\\"اسجُدْ لصورة الله، ولكن إن لم تسجد له، فإن الرب الإله سيغضب\"\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 3,\n      \"text_ar\": \"عليك\\\". فقلتُ: \\\"إن غضب عليّ، فسأقيم عرشي فوق كواكب السماء وأكون مثل العلي\\\".\"\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 1,\n      \"text_ar\": \"وغضب الله الرب عليّ وطردني أنا وملائكتي من مجدنا؛ ومن أجل\"\n    },\n    {\n      \"chapter\": 16,\n      \"verse\": 2,\n      \"text_ar\": \"أجلكَ طُردنا من مساكننا إلى هذا العالم وطُرِحنا على الأرض. و\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 423,
+    "output": 411,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0011544,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 423,
+      "outputTokens": 411,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011544,
+      "latencyMs": 1611
+    }
+  ]
+}

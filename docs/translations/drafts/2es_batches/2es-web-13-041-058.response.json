@@ -1,0 +1,37 @@
+{
+  "request_id": "93335446-3fda-46b9-aa29-2e3c525698bd",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 13,\n      \"verse\": 41,\n      \"text_ar\": \"ولكنهم تشاوروا فيما بينهم قائلين: «لنترك جموع الأمم ولنخرج إلى منطقة أبعد لم يسبق للبشر أن سكنوها،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 42,\n      \"text_ar\": \"لكي يحفظوا هناك فرائضهم التي لم يحفظوها في أرضهم».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 43,\n      \"text_ar\": \"فدخلوا عبر المضائق الضيقة لنهر الفرات،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 44,\n      \"text_ar\": \"لأن العلي صنع لهم حينئذ آيات، وحبس ينابيع النهر حتى عبروا.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 45,\n      \"text_ar\": \"لأنه كان في تلك الأرض طريق طويل يقطع، أي سنة ونصف. وتسمى تلك المنطقة «أرسارت».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 46,\n      \"text_ar\": \"ثم سكنوا هناك إلى الزمان الأخير. والآن عندما يبدأون بالعودة،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 47,\n      \"text_ar\": \"يحبس العلي ينابيع النهر مرة أخرى لكي يعبروا. ولذلك رأيت الجموع مجتمعة بسلام.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 48,\n      \"text_ar\": \"أما الذين يبقون من شعبك فهو أولئك الذين توجدون داخل تخومي المقدسة.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 49,\n      \"text_ar\": \"إذن، عندما يهلك جموع الأمم المجتمعة، فإنه سيدافع عن الشعب الباقي.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 50,\n      \"text_ar\": \"حينئذ سيريهم عجائب كثيرة جداً».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 51,\n      \"text_ar\": \"فقلت: «أيها السيد الرب، فسر لي هذا: لماذا رأيت ذلك الإنسان صاعداً من وسط البحر؟»\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 52,\n      \"text_ar\": \"فقال لي: «كما أنه لا يستطيع أحد أن يستقصي أو يعرف ما في أعماق البحر، هكذا لا يستطيع أحد على الأرض أن يرى ابني أو أولئك الذين معه، إلا في زمن يومه.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 53,\n      \"text_ar\": \"هذا هو تفسير الحلم الذي رأيته، ولهذا وحدك نلت الاستنارة بهذا،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 54,\n      \"text_ar\": \"لأنك تركت طرقك الخاصة، وكرست اجتهادك لطرقي، وبحثت عن شريعتي.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 55,\n      \"text_ar\": \"لقد نظمت حياتك بالحكمة، ودعوت الفهم أمك.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 56,\n      \"text_ar\": \"لذلك أريتك هذا، لأن هناك مكافأة مدخرة عند العلي. ويكون، بعد ثلاثة أيام أخر، أني سأكلمك بأمور أخرى، وأعلن لك أموراً عظيمة وعجيبة».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 57,\n      \"text_ar\": \"فخرجت ومضيت إلى الحقل، ومجرت وشكرت العلي جداً بسبب عجائبه التي صنعها شيئاً فشيئاً،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 58,\n      \"text_ar\": \"وبأنه يدبر الزمان، وما يحدث في أوقاتها. فجلست هناك ثلاثة أيام.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 779,
+    "output": 1271,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0034111999999999996,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 779,
+      "outputTokens": 1271,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0034111999999999996,
+      "latencyMs": 3459
+    }
+  ]
+}

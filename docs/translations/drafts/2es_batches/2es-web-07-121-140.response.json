@@ -1,0 +1,65 @@
+{
+  "request_id": "c7c3799f-b97d-4d5e-8400-f03543e5232e",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":7,\"verse\":121,\"text_ar\":\"وأنه توجد مساكن معدة للصحة والسلامة، بينما عشنا نحن بشرور؟\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":122,\"text_ar\":\"وأنه مجد العلي سيدافع عن أولئك الذين سلكوا حياة نقية، بينما سلكنا نحن في أشّر الطرق على الإطلاق؟\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":123,\"text_ar\":\"وأنه ستُكشف فردوسٌ ثمرها يدوم بلا فساد، وفيه وفرة وشفاء، بينما لن ندخل نحن إليه،\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":124,\"text_ar\":\"لأننا عشنا في طرق معوجة؟\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":125,\"text_ar\":\"وأنه وجوه الذين مارسوا ضبط النفس ستشرق أكثر من النجوم، بينما وجوهنا ستكون أظلم من الظلام؟\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":126,\"text_ar\":\"لأننا بينما كنا نعيش ونرتكب الإثم، لم نفكر فيما سيتعين علينا أن نعانيه بعد الموت.»\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":127,\"text_ar\":\"فأجاب قائلاً: «هذا هو مغزى المعركة التي سيخوضها البشر المولودون على الأرض:\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":128,\"text_ar\":\"إن غُلبوا فسيعانون مثلما قلتَ، وإن انتصروا فسينيالون ما أقوله.\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":129,\"text_ar\":\"لأن هذه هي الطريقة التي تحدث بها موسى إلى الشعب حين كان حياً، قائلاً: \\\"اختاروا الحياة لكي تحيا!\\\"\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":130,\"text_ar\":\"ومع ذلك لم يصدقوه ولا الأنبياء من بعده، ولا حتى أنا الذي كلمتهم.\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":131,\"text_ar\":\"لذلك لن تكون هناك حزونة في هلاكهم، مثلما سيكون هناك فرح بالذين تيقنوا من الخلاص.»\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":132,\"text_ar\":\"فأجبتُ وقلتُ: «أعرف يا رب أن العلي يُדعى الآن رحيماً، لكونه يرحم أولئك الذين لم يأتوا بعد إلى العالم؛\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":133,\"text_ar\":\"وَرؤوفاً، لكونه يرأف بأولئك الذين يرجعون إلى شريعته؛\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":134,\"text_ar\":\"وطويلي الأناة، لكونه يتأنى على الذين أخطأوا، بما أنهم مخاليقه؛\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":135,\"text_ar\":\"وكريماً، لكونه مستعداً للعطاء بدلاً من أن يأخذ؛\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":136,\"text_ar\":\"وغزير الرحمة، لكونه يضاعف شيئاً فشيئاً المراحم على الموجودين الآن، وعلى الذين مضوا، وأيضاً على الذين سيأتون—\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":137,\"text_ar\":\"لأنه لو لم يكن رحيماً لما استمر العالم مع الساكنين فيه—\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":138,\"text_ar\":\"وغافراً، لأنه لو لم يغفر من صلاحه لكي يستريح مرتكبو الآثام منها، لما بقي حيّاً حتى واحد من عشرة آلاف جزء من الجنس البشري؛\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":139,\"text_ar\":\"وديّاناً، لأنه لو لم يعفُ عن الذين خُلِقوا بكلمته، ويمحُ كثرة الخطايا،\",\"review_notes_ar\":[]},{\"chapter\":7,\"verse\":140,\"text_ar\":\"لربما بقي قليلون جداً من جموع لا تُحصى.»\",\"review_notes_ar\":[]}]}",
+  "usage": {
+    "input": 850,
+    "output": 1031,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0028325,
+  "estimatedCostCurrency": "USD",
+  "failovers": 2,
+  "attempts": [
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "error",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 50
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 850,
+      "outputTokens": 1031,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0028325,
+      "latencyMs": 3577
+    }
+  ]
+}

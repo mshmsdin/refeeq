@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":4,\"book_code\":\"2ES\",\"verses\":[{\"verse\":21,\"chapter\":4,\"text\":\"For just as the ground is given to the wood, and the sea to its waves, even so those who dwell upon the earth may understand nothing but what is upon the earth. Only he who dwells above the heavens understands the things that are above the height of the heavens.”\"},{\"verse\":22,\"chapter\":4,\"text\":\"Then answered I and said, “I beg you, O Lord, why has the power of understanding been given to me?\"},{\"verse\":23,\"chapter\":4,\"text\":\"For it was not in my mind to be curious of the ways above, but of such things as pass by us daily, because Israel is given up as a reproach to the heathen. The people whom you have loved have been given over to ungodly nations. The law of our forefathers is made of no effect, and the written covenants are nowhere regarded.\"},{\"verse\":24,\"chapter\":4,\"text\":\"We pass away out of the world like locusts. Our life is like a vapor, and we aren’t worthy to obtain mercy.\"},{\"verse\":25,\"chapter\":4,\"text\":\"What will he then do for his name by which we are called? I have asked about these things.”\"},{\"verse\":26,\"chapter\":4,\"text\":\"Then he answered me, and said, “If you are alive you will see, and if you live long, you will marvel, for the world hastens quickly to pass away.\"},{\"verse\":27,\"chapter\":4,\"text\":\"For it is not able to bear the things that are promised to the righteous in the times to come; for this world is full of sadness and infirmities.\"},{\"verse\":28,\"chapter\":4,\"text\":\"For the evil about which you asked me has been sown, but its harvest hasn’t yet come.\"},{\"verse\":29,\"chapter\":4,\"text\":\"If therefore that which is sown isn’t reaped, and if the place where the evil is sown doesn’t pass away, the field where the good is sown won’t come.\"},{\"verse\":30,\"chapter\":4,\"text\":\"For a grain of evil seed was sown in the heart of Adam from the beginning, and how much wickedness it has produced to this time! How much more it will yet produce until the time of threshing comes!\"}]}"
+    }
+  ],
+  "request_id": "3faf0a0a-01dd-4ac4-a56d-04a01a7d0cd4",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 21,22,23,24,25,26,27,28,29,30 in this chapter.",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "tenant_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "65152252-ebe9-4557-a657-f0b40d049f13",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وبعد سبعة أيام، عادت أفكار قلبي لتكون مؤلمة جدا بالنسبة لي،\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"واستعادت نفسي روح الفهم، وشرعت في التكلم بكلمات أمام العلي مرة أخرى.\",\n      \"verse\": 22\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"قلت: أيها الرب السيد على جميع غابات الأرض، وكل أشجارها، لقد اخترت لنفسك كرمة واحدة.\",\n      \"verse\": 23\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ومن كل أراضي العالم اخترت لنفسك بلدا واحدا. ومن كل أزهار العالم، اخترت لنفسك زنبقة واحدة.\",\n      \"verse\": 24\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ومن كل أعماق البحر، ملأت لنفسك نهرا واحدا. ومن كل المدن المبنية، كرست صهيون لنفسك.\",\n      \"verse\": 25\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ومن كل الطيور المخلوقة سميت لنفسك حمامة واحدة. ومن كل المواشي التي صنعت، وفرت لنفسك خروفا واحدا.\",\n      \"verse\": 26\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وبين كل جموع الشعوب اقتنيت لنفسك شعبا واحدا. وهذا الشعب، الذي أحببته، أعطيته شريعة يرضى عليها الجميع.\",\n      \"verse\": 27\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"والآن، أيها الرب، لماذا أسلمت هذا الشعب الواحد إلى كثيرين، وأهنت الأصل الواحد فوق الآخرين، وبعثرت وحيدك بين الكثيرين؟\",\n      \"verse\": 28\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"إن الذين قاوموا مواعيدك قد داسوا الذين آمنوا بعهودك.\",\n      \"verse\": 29\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فإن كنت حقا تبغض شعبك هكذا، فينبغي أن يعاقبوا بيدك أنت.\",\n      \"verse\": 30\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  488,
+                  "output":  621,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0016989000000000001,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  488,
+                         "outputTokens":  621,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016989000000000001,
+                         "latencyMs":  1937
+                     }
+                 ]
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "f2abd19d-0e3c-4eca-930e-26d6521fe9ff",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 14,\n      \"verse\": 1,\n      \"text_ar\": \"وكان في اليوم الثالث، أنني جلست تحت شجرة بلوط، وإذا صوت خرج من عليقة قريبة مني وقال: «يا عزرا، يا عزرا!».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 2,\n      \"text_ar\": \"فقلت: «هأنذا يا رب»، وقمت على قدمي.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 3,\n      \"text_ar\": \"فقال لي حينئذ: «لقد أعلنت نفسي في عليقة وتكلمت مع موسى حين كان شعبي في العبودية بمصر.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 4,\n      \"text_ar\": \"وأرسلته فأخرج شعبي من مصر، وصعدت به إلى جبل سيناء حيث أقمته معي لأيام كثيرة.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 5,\n      \"text_ar\": \"وأخبرته بأمور عجيبة كثيرة، وأريته أسرار الأزمنة ونهاية الأوقات، وأمرته قائلًا:\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 6,\n      \"text_ar\": \"هذه تعلنها علانية، وهذه تخفيها.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 7,\n      \"text_ar\": \"والآن أقول لك:\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 8,\n      \"text_ar\": \"احفظ في قلبك الآيات التي أريتك إياها، والأحلام التي رأيتها، والتفسيرات التي سمعتها؛\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 9,\n      \"text_ar\": \"لأنك سترفع عن البشر، ومن الآن فصاعداً ستعيش مع ابني ومع أولئك الذين هم مثلك، حتى تنقضي الأزمنة.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 10,\n      \"text_ar\": \"فإن العالم قد فقد شبابه، والأزمنة تشرع في الشيخوخة.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 459,
+    "output": 693,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0018702,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 459,
+      "outputTokens": 693,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0018702,
+      "latencyMs": 2831
+    }
+  ]
+}

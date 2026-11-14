@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "9bfc3c87-2ab1-4388-a4be-d96d0996cc09",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":1,\"verses\":[{\"chapter\":1,\"verse\":11,\"text\":\"Then I pondered and said to myself: \\\"Is this he who made heaven and earth, the sea and us all How will I know the truth\\\"\"},{\"chapter\":1,\"verse\":12,\"text\":\"And in that night as I lay asleep, a voice came and called: \\\"Jobab! Jobab! rise up, and I will tell thee who is the one whom thou wishest to know.\"},{\"chapter\":1,\"verse\":13,\"text\":\"This, however, to whom the people bring burnt-offerings and libations, is not God, but this is the power and work of the Seducer (Satan) by which he beguiles the people\\\".\"},{\"chapter\":1,\"verse\":14,\"text\":\"And when I heard this, I fell upon the earth and I prostrated myself saying:\"},{\"chapter\":1,\"verse\":15,\"text\":\"\\\"O my Lord who speakest for the salvation of my soul. I pray thee, if this is the idol of Satan, I pray thee, let me go hence and destroy it and purify this spot.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter."
+}

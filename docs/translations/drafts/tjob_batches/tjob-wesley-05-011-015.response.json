@@ -1,0 +1,37 @@
+{
+  "request_id": "0c8fb5d6-f00f-4654-9ac9-625a717347b5",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وأما زوجتي المتضضعة التي أُحضِرت إلى مخدع عرسها بمثل هذا الترف العظيم ومع حراس شخصيين من الرماة، فرأيتها تقوم بعمل السقاء كأمة في بيت رجل عامي لتكسب بعض الخبز وتأتي به إليّ.\",\n      \"verse\": 11\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وفي ضيقي الشديد قلت: \\\"يا ليت هؤلاء الحكام المتفاخرين في المدينة، الذين ما كنت أظنهم يعادلون كلاب رعاتي، يستخدمون زوجتي الآن خادمة!\\\"\",\n      \"verse\": 12\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وبعد هذا تشجعت ثانية.\",\n      \"verse\": 13\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ولكنهم فيما بعد حجبوا حتى الخبز الذي كان ينبغي أن يكون لقوتها وحدها.\",\n      \"verse\": 14\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فأخذته وقسمته بينها وبيني، قائلة بأسى: \\\"الويل لي! فمن الآن فصاعداً قد لا يعتاش على الخبز، ولا يمكنه الذهاب إلى السوق ليطلب خبزاً من بائعي الخبز ليأتي به إليّ لكي يأكل\\\"\",\n      \"verse\": 15\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 351,
+    "output": 393,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010877999999999999,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 351,
+      "outputTokens": 393,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010877999999999999,
+      "latencyMs": 1664
+    }
+  ]
+}

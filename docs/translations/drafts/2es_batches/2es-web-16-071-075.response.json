@@ -1,0 +1,37 @@
+{
+  "request_id": "07050b8c-87b8-461b-b986-16f87230978b",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":16,\"verse\":71,\"text_ar\":\"سيكونون مثل المجانين، لا يستبقون أحداً، بل ينهبون ويهلكون أولئك الذين ما زالوا يتقون الرب.\",\"review_notes_ar\":[]},{\"chapter\":16,\"verse\":72,\"text_ar\":\"لأنهم سيهلكون ممتلكاتهم وينهبونها، ويطردونهم من بيوتهم.\",\"review_notes_ar\":[]},{\"chapter\":16,\"verse\":73,\"text_ar\":\"حينئذ يُعرف امتحان مختاريَّ، تماماً كالذهب الذي يُمتحن في النار.\",\"review_notes_ar\":[]},{\"chapter\":16,\"verse\":74,\"text_ar\":\"اسمعوا يا مختاريَّ، يقول الرب: \\\"هوذا أيام الضيق قريبة، وسأنجيكم منها.\",\"review_notes_ar\":[]},{\"chapter\":16,\"verse\":75,\"text_ar\":\"لا تخافوا ولا تشكوا، فإن الله هو قائدكم.\\\"\",\"review_notes_ar\":[]}]}",
+  "usage": {
+    "input": 297,
+    "output": 253,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0007216,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 297,
+      "outputTokens": 253,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0007216,
+      "latencyMs": 1045
+    }
+  ]
+}

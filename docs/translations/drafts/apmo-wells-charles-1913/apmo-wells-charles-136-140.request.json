@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "15ff5c1d-d3da-4a92-aedc-5764b14668fe",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":38,\"text\":\"they came to paradise and all the leaves of paradise were stirred so that all men begotten of Adam slept from the fragrance save Seth alone, because he was born 'according to the appointment of God '. Then Adam's body lay there in\",\"source_ref\":\"38:4\"},{\"chapter\":38,\"text\":\"paradise on the earth and Seth grieved exceedingly over him.\",\"source_ref\":\"38:5\"},{\"chapter\":40,\"text\":\"Then God spake to the archangel(s) Michael, (Gabriel, Uriel, and Raphael): 'Go away\",\"source_ref\":\"40:1\"},{\"chapter\":40,\"text\":\"to Paradise in the third heaven, and strew linen clothes and cover the body of Adam and bring oil of the 'oil of fragrance' and pour it over him. And they acted thus did the three great angels and they prepared him for burial. And God said: 'Let the body of Abel also be\",\"source_ref\":\"40:2\"},{\"chapter\":40,\"text\":\"brought.' And they brought other linen clothes and prepared his (body) also. For he was unburied since the day when Cain his brother slew him; for wicked Cain took great pains to conceal (him) but could not, for the earth would not receive him for the body sprang up from the earth and a voice went out of the earth saying: 'I will not\",\"source_ref\":\"40:3\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 38:4, 38:5, 40:1, 40:2, 40:3.",
+  "application_id": "rafeeq-bible-translation"
+}

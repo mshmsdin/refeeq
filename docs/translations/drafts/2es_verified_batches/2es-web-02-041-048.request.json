@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 41,42,43,44,45,46,47,48 in this chapter.",
+  "request_id": "afd7be23-ac6c-4422-9992-3198d5f37d70",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":2,\"book_code\":\"2ES\",\"verses\":[{\"chapter\":2,\"text\":\"The number of your children, whom you long for, is fulfilled. Ask the power of the Lord, that your people, which have been called from the beginning, may be made holy.”\",\"verse\":41},{\"chapter\":2,\"text\":\"I, Esdras, saw upon Mount Zion a great multitude, whom I could not number, and they all praised the Lord with songs.\",\"verse\":42},{\"chapter\":2,\"text\":\"In the midst of them, there was a young man of a high stature, taller than all the rest, and upon every one of their heads he set crowns, and he was more exalted than they were. I marveled greatly at this.\",\"verse\":43},{\"chapter\":2,\"text\":\"So I asked the angel, and said, “What are these, my Lord?”\",\"verse\":44},{\"chapter\":2,\"text\":\"He answered and said to me, “These are those who have put off the mortal clothing, and put on the immortal, and have confessed the name of God. Now they are crowned, and receive palms.”\",\"verse\":45},{\"chapter\":2,\"text\":\"Then said I to the angel, “Who is the young man who sets crowns on them, and gives them palms in their hands?”\",\"verse\":46},{\"chapter\":2,\"text\":\"So he answered and said to me, “He is the Son of God, whom they have confessed in the world.” Then I began to praise those who stood so valiantly for the name of the Lord.\",\"verse\":47},{\"chapter\":2,\"text\":\"Then the angel said to me, “Go your way, and tell my people what kind of things, and how great wonders of the Lord God you have seen.”\",\"verse\":48}]}"
+    }
+  ]
+}

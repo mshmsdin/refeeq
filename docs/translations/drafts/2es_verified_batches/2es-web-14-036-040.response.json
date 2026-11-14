@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "a67c2cdf-ced3-44c4-910a-52aa07124578",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 14,\n      \"text_ar\": \"لا يدن مني أحد الآن، ولا يلتمسني مدة أربعين يوماً.\",\n      \"verse\": 36\n    },\n    {\n      \"chapter\": 14,\n      \"text_ar\": \"فأخذت الرجال الخمسة كما أمرني، وخرجنا إلى الحقل ومكثنا هناك.\",\n      \"verse\": 37\n    },\n    {\n      \"chapter\": 14,\n      \"text_ar\": \"وحدث في اليوم التالي أن صوتاً ناداني قائلاً: افتح يا عزرا فمك واشرب ما أسقيكه.\",\n      \"verse\": 38\n    },\n    {\n      \"chapter\": 14,\n      \"text_ar\": \"ففتحت فمي وإذا بكأس مملوءة قدمت لي، وكانت مملوءة بشيء يشبه الماء ولكن لونها كان مثل النار.\",\n      \"verse\": 39\n    },\n    {\n      \"chapter\": 14,\n      \"text_ar\": \"أخذت وشربت، ولما شربت نطق قلبي بفهم ونمت الحكمة في صدري لأن روحي حفظت ذاكرتها.\",\n      \"verse\": 40\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  320,
+                  "output":  321,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0008985,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  320,
+                         "outputTokens":  321,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0008985,
+                         "latencyMs":  1345
+                     }
+                 ]
+}

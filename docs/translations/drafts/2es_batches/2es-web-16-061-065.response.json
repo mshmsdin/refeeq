@@ -1,0 +1,51 @@
+{
+  "request_id": "ee141848-6f34-433d-844f-6194d6b39cc5",
+  "content": "{\n  \"book_code\":\"2ES\",\n  \"verses\":[\n    {\n      \"chapter\":16,\n      \"verse\":61,\n      \"text_ar\":\"خَلَقَ الإِنسان، وجَعَلَ في طَلَب القَلب، وأَوحى إليه نفَسًا، والحَياة، والفَهْم.\",\n      \"review_notes_ar\":[]\n    },\n    {\n      \"chapter\":16,\n      \"verse\":62,\n      \"text_ar\":\"نَعَم، روحَ الله القَدِير. الخالِقُ لكل شَيء، وغَاصِبُ ما استُخفِيَ على الخِفا\",\n      \"review_notes_ar\":[]\n    },\n    {\n      \"chapter\":16,\n      \"verse\":63,\n      \"text_ar\":\"إِنَّه عارِفُ بِما بِهِ تُخلَقُ الخَلائِق، وما بجَهاتِك في خِبا. عَيا لِمَن كَذَبوا، ودارَوا لِيُخفوا خِبا\",\n      \"review_notes_ar\":[]\n    },\n    {\n      \"chapter\":16,\n      \"verse\":64,\n      \"text_ar\":\"فَإِنَّ الرَّبَّ يَحكُمُ قَضاءً كُلَّ عملِكُم، وإِنَّه يُخزِيكم بإِبلاغِ خِبا\",\n      \"review_notes_ar\":[]\n    },\n    {\n      \"chapter\":16,\n      \"verse\":65,\n      \"text_ar\":\"حَتَّى إِذا أُظهِرت ذُنوبٌ بَينَ القوم سَئِم، وحَسبتُم أَنَّها في الدّاه تَخفي، فالحَقيقَتُ يُذاعت كَأَشياع، وعارٌ ما طابَه حِيناً ما حاشا\",\n      \"review_notes_ar\":[]\n    }\n  ]\n}",
+  "usage": {
+    "input": 316,
+    "output": 439,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+  "provider": "Groq Paid",
+  "model": "qwen/qwen3.8-27b",
+  "estimatedCost": 0.0020088,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "success",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 316,
+      "outputTokens": 439,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0020088,
+      "latencyMs": 965
+    }
+  ]
+}

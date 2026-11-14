@@ -1,0 +1,37 @@
+{
+  "request_id": "e4702288-14f5-4bdd-b402-8b0f61d366f5",
+  "content": "{\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":25,\"verse\":1,\"text_ar\":\"فقال آدم لشيث: اسمع يا ابني شيث، لأقص عليك ما سمعتُه و\"},{\"chapter\":25,\"verse\":2,\"text_ar\":\"رأيتُه بعد أن طُردتُ أنا وأمك من الفردوس. وعندما كنا نصلي، أتى إليّ ميخائيل رئيس الملائكة، رسول الله. ورأيت مركبة كالهواء وعجلاتها نارية، واختُطفتُ إلى فردوس البر، ورأوجه جلوساً وكان وجهه ناراً ملتهبة لا يمكن احتمالها. وكانت ألوف مؤلفة من الملائكة عن يمين تلك المركبة ويسارها.\"},{\"chapter\":26,\"verse\":1,\"text_ar\":\"فلما رأيتُ هذا تحيرتُ واستولى عليّ الرعب وانحنيتُ أمام\"},{\"chapter\":26,\"verse\":2,\"text_ar\":\"الله ووجهي إلى الأرض. فقال لي الله: ها إنك تموت، لأنك تعديتَ وصية الله، إذ سمعتَ بالأحرى لصوت امرأتك التي أسلمتُها إلى سلطانك لتكون طائعة لإرادتك، ومع ذلك استمعتَ إليها وتجاوزتَ كلامي.\"}]}",
+  "usage": {
+    "input": 439,
+    "output": 292,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0008617000000000001,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 439,
+      "outputTokens": 292,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008617000000000001,
+      "latencyMs": 1651
+    }
+  ]
+}

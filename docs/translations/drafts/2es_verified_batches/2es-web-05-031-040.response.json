@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "8ee5b3c7-d935-4f48-b2ca-0bc0c8567eb5",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فلما كلمت بهذا الكلام، أرسل إلي الملاك الذي أتى إلي في الليلة السابقة،\",\n      \"verse\": 31\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وقال لي: اسمع لي فأعلمك، واصغ إلي فأخبرك بأكثر.\",\n      \"verse\": 32\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فقلت: تكلم يا سيد. فقال لي: إنك مضطرب البال جداً من أجل إسرائيل. أتحب ذلك الشعب أكثر من الذي صنعه؟\",\n      \"verse\": 33\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فقلت: لا يا سيد، بل قد تكلمت من شدة الحزن، لأن قلبي في عذاب كل ساعة وأنا أجاهد لأدرك طريق العلي وأفحص عن جزء من قضائه.\",\n      \"verse\": 34\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فقال لي: لا تستطيع. فقلت: ولماذا يا سيد؟ ولماذا ولدت؟ ولم لا يكن رحم أمي قبري حتى لا أرى تعب يعقوب وتعب شعب إسرائيل المضني؟\",\n      \"verse\": 35\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فقال لي: عد لي الذين لم يأتوا بعد. واجمع لي القطرات المشتتة، وأعِد الأزهار اليابسة خضراء من أجلي.\",\n      \"verse\": 36\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وافتح لي المخادع المغلقة، وأخرج لي الرياح المحبوسة فيها. أو أرني صورة صوت. فحينئذ أخبرك بالتعب الذي سألت أن تراه.\",\n      \"verse\": 37\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فقلت: أيها السيد الرب، من يقدر أن يعرف هذه الأشياء إلا من ليس له مسكن مع البشر؟\",\n      \"verse\": 38\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"أما أنا فمعوز الحكمة. فكيف إذن أتكلم في هذه الأشياء التي سألتني عنها؟\",\n      \"verse\": 39\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فقال لي: كما أنك لا تستطيع أن تفعل شيئاً من هذه الأشياء التي تكلمت عنها، هكذا لا تستطيع أن تكتشف قضائي، ولا نهاية المحبة التي وعدت بها شعبي.\",\n      \"verse\": 40\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  642,
+                  "output":  682,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0018976,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  642,
+                         "outputTokens":  682,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0018976,
+                         "latencyMs":  2733
+                     }
+                 ]
+}

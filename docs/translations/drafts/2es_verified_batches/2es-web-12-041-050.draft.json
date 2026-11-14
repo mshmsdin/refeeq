@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  12,
+    "range":  "41-50",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "f7b594d2-bdce-4cd1-894f-8b55d62478ab",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  502,
+                         "outputTokens":  598,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016455999999999999,
+                         "latencyMs":  2278
+                     }
+                 ],
+    "usage":  {
+                  "input":  502,
+                  "output":  598,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0016455999999999999,
+    "verses":  [
+                   {
+                       "chapter":  12,
+                       "text_ar":  "بماذا أخطأنا إليك، وأي شر عملناه ضدك حتى تتركنا هكذا تماماً وتجلس في هذا الموضع؟",
+                       "verse":  41
+                   },
+                   {
+                       "chapter":  12,
+                       "text_ar":  "لأنه من بين جميع الأنبياء، لم يبقَ لنا سواك، كعنقود قطاف، وكراج في موضع مظلم، وكملجأ لسفينة نجت من العاصفة.",
+                       "verse":  42
+                   },
+                   {
+                       "chapter":  12,
+                       "text_ar":  "أليست الشرور التي حلت بنا كافية؟",
+                       "verse":  43
+                   },
+                   {
+                       "chapter":  12,
+                       "text_ar":  "إن تخليت عنا، فكم كان ذلك أفضل لنا لو كنا نحن أيضاً قد فنينا في حريق صيون!",
+                       "verse":  44
+                   },
+                   {
+                       "chapter":  12,
+                       "text_ar":  "لأننا لست أفضل من أولئك الذين ماتوا هناك. ثم بكوا بصوت عالٍ، فأجبتهم:",
+                       "verse":  45
+                   },
+                   {
+                       "chapter":  12,
+                       "text_ar":  "تشجعوا يا إسرائيل! لا تحزنوا يا بيت يعقوب؛",
+                       "verse":  46
+                   },
+                   {
+                       "chapter":  12,
+                       "text_ar":  "فإن العلي يذكركم. والقدير لم ينسكم إلى الأبد.",
+                       "verse":  47
+                   },
+                   {
+                       "chapter":  12,
+                       "text_ar":  "أما أنا فما تخلت عنكم، ولم أبتعد عنكم؛ بل أتيت إلى هذا الموضع لأصلي من أجل خراب صيون، ولكي أطلب الرحمة لذل مقدسك.",
+                       "verse":  48
+                   },
+                   {
+                       "chapter":  12,
+                       "text_ar":  "فالآن اذهبوا كل واحد إلى بيته، وبعد هذه الأيام سآتي إليكم.",
+                       "verse":  49
+                   },
+                   {
+                       "chapter":  12,
+                       "text_ar":  "فذهب الشعب في طريقهم إلى المدينة كما قلت لهم.",
+                       "verse":  50
+                   }
+               ]
+}

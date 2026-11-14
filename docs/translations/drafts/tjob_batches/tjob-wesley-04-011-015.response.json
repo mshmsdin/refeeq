@@ -1,0 +1,37 @@
+{
+  "request_id": "86056056-8fa2-43f7-ae07-18ce69ac42a3",
+  "content": "{\"verses\":[{\"chapter\":4,\"text_ar\":\"ولما سمعت ذلك، سبحت الله ولم أجدف.\",\"verse\":11},{\"chapter\":4,\"text_ar\":\"فلما علم المضل بشجاعتي، دبر أموراً جديدة ضدي.\",\"verse\":12},{\"chapter\":4,\"text_ar\":\"تنكر في زي ملك فارس وحاصر مدينتي، وبعد أن اقتاد كل من كان فيها، خاطبهم بشر، قائلًا بلغة متعجرفة:\",\"verse\":13},{\"chapter\":4,\"text_ar\":\"إن أيوب هذا الذي نال كل خيرات الأرض ولم يترك شيئاً لغيره، هو الذي دمر وهدم هيكل الإله.\",\"verse\":14},{\"chapter\":4,\"text_ar\":\"لذلك سأجازيه بما فعله ببيت الإله العظيم.\",\"verse\":15}],\"book_code\":\"TJOB\"}",
+  "usage": {
+    "input": 291,
+    "output": 197,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0005798,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 291,
+      "outputTokens": 197,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0005798,
+      "latencyMs": 1848
+    }
+  ]
+}

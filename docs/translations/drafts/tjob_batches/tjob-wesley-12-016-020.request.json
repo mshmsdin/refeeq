@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "7e928c3e-9814-4b2b-9f99-bb1293ea378c",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":12,\"verses\":[{\"chapter\":12,\"verse\":16,\"text\":\"He left seven sons and three daughters, and there were no daughters found on earth as fair as the daughters of Job.\"},{\"chapter\":12,\"verse\":17,\"text\":\"The name of Job was formerly Jobab, and he was called Job by the Lord.\"},{\"chapter\":12,\"verse\":18,\"text\":\"He had lived before his plague eighty five years, and after the plague he took the double share of all; hence also his years he doubled, which is\"},{\"chapter\":12,\"verse\":19,\"text\":\"years. Thus he lived altogether\"},{\"chapter\":12,\"verse\":20,\"text\":\"years.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 16,17,18,19,20 in this chapter."
+}

@@ -1,0 +1,17 @@
+{
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "a61bf265-6447-49fd-b3fc-fc59502ac3df",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"chapter\":2,\"source_ref\":\"2:25\",\"verse\":25,\"text\":\"And she conceived again and bare a daughter, and she called her name Naamah, for she said, After I had withered away have I obtained pleasure and delight.\"},{\"chapter\":2,\"source_ref\":\"2:26\",\"verse\":26,\"text\":\"And Lamech was old and advanced in years, and his eyes were dim that he could not see, and Tubal Cain, his son, was leading him and it was one day that Lamech went into the field and Tubal Cain his son was with him, and whilst they were walking in the field, Cain the son of Adam advanced towards them; for Lamech was very old and could not see much, and Tubal Cain his son was very young.\"},{\"chapter\":2,\"source_ref\":\"2:27\",\"verse\":27,\"text\":\"And Tubal Cain told his father to draw his bow, and with the arrows he smote Cain, who was yet far off, and he slew him, for he appeared to them to be an animal.\"},{\"chapter\":2,\"source_ref\":\"2:28\",\"verse\":28,\"text\":\"And the arrows entered Cain's body although he was distant from them, and he fell to the ground and died.\"},{\"chapter\":2,\"source_ref\":\"2:29\",\"verse\":29,\"text\":\"And the Lord requited Cain's evil according to his wickedness, which he had done to his brother Abel, according to the word of the Lord which he had spoken.\"},{\"chapter\":2,\"source_ref\":\"2:30\",\"verse\":30,\"text\":\"And it came to pass when Cain had died, that Lamech and Tubal went to see the animal which they had slain, and they saw, and behold Cain their grandfather was fallen dead upon the earth.\"},{\"chapter\":2,\"source_ref\":\"2:31\",\"verse\":31,\"text\":\"And Lamech was very much grieved at having done this, and in clapping his hands together he struck his son and caused his death.\"},{\"chapter\":2,\"source_ref\":\"2:32\",\"verse\":32,\"text\":\"And the wives of Lamech heard what Lamech had done, and they sought to kill him.\"},{\"chapter\":2,\"source_ref\":\"2:33\",\"verse\":33,\"text\":\"And the wives of Lamech hated him from that day, because he slew Cain and Tubal Cain, and the wives of Lamech separated from him, and would not hearken to him in those days.\"},{\"chapter\":2,\"source_ref\":\"2:34\",\"verse\":34,\"text\":\"And Lamech came to his wives, and he pressed them to listen to him about this matter.\"}]}"
+    }
+  ]
+}

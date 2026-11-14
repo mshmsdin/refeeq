@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":6,\"verses\":[{\"chapter\":6,\"verse\":6,\"text\":\"6 “You are the God who gives a reward to those who love you.\"},{\"chapter\":6,\"verse\":7,\"text\":\"7 Come to life in your tent, in your virginal faith, and believe that you will live!\"},{\"chapter\":6,\"verse\":8,\"text\":\"8 Look at this basket of figs,\"},{\"chapter\":6,\"verse\":9,\"text\":\"9 So it will be with you, my flesh,\"},{\"chapter\":6,\"verse\":10,\"text\":\"10 The one who preserved the basket of figs will again preserve you by his power.”\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "3a98e9b0-5f0d-48eb-b428-51363a1a4653",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

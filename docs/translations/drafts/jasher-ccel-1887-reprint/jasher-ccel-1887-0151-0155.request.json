@@ -1,0 +1,17 @@
+{
+  "messages": [
+    {
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
+      "role": "system"
+    },
+    {
+      "content": "{\"units\":[{\"source_ref\":\"5:19\",\"chapter\":5,\"text\":\"And Lamech the father of Noah, died in those days; yet verily he did not go with all his heart in the ways of his father, and he died in the hundred and ninety-fifth year of the life of Noah.\",\"verse\":19},{\"source_ref\":\"5:20\",\"chapter\":5,\"text\":\"And all the days of Lamech were seven hundred and seventy years, and he died.\",\"verse\":20},{\"source_ref\":\"5:21\",\"chapter\":5,\"text\":\"And all the sons of men who knew the Lord, died in that year before the Lord brought evil upon them; for the Lord willed them to die, so as not to behold the evil that God would bring upon their brothers and relatives, as he had so declared to do.\",\"verse\":21},{\"source_ref\":\"5:22\",\"chapter\":5,\"text\":\"In that time, the Lord said to Noah and Methuselah, Stand forth and proclaim to the sons of men all the words that I spoke to you in those days, peradventure they may turn from their evil ways, and I will then repent of the evil and will not bring it.\",\"verse\":22},{\"source_ref\":\"5:23\",\"chapter\":5,\"text\":\"And Noah and Methuselah stood forth, and said in the ears of the sons of men, all that God had spoken concerning them.\",\"verse\":23}],\"book_code\":\"JASHER\"}",
+      "role": "user"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "49a6f6e2-e772-4598-be74-a04bfb22d905",
+  "service_key": "bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "tenant_id": "rafeeq-bible-translation"
+}

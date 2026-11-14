@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":7,\"verses\":[{\"chapter\":7,\"verse\":26,\"text\":\"26 For it is like a father with an only son, who is handed over for punishment; and those who see his father and console him cover his face, so that he will not see how his son is being punished, and be even more ravaged by grief.\"},{\"chapter\":7,\"verse\":27,\"text\":\"27 For in this way God took pity on you and did not let you enter Babylon so that you would not see the affliction of the people.\"},{\"chapter\":7,\"verse\":28,\"text\":\"28 For since we came here, grief has not left us, for sixty-six years as of today.\"},{\"chapter\":7,\"verse\":29,\"text\":\"29 “For many times when I went out I found some of the people hung up by King Nebuchadnezzar, crying and saying: ‘Have mercy on us, god Zar!’\"},{\"chapter\":7,\"verse\":30,\"text\":\"30 When I heard this, I grieved and cried with double mourning, not only because they were hung up, but because they were calling on a foreign god, saying ‘Have mercy on us.’\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "67a71c99-7648-4352-a96e-ac0c9f55c88a",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 26,27,28,29,30 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

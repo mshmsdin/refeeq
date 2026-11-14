@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":6,\"book_code\":\"2ES\",\"verses\":[{\"verse\":31,\"chapter\":6,\"text\":\"If therefore you will pray yet again, and fast seven more days, I will again tell you greater things than these.\"},{\"verse\":32,\"chapter\":6,\"text\":\"For your voice has surely been heard before the Most High. For the Mighty has seen your righteousness. He has also seen your purity, which you have maintained ever since your youth.\"},{\"verse\":33,\"chapter\":6,\"text\":\"Therefore he has sent me to show you all these things, and to say to you, ‘Believe, and don’t be afraid!\"},{\"verse\":34,\"chapter\":6,\"text\":\"Don’t be hasty to think vain things about the former times, that you may not hasten in the latter times.’”\"},{\"verse\":35,\"chapter\":6,\"text\":\"It came to pass after this, that I wept again, and fasted seven days in like manner, that I might fulfill the three weeks which he told me.\"},{\"verse\":36,\"chapter\":6,\"text\":\"On the eighth night, my heart was troubled within me again, and I began to speak in the presence of the Most High.\"},{\"verse\":37,\"chapter\":6,\"text\":\"For my spirit was greatly aroused, and my soul was in distress.\"},{\"verse\":38,\"chapter\":6,\"text\":\"I said, “O Lord, truly you spoke at the beginning of the creation, on the first day, and said this: ‘Let heaven and earth be made,’ and your word perfected the work.\"},{\"verse\":39,\"chapter\":6,\"text\":\"Then the spirit was hovering, and darkness and silence were on every side. The sound of man’s voice was not yet there.\"},{\"verse\":40,\"chapter\":6,\"text\":\"Then you commanded a ray of light to be brought out of your treasuries, that your works might then appear.\"}]}"
+    }
+  ],
+  "request_id": "9c7c20e1-2b73-40de-bd0e-51e558b0756a",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 31,32,33,34,35,36,37,38,39,40 in this chapter.",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "tenant_id": "rafeeq-bible-translation"
+}

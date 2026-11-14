@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "5d439476-8d94-4d57-b47a-5eb32bc9726b",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":17,\"text\":\"of every plant.\\\" And I said: \\\"Yea, we eat of all. save one only, which is in the midst of paradise, concerning which, God charged us not to eat of it: for, He said to us, on the day on which ye eat of it, ye shall die the death.\\\"\",\"source_ref\":\"17:5\"},{\"chapter\":18,\"text\":\"Then the serpent saith to me, \\\"May God live! but I am grieved on your account, for I would not have you ignorant. But arise, (come) hither, hearken to me and eat and mind the value of that tree.\\\" 2,3 But I said to him, \\\" I fear lest God be wroth with me as he told us.\\\" And he saith to me: \\\"Fear not, for as soon as thou eatest of it, ye too shall be as God, in that ye shall know good and evil.\",\"source_ref\":\"18:1\"},{\"chapter\":18,\"text\":\"But God perceived this that ye would be like Him, so he envied you and said, Ye shall not eat of 5,6 it. Nay, do thou give heed to the plant and thou wilt see its great glory.\\\" Yet I feared to take of the fruit. And he saith to me: \\\"Come hither, and I will give it thee. Follow me.\\\"\",\"source_ref\":\"18:4\"},{\"chapter\":19,\"text\":\"And I opened to him and he walked a little way, then turned and said to me: \\\"I have changed my\",\"source_ref\":\"19:1\"},{\"chapter\":19,\"text\":\"mind and I will not give thee to eat until thou swear to me to give also to thy husband.\\\" (And) I said. \\\"What sort of oath shall I swear to thee? Yet what I know, I say to thee: By the throne of the\",\"source_ref\":\"19:2\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 17:5, 18:1, 18:4, 19:1, 19:2.",
+  "application_id": "rafeeq-bible-translation"
+}

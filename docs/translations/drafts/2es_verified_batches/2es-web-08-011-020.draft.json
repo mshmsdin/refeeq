@@ -1,0 +1,137 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  8,
+    "range":  "11-20",
+    "status":  "machine_translated_structured",
+    "provider":  "Groq free tier",
+    "model":  "openai/gpt-oss-120b",
+    "request_id":  "e4d9cbf6-d68d-42e5-9248-bc1dcfaeb8cc",
+    "failovers":  3,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "skipped",
+                         "errorCode":  "quota",
+                         "estimatedCost":  null,
+                         "latencyMs":  0,
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000"
+                     },
+                     {
+                         "modelId":  "05dfb509-43ee-4357-a629-e560369080e7",
+                         "provider":  "Gemini",
+                         "model":  "gemini-3.8-flash",
+                         "status":  "skipped",
+                         "errorCode":  "quota",
+                         "estimatedCost":  null,
+                         "latencyMs":  0,
+                         "inputPrice":  "0.7500000000",
+                         "outputPrice":  "3.7500000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0750000000",
+                         "imagePrice":  "0.0000000000"
+                     },
+                     {
+                         "modelId":  "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+                         "provider":  "Groq Paid",
+                         "model":  "qwen/qwen3.8-27b",
+                         "status":  "skipped",
+                         "errorCode":  "quota",
+                         "estimatedCost":  null,
+                         "latencyMs":  0,
+                         "inputPrice":  "0.8000000000",
+                         "outputPrice":  "4.0000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.8000000000",
+                         "imagePrice":  "0.0000000000"
+                     },
+                     {
+                         "modelId":  "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+                         "provider":  "Groq free tier",
+                         "model":  "openai/gpt-oss-120b",
+                         "status":  "success",
+                         "inputPrice":  "0.0000000000",
+                         "outputPrice":  "0.0000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0000000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  630,
+                         "outputTokens":  1008,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0,
+                         "latencyMs":  2442
+                     }
+                 ],
+    "usage":  {
+                  "input":  630,
+                  "output":  1008,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0,
+    "verses":  [
+                   {
+                       "chapter":  8,
+                       "verse":  11,
+                       "text_ar":  "لِيُطَعَّمَ الجَسَدُ الَّذِي صُنِعَ لَحِينًا، وَبَعْدَ ذَلِكَ تَهْدِيْهِ فِي رَحْمَتِكَ."
+                   },
+                   {
+                       "chapter":  8,
+                       "verse":  12,
+                       "text_ar":  "نَعَمْ، أَنْتَ رَفَعْتَهُ فِي صِدْقِكَ، وَرَبَّيْتَهُ فِي شَرِيعَتِكَ، وَصَحَّحْتَهُ بِحُكْمِكَ."
+                   },
+                   {
+                       "chapter":  8,
+                       "verse":  13,
+                       "text_ar":  "أَنْتَ قَتَلْتَهُ كَخَلْقِكَ، وَجَعَلْتَهُ يَحْيَى كَعَمَلِكَ."
+                   },
+                   {
+                       "chapter":  8,
+                       "verse":  14,
+                       "text_ar":  "فَإِنْ كُنتَ تَدْمِرُهُ بِسُهُولَةٍ وَفَجْأَةٍ الَّذِي صُنِعَ بِجِهْدٍ عَظِيمٍ بِأَمْرِكَ، فَمَا هَدَفُ خَلْقِهِ؟"
+                   },
+                   {
+                       "chapter":  8,
+                       "verse":  15,
+                       "text_ar":  "الآنَ إذًا سَأَتَكَلَّمُ. عَنِ الإِنْسَانِ عُمُومًا أَنتَ أَعْلَمُ، وَلَكِنْ عَنِ شَعْبِكَ الَّذِي أَشْعُرُ لَهُ بِالْحُزْنِ،"
+                   },
+                   {
+                       "chapter":  8,
+                       "verse":  16,
+                       "text_ar":  "وَعَنِ مِيرَاثِكَ الَّذِي أَنَا أَبْكِي مِنْ أجْلِهِ، عَنِ إِسْرَائِيلَ الَّذِي أَحْمِلُهُ فِي كُثْرَةِ الثِّقَلِ، وَعَنِ بُذْرِ يَعْقُوبَ الَّذِي أَشْعُرُ بِالْقَلَقِ مِنْ أجْلِهِ،"
+                   },
+                   {
+                       "chapter":  8,
+                       "verse":  17,
+                       "text_ar":  "لِذَلِكَ سَأَبْدَأُ أَدْعُو إِلَيْكَ لِنَفْسِي وَلَهُمْ؛ لأَنِّي أَرَى عُيُوبَ الَّذِينَ يَسْكُنُونَ فِي الأَرْضِ؛"
+                   },
+                   {
+                       "chapter":  8,
+                       "verse":  18,
+                       "text_ar":  "وَلَكِنْ سَمِعْتُ سُرْعَةَ الْحُكْمِ الَّذِي سَيَأْتِي."
+                   },
+                   {
+                       "chapter":  8,
+                       "verse":  19,
+                       "text_ar":  "إِذًا اسْمَعْ صَوْتِي، وَافْهَمْ قَوْلِي، وَسَأَتَكَلَّمُ أَمَامَكَ. بَدْءُ كَلِمَاتِ عِزْرَا، قَبْلَ أَنْ يُرْتَفَعَ إِلَيْهِ. قَالَ،"
+                   },
+                   {
+                       "chapter":  8,
+                       "verse":  20,
+                       "text_ar":  "يا رَبُّ، أَنْتَ الَّذِي تَبْقَى إِلَى الأَبَدِ، وَعَيْنَاكَ رَافِعَةٌ، وَغُرَفُكَ فِي السَّمَاءِ."
+                   }
+               ]
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":30,\"source_ref\":\"30:4\",\"text\":\"thy bed 'Then Adam answered and said: 'My sons, I am sick and in pain.' And all his sons said to him: 'What does it mean, father, this illness and pain'\"},{\"chapter\":31,\"source_ref\":\"31:1\",\"text\":\"Then said Seth his son: 'O (my) lord, perchance thou hast longed after the fruit of paradise, which thou wast wont to eat, and therefore thou liest in sadness Tell me and I will go to the nearest gates of paradise and put dust on my head and throw myself down on the earth before the gates of paradise and lament and make entreaty to God with loud lamentation; perchance he will hearken to me and send his angel to bring me the fruit, for which thou hast longed.'\"},{\"chapter\":31,\"source_ref\":\"31:2\",\"text\":\"Adam answered and said: 'No, my son, I do not long (for this), but I feel weakness and great\"},{\"chapter\":31,\"source_ref\":\"31:3\",\"text\":\"pain in my body.' Seth answered, 'What is pain, my lord father I am ignorant; but hide it not from us, but tell us (about it).'\"},{\"chapter\":32,\"source_ref\":\"32:1\",\"text\":\"And Adam answered and said: 'Hear me, my sons. When God made us, me and your mother, and placed us in paradise and gave us every tree bearing fruit to eat, he laid a prohibition on us concerning the tree of knowledge of good and evil, which is in the midst of paradise; (saying)\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "c81a22ec-95c1-460a-9fb3-d4e129259781",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 30:4, 31:1, 31:2, 31:3, 32:1.",
+  "tenant_id": "rafeeq-bible-translation"
+}

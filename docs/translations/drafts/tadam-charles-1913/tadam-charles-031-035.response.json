@@ -1,0 +1,37 @@
+{
+  "request_id": "b607065a-3470-4b59-9c74-424b41a127f5",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 12,\n      \"verse\": 2,\n      \"text_ar\": \"في وسط الملائكة، ومن أجلك طُرِحتُ أنا في الأرض'. فأجاب آدم: 'ماذا\"\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 3,\n      \"text_ar\": \"تخبرني؟ ماذا صنعتُ إليك، أو ما هو ذنبي ضدك، وبما أنك لم تتلقَّ أضراراً أو إصابات منا، فلماذا تلاحقنا؟'\"\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 1,\n      \"text_ar\": \"فأجاب إبليس: 'يا آدم، ماذا تخبرني؟ من أجلك أنتَ جرى طرحي\"\n    },\n    {\n      \"chapter\": 13,\n      \"verse\": 2,\n      \"text_ar\": \"من ذلك المكان. فعندما صُوِّرتَ، طُرِحتُ أنا من حضرة الله ونُفِيتُ من شركة الملائكة. وعندما نفخ الله فيك نسمة الحياة وصُنِع وجهك وشبهك على صورة الله، أتاك ميخائيل أيضاً وجعلنا نسجد لك أمام الله؛ وتكلم الله الرب قائلاً: هوذا آدم. لقد صنعْتُك على صورتنا وشبهنا'.\"\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 1,\n      \"text_ar\": \"وخرج ميخائيل ودعا جميع الملائكة قائلاً: 'اسجدوا لصورة الله كما أمر الرب الإله'. وسجد ميخائيل بنفسه أولاً؛ ثم دعاني وقال: 'اسجد لصورة الله'\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 442,
+    "output": 422,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0011875999999999998,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 442,
+      "outputTokens": 422,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011875999999999998,
+      "latencyMs": 2690
+    }
+  ]
+}

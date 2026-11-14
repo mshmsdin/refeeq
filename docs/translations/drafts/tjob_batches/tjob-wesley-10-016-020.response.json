@@ -1,0 +1,37 @@
+{
+  "request_id": "3bb6721c-da5f-4b90-9637-a485da512498",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لأنه أحب جمال الحية وجلود التنين، ومرارته وسومه يخصان الشمالي.\",\n      \"verse\": 16\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لأنه لم يملك نفسه للرب ولم يخفه، بل أبغض الذين اختارهم.\",\n      \"verse\": 17\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"هكذا نسيه الله، وتخلت عنه القديسون، وستكون غضبته وسخطه خراباً له، ولن تكون له رحمة في قلبه ولا سلام، لأن على لسانه سم أفعى.\",\n      \"verse\": 18\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"عادل هو الرب، وأحكامه حق، وليس عنده محاباة، لأنه يدين الجميع بالسواء.\",\n      \"verse\": 19\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"هوذا الرب آت! هوذا القديسون قد أُعدوا: التيجان وجوائز المنتصرين تتقدمهم!\",\n      \"verse\": 20\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 349,
+    "output": 327,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009222000000000001,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 349,
+      "outputTokens": 327,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009222000000000001,
+      "latencyMs": 1349
+    }
+  ]
+}

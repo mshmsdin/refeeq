@@ -1,0 +1,17 @@
+{
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "service_key": "bible-translation",
+  "request_id": "20efe410-a37e-4e2e-92b9-a1290aaf0178",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"chapter\":5,\"source_ref\":\"5:9\",\"text\":\"And Noah and Methuselah spoke all the words of the Lord to the sons of men, day after day, constantly speaking to them.\",\"verse\":9},{\"chapter\":5,\"source_ref\":\"5:10\",\"text\":\"But the sons of men would not hearken to them, nor incline their ears to their words, and they were stiffnecked.\",\"verse\":10},{\"chapter\":5,\"source_ref\":\"5:11\",\"text\":\"And the Lord granted them a period of one hundred and twenty years, saying, If they will return, then will God repent of the evil, so as not to destroy the earth.\",\"verse\":11},{\"chapter\":5,\"source_ref\":\"5:12\",\"text\":\"Noah the son of Lamech refrained from taking a wife in those days, to beget children, for he said, Surely now God will destroy the earth, wherefore then shall I beget children?\",\"verse\":12},{\"chapter\":5,\"source_ref\":\"5:13\",\"text\":\"And Noah was a just man, he was perfect in his generation, and the Lord chose him to raise up seed from his seed upon the face of the earth.\",\"verse\":13},{\"chapter\":5,\"source_ref\":\"5:14\",\"text\":\"And the Lord said unto Noah, Take unto thee a wife, and beget children, for I have seen thee righteous before me in this generation.\",\"verse\":14},{\"chapter\":5,\"source_ref\":\"5:15\",\"text\":\"And thou shalt raise up seed, and thy children with thee, in the midst of the earth; and Noah went and took a wife, and he chose Naamah the daughter of Enoch, and she was five hundred and eighty years old.\",\"verse\":15},{\"chapter\":5,\"source_ref\":\"5:16\",\"text\":\"And Noah was four hundred and ninety-eight years old, when he took Naamah for a wife.\",\"verse\":16},{\"chapter\":5,\"source_ref\":\"5:17\",\"text\":\"And Naamah conceived and bare a son, and he called his name Japheth, saying, God has enlarged me in the earth; and she conceived again and bare a son, and he called his name Shem, saying, God has made me a remnant, to raise up seed in the midst of the earth.\",\"verse\":17},{\"chapter\":5,\"source_ref\":\"5:18\",\"text\":\"And Noah was five hundred and two years old when Naamah bare Shem, and the boys grew up and went in the ways of the Lord, in all that Methuselah and Noah their father taught them.\",\"verse\":18}]}"
+    }
+  ],
+  "tenant_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":22,\"source_ref\":\"22:5\",\"text\":\"And Adam said, 'Alas if Cain slew Abel. Yet let us separate them from each other mutually, and let us make for each of them separate dwellings.'\"},{\"chapter\":23,\"source_ref\":\"23:1\",\"text\":\"And they made Cain an husbandman, (but) Abel they made a shepherd; in order that in this wise they might be mutually separated.\"},{\"chapter\":23,\"source_ref\":\"23:2\",\"text\":\"And thereafter, Cain slew Abel, but Adam was then one hundred and thirty years old, but Abel was slain when he was one hundred and twenty-two years. And thereafter Adam knew his wife and he begat a son and called his name Seth.\"},{\"chapter\":24,\"source_ref\":\"24:1\",\"text\":\"And Adam said to Eve, 'Behold, I have begotten a son, in place of Abel, whom Cain slew.'\"},{\"chapter\":24,\"source_ref\":\"24:2\",\"text\":\"And after Adam had begotten Seth, he lived eight hundred years and begat thirty sons and thirty daughters; in all sixty-three children. And they were increased over the face of the earth in their nations.\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "638e9bef-3c1b-4c46-8e00-9bbe5dc30290",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 22:5, 23:1, 23:2, 24:1, 24:2.",
+  "tenant_id": "rafeeq-bible-translation"
+}

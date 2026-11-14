@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":12,\"book_code\":\"2ES\",\"verses\":[{\"verse\":1,\"chapter\":12,\"text\":\"It came to pass, while the lion spoke these words to the eagle, I saw,\"},{\"verse\":2,\"chapter\":12,\"text\":\"and behold, the head that remained disappeared, and the two wings which went over to it arose and set themselves up to reign; and their kingdom was brief and full of uproar.\"},{\"verse\":3,\"chapter\":12,\"text\":\"I saw, and behold, they disappeared, and the whole body of the eagle was burned, so that the earth was in great fear. Then I woke up because of great perplexity of mind and great fear, and said to my spirit,\"},{\"verse\":4,\"chapter\":12,\"text\":\"“Behold, you have done this to me, because you search out the ways of the Most High.\"},{\"verse\":5,\"chapter\":12,\"text\":\"Behold, I am still weary in my mind, and very weak in my spirit. There isn’t even a little strength in me, because of the great fear with which I was frightened tonight.\"},{\"verse\":6,\"chapter\":12,\"text\":\"Therefore I will now ask the Most High that he would strengthen me to the end.”\"},{\"verse\":7,\"chapter\":12,\"text\":\"Then I said, “O sovereign Lord, if I have found favor in your sight, and if I am justified with you more than many others, and if my prayer has indeed come up before your face,\"},{\"verse\":8,\"chapter\":12,\"text\":\"strengthen me then, and show me, your servant, the interpretation and plain meaning of this fearful vision, that you may fully comfort my soul.\"},{\"verse\":9,\"chapter\":12,\"text\":\"For you have judged me worthy to show me the end of time and the last events of the times.”\"},{\"verse\":10,\"chapter\":12,\"text\":\"He said to me, “This is the interpretation of this vision which you saw:\"}]}"
+    }
+  ],
+  "request_id": "f630928c-5bbe-4d4c-bbf2-bde6b0b9478d",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 1,2,3,4,5,6,7,8,9,10 in this chapter.",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "tenant_id": "rafeeq-bible-translation"
+}

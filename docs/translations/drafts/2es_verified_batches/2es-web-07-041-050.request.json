@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":7,\"verses\":[{\"chapter\":7,\"text\":\"neither summer, nor spring, nor heat, nor winter, neither frost, nor cold, nor hail, nor rain, nor dew,\",\"verse\":41},{\"chapter\":7,\"text\":\"neither noon, nor night, nor dawn, neither shining, nor brightness, nor light, except only the splendor of the glory of the Most High, by which all will see the things that are set before them.\",\"verse\":42},{\"chapter\":7,\"text\":\"It will endure as though it were a week of years.\",\"verse\":43},{\"chapter\":7,\"text\":\"This is my judgment and its prescribed order; but I have only shown these things to you.â€‌\",\"verse\":44},{\"chapter\":7,\"text\":\"I answered, â€œI said then, O Lord, and I say now: Blessed are those who are now alive and keep your commandments!\",\"verse\":45},{\"chapter\":7,\"text\":\"But what about those for whom I prayed? For who is there of those who are alive who has not sinned, and who of the children of men hasnâ€™t transgressed your covenant?\",\"verse\":46},{\"chapter\":7,\"text\":\"Now I see that the world to come will bring delight to few, but torments to many.\",\"verse\":47},{\"chapter\":7,\"text\":\"For an evil heart has grown up in us, which has led us astray from these commandments and has brought us into corruption and into the ways of death. It has shown us the paths of perdition and removed us far from lifeâ€”and that, not a few only, but nearly all who have been created.â€‌\",\"verse\":48},{\"chapter\":7,\"text\":\"He answered me, â€œListen to me, and I will instruct you. I will admonish you yet again.\",\"verse\":49},{\"chapter\":7,\"text\":\"For this reason, the Most High has not made one world, but two.\",\"verse\":50}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "53d3e63e-4fc7-4c5d-aefe-5747494fa841",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 41,42,43,44,45,46,47,48,49,50 in this chapter."
+}

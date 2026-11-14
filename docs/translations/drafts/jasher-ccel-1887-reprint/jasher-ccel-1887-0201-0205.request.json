@@ -1,0 +1,17 @@
+{
+  "messages": [
+    {
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
+      "role": "system"
+    },
+    {
+      "content": "{\"units\":[{\"source_ref\":\"6:33\",\"chapter\":6,\"text\":\"And a wind passed over the earth, and the waters were still and the ark rested.\",\"verse\":33},{\"source_ref\":\"6:34\",\"chapter\":6,\"text\":\"And the fountains of the deep and the windows of heaven were stopped, and the rain from heaven was restrained.\",\"verse\":34},{\"source_ref\":\"6:35\",\"chapter\":6,\"text\":\"And the waters decreased in those days, and the ark rested upon the mountains of Ararat.\",\"verse\":35},{\"source_ref\":\"6:36\",\"chapter\":6,\"text\":\"And Noah then opened the windows of the ark, and Noah still called out to the Lord at that time and he said, O Lord, who didst form the earth and the heavens and all that are therein, bring forth our souls from this confinement, and from the prison wherein thou hast placed us, for I am much wearied with sighing.\",\"verse\":36},{\"source_ref\":\"6:37\",\"chapter\":6,\"text\":\"And the Lord hearkened to the voice of Noah, and said to him, When though shalt have completed a full year thou shalt then go forth.\",\"verse\":37}],\"book_code\":\"JASHER\"}",
+      "role": "user"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "0e5c88ec-415a-404d-a43e-b635b69d1ba1",
+  "service_key": "bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "tenant_id": "rafeeq-bible-translation"
+}

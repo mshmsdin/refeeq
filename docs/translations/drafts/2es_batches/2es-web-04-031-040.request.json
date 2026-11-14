@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":4,\"book_code\":\"2ES\",\"verses\":[{\"verse\":31,\"chapter\":4,\"text\":\"Ponder now by yourself, how much fruit of wickedness a grain of evil seed has produced.\"},{\"verse\":32,\"chapter\":4,\"text\":\"When the grains which are without number are sown, how great a threshing floor they will fill!”\"},{\"verse\":33,\"chapter\":4,\"text\":\"Then I answered and said, “How long? When will these things come to pass? Why are our years few and evil?”\"},{\"verse\":34,\"chapter\":4,\"text\":\"He answered me, and said, “Don’t hurry faster than the Most High; for your haste is for your own self, but he who is above hurries on behalf of many.\"},{\"verse\":35,\"chapter\":4,\"text\":\"Didn’t the souls of the righteous ask about these things in their chambers, saying, ‘How long will we be here? When does the fruit of the threshing floor come?’\"},{\"verse\":36,\"chapter\":4,\"text\":\"To them, Jeremiel the archangel answered, ‘When the number is fulfilled of those who are like you. For he has weighed the world in the balance.\"},{\"verse\":37,\"chapter\":4,\"text\":\"By measure, he has measured the times. By number, he has counted the seasons. He won’t move or stir them until that measure is fulfilled.’”\"},{\"verse\":38,\"chapter\":4,\"text\":\"Then I answered, “O sovereign Lord, all of us are full of ungodliness.\"},{\"verse\":39,\"chapter\":4,\"text\":\"Perhaps it is for our sakes that the threshing time of the righteous is kept back—because of the sins of those who dwell on the earth.”\"},{\"verse\":40,\"chapter\":4,\"text\":\"So he answered me, “Go your way to a woman with child, and ask of her when she has fulfilled her nine months, if her womb may keep the baby any longer within her.”\"}]}"
+    }
+  ],
+  "request_id": "21aea5fa-4080-4d43-acb2-e9f4d2b0b3d2",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 31,32,33,34,35,36,37,38,39,40 in this chapter.",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "tenant_id": "rafeeq-bible-translation"
+}

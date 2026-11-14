@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "9dbc2263-baaf-425f-bfe3-02760cff1837",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"verse\":16,\"text\":\"And when Satan learned this, he took the guise of a bread-seller, and it was as if by chance that my wife met him and asked him for bread thinking that it was that sort of man.\"},{\"chapter\":5,\"verse\":17,\"text\":\"But Satan said to her : \\\"Give me the value, and then take what thou wishest.\\\"\"},{\"chapter\":5,\"verse\":18,\"text\":\"Whereupon she answered saying: Where shall I get money Dost thou not know what misfortune happened to me. If thou hast pity, show it to me; if not, thou shalt see.\\\"\"},{\"chapter\":5,\"verse\":19,\"text\":\"And he replied saying: \\\"If you did not deserve this misfortune, you would not have suffered all this.\"},{\"chapter\":5,\"verse\":20,\"text\":\"Now, if there is no silver piece in thine hand, give me the hair of thine head and take three loaves of bread for it, so that ye may live on there for three days.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 16,17,18,19,20 in this chapter."
+}

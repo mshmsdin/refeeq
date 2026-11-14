@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"verses\":[{\"verse\":1,\"text\":\"On the day he became sick and (he) knew that he would have to leave his bodily abode, he called his seven sons and his three daughters together and spake to them as follows:\",\"chapter\":1},{\"verse\":2,\"text\":\"\\\"Form a circle around me, children, and hear, and I shall relate to you what the Lord did for me and all that happened to me.\",\"chapter\":1},{\"verse\":3,\"text\":\"For I am Job your father.\",\"chapter\":1},{\"verse\":4,\"text\":\"Know ye then my children, that you are the generation of a chosen one and take heed of your noble birth.\",\"chapter\":1},{\"verse\":5,\"text\":\"For I am of the sons of Esau. My brother is Nahor, and your mother is Dinah. By her have I become your father.\",\"chapter\":1}],\"book_code\":\"TJOB\",\"chapter\":1}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5 in this chapter.",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "tenant_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "request_id": "b8700d04-6273-48bb-9578-7e6f372bf2e6",
+  "application_id": "rafeeq-bible-translation"
+}

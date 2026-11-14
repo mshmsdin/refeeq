@@ -1,0 +1,55 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  4,
+    "range":  "51-52",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "aec329d2-526a-4828-84fc-09ad9f0ae4a0",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  210,
+                         "outputTokens":  154,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.000448,
+                         "latencyMs":  820
+                     }
+                 ],
+    "usage":  {
+                  "input":  210,
+                  "output":  154,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.000448,
+    "verses":  [
+                   {
+                       "chapter":  4,
+                       "text_ar":  "Then I prayed, and said, O Do you think that I will live until that time? Or who will be alive in those days? O",
+                       "verse":  51
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "He answered me, O As for the signs you asked me about, I may tell you of them in part; but I wasn T sent to tell you about your life, for I don T know.",
+                       "verse":  52
+                   }
+               ]
+}

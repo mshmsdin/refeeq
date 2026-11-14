@@ -1,0 +1,70 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  7,
+    "range":  "31-35",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "b4251a10-5e81-435e-8692-e0384fadcf66",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  289,
+                         "outputTokens":  310,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0008617000000000001,
+                         "latencyMs":  1366
+                     }
+                 ],
+    "usage":  {
+                  "input":  289,
+                  "output":  310,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0008617000000000001,
+    "verses":  [
+                   {
+                       "chapter":  7,
+                       "text_ar":  "بعد سبعة أيام، العالم الذي لم يستيقظ بعد سيقام، وما هو قابل للفساد سيموت.",
+                       "verse":  31
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "سترد الأرض أولئك الراقدين فيها، والتراب أولئك الساكنين فيه في سكوت، والأماكن السرية ستسلم تلك النفوس التي سلمت إليها.",
+                       "verse":  32
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "العلي سيعلن على كرسي الدينونة، والرحمة ستزول، والصبر سيسحب.",
+                       "verse":  33
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "الدينونة وحدها ستبقى. الحق سيقف. الإيمان سيقوى.",
+                       "verse":  34
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "المجازاة ستتبع. المكافأة ستظهر. الأعمال الصالحة ستستيقظ، والأعمال الشريرة لن تنام.",
+                       "verse":  35
+                   }
+               ]
+}

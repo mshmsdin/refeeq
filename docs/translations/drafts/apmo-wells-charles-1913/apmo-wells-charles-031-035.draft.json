@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 31,
+  "batch_end": 35,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "6e404c20-7ac9-4270-b4fb-6225be5e0e92",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 350,
+      "outputTokens": 307,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008725,
+      "latencyMs": 1450
+    }
+  ],
+  "usage": {
+    "input": 350,
+    "output": 307,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0008725,
+  "units": [
+    {
+      "chapter": 10,
+      "source_ref": "10:4",
+      "text_ar": "صرخ وقال:"
+    },
+    {
+      "chapter": 11,
+      "source_ref": "11:1",
+      "text_ar": "«ليس شأننا يا حواء جشعك ونوحك، بل شأنك وحدك؛ لأنه منك نشأ سلطان الوحوش. كيف انفتح"
+    },
+    {
+      "chapter": 11,
+      "source_ref": "11:2",
+      "text_ar": "فمك لتأكلي من الشجرة التي أوصاك الله ألا تأكلي منها؟ ولهذا السبب تحولت طبيعتنا أيضاً. فالآن إذاً لا تقوين على تحمل الأمر،"
+    },
+    {
+      "chapter": 11,
+      "source_ref": "11:3",
+      "text_ar": "إن شرعت في توبيخك»."
+    },
+    {
+      "chapter": 12,
+      "source_ref": "12:1",
+      "text_ar": "حينئذ خاطب شيث الوحش قائلاً: «أغلق فمك واصمت وابعد عن صورة الله إلى يوم الدينونة». ثم قال"
+    }
+  ]
+}

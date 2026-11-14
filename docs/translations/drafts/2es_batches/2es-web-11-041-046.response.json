@@ -1,0 +1,37 @@
+{
+  "request_id": "443e6140-baa4-46ef-9ab9-d47209ba47c3",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 11,\n      \"verse\": 41,\n      \"text_ar\": \"أنت دست الأرض، ولكن ليس بالحق.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 42,\n      \"text_ar\": \"لأنك عذبت الودعاء، وآذيت المسالمين، وأبغضت الناطقين بالحق، وأحببت الكذابين، ودمرت مساكن المثمرين، وأسقطت أسوار من لم يصنعوا لك أذى.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 43,\n      \"text_ar\": \"لقد صعدت وقاحتك إلى العلي، وكبرياؤك إلى القدير.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 44,\n      \"text_ar\": \"وقد نظر العلي أيضاً إلى أزمنته، وها هي قد انتهت، وكمُلَت دهوره.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 45,\n      \"text_ar\": \"لذلك لا تظهري بعد، أيتها النسر، ولا أجنحتك المريعة، ولا أجنحتك الصغيرة الشريرة، ولا رؤوسك القاسية، ولا مخالبك المؤذية، ولا كل جسمك الباطل،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 46,\n      \"text_ar\": \"لكي تستريح الأرض وتنتعش، وتتحرّر من عنفك، ولكي ترجو دينونة ورحمة خالقها».\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 346,
+    "output": 478,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0012988,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 346,
+      "outputTokens": 478,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0012988,
+      "latencyMs": 2029
+    }
+  ]
+}

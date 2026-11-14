@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":4,\"verses\":[{\"chapter\":4,\"text\":\"Then I prayed, and said, â€œDo you think that I will live until that time? Or who will be alive in those days?â€‌\",\"verse\":51},{\"chapter\":4,\"text\":\"He answered me, â€œAs for the signs you asked me about, I may tell you of them in part; but I wasnâ€™t sent to tell you about your life, for I donâ€™t know.\",\"verse\":52}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "70096582-f505-4c24-9b08-a58cc4e71663",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 51,52 in this chapter."
+}

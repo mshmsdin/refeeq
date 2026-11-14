@@ -1,0 +1,81 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 5,
+  "range": "51-56",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "712daeea-293a-4883-a81e-89ddc65ce925",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 329,
+      "outputTokens": 457,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0012412,
+      "latencyMs": 1483
+    }
+  ],
+  "usage": {
+    "input": 329,
+    "output": 457,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0012412,
+  "verses": [
+    {
+      "chapter": 5,
+      "verse": 51,
+      "text_ar": "فأجابني: «اسأل امرأة تلد أطفالاً وهي تخبرك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 5,
+      "verse": 52,
+      "text_ar": "وقل لها: “لماذا ليس الذين أنجبتهم الآن مثل أولئك الذين كانوا من قبل، بل أصغر قامة؟”",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 5,
+      "verse": 53,
+      "text_ar": "وهي أيضاً ستجيبك: “إن الذين يولدون في قوة الشباب يختلفون عن أولئك الذين يولدون في وقت الشيخوخة، عندما يعجز الرحم”».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 5,
+      "verse": 54,
+      "text_ar": "«فتأمل أنت أيضاً، كيف أنكم أصغر قامة من الذين كانوا قبلكم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 5,
+      "verse": 55,
+      "text_ar": "وهكذا فإن الذين يأتون بعدكم هم أصغر منكم، بصفتهم مولودين من الخليقة التي تبدأ الآن في الشيخوخة، وقد تجاوزت قوة الشباب».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 5,
+      "verse": 56,
+      "text_ar": "ثم قلت: «يا رب، أتوسل إليك، إن كنت قد وجدت نعمة في عينيك، فأرِ عبدك بمن تفتقد خليقتك».",
+      "review_notes_ar": []
+    }
+  ]
+}

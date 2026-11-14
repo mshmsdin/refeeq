@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "e37dee6c-2a71-4bbe-8836-938e5b5e3a2c",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لذلك طلبت منك أن تبقى في الحقل حيث لم يُبنَ بيت،\",\n      \"verse\": 51\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لأني كنت أعلم أن العلي سيظهر لك هذا.\",\n      \"verse\": 52\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لذلك أمرتك أن تأتي إلى الحقل، حيث لم يكن أساس لأي بناء.\",\n      \"verse\": 53\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لأنه لا يمكن لأي بناء بشري أن يقف في المكان الذي ستُظهر فيه مدينة العلي.\",\n      \"verse\": 54\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لذلك لا تخف ولا تدع قلبك يرتعب، بل امض في طريقك وانظر جمال وبناء العظمة، بقدر ما تستطيع عيناك أن ترى.\",\n      \"verse\": 55\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"حينئذ ستسمع بقدر ما تستطيع أذناك أن تفهما.\",\n      \"verse\": 56\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لأنك مبارك أكثر من كثيرين، ودُعيت باسمك لتكون مع العلي، مثل القليلين فقط.\",\n      \"verse\": 57\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"ولكن غداً في الليل ستبقى هنا،\",\n      \"verse\": 58\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"وهكذا سيوضح لك العلي تلك الرؤى في أحلام عما سيفعله العلي بالذين يعيشون على الأرض في الأيام الأخيرة. فنمت تلك الليلة وأخرى، كما أمرني.\",\n      \"verse\": 59\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  424,
+                  "output":  520,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0014272,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  424,
+                         "outputTokens":  520,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0014272,
+                         "latencyMs":  2140
+                     }
+                 ]
+}

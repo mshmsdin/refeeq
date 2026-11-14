@@ -1,0 +1,37 @@
+{
+  "request_id": "712daeea-293a-4883-a81e-89ddc65ce925",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 5,\n      \"verse\": 51,\n      \"text_ar\": \"فأجابني: «اسأل امرأة تلد أطفالاً وهي تخبرك.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 52,\n      \"text_ar\": \"وقل لها: “لماذا ليس الذين أنجبتهم الآن مثل أولئك الذين كانوا من قبل، بل أصغر قامة؟”\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 53,\n      \"text_ar\": \"وهي أيضاً ستجيبك: “إن الذين يولدون في قوة الشباب يختلفون عن أولئك الذين يولدون في وقت الشيخوخة، عندما يعجز الرحم”».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 54,\n      \"text_ar\": \"«فتأمل أنت أيضاً، كيف أنكم أصغر قامة من الذين كانوا قبلكم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 55,\n      \"text_ar\": \"وهكذا فإن الذين يأتون بعدكم هم أصغر منكم، بصفتهم مولودين من الخليقة التي تبدأ الآن في الشيخوخة، وقد تجاوزت قوة الشباب».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 56,\n      \"text_ar\": \"ثم قلت: «يا رب، أتوسل إليك، إن كنت قد وجدت نعمة في عينيك، فأرِ عبدك بمن تفتقد خليقتك».\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 329,
+    "output": 457,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0012412,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 329,
+      "outputTokens": 457,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0012412,
+      "latencyMs": 1483
+    }
+  ]
+}

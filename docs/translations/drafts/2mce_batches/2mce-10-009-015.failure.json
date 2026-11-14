@@ -1,0 +1,5 @@
+{
+  "status": "rejected_by_router_http_503",
+  "reason": "All eligible providers failed",
+  "checked_at_utc": "2026-11-14T05:25:03.041Z"
+}

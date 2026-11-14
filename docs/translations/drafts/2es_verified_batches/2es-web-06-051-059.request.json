@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":6,\"verses\":[{\"chapter\":6,\"text\":\"To Behemoth, you gave one part, which was dried up on the third day, that he should dwell in it, in which are a thousand hills;\",\"verse\":51},{\"chapter\":6,\"text\":\"but to Leviathan you gave the seventh part, namely, the watery part. You have kept them to be devoured by whom you wish, when you wish.\",\"verse\":52},{\"chapter\":6,\"text\":\"â€œBut on the sixth day, you commanded the earth to produce before you cattle, animals, and creeping things.\",\"verse\":53},{\"chapter\":6,\"text\":\"Over these, you ordained Adam as ruler over all the works that you have made. Of him came all of us, the people whom you have chosen.\",\"verse\":54},{\"chapter\":6,\"text\":\"â€œAll this have I spoken before you, O Lord, because you have said that for our sakes you made this world.\",\"verse\":55},{\"chapter\":6,\"text\":\"As for the other nations, which also come from Adam, you have said that they are nothing, and are like spittle. You have likened the abundance of them to a drop that falls from a bucket.\",\"verse\":56},{\"chapter\":6,\"text\":\"Now, O Lord, behold these nations, which are reputed as nothing, being rulers over us and devouring us.\",\"verse\":57},{\"chapter\":6,\"text\":\"But we your people, whom you have called your firstborn, your only children, and your fervent lover, are given into their hands.\",\"verse\":58},{\"chapter\":6,\"text\":\"Now if the world is made for our sakes, why donâ€™t we possess our world for an inheritance? How long will this endure?â€‌\",\"verse\":59}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "eed6f5c7-b16b-4b72-8505-1cf0200bc8b7",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 51,52,53,54,55,56,57,58,59 in this chapter."
+}

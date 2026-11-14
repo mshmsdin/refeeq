@@ -1,0 +1,18 @@
+{
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "request_id": "43309584-7e68-41c7-b8db-2b637b55cc72",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي كأعداد صحيحة بأرقام 0-9 فقط، بلا فاصلة أو كلمة ملحقة، وعنصراً واحداً لكل وحدة.",
+      "role": "system"
+    },
+    {
+      "content": "{\"verses\":[{\"verse\":66,\"chapter\":16,\"text\":\"What will you do? Or how will you hide your sins before God and his angels?\"},{\"verse\":67,\"chapter\":16,\"text\":\"Behold, God is the judge. Fear him! Stop sinning, and forget your iniquities, to never again commit them. So will God lead you out, and deliver you from all suffering.\"},{\"verse\":68,\"chapter\":16,\"text\":\"For, behold, the burning wrath of a great multitude is kindled over you, and they will take away some of you, and feed you with that which is sacrificed to idols.\"},{\"verse\":69,\"chapter\":16,\"text\":\"Those who consent to them will be held in derision and in contempt, and be trodden under foot.\"},{\"verse\":70,\"chapter\":16,\"text\":\"For there will be in various places, and in the next cities, a great insurrection against those who fear the Lord.\"}],\"book_code\":\"2ES\",\"chapter\":16}",
+      "role": "user"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 66,67,68,69,70 in this chapter.",
+  "service_key": "bible-translation"
+}

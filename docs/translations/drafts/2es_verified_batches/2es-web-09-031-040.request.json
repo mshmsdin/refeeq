@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":9,\"verses\":[{\"chapter\":9,\"text\":\"For behold, I sow my law in you, and it will bring forth fruit in you, and you will be glorified in it forever.â€™\",\"verse\":31},{\"chapter\":9,\"text\":\"But our fathers, who received the law, didnâ€™t keep it, and didnâ€™t observe the statutes. The fruit of the law didnâ€™t perish, for it couldnâ€™t, because it was yours.\",\"verse\":32},{\"chapter\":9,\"text\":\"Yet those who received it perished, because they didnâ€™t keep the thing that was sown in them.\",\"verse\":33},{\"chapter\":9,\"text\":\"Behold, it is a custom that when the ground has received seed, or the sea a ship, or any vessel food or drink, and when it comes to pass that that which is sown, or that which is launched,\",\"verse\":34},{\"chapter\":9,\"text\":\"or the things which have been received, should come to an end, these come to an end, but the receptacles remain. Yet with us, it doesnâ€™t happen that way.\",\"verse\":35},{\"chapter\":9,\"text\":\"For we who have received the law will perish by sin, along with our heart which received it.\",\"verse\":36},{\"chapter\":9,\"text\":\"Notwithstanding the law doesnâ€™t perish, but remains in its honor.â€‌\",\"verse\":37},{\"chapter\":9,\"text\":\"When I spoke these things in my heart, I looked around me with my eyes, and on my right side I saw a woman, and behold, she mourned and wept with a loud voice, and was much grieved in mind. Her clothes were torn, and she had ashes on her head.\",\"verse\":38},{\"chapter\":9,\"text\":\"Then let I my thoughts go in which I was occupied, and turned myself to her,\",\"verse\":39},{\"chapter\":9,\"text\":\"and said to her, â€œWhy are you weeping? Why are you grieved in your mind?â€‌\",\"verse\":40}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "205ebd37-dacc-4cd3-b18f-adfe0af9b58f",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 31,32,33,34,35,36,37,38,39,40 in this chapter."
+}

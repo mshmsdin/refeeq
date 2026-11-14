@@ -1,0 +1,37 @@
+{
+  "request_id": "f56c33e4-6a5d-4232-a6e4-248231ee0938",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 12,\n      \"verse\": 11,\n      \"text_ar\": \"أما النسر الذي رأيته طالعاً من البحر، فهو المملكة الرابعة التي ظهرت في رؤيا لأخيك دانيال.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 12,\n      \"text_ar\": \"ولكنها لم تُفسر له، كما أفسرها أنا لك الآن أو كما فسرتها.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 13,\n      \"text_ar\": \"هوَذا الأيام آتية لتقوم مملكة على الأرض، وستكون مهوبة أكثر من جميع الممالك التي كانت قبلها.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 14,\n      \"text_ar\": \"وسيملك فيها اثنا عشر ملكاً، الواحد بعد الآخر.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 15,\n      \"text_ar\": \"ومن بين هؤلاء، يبدأ الثاني في الملك، وسيملك مدة أطول من باقي الاثني عشر.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 16,\n      \"text_ar\": \"هذا هو تفسير الأجنحة الاثني عشر التي رأيتها.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 17,\n      \"text_ar\": \"وأما متى سمعت صوتاً يتكلم، لا يصدر عن الرؤوس، بل من وسط جسدها، فهذا هو تفسيره:\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 18,\n      \"text_ar\": \"أنه بعد زمان تلك المملكة، ستحدث منازعات ليست قليلة، وستكون في خطر السقوط. ومع ذلك، فلن تسقط حينئذ، بل ستُستعاد مرة أخرى إلى قوتها السابقة.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 19,\n      \"text_ar\": \"ورأيت الأجنحة الثمانية التحتية الملتصقة بأجنحتها. هذا هو تفسيره:\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 20,\n      \"text_ar\": \"أنه سيقوم فيها ثمانية ملوك، تكون أوقاتهم قصيرة وسنواتهم سريعة.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 458,
+    "output": 715,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0019249,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 458,
+      "outputTokens": 715,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0019249,
+      "latencyMs": 2061
+    }
+  ]
+}

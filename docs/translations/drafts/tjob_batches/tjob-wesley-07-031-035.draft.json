@@ -1,0 +1,85 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 7,
+  "range": "31-35",
+  "status": "machine_translated_structured",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "bff9015f-b4b3-469f-9aae-a2979bec2baa",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 543,
+      "outputTokens": 356,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 977
+    }
+  ],
+  "usage": {
+    "input": 543,
+    "output": 356,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "verses": [
+    {
+      "chapter": 7,
+      "verse": 31,
+      "text_ar": "أأنتَ ذلك الذي كان له شمعيات من الذهب موضوعة على قواعد من الفضة؛ والآن يجب أن تشتاق إلى بريق القمر الطبيعي [\"أين ذهبت مجدك إذًا!\"]"
+    },
+    {
+      "chapter": 7,
+      "verse": 32,
+      "text_ar": "أأنتَ الذي كان له مرهم مصنوع من توابل اللبان، والآن أنت في حالة نبذ! [أين ذهبت مجدك إذًا!]"
+    },
+    {
+      "chapter": 7,
+      "verse": 33,
+      "text_ar": "أأنتَ ذلك الذي كان يضحك على الفاسدين والآثمين للاستهزاء، والآن أصبحت موضع سخرية للجميع! [أين ذهبت مجدك إذًا]"
+    },
+    {
+      "chapter": 7,
+      "verse": 34,
+      "text_ar": "وعندما صرخ إليفاز لفترة طويلة ونوح، بينما انضم إليه الجميع، فأصبح الضجيج عظيمًا جدًا، قلت لهم:"
+    },
+    {
+      "chapter": 7,
+      "verse": 35,
+      "text_ar": "اصمتوا وسأُريكم عرشي، ومجد بريقه: مجدي سيكون أبديا."
+    }
+  ]
+}

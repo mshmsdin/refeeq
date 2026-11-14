@@ -1,0 +1,105 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 6,
+  "range": "31-40",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "48271848-753d-4e2c-939d-523b01229155",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 493,
+      "outputTokens": 743,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0020054,
+      "latencyMs": 2116
+    }
+  ],
+  "usage": {
+    "input": 493,
+    "output": 743,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0020054,
+  "verses": [
+    {
+      "chapter": 6,
+      "verse": 31,
+      "text_ar": "فإن صليت أيضاً مرة أخرى، وصمت سبعة أيام أخر، فسأخبرك أيضاً بأمور أعظم من هذه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 32,
+      "text_ar": "لأن صوتك قد سُمع حقاً أمام العلي. فإن القدير قد رأى برك. ورأى أيضاً نقاوتك التي حافظت عليها منذ صباك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 33,
+      "text_ar": "ولذلك أرسلني لأريك كل هذه الأمور، وأقول لك: «آمن ولا تخف!»",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 34,
+      "text_ar": "لا تستعجل في التفكير بأمور باطلة حول الأزمان السالفة، لكيلا تتسرع في الأزمان اللاحقة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 35,
+      "text_ar": "وحدث بعد هذا أنني بكيت أيضاً، وصمت سبعة أيام على النحو ذاته، لكي أتمم الأسابيع الثلاثة التي قال لي عنها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 36,
+      "text_ar": "وفي الليلة الثامنة، اضطرب قلبي في داخلي مرة أخرى، وشرعت أتكلم في حضرة العلي.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 37,
+      "text_ar": "لأن روحي كانت مهتاجة جداً، وكانت نفسي في ضيق.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 38,
+      "text_ar": "فقلت: «أيها الرب، حقاً إنك تكلمت في بدء الخليقة، في اليوم الأول، وقلت هكذا: «لتُصنع السماء والأرض»، فأكملت كلمتك العمل.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 39,
+      "text_ar": "حينئذ كان الروح يحوم، وكانت الظلمة والسكون في كل جانب. ولم يكن صوت الإنسان موجوداً بعد.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 40,
+      "text_ar": "ثم أمرتَ أن يُخرج شعاع من النور من خزائنك، لكي تظهر أعمالك حينئذ.",
+      "review_notes_ar": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "767c67d3-5ebc-4b49-9cdf-c3b245dd25ff",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وخرج من المدينة، وعندما بحث رأى معالم المدينة، وقال: «حقاً، هذه هي المدينة. لقد ضللت طريقي».\",\n      \"verse\": 11\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ومرة أخرى عاد إلى المدينة وبحث، فلم يجد أحداً من شعبه، وقال: «مبارك هو الرب، لأن غشية عظيمة قد حلت بي!»\",\n      \"verse\": 12\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ومرة أخرى خرج من المدينة، وبقي هناك حزيناً، لا يدري إلى أين يذهب.\",\n      \"verse\": 13\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ووضع السلة، قائلاً: «سأجلس هنا حتى ينزع الرب هذه الغشية عني».\",\n      \"verse\": 14\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وبينما كان جالساً، رأى شيخاً قادماً من الحقل، فقال له أبيمالك: «أقول لك ايها الشيخ، ما هذه المدينة؟»\",\n      \"verse\": 15\n    }\n  ]\n}",
+  "usage": {
+    "input": 333,
+    "output": 334,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009349,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 333,
+      "outputTokens": 334,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009349,
+      "latencyMs": 1993
+    }
+  ]
+}

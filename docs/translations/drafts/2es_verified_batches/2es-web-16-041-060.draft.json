@@ -1,0 +1,145 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 16,
+  "range": "41-60",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "532f8242-ebd9-4a8e-96a0-5bd867aafbcb",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 848,
+      "outputTokens": 1152,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0031344000000000003,
+      "latencyMs": 2770
+    }
+  ],
+  "usage": {
+    "input": 848,
+    "output": 1152,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0031344000000000003,
+  "verses": [
+    {
+      "text_ar": "من يبيع فليكن كالهارب، ومن يشتر كمن سيخسر،",
+      "chapter": 16,
+      "verse": 41
+    },
+    {
+      "text_ar": "ومن يتاجر فليكن كمن ليس له ربح فيها، ومن يبني كمن لن يسكن فيها،",
+      "chapter": 16,
+      "verse": 42
+    },
+    {
+      "text_ar": "ومن يزرع فكأنه لن يحصد، وهكذا من يقلم الكروم كمن لن يجني العنب،",
+      "chapter": 16,
+      "verse": 43
+    },
+    {
+      "text_ar": "والذين يتزوجون كمن لن يكون لهم أطفال، والذين لا يتزوجون كالارامل.",
+      "chapter": 16,
+      "verse": 44
+    },
+    {
+      "text_ar": "لهذا السبب، فإن الذين يتعبون يتعبون باطلاً،",
+      "chapter": 16,
+      "verse": 45
+    },
+    {
+      "text_ar": "لأن الغرباء سيحصدون ثمارهم، وينهبون ممتلكاتهم، ويهدمون بيوتهم، ويأخذون أطفالهم سبايا، ففي السبي والجوع سيحبلون بأطفالهم.",
+      "chapter": 16,
+      "verse": 46
+    },
+    {
+      "text_ar": "والذين يمارسون التجارة إنما يفعلون ذلك ليُنهبوا. وكلما زادوا في تزيين مدنهم وبيوتهم وممتلكاتهم وأشخاصهم،",
+      "chapter": 16,
+      "verse": 47
+    },
+    {
+      "text_ar": "كلما أبغضتهم أكثر بسبب خطاياهم، يقول الرب.",
+      "chapter": 16,
+      "verse": 48
+    },
+    {
+      "text_ar": "وكما أن المرأة المحترمة والفاضلة تبغض الزانية،",
+      "chapter": 16,
+      "verse": 49
+    },
+    {
+      "text_ar": "هكذا ستبغض البارة الإثم عندما تزين نفسها، وستوبخها وجهاً لوجه عندما يأتي من يدافع عن الذي يبحث باجتهاد عن كل خطية على الأرض.",
+      "chapter": 16,
+      "verse": 50
+    },
+    {
+      "text_ar": "لذلك لا تكونوا مثلها ولا مثل أعمالها.",
+      "chapter": 16,
+      "verse": 51
+    },
+    {
+      "text_ar": "لأنه بعد قليل جداً، يُنزع الإثم من الأرض، وتملك البِرّ علينا.",
+      "chapter": 16,
+      "verse": 52
+    },
+    {
+      "text_ar": "لا يدع الخاطئ يقول إنه لم يخطئ؛ فإن الله سيحرق جمر نار على رأس من يقول «لم أخطئ أمام الله ومجده».",
+      "chapter": 16,
+      "verse": 53
+    },
+    {
+      "text_ar": "هوذا، الرب يعلم كل أعمال البشر، وتصوراتهم، وأفكارهم، وقلوبهم.",
+      "chapter": 16,
+      "verse": 54
+    },
+    {
+      "text_ar": "هو قال: «لتكن الأرض»، فصنعت، «لتكن السماء»، فصنعت.",
+      "chapter": 16,
+      "verse": 55
+    },
+    {
+      "text_ar": "بكلمته ثبتت النجوم، وهو يعرف عدد النجوم.",
+      "chapter": 16,
+      "verse": 56
+    },
+    {
+      "text_ar": "يفحص اللجة وكنوزها. وقد قس البحر وما يحويه.",
+      "chapter": 16,
+      "verse": 57
+    },
+    {
+      "text_ar": "حبس البحر في وسط المياه، وبكلمته علق الأرض فوق المياه.",
+      "chapter": 16,
+      "verse": 58
+    },
+    {
+      "text_ar": "بسط السماء مثل قبة. وأسسها فوق المياه.",
+      "chapter": 16,
+      "verse": 59
+    },
+    {
+      "text_ar": "صنع ينابيع مياه في البرية وبركاً على قمم الجبال ليرسل أنهاراً من المرتفعات تسقي الأرض.",
+      "chapter": 16,
+      "verse": 60
+    }
+  ]
+}

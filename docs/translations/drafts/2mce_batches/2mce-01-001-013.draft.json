@@ -1,0 +1,108 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "2MCE",
+  "book_name_ar": "المكابيون الإثيوبي الثاني",
+  "source_translation": "en-wikisource-2-meqabyan",
+  "source_url": "https://en.wikisource.org/wiki/Translation:2_Meqabyan",
+  "source_license": "CC BY-SA 4.0; attribution and share-alike required for any release",
+  "source_quality": "Community English translation from Ge ez; not a critical edition.",
+  "source_sha256": "51c64f57d3bf57592839651226f2afb05610cfed090fd99da374cee7067a7cc9",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "model_id": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "request_id": "56237313-539f-4dd9-8bd9-a3b340a98b34",
+  "usage": {
+    "input": 1244,
+    "output": 1037,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "estimated_cost_currency": "USD",
+  "translation": {
+    "book_code": "2MCE",
+    "chapter": 1,
+    "verses": [
+      {
+        "chapter": 1,
+        "verse": 1,
+        "text_ar": "هذا كتاب يروي كيف وجد مقابيون بني إسرائيل في بلاد ما بين النهرين، التي هي جزء من سوريا، فقتلهم في تلك المنطقة، بدءًا من يابوك حتى ساحة أورشليم؛ ويروي كيف دمر البلاد.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 1,
+        "verse": 2,
+        "text_ar": "لأن السريان وإدوم والعماليق كانوا متحدين مع رجل موآبي، مقابيون، الذي دمر أرض أورشليم — لأنهم خيموا من السامرة إلى ساحة أورشليم وفي كل أراضيها — فقتلوا في الحرب، ولم يستثنوا أحدًا إلا قلة من الذين فروا.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 1,
+        "verse": 3,
+        "text_ar": "عندما أخطأ بني إسرائيل، أثار الرب مقابيون، رجل موآب، ضدهم، فقتلهم بالسيف.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 1,
+        "verse": 4,
+        "text_ar": "بسبب ذلك، تباهى أعداء الرب والشعوب فوق بلده المبجل وحلفوا بجرائمهم.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 1,
+        "verse": 5,
+        "text_ar": "خيم الفلاسطيون وإدوم هناك؛ أرسلهم الرب لأن الناس كانوا منافقين بخصوص كلمته، فبدؤوا ينتقمون ويدمرون أرض الرب.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 1,
+        "verse": 6,
+        "text_ar": "أرض مقابيون هي رييمات، وهي جزء من موآب؛ نهض من بلده بقوة، وأولئك الذين معه حلفوا أيضًا بعهود.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 1,
+        "verse": 7,
+        "text_ar": "خيموا في منطقة جلعاد، التي هي حظ بلاد ما بين النهرين إلى سوريا، لكي يدمروا أرض الرب. هناك توسل إلى العماليق والفلاسطيين للمساعدة، فاعطاهم كثيرًا من الفضة والذهب والعراب والخيول ليكونوا شريكًا له في جرمه.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 1,
+        "verse": 8,
+        "text_ar": "اجتمعوا وسحقوا القلعة؛ الذين كانوا يسكنونها سَفَكوا دمًا كالماء.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 1,
+        "verse": 9,
+        "text_ar": "جعلوا أورشليم ككوخ في كرمة (مأوى مؤقت)؛ أطلقوا صوته فيها وأدوا جميع الأعمال الآثمة التي يكرهها الرب. كما دنسوا أرض الرب التي كانت ذات يوم مليئة بالثناء والشرف.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 1,
+        "verse": 10,
+        "text_ar": "حولوا لحم أصدقائكم وجثث خدامكم إلى طعام لوحوش الصحراء وطيور السماء.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 1,
+        "verse": 11,
+        "text_ar": "نهبوا الأيتام والأرامل؛ بلا خوف من الرب تصرفوا كما علمهم الشيطان. حتى أن الرب، الذي يختبر الكلى والعقل، استفزّ إلى الغضب، فمزقوا أجنة النساء الحوامل من بطونهن.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 1,
+        "verse": 12,
+        "text_ar": "عادوا إلى بلدهم فرحين لأنهم عملوا الشر ضد شعب الرب، محملين الغنائم التي انتزلوها من الأرض المبجلة.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 1,
+        "verse": 13,
+        "text_ar": "عند عودتهم ودخولهم بيوتهم، أقاموا احتفالات، وأغاني، وتصفيقًا.",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  2,
+    "range":  "21-30",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "c58a921a-11d7-4c03-a780-d7e18b4f6847",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  452,
+                         "outputTokens":  574,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0015706,
+                         "latencyMs":  2348
+                     }
+                 ],
+    "usage":  {
+                  "input":  452,
+                  "output":  574,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0015706,
+    "verses":  [
+                   {
+                       "chapter":  2,
+                       "text_ar":  "اشف المكسور والضعيف. لا تهزأ بالأعرج. دافع عن المشوه. دع الأعمى يرى مجدي.",
+                       "verse":  21
+                   },
+                   {
+                       "chapter":  2,
+                       "text_ar":  "احمِ الشيوخ والصغار داخل أسوارك.",
+                       "verse":  22
+                   },
+                   {
+                       "chapter":  2,
+                       "text_ar":  "حيثما تجد الموتى، ضع عليهم علامة وسلمهم للقبور، وسأعطيك المكان الأول في قيامتي.",
+                       "verse":  23
+                   },
+                   {
+                       "chapter":  2,
+                       "text_ar":  "اثبتوا يا شعبي واستريحوا، فإن راحتكم ستأتي.",
+                       "verse":  24
+                   },
+                   {
+                       "chapter":  2,
+                       "text_ar":  "أغذي أولادك أيتها المرضعة الصالحة، وثبت أقدامهم.",
+                       "verse":  25
+                   },
+                   {
+                       "chapter":  2,
+                       "text_ar":  "أما عن الخدام الذين أعطيتكم إياهم، فلن يهلك منهم واحد، لأني سأطلبهم من بين عددهم.",
+                       "verse":  26
+                   },
+                   {
+                       "chapter":  2,
+                       "text_ar":  "لا تقلقوا، لأنه عندما يأتي يوم الضيق والكرب، سيبكي الآخرون ويحزنون، أما أنتم ستفرحون ويكون لكم وفور.",
+                       "verse":  27
+                   },
+                   {
+                       "chapter":  2,
+                       "text_ar":  "ستحسدكم الأمم، لكنهم لن يقدروا أن يفعلوا شيئاً ضدكم، يقول الرب.",
+                       "verse":  28
+                   },
+                   {
+                       "chapter":  2,
+                       "text_ar":  "ستغطيكم يدي، لكي لا يرى أولادكم جهنم.",
+                       "verse":  29
+                   },
+                   {
+                       "chapter":  2,
+                       "text_ar":  "افرحي أيتها الأم مع أولادك، لأني أنقذكم، يقول الرب.",
+                       "verse":  30
+                   }
+               ]
+}

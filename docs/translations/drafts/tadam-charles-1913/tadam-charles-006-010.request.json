@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":3,\"source_ref\":\"3:3\",\"text\":\"Adam answered: 'Forbear, Eve, from such words, that peradventure God bring not some other curse upon us. How is it possible that I should stretch forth my hand against my own flesh Nay, let us arise and look for something for us to live on, that we fail not.'\"},{\"chapter\":4,\"source_ref\":\"4:1\",\"text\":\"And they walked about and searched for nine days, and they found none such as they were used to have in paradise, but found only animals'\"},{\"chapter\":4,\"source_ref\":\"4:2\",\"text\":\"food. And Adam said to Eve: 'This hath the Lord provided for animals and brutes to eat;\"},{\"chapter\":4,\"source_ref\":\"4:3\",\"text\":\"but we used to have angels' food. But it is just and right that we lament before the sight of God who made us. Let us repent with a great penitence: perchance the Lord will be gracious to us and will pity us and give us a share of something for our living.'\"},{\"chapter\":5,\"source_ref\":\"5:1\",\"text\":\"And Eve said to Adam: 'What is penitence Tell me, what sort of penitence am I to do Let us not put too great a labour on ourselves, which we cannot endure, so that the Lord will not hearken to our prayers: and will turn away His countenance from us, because we have not\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "c2e88d9f-d006-4a06-b820-94c0ff0031e7",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 3:3, 4:1, 4:2, 4:3, 5:1.",
+  "tenant_id": "rafeeq-bible-translation"
+}

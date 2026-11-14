@@ -1,0 +1,37 @@
+{
+  "request_id": "de488ff6-0b44-423d-83f7-5de2c82aa0cd",
+  "content": "{\n  \"book_code\": \"2MCE\",\n  \"chapter\": 15,\n  \"verses\": [\n    {\n      \"chapter\": 15,\n      \"verse\": 16,\n      \"text_ar\": \"ورثهم ملكوت السماوات، حيث يُوجد الرفاه الذي أقسم به على آبائهم في الساعة التي ينهض فيها الموتى ويصبح الأغنياء فقراء.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 17,\n      \"text_ar\": \"سوف يبكي الذين ارتكبوا الخطيئة، الذين لم يؤمنوا بأن الموتى سيقومون، الذين لم يلتزموا بشريعة الرب، والذين لم يفكروا بيوم الصعود.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 18,\n      \"text_ar\": \"في ذلك الوقت، سيرون الضيق الذي يجدهم، والذي لا ينتهي؛ حيث لا راحة ولا رفاه، بل حزن في عقولهم لا يعرف السكون.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 19,\n      \"text_ar\": \"نار لا تموت وديدان لا تنام ستحصلهما.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 20,\n      \"text_ar\": \"في المكان الذي توجد فيه أجسادهم، ستحل عليهم النار والكبريت والزوابع والبرد والبرد القاسي والثلج والبرد المتجمد.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 21,\n      \"text_ar\": \"لمن لا يؤمن بأن الموتى سيقومون، هناك نار جهنم عليهم.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 820,
+    "output": 446,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 820,
+      "outputTokens": 446,
+      "cachedTokens": 256,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1035
+    }
+  ]
+}

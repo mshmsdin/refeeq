@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "f0e2843d-a584-4461-8a9f-a4b37b6f6fb5",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":7,\"verses\":[{\"chapter\":7,\"verse\":21,\"text\":\"And after the seven days Elihu said to the kings : \\\"Come let us step near and examine him accurately, whether he truly is Jobab or not\\\"\"},{\"chapter\":7,\"verse\":22,\"text\":\"And they, being not half a mile (stadium) distant from his malodorous body, they rose and stepped near, carrying perfume in their hands, while their soldiers went with them and threw fragrant incense round about them so that they could come near me.\"},{\"chapter\":7,\"verse\":23,\"text\":\"And after they had thus passed three hours, covering the way with aroma, they drew nigh.\"},{\"chapter\":7,\"verse\":24,\"text\":\"And Eliphaz began and said : \\\"Art thou, indeed, Job, our fellow-king Art thou the one who owned the great glory\"},{\"chapter\":7,\"verse\":25,\"text\":\"Art thou he who once shone like the sun of day upon the whole earth Art thou he who once resembled the moon and the stars effulgent throughout the night\\\"\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24,25 in this chapter."
+}

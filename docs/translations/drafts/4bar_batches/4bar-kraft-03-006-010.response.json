@@ -1,0 +1,37 @@
+{
+  "request_id": "95fa3b21-3543-4363-8ca3-e1fdca40ab9e",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"ثم تكلم إرميا قائلاً: «أرجوك يا رب، اسمح لي أن أتكلم بحضرتك».\",\n      \"verse\": 6\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"فقال الرب: «تكلم يا مختاري إرميا».\",\n      \"verse\": 7\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"فقال إرميا: «يا رب، الآن نعلم أنك تسلم المدينة لأعدائها، وسيسبون الشعب إلى بابل.\",\n      \"verse\": 8\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"ماذا تريد مني أن أفعل بآنية القدس لخدمة الهيكل؟»\",\n      \"verse\": 9\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"فقال له الرب: «خذها واستودعها الأرض، قائلاً: \"\n      ,\n      \"verse\": 10\n    }\n  ]\n}",
+  "usage": {
+    "input": 310,
+    "output": 283,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0008005,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 310,
+      "outputTokens": 283,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008005,
+      "latencyMs": 1192
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 51,
+  "batch_end": 60,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "59814bf1-fccf-4f00-82fd-880ec7831944",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 832,
+      "outputTokens": 643,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1768
+    }
+  ],
+  "usage": {
+    "input": 832,
+    "output": 643,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "chapter": 2,
+      "source_ref": "2:15",
+      "text_ar": "وعندما كان كاينان في السنّ السبعين، أنجب ثلاثة أبناء واثنتين بنات."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:16",
+      "text_ar": "وهؤلاء هي أسماء أولاد كاينان: اسم البكر ملاعل، والثاني إينان، والثالث مريد، وكانت أخواتهم عاداه وزيلة؛ هؤلاء هم الخمسة أبناء كاينان الذين وُلدوا له."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:17",
+      "text_ar": "ولاميك، ابن ميثوسائيل، ارتبط بقاينان بالزواج، فأخذ بناتهما زوجتين، فحملت عاداه وأنجبت لاميك صبيًا، فسماه جبال."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:18",
+      "text_ar": "وحملت مرة أخرى وأنجبت صبيًا، فأسمته جوبال؛ وزيلة، أختها، كانت عاقرًا في ذلك الزمان ولم يكن لها نسل."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:19",
+      "text_ar": "ففي ذلك الزمان بدأ أبناء البشر يخونون الله، ويعصون الوصايا التي أمرها لآدم، أن يثمروا ويتكاثروا في الأرض."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:20",
+      "text_ar": "وبعض أبناء البشر جعلوا زوجاتهم يشربن جرعة تجعلهن عاقرات، كي يحافظن على أجسامهن ولا يبهت جمالهن."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:21",
+      "text_ar": "وعندما جعل أبناء البشر بعض زوجاتهم يشربن، شربت زيلة معهن."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:22",
+      "text_ar": "وكانت النساء الحوامل يبدين مكروهات في نظر أزواجهن كالأرامل بينما أزواجهن على قيد الحياة، لأنهن كن مرتبطات بالعرجات فقط."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:23",
+      "text_ar": "وفي آخر الأيام والسنوات، عندما كبرت زيلة، فتح الله بطنها."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:24",
+      "text_ar": "وحملت وأنجبت صبيًا فأسمته طوبال كاين، قائلة: بعد أن ذبلتُ قد حصلتُ عليه من الإله القدير."
+    }
+  ]
+}

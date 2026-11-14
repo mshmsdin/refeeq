@@ -1,0 +1,55 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  9,
+    "range":  "46-47",
+    "status":  "machine_translated_structured",
+    "provider":  "Groq Paid",
+    "model":  "qwen/qwen3.8-27b",
+    "request_id":  "a6d9a532-08db-4521-a622-4d290000e8f4",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+                         "provider":  "Groq Paid",
+                         "model":  "qwen/qwen3.8-27b",
+                         "status":  "success",
+                         "inputPrice":  "0.8000000000",
+                         "outputPrice":  "4.0000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.8000000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  166,
+                         "outputTokens":  117,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0006008,
+                         "latencyMs":  706
+                     }
+                 ],
+    "usage":  {
+                  "input":  166,
+                  "output":  117,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0006008,
+    "verses":  [
+                   {
+                       "chapter":  9,
+                       "text_ar":  "رَبِيتُهُ بِكُلِّ عِنايةٍ وَرِعايةٍ.",
+                       "verse":  46
+                   },
+                   {
+                       "chapter":  9,
+                       "text_ar":  "لِذَلِكَ، لَمَّا كَبِرَ، جِئْتُ لِيَتَّخِذَ لَهُ زَوْجَةً، فَجَعَلْتُ لَهُ يَوْمَ نَدِيمِةٍ.",
+                       "verse":  47
+                   }
+               ]
+}

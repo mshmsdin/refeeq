@@ -1,0 +1,37 @@
+{
+  "request_id": "fe733dd5-d6c2-4df6-bee5-2c44a91a313a",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"فهكذَا عَبَرُوا الأُرْدُنَّ وَأَتَوْا إِلَى أُورُشَلِيمَ.\",\n      \"verse\": 6\n    },\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"وَقَامَ إِرْمِيَا وَبَارُوخُ وَأَبِيمَالِكُ وَقَالُوا: «لَا يَدْخُلْ هَذِهِ الْمَدِينَةَ إِنْسَانٌ تَزَوَّجَ بَابِلِيَّةً!»\",\n      \"verse\": 7\n    },\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"وَقَالُوا بَعْضُهُمْ لِبَعْضٍ: «لِنَقُمْ وَلْنَجْشَعْ إِلَى بَابِلَ إِلَى مَكَانِنَا». وَارْتَحَلُوا.\",\n      \"verse\": 8\n    },\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"وَلَكِنْ بَيْنَمَا كَانُوا قَادِمِينَ إِلَى بَابِلَ، خَرَجَ الْبَابِلِيُّونَ لِلِقَائِهِمْ قَائِلِينَ: «لَا يُمْكِنُكُمْ دُخُولُ مَدِينَتِنَا، لِأَنَّكُمُ ابْغَضْتُمُونَا وَتَرَكْتُمُونَا خُفْيَةً. فَلَا تَقْدِرُونَ أَنْ تَدْخُلُوا مَعَنَا.\",\n      \"verse\": 9\n    },\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"لِأَنَّنَا قَدْ تَحَالَفْنَا مَعًا بِقَسَمٍ مُقَدَّسٍ بِاسْمِ إِلَهِنَا أَنْ لَا نَقْبَلَكُمْ وَلَا أَوْلَادَكُمْ، إِذْ تَرَكْتُمُونَا خُفْيَةً».\",\n      \"verse\": 10\n    }\n  ]\n}",
+  "usage": {
+    "input": 305,
+    "output": 528,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0014115,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 305,
+      "outputTokens": 528,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0014115,
+      "latencyMs": 1956
+    }
+  ]
+}

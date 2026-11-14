@@ -1,0 +1,165 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 13,
+  "range": "21-40",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "9a07dd3f-e16c-4409-8efb-b6075cf83d0e",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 862,
+      "outputTokens": 1028,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0028286,
+      "latencyMs": 3498
+    }
+  ],
+  "usage": {
+    "input": 862,
+    "output": 1028,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0028286,
+  "verses": [
+    {
+      "chapter": 13,
+      "verse": 21,
+      "text_ar": "«سأخبرك بتفسير الرؤيا، وأكشف لك أيضاً الأمور التي ذكرتها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 22,
+      "text_ar": "لقد تحدثت عن الباقين. هذا هو التفسير:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 23,
+      "text_ar": "الذي يحتمل الخطر في ذلك الوقت سيحمي أولئك الذين يقعون في الخطر، أعني أولئك الذين لهم أعمال وإيمان بالقدير.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 24,
+      "text_ar": "فاعلم إذن أن الباقين هم أكثر مباركة من الذين ماتوا.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 25,
+      "text_ar": "هذه هي تفاسير الرؤيا: أما لأنك رأيت إنساناً طالعاً من قلب البحر،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 26,
+      "text_ar": "فهذا هو الذي كان العلي يحفظه لأزمان طويلة، والذي سيخلص خليقته بذاته. وهو سيرشد الباقين.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 27,
+      "text_ar": "وأما لأنك رأيت أنه خرج من فمه ريح ونار وعاصفة،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 28,
+      "text_ar": "وأما لأنه لم يحمل لا رمحاً ولا أي سلاح حرب، بل أبادة هجوم ذلك الجمع الذي أتى ليحاربه، فهذا هو التفسير:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 29,
+      "text_ar": "ها إن الأيام آتية حين يبدأ العلي في خلاص أولئك الذين على الأرض.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 30,
+      "text_ar": "ستحل حيرة العقل بالساكنين على الأرض.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 31,
+      "text_ar": "سيتآمر الواحد ليشن حرباً على الآخر، مدينة على مدينة، ومكان على مكان، وشعب على شعب، ومملكة على مملكة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 32,
+      "text_ar": "وسيكون، متى حدثت هذه الأمور ووقعت الآيات التي أريتك إياها من قبل، حينئذ يُعلن ابني، الذي رأيته إنساناً صاعداً.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 33,
+      "text_ar": "وسيكون، متى سمعت كل الأمم صوته، أن كل إنسان سيترك أرضه والمعركة التي يخوضونها الواحد ضد الآخر.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 34,
+      "text_ar": "وسيُجمع جمع لا يحصى، كما رأيت، راغبين في أن يأتوا ويحاربوه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 35,
+      "text_ar": "لكنه سيقف على رأس جبل صهيون.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 36,
+      "text_ar": "وستأتي صهيون وتُرى لجميع الناس، مُستعدة ومبنية، مثلما رأيت الجبل منحوتاً بغير أيدٍ.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 37,
+      "text_ar": "سيوبخ ابني الأمم التي أتيْت لشرورها، بضربات تشبه العاصفة،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 38,
+      "text_ar": "وسيوبخهم في وجوههم بأفكارهم الشريرة، والعذابات التي يُعذبون بها والتي تشبه اللهيب. ويهلكهم بلا تعب بالشريعة التي تشبه النار.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 39,
+      "text_ar": "وأما لأنك رأيت أنه جمع إلى نفسه جمعاً آخر مسالماً،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 13,
+      "verse": 40,
+      "text_ar": "فهؤلاء هم الأسباط العشرة الذين سيقوا خارج أرضهم في أيام الملك هوشع، الذين سباهم شلمناصر ملك الأشوريين، فنقلهم إلى ما وراء النهر، فسيقوا إلى أرض أخرى.",
+      "review_notes_ar": []
+    }
+  ]
+}

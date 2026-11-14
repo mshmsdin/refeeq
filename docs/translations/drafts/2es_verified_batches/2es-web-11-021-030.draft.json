@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  11,
+    "range":  "21-30",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "3ecd1545-b260-4581-9b4f-dc389cc9d524",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  446,
+                         "outputTokens":  569,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0015563,
+                         "latencyMs":  1703
+                     }
+                 ],
+    "usage":  {
+                  "input":  446,
+                  "output":  569,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0015563,
+    "verses":  [
+                   {
+                       "chapter":  11,
+                       "text_ar":  "وأقام أيضا بعض منها لكنها لم تملك.",
+                       "verse":  21
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "وبعد هذا نظرت وإذا الأجنحة الاثنا عشر قد اختفت مع جناحين من الأجنحة الصغيرة.",
+                       "verse":  22
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "ولم يبق شيء على جسم النسر سوى الرؤوس الثلاثة التي استراحت وستة أجنحة صغيرة.",
+                       "verse":  23
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "فرأيت وإذا بجناحين صغيرين انفصلا عن الستة وبقيا تحت الرأس الذي على الجانب الأيمن، وبقي أربعة في مكانها.",
+                       "verse":  24
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "فرأيت وإذا بهذه الأجنحة التحتية خططت لأن تقيم نفسها وتملك.",
+                       "verse":  25
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "فرأيت وإذا بواحد أقيم لكنه اختفى بعد قليل.",
+                       "verse":  26
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "وفعل الثاني هكذا أيضا، واختفى أسرع من الأول.",
+                       "verse":  27
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "فرأيت وإذا بالاثنين اللذين بقيا خططا أيضا فيما بينهما للملك.",
+                       "verse":  28
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "وفيما كانا يفكران في ذلك، إذا بواحد من الرؤوس المستريحة استيقظ، وهو الذي كان في الوسط، لأنه كان أعظم من الرأسين الآخرين.",
+                       "verse":  29
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "ورأيت كيف انضم إلى الرأسين الآخرين معه.",
+                       "verse":  30
+                   }
+               ]
+}

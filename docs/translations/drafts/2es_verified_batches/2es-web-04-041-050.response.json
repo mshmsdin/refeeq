@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "082603f9-72c5-4e78-9859-4582bc477190",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"ثم قلت لا يا سيد هكذا لا يكون فقال لي في الجحيم مخادع النفوس مثل البطن\",\n      \"verse\": 41\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"لأنه كما أن المرأة الحامل تسرع أن تنجو من ألم المخاض هكذا هذه الأماكن تسرع أن تسلم ما أودع فيها منذ البداءة\",\n      \"verse\": 42\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"وحينئذ يرى لك ما تشتهي أن تراه\",\n      \"verse\": 43\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فأجبت قلت إن كنت قد وجدت نعمة في عينيك وإن كان ممكنا وإن كنت مستحقا\",\n      \"verse\": 44\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فأرني هذا أيضا هل ما بقي أكثر مما مضى أم انقضى منا القسم الأعظم\",\n      \"verse\": 45\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"لأني أعرف ما مضى ولكني لا أعرف ما سيأتي\",\n      \"verse\": 46\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فقال لي قف عن يمني فأفسر لك المثل\",\n      \"verse\": 47\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فوقفت ونظرت وإذا أتون نار ملتهبة يمر أمامي وحدث لما مضى اللهب أني نظرت فرأيت الدخان باقيا\",\n      \"verse\": 48\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"وبعد هذا عبر أمامي سحاب ماء وأنزل مطرا كثيرا بعاصفة ولما انقضت العاصفة بقيت منه القطرات\",\n      \"verse\": 49\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فقال لي تأمل في نفسك كما أن المطر أكثر من القطرات والنار أعظم من الدخان هكذا القسم الذي مضى كان أعظم بكثير أما القطرات والدخان فبقيا\",\n      \"verse\": 50\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  541,
+                  "output":  597,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0016547999999999999,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  541,
+                         "outputTokens":  597,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016547999999999999,
+                         "latencyMs":  2299
+                     }
+                 ]
+}

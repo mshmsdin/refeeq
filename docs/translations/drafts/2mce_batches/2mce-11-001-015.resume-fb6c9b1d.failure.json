@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "http_status": 503,
+  "router_code": null,
+  "error": "All eligible providers failed",
+  "request": "docs\\translations\\drafts\\2mce_batches\\2mce-11-001-015.resume-fb6c9b1d.request.json",
+  "attempt": 6,
+  "retry_policy": "Five earlier cooldown-separated requests for this range also returned provider failures."
+}

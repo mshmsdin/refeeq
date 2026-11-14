@@ -1,0 +1,37 @@
+{
+  "request_id": "c36fd66a-9172-49d1-acfc-876d1bbcbb5a",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وقام باروخ وخرج من القبر ووجد النسر جالساً خارج القبر.\",\n      \"verse\": 1\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وقال له النسر بصوت بشري: \\\"السلام لك يا باروخ، يا وكيل الأمانة.\\\"\",\n      \"verse\": 2\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وقال له باروخ: \\\"أنت الذي تتكلم مختار من بين كل طيور السماء، لأن هذا واضح من بريق عينيك، أخبرني إذن، ماذا تفعل هنا؟\\\"\",\n      \"verse\": 3\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وقال له النسر: \\\"أُرسلت إلى هنا لكي تستخدموني في إرسال أي رسالة تريدها.\\\"\",\n      \"verse\": 4\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وقال له باروخ: \\\"أبإمكانك حمل هذه الرسالة إلى إرميا في بابل؟\\\"\",\n      \"verse\": 5\n    }\n  ],\n  \"book_code\": \"4BAR\"\n}",
+  "usage": {
+    "input": 296,
+    "output": 310,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0008638,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 296,
+      "outputTokens": 310,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008638,
+      "latencyMs": 1466
+    }
+  ]
+}

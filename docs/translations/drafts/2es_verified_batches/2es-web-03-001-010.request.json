@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":3,\"verses\":[{\"chapter\":3,\"text\":\"In the thirtieth year after the ruin of the city, I Salathiel, also called Esdras, was in Babylon, and lay troubled upon my bed, and my thoughts came up over my heart,\",\"verse\":1},{\"chapter\":3,\"text\":\"for I saw the desolation of Zion and the wealth of those who lived at Babylon.\",\"verse\":2},{\"chapter\":3,\"text\":\"My spirit was very agitated, so that I began to speak words full of fear to the Most High, and said,\",\"verse\":3},{\"chapter\":3,\"text\":\"â€œO sovereign Lord, didnâ€™t you speak at the beginning when you formed the earthâ€”and that yourself aloneâ€”and commanded the dust\",\"verse\":4},{\"chapter\":3,\"text\":\"and it gave you Adam, a body without a soul? Yet it was the workmanship of your hands, and you breathed into him the breath of life, and he was made alive in your presence.\",\"verse\":5},{\"chapter\":3,\"text\":\"You led him into the garden which your right hand planted before the earth appeared.\",\"verse\":6},{\"chapter\":3,\"text\":\"You gave him your one commandment, which he transgressed, and immediately you appointed death for him and his descendants. From him were born nations, tribes, peoples, and kindred without number.\",\"verse\":7},{\"chapter\":3,\"text\":\"Every nation walked after their own will, did ungodly things in your sight, and despised your commandments, and you didnâ€™t hinder them.\",\"verse\":8},{\"chapter\":3,\"text\":\"Nevertheless, again in process of time, you brought the flood on those who lived in the world and destroyed them.\",\"verse\":9},{\"chapter\":3,\"text\":\"It came to pass that the same thing happened to them. Just as death came to Adam, so was the flood to these.\",\"verse\":10}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "b5e48e95-e317-4792-b605-0585883fd04f",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5,6,7,8,9,10 in this chapter."
+}

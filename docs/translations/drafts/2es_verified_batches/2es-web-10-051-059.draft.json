@@ -1,0 +1,90 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  10,
+    "range":  "51-59",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "e37dee6c-2a71-4bbe-8836-938e5b5e3a2c",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  424,
+                         "outputTokens":  520,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0014272,
+                         "latencyMs":  2140
+                     }
+                 ],
+    "usage":  {
+                  "input":  424,
+                  "output":  520,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0014272,
+    "verses":  [
+                   {
+                       "chapter":  10,
+                       "text_ar":  "لذلك طلبت منك أن تبقى في الحقل حيث لم يُبنَ بيت،",
+                       "verse":  51
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "لأني كنت أعلم أن العلي سيظهر لك هذا.",
+                       "verse":  52
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "لذلك أمرتك أن تأتي إلى الحقل، حيث لم يكن أساس لأي بناء.",
+                       "verse":  53
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "لأنه لا يمكن لأي بناء بشري أن يقف في المكان الذي ستُظهر فيه مدينة العلي.",
+                       "verse":  54
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "لذلك لا تخف ولا تدع قلبك يرتعب، بل امض في طريقك وانظر جمال وبناء العظمة، بقدر ما تستطيع عيناك أن ترى.",
+                       "verse":  55
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "حينئذ ستسمع بقدر ما تستطيع أذناك أن تفهما.",
+                       "verse":  56
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "لأنك مبارك أكثر من كثيرين، ودُعيت باسمك لتكون مع العلي، مثل القليلين فقط.",
+                       "verse":  57
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "ولكن غداً في الليل ستبقى هنا،",
+                       "verse":  58
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "وهكذا سيوضح لك العلي تلك الرؤى في أحلام عما سيفعله العلي بالذين يعيشون على الأرض في الأيام الأخيرة. فنمت تلك الليلة وأخرى، كما أمرني.",
+                       "verse":  59
+                   }
+               ]
+}

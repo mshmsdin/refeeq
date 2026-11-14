@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "9013f69f-9465-46de-9035-e7cfb513018c",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":37,\"text\":\"the works of His making, for He hath pitied Adam the creature of His hands.' But when the\",\"source_ref\":\"37:2\"},{\"chapter\":37,\"text\":\"angels had said these words, lo, there came one of the seraphim with six wings and snatched up Adam and carried him off to the Acherusian lake, and washed him thrice, in the presence of God.\",\"source_ref\":\"37:3\"},{\"chapter\":39,\"text\":\"And God saith to him: 'Adam, what hast thou done? If thou hadst kept my commandment, there would now be no rejoicing among those who are bringing thee down to this place. Yet, I tell thee that I will turn their joy to grief\",\"source_ref\":\"39:1\"},{\"chapter\":39,\"text\":\"and thy grief will I turn to joy, and I will transform thee to thy former glory? and set thee on the throne of thy deceiver. But he shall be cast\",\"source_ref\":\"39:2\"},{\"chapter\":39,\"text\":\"into this place to see thee sitting above him, then he shall be condemned and they that heard him, and he shall be grieved sore when he seeth thee sitting on his honourable throne.'\",\"source_ref\":\"39:3\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 37:2, 37:3, 39:1, 39:2, 39:3.",
+  "application_id": "rafeeq-bible-translation"
+}

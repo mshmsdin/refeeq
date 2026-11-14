@@ -1,0 +1,170 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 101,
+  "batch_end": 110,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-20b",
+  "request_id": "1150370c-44fd-417e-abb7-dfbc8d81dd2f",
+  "failovers": 5,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "99274687-1d7c-4d9e-a6f4-aab3765418ca",
+      "provider": "Mistral",
+      "model": "mistral-small-2603",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.1500000000",
+      "outputPrice": "0.6000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0150000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "05dfb509-43ee-4357-a629-e560369080e7",
+      "provider": "Gemini",
+      "model": "gemini-3.8-flash",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.7500000000",
+      "outputPrice": "3.7500000000",
+      "currency": "USD",
+      "cachedPrice": "0.0750000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 946,
+      "outputTokens": 700,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 901
+    }
+  ],
+  "usage": {
+    "input": 946,
+    "output": 700,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "text_ar": "وقالوا لإنوخ ما رأوا، فأجاب إينوخ لهم: هل هذا الحصان ينزل إلى الأرض من أجلِّي؟ لقد حان الوقت لأغادركم ولن أُرى منكم بعد ذلك.",
+      "chapter": 3,
+      "source_ref": "3:28"
+    },
+    {
+      "text_ar": "في ذلك الوقت نزل الحصان ووقف أمام إينوخ، ورأى جميع أبناء البشر الذين كانوا معه.",
+      "chapter": 3,
+      "source_ref": "3:29"
+    },
+    {
+      "text_ar": "قال إينوخ مرة أخرى للناس صوتاً مبثوثاً، قائلاً: أين هو الرجل الذي يستمتع بمعرفة طرق الرب إلهه؟ فليأتِ هذا اليوم إلى إينوخ قبل أن يُخذ منا.",
+      "chapter": 3,
+      "source_ref": "3:30"
+    },
+    {
+      "text_ar": "جميع أبناء البشر تجمّعوا وذهبوا إلى إينوخ ذلك اليوم؛ وكل ملوك الأرض مع أمرائهم ومستشارهم ظلوا معه ذلك اليوم؛ وعلّمت إينوخ أبناء البشر الحكمة والمعرفة، ومنحهم تعليمًا إلهيًا؛ فأمرهم أن يعبدوا الرب ويعتمدوا طرقه طوال أيام حياتهم، واستمر في إرساء السلام بينهم.",
+      "chapter": 3,
+      "source_ref": "3:31"
+    },
+    {
+      "text_ar": "وبعد ذلك ارتفع على الحصان، وتوجه، وذهب معه جميع أبناء البشر، نحو ثمانية مائة ألف رجل؛ وسافروا معه رحلة يوم واحد.",
+      "chapter": 3,
+      "source_ref": "3:32"
+    },
+    {
+      "text_ar": "في اليوم الثاني قال لهم: عدوا إلى خيامكم، لماذا تذهبون؟ ربما تموتون؛ فأحدهم ابتعد عنهم، والباقون سافروا معه ستة أيام؛ وقال إينوخ لهم كل يوم: عدوا إلى خيامكم، لتجنبوا الموت؛ لكنهم لم يرغبوا في العودة، وسافروا معه.",
+      "chapter": 3,
+      "source_ref": "3:33"
+    },
+    {
+      "text_ar": "في اليوم السادس بقي بعض الرجال معه، وتشبّثوا به، وقالوا له: سوف نسير معك إلى المكان الذي تذهب إليه؛ كما هو حي الرب، فالموت فقط سيفرّقنا.",
+      "chapter": 3,
+      "source_ref": "3:34"
+    },
+    {
+      "text_ar": "وتسعّدوا بشدة للسير معه، فوقف عن الحديث معهم؛ فذهبوا معه ولم يعودوا.",
+      "chapter": 3,
+      "source_ref": "3:35"
+    },
+    {
+      "text_ar": "وعندما عاد الملوك، أجبروا على إجراء تعداد لمعرفة عدد الرجال الذين ظلوا مع إينوخ؛ وفي اليوم السابع صعد إينوخ إلى السماء في دوامة، مع الخيول والطوارئ النارية.",
+      "chapter": 3,
+      "source_ref": "3:36"
+    },
+    {
+      "text_ar": "في اليوم الثامن أرسل كل الملك الذي كان مع إينوخ للعودة وتحضير عدد الرجال الذين كان معهم في المكان الذي صعد منه إلى السماء.",
+      "chapter": 3,
+      "source_ref": "3:37"
+    }
+  ]
+}

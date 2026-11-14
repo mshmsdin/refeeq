@@ -1,0 +1,51 @@
+{
+  "request_id": "ef0db523-eed3-40c5-9dac-92ce9d9c3412",
+  "content": "{\n  \"book_code\": \"JASHER\",\n  \"verses\": [\n    {\n      \"chapter\": 4,\n      \"verse\": 20,\n      \"source_ref\": \"4:20\",\n      \"text_ar\": \"ومات جميع الرجال الذين سلكوا طرق الرب في تلك الأيام، قبل أن يجلب الرب الشر إلى الإنسان الذي أعلن عنه، فكان ذلك من عند الرب، لكي لا يروا الشر الذي تكلم به الرب عن بني الناس.\"\n    },\n    {\n      \"chapter\": 4,\n      \"verse\": 21,\n      \"source_ref\": \"4:21\",\n      \"text_ar\": \"ووجد نوح نعمة في نظر الرب، واختاره الرب هو وأولاده ليخرج من نسلهم سلالة على وجه الأرض كلها.\"\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 1,\n      \"source_ref\": \"5:1\",\n      \"text_ar\": \"وكان ذلك في السنة الثمانين والأربعين من عمر نوح، حين مات حنّوك ابن شيث، وكان عمره تسعمائة وخمس سنوات عند وفاته.\"\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 2,\n      \"source_ref\": \"5:2\",\n      \"text_ar\": \"وفي السنة المئة وتسعة وسبعين من عمر نوح، مات كاينان ابن إنوش، وكان عمر كاينان تسعمائة وعشر سنوات، فمات.\"\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 3,\n      \"source_ref\": \"5:3\",\n      \"text_ar\": \"وفي السنة المئتين والثلاثة والثلاثين من عمر نوح، مات مهلّيل ابن كاينان، وكان عمر مهلّيل ثمانمائة وخمس وتسعين سنة، فمات.\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 569,
+    "output": 428,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 569,
+      "outputTokens": 428,
+      "cachedTokens": 256,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 3757
+    }
+  ]
+}

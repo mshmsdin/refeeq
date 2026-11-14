@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "af1da7b0-7e27-439b-b9d3-2be68d92b37c",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":9,\"verses\":[{\"chapter\":9,\"verse\":6,\"text\":\"For have I like a brute the motherly feeling of wild beasts that my ten children should have perished on one day and not to one of them could I give a decent burial\"},{\"chapter\":9,\"verse\":7,\"text\":\"And the kings gave order that the ruins of my house should be dug up. But I prohibited it, saving\"},{\"chapter\":9,\"verse\":8,\"text\":\"Do not go to the trouble in vain; for my children will not he found, for they are in the keeping of their Maker and Ruler.\"},{\"chapter\":9,\"verse\":9,\"text\":\"And the kings answered and said : \\\"Who will gainsay that he is out of his mind and raves\"},{\"chapter\":9,\"verse\":10,\"text\":\"For while we desire to bring the bones of his children back, he forbids us to do so saying: They have been taken and placed the keeping of their Maker. Therefore prove unto us the truth\\\".\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter."
+}

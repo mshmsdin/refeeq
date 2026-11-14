@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 151,
+  "batch_end": 155,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "706bb6d7-23c3-41a2-8715-91cf496a653f",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 411,
+      "outputTokens": 388,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010933,
+      "latencyMs": 1592
+    }
+  ],
+  "usage": {
+    "input": 411,
+    "output": 388,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0010933,
+  "units": [
+    {
+      "chapter": 42,
+      "source_ref": "42:6",
+      "text_ar": "أهلاً، بل وأنا غير أهلٍ وأنا خاطئة، أن أُدخل إلى مسكنه، تماماً كما كنتُ معه في الفردوس، بلا انفصال الواحد عن الآخر؛ تماماً كما في تعدينا، كنا"
+    },
+    {
+      "chapter": 42,
+      "source_ref": "42:7",
+      "text_ar": "(كلينا) قد ضللنا وتعدينا وصيتك، ولكنا لم ننفصل. هكذا يا رب، لا"
+    },
+    {
+      "chapter": 42,
+      "source_ref": "42:8",
+      "text_ar": "تفصلنا الآن.' ولكن بعد أن صلّت، شخصت نحو السماء وأطلقت تنهيدة عالية وضربت صدرها وقالت: 'يا إله الكل، تقبل روحي'، وفي الحال أسلمت روحها لله."
+    },
+    {
+      "chapter": 43,
+      "source_ref": "43:1",
+      "text_ar": "وجاء ميخائيل وعلّم شيثاً كيف يعدّ حواء للدفن. وجاء ثلاثة ملائكة ودفنوا جسدها حيث كان جسد آدم وهابيل. وبعد ذلك تحدث"
+    },
+    {
+      "chapter": 43,
+      "source_ref": "43:2",
+      "text_ar": "ميخائيل إلى شيث وقال: 'هكذا جهّز كل إنسان يموت إلى يوم القيامة'. وبعد أن أعطاه هذه القاعدة، هو"
+    }
+  ]
+}

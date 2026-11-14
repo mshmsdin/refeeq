@@ -1,0 +1,85 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 14,
+  "range": "41-48",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "1b257664-97fd-4e28-aaba-d8fb716e2de4",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 397,
+      "outputTokens": 478,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0013141,
+      "latencyMs": 1557
+    }
+  ],
+  "usage": {
+    "input": 397,
+    "output": 478,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0013141,
+  "verses": [
+    {
+      "text_ar": "انفتح فمي ولم أغلقه بعد.",
+      "chapter": 14,
+      "verse": 41
+    },
+    {
+      "text_ar": "وأعطى العلي فهماً للرجال الخمسة، فكتبوا تباعاً الأمور التي قيلت لهم بحروف لم يكونوا يعرفونها، وجلسوا أربعين يوماً. وكانوا يكتبون في النهار، وفي الليل يأكلون خبزاً.",
+      "chapter": 14,
+      "verse": 42
+    },
+    {
+      "text_ar": "أما أنا فتكلمت في النهار، ولم أصمت في الليل.",
+      "chapter": 14,
+      "verse": 43
+    },
+    {
+      "text_ar": "هكذا في أربعين يوماً، كُتبت أربعة وتسعون كتاباً.",
+      "chapter": 14,
+      "verse": 44
+    },
+    {
+      "text_ar": "وحدث عندما كملت الأيام الأربعون، أن العلي كلمني قائلاً: \"الكتب الأولى التي كتبتها، انشرها علانية، وليقرأها المستحقون وغير المستحقين؛",
+      "chapter": 14,
+      "verse": 45
+    },
+    {
+      "text_ar": "أما السبعون الأخيرة فاحفظها لكي تسلمها إلى الحكماء من شعبك؛",
+      "chapter": 14,
+      "verse": 46
+    },
+    {
+      "text_ar": "لأنه فيهم نبع الفهم، ومصدر الحكمة، ونهل المعرفة.\"",
+      "chapter": 14,
+      "verse": 47
+    },
+    {
+      "text_ar": "ففعلت هكذا.",
+      "chapter": 14,
+      "verse": 48
+    }
+  ]
+}

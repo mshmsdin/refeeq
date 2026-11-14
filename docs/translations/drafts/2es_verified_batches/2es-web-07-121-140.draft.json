@@ -1,0 +1,173 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 7,
+  "range": "121-140",
+  "status": "machine_translated_structured",
+  "provider": "Groq Paid",
+  "model": "qwen/qwen3.8-27b",
+  "request_id": "5c957a70-c6ae-4142-9d2a-37c98e456221",
+  "failovers": 2,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "05dfb509-43ee-4357-a629-e560369080e7",
+      "provider": "Gemini",
+      "model": "gemini-3.8-flash",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.7500000000",
+      "outputPrice": "3.7500000000",
+      "currency": "USD",
+      "cachedPrice": "0.0750000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "success",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 867,
+      "outputTokens": 1160,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0053336,
+      "latencyMs": 2493
+    }
+  ],
+  "usage": {
+    "input": 867,
+    "output": 1160,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0053336,
+  "verses": [
+    {
+      "chapter": 7,
+      "text_ar": "وأنَّ دُورَ مَسرَة وأَمان محفوظَة، وقد سَكنَّا في الإثم؟",
+      "verse": 121
+    },
+    {
+      "chapter": 7,
+      "text_ar": "وأنَّ مَجدَ العليّ يُحافِظ على مَن عِشوا في الوَصف الطاهر، ونحن سِرنا في مُخالَفة غَيرِها؟",
+      "verse": 122
+    },
+    {
+      "chapter": 7,
+      "text_ar": "وأنَّ جَنَّهٌ تُكشَف، فَيَبِق ثَمَرُها من نُعاس، فيها خَصبٌ وشِفاء، ولا ندخُل فيها،",
+      "verse": 123
+    },
+    {
+      "chapter": 7,
+      "text_ar": "لأَنّا عِشنا في سَفَاهَة؟",
+      "verse": 124
+    },
+    {
+      "chapter": 7,
+      "text_ar": "وأنَّ وُجوهُ مَن تَلقاهُ يَتَجَمّلون أكثرَ من الكواكِب، ولكنْ صَيرتُنا تُبغَّض أكثرَ من العتمَة؟",
+      "verse": 125
+    },
+    {
+      "chapter": 7,
+      "text_ar": "إذِ اكتَفينا وقتَ عيشِنا بالإثم، ولم نُحسِب بما نَعهَدُه من بَعد الموت.»",
+      "verse": 126
+    },
+    {
+      "chapter": 7,
+      "text_ar": "فاَستَرَد: «هذا مُعنى تلكِ المُلاحَمة الَّتي على الأرض تُصَارِعها الأَنسَاءُ:",
+      "verse": 127
+    },
+    {
+      "chapter": 7,
+      "text_ar": "إمّا غُلِبوا، فعَذابٌ ليَستَدِرُّون مِثلَ ما ذَكَرتَ، وإمّا غَلَبوا، فَنائلٌ هيَ عندي.",
+      "verse": 128
+    },
+    {
+      "chapter": 7,
+      "text_ar": "فَهذا يَدرُس موسى الكَلَمَ الشَّعْبِ، وقد عاشَ مُنذُها، فقال: «خُذوا حَيَاةً لأنَّكم تنجُون!»",
+      "verse": 129
+    },
+    {
+      "chapter": 7,
+      "text_ar": "فلم يُصدِّقوه، ولا الأنبياءَ بَعدَه، ولا أنا، الكَلامَ لَهم.",
+      "verse": 130
+    },
+    {
+      "chapter": 7,
+      "text_ar": "لذلك لا تُعلَم تَحَنُّنٌ في مُهْلِكِيهم كَفرحِهِم للخَيرِ المُؤمَّنِ بهم.»",
+      "verse": 131
+    },
+    {
+      "chapter": 7,
+      "text_ar": "فاَستَرَدتُ: «يا سيِّدي، العَليُّ المُسمَّى رَحوماً، إذ رَحِمَ مَن لم يَكن قد تَقَدَّم إلَى الكَونِ،",
+      "verse": 132
+    },
+    {
+      "chapter": 7,
+      "text_ar": "وَرَحيماً إذ رَحِمَ مَن رَجَع إلَى شَريعَتِه،",
+      "verse": 133
+    },
+    {
+      "chapter": 7,
+      "text_ar": "ومُتَينياً إذ تَناوَلَه مَن عَمِلا الإثمَ، إذ خَلقَتُه خَلقَه.",
+      "verse": 134
+    },
+    {
+      "chapter": 7,
+      "text_ar": "وَمُحسِناً إذ هُوَ يُعطي لِدَينٍ،",
+      "verse": 135
+    },
+    {
+      "chapter": 7,
+      "text_ar": "وَرَحيماً جِدّاً إذ يُزايِد رَحمَةً على مَن كَانَا وتِلك التي سَتَأتِي،",
+      "verse": 136
+    },
+    {
+      "chapter": 7,
+      "text_ar": "لأنَّه لَولَا أنَّهُ رحيمٌ، لمَا كان العالَمُ مُقِلّاً السَّكِينِ لَمن سُكَّناها،",
+      "verse": 137
+    },
+    {
+      "chapter": 7,
+      "text_ar": "وَوَدوداً إذ غَفَر مَن ضَجَّة عَمِلا الإثمَ لِيَرُزُقوا نَجاةً، فإنَّهُ لا يَحصُر عنهُ أن يُرزقُ لِرَحمَتِه، وإلّا لمَا كان كُلُّ إِنسٍ عَلى حيّةٍ ولا اِثنَينَ في أربَعَةِ أَربَعَةٍ.",
+      "verse": 138
+    },
+    {
+      "chapter": 7,
+      "text_ar": "وَحَكماً إذا تَحَكَّمَ بَعضُ مَن خَلَقَ بِكَلِمَتِه، وعَمَّ مُذَنةَ الإثمِ.",
+      "verse": 139
+    },
+    {
+      "chapter": 7,
+      "text_ar": "ثُمَّ إنَّ المُتَبقِّينَ لَيسوا كثيرينَ عَنِ الدَّهَرِ لا مُعَدَّه.»",
+      "verse": 140
+    }
+  ]
+}

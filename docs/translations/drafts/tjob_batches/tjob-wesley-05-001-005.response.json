@@ -1,0 +1,37 @@
+{
+  "request_id": "b66c0d70-91cc-4938-b7b7-fa441e65a46c",
+  "content": "{\"verses\":[{\"chapter\":5,\"text_ar\":\"ولما رأى الشيطان أنه لا يستطيع أن يدخلني في اليأس، ذهب وطلب جسدي من الرب لكي يصيبني بالوبأ، لأن الشرير لم يستطع أن يحتمل صبري.\",\"verse\":1},{\"chapter\":5,\"text_ar\":\"ثم أسلمني الرب إلى يديه ليفعل بجسدي ما يريد، ولكنه لم يعطه سلطاناً على نفسي.\",\"verse\":2},{\"chapter\":5,\"text_ar\":\"وجاء إليَّ بينما كنت جالساً على عرشي وما زلت أُنوح على أطفالي.\",\"verse\":3},{\"chapter\":5,\"text_ar\":\"وأشبه إعصاراً عظيماً وقلب عرشي وطرحني على الأرض.\",\"verse\":4},{\"chapter\":5,\"text_ar\":\"وظللت طريحاً على الأرض لمدة ثلاث ساعات، وضربني بوبأ شديد من قمة رأسي إلى أخمص قدمي.\",\"verse\":5}],\"book_code\":\"TJOB\"}",
+  "usage": {
+    "input": 300,
+    "output": 225,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0006525,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 300,
+      "outputTokens": 225,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0006525,
+      "latencyMs": 1132
+    }
+  ]
+}

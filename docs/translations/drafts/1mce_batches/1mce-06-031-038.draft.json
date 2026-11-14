@@ -1,0 +1,78 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "1MCE",
+  "book_name_ar": "المكابيون الإثيوبي الأول",
+  "source_translation": "en-wikisource-1-meqabyan",
+  "source_url": "https://en.wikisource.org/wiki/Translation:1_Meqabyan",
+  "source_license": "CC BY-SA 4.0; attribution and share-alike required for any release",
+  "source_quality": "Community English translation from Ge ez; not a critical edition, page under deletion discussion",
+  "source_sha256": "5615a85aab3db5a116478c7e8c884a10f7c7d61ba7d5cbbb5fc8d13627461ed1",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "model_id": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "request_id": "6f0015df-f1ea-466e-8253-cff980ee660d",
+  "usage": {
+    "input": 1033,
+    "output": 725,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "estimated_cost_currency": "USD",
+  "translation": {
+    "book_code": "1MCE",
+    "chapter": 6,
+    "verses": [
+      {
+        "chapter": 6,
+        "verse": 31,
+        "text_ar": "وقال صامويل لساؤول: «قَسَمَ يَهُ مَمْلَكَتَكَ».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 32,
+        "text_ar": "وقال ساؤول مرةً أخرى لصامويل أمام الناس: «أكرموني وتُبوا خطئي أمام يَهُ، فيغفر لي». وكان يخشى كلمة يَهُ التي أغضبته، لكنه لا يخشى الملك الميت؛ فرفض صامويل أن يرد على كلامه.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 33,
+        "text_ar": "بسبب ذلك طعن ملك أماليك أغّاج قبل أن يبتلع ما مضغه.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 34,
+        "text_ar": "لأنّه هدم شريعة يَهُ، ولأنّه هو الملك الملكوت، الذي يَحكمُ الجميع، ضرب يَهُ على رأس ملكٍ ارتكب الخطيئة، لأن ذلك لم يَخجله.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 35,
+        "text_ar": "فهو الربُّ الغاضبُ الذي يَطرد جميع النبلاء وسُلطة الملوك الذين لا يخافونَهُ. ولا يوجد من يحكمه.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 36,
+        "text_ar": "كما قال: «سَيَذْهَبُ سُلالة دَاوُد بينما كان مُشَاهَدًا ومُكَرَّمًا، وسَيَذْهَبُ سُلالة ساؤول بينما كان مُذِلًّا». فدمّر المملكَة من طفله ومن ساؤول.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 37,
+        "text_ar": "لأنه حَزِنَ عليه، ولأنّه دمر المجرمين الذين أحزنوه بأعمالهم الشريرة، انتقم يَهُ ودمر سُلالة أبناء ساؤول، لأن من لا ينتقم من عدو يَهُ هو عدو يَهُ.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 38,
+        "text_ar": "حين يكون بإمكانه الانتقام والتدمير، وعندما يمتلك السلطة، فإنّ من لا ينتقم ويُدمِّر الآثَم ولا ينتقم ويُدمِّر من لا يلتزم بشريعة يَهُ هو عدو يَهُ؛ فدمّر سُلالة أبناء ساؤول.",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

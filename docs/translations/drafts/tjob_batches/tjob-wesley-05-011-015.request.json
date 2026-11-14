@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "5dd02d1c-752f-41b7-9498-1ed1f402c092",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"verse\":11,\"text\":\"And my humbled wife who had been brought to her bridal chamber in such great luxuriousness and with spearmen as body-guards. I saw her do a water-carrier's work like a slave in the house of a common man in order to win some bread and bring it to me.\"},{\"chapter\":5,\"verse\":12,\"text\":\"And in my sore affliction I said: \\\"Oh that these braggart city rulers whom I soul not have thought to be equal with my shepherd dogs should now employ my wife as servant!\\\"\"},{\"chapter\":5,\"verse\":13,\"text\":\"And after this I took courage again.\"},{\"chapter\":5,\"verse\":14,\"text\":\"Yet afterwards they withheld even the bread that it should only have her own nourishment.\"},{\"chapter\":5,\"verse\":15,\"text\":\"But she took it and divided it between herself and me, saying woefully: \\\"Woe to me! Forthwith he may no longer feed on bread, and he cannot go to the market to ask bread of the bread-sellers in order to bring it to me that he may eat\\\"\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter."
+}

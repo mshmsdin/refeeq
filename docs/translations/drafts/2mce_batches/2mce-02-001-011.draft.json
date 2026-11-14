@@ -1,0 +1,96 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "2MCE",
+  "book_name_ar": "المكابيون الإثيوبي الثاني",
+  "source_translation": "en-wikisource-2-meqabyan",
+  "source_url": "https://en.wikisource.org/wiki/Translation:2_Meqabyan",
+  "source_license": "CC BY-SA 4.0; attribution and share-alike required for any release",
+  "source_quality": "Community English translation from Ge ez; not a critical edition.",
+  "source_sha256": "51c64f57d3bf57592839651226f2afb05610cfed090fd99da374cee7067a7cc9",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "model_id": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "request_id": "a044b807-5d47-4b96-973d-baa6aa7e1233",
+  "usage": {
+    "input": 1206,
+    "output": 960,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "estimated_cost_currency": "USD",
+  "translation": {
+    "book_code": "2MCE",
+    "chapter": 2,
+    "verses": [
+      {
+        "chapter": 2,
+        "verse": 1,
+        "text_ar": "قال النبي ريء له: «ابتهج اليوم قليلًا خلال احتفالاتك؛ لكن الرب الذي مجده إسرائيل سيأخذ انتقامًا ويدمرك في العقاب الذي لم تشك فيه».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 2,
+        "verse": 2,
+        "text_ar": "هل تقول: «خيلتي سريعة، ولذلك سأنقذ نفسي بالفرار»؟",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 2,
+        "verse": 3,
+        "text_ar": "أخبرك: الناس الذين يتبعونك أسرع من النسور. لن تنجو من حكم الرب والدمار الذي سيحلّ بك.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 2,
+        "verse": 4,
+        "text_ar": "هل تقول: «أنا أرتدي ثيابًا من الحديد، فلا الرماح ولا الأقواس تؤذيني»؟ الرب الذي يكرم إسرائيل قال: «ليس بالرماح أن أأخذ انتقامي وأهلكك». فأخبره: «سأجلب عليك مرضًا في القلب، وحكة، وروماتيزم—أمراض أشد وأقوى من رمية الرمح أو لسعة القوس. ومع ذلك، حتى بهذه الأشياء لن أُنهي انتقامي».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 2,
+        "verse": 5,
+        "text_ar": "«لقد أثرت غضبي. سأجلب عليك مرض القلب؛ لن تجد من يساعدك، ولن تنقذ من سلطتي حتى أمحو ذكر اسمك من هذا العالم».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 2,
+        "verse": 6,
+        "text_ar": "«لأنك قست ذهنك ورفعت نفسك فوق بلادي، عندما أفعل هذا بسرعة البرق، ستدرك أنني خالقك. أنت أمامي كالعشب أمام الرياح التي يحرقها النار، وكالغبار الذي تشتت الرياح من الأرض».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 2,
+        "verse": 7,
+        "text_ar": "لأنك أثرت غضبي ولم تعترف بخالقك؛ سأتغاضى عن كل أقاربك، ولن أرحم أحدًا يقترب من حصنك.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 2,
+        "verse": 8,
+        "text_ar": "«والآن، ابتعد عن كل الخطايا التي ارتكبتها. إذا تركت خطاياك وطالبت السلام في الحداد والحزن أمام الرب—إن توجّهت إليه بقلبٍ طاهر—فسيف forgiverك الرب جميع خطاياك التي ارتكبتها أمامه»، قال له.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 2,
+        "verse": 9,
+        "text_ar": "في ذلك الوقت ارتدى المكابيون الغبار ونحوا أمام الرب بسبب خطيئته، لأن الرب كان غاضبًا منه.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 2,
+        "verse": 10,
+        "text_ar": "فإن عينيه مكشوفتان ولا يحجب؛ أذناه مفتوحتان ولا يتغاضى. لا يجعل الكلمة التي قالها كاذبة، ويؤديها بسرعة، لأن الرب علم أنه لن يمهل العقاب الذي نطق به من خلال كلمة النبي.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 2,
+        "verse": 11,
+        "text_ar": "خلع ثيابه، وارتدى كُسوةً من الكُسوة، ورش الغبار على رأسه، وبكى ودمع أمام خالقه، الرب، بسبب الخطيئة التي ارتكبها.",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

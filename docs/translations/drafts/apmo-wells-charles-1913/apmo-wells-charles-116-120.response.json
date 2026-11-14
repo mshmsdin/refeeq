@@ -1,0 +1,37 @@
+{
+  "request_id": "0fdc7de2-e296-42f9-a20e-51a92099e7be",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 34,\n      \"verse\": 1,\n      \"text_ar\": \"وأنا حواء عاينت أعجوبتين عظيمتين ومخوفتين واقفتين في حضرة الله فبكيت من\"\n    },\n    {\n      \"chapter\": 34,\n      \"verse\": 2,\n      \"text_ar\": \"الخوف، وصرخت بصوت عالٍ إلى ابني شيث وقلت: 'قم يا شيث من جسد أبيك آدم وتعال إليَّ، وسترى منظراً لم يعاينه قط عين إنسان'.\"\n    },\n    {\n      \"chapter\": 35,\n      \"verse\": 1,\n      \"text_ar\": \"ثم قام شيث وأتى إلى أمه وقال لها: 'ما هي بليتك؟ لماذا تبكين؟' (و) قالت له: 'انظر\"\n    },\n    {\n      \"chapter\": 35,\n      \"verse\": 2,\n      \"text_ar\": \"إلى فوق وترى بعينيك السموات السبع مفتوحة، وانظر كيف تضطجع نفس أبيك على وجهها وجميع الملائكة القديسين يصلون لأجله قائلين: 'اغفر له يا أب الكل، لأنه صورتك'. 'توسل يا ولدي\"\n    },\n    {\n      \"chapter\": 35,\n      \"verse\": 3,\n      \"text_ar\": \"شيث، ما معنى هذا؟ وهل يُسلم يوماً إلى يدي الآب غير المنظور، إلهنا أيضاً؟ ولكن من هما الاثنان\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 417,
+    "output": 396,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0011151,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 417,
+      "outputTokens": 396,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011151,
+      "latencyMs": 2080
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 111,
+  "batch_end": 115,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "dbd2aee6-f367-4368-b756-8eb9a716cb28",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 461,
+      "outputTokens": 436,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0012282999999999999,
+      "latencyMs": 1724
+    }
+  ],
+  "usage": {
+    "input": 461,
+    "output": 436,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0012282999999999999,
+  "units": [
+    {
+      "chapter": 32,
+      "source_ref": "32:4",
+      "text_ar": "وأقامت وقالت: «قومي يا حواء (من توبتك)، فإن هوذا آدم زوجك قد خرج من جسده. قومي وانظري روحه المحمولة في العلاء إلى صانعه»."
+    },
+    {
+      "chapter": 33,
+      "source_ref": "33:1",
+      "text_ar": "وقامت حواء ومسحت دموعها بيدها، فقال لها الملاك: «ارفعي نفسك"
+    },
+    {
+      "chapter": 33,
+      "source_ref": "33:2",
+      "text_ar": "عن الأرض». وفتحت عينها بثبات نحو السماء، فرأت مركبة نور، تحملها أربعة نسور لامعة، وكان يستحيل على أي إنسان مولود من امرأة أن يصف مجدها أو"
+    },
+    {
+      "chapter": 33,
+      "source_ref": "33:3",
+      "text_ar": "ينظر إلى وجهها - والملائكة تسير قدام المركبة - ولما وصلوا إلى المكان الذي كان فيه أبوكم آدم، توقفت المركبة والسيرافيم. ورأيت مجامر من ذهب، بين أبيكم والمركبة، وكل الملائكة بالمجامر والبخور أقبلوا مسرعين نحو"
+    },
+    {
+      "chapter": 33,
+      "source_ref": "33:5",
+      "text_ar": "تقدمة البخور ونفخوا عليها فغطى دخان البخور الجلادير. وسقطت الملائكة وسجدت لله، صارخين بصوت عال وقائلين: «أيها القدوس، اغفر، لأنه صورتك وعمل يداك المقدستان»."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "a7c9ce0f-bf10-462d-8a9b-41876e489e04",
+  "content": "{\"verses\":[{\"text_ar\":\"وأما قسيا فأعطاها مجمرة (وفيها عطر = قسيا)، وقرن أمالثيا (= الموسيقى) أعطاه دفاً لكي يباركا الملائكة القديسين الذين أتوا من أجل نفسه.\",\"chapter\":12,\"verse\":6},{\"text_ar\":\"وأخذا هذه، ورنما، وعزفا على المزمار، وسبحا ومجدا الله باللسان المقدس.\",\"chapter\":12,\"verse\":7},{\"text_ar\":\"وبعد هذا أتى الجالس على المركبة العظيمة وقبل أيوب، بينما كانت بناته الثلاث ينظرن، وأما الأخريات فلم يرين ذلك.\",\"chapter\":12,\"verse\":8},{\"text_ar\":\"وأخذ نفس أيوب وارتفع إلى فوق، آخذاً إياها (النفس) من ذراعها وحامل إياها على المركبة، ومضى نحو الشرق.\",\"chapter\":12,\"verse\":9},{\"text_ar\":\"وأما جسده فحمل إلى القبر بينما كانت البنات الثلاث يتقدمهن المسير، وقد تقططقن بمناطقهم وكن يرتلن ترانيم تسبيح لله.\",\"chapter\":12,\"verse\":10}],\"book_code\":\"TJOB\"}",
+  "usage": {
+    "input": 340,
+    "output": 286,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.000817,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 340,
+      "outputTokens": 286,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.000817,
+      "latencyMs": 1506
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "fd316c80-f35d-466c-ab3d-58044bd54ef5",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"ودعا ابنته التي اسمها نهار (يميمة) وقال لها: خذى هذا الخاتم المزدوج المستخدم كمفتاح واذهبي إلى بيت الخزائن وأحضري لي الصندوق الذهبي، لكي أعطيك نصيبك.\",\n      \"verse\": 11\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"فذهبت وأحضرتْه إليه، ففتحه وأخرج مناطق ذات ثلاثة خيوط لا يستطيع إنسان أن يصف مظهرها.\",\n      \"verse\": 12\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"لأنها لم تكن عملاً أرضياً، بل كانت شرارات نور سماوية تلمع من خلالها كأشعة الشمس.\",\n      \"verse\": 13\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"وأعطى منطقة واحدة لكل واحدة من بناته وقال: اجعلن هذه مناطق حولكن لكي تحطنكن طوال أيام حياتكن وتمنحكن كل خير.\",\n      \"verse\": 14\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"وقالت الابنة الأخرى التي اسمها قصيعة: أهذا هو النصيب الذي تقول إنه أفضل من نصيب إخوتنا؟ ماذا الآن؟ أيمكننا أن نعيش بهذا؟\",\n      \"verse\": 15\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 363,
+    "output": 373,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010414,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 363,
+      "outputTokens": 373,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010414,
+      "latencyMs": 1478
+    }
+  ]
+}

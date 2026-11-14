@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "e1c7e7e2-60f5-4f24-b547-4dfcd1a69863",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":42,\"text\":\"After these words, God made a seal and sealed the tomb, that no one might do anything to him for six days till his rib should return to him. Then the Lord and his angels went to their place.\",\"source_ref\":\"42:1\"},{\"chapter\":42,\"text\":\"And Eve also, when the six days were fulfilled,\",\"source_ref\":\"42:2\"},{\"chapter\":42,\"text\":\"fell asleep. But while she was living, she wept bitterly about Adam's falling on sleep, for she knew not where he was laid. For when the Lord came to paradise to bury Adam she was asleep, and her sons too, except Seth, till He bade Adam be prepared for burial; and no man knew on earth, except her son Seth. And Eve prayed (in\",\"source_ref\":\"42:3\"},{\"chapter\":42,\"text\":\"the hour of her death) that she might be buried in the place where her husband Adam was. And after she had finished her prayer, she saith: 'Lord,\",\"source_ref\":\"42:4\"},{\"chapter\":42,\"text\":\"Master, God of all rule, estrange not me thy handmaid from the body of Adam, for from his members didst thou make me. But deem me\",\"source_ref\":\"42:5\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 42:1, 42:2, 42:3, 42:4, 42:5.",
+  "application_id": "rafeeq-bible-translation"
+}

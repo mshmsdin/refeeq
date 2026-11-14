@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "a27efbf5-1a72-4949-bd6e-ebc71c7e82d8",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":7,\"text\":\"And Adam said to him: 'When God made us, me and your mother, through whom also I die, He gave us power to eat of every tree which is in paradise, but, concerning that one only, He charged us not to eat of it, and through this one we are to die. And the hour drew nigh for the angels\",\"source_ref\":\"7:1\"},{\"chapter\":7,\"text\":\"who were guarding your mother to go up and worship the Lord, and I was far from her, and the enemy knew that she was alone and gave to her, and she ate of the tree of which she had been told not to eat.\",\"source_ref\":\"7:2\"},{\"chapter\":7,\"text\":\"Then she gave also to me to eat.\",\"source_ref\":\"7:3\"},{\"chapter\":8,\"text\":\"'And God was wroth with us, and the Lord came into paradise and called me in a terrible voice and said: \\\"Adam, where art thou? And why hidest thou from my face? Shall the house be able to hide itself from its builder?\\\" And he saith to me: \\\"Since thou hast abandoned my covenant, I have brought upon thy body seventy-two strokes; the trouble of the first stroke is a pain of the eyes, the second stroke an affection of the hearing, and likewise in turn all the strokes shall befall thee.\\\"'\",\"source_ref\":\"8:1\"},{\"chapter\":9,\"text\":\"As he said this to his sons, Adam groaned sore and said: 'What shall I do? I am in great distress.' And Eve wept and said: 'My lord\",\"source_ref\":\"9:1\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 7:1, 7:2, 7:3, 8:1, 9:1.",
+  "application_id": "rafeeq-bible-translation"
+}

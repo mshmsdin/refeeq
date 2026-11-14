@@ -1,0 +1,71 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 4,
+  "range": "21-25",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "582bb2f2-1f9b-45c2-92e2-9b26a1083449",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 351,
+      "outputTokens": 367,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010228,
+      "latencyMs": 1522
+    }
+  ],
+  "usage": {
+    "input": 351,
+    "output": 367,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0010228,
+  "verses": [
+    {
+      "chapter": 4,
+      "text_ar": "ولما رأى أبناء مدينتي أن ما قاله قد تحقق، جاؤوا وطاردوني، ونهبوا كل ما كان في بيتي.",
+      "verse": 21
+    },
+    {
+      "chapter": 4,
+      "text_ar": "ورأيت بعينيّ نهب بيتي، وجلس رجال بلا تهذيب وبلا شرف على مائدتي وعلى أسئتي، ولم أستطيع أن أعترض عليهم.",
+      "verse": 22
+    },
+    {
+      "chapter": 4,
+      "text_ar": "لأني كنت منهكاً كامرأة قد حلت حقواها من كثرة الأوجاع، متذكراً أساساً أن هذه الحرب قد تنبأ بها لي الرب بواسطة ملاكه.",
+      "verse": 23
+    },
+    {
+      "chapter": 4,
+      "text_ar": "وصرت كمن يرى البحر الهائج والرياح المعاكسة، بينما يكون حمل السفينة في عرض البحر ثقيلاً جداً، فيطرح الحمل في البحر قائلاً:",
+      "verse": 24
+    },
+    {
+      "chapter": 4,
+      "text_ar": "«أريد أن أهلك هذا كله فقط لكي أصل سالماً إلى المدينة فأربح السفينة الناجية وأفضل أمتعتي».",
+      "verse": 25
+    }
+  ]
+}

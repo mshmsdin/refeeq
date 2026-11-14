@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "656bf4b6-53fe-4526-87db-43e574e53d88",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"verse\":6,\"text\":\"And I left the city in great terror and woe and sat down upon a dunghill my body being worm-eaten.\"},{\"chapter\":5,\"verse\":7,\"text\":\"And I wet the earth with the moistness of my sore body, for matter flowed off my body, and many worms covered it.\"},{\"chapter\":5,\"verse\":8,\"text\":\"And when a single worm crept off my body, I put it back saying: \\\"Remain on the spot where thou hast been placed until He who hath sent thee will order thee elsewhere.\\\"\"},{\"chapter\":5,\"verse\":9,\"text\":\"Thus I endured for sever years, sitting on a dung-hill outside of the city while being plague-stricken.\"},{\"chapter\":5,\"verse\":10,\"text\":\"And I saw with mine own eyes my longed-for children [carried by angels to heaven]\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter."
+}

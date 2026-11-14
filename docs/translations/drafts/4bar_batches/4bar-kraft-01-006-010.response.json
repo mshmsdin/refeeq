@@ -1,0 +1,37 @@
+{
+  "request_id": "3a6ac320-d40c-40a5-a008-593046a7a7fb",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"وتكلم إرميا قائلاً: “أيها الرب القدير، أتسلم المدينة المختارة إلى الكلدانيين، لكي يفتخر الملك بشعبه الكثير ويقول: ’لقد غلبت مدينة الله المقدسة‘؟”\",\n      \"verse\": 6\n    },\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"لا يا رب، بل إن كانت هذه مشيئتك، فلتهلك بأيديك.”\",\n      \"verse\": 7\n    },\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"وقال الرب لإرميا: “بما أنك مختاري، قم واخرج من هذه المدينة، أنت وبواريخ، لأني مهلكها بسبب خطايا الساكنين فيها الكثيرة.”\",\n      \"verse\": 8\n    },\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"لأنه لا الملك ولا جيشه يقدرون أن يدخلوها ما لم أفتح أنا أبوابها أولاً.\",\n      \"verse\": 9\n    },\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"قم إذن، واذهب إلى بواريخ، وأخبره بهذا الكلام.\",\n      \"verse\": 10\n    }\n  ]\n}",
+  "usage": {
+    "input": 322,
+    "output": 332,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009266,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 322,
+      "outputTokens": 332,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009266,
+      "latencyMs": 1656
+    }
+  ]
+}

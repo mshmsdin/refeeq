@@ -1,0 +1,65 @@
+{
+  "request_id": "8276330e-c4d1-452b-bed1-99c892676e76",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 12,\n      \"verse\": 41,\n      \"text_ar\": \"بم أخطأنا إليك؟ وأي شر صنعناه ضدك حتى تخل عنا تماماً وتجلس في هذا الموضع؟\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 42,\n      \"text_ar\": \"لأنه من بين جميع الأنبياء، لم يبقَ لنا سِواك، مثل عُنْقُود في قطاف العنب، ومثل مصباح في مكان مظلم، ومثل ميناء لسفينة نجاة من العاصفة.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 43,\n      \"text_ar\": \"أليست الشرور التي حلت بنا كافية؟\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 44,\n      \"text_ar\": \"إن تخليت عنا، فكم كان خيراً لنا لو أُهْلِكنا نحن أيضاً في حريق صهيون!\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 45,\n      \"text_ar\": \"لأننا لست بأفضل من الذين ماتوا هناك.» ثم بكوا بصوت عالٍ. فأجبتهم:\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 46,\n      \"text_ar\": \"«تشجعي يا إسرائيل! ولا تحزني يا بيت يعقوب؛\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 47,\n      \"text_ar\": \"لأن العلي يذكركم. والقدير لم ينسَكم إلى الأبد.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 48,\n      \"text_ar\": \"أما أنا، فلم أتخلَّ عنكم. ولم أبتعد عنكم؛ بل أتيت إلى هذا الموضع لأصلي من أجل خراب صهيون، ولكي أطلب الرحمة لذل مقدَّسكم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 49,\n      \"text_ar\": \"والآن اذهبوا كل واحد إلى بيته، وبعد هذه الأيام آتي إليكم.»\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 50,\n      \"text_ar\": \"فهذه الشعب ذهب في طريقه إلى المدينة كما أمرتهم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 51,\n      \"text_ar\": \"أما أنا فجلست في الحقل سبعة أيام، كما أمرني الملاك. وفي تلك الأيام، لم أكن آكل إلا من زهور الحقل، وكان طعامي من النباتات.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 531,
+    "output": 809,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0021818000000000002,
+  "estimatedCostCurrency": "USD",
+  "failovers": 2,
+  "attempts": [
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "error",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 34
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "error",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 32
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 531,
+      "outputTokens": 809,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0021818000000000002,
+      "latencyMs": 2689
+    }
+  ]
+}

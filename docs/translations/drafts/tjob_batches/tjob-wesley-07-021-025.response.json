@@ -1,0 +1,37 @@
+{
+  "request_id": "6a2543df-1f41-463c-8d86-b2a72c117ebf",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وبعد سبعة أيام قال أليهو للملوك: \\\"هلم لنقترب ونفحصه بدقة، أهو حقاً أيوب أم لا\\\"\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وإذ كانوا على بعد أقل من نصف ميل (استديون) من جسده المنتن، قاموا واقتربوا حاملين طيوباً في أيديهم، بينما ذهب جنودهم معهم وطرحوا بخوراً عطراً حولهم لكي يستطيعوا الاقتراب مني.\",\n      \"verse\": 22\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وبعد أن قضوا ثلاث ساعات هكذا، مغطين الطريق بالعطر، اقتربوا.\",\n      \"verse\": 23\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وابتدأ أليفاز وقال: \\\"أأنت حقاً أيوب، ملكنا الرفيق؟ أأنت هو الذي ملك المجد العظيم؟\\\"\",\n      \"verse\": 24\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"أأنت هو الذي أشرق يوماً كشمس النهار على الأرض كلها؟ أأنت هو الذي كان يشبه مرة القمر والنجوم المضيئة طوال الليل؟\\\"\",\n      \"verse\": 25\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 336,
+    "output": 373,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010333,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 336,
+      "outputTokens": 373,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010333,
+      "latencyMs": 1340
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "a9739696-f224-4908-9cb9-57b2e8c81184",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":4,\"text\":\"And after this, Adam knew Eve his wife, and she conceived and bare Seth. And Adam said to Eve: 'See! we have\",\"source_ref\":\"4:1\"},{\"chapter\":4,\"text\":\"begotten a son in place of Abel, whom Cain slew, let us give glory and sacrifice to God.'\",\"source_ref\":\"4:2\"},{\"chapter\":5,\"text\":\"And Adam begat thirty sons and thirty daughters and Adam lived nine hundred and thirty years; and he fell sick and cried with a loud\",\"source_ref\":\"5:1\"},{\"chapter\":5,\"text\":\"voice and said, 'Let all my sons come to me that I may see them before I die.'\",\"source_ref\":\"5:2\"},{\"chapter\":5,\"text\":\"And all assembled, for the earth was divided into three parts. And Seth his son said to him:\",\"source_ref\":\"5:3\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 4:1, 4:2, 5:1, 5:2, 5:3.",
+  "application_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":10,\"verses\":[{\"chapter\":10,\"text\":\"Therefore I asked you to remain in the field where no house was built,\",\"verse\":51},{\"chapter\":10,\"text\":\"for I knew that the Most High would show this to you.\",\"verse\":52},{\"chapter\":10,\"text\":\"Therefore I commanded you to come into the field, where no foundation of any building was.\",\"verse\":53},{\"chapter\":10,\"text\":\"For no human construction could stand in the place in which the city of the Most High was to be shown.\",\"verse\":54},{\"chapter\":10,\"text\":\"Therefore donâ€™t be afraid nor let your heart be terrified, but go your way in and see the beauty and greatness of the building, as much as your eyes are able to see.\",\"verse\":55},{\"chapter\":10,\"text\":\"Then will you hear as much as your ears may comprehend.\",\"verse\":56},{\"chapter\":10,\"text\":\"For you are more blessed than many, and are called by name to be with the Most High, like only a few.\",\"verse\":57},{\"chapter\":10,\"text\":\"But tomorrow at night you shall remain here,\",\"verse\":58},{\"chapter\":10,\"text\":\"and so the Most High will show you those visions in dreams of what the Most High will do to those who live on the earth in the last days.â€‌ So I slept that night and another, as he commanded me.\",\"verse\":59}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "215aa508-3d51-49ae-941b-ea858af95c71",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 51,52,53,54,55,56,57,58,59 in this chapter."
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "34e2e1b2-0f0c-49ca-93fa-a04fac23226c",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"فقال النسر: \\\"أقول لك يا إرميا: تعال، احلل هذه الرسالة واقرأها على الشعب\\\". فحل الرسالة وقرأها على الشعب.\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"ولما سمعها الشعب، بكوا ووضعوا تراباً على رؤوسهم، وقالوا لإرميا: \\\"خلصنا وأخبرنا ماذا نعمل لكي ندخل مدينتنا مرة أخرى\\\".\",\n      \"verse\": 22\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"فأجاب إرميا وقال لهم: \\\"افعلوا كل ما سمعتموه من الرسالة، والرب سيقودنا إلى مدينتنا\\\".\",\n      \"verse\": 23\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وكتب إرميا رسالة إلى باروخ قائلاً: \\\"يا ابني الحبيب، صلِ باجتهاد وتضرع إلى الله لأجلنا، لكي يهدي طريقنا حتى نخرج من ولاية هذا الملك فاقد الناموس.\",\n      \"verse\": 24\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لأنك وُجدت باراً أمام الله، ولم يدعك تأتي إلى هنا، لكي لا ترى الضيق الذي حل بالشعب على أيدي البابليين.\",\n      \"verse\": 25\n    }\n  ]\n}",
+  "usage": {
+    "input": 373,
+    "output": 386,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010769,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 373,
+      "outputTokens": 386,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010769,
+      "latencyMs": 1425
+    }
+  ]
+}

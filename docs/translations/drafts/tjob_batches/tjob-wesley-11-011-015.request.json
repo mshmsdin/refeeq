@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "44f9b11d-9f78-4d9e-a8f1-2bec3a119387",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":11,\"verses\":[{\"chapter\":11,\"verse\":11,\"text\":\"And he called his daughter whose name was Day (Yemima) and said to her: \\\"Take this double ring used as a key and go to the treasure-house and bring me the golden casket, that I may give you your possession.\"},{\"chapter\":11,\"verse\":12,\"text\":\"And she went and brought it to him, and he opened it and took out three-stringed girdles about the appearance of which no man can speak.\"},{\"chapter\":11,\"verse\":13,\"text\":\"For they were not earthly work, but celestial sparks of light flashed through them like the rays of the sun.\"},{\"chapter\":11,\"verse\":14,\"text\":\"And he gave one string to each of His daughters and said: \\\"Put these as girdles around you in order that all the days of your life they may encircle you and endow you with every thing good\\\".\"},{\"chapter\":11,\"verse\":15,\"text\":\"And the other daughter whose name was Kassiah said: \\\"Is this the possession of which thou sayest it is better than that of our brothers What now Can we live on this\\\"\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter."
+}

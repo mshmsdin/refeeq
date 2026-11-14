@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "0989abcb-6282-4e3e-8cc3-f0d5f9842d91",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لان الله امر بصرامة اولئك الذين اتوا، حتى عندما اتوا، بما يجب عليهم فعله ليحيا، وما يجب عليهم مراعاته لتجنب العقاب.\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"مع ذلك، لم يكونوا طائعين له، بل تحدثوا ضده وتخيلوا لانفسهم اموراً باطلة.\",\n      \"verse\": 22\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لقد وضعوا خططاً ماكرة للشر، وقالوا علاوة على ذلك عن العلي إنه غير موجود، ولم يعرفوا طرقه.\",\n      \"verse\": 23\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لقد احتقروا شريعته وانكروا عهوده. ولم يكونوا امناء لفرائضه، ولم يقوموا باعماله.\",\n      \"verse\": 24\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لذلك، يا عزرا، للافراغ امور فارغة، وللامتلاء امور ممتلئة.\",\n      \"verse\": 25\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لانه هوذا، سيأتي الوقت، ويكون، عندما تحدث هذه العلامات التي اخبرتك بها من قبل، ان العروس ستظهر، بل والمدينة الخارجة، وسوف يُرى من هي محجوبة الآن عن الارض.\",\n      \"verse\": 26\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"كل من ينجو من الشرور المتنبأ بها سيبصر عجائبي.\",\n      \"verse\": 27\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لان ابني يسوع سيُعلن مع اولئك الذين معه، والذين يبقون سيفرحون اربعمائة سنة.\",\n      \"verse\": 28\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"بعد هذه السنوات سيموت ابني المسيح، مع كل اولئك الذين فيهم نسمة حياة.\",\n      \"verse\": 29\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"حينئذ يتحول العالم الى الصمت القديم سبعة ايام، كما في البدء الاول، لكي لا يبقى انسان.\",\n      \"verse\": 30\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  498,
+                  "output":  635,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0017369,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  498,
+                         "outputTokens":  635,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017369,
+                         "latencyMs":  2163
+                     }
+                 ]
+}

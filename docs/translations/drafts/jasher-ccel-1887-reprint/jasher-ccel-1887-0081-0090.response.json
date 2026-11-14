@@ -1,0 +1,51 @@
+{
+  "request_id": "168110ec-2f11-43e7-8e84-19e9123a044e",
+  "content": "{\n  \"book_code\": \"JASHER\",\n  \"verses\": [\n    {\n      \"chapter\": 3,\n      \"verse\": 8,\n      \"source_ref\": \"3:8\",\n      \"text_ar\": \"وكان روح الله على أخنوخ، فكان يعلِّم جميع رجاله حكمة الله وطرقه، وكان أبناء البشر يعبدون الرب طوال أيام أخنوخ، فكانوا يأتون لسماع حكمته.\"\n    },\n    {\n      \"chapter\": 3,\n      \"verse\": 9,\n      \"source_ref\": \"3:9\",\n      \"text_ar\": \"وكان جميع ملوك أبناء البشر، الأول والآخر، مع أمرائهم وقضاتهم، يأتون إلى أخنوخ عندما سمعوا بحكمته، فكانوا يركعون له، وطلبوا من أخنوخ أن يحكمهم، فوافق على ذلك.\"\n    },\n    {\n      \"chapter\": 3,\n      \"verse\": 10,\n      \"source_ref\": \"3:10\",\n      \"text_ar\": \"وتجمعوا جميعًا، مائة وثلاثون ملكًا وأميرًا، فجعلوا أخنوخ ملكًا عليهم وكانوا جميعًا تحت سلطته وأمره.\"\n    },\n    {\n      \"chapter\": 3,\n      \"verse\": 11,\n      \"source_ref\": \"3:11\",\n      \"text_ar\": \"وعلَّمهم أخنوخ الحكمة والعلم وطرقات الرب؛ فصنع بينهم سلامًا، وكان السلام سائدًا في الأرض طوال حياة أخنوخ.\"\n    },\n    {\n      \"chapter\": 3,\n      \"verse\": 12,\n      \"source_ref\": \"3:12\",\n      \"text_ar\": \"وحكم أخنوخ على أبناء البشر مدة مئتي وثلاثة وأربعين سنة، فكان يطبق العدل والبر مع جميع قومه، ويقودهم إلى سبل الرب.\"\n    },\n    {\n      \"chapter\": 3,\n      \"verse\": 13,\n      \"source_ref\": \"3:13\",\n      \"text_ar\": \"وهذه أجيال أخنوخ، متوشالح، وإليشع، وإليملخ، ثلاثة أبناء؛ وكانت أخواتهم ملقة وناما، وعاش متوشالح سبعًا وثمانين سنة وأنجب لاميك.\"\n    },\n    {\n      \"chapter\": 3,\n      \"verse\": 14,\n      \"source_ref\": \"3:14\",\n      \"text_ar\": \"وكان ذلك في السنة السادسة والخمسين من حياة لاميك حين مات آدم؛ كان عمره تسعمائة وثلاثين سنة عند وفاته، فدفنه ابناه مع أخنوخ ومتوشالح ابنه، بطقوسٍ عظيمة كما في دفن الملوك، في الكهف الذي أخبره الله به.\"\n    },\n    {\n      \"chapter\": 3,\n      \"verse\": 15,\n      \"source_ref\": \"3:15\",\n      \"text_ar\": \"وفي ذلك المكان أبى جميع أبناء البشر حزنًا كبيرًا وبكاءً على آدم؛ فصار ذلك عادةً عند أبناء البشر إلى اليوم.\"\n    },\n    {\n      \"chapter\": 3,\n      \"verse\": 16,\n      \"source_ref\": \"3:16\",\n      \"text_ar\": \"مات آدم لأنه أكل من شجرة المعرفة؛ هو وذريته من بعده، كما قال ربّ الله.\"\n    },\n    {\n      \"chapter\": 3,\n      \"verse\": 17,\n      \"source_ref\": \"3:17\",\n      \"text_ar\": \"وكان ذلك في سنة وفاة آدم، وهي السنة المئتين والثلاثة والأربعين من حكم أخنوخ؛ فقرر أخنوخ في ذلك الوقت أن ينفصل عن أبناء البشر ويختفي كما كان في البداية ليخدم الرب.\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 893,
+    "output": 841,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 893,
+      "outputTokens": 841,
+      "cachedTokens": 256,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1880
+    }
+  ]
+}

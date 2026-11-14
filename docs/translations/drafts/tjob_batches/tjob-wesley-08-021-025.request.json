@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "2cd8424a-1184-4b01-bd8b-111df602e9a1",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":8,\"verses\":[{\"chapter\":8,\"verse\":21,\"text\":\"In order that you know that my heart is sound, hear what I ask you:\"},{\"chapter\":8,\"verse\":22,\"text\":\"Through the stomach cometh food, and water you drink through the mouth, and then it flows through the same throat, and when the two go down to become excrement, they again part; who effects this separation\\\".\"},{\"chapter\":8,\"verse\":23,\"text\":\"And Baldad said: \\\"I do not know\\\". And I rejoined and said to him : \\\"If thou dost not understand even the exits of the body, how canst thou understand the celestial circuits\\\"\"},{\"chapter\":8,\"verse\":24,\"text\":\"Then Sophar rejoined and said : \\\"We do not inquire after our own affairs, but we desire to know whether thou art in a sound state, and behold, we see that thy reason has not been shaken.\"},{\"chapter\":8,\"verse\":25,\"text\":\"What now dost thou wish that we should do for thee Behold, we have come here and brought the physicians of three kings, and if thou wishest, thou mayest he cured by them\\\".\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24,25 in this chapter."
+}

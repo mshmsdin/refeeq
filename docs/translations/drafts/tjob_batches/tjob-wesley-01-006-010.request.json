@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "905df1c1-05ea-450f-8f35-bc8291101ff4",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":1,\"verses\":[{\"chapter\":1,\"verse\":6,\"text\":\"For my first wife died with my other ten children in bitter death.\"},{\"chapter\":1,\"verse\":7,\"text\":\"Hear now, children, and I will reveal unto you what happened to me.\"},{\"chapter\":1,\"verse\":8,\"text\":\"I was a very rich man living in the East in the land Ausitis, (Utz) and before the Lord had named me Job, I was called Jobab.\"},{\"chapter\":1,\"verse\":9,\"text\":\"The beginning of my trial was thus.\"},{\"chapter\":1,\"verse\":10,\"text\":\"Near my house there was the idol of one worshipped by the people; and I saw constantly burnt-offerings brought to him as a god.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter."
+}

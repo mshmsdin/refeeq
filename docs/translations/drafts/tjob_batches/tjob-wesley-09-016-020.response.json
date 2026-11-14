@@ -1,0 +1,37 @@
+{
+  "request_id": "0ac4936a-a092-44bc-aef8-c25d30bc1933",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"ولما فتش سيدها المستبد عنها ولم يجدها، أتى إلى حظيرة مواشيه، وهناك رآها ممتدة على المذود ميتة، بينما كانت جميع الحيوانات من حولها تبكي عليها.\",\n      \"verse\": 16\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"وكل من راها بكى وناح، وامتد الصراخ في جميع المدينة.\",\n      \"verse\": 17\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"وأنزلها الناس وكفنوها ودفنوها بجانب البيت الذي سقط على أولادها.\",\n      \"verse\": 18\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"وأقام فقراء المدينة مناحة عظيمة عليها وقالوا: \\\"هوذا هذه سيتيس التي لا يوجد مثيل لها في النبالة والمجد في أي امرأة. وآه! لم تكن مستحقة لقبر لائق!\\\"\",\n      \"verse\": 19\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"مرثاة لها ستجدونها في السجل.\",\n      \"verse\": 20\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 319,
+    "output": 330,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009207000000000001,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 319,
+      "outputTokens": 330,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009207000000000001,
+      "latencyMs": 1519
+    }
+  ]
+}

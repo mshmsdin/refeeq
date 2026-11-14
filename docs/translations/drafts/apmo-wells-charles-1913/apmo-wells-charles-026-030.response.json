@@ -1,0 +1,37 @@
+{
+  "request_id": "09e1fb22-a7e6-4383-a1f3-a3dc40e94cbf",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 9,\n      \"verse\": 2,\n      \"text_ar\": \"يا آدم، قم وأعطني نصف بلائك وسأتحمله؛ فإنه من أجلي حدث لك هذا، ومن أجلي أُحطت بالتعب والشدائد'.\"\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 3,\n      \"text_ar\": \"قال آدم لحواء: 'قومي واذهبي مع ابني شيث بالقرب من الفردوس، وضَعَا تراباً على رؤوسكما وابكيا وتضرعا إلى الله ليحرحمنا ويرسل ملاكه إلى الفردوس، ويعطيني من الشجرة التي يخرج منها الزيت، وتأتيني به، لأمسح به وأستريح من وجعي'.\"\n    },\n    {\n      \"chapter\": 10,\n      \"verse\": 1,\n      \"text_ar\": \"ثم ذهب شيث وحواء نحو الفردوس، فرأت حواء ابنها، ووحشاً مفترساً يهاجمه، فبكت حواء وقالت: 'الويل لي؛ إذا\"\n    },\n    {\n      \"chapter\": 10,\n      \"verse\": 2,\n      \"text_ar\": \"أتيْتُ إلى يوم القيامة، فإن كل الذين خطئوا سيلعنونني قائلين: إن حواء لم تحافظ على وصية الله'.\"\n    },\n    {\n      \"chapter\": 10,\n      \"verse\": 3,\n      \"text_ar\": \"وخاطبت الوحش قائلة: 'أيها الوحش الشرير، ألا تخاف أن تحارب صورة الله؟ كيف انفتح فمك؟ وكيف تقوّت أسنانك؟ وكيف لم تتذكر خضوعك؟ فقد كنت قديماً خاضعاً لصورة الله'. ثم إن الوحش\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 470,
+    "output": 453,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0012735,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 470,
+      "outputTokens": 453,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0012735,
+      "latencyMs": 2311
+    }
+  ]
+}

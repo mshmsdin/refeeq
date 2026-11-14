@@ -1,0 +1,77 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 15,
+  "range": "61-63",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "afdefb25-ea09-4c4b-9043-9ec82a46653c",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 209,
+      "outputTokens": 224,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0006227,
+      "latencyMs": 995
+    }
+  ],
+  "usage": {
+    "input": 209,
+    "output": 224,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0006227,
+  "verses": [
+    {
+      "chapter": 15,
+      "verse": 61,
+      "text_ar": "ستُطرحون منهم كالقش، ويكونون لكم ناراً.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 62,
+      "text_ar": "سيأكلونكم ومدنكم وأرضكم وجبالكم، ويحرقون بالنار كل غاباتكم وأشجاركم المثمرة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 63,
+      "text_ar": "ويسبون أطفالكم، وينهبون ثرواتكم، ويشوهون بهاء وجوهكم.",
+      "review_notes_ar": []
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 5,
+  "range": "41-45",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "ab44b57a-5392-4541-8f3a-eb02b5aa0401",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 399,
+      "outputTokens": 381,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010722000000000001,
+      "latencyMs": 1386
+    }
+  ],
+  "usage": {
+    "input": 399,
+    "output": 381,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0010722000000000001,
+  "verses": [
+    {
+      "chapter": 5,
+      "verse": 41,
+      "text_ar": "فقلت: «ولكن، ها أنت يا رب، قد قطعت الوعد لأولئك الأحياء في النهاية. فماذا يفعل الذين كانوا قبلنا، أو نحن أنفسنا، أو الذين يأتون بعدنا؟»",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 5,
+      "verse": 42,
+      "text_ar": "فقال لي: «سأشبه ديني بخاتم. وكما أنه ليس هناك تباطؤ لمن هم في الآخرة، هكذا أيضاً ليس هناك تسارع لمن هم في الأوائل».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 5,
+      "verse": 43,
+      "text_ar": "فأجبت: «أما كان بإمكانك أن تصنعهم دفعة واحدة، الذين صُنِعوا، والذين هم الآن، والذين سيأتون بعد، لكي تظهر دينك بشكل أسرع؟»",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 5,
+      "verse": 44,
+      "text_ar": "فأجابني وقال: «لا يمكن للخليقة أن تتحرك أسرع من الخالق، ولا يستطيع العالم أن يحتملهم دفعة واحدة الذين سيُخلَقون فيه».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 5,
+      "verse": 45,
+      "text_ar": "فقلت: «كيف قلت لعبدك إنك ستحيي حتماً دفعة واحدة الخليقة التي خلقتها؟ فإذا كان بإمكانهم أن يكونوا أحياء دفعة واحدة، وبإمكان الخليقة أن تدعمهم، فهكذا كان يمكنها الآن أيضاً أن تدعمهم ليكونوا حاضرين دفعة واحدة».",
+      "review_notes_ar": []
+    }
+  ]
+}

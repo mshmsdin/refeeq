@@ -1,0 +1,17 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"units\":[{\"chapter\":3,\"verse\":8,\"text\":\"And the spirit of God was upon Enoch, and he taught all his men the wisdom of God and his ways, and the sons of men served the Lord all the days of Enoch, and they came to hear his wisdom.\",\"source_ref\":\"3:8\"},{\"chapter\":3,\"verse\":9,\"text\":\"And all the kings of the sons of men, both first and last, together with their princes and judges, came to Enoch when they heard of his wisdom, and they bowed down to him, and they also required of Enoch to reign over them, to which he consented.\",\"source_ref\":\"3:9\"},{\"chapter\":3,\"verse\":10,\"text\":\"And they assembled in all, one hundred and thirty kings and princes, and they made Enoch king over them and they were all under his power and command.\",\"source_ref\":\"3:10\"},{\"chapter\":3,\"verse\":11,\"text\":\"And Enoch taught them wisdom, knowledge, and the ways of the Lord; and he made peace amongst them, and peace was throughout the earth during the life of Enoch.\",\"source_ref\":\"3:11\"},{\"chapter\":3,\"verse\":12,\"text\":\"And Enoch reigned over the sons of men two hundred and forty-three years, and he did justice and righteousness with all his people, and he led them in the ways of the Lord.\",\"source_ref\":\"3:12\"},{\"chapter\":3,\"verse\":13,\"text\":\"And these are the generations of Enoch, Methuselah, Elisha, and Elimelech, three sons; and their sisters were Melca and Nahmah, and Methuselah lived eighty-seven years and he begat Lamech.\",\"source_ref\":\"3:13\"},{\"chapter\":3,\"verse\":14,\"text\":\"And it was in the fifty-sixth year of the life of Lamech when Adam died; nine hundred and thirty years old was he at his death, and his two sons, with Enoch and Methuselah his son, buried him with great pomp, as at the burial of kings, in the cave which God had told him.\",\"source_ref\":\"3:14\"},{\"chapter\":3,\"verse\":15,\"text\":\"And in that place all the sons of men made a great mourning and weeping on account of Adam; it has therefore become a custom among the sons of men to this day.\",\"source_ref\":\"3:15\"},{\"chapter\":3,\"verse\":16,\"text\":\"And Adam died because he ate of the tree of knowledge; he and his children after him, as the Lord God had spoken.\",\"source_ref\":\"3:16\"},{\"chapter\":3,\"verse\":17,\"text\":\"And it was in the year of Adam's death which was the two hundred and forty-third year of the reign of Enoch, in that time Enoch resolved to separate himself from the sons of men and to secret himself as at first in order to serve the Lord.\",\"source_ref\":\"3:17\"}],\"book_code\":\"JASHER\"}"
+    }
+  ],
+  "service_key": "bible-translation",
+  "request_id": "d02deeee-16b8-4f81-8dc4-ac938dd8e447",
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e"
+}

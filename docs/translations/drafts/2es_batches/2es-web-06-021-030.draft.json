@@ -1,0 +1,105 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 6,
+  "range": "21-30",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "335ec353-99cb-4283-9c87-c4bb4544ac4c",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 478,
+      "outputTokens": 745,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0020059,
+      "latencyMs": 2149
+    }
+  ],
+  "usage": {
+    "input": 478,
+    "output": 745,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0020059,
+  "verses": [
+    {
+      "chapter": 6,
+      "verse": 21,
+      "text_ar": "الأطفال أبناء السنة سيتمكنون من الكلام بأصواتهم، والنساء الحوامل ستلدن أجنة غير كُمل في الشهر الثالث أو الرابع، وستعيش تلك الأجنة وترقص.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 22,
+      "text_ar": "فجأة ستظهر الأراضي المزروعة وكأنها لم تُزرع قط، ومخازن الغلال الممتلئة ستُوجد فجأة فارغة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 23,
+      "text_ar": "سيوطلق البوق صوتاً حين يسمعه كل انسان سيخافون فجأة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 24,
+      "text_ar": "في ذلك الوقت سيشن الأصدقاء حرباً بعضهم ضد بعض كأنهم أعداء، وسترتجف الأرض مع ساكنيها، وستتوقف ينابيع المياه بحيث لا تجري لمدة ثلاث ساعات.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 25,
+      "text_ar": "«ويكون أن كل من يبقى بعد كل هذه الأمور التي أخبرتك بها، فإنه سيخلص ويرى خلاصي ونهاية عالمي».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 26,
+      "text_ar": "سيرون الرجال الذين رُفعوا، الذين لم يذوقوا الموت منذ ولادتهم. وستتغير قلوب السكان وتتحول إلى روح أخرى.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 27,
+      "text_ar": "لأن الشر سيُمحى والمكر سيُطفأ.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 28,
+      "text_ar": "والإيمان سيُزهر، والفساد سيُهزم، والحق الذي ظل طويلاً بلا ثمر سيُعلن.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 29,
+      "text_ar": "ولما تحدث معي، هوذا قليلاً فقيلاً، المكان الذي كنت واقفاً عليه تمايل إلى الأمام وإلى الوراء.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 30,
+      "text_ar": "وقال لي: «جئت لأريك هذه الأمور الليلة».",
+      "review_notes_ar": []
+    }
+  ]
+}

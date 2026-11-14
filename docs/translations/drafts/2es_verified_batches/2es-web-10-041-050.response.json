@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "79e4af08-7176-4119-905f-c8bc8de65a40",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"المرأة التي ظهرت لك قبل قليل، التي رأيتها تنوح وبدأت تعزيها،\",\n      \"verse\": 41\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"ولكن الآن لا ترى شبه المرأة بعد، بل ظهرت لك مدينة قيد البناء،\",\n      \"verse\": 42\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"وهي أخبرتك بموت ابنها، فهذا هو التفسير:\",\n      \"verse\": 43\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"هذه المرأة التي رأيتها هي صيون التي تراها الآن كمدينة تُبنى.\",\n      \"verse\": 44\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"أخبرتك أنها كانت عاقراً لمدة ثلاثين سنة لأنه كانت هناك ثلاثة آلاف سنة في العالم لم يُقدم فيها تقدمة بعد.\",\n      \"verse\": 45\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"وحدث بعد ثلاثة آلاف سنة أن سليمان بنى المدينة وقدم التقادم. وعندئذ ولدت العاقر ابناً.\",\n      \"verse\": 46\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"أخبرتك أنها ربته بعناية فائقة. وكان ذلك هو المسكن في أورشليم.\",\n      \"verse\": 47\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"وحين قالت لك إن ابني مات حين دخل حجرة عرسه، وأصابتها تلك المصيبة، فهذا هو الدمار الذي حل بأورشليم.\",\n      \"verse\": 48\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"هوذا قد رأيت شبهها كيف ناحت على ابنها، وبدأت تعزيها عما حدث لها. هذه هي الأمور التي كان ينبغي أن تُكشف لك.\",\n      \"verse\": 49\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لأن العلي الآن، إذ يرى أنك حزين بإخلاص وتتألم من كل قلبك من أجلها، قد أراكم بهاء مجدها وجمال حسنها.\",\n      \"verse\": 50\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  509,
+                  "output":  611,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0016802,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  509,
+                         "outputTokens":  611,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016802,
+                         "latencyMs":  2273
+                     }
+                 ]
+}

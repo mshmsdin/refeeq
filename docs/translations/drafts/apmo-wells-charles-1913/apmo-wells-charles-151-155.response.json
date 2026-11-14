@@ -1,0 +1,37 @@
+{
+  "request_id": "706bb6d7-23c3-41a2-8715-91cf496a653f",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 42,\n      \"verse\": 6,\n      \"text_ar\": \"أهلاً، بل وأنا غير أهلٍ وأنا خاطئة، أن أُدخل إلى مسكنه، تماماً كما كنتُ معه في الفردوس، بلا انفصال الواحد عن الآخر؛ تماماً كما في تعدينا، كنا\"\n    },\n    {\n      \"chapter\": 42,\n      \"verse\": 7,\n      \"text_ar\": \"(كلينا) قد ضللنا وتعدينا وصيتك، ولكنا لم ننفصل. هكذا يا رب، لا\"\n    },\n    {\n      \"chapter\": 42,\n      \"verse\": 8,\n      \"text_ar\": \"تفصلنا الآن.' ولكن بعد أن صلّت، شخصت نحو السماء وأطلقت تنهيدة عالية وضربت صدرها وقالت: 'يا إله الكل، تقبل روحي'، وفي الحال أسلمت روحها لله.\"\n    },\n    {\n      \"chapter\": 43,\n      \"verse\": 1,\n      \"text_ar\": \"وجاء ميخائيل وعلّم شيثاً كيف يعدّ حواء للدفن. وجاء ثلاثة ملائكة ودفنوا جسدها حيث كان جسد آدم وهابيل. وبعد ذلك تحدث\"\n    },\n    {\n      \"chapter\": 43,\n      \"verse\": 2,\n      \"text_ar\": \"ميخائيل إلى شيث وقال: 'هكذا جهّز كل إنسان يموت إلى يوم القيامة'. وبعد أن أعطاه هذه القاعدة، هو\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 411,
+    "output": 388,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010933,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 411,
+      "outputTokens": 388,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010933,
+      "latencyMs": 1592
+    }
+  ]
+}

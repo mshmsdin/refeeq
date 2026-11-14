@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "a852ba7d-13ad-4506-8d50-a0833ae7b693",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":5,\"text\":\"'Father Adam, what is thy complaint?'\",\"source_ref\":\"5:4\"},{\"chapter\":5,\"text\":\"And he saith, 'MY children, I am crushed by the burden of trouble.' And they say to him, 'What is trouble?'\",\"source_ref\":\"5:5\"},{\"chapter\":6,\"text\":\"And Seth answered and said to him: 'Hast thou called to mind, father, the fruit of paradise of which thou usedst to eat, and hast been grieved in yearning for it?' 'If this be so, tell me, (and) I will go and\",\"source_ref\":\"6:1\"},{\"chapter\":6,\"text\":\"bring thee fruit from paradise. For I will set dung upon my head and will weep and pray that the Lord will hearken to me and send his angel (and bring me a plant from paradise), and I will bring it thee that thy trouble may cease from thee.' Adam saith to him: 'Nay, my son Seth, but\",\"source_ref\":\"6:2\"},{\"chapter\":6,\"text\":\"I have (much) sickness and trouble!' Seth saith to him: 'And how hath this come upon thee?'\",\"source_ref\":\"6:3\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 5:4, 5:5, 6:1, 6:2, 6:3.",
+  "application_id": "rafeeq-bible-translation"
+}

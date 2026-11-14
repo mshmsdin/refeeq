@@ -1,0 +1,179 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 3,
+  "range": "1-20",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "f2eee9d3-b3b7-4c53-b100-af3033082796",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 889,
+      "outputTokens": 1508,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0040367,
+      "latencyMs": 3831
+    }
+  ],
+  "usage": {
+    "input": 889,
+    "output": 1508,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0040367,
+  "verses": [
+    {
+      "chapter": 3,
+      "verse": 1,
+      "text_ar": "في السنة الثلاثين بعد خراب المدينة، كنت أنا سالثيئيل، الذي يدعى أيضاً عزرا، في بابل، وكنت مضطجعاً على فراشي في كرب، وصعدت أفكاري إلى قلبي،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 2,
+      "text_ar": "لأني رأيت خراب صيون وثروة الساكنين في بابل.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 3,
+      "text_ar": "فاضطربت روحي جداً، حتى إنه أخذني أن أكلم العلي بكلام مملوء خوفاً، وقلت:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 4,
+      "text_ar": "«أيها السيد الرب، ألم تتكلم في البدء حين صوّرت الأرض -وذلك وحدك بنفسك- وأمرت التراب،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 5,
+      "text_ar": "فأعطاك آدم، جسداً بلا نفس؟ ومع ذلك كان صنع يديك، ونفخت فيه نسمة الحياة، فأحيي قدامك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 6,
+      "text_ar": "وقدته إلى الجنة التي غرستها يمينك قبل أن تظهر الأرض.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 7,
+      "text_ar": "وأعطيته وصيتك الواحدة، فتعداها، وللوقت عينت له ولنسله الموت. ومنه وُلدت أمم وأسباط وشعوب وعشائر لا تُحصى.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 8,
+      "text_ar": "وسلكت كل أمة حسب إرادتها الخاصة، وصنعت أعمالاً شريرة في عينيك، وازدرت بوصاياك، فلم تمنعهم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 9,
+      "text_ar": "ومع ذلك، أيفضلاً بمرور الزمان، جلبت الطوفان على الساكنين في العالم وأهلكتهم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 10,
+      "text_ar": "وحدث أن الشيء نفسه حدث لهم، فكما جاء الموت على آدم، هكذا كان الطوفان على هؤلاء.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 11,
+      "text_ar": "ومع ذلك، أبقيت واحداً منهم، نوح مع أهل بيته، وجميع الأبرار الذين تناسلوا منه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 12,
+      "text_ar": "«وحدث لما بدأ الساكنون على الأرض يتكاثرون، أنهم كثروا أيضاً أولاداً وشعوباً وأمماً كثيرة، وبدأوا ثانية يكونون أكثر شراً من آبائهم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 13,
+      "text_ar": "وحدث، عندما عملوا الشر قدامك، أنك اخترت واحداً منهم كان اسمه إبراهيم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 14,
+      "text_ar": "أحببته، وله وحده أظهرت نهاية الأزمنة سراً في الليل،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 15,
+      "text_ar": "وقطعت معه عهداً أبدياً، واعداً إياه بأنك لن ترفض نسله أبداً. وأعطيته إسحاق، وإسحاق أعطيته يعقوب وعيسو.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 16,
+      "text_ar": "وأفرزت يعقوب لنفسك، ورذلت عيسو، فصار يعقوب جمهوراً عظيماً.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 17,
+      "text_ar": "وحدث عندما أخرجت نسله من مصر، أنك صعدت بهم إلى جبل سيناء.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 18,
+      "text_ar": "وطأطأت السموات أيضاً، وزلزلت الأرض، وحركت الكون بأسره، وجعلت الأعماق ترتجف، وأزعجت الدهر.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 19,
+      "text_ar": "وعبر مجدك خلال أربعة أبواب: باب النار، وباب الزلزلة، وباب الريح، وباب الجليد، لكي تعطي الشريعة لنسل يعقوب، والوصية لنسل إسرائيل.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 20,
+      "text_ar": "«ومع ذلك لم تنزع منهم قلبهم الشرير، لكي تُثمر شريعتك فيهم.",
+      "review_notes_ar": []
+    }
+  ]
+}

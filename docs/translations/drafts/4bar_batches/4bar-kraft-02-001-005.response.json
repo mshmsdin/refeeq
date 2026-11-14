@@ -1,0 +1,37 @@
+{
+  "request_id": "45d594b1-a799-4ecd-979a-2d604c13114b",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"وركَضَ إرميا وأخبر باروخ بهذه الأمور، وإذ دخلا إلى هيكل الله، مزق إرميا ثيابه ووضع تراباً على رأسه ودخل موضع الله المقدس.\",\n      \"verse\": 1\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"ولما رأاه باروخ والتراب منثور على رأسه وثيابه ممزقة، صرخ بصوت عظيم قائلاً: «يا أبتاه إرميا، ماذا تفعل؟ أي خطية أخطأها الشعب؟»\",\n      \"verse\": 2\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"لأنه كلما خطئ الشعب، كان إرميا ينثر تراباً على رأسه ويصلي لأجل الشعب حتى غُفِرت خطيتهم.\",\n      \"verse\": 3\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"فسأله باروخ قائلاً: «يا أبتا, ما هذا؟»\",\n      \"verse\": 4\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"فقال له إرميا: «دعنا نكف عن تمزيق ثيابنا ولنمزق قلوبنا عوضاً عن ذلك! ودعنا نكف عن استسقاء الماء للأجران، بل لنتبك ولنملأها دموعاً! لأن الرب لن يرحم هذا الشعب.»\",\n      \"verse\": 5\n    }\n  ],\n  \"book_code\": \"4BAR\"\n}",
+  "usage": {
+    "input": 341,
+    "output": 398,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010973,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 341,
+      "outputTokens": 398,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010973,
+      "latencyMs": 1567
+    }
+  ]
+}

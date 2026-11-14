@@ -1,0 +1,70 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  11,
+    "range":  "31-35",
+    "status":  "machine_translated_structured",
+    "provider":  "Groq Paid",
+    "model":  "qwen/qwen3.8-27b",
+    "request_id":  "394c08b1-bd4b-49f1-9356-b547981bccab",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+                         "provider":  "Groq Paid",
+                         "model":  "qwen/qwen3.8-27b",
+                         "status":  "success",
+                         "inputPrice":  "0.8000000000",
+                         "outputPrice":  "4.0000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.8000000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  307,
+                         "outputTokens":  275,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0013456,
+                         "latencyMs":  640
+                     }
+                 ],
+    "usage":  {
+                  "input":  307,
+                  "output":  275,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0013456,
+    "verses":  [
+                   {
+                       "chapter":  11,
+                       "text_ar":  "هوذا الزعيم قد مال إلى أولئك الذين كانوا معه، وأكل الجناحين التّحتيَّين اللَّذين كانت لهما نيّة أن يُملكوا.",
+                       "verse":  31
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "أمّا هذا الزِّعْمُ فقد حاز الأرض جميعاً، وسلّم على ساكنيها بكثير من الظُّلم، وقام على العالم بحُكم أقوى ممّا كان بجميع الأجنحة الّتي سبقت.",
+                       "verse":  32
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "وبعد ذلك رأيت، فإذا الزِّعاء الوسطى قد ذهبت فجأةً كالجنّاح.",
+                       "verse":  33
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "فبقيت الزّيمان الاثنتان، وهما أيضاً ملكتا الأرض وساكنيها مثلهما من قبل.",
+                       "verse":  34
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "ورأيت، فإذا الزّعِمُ القُطْرِيّ قد أكل الزّعِم اليُسْعيّ.",
+                       "verse":  35
+                   }
+               ]
+}

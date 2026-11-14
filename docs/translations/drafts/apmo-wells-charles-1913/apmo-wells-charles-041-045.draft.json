@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 41,
+  "batch_end": 45,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "5380670f-2367-4847-bc9a-0e43e8dfa5a7",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 357,
+      "outputTokens": 324,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009171,
+      "latencyMs": 1343
+    }
+  ],
+  "usage": {
+    "input": 357,
+    "output": 324,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0009171,
+  "units": [
+    {
+      "chapter": 14,
+      "source_ref": "14:1",
+      "text_ar": "هكذا تكلم الملاك وانصرف عنهم. وأتى شيث وحواء إلى الكوخة حيث وُضع آدم. وقال آدم لحواء: «يا حواء، ماذا"
+    },
+    {
+      "chapter": 14,
+      "source_ref": "14:2",
+      "text_ar": "فعلتِ بنا؟ لقد جلبتِ علينا غضباً عظيماً وهو الموت، [متهكماً على كل جنسنا].» وقال لها: «ادعي كل"
+    },
+    {
+      "chapter": 14,
+      "source_ref": "14:3",
+      "text_ar": "أولادنا وأولاد أولادنا وأخبريهم بكيفية تعدينا.»"
+    },
+    {
+      "chapter": 15,
+      "source_ref": "15:1",
+      "text_ar": "ثم قالت حواء لهم: «اسمعوا يا جميع أولادي وأولاد أولادي وسأقص عليكم"
+    },
+    {
+      "chapter": 15,
+      "source_ref": "15:2",
+      "text_ar": "كيف خدعنا العدو. لقد حدث بينما كنا نحرس الفردوس، كل منا قسمه"
+    }
+  ]
+}

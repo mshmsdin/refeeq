@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":14,\"source_ref\":\"14:3\",\"text\":\"the Lord.' And I answered, 'I have no (need) to worship Adam.' And since Michael kept urging me to worship, I said to him, 'Why dost thou urge me I will not worship an inferior and younger being (than I). I am his senior in the Creation, before he was made was I already made. It is his duty to worship me.'\"},{\"chapter\":15,\"source_ref\":\"15:1,2\",\"text\":\"When the angels, who were under me, heard this, they refused to worship him. And Michael saith, 'Worship the image of God, but if thou wilt not worship him, the Lord God will be wrath\"},{\"chapter\":15,\"source_ref\":\"15:3\",\"text\":\"with thee.' And I said, 'If He be wrath with me, I will set my seat above the stars of heaven and will be like the Highest.'\"},{\"chapter\":16,\"source_ref\":\"16:1\",\"text\":\"And God the Lord was wrath with me and banished me and my angels from our glory; and on\"},{\"chapter\":16,\"source_ref\":\"16:2\",\"text\":\"thy account were we expelled from our abodes into this world and hurled on the earth. And\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "f0fdb24a-d23b-4e8e-a0b0-ef93a9a57637",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 14:3, 15:1,2, 15:3, 16:1, 16:2.",
+  "tenant_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "8e826332-4507-45ee-99cb-dbcddfac7916",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"قَالَتْ لِي: اِتْرُكْنِي وَحْدِي يَا سَيِّدِي لأَبْكِيَ عَلَى نَفْسِي وَأَزِيدَ حُزْنِي، فَإِنِّي مُضْطَرِبَةُ الْبَالِ جِدّاً وَمُنْحَطَّةٌ إِلَى أَدْنَى مَحَطٍّ.\",\n      \"verse\": 41\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"فَقُلْتُ لَهَا: مَا بِكِ؟ أَخْبِرِينِي.\",\n      \"verse\": 42\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"فَقَالَتْ لِي: إِنِّي أَنَا خَادِمَتَكَ كُنْتُ عَاقِرًا بِلا وَلَدٍ وَلِي زَوْجٌ مُنْذُ ثَلاثِينَ سَنَةً.\",\n      \"verse\": 43\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"وَكُنْتُ كُلَّ سَاعَةٍ وَكُلَّ يَوْمٍ طِوَالَ هَذِهِ الثَّلاثِينَ سَنَةً أَرْفَعُ صَلَاتِي إِلَى الْعَلِيِّ لَيْلاً وَنَهَاراً.\",\n      \"verse\": 44\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"وَحَدَثَ بَعْدَ ثَلاثِينَ سَنَةً أَنَّ اللَّهَ سَمِعَنِي أَنَا أَمَتَكَ وَرَأَى مَسْكَنَتِي وَاعْتَبَرَ شَقَائِي وَأَعْطَانِي ابْناً فَفَرِحْتُ بِهِ كَثِيراً أَنَا وَزَوْجِي وَجَمِيعُ جِيرَانِي وَأَعْطَيْنَا مَجْداً عَظِيماً لِلْقَدِيرِ.\",\n      \"verse\": 45\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  335,
+                  "output":  538,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0014455,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  335,
+                         "outputTokens":  538,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0014455,
+                         "latencyMs":  2452
+                     }
+                 ]
+}

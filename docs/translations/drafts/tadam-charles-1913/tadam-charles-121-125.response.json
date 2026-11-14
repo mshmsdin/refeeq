@@ -1,0 +1,37 @@
+{
+  "request_id": "30fef366-2014-48b5-9b0c-b1e0e638fff6",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 42,\n      \"verse\": 5,\n      \"text_ar\": \"الماء والروح القدس إلى الحياة الأبدية. ثم إن ابن الله المحبوب جداً، المسيح، نازلاً على الأرض، سيقود أباك آدم إلى الفردوس وإلى شجرة الرحمة.]\"\n    },\n    {\n      \"chapter\": 43,\n      \"verse\": 1,\n      \"text_ar\": \"'وأما أنت يا شيث، فاذهب إلى أبيك آدم، إذ قد تمّ زمان حياته. فبعد ستة أيام، تخرج نفسه من جسده، وحين تخرج، ستعاين عجائب عظيمة في السماء وعلى الأرض و\"\n    },\n    {\n      \"chapter\": 43,\n      \"verse\": 2,\n      \"text_ar\": \"نيرات السماء.' وبهذه الكلمات، انصرف ميخائيل للتو عن شيث.\"\n    },\n    {\n      \"chapter\": 43,\n      \"verse\": 3,\n      \"text_ar\": \"ورجعت حواء وشيث حاملين معهما أعشاباً ذات رائحة طيبة، أي الناردين والزعفران والقصب والقرفة.\"\n    },\n    {\n      \"chapter\": 44,\n      \"verse\": 1,\n      \"text_ar\": \"ولما بلغ شيث وأمه آدم، أخبراه بما فعله الوحش [الحية].\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 384,
+    "output": 355,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010027,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 384,
+      "outputTokens": 355,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010027,
+      "latencyMs": 1427
+    }
+  ]
+}

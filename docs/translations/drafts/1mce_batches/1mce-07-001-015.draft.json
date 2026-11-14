@@ -1,0 +1,120 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "1MCE",
+  "book_name_ar": "المكابيون الإثيوبي الأول",
+  "source_translation": "en-wikisource-1-meqabyan",
+  "source_url": "https://en.wikisource.org/wiki/Translation:1_Meqabyan",
+  "source_license": "CC BY-SA 4.0; attribution and share-alike required for any release",
+  "source_quality": "Community English translation from Ge ez; not a critical edition, page under deletion discussion",
+  "source_sha256": "5615a85aab3db5a116478c7e8c884a10f7c7d61ba7d5cbbb5fc8d13627461ed1",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "model_id": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "request_id": "d4517acc-4415-458f-ab71-c08a0c22a776",
+  "usage": {
+    "input": 1478,
+    "output": 1234,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "estimated_cost_currency": "USD",
+  "translation": {
+    "book_code": "1MCE",
+    "chapter": 7,
+    "verses": [
+      {
+        "chapter": 7,
+        "verse": 1,
+        "text_ar": "وأنت إذا كنت ملكًا أو حاكماً، ما هو الأمر المهم لك؟",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 2,
+        "text_ar": "أليس ياه هو الذي خلقك، فأخرجك من عدم إلى حياة، لتنفذ مشيئته وتعيش مُقوَّى بأمره وتخشى قضائه؟ كما تضطهد عبيدك وتُحكم عليهم، كذلك ياه هو الذي يضطهدك ويحكم عليك.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 3,
+        "text_ar": "كما تضرب بلا رحمة من أخطأ، كذلك ياه سيضربك ويُسقطك إلى جهنم لا مخرج منها إلى الأبد.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 4,
+        "text_ar": "كما تضرب من لم يُخضع لك ولم يُقدم لك جزية، فلماذا لا تُقدم جزية لياه؟",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 5,
+        "text_ar": "إذ هو الذي خلقك لتُحب الذين قد يخافون منك، وتوّجك على جميع المخلوقات لتُحافظ على شعبه صادقًا، فلماذا لا تخشى خالقك ياه؟",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 6,
+        "text_ar": "احكم بالعدل والحق، كما عيّنك ياه؛ ولا تُظهر تحيزًا أو ميلاً للصغار أو الكبار. من ستخاف سواه؟ حافظ على عبادته وتعهده التسعة.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 7,
+        "text_ar": "كما أمر موسى أبناء إسرائيل، قائلًا: «قد قدمت لكم ماءً ونارًا؛ مدوا أيديكم نحو ما تحبون»، فلا تذهب يمينًا ولا يسارًا.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 8,
+        "text_ar": "اسمع كلمته التي أقولها لك، لتسمع كلمته وتنفذ أمرك، لئلا تقول: «إنها وراء البحر أو وراء العمق أو وراء النهر؛ من سيجلبها لي لأرها وأسمع كلمته وأنفذ أمره؟»",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 9,
+        "text_ar": "لئلا تقول: «من سيصعد إلى السماء مرة أخرى وينزل كلمة ياه إليّ لأسمعها وأفعلها؟» كلمة ياه هي التي اقتربت؛ هوذا لتعلّمها بفمك وتعطي صدقة بها بيدك.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 10,
+        "text_ar": "ولم تسمع خالقك ياه إلا إذا سمعت كتابه، ولم تحبه ولا تحافظ على أمره إلا إذا حفظت شريعته. وستدخل جهنم إلى الأبد إذا لم تحب أمره ولا تفعل مشيئة ياه، الذي كرامك وجعلك مشهورًا، فصلك عن كل شعوبك لتُحافظ عليهم صادقين؛ ستدخل جهنم إلى الأبد.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 11,
+        "text_ar": "جعلَك فوق الكل، وتوّجَك على جميع شعبه لتَحكم شعبه بأمانة بالعدل، بينما تذكر اسم خالقك الذي خلقك ومنحك ملكًا.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 12,
+        "text_ar": "هناك من تضربهم لخطئهم، وهناك من تعفو عنهم بينما تأخذ في الاعتبار عمل ياه، وهناك من تحكم عليهم بالعدل، مصححًا استدلالك.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 13,
+        "text_ar": "ولا تُظهر ميلاً أو تحيزًا عندما يجادلون أمامك، فالممتلكات الأرضية هي ثروتك. لا تقبل رشةً لتُعفو عن الآثم وتظلم البريء.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 14,
+        "text_ar": "إذا نفذت مشيئته، سيضاعف ياه أيامك في هذه الدنيا؛ وإن أساؤته، سيقلل أيامك.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 7,
+        "verse": 15,
+        "text_ar": "فكّر أنك ستقوم بعد موتك، وستُفحص واقفًا أمامه عن كل عملٍ قمت به، سواء كان خيرًا أم شرًا.",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

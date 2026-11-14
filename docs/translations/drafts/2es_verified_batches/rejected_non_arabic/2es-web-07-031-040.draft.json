@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  7,
+    "range":  "31-40",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "6dc28f47-29b6-4e9c-a33b-f53b47320442",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  500,
+                         "outputTokens":  589,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016225,
+                         "latencyMs":  1957
+                     }
+                 ],
+    "usage":  {
+                  "input":  500,
+                  "output":  589,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0016225,
+    "verses":  [
+                   {
+                       "chapter":  7,
+                       "text_ar":  "After seven days the world that is not yet awake will be raised up, and what is corruptible will die.",
+                       "verse":  31
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "The earth will restore those who are asleep in it, and the dust those who dwell in it in silence, and the secret places will deliver those souls that were committed to them.",
+                       "verse":  32
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "The Most High will be revealed on the judgment seat, and compassion will pass away, and patience will be withdrawn.",
+                       "verse":  33
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "Only judgment will remain. Truth will stand. Faith will grow strong.",
+                       "verse":  34
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "Recompense will follow. The reward will be shown. Good deeds will awake, and wicked deeds won\u0027t sleep.",
+                       "verse":  35
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "The pit of torment will appear, and near it will be the place of rest. The furnace of hell will be shown, and near it the paradise of delight.",
+                       "verse":  36
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "Then the Most High will say to the nations that are raised from the dead, Look and understand whom you have denied, whom you haven\u0027t served, whose commandments you have despised.",
+                       "verse":  37
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "Look on this side and on that. Here is delight and rest, and there fire and torments. Thus he will speak to them in the day of judgment.",
+                       "verse":  38
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "This is a day that has neither sun, nor moon, nor stars,",
+                       "verse":  39
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "neither cloud, nor thunder, nor lightning, neither wind, nor water, nor air, neither darkness, nor evening, nor morning,",
+                       "verse":  40
+                   }
+               ]
+}

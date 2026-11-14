@@ -1,0 +1,71 @@
+{
+  "book_code": "4BAR",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-kraft-4-baruch-longer",
+  "source_name": "Kraft and Purintun English 4 Baruch (Longer Version)",
+  "source_url": "https://intertextual.bible/read/4-baruch/1",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "chapter": 4,
+  "range": "6-10",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "09d7b098-33cd-49da-a6a6-09dbf70633c4",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 271,
+      "outputTokens": 205,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0005937999999999999,
+      "latencyMs": 1787
+    }
+  ],
+  "usage": {
+    "input": 271,
+    "output": 205,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0005937999999999999,
+  "verses": [
+    {
+      "chapter": 4,
+      "text_ar": "وفيما كان إرميا لا يزال يبكي على الشعب، أخرجوه مع الشعب وجروهم إلى بابل.",
+      "verse": 6
+    },
+    {
+      "chapter": 4,
+      "text_ar": "أما باروخ فوضع تراباً على رأسه وجلس وصرخ بهذه المراثي قائلاً:",
+      "verse": 7
+    },
+    {
+      "chapter": 4,
+      "text_ar": "ولكن لا تدع الشعب الآثم يفتخر ويقول: «لقد كنا أقوياء بما يكفي لنأخذ مدينة الله بقوتنا».",
+      "verse": 8
+    },
+    {
+      "chapter": 4,
+      "text_ar": "والله سيرحمنا ويجعلنا نعود إلى مدينتنا، أما أنتم فلن نجوا!",
+      "verse": 9
+    },
+    {
+      "chapter": 4,
+      "text_ar": "طوبى لآبائنا، إبراهيم وإسحاق ويعقوب،",
+      "verse": 10
+    }
+  ],
+  "source_license_notice": "طبعة مركز تحليل النصوص بالحاسوب (جامعة بنسلفانيا)، تحرير روبرت كرافت، ١٥ ديسمبر ١٩٨٧؛ النسخة الأطول مبنية على ترجمة روبرت كرافت وآن إليزابيث بورنتن المنشورة سنة ١٩٧٢. يصرح المصدر بإتاحتها للاستخدام غير التجاري بشرط إرفاق هذا التنبيه كاملاً مع كل نسخة موزعة والإبلاغ عن الأخطاء والتصحيحات والمشكلات إلى الموزع: English Translation of the Longer and Shorter Versions of the Paraleipomena Jeremiou: Public Domain CATSS edition by Robert A. Kraft, 15 Dec 1987. Filesize uncompressed: about 48 K. Freely available for non-commercial use provided that this header is included in its entirety with any copy distributed and that errors/corrections or other problems are reported to the distributor: Center for Computer Analysis of Texts Religious Studies / Cohen Hall, University of Pennsylvania, Philadelphia PA 19104-6304 USA. The Longer Version is based on Paraleipomena Jeremiou: An English Translation, by Robert Kraft and Ann Elizabeth Purintun (Seminar Papers of the Society of Biblical Literature for 1971, vol. 2; SBL, 1971, 327-346), which appeared in slightly revised form in their 1972 edition of Paraleipomena Jeremiou (Texts and Translations 1: Pseudepigrapha Series 1; Missoula Montana: Scholars Press for the SBL, 1972). The Shorter Version was translated by William Newby and edited for electronic publication by Robert Kraft. Both Versions were included on the Experimental CD-ROM #1 published by the Packard Humanities Institute in cooperation with CCAT in December 1987."
+}

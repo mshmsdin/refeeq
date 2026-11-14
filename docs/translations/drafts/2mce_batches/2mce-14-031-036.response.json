@@ -1,0 +1,37 @@
+{
+  "request_id": "462e2675-feda-4ee0-9706-99d7da64225d",
+  "content": "{\n  \"book_code\": \"2MCE\",\n  \"chapter\": 14,\n  \"verses\": [\n    {\n      \"chapter\": 14,\n      \"verse\": 31,\n      \"text_ar\": \"... ولا يمكن للمرأة الحامل أن تغلق وتمنع رحمها عندما ينتزعها المخاض — فهي لا تستطيع الهرب دون أن تلد...\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 32,\n      \"text_ar\": \"... كأن ندى نزل عليها بأمر من الرب، فإنها ستولدهم جميعًا مرة واحدة. وبعد أن يسمعوا كلمة الرب، لا يستطيع القبر أيضًا أن يمنع الأشخاص المتجمعين فيه من النهوض.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 33,\n      \"text_ar\": \"سيتجمع اللحم في المكان الذي سقطت فيه الجثث؛ وتُفتح الأماكن التي تسكن فيها النفوس؛ وتعود النفوس إلى اللحم الذي كانت قد انفصلت عنه سابقًا.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 34,\n      \"text_ar\": \"عندما يُقرع الطبل، سيقوى الموتى بسرعة في غمضة عين. بعد قيامهم، سيقفون أمام الرب، فيمنحهم جزائهم حسب عمل أيديهم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 35,\n      \"text_ar\": \"في ذلك الوقت سترى أنك تقوم مع الموتى، وستندهش من كل ما فعلته في هذه الدنيا. عندما ترى جميع خطاياك مكتوبة أمامك، ستشعر بندم عديم الجدوى.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 36,\n      \"text_ar\": \"أنت تعلم أنك ستقوم مع الموتى وأنك ستحصل على مشقتك وفقًا للأعمال التي قمت بها.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 861,
+    "output": 490,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 861,
+      "outputTokens": 490,
+      "cachedTokens": 256,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1124
+    }
+  ]
+}

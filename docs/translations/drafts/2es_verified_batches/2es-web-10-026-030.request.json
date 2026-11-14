@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":10,\"verses\":[{\"chapter\":10,\"text\":\"Behold, suddenly she made a great and very fearful cry, so that the earth shook at the noise.\",\"verse\":26},{\"chapter\":10,\"text\":\"I looked, and behold, the woman appeared to me no more, but there was a city built, and a place shown itself from large foundations. Then I was afraid, and cried with a loud voice,\",\"verse\":27},{\"chapter\":10,\"text\":\"â€œWhere is Uriel the angel, who came to me at the first? For he has caused me to fall into this great trance, and my end has turned into corruption, and my prayer a reproach!â€‌\",\"verse\":28},{\"chapter\":10,\"text\":\"As I was speaking these words, behold, the angel who had come to me at first came to me, and he looked at me.\",\"verse\":29},{\"chapter\":10,\"text\":\"Behold, I lay as one who had been dead, and my understanding was taken from me. He took me by the right hand, and comforted me, and set me on my feet, and said to me,\",\"verse\":30}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "dfce755e-5917-4b11-a853-7ebf9a283c0e",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 26,27,28,29,30 in this chapter."
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"4BAR\",\"chapter\":4,\"verses\":[{\"chapter\":4,\"text\":\"1 And when morning came, the army of the Chaldeans surrounded the city.\",\"verse\":1},{\"chapter\":4,\"text\":\"2 And the great angel sounded his trumpet, saying: “Enter the city, army of the Chaldeans, for the gate is opened for you.\",\"verse\":2},{\"chapter\":4,\"text\":\"3 Therefore let the king enter, with his many troops, and let him take all the people captive.”\",\"verse\":3},{\"chapter\":4,\"text\":\"4 But taking the keys of the temple, Jeremiah went outside the city and threw them away in the presence of the sun, saying: “I say to you, Sun, take the keys of the temple of God and guard them until the day when the Lord asks you for them.\",\"verse\":4},{\"chapter\":4,\"text\":\"5 For we have not been found worthy to keep them, for we have become unfaithful guardians.”\",\"verse\":5}]}"
+    }
+  ],
+  "tenant_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "e9709b05-e853-4b16-91fb-18d5ce123106",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5 in this chapter.",
+  "application_id": "rafeeq-bible-translation"
+}

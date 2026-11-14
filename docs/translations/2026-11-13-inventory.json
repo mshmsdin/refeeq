@@ -1,0 +1,3271 @@
+{
+  "prepared_on": "2026-11-14",
+  "translation_naming_policy": {
+    "human_translation_name": "ترجمة محمد بن شمس الدين",
+    "machine_translation_name": "ترجمة آلية",
+    "human_name_source_languages": [
+      "en"
+    ],
+    "machine_name_source_languages": [
+      "gez"
+    ],
+    "pending_language_evaluation": [
+      "grc",
+      "la",
+      "arc",
+      "syr"
+    ],
+    "policy_note_ar": "التصنيف بحسب لغة النص المستخدم مباشرةً للترجمة، لا لغة أصل العمل. الإنجليزية هي اللغة المعتمدة حالياً؛ الجعزية المباشرة تُوسم ترجمة آلية. اليونانية واللاتينية والآرامية والسريانية تنتظر تجربة موثقة قبل اختيار الاسم."
+  },
+  "scope": "Local database only; no claim that Arabic translations do not exist elsewhere. Counts include active foreign witnesses, not unique material to translate. Partial Arabic coverage and books without imported source text are outside this inventory.",
+  "rafeeq_revision": "261f0e62c5e5e14999301109ca0820084a634cde",
+  "summary": {
+    "books": 87,
+    "witnesses": 105,
+    "source_units_across_all_witnesses": 22726,
+    "source_characters_across_all_witnesses": 6621708,
+    "book_text_status": {
+      "complete": 76,
+      "partial": 11
+    },
+    "completeness_gate": {
+      "verified_complete": 2,
+      "blocked_partial": 11,
+      "pending_source_review": 74
+    },
+    "translation_progress": {
+      "book_code": "2MCE",
+      "generated_verses": 421,
+      "total_verses": 421,
+      "saved_batches": 36,
+      "human_review": "قوبلت مراجع الوحدات الـ٤٢١ بالمصدر بلا نقص أو زيادة أو تكرار. بقيت ست ملاحظات لغوية/مصدرية للمراجعة البشرية. لم تُستورد الترجمة أو تُنشر."
+    }
+  },
+  "books": [
+    {
+      "code": "1ES",
+      "name_ar": "عزرا الأول",
+      "local_text_status": "complete",
+      "original_language": "غير محسوم؛ النص الكامل الباقي متاح باليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "عُثر على ترجمة عربية كاملة باسم «ترجمة محمد بن شمس الدين» في واجهة البيبل المستقلة: ٩ إصحاحات و٤٤٨ عدداً؛ لم تُخدم صفحة عزرا الأول في مسار واجهة رفيق الرئيسية وقت الفحص (٤٠٤). لا تُنشأ ترجمة مكررة قبل حسم إعادة استخدام النص.",
+      "source_selection_status": "en-web وسيط الترجمة؛ الشاهد اليوناني الكامل الباقي متاح بطبعة برنتون 1851، ولم يُستورد بعد.",
+      "witnesses": [
+        {
+          "slug": "en-brenton",
+          "name_ar": "ترجمة برنتون الإنجليزية للسُّبعينية",
+          "language": "en",
+          "chapters": 9,
+          "units": 448,
+          "characters": 63434,
+          "sha256": "a9726866f5ef2e72d50f2598267edb47a0b48167f51726ffbd60e3ab93540020",
+          "translation_source_url": "https://ebible.org/Scriptures/eng-Brenton_vpl.zip",
+          "translation_notes": "ترجمة إنجليزية للسُّبعينية؛ تسجل كطبعة موازية ولا تستبدل الشاهد اليوناني.",
+          "book_source_name": "World English Bible Classic",
+          "book_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "book_source_notes": "مُضاف إلى كتالوج موقع البيبل فقط.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "en-web",
+          "name_ar": "البيبل العالمي الكلاسيكي",
+          "language": "en",
+          "chapters": 9,
+          "units": 448,
+          "characters": 61230,
+          "sha256": "d7c46b173af62c9b6ac96f369a219fefc8db3b23a78e16c5eeddfe75669b81ce",
+          "translation_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "translation_notes": "ترجمة إنجليزية عامة؛ تستخدم أيضاً لاستكمال الأعمال التي لا يتوفر لها عربي، ومنها عزرا الثاني عند وجوده في المصدر.",
+          "book_source_name": "World English Bible Classic",
+          "book_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "book_source_notes": "مُضاف إلى كتالوج موقع البيبل فقط.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "existing_complete_arabic_in_related_bible_api_do_not_duplicate",
+        "external_arabic_translation_review": "no online text found in initial checks; not exhaustive",
+        "execution": "draft_reviewed_by_model_pending_human_approval",
+        "draft_verses": 448,
+        "source_audit": "2026-11-14-source-audit.md",
+        "review_status_ar": "قوبلت الآيات 448/448 مبدئيًا بالشاهد الإنجليزي؛ النص يحتاج اعتمادًا بشريًا كاملًا ولا يجوز نشره الآن."
+      }
+    },
+    {
+      "code": "1MCE",
+      "name_ar": "المكابيون الإثيوبي الأول",
+      "local_text_status": "complete",
+      "original_language": "الجعزية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "عُثر على ترجمة عربية منشورة للوحدات الإنجليزية المجتمعية، لكن تغطيتها لا تطابق نص الجعزية ذي ٣٦ إصحاحاً: الجعزية ٧٦٢ وحدة، والإنجليزية ٧٥٦، والعربية ٧٥٨؛ بقيت خمسة مراجع جعزية بلا مقابل عربي مطابق. لا تُعدّ ترجمة كاملة للعمل قبل حسم اختلاف الشواهد.",
+      "source_selection_status": "en-wikisource-1-meqabyan audited; community translation, not a critical edition",
+      "witnesses": [
+        {
+          "slug": "en-wikisource-1-meqabyan",
+          "name_ar": "الترجمة الإنجليزية للمكابيان الإثيوبي الأول",
+          "language": "en",
+          "chapters": 7,
+          "units": 238,
+          "characters": 40001,
+          "sha256": "33aa6bdecfc24b9917082ea2cac498d66cdf44df961d570e379cb42744e7ea90",
+          "translation_source_url": "https://en.wikisource.org/w/api.php?action=parse&page=Translation%3A1_Meqabyan&prop=wikitext&format=json&origin=*",
+          "translation_notes": "ترجمة إنجليزية مجتمعية منشورة في ويكي مصدر عن أصل جعزي، بترخيص المشاع الإبداعي نسب المصنف-المشاركة بالمثل 4.0؛ ليست طبعة نقدية معيارية.",
+          "book_source_name": "Wikisource English 1 Meqabyan",
+          "book_source_url": "https://en.wikisource.org/w/api.php?action=parse&page=Translation%3A1_Meqabyan&prop=wikitext&format=json&origin=*",
+          "book_source_notes": "ترجمة إنجليزية مجتمعية منشورة في ويكي مصدر عن أصل جعزي، بترخيص المشاع الإبداعي نسب المصنف-المشاركة بالمثل 4.0؛ ليست طبعة نقدية معيارية.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "arabic_exists_but_incomplete_vs_geez_witness",
+        "database_status_is_not_approval": true,
+        "audited_source_units": 240,
+        "preexisting_imported_units": 238,
+        "chapter_counts": [
+          28,
+          28,
+          38,
+          37,
+          39,
+          38,
+          32
+        ],
+        "source_sha256": "5615a85aab3db5a116478c7e8c884a10f7c7d61ba7d5cbbb5fc8d13627461ed1",
+        "normalized_source_file": "sources/1mce-en-wikisource-normalized.json",
+        "request_batches": 19,
+        "execution": "draft_complete_for_human_review",
+        "generated_verses": 240,
+        "saved_batches": 19
+      }
+    },
+    {
+      "code": "2BAR",
+      "name_ar": "باروخ الثاني",
+      "local_text_status": "complete",
+      "original_language": "السريانية مع شواهد يونانية وآرامية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "عُثر على نص عربي مخطوط لباروخ الثاني في مخطوطة دير سانت كاترين العربية 589، وتعرض طبعة برِل 1986 النص العربي الكامل للرؤيا مع ترجمة مقابلة. تسجل الفهارس العربية للرؤيا والرسالة الملحقة؛ لم تُطابق وحداتها بعد مع تقسيم شاهد تشارلز ذي 87 إصحاحاً، فلا تُنشأ ترجمة كاملة مكررة قبل المقابلة.",
+      "source_selection_status": "en-charles-2-baruch-complete_87_chapters_697_units; external Arabic manuscript and scholarly edition require reference alignment before any generation",
+      "witnesses": [
+        {
+          "slug": "en-charles-2-baruch",
+          "name_ar": "الترجمة الإنجليزية لباروخ الثاني",
+          "language": "en",
+          "chapters": 87,
+          "units": 697,
+          "characters": 83750,
+          "sha256": "f101a404b27148cfef5f97ba9dd5ebe279f4ecf6f54f510a85e081771206aed0",
+          "translation_source_url": "https://intertextual.bible/read/2-baruch/1",
+          "translation_notes": "نص كامل مبني على ترجمة آر. هـ. تشارلز المنشورة سنة 1913 والمعلنة ملكاً عاماً في المصدر؛ يتضمن 87 إصحاحاً. لا توجد ترجمة عربية مدخلة في هذه المرحلة، وتُترك للمقارنة والترجمة اللاحقة.",
+          "book_source_name": "R. H. Charles English 2 Baruch",
+          "book_source_url": "https://intertextual.bible/read/2-baruch/1",
+          "book_source_notes": "نص كامل مبني على ترجمة آر. هـ. تشارلز المنشورة سنة 1913 والمعلنة ملكاً عاماً في المصدر؛ يتضمن 87 إصحاحاً. لا توجد ترجمة عربية مدخلة في هذه المرحلة، وتُترك للمقارنة والترجمة اللاحقة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "external_arabic_witness_found_pending_edition_alignment",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "2ES",
+      "name_ar": "عزرا الثاني",
+      "local_text_status": "complete",
+      "original_language": "العربية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "عُثر على ترجمة عربية منشورة في واجهة البيبل المستقلة؛ تغطي ٩٤٤/٩٤٤ وحدة للشاهد الإنجليزي. لا تُنشأ ترجمة مكررة قبل حسم إعادة استخدام النص في رفيق.",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-web",
+          "name_ar": "البيبل العالمي الكلاسيكي",
+          "language": "en",
+          "chapters": 16,
+          "units": 944,
+          "characters": 114498,
+          "sha256": "e7b5af88cc4730a5b1debab1991f5a2f52079f629759beb07221b48913423673",
+          "translation_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "translation_notes": "ترجمة إنجليزية عامة؛ تستخدم أيضاً لاستكمال الأعمال التي لا يتوفر لها عربي، ومنها عزرا الثاني عند وجوده في المصدر.",
+          "book_source_name": "World English Bible Classic",
+          "book_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "book_source_notes": "مُضاف إلى كتالوج موقع البيبل فقط.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "existing_complete_arabic_sibling_api",
+        "execution": "do_not_translate_until_two_variants_are_resolved",
+        "evidence": "2026-11-14-source-audit.md"
+      }
+    },
+    {
+      "code": "2MCE",
+      "name_ar": "المكابيون الإثيوبي الثاني",
+      "local_text_status": "complete",
+      "original_language": "الجعزية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "عُثر على ترجمة عربية منشورة في واجهة البيبل المستقلة؛ تغطي ٤٢١/٤٢١ وحدة للشاهد الإنجليزي. لا تُنشأ ترجمة مكررة قبل حسم إعادة استخدامها في رفيق.",
+      "source_selection_status": "en-wikisource-2-meqabyan audited against live imported witness",
+      "witnesses": [
+        {
+          "slug": "en-wikisource-2-meqabyan",
+          "name_ar": "الترجمة الإنجليزية للمكابيان الإثيوبي الثاني",
+          "language": "en",
+          "chapters": 21,
+          "units": 421,
+          "characters": 71092,
+          "sha256": "51c64f57d3bf57592839651226f2afb05610cfed090fd99da374cee7067a7cc9",
+          "translation_source_url": "https://en.wikisource.org/w/api.php?action=parse&page=Translation%3A2_Meqabyan&prop=wikitext&format=json&origin=*",
+          "translation_notes": "Community translation from Ge ez, not a critical edition; licensed CC BY-SA 4.0; keep attribution and share-alike terms.",
+          "book_source_name": "Wikisource English 2 Meqabyan",
+          "book_source_url": "https://en.wikisource.org/w/api.php?action=parse&page=Translation%3A2_Meqabyan&prop=wikitext&format=json&origin=*",
+          "book_source_notes": "ترجمة إنجليزية مجتمعية منشورة في ويكي مصدر عن أصل جعزي، بترخيص المشاع الإبداعي نسب المصنف-المشاركة بالمثل 4.0؛ ليست طبعة نقدية معيارية.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "existing_complete_arabic_sibling_api",
+        "database_status_is_not_approval": true,
+        "audited_source_units": 421,
+        "live_imported_units": 421,
+        "missing_refs": 0,
+        "extra_refs": 0,
+        "text_mismatches": 0,
+        "chapter_counts": [
+          13,
+          11,
+          29,
+          32,
+          18,
+          24,
+          8,
+          24,
+          27,
+          28,
+          25,
+          15,
+          14,
+          36,
+          21,
+          14,
+          12,
+          14,
+          15,
+          14,
+          27
+        ],
+        "source_sha256": "51c64f57d3bf57592839651226f2afb05610cfed090fd99da374cee7067a7cc9",
+        "normalized_source_file": "sources/2mce-en-wikisource-normalized.json",
+        "request_batches_prepared": 36,
+        "generated_verses": 421,
+        "saved_batches": 36,
+        "estimated_model_cost_usd": 0.0204476,
+        "execution": "draft_complete_for_human_review",
+        "pending_next_range": "اكتملت وحدات المصدر الـ٤٢١؛ بقيت المراجعة البشرية المستقلة قبل الاستيراد أو النشر.",
+        "source_numbering_note": "Chapter 16 jumps from verse 8 to 10 in the original Wikisource text and the live Rafiq English witness; no verse 9 is present in the selected edition.",
+        "last_failure": "فشلت محاولة ٢١:١–١٦ الأولى برسالة ٥٠٣ بعد تعطل المزوّدات؛ نجحت إعادة طلب الوحدات الناقصة الخمس عشرة عبر جيميني ٣٫٥ فلاش لايت. استُبعد العدد ٢١:٢٨ من المسودة لأنه غير موجود في المصدر المحدد. كانت مخرجات كيوين السابقة مرفوضة ولم تُحسب.",
+        "model_fallback_order": [
+          "Gemini gemini-3.5-flash-lite",
+          "Groq openai/gpt-oss-120b",
+          "Mistral mistral-small-2603",
+          "Gemini gemini-3.8-flash",
+          "Groq qwen/qwen3.8-27b",
+          "Groq openai/gpt-oss-20b"
+        ],
+        "monthly_budget_usd": 25,
+        "human_review": "required; source references fully covered, six review notes remain",
+        "imported_or_published": false,
+        "rejected_batches": 1,
+        "rejected_verses": 14,
+        "draft_verses": 421,
+        "review_notes_count": 6
+      }
+    },
+    {
+      "code": "3BAR",
+      "name_ar": "باروخ الثالث",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "عُثر على ترجمة عربية منشورة في واجهة البيبل المستقلة؛ تغطي ١٧/١٧ وحدة للشاهد الإنجليزي. لا تُنشأ ترجمة مكررة قبل حسم إعادة استخدامها في رفيق.",
+      "source_selection_status": "en-wesley-center-3-baruch audited against live imported witness",
+      "witnesses": [
+        {
+          "slug": "en-wesley-center-3-baruch",
+          "name_ar": "الترجمة الإنجليزية لباروخ الثالث",
+          "language": "en",
+          "chapters": 17,
+          "units": 17,
+          "characters": 21545,
+          "sha256": "77912cadbb8f84c9f0cffa85a3484efcf86c7c25aa383ff6e3b27ad3334dd347",
+          "translation_source_url": "https://www.pseudepigrapha.com/pseudepigrapha/3Baruch.html",
+          "translation_notes": "ترجمة إنجليزية تاريخية للرؤيا اليونانية لباروخ الثالث في تحرير مركز ويسلي، من نص منظم يحفظ الفصول السبعة عشر. يحفظ المستورد وحدة نصية واحدة لكل فصل لأن المصدر يجمع أرقام الآيات داخل فقرات متصلة. يذكر المصدر قيداً تجارياً على النص، ولا توجد ترجمة عربية مدخلة في هذه المرحلة.",
+          "book_source_name": "Wesley Center English 3 Baruch",
+          "book_source_url": "https://www.pseudepigrapha.com/pseudepigrapha/3Baruch.html",
+          "book_source_notes": "ترجمة إنجليزية تاريخية للرؤيا اليونانية لباروخ الثالث في تحرير مركز ويسلي، من نص منظم يحفظ الفصول السبعة عشر. يحفظ المستورد وحدة نصية واحدة لكل فصل لأن المصدر يجمع أرقام الآيات داخل فقرات متصلة. يذكر المصدر قيداً تجارياً على النص، ولا توجد ترجمة عربية مدخلة في هذه المرحلة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "existing_complete_arabic_sibling_api",
+        "database_status_is_not_approval": true,
+        "audited_source_units": 17,
+        "live_imported_units": 17,
+        "missing_refs": 0,
+        "extra_refs": 0,
+        "text_mismatches": 0,
+        "chapter_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "source_sha256": "77912cadbb8f84c9f0cffa85a3484efcf86c7c25aa383ff6e3b27ad3334dd347",
+        "normalized_source_file": "sources/3bar-wesley-normalized.json",
+        "rights_review": "commercial_use_restricted; preserve notice; review before public release",
+        "execution": "audited_in_catalog_order",
+        "imported_or_published": false
+      }
+    },
+    {
+      "code": "3MA",
+      "name_ar": "المكابيين الثالث",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "عُثر على نص عربي كامل الفصول السبعة في نسخة سميث وفان دايك على موقع الكنوز القبطية. رُصدت 245 وحدة مرقمة عربياً؛ بينما يغطي كل من برنتون والعالم الإنجليزي 228 وحدة بتوزيع 29، 33، 30، 21، 51، 41، 23. الترقيم غير متطابق، ويلزم فحص مقابلة الوحدات قبل إعادة الاستخدام؛ لا تُرسل ترجمة مكررة الآن.",
+      "source_selection_status": "en-brenton and en-web each complete at 7 chapters/228 units; Arabic SVD witness covers chapters 1-7 but has 245 numbered units",
+      "witnesses": [
+        {
+          "slug": "en-brenton",
+          "name_ar": "ترجمة برنتون الإنجليزية للسُّبعينية",
+          "language": "en",
+          "chapters": 7,
+          "units": 228,
+          "characters": 38465,
+          "sha256": "e11d77440fc659b7e1e574b9e4ee79941b7d9146bd7dbf76105661c8e8133dd1",
+          "translation_source_url": "https://ebible.org/Scriptures/eng-Brenton_vpl.zip",
+          "translation_notes": "ترجمة إنجليزية للسُّبعينية؛ تسجل كطبعة موازية ولا تستبدل الشاهد اليوناني.",
+          "book_source_name": "World English Bible Classic",
+          "book_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "book_source_notes": "مُضاف إلى كتالوج موقع البيبل فقط.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "en-web",
+          "name_ar": "البيبل العالمي الكلاسيكي",
+          "language": "en",
+          "chapters": 7,
+          "units": 228,
+          "characters": 37911,
+          "sha256": "8dc458f3412b2a55b43e44d2984aa80793d1712d26b79e57619dd1065c622f72",
+          "translation_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "translation_notes": "ترجمة إنجليزية عامة؛ تستخدم أيضاً لاستكمال الأعمال التي لا يتوفر لها عربي، ومنها عزرا الثاني عند وجوده في المصدر.",
+          "book_source_name": "World English Bible Classic",
+          "book_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "book_source_notes": "مُضاف إلى كتالوج موقع البيبل فقط.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "external_arabic_full_chapter_text_found_pending_reference_alignment",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "3MCE",
+      "name_ar": "المكابيون الإثيوبي الثالث",
+      "local_text_status": "complete",
+      "original_language": "الجعزية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "عُثر على ترجمة عربية منشورة في واجهة البيبل المستقلة؛ تغطي ٢٠٨/٢٠٨ وحدات للشاهد الإنجليزي من المكابيين الإثيوبي الثالث. صفحة الكنوز القبطية التي تحمل اسم المكابيين الثالث تخص السفر اليوناني المختلف ولا تُحسب لهذا العمل.",
+      "source_selection_status": "en-wikisource-3-meqabyan audited against live imported witness; translation deferred until 2MCE draft completes",
+      "witnesses": [
+        {
+          "slug": "en-wikisource-3-meqabyan",
+          "name_ar": "الترجمة الإنجليزية للمكابيان الإثيوبي الثالث",
+          "language": "en",
+          "chapters": 10,
+          "units": 208,
+          "characters": 38910,
+          "sha256": "bdfa19fd4690f7817f8a3f6d777df8db6f4975af1d45ef5e6287637943848d01",
+          "translation_source_url": "https://en.wikisource.org/w/api.php?action=parse&page=Translation%3A3_Meqabyan&prop=wikitext&format=json&origin=*",
+          "translation_notes": "ترجمة إنجليزية مجتمعية منشورة في ويكي مصدر عن أصل جعزي، بترخيص المشاع الإبداعي نسب المصنف-المشاركة بالمثل 4.0؛ ليست طبعة نقدية معيارية.",
+          "book_source_name": "Wikisource English 3 Meqabyan",
+          "book_source_url": "https://en.wikisource.org/w/api.php?action=parse&page=Translation%3A3_Meqabyan&prop=wikitext&format=json&origin=*",
+          "book_source_notes": "ترجمة إنجليزية مجتمعية منشورة في ويكي مصدر عن أصل جعزي، بترخيص المشاع الإبداعي نسب المصنف-المشاركة بالمثل 4.0؛ ليست طبعة نقدية معيارية.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "existing_complete_arabic_sibling_api",
+        "database_status_is_not_approval": true,
+        "audited_source_units": 208,
+        "live_imported_units": 208,
+        "missing_refs": 0,
+        "extra_refs": 0,
+        "text_mismatches": 0,
+        "chapter_counts": [
+          24,
+          23,
+          11,
+          36,
+          16,
+          16,
+          5,
+          12,
+          36,
+          29
+        ],
+        "source_sha256": "bdfa19fd4690f7817f8a3f6d777df8db6f4975af1d45ef5e6287637943848d01",
+        "normalized_source_file": "sources/3mce-en-wikisource-normalized.json",
+        "execution": "preexisting_local_arabic_candidate_pending_human_review_and_provenance",
+        "draft_verses": 208,
+        "saved_batches": 1,
+        "human_review": "required",
+        "imported_or_published": false,
+        "existing_candidate_file": "server/importers/data/ar-mohammad/3mce.json",
+        "existing_candidate_reference_audit": {
+          "source_units": 208,
+          "arabic_units": 208,
+          "missing_refs": 0,
+          "extra_refs": 0,
+          "duplicate_refs": 0,
+          "empty_texts": 0,
+          "live_english_match": {
+            "missing_refs": 0,
+            "extra_refs": 0,
+            "text_mismatches": 0
+          }
+        },
+        "sanad_sample_comparison": {
+          "units": 15,
+          "identical_texts": 15,
+          "different_texts": 0
+        },
+        "sanad_generated_verses": 15,
+        "provider_model_provenance": "غير موثق للـ193 وحدة الباقية في ملف الاستيراد المحلي؛ لا تُنسب إلى نموذج بعينه."
+      }
+    },
+    {
+      "code": "4BAR",
+      "name_ar": "باروخ الرابع (بقيّة كلمات إرميا)",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "Initial Arabic and title searches found no Arabic text. Two scholarly source lists name Greek, Ethiopic, Armenian, Slavonic, and Romanian witnesses but no Arabic witness; absence is not exhaustive.",
+      "source_selection_status": "en-kraft-4-baruch-longer audited against live imported witness",
+      "witnesses": [
+        {
+          "slug": "en-kraft-4-baruch-longer",
+          "name_ar": "الترجمة الإنجليزية الأطول لباروخ الرابع",
+          "language": "en",
+          "chapters": 9,
+          "units": 197,
+          "characters": 25349,
+          "sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+          "translation_source_url": "https://intertextual.bible/read/4-baruch/1",
+          "translation_notes": "طبعة مركز تحليل النصوص بالحاسوب (جامعة بنسلفانيا)، تحرير روبرت كرافت، ١٥ ديسمبر ١٩٨٧؛ النسخة الأطول مبنية على ترجمة روبرت كرافت وآن إليزابيث بورنتن المنشورة سنة ١٩٧٢. يصرح المصدر بإتاحتها للاستخدام غير التجاري بشرط إرفاق هذا التنبيه كاملاً مع كل نسخة موزعة والإبلاغ عن الأخطاء والتصحيحات والمشكلات إلى الموزع: English Translation of the Longer and Shorter Versions of the Paraleipomena Jeremiou: Public Domain CATSS edition by Robert A. Kraft, 15 Dec 1987. Filesize uncompressed: about 48 K. Freely available for non-commercial use provided that this header is included in its entirety with any copy distributed and that errors/corrections or other problems are reported to the distributor: Center for Computer Analysis of Texts Religious Studies / Cohen Hall, University of Pennsylvania, Philadelphia PA 19104-6304 USA. The Longer Version is based on Paraleipomena Jeremiou: An English Translation, by Robert Kraft and Ann Elizabeth Purintun (Seminar Papers of the Society of Biblical Literature for 1971, vol. 2; SBL, 1971, 327-346), which appeared in slightly revised form in their 1972 edition of Paraleipomena Jeremiou (Texts and Translations 1: Pseudepigrapha Series 1; Missoula Montana: Scholars Press for the SBL, 1972). The Shorter Version was translated by William Newby and edited for electronic publication by Robert Kraft. Both Versions were included on the Experimental CD-ROM #1 published by the Packard Humanities Institute in cooperation with CCAT in December 1987.",
+          "book_source_name": "Kraft and Purintun English 4 Baruch (Longer Version)",
+          "book_source_url": "https://intertextual.bible/read/4-baruch/1",
+          "book_source_notes": "طبعة مركز تحليل النصوص بالحاسوب (جامعة بنسلفانيا)، تحرير روبرت كرافت، ١٥ ديسمبر ١٩٨٧؛ النسخة الأطول مبنية على ترجمة روبرت كرافت وآن إليزابيث بورنتن المنشورة سنة ١٩٧٢. يصرح المصدر بإتاحتها للاستخدام غير التجاري بشرط إرفاق هذا التنبيه كاملاً مع كل نسخة موزعة والإبلاغ عن الأخطاء والتصحيحات والمشكلات إلى الموزع: English Translation of the Longer and Shorter Versions of the Paraleipomena Jeremiou: Public Domain CATSS edition by Robert A. Kraft, 15 Dec 1987. Filesize uncompressed: about 48 K. Freely available for non-commercial use provided that this header is included in its entirety with any copy distributed and that errors/corrections or other problems are reported to the distributor: Center for Computer Analysis of Texts Religious Studies / Cohen Hall, University of Pennsylvania, Philadelphia PA 19104-6304 USA. The Longer Version is based on Paraleipomena Jeremiou: An English Translation, by Robert Kraft and Ann Elizabeth Purintun (Seminar Papers of the Society of Biblical Literature for 1971, vol. 2; SBL, 1971, 327-346), which appeared in slightly revised form in their 1972 edition of Paraleipomena Jeremiou (Texts and Translations 1: Pseudepigrapha Series 1; Missoula Montana: Scholars Press for the SBL, 1972). The Shorter Version was translated by William Newby and edited for electronic publication by Robert Kraft. Both Versions were included on the Experimental CD-ROM #1 published by the Packard Humanities Institute in cooperation with CCAT in December 1987.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "passed_source_import_and_live_witness_match",
+        "database_status_is_not_approval": true,
+        "audited_source_units": 197,
+        "live_imported_units": 197,
+        "missing_refs": 0,
+        "extra_refs": 0,
+        "text_mismatches": 0,
+        "chapter_counts": [
+          12,
+          10,
+          22,
+          12,
+          35,
+          25,
+          37,
+          12,
+          32
+        ],
+        "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+        "normalized_source_file": "sources/4bar-kraft-longer-normalized.json",
+        "rights_review": "noncommercial_only_notice_must_be_preserved",
+        "execution": "draft_machine_translation_complete_pending_human_review",
+        "draft_verses": 197,
+        "draft_batches": 43,
+        "draft_providers": [
+          "Gemini 3.5 Flash Lite",
+          "Groq free tier"
+        ],
+        "draft_estimated_cost_usd": 0.0336838,
+        "draft_review_status_ar": "المسودة الآلية تغطي ١٩٧/١٩٧ وحدة بمراجع فريدة بلا نص فارغ. لم تخضع لمراجعة بشرية، ولم تُستورد أو تُنشر. يجب حفظ إشعار الاستخدام غير التجاري كاملاً مع أي نسخة توزّع.",
+        "imported_or_published": false
+      }
+    },
+    {
+      "code": "4MA",
+      "name_ar": "المكابيين الرابع",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "ثبت نص عربي جزئي في ويكي مصدر: يظهر نص الإصحاح الأول والسادس عشر فقط، مع عناوين الإصحاحات الأخرى بلا متن. وتعرض صفحة أورسو زوكس مادة عن السفر وتذكر ترجمة عربية، لكن الوصول المباشر محجوب ولم يُتحقق من اكتمال متنها؛ لا تُرسل ترجمة مكررة قبل حسم ذلك.",
+      "source_selection_status": "Brenton 18 chapters/480 units and WEB 18 chapters/484 units; reference division and live witness match not yet audited",
+      "witnesses": [
+        {
+          "slug": "en-brenton",
+          "name_ar": "ترجمة برنتون الإنجليزية للسُّبعينية",
+          "language": "en",
+          "chapters": 18,
+          "units": 480,
+          "characters": 58110,
+          "sha256": "ced0c956bf6169b880d34968d373bbe7886417c2335dff1ef818f90ae3ec4d7c",
+          "translation_source_url": "https://ebible.org/Scriptures/eng-Brenton_vpl.zip",
+          "translation_notes": "ترجمة إنجليزية للسُّبعينية؛ تسجل كطبعة موازية ولا تستبدل الشاهد اليوناني.",
+          "book_source_name": "World English Bible Classic",
+          "book_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "book_source_notes": "مُضاف إلى كتالوج موقع البيبل فقط.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "en-web",
+          "name_ar": "البيبل العالمي الكلاسيكي",
+          "language": "en",
+          "chapters": 18,
+          "units": 484,
+          "characters": 57243,
+          "sha256": "e1b9d15dd5328d8802350a495026f94c0b48ed5ffdbd31b80534cad2c69a747b",
+          "translation_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "translation_notes": "ترجمة إنجليزية عامة؛ تستخدم أيضاً لاستكمال الأعمال التي لا يتوفر لها عربي، ومنها عزرا الثاني عند وجوده في المصدر.",
+          "book_source_name": "World English Bible Classic",
+          "book_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "book_source_notes": "مُضاف إلى كتالوج موقع البيبل فقط.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "AABR",
+      "name_ar": "وصية إبراهيم",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "Historical Arabic version documented, comprising Testaments of Abraham, Isaac, and Jacob; the searched edition provides extracts from an Arabic manuscript. No complete online Arabic text found in initial checks.",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-craigie-testament-abraham-version-1",
+          "name_ar": "الترجمة الإنجليزية لوصية إبراهيم، النسخة الأولى",
+          "language": "en",
+          "chapters": 20,
+          "units": 20,
+          "characters": 41726,
+          "sha256": "9e6debc9d951f10b5fb93495294aef5f6c2d3d08364a6f7eb3c35f49a0f8bb2f",
+          "translation_source_url": "https://www.newadvent.org/fathers/1007.htm",
+          "translation_notes": "ترجمة دبليو. أ. كريغي المنشورة في آباء ما قبل نيقية، وتعرض النسخة الأولى من وصية إبراهيم في ٢٠ مقطعاً مرقماً؛ يحفظها المستورد مستقلة عن النسخة الثانية.",
+          "book_source_name": "W. A. Craigie English Testament of Abraham, Version 2",
+          "book_source_url": "https://www.newadvent.org/fathers/1007.htm",
+          "book_source_notes": "ترجمة دبليو. أ. كريغي المنشورة في آباء ما قبل نيقية، وتعرض النسخة الثانية من وصية إبراهيم في ١٥ مقطعاً مرقماً؛ تحفظ منفصلة لأن النسختين تختلفان في الطول والترتيب.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "en-craigie-testament-abraham-version-2",
+          "name_ar": "الترجمة الإنجليزية لوصية إبراهيم، النسخة الثانية",
+          "language": "en",
+          "chapters": 15,
+          "units": 15,
+          "characters": 18877,
+          "sha256": "b64ab5e9349746afd07dc1690feff2e8d45681e9550a049703370df92140921d",
+          "translation_source_url": "https://www.newadvent.org/fathers/1007.htm",
+          "translation_notes": "ترجمة دبليو. أ. كريغي المنشورة في آباء ما قبل نيقية، وتعرض النسخة الثانية من وصية إبراهيم في ١٥ مقطعاً مرقماً؛ تحفظ منفصلة لأن النسختين تختلفان في الطول والترتيب.",
+          "book_source_name": "W. A. Craigie English Testament of Abraham, Version 2",
+          "book_source_url": "https://www.newadvent.org/fathers/1007.htm",
+          "book_source_notes": "ترجمة دبليو. أ. كريغي المنشورة في آباء ما قبل نيقية، وتعرض النسخة الثانية من وصية إبراهيم في ١٥ مقطعاً مرقماً؛ تحفظ منفصلة لأن النسختين تختلفان في الطول والترتيب.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "not_eligible_pending_scope_definition",
+        "database_status_is_not_approval": true,
+        "external_arabic_version_documented": true,
+        "arabic_in_local_database": false,
+        "source": "Arabic version of the Testaments of Abraham, Isaac and Jacob, recorded by G. H. Box with excerpts from the manuscript",
+        "execution": "do_not_translate_under_global_no_arabic_scope",
+        "evidence_url": "https://www.gospelstudies.org.uk/earlychurch/pdf/e-books/box_g-h/testament-of-abraham_box.pdf"
+      }
+    },
+    {
+      "code": "ABR",
+      "name_ar": "رؤيا إبراهيم",
+      "local_text_status": "complete",
+      "original_language": "السلافية الكنسية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "No Arabic text found in initial searches; scholarly sources report that the extant Apocalypse of Abraham survives only in Slavonic manuscripts. This is distinct from the Testament of Abraham, which does have an Arabic version.",
+      "source_selection_status": "en-pseudepigrapha-apocalypse-abraham audited against live imported witness; anonymous-source rights require review",
+      "witnesses": [
+        {
+          "slug": "en-pseudepigrapha-apocalypse-abraham",
+          "name_ar": "الترجمة الإنجليزية لرؤيا إبراهيم",
+          "language": "en",
+          "chapters": 32,
+          "units": 302,
+          "characters": 34854,
+          "sha256": "4e934e2ebab18eaaa5d33ad7eb1f6da9986ad65c0bf3898257a6e5e79b484921",
+          "translation_source_url": "https://www.pseudepigrapha.com/pseudepigrapha/Apocalypse_of_Abraham.html",
+          "translation_notes": "طبعة ويب تعرض ترجمتين إنجليزيتين مجهولتي المترجم؛ أُدخل العمود الأول وحده في ٣٢ إصحاحاً و٣٠٢ وحدة، مع إبقاء النص منفصلاً عن أي ترجمة عربية لاحقة.",
+          "book_source_name": "English Apocalypse of Abraham",
+          "book_source_url": "https://www.pseudepigrapha.com/pseudepigrapha/Apocalypse_of_Abraham.html",
+          "book_source_notes": "طبعة ويب تعرض ترجمتين إنجليزيتين مجهولتي المترجم؛ أُدخل العمود الأول وحده في ٣٢ إصحاحاً و٣٠٢ وحدة، مع إبقاء النص منفصلاً عن أي ترجمة عربية لاحقة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "passed_source_import_and_live_witness_match",
+        "database_status_is_not_approval": true,
+        "audited_source_units": 302,
+        "live_imported_units": 302,
+        "missing_refs": 0,
+        "extra_refs": 0,
+        "text_mismatches": 0,
+        "chapter_counts": [
+          9,
+          9,
+          8,
+          6,
+          13,
+          16,
+          12,
+          6,
+          9,
+          15,
+          6,
+          8,
+          13,
+          12,
+          7,
+          4,
+          19,
+          14,
+          8,
+          6,
+          7,
+          3,
+          14,
+          9,
+          6,
+          6,
+          12,
+          4,
+          20,
+          8,
+          8,
+          5
+        ],
+        "source_sha256": "4e934e2ebab18eaaa5d33ad7eb1f6da9986ad65c0bf3898257a6e5e79b484921",
+        "normalized_source_file": "sources/abr-pseudepigrapha-normalized.json",
+        "rights_review": "anonymous source translator and exact provenance unresolved; internal draft only",
+        "execution": "audited_in_catalog_order_after_4BAR",
+        "imported_or_published": false
+      }
+    },
+    {
+      "code": "ACTTHOM",
+      "name_ar": "أعمال توما",
+      "local_text_status": "complete",
+      "original_language": "السريانية واليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "Arabic Acts of Thomas versions (Arabic 1 and Arabic 2) are documented; these are textual adaptations whose coverage differs from the Greek/Syriac witness in Rafiq. Excluded from the global no-Arabic scope pending edition-level comparison.",
+      "source_selection_status": "Arabic versions documented; do not start duplicate translation before version scope comparison",
+      "witnesses": [
+        {
+          "slug": "en-james-acts-thomas",
+          "name_ar": "ترجمة جيمس الإنجليزية لأعمال توما",
+          "language": "en",
+          "chapters": 14,
+          "units": 170,
+          "characters": 205076,
+          "sha256": "ad3f048e324e6a3fa3f4a984c6f7d455a62c1f7a231ec1ad86bc5557aa2bdf13",
+          "translation_source_url": "http://www.gnosis.org/library/actthom.htm",
+          "translation_notes": "ترجمة مونتاغيو رودس جيمس، العهد الجديد الأبوكريفي، أكسفورد، ١٩٢٤. النص الرقمي المصحح لدى مكتبة الجمعية الغنوصية؛ ١٧٠ قسماً مرقماً موزعة على الأجزاء الثلاثة عشر والاستشهاد. تحفظ أرقام الأقسام الأصلية عبر الأجزاء، وتعليقات الطبعة والقراءات البديلة. النص القديم ملك عام؛ لا تشمل الإضافة مقدمات محرري الموقع الحديثة.",
+          "book_source_name": "M. R. James English Acts of Thomas",
+          "book_source_url": "http://www.gnosis.org/library/actthom.htm",
+          "book_source_notes": "ترجمة مونتاغيو رودس جيمس، العهد الجديد الأبوكريفي، أكسفورد، ١٩٢٤. النص الرقمي المصحح لدى مكتبة الجمعية الغنوصية؛ ١٧٠ قسماً مرقماً موزعة على الأجزاء الثلاثة عشر والاستشهاد. تحفظ أرقام الأقسام الأصلية عبر الأجزاء، وتعليقات الطبعة والقراءات البديلة. النص القديم ملك عام؛ لا تشمل الإضافة مقدمات محرري الموقع الحديثة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "not_eligible_arabic_witnesses_documented",
+        "database_status_is_not_approval": true,
+        "execution": "do_not_translate_until_arabic_versions_compared"
+      }
+    },
+    {
+      "code": "ADAMCON",
+      "name_ar": "صراع آدم وحواء مع الشيطان",
+      "local_text_status": "complete",
+      "original_language": "الجعزية بوسيط عربي",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "Arabic textual tradition documented; scholarship describes the Ethiopic work as translated from Arabic. Excluded from the global no-Arabic scope.",
+      "source_selection_status": "Arabic tradition documented; no new translation under global no-Arabic scope",
+      "witnesses": [
+        {
+          "slug": "en-malan-conflict-adam-eve",
+          "name_ar": "ترجمة سليمان مالان الإنجليزية لصراع آدم وحواء",
+          "language": "en",
+          "chapters": 105,
+          "units": 105,
+          "characters": 369483,
+          "sha256": "5a2aa3fac99e96a5c136fc27d1678783874ec1a71f74fa868b23941b2c47e567",
+          "translation_source_url": "https://www.pseudepigrapha.com/pseudepigrapha/ConflictOfAdamEve/AdamEveConflict.html",
+          "translation_notes": "ترجمة سليمان مالان المنشورة سنة 1882 عن التقليد الإثيوبي. يضم العمل أربعة كتب؛ النسخة الرقمية تعرض 105 عناوين فصول فعلية، وقد أزيل تكرار طباعي متتالٍ في عنوان الفصل 26.",
+          "book_source_name": "S. C. Malan English Conflict of Adam and Eve",
+          "book_source_url": "https://www.pseudepigrapha.com/pseudepigrapha/ConflictOfAdamEve/AdamEveConflict.html",
+          "book_source_notes": "ترجمة سليمان مالان المنشورة سنة 1882 عن التقليد الإثيوبي. يضم العمل أربعة كتب؛ النسخة الرقمية تعرض 105 عناوين فصول فعلية، وقد أزيل تكرار طباعي متتالٍ في عنوان الفصل 26.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "not_eligible_arabic_original_or_witness_documented",
+        "database_status_is_not_approval": true,
+        "execution": "do_not_translate_under_global_no_arabic_scope"
+      }
+    },
+    {
+      "code": "AHIKAR",
+      "name_ar": "قصة أخيقار",
+      "local_text_status": "complete",
+      "original_language": "الآرامية مع صيغ سريانية وعربية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "Arabic manuscript tradition documented by the Göttingen critical project, including long narrative manuscripts and fragments. Excluded from the global no-Arabic scope.",
+      "source_selection_status": "Arabic tradition documented; no new translation under global no-Arabic scope",
+      "witnesses": [
+        {
+          "slug": "en-charles-story-ahikar",
+          "name_ar": "ترجمة تشارلز الإنجليزية لقصة أخيقار",
+          "language": "en",
+          "chapters": 1,
+          "units": 1,
+          "characters": 65455,
+          "sha256": "b6d5303053ccec95f25b29d73da1f4a20563e1f1cf00703c005fd651f8544dcd",
+          "translation_source_url": "https://www.pseudepigrapha.com/pseudepigrapha/ahikar.htm",
+          "translation_notes": "نص إنجليزي تاريخي لقصة أخيقار وأمثاله؛ لا يقدم المصدر تقسيم فصول موحداً، لذا يحفظ النص الكامل في فصل واحد دون اختراع ترقيم.",
+          "book_source_name": "R. H. Charles English Story of Ahikar",
+          "book_source_url": "https://www.pseudepigrapha.com/pseudepigrapha/ahikar.htm",
+          "book_source_notes": "نص إنجليزي تاريخي لقصة أخيقار وأمثاله؛ لا يقدم المصدر تقسيم فصول موحداً، لذا يحفظ النص الكامل في فصل واحد دون اختراع ترقيم.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "not_eligible_arabic_witnesses_documented",
+        "database_status_is_not_approval": true,
+        "execution": "do_not_translate_under_global_no_arabic_scope"
+      }
+    },
+    {
+      "code": "AMRAM",
+      "name_ar": "رؤى عمرام",
+      "local_text_status": "partial",
+      "original_language": "الآرامية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "no_complete_arabic_text_found_in_targeted_search; broader search ongoing",
+      "source_selection_status": "selected_ccel_1887_reprint_of_1840_translation",
+      "witnesses": [
+        {
+          "slug": "arc-ocp-visions-amram",
+          "name_ar": "الشاهد الآرامي لرؤى عمرام",
+          "language": "arc",
+          "chapters": 2,
+          "units": 24,
+          "characters": 697,
+          "sha256": "acb76476caa568c14147f99d01a3b00abfe3c3dcf6f30bafd58175b7b94ca5d1",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Amram.xml",
+          "translation_notes": "شاهد آرامي من مخطوطات البحر الميت في طبعة OCP؛ وحداته مجزأة ولا تمثل كتاباً متصلاً كاملاً.",
+          "book_source_name": "OCP English Translation of Visions of Amram",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Amram.xml",
+          "book_source_notes": "ترجمة OCP الإنجليزية للشواهد الآرامية المجزأة؛ تعرض منفصلة عن النص الأصلي.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "en-ocp-visions-amram",
+          "name_ar": "الترجمة الإنجليزية لرؤى عمرام",
+          "language": "en",
+          "chapters": 2,
+          "units": 24,
+          "characters": 1272,
+          "sha256": "c4ad0b104e93e370cdeda39f714c727764c9708c954732d63b3a56f8cc499f0e",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Amram.xml",
+          "translation_notes": "ترجمة OCP الإنجليزية للشواهد الآرامية المجزأة؛ تعرض منفصلة عن النص الأصلي.",
+          "book_source_name": "OCP English Translation of Visions of Amram",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Amram.xml",
+          "book_source_notes": "ترجمة OCP الإنجليزية للشواهد الآرامية المجزأة؛ تعرض منفصلة عن النص الأصلي.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_partial",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "APDAN",
+      "name_ar": "رؤيا دانيال اليونانية",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "grc-ocp-apocalypse-daniel",
+          "name_ar": "الشاهد اليوناني لرؤيا دانيال",
+          "language": "grc",
+          "chapters": 13,
+          "units": 170,
+          "characters": 13210,
+          "sha256": "d12896050447cc3a920d8cd5fac2095e8e853044afbdcd49708a1d6213509173",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/ApDan.xml",
+          "translation_notes": "طبعة OCP للشاهد اليوناني، وتحفظ الفصول ٢–١٤ من المصدر بترقيم العرض الداخلي ١–١٣.",
+          "book_source_name": "OCP Greek Apocalypse of Daniel",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/ApDan.xml",
+          "book_source_notes": "طبعة OCP للشاهد اليوناني، وتحفظ الفصول ٢–١٤ من المصدر بترقيم العرض الداخلي ١–١٣.",
+          "rights_review": "Wikisource index is unreviewed; not selected"
+        },
+        {
+          "slug": "jasher-ccel-1887-reprint",
+          "name_ar": "طبعة ١٨٨٧ الإنجليزية المعيدة لترجمة ١٨٤٠",
+          "language": "en",
+          "chapters": 91,
+          "units": 3910,
+          "characters": 772446,
+          "sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+          "translation_source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+          "translation_notes": "إعادة طبع ١٨٨٧ للنص الذي يعرّفه المصدر بأنه ترجمة ١٨٤٠ من العبرية؛ اختير الشاهد كاملاً بعد مطابقة عدد فقرات كل فصل مع مراجع رفيق. بقيت سبعة فروق لفظية عن تفريغ ويكي مصدر، إضافة إلى ٧١ علامة حاشية؛ لم تُخلط النسختان.",
+          "book_source_name": "Jasher 1840 English translation, CCEL 1887 exact-edition reprint",
+          "book_source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+          "book_source_notes": "المصدر يعرّفها بأنها إعادة طبع ١٨٨٧ للنص المترجم سنة ١٨٤٠.",
+          "rights_review": "Public-domain 1840 translation; 1887 reprint"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "complete_selected_CCEL_1887_91_chapters_3910_units_reference_aligned",
+        "database_status_is_not_approval": true,
+        "draft_units": 10,
+        "draft_status": "machine_second_pass_pending_human"
+      }
+    },
+    {
+      "code": "APDANC",
+      "name_ar": "رؤيا دانيال القبطية (الرؤيا الرابعة عشرة)",
+      "local_text_status": "complete",
+      "original_language": "القبطية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-pearse-coptic-apocalypse-daniel-public-domain",
+          "name_ar": "ترجمة روجر بيرس الإنجليزية عن الفرنسية لرؤيا دانيال القبطية",
+          "language": "en",
+          "chapters": 1,
+          "units": 28,
+          "characters": 9573,
+          "sha256": "4e509428e3a77a3b7c3c443b078291b9f215eb55996c2d94ebf05610f9fdf66a",
+          "translation_source_url": "https://www.tertullian.org/fathers/apocalypse_of_daniel_coptic_02_text.htm",
+          "translation_notes": "النص الكامل للرؤيا الرابعة عشرة لدانيال كما في الشاهد القبطي، في ترجمة روجر بيرس الإنجليزية المنشورة سنة ٢٠٠٩ عن ترجمة فريدريك ماكلير الفرنسية لعام ١٨٩٦؛ يصف بيرس ترجمته بأنها تقريبية ومنخفضة القيمة العلمية، لذا لا تُعرض على أنها ترجمة مباشرة عن القبطية أو طبعة علمية. حُفظ المتن المرقم ١–٢٨ في ٢٨ وحدة، واستُبعدت مقدمة بيرس والحواشي التفسيرية. يصرح المصدر بأن الملف ومادته ملك عام.",
+          "book_source_name": "Roger Pearse Public-Domain English Coptic Apocalypse of Daniel",
+          "book_source_url": "https://www.tertullian.org/fathers/apocalypse_of_daniel_coptic_02_text.htm",
+          "book_source_notes": "النص الكامل للرؤيا الرابعة عشرة لدانيال كما في الشاهد القبطي، في ترجمة روجر بيرس الإنجليزية المنشورة سنة ٢٠٠٩ عن ترجمة فريدريك ماكلير الفرنسية لعام ١٨٩٦؛ يصف بيرس ترجمته بأنها تقريبية ومنخفضة القيمة العلمية، لذا لا تُعرض على أنها ترجمة مباشرة عن القبطية أو طبعة علمية. حُفظ المتن المرقم ١–٢٨ في ٢٨ وحدة، واستُبعدت مقدمة بيرس والحواشي التفسيرية. يصرح المصدر بأن الملف ومادته ملك عام.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "APEP",
+      "name_ar": "رؤيا بطرس",
+      "local_text_status": "partial",
+      "original_language": "اليونانية والجعزية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-mr-james-apocalypse-peter",
+          "name_ar": "الترجمة الإنجليزية لرؤيا بطرس",
+          "language": "en",
+          "chapters": 1,
+          "units": 1,
+          "characters": 59602,
+          "sha256": "3246e7c8967ef9dc9f55ac2fe17d5c79ad88e6c71a690c5b33e091c4f2565299",
+          "translation_source_url": "https://www.earlychristianwritings.com/text/apocalypsepeter-mrjames.html",
+          "translation_notes": "ترجمة تاريخية لشواهد رؤيا بطرس اليونانية والإثيوبية؛ المصدر نفسه يذكر اختلاف الشواهد وعدم اكتمال النص، لذلك تحفظ المادة كشاهد مجزأ في وحدة واحدة.",
+          "book_source_name": "M. R. James English Apocalypse of Peter",
+          "book_source_url": "https://www.earlychristianwritings.com/text/apocalypsepeter-mrjames.html",
+          "book_source_notes": "ترجمة تاريخية لشواهد رؤيا بطرس اليونانية والإثيوبية؛ المصدر نفسه يذكر اختلاف الشواهد وعدم اكتمال النص، لذلك تحفظ المادة كشاهد مجزأ في وحدة واحدة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_partial",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "APET",
+      "name_ar": "أعمال بطرس",
+      "local_text_status": "partial",
+      "original_language": "اليونانية واللاتينية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-mr-james-acts-peter",
+          "name_ar": "الترجمة الإنجليزية لأعمال بطرس",
+          "language": "en",
+          "chapters": 1,
+          "units": 1,
+          "characters": 111468,
+          "sha256": "05ca715e12a093b8779fdef587b16e489ab3a609d7b087d0e7be48f8e26d4841",
+          "translation_source_url": "https://www.earlychristianwritings.com/text/actspeter.html",
+          "translation_notes": "ترجمة تاريخية لشواهد أعمال بطرس؛ يحفظ الموقع النص المنشور في وحدة واحدة لأن الشواهد والتقسيمات تختلف، مع وسم العمل بأنه متعدد الأجزاء.",
+          "book_source_name": "M. R. James English Acts of Peter",
+          "book_source_url": "https://www.earlychristianwritings.com/text/actspeter.html",
+          "book_source_notes": "ترجمة تاريخية لشواهد أعمال بطرس؛ يحفظ الموقع النص المنشور في وحدة واحدة لأن الشواهد والتقسيمات تختلف، مع وسم العمل بأنه متعدد الأجزاء.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_partial",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "APEZRA",
+      "name_ar": "رؤيا عزرا اليونانية",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-walker-greek-apocalypse-ezra-1885",
+          "name_ar": "ترجمة ووكر الإنجليزية لرؤيا عزرا اليونانية",
+          "language": "en",
+          "chapters": 1,
+          "units": 1,
+          "characters": 16872,
+          "sha256": "94eb5cdb04e1ccf8779984346017b36099e2702fc38cdf407efd4f741418942b",
+          "translation_source_url": "https://www.tertullian.org/fathers2/ANF-08/anf08-106.htm",
+          "translation_notes": "ترجمة أ. ووكر الإنجليزية في آباء ما قبل نيقية، المجلد الثامن، طبعة ١٨٨٥، الصفحات ٥٧١–٥٧٤؛ النص الرقمي من نسخة الطبعة المنشورة لدى ترتليان. الترجمة مبنية على نص تيشندورف اليوناني، وتحفظ هنا كشاهد إنجليزي مستقل في فصل واحد لأن الطبعة لا تقسمه إلى فصول أو أعداد. لا تدّعي هذه الترجمة مطابقة سطرية لتقسيم OCP الحديث؛ النص الإنجليزي الكامل المتاح محفوظ من دون حواشي الطبعة.",
+          "book_source_name": "A. Walker English Greek Apocalypse of Ezra",
+          "book_source_url": "https://www.tertullian.org/fathers2/ANF-08/anf08-106.htm",
+          "book_source_notes": "ترجمة أ. ووكر الإنجليزية في آباء ما قبل نيقية، المجلد الثامن، طبعة ١٨٨٥، الصفحات ٥٧١–٥٧٤؛ النص الرقمي من نسخة الطبعة المنشورة لدى ترتليان. الترجمة مبنية على نص تيشندورف اليوناني، وتحفظ هنا كشاهد إنجليزي مستقل في فصل واحد لأن الطبعة لا تقسمه إلى فصول أو أعداد. لا تدّعي هذه الترجمة مطابقة سطرية لتقسيم OCP الحديث؛ النص الإنجليزي الكامل المتاح محفوظ من دون حواشي الطبعة.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "grc-ocp-greek-apocalypse-ezra",
+          "name_ar": "الشاهد اليوناني لرؤيا عزرا",
+          "language": "grc",
+          "chapters": 7,
+          "units": 219,
+          "characters": 16946,
+          "sha256": "422ae7bc9082e23dd25f4ba6cf9a531a8b328307273b76b019fc4da29789a950",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/ApEzra.xml",
+          "translation_notes": "نص يوناني من طبعة نقدية OCP، منفصل عن عزرا الثاني ورؤيا عزرا اللاتينية.",
+          "book_source_name": "A. Walker English Greek Apocalypse of Ezra",
+          "book_source_url": "https://www.tertullian.org/fathers2/ANF-08/anf08-106.htm",
+          "book_source_notes": "ترجمة أ. ووكر الإنجليزية في آباء ما قبل نيقية، المجلد الثامن، طبعة ١٨٨٥، الصفحات ٥٧١–٥٧٤؛ النص الرقمي من نسخة الطبعة المنشورة لدى ترتليان. الترجمة مبنية على نص تيشندورف اليوناني، وتحفظ هنا كشاهد إنجليزي مستقل في فصل واحد لأن الطبعة لا تقسمه إلى فصول أو أعداد. لا تدّعي هذه الترجمة مطابقة سطرية لتقسيم OCP الحديث؛ النص الإنجليزي الكامل المتاح محفوظ من دون حواشي الطبعة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "APJAMES",
+      "name_ar": "رؤيا يعقوب الرسول السريانية",
+      "local_text_status": "complete",
+      "original_language": "السريانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-harris-syriac-revelation-james",
+          "name_ar": "رؤيا يعقوب الرسول السريانية: ترجمة هاريس",
+          "language": "en",
+          "chapters": 1,
+          "units": 1,
+          "characters": 3029,
+          "sha256": "dcc7d87b50e6f7352fdc726fad93a7ba90f303b616fe88ed3f95654458a4a644",
+          "translation_source_url": "https://archive.org/details/cu31924029295819",
+          "translation_notes": "ترجمة ج. ريندل هاريس، طبعة ١٩٠٠، الصفحتان ٣٣–٣٤؛ مخطوط جامعة هارفرد السرياني ٩٣، الورقتان ٥٣ظ–٥٤و (هاريس ٨٥ سابقاً). راجعنا كل كلمة على صورة الصفحتين الممسوحتين. هذا عمل مستقل عن رؤيا يعقوب القبطية في مكتبة نجع حمادي، ولا يُدمج معها. نص الطبعة القديمة ملك عام.",
+          "book_source_name": "J. Rendel Harris English Syriac Revelation of James the Apostle",
+          "book_source_url": "https://archive.org/details/cu31924029295819",
+          "book_source_notes": "ترجمة ج. ريندل هاريس، طبعة ١٩٠٠، الصفحتان ٣٣–٣٤؛ مخطوط جامعة هارفرد السرياني ٩٣، الورقتان ٥٣ظ–٥٤و (هاريس ٨٥ سابقاً). راجعنا كل كلمة على صورة الصفحتين الممسوحتين. هذا عمل مستقل عن رؤيا يعقوب القبطية في مكتبة نجع حمادي، ولا يُدمج معها. نص الطبعة القديمة ملك عام.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "APMO",
+      "name_ar": "رؤيا موسى (الصيغة اليونانية)",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "searched_no_complete_arabic_text_found",
+      "source_selection_status": "selected_english_witness_pending_human_and_rights_review",
+      "witnesses": [
+        {
+          "slug": "en-wells-apocalypse-moses",
+          "name_ar": "رؤيا موسى (الصيغة اليونانية)",
+          "language": "en",
+          "chapters": 43,
+          "units": 158,
+          "characters": 26437,
+          "sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+          "translation_source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+          "translation_notes": "ترجمة ويليامز ويلز ضمن طبعة تشارلز لسنة 1913؛ العمل هو الصيغة اليونانية من حياة آدم وحواء، مستقلة عن حياة آدم وحواء اللاتينية (TADAM) وعن وصية/صعود موسى (MOS).",
+          "book_source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+          "book_source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+          "book_source_notes": "ترجمة ويليامز ويلز ضمن طبعة تشارلز الأكاديمية المنشورة سنة 1913؛ النص هو الصيغة اليونانية من حياة آدم وحواء، مستقل عن حياة آدم وحواء اللاتينية (TADAM) وعن وصية/صعود موسى (MOS).",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "43_chapters_158_nonempty_units_verified_from_selected_witness",
+        "database_status_is_not_approval": true,
+        "rights_review": "pending",
+        "human_review": "pending",
+        "notes_ar": "إحصاء النص المستخرج 26437 حرفاً، مقابل 26444 في سجل الفهرس السابق؛ فرق سبعة أحرف مسجل للتحقق، مع تطابق عدد الوحدات والإصحاحات وعدم وجود فراغ أو تكرار."
+      },
+      "translation_progress": {
+        "status": "complete_machine_draft_pending_human_review",
+        "source_units": 158,
+        "draft_units": 158,
+        "draft_files": 32,
+        "missing_references": 0,
+        "duplicate_references": 0,
+        "blank_arabic_units": 0,
+        "latin_characters_in_arabic": 0,
+        "imported": false,
+        "published": false,
+        "review_status": "pending_human",
+        "providers": {
+          "Gemini 3.5 Flash Lite": 133,
+          "Groq free tier": 25
+        },
+        "draft_cost_usd": 0.0308015,
+        "router_failover_used": true
+      }
+    },
+    {
+      "code": "APOEZ",
+      "name_ar": "رؤيا حزقيال",
+      "local_text_status": "partial",
+      "original_language": "اليونانية واللاتينية مع أصل آرامي محتمل",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-greekdoc-apocryphon-ezekiel-fragments",
+          "name_ar": "الشواهد الإنجليزية لرؤيا حزقيال",
+          "language": "en",
+          "chapters": 5,
+          "units": 17,
+          "characters": 4361,
+          "sha256": "1fbc55673a574e68a55aa9d996df32718a33e58edafbe08468c73451c5860fc8",
+          "translation_source_url": "https://greekdoc.com/DOCUMENTS/pseudepigrapha/ap-ezekiel.html",
+          "translation_notes": "خمسة شواهد إنجليزية مترجمة من مقتطفات يونانية ولاتينية محفوظة في اقتباسات الآباء؛ لا يمثل النص الكامل المفقود، وتبقى مواضع الشواهد وسياقها النقدي بحاجة إلى مقارنة مستقلة.",
+          "book_source_name": "English Apocryphon of Ezekiel Fragments",
+          "book_source_url": "https://greekdoc.com/DOCUMENTS/pseudepigrapha/ap-ezekiel.html",
+          "book_source_notes": "خمسة شواهد إنجليزية مترجمة من مقتطفات يونانية ولاتينية محفوظة في اقتباسات الآباء؛ لا يمثل النص الكامل المفقود، وتبقى مواضع الشواهد وسياقها النقدي بحاجة إلى مقارنة مستقلة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_partial",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "APOL",
+      "name_ar": "أعمال بولس",
+      "local_text_status": "partial",
+      "original_language": "اليونانية والقبطية مع شواهد لاتينية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-mr-james-acts-paul",
+          "name_ar": "الترجمة الإنجليزية لأعمال بولس",
+          "language": "en",
+          "chapters": 1,
+          "units": 1,
+          "characters": 77594,
+          "sha256": "d367888162463b9ca23f5b267e26f1c64841653ca9bc961b1f6aa6970c59b6e4",
+          "translation_source_url": "https://www.earlychristianwritings.com/text/actspaul.html",
+          "translation_notes": "ترجمة تاريخية منشورة في موقع الكتابات المسيحية المبكرة؛ العمل مركب وشواهده مجزأة، لذلك يحفظ الشاهد المنشور في وحدة واحدة ولا يعرض كنص كامل موحد.",
+          "book_source_name": "M. R. James English Acts of Paul",
+          "book_source_url": "https://www.earlychristianwritings.com/text/actspaul.html",
+          "book_source_notes": "ترجمة تاريخية منشورة في موقع الكتابات المسيحية المبكرة؛ العمل مركب وشواهده مجزأة، لذلك يحفظ الشاهد المنشور في وحدة واحدة ولا يعرض كنص كامل موحد.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_partial",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "APZEPH",
+      "name_ar": "رؤيا صفنيا",
+      "local_text_status": "partial",
+      "original_language": "القبطية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-intertextual-apocalypse-zephaniah",
+          "name_ar": "الشذرات الإنجليزية لرؤيا صفنيا",
+          "language": "en",
+          "chapters": 14,
+          "units": 112,
+          "characters": 11990,
+          "sha256": "49341500080ff6b848066dc2b44e3026dd6a83bee27c5a3d867868b6ab29946c",
+          "translation_source_url": "https://intertextual.bible/read/apocalypse-of-zephaniah",
+          "translation_notes": "عرض رقمي مبني على ترجمتي شتايندورف ١٨٩٩ وويلسون ١٨٨٥ المعلنتين ملكاً عاماً. يحفظ ١٤ مقطعاً/فصلاً من الشذرات القبطية، وبعض الوحدات نفسها ناقصة بعلامات حذف؛ لا يمثل نصاً كاملاً ولا ترتيباً مخطوطياً محققاً.",
+          "book_source_name": "Public-domain English Apocalypse of Zephaniah fragments",
+          "book_source_url": "https://intertextual.bible/read/apocalypse-of-zephaniah",
+          "book_source_notes": "عرض رقمي مبني على ترجمتي شتايندورف ١٨٩٩ وويلسون ١٨٨٥ المعلنتين ملكاً عاماً. يحفظ ١٤ مقطعاً/فصلاً من الشذرات القبطية، وبعض الوحدات نفسها ناقصة بعلامات حذف؛ لا يمثل نصاً كاملاً ولا ترتيباً مخطوطياً محققاً.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_partial",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "ARIST",
+      "name_ar": "رسالة أريستاس",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-charles-letter-aristeas",
+          "name_ar": "الترجمة الإنجليزية لرسالة أريستاس",
+          "language": "en",
+          "chapters": 1,
+          "units": 1,
+          "characters": 108691,
+          "sha256": "292efb733726c7201ea8a08ccc73eaf22466815e948fd80519733389200dc9c7",
+          "translation_source_url": "https://www.pseudepigrapha.com/pseudepigrapha/aristeas.htm",
+          "translation_notes": "تحرير آر. هـ. تشارلز المنشور سنة 1913؛ الرسالة طويلة وغير مقسمة إلى إصحاحات ثابتة في المصدر، لذلك تحفظ هنا كوحدة واحدة، مع إمكانية إعادة تقسيم الفقرات ومقارنتها لاحقاً.",
+          "book_source_name": "R. H. Charles English Letter of Aristeas",
+          "book_source_url": "https://www.pseudepigrapha.com/pseudepigrapha/aristeas.htm",
+          "book_source_notes": "تحرير آر. هـ. تشارلز المنشور سنة 1913؛ الرسالة طويلة وغير مقسمة إلى إصحاحات ثابتة في المصدر، لذلك تحفظ هنا كوحدة واحدة، مع إمكانية إعادة تقسيم الفقرات ومقارنتها لاحقاً.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "ASC",
+      "name_ar": "صعود إشعياء",
+      "local_text_status": "complete",
+      "original_language": "الجعزية مع شواهد أقدم",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-charles-ascension-isaiah",
+          "name_ar": "الترجمة الإنجليزية لصعود إشعياء",
+          "language": "en",
+          "chapters": 11,
+          "units": 296,
+          "characters": 44276,
+          "sha256": "b854c0e8144f2ab20d4ddfdbbc1c9136b6d377926b65581242706d6f326356f8",
+          "translation_source_url": "https://viachrista.org/Library/Anon_Ascension_Isaiah.html",
+          "translation_notes": "ترجمة آر. هـ. تشارلز من النص الإثيوبي مع الشواهد الأقدم، في 11 إصحاحاً؛ العمل مركب من استشهاد إشعياء ورؤيا لاحقة، لذلك لا يعرض كنص موحد بلا وصف.",
+          "book_source_name": "R. H. Charles English Ascension of Isaiah",
+          "book_source_url": "https://viachrista.org/Library/Anon_Ascension_Isaiah.html",
+          "book_source_notes": "ترجمة آر. هـ. تشارلز من النص الإثيوبي مع الشواهد الأقدم، في 11 إصحاحاً؛ العمل مركب من استشهاد إشعياء ورؤيا لاحقة، لذلك لا يعرض كنص موحد بلا وصف.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "BARN",
+      "name_ar": "رسالة برنابا",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-hoole-barnabas",
+          "name_ar": "الترجمة الإنجليزية لرسالة برنابا",
+          "language": "en",
+          "chapters": 21,
+          "units": 194,
+          "characters": 50694,
+          "sha256": "51792c16298f2803ba143ba2e280789f9deef862e03d8cec1a9168ad1a9a5c20",
+          "translation_source_url": "https://en.wikisource.org/wiki/Epistle_of_Barnabas_(Hoole_translation)",
+          "translation_notes": "ترجمة تشارلز هـ. هول المنشورة سنة 1885؛ تحفظ الفصول الإحدى والعشرين كما يقسمها المصدر، وتعرض بوصفها كتابة كنسية مبكرة لا سفراً قانونياً.",
+          "book_source_name": "Charles H. Hoole English Epistle of Barnabas",
+          "book_source_url": "https://en.wikisource.org/wiki/Epistle_of_Barnabas_(Hoole_translation)",
+          "book_source_notes": "ترجمة تشارلز هـ. هول المنشورة سنة 1885؛ تحفظ الفصول الإحدى والعشرين كما يقسمها المصدر، وتعرض بوصفها كتابة كنسية مبكرة لا سفراً قانونياً.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "CLE-ETH",
+      "name_ar": "إكليمندس الإثيوبي",
+      "local_text_status": "partial",
+      "original_language": "الجعزية مع أصل رؤيوي أقدم",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-james-ethiopic-clement-2",
+          "name_ar": "مقتطف إنجليزي من رؤيا بطرس الإثيوبية في الكتاب الثاني لإكليمندس",
+          "language": "en",
+          "chapters": 67,
+          "units": 67,
+          "characters": 24090,
+          "sha256": "706a1f621ed6deeb65f4589f2d1dba5b0fdc616820bec3dd7725195ec564c4ac",
+          "translation_source_url": "https://ertale.com/bible/ethiopiancanon/clement2/{chapter}/",
+          "translation_notes": "ترجمة م. ر. جيمس، طبعة ١٩٢٤. هذا مقتطف من رؤيا بطرس الإثيوبية المحفوظة ضمن الكتاب الثاني لإكليمندس؛ ليس نص الكتاب الثاني كاملاً. المصدر الرقمي يقسم المقتطف إلى ٦٨ صفحة/مقطعاً، والصفحة ٢٣ لا تعرض إلا بقايا تعرف ضوئي على الحروف، فلا يثبت ذلك فقد فصل قديم. جيمس يقول إن الكتاب الإثيوبي يتواصل بعد المقتطف بنص لاحق لم يترجمه هنا. يُحفظ السجل جزئياً ولا تُخترع الصفحة التالفة.",
+          "book_source_name": "M. R. James Ethiopic Apocalypse of Peter excerpt in Clement Book II",
+          "book_source_url": "https://ertale.com/bible/ethiopiancanon/clement2/{chapter}/",
+          "book_source_notes": "ترجمة م. ر. جيمس، طبعة ١٩٢٤. هذا مقتطف من رؤيا بطرس الإثيوبية المحفوظة ضمن الكتاب الثاني لإكليمندس؛ ليس نص الكتاب الثاني كاملاً. المصدر الرقمي يقسم المقتطف إلى ٦٨ صفحة/مقطعاً، والصفحة ٢٣ لا تعرض إلا بقايا تعرف ضوئي على الحروف، فلا يثبت ذلك فقد فصل قديم. جيمس يقول إن الكتاب الإثيوبي يتواصل بعد المقتطف بنص لاحق لم يترجمه هنا. يُحفظ السجل جزئياً ولا تُخترع الصفحة التالفة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_partial",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "CLE1",
+      "name_ar": "رسالة إكليمندس الأولى",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-newadvent-first-clement",
+          "name_ar": "الترجمة الإنجليزية للرسالة الأولى لإكليمندس",
+          "language": "en",
+          "chapters": 65,
+          "units": 65,
+          "characters": 75224,
+          "sha256": "9559a0aa70d4a7900fb834793899ab0f3fbbc428c8897f4fbdb88eb1d4e3de76",
+          "translation_source_url": "https://www.newadvent.org/fathers/1010.htm",
+          "translation_notes": "ترجمة تاريخية من مجموعة آباء ما قبل نيقية منشورة في نيو أدفنت، تحفظ الفصول الخمسة والستين، وتعرض كرسالة كنسية مبكرة لا كسفر قانوني.",
+          "book_source_name": "New Advent English First Epistle of Clement",
+          "book_source_url": "https://www.newadvent.org/fathers/1010.htm",
+          "book_source_notes": "ترجمة تاريخية من مجموعة آباء ما قبل نيقية منشورة في نيو أدفنت، تحفظ الفصول الخمسة والستين، وتعرض كرسالة كنسية مبكرة لا كسفر قانوني.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "CLE2",
+      "name_ar": "رسالة إكليمندس الثانية",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-newadvent-second-clement",
+          "name_ar": "الترجمة الإنجليزية للرسالة الثانية لإكليمندس",
+          "language": "en",
+          "chapters": 20,
+          "units": 20,
+          "characters": 22855,
+          "sha256": "d2e7428de65b49bbc175899b088d3f7cd0a05093e07c7760d7507808311fea0e",
+          "translation_source_url": "https://www.newadvent.org/fathers/1011.htm",
+          "translation_notes": "ترجمة تاريخية للرسالة الثانية المنسوبة تقليدياً إلى إكليمندس، تحفظ عشرين فصلاً، مع إبقاء نسبة العمل وتاريخه موضع وصف علمي لا حكماً قطعياً.",
+          "book_source_name": "New Advent English Second Epistle of Clement",
+          "book_source_url": "https://www.newadvent.org/fathers/1011.htm",
+          "book_source_notes": "ترجمة تاريخية للرسالة الثانية المنسوبة تقليدياً إلى إكليمندس، تحفظ عشرين فصلاً، مع إبقاء نسبة العمل وتاريخه موضع وصف علمي لا حكماً قطعياً.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "CONFESD",
+      "name_ar": "اعتراف عزرا",
+      "local_text_status": "complete",
+      "original_language": "اللاتينية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-web-confession-esdras",
+          "name_ar": "الشاهد الإنجليزي الموازي لاعتراف عزرا من البيبل العالمي الكلاسيكي",
+          "language": "en",
+          "chapters": 1,
+          "units": 17,
+          "characters": 1971,
+          "sha256": "8b650953a96397a4f631654e02e027cf1752497ab6259951028f14301173c451",
+          "translation_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "translation_notes": "مقطع إنجليزي من World English Bible Classic، 4 Esdras 8:20–36، محفوظ كترجمة موازية لاعتراف عزرا مع إبقاء الأعداد ٢٠–٣٦. لا يُدّعى أنه ترجمة حرفية مستقلة للشاهد اللاتيني الليتورجي؛ إنه المقطع المقابل في نص عزرا الرابع. النص ملك عام، ومصدره يسمح بإعادة النشر والتوزيع. المصدر الرقمي: eng-web_vpl.zip؛ بيان الحقوق: https://www.ebible.org/eng-web/copyright.htm.",
+          "book_source_name": "WEB Classic parallel text for Confessio Esdrae",
+          "book_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "book_source_notes": "مقطع إنجليزي من World English Bible Classic، 4 Esdras 8:20–36، محفوظ كترجمة موازية لاعتراف عزرا مع إبقاء الأعداد ٢٠–٣٦. لا يُدّعى أنه ترجمة حرفية مستقلة للشاهد اللاتيني الليتورجي؛ إنه المقطع المقابل في نص عزرا الرابع. النص ملك عام، ومصدره يسمح بإعادة النشر والتوزيع. المصدر الرقمي: eng-web_vpl.zip؛ بيان الحقوق: https://www.ebible.org/eng-web/copyright.htm.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "la-ocp-confession-esdras",
+          "name_ar": "الشاهد اللاتيني لاعتراف عزرا",
+          "language": "la",
+          "chapters": 1,
+          "units": 17,
+          "characters": 1681,
+          "sha256": "67f8bb58d767360b04465c94bc2fbfda97c30c72d845587d7e088120d4541ff9",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/ConfEsdr.xml",
+          "translation_notes": "نص لاتيني قصير من طبعة بنسلي 1895؛ مستقل عن عزرا الثاني وكلمة ورؤيا عزرا.",
+          "book_source_name": "WEB Classic parallel text for Confessio Esdrae",
+          "book_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "book_source_notes": "مقطع إنجليزي من World English Bible Classic، 4 Esdras 8:20–36، محفوظ كترجمة موازية لاعتراف عزرا مع إبقاء الأعداد ٢٠–٣٦. لا يُدّعى أنه ترجمة حرفية مستقلة للشاهد اللاتيني الليتورجي؛ إنه المقطع المقابل في نص عزرا الرابع. النص ملك عام، ومصدره يسمح بإعادة النشر والتوزيع. المصدر الرقمي: eng-web_vpl.zip؛ بيان الحقوق: https://www.ebible.org/eng-web/copyright.htm.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "COV1",
+      "name_ar": "كتاب العهد الأول",
+      "local_text_status": "complete",
+      "original_language": "السريانية مع التقليد الجعزي",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-cooper-maclean-book-covenant-1",
+          "name_ar": "الترجمة الإنجليزية لكتاب العهد الأول",
+          "language": "en",
+          "chapters": 74,
+          "units": 74,
+          "characters": 128908,
+          "sha256": "14e5ab4c30e8fe43adc73a7ae0d1ab3d6aa04a6f90290aa8ffc7fc0f4d1fce55",
+          "translation_source_url": "https://ertale.com/bible/ethiopiancanon/bookofthecovenant1/{chapter}/",
+          "translation_notes": "ترجمة جيمس كوبر وأ. ج. مكلين المنشورة سنة 1902؛ المصدر يوضح أنها من التقليد السرياني لوصية ربنا، وليست ترجمة مباشرة من الجعزية، لذلك يحفظ الشاهد مع هذا التنبيه.",
+          "book_source_name": "Cooper and Maclean English Book of Covenant I",
+          "book_source_url": "https://ertale.com/bible/ethiopiancanon/bookofthecovenant1/{chapter}/",
+          "book_source_notes": "ترجمة جيمس كوبر وأ. ج. مكلين المنشورة سنة 1902؛ المصدر يوضح أنها من التقليد السرياني لوصية ربنا، وليست ترجمة مباشرة من الجعزية، لذلك يحفظ الشاهد مع هذا التنبيه.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "COV2",
+      "name_ar": "كتاب العهد الثاني",
+      "local_text_status": "complete",
+      "original_language": "القبطية مع التقليد الجعزي",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-james-book-covenant-2",
+          "name_ar": "الترجمة الإنجليزية لكتاب العهد الثاني",
+          "language": "en",
+          "chapters": 51,
+          "units": 51,
+          "characters": 50415,
+          "sha256": "0b2e874a435d4519870b8a2392fbb3f6412c710dd633b7e995db00c12f86e7ff",
+          "translation_source_url": "https://ertale.com/bible/ethiopiancanon/bookofthecovenant2/{chapter}/",
+          "translation_notes": "ترجمة م. ر. جيمس المنشورة سنة 1924 والمعلنة الملكية العامة في الولايات المتحدة؛ وهي أقرب شاهد إنجليزي عام لكتاب العهد الثاني الإثيوبي المرتبط برسالة الرسل.",
+          "book_source_name": "M. R. James English Book of Covenant II",
+          "book_source_url": "https://ertale.com/bible/ethiopiancanon/bookofthecovenant2/{chapter}/",
+          "book_source_notes": "ترجمة م. ر. جيمس المنشورة سنة 1924 والمعلنة الملكية العامة في الولايات المتحدة؛ وهي أقرب شاهد إنجليزي عام لكتاب العهد الثاني الإثيوبي المرتبط برسالة الرسل.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "DIAT",
+      "name_ar": "دياتسرون تاتيان",
+      "local_text_status": "complete",
+      "original_language": "السريانية أو اليونانية مع شاهد عربي لاحق",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-hogg-diatessaron",
+          "name_ar": "الترجمة الإنجليزية لدِيَاتِسَرون تاتيان",
+          "language": "en",
+          "chapters": 53,
+          "units": 2519,
+          "characters": 320794,
+          "sha256": "a7ef62cd0a2240e133da60213afa6755e9fcfd4711e5e8e8b7697412a26a525a",
+          "translation_source_url": "https://en.wikisource.org/wiki/Ante-Nicene_Fathers/Volume_IX/The_Diatessaron_of_Tatian/The_Diatessaron/Section_{chapter}",
+          "translation_notes": "ترجمة هوب و. هوغ المنشورة في مجموعة آباء ما قبل نيقية؛ الأصل التوفيقي الكامل مفقود، والنص المنشور ترجمة إنجليزية عن الشاهد العربي. تحفظ الأقسام الثلاثة والخمسين، وتقسم الوحدات بحسب العلامات الرقمية الظاهرة في المصدر.",
+          "book_source_name": "Hope W. Hogg English Diatessaron of Tatian",
+          "book_source_url": "https://en.wikisource.org/wiki/Ante-Nicene_Fathers/Volume_IX/The_Diatessaron_of_Tatian/The_Diatessaron/Section_{chapter}",
+          "book_source_notes": "ترجمة هوب و. هوغ المنشورة في مجموعة آباء ما قبل نيقية؛ الأصل التوفيقي الكامل مفقود، والنص المنشور ترجمة إنجليزية عن الشاهد العربي. تحفظ الأقسام الثلاثة والخمسين، وتقسم الوحدات بحسب العلامات الرقمية الظاهرة في المصدر.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "DID",
+      "name_ar": "الديداخي (تعليم الرسل)",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-hoole-didache",
+          "name_ar": "الترجمة الإنجليزية للديداخي",
+          "language": "en",
+          "chapters": 16,
+          "units": 100,
+          "characters": 15953,
+          "sha256": "b0ed9742c6b2d9bcf1c9904eb24b00ff04f22b4897a5f69a1a2365f890e30db6",
+          "translation_source_url": "https://earlychristianwritings.com/text/didache-hoole.html",
+          "translation_notes": "ترجمة تشارلز هـ. هول المنشورة سنة 1894؛ تحفظ الفصول الستة عشر، وتعرض بوصفها كتابة كنسية مبكرة لا سفراً قانونياً.",
+          "book_source_name": "Charles H. Hoole English Didache",
+          "book_source_url": "https://earlychristianwritings.com/text/didache-hoole.html",
+          "book_source_notes": "ترجمة تشارلز هـ. هول المنشورة سنة 1894؛ تحفظ الفصول الستة عشر، وتعرض بوصفها كتابة كنسية مبكرة لا سفراً قانونياً.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "DID-ETH",
+      "name_ar": "الدسقولية الإثيوبية",
+      "local_text_status": "complete",
+      "original_language": "الجعزية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-harden-ethiopic-didascalia",
+          "name_ar": "الترجمة الإنجليزية للدسقولية الإثيوبية",
+          "language": "en",
+          "chapters": 43,
+          "units": 43,
+          "characters": 314791,
+          "sha256": "9743b00e17ea7ab9d20ce5e416e8dfc84607306981a0b9981981f258a777e0da",
+          "translation_source_url": "https://ertale.com/bible/ethiopiancanon/didascalia/{chapter}/",
+          "translation_notes": "ترجمة ج. م. هاردن المنشورة سنة 1920، من الجعزية، ومعلنة الملكية العامة في المصدر؛ يحفظ كل إصحاح كوحدة واحدة لأن النثر لا يقدم تقسيم أعداد أصلياً ثابتاً، مع وسمها تقليداً إثيوبياً منفصلاً عن الدسقولية السريانية.",
+          "book_source_name": "J. M. Harden English Ethiopic Didascalia",
+          "book_source_url": "https://ertale.com/bible/ethiopiancanon/didascalia/{chapter}/",
+          "book_source_notes": "ترجمة ج. م. هاردن المنشورة سنة 1920، من الجعزية، ومعلنة الملكية العامة في المصدر؛ يحفظ كل إصحاح كوحدة واحدة لأن النثر لا يقدم تقسيم أعداد أصلياً ثابتاً، مع وسمها تقليداً إثيوبياً منفصلاً عن الدسقولية السريانية.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "DIDAS",
+      "name_ar": "الدسقولية الرسولية",
+      "local_text_status": "complete",
+      "original_language": "غير محددة",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-gibson-didascalia",
+          "name_ar": "الترجمة الإنجليزية لغيبسون للدسقولية الرسولية",
+          "language": "en",
+          "chapters": 26,
+          "units": 26,
+          "characters": 311039,
+          "sha256": "6bc345470a81e4b087c9c1256f8dc771f26aac4c2a6600f8f7affc93bc3709a9",
+          "translation_source_url": "https://archive.org/download/didascaliaaposto00gibsuoft/didascaliaaposto00gibsuoft_djvu.txt",
+          "translation_notes": "ترجمة مارغريت دنلوب غيبسون من السريانية، طبعة 1903، من نسخة أرشيفية معلنة الملكية العامة.",
+          "book_source_name": "Margaret Dunlop Gibson English Didascalia",
+          "book_source_url": "https://archive.org/download/didascaliaaposto00gibsuoft/didascaliaaposto00gibsuoft_djvu.txt",
+          "book_source_notes": "ترجمة مارغريت دنلوب غيبسون من السريانية، طبعة 1903، من نسخة أرشيفية معلنة الملكية العامة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "ENO",
+      "name_ar": "أخنوخ الأول",
+      "local_text_status": "complete",
+      "original_language": "الجعزية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-charles-enoch",
+          "name_ar": "ترجمة تشارلز الإنجليزية لسفر أخنوخ الأول",
+          "language": "en",
+          "chapters": 108,
+          "units": 1062,
+          "characters": 193106,
+          "sha256": "d01f994ebb24e86224285a0aad8e1eb63a9066d181f2cc64a1d03201fa7e8b86",
+          "translation_source_url": "https://enocharchive.com/books/the-book-of-enoch/{chapter}",
+          "translation_notes": "ترجمة آر. هـ. تشارلز، طبعة 1917، من نسخة منظمة تنقل النص الإنجليزي المعلن ملكيته العامة.",
+          "book_source_name": "August Dillmann Digital Ethiopic 1 Enoch",
+          "book_source_url": "https://www.tau.ac.il/~hacohen/Henoch/Henoch%201.html",
+          "book_source_notes": "نسخة رقمية من طبعة أغسطس دِلمن الجعزية المنشورة في 1851، بصفحة مستقلة لكل إصحاح حتى الإصحاح 108؛ تحفظ هذه النسخة وحدة نصية واحدة لكل إصحاح لأن صفحات المصدر لا تقدم تقسيماً عددياً موحداً.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "gez-dillmann-enoch",
+          "name_ar": "النص الجعزي لأخنوخ الأول",
+          "language": "gez",
+          "chapters": 108,
+          "units": 108,
+          "characters": 123765,
+          "sha256": "de815566b8887c6b01ac2a06b7cbdcf8b74b6f6655c0c3b8873d792d94790b33",
+          "translation_source_url": "https://www.tau.ac.il/~hacohen/Henoch/Henoch%201.html",
+          "translation_notes": "نسخة رقمية من طبعة أغسطس دِلمن الجعزية المنشورة في 1851، بصفحة مستقلة لكل إصحاح حتى الإصحاح 108؛ تحفظ هذه النسخة وحدة نصية واحدة لكل إصحاح لأن صفحات المصدر لا تقدم تقسيماً عددياً موحداً.",
+          "book_source_name": "August Dillmann Digital Ethiopic 1 Enoch",
+          "book_source_url": "https://www.tau.ac.il/~hacohen/Henoch/Henoch%201.html",
+          "book_source_notes": "نسخة رقمية من طبعة أغسطس دِلمن الجعزية المنشورة في 1851، بصفحة مستقلة لكل إصحاح حتى الإصحاح 108؛ تحفظ هذه النسخة وحدة نصية واحدة لكل إصحاح لأن صفحات المصدر لا تقدم تقسيماً عددياً موحداً.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "ENO2",
+      "name_ar": "أخنوخ الثاني",
+      "local_text_status": "complete",
+      "original_language": "السلافية الكنسية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-platt-2-enoch",
+          "name_ar": "الترجمة الإنجليزية لأخنوخ الثاني",
+          "language": "en",
+          "chapters": 68,
+          "units": 320,
+          "characters": 60115,
+          "sha256": "5ec30e269aef6a6972d01ab2ca9fef26dc455e439cc695581f7b2a881db28362",
+          "translation_source_url": "https://en.wikisource.org/w/api.php?action=parse&page=The_Forgotten_Books_of_Eden%2FThe_Book_of_the_Secrets_of_Enoch&prop=wikitext&format=json&origin=*",
+          "translation_notes": "ترجمة روذرفورد بلات الإنجليزية المنشورة في كتاب The Forgotten Books of Eden سنة 1928؛ تُعرض بوصفها ترجمة تاريخية، مع التنبيه إلى اختلاف تقسيمات أخنوخ الثاني بين المخطوطات والمراجعات.",
+          "book_source_name": "Rutherford H. Platt English 2 Enoch",
+          "book_source_url": "https://en.wikisource.org/w/api.php?action=parse&page=The_Forgotten_Books_of_Eden%2FThe_Book_of_the_Secrets_of_Enoch&prop=wikitext&format=json&origin=*",
+          "book_source_notes": "ترجمة روذرفورد بلات الإنجليزية المنشورة في كتاب The Forgotten Books of Eden سنة 1928؛ تُعرض بوصفها ترجمة تاريخية، مع التنبيه إلى اختلاف تقسيمات أخنوخ الثاني بين المخطوطات والمراجعات.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "ENO3",
+      "name_ar": "أخنوخ الثالث",
+      "local_text_status": "complete",
+      "original_language": "العبرية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-odeberg-3-enoch",
+          "name_ar": "الترجمة الإنجليزية لأخنوخ الثالث",
+          "language": "en",
+          "chapters": 54,
+          "units": 407,
+          "characters": 116427,
+          "sha256": "f2b4485670ec6373f5b826edaa1be0de34036d8fb8b7b06f72746655f8ffc3a6",
+          "translation_source_url": "https://www.thebookofenoch.net/3-enoch/",
+          "translation_notes": "طبعة ويب إنجليزية مبنية على تحرير هوغو أودبرغ لأخنوخ الثالث سنة 1928، وتعرض 54 قسماً مرقماً بما فيها الأقسام الحرفية 15B و22B و22C و48A–48D. تُحفظ فقرات كل قسم كوحدات مستقلة، ولا توجد ترجمة عربية مدخلة في هذه المرحلة.",
+          "book_source_name": "Hugo Odeberg English 3 Enoch",
+          "book_source_url": "https://www.thebookofenoch.net/3-enoch/",
+          "book_source_notes": "طبعة ويب إنجليزية مبنية على تحرير هوغو أودبرغ لأخنوخ الثالث سنة 1928، وتعرض 54 قسماً مرقماً بما فيها الأقسام الحرفية 15B و22B و22C و48A–48D. تُحفظ فقرات كل قسم كوحدات مستقلة، ولا توجد ترجمة عربية مدخلة في هذه المرحلة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "EPISTAP",
+      "name_ar": "رسالة الرسل",
+      "local_text_status": "complete",
+      "original_language": "الجعزية والقبطية مع أصل يوناني مفترض",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-james-epistle-apostles",
+          "name_ar": "ترجمة جيمس الإنجليزية لرسالة الرسل",
+          "language": "en",
+          "chapters": 51,
+          "units": 51,
+          "characters": 49943,
+          "sha256": "5151ef5fddfbaefebca62ef1bdb802d03ae1186f0ecc8c53d9c2ce45e76ada0d",
+          "translation_source_url": "https://en.wikisource.org/wiki/The_Apocryphal_New_Testament_(1924)/Epistles/The_Epistle_of_the_Apostles?action=render",
+          "translation_notes": "ترجمة مونتاغيو رودس جيمس، العهد الجديد الأبوكريفي، أكسفورد، ١٩٢٤، الصفحات ٤٨٥–٥٠٣؛ ٥١ قسماً. تعتمد النسخة الجعزية الكاملة مع مقارنة الشاهد القبطي الجزئي واللاتيني. كل قسم فصل مستقل؛ تعليقات المقارنة في النص محفوظة، وحواشي الطبعة في رابط المصدر. لا تشمل وصية الجليل المستقلة التي يقتبس المترجم منها جملة في مقدمته.",
+          "book_source_name": "M. R. James English Epistle of the Apostles",
+          "book_source_url": "https://en.wikisource.org/wiki/The_Apocryphal_New_Testament_(1924)/Epistles/The_Epistle_of_the_Apostles?action=render",
+          "book_source_notes": "ترجمة مونتاغيو رودس جيمس، العهد الجديد الأبوكريفي، أكسفورد، ١٩٢٤، الصفحات ٤٨٥–٥٠٣؛ ٥١ قسماً. تعتمد النسخة الجعزية الكاملة مع مقارنة الشاهد القبطي الجزئي واللاتيني. كل قسم فصل مستقل؛ تعليقات المقارنة في النص محفوظة، وحواشي الطبعة في رابط المصدر. لا تشمل وصية الجليل المستقلة التي يقتبس المترجم منها جملة في مقدمته.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "EZRS",
+      "name_ar": "عزرا سوتوئيل",
+      "local_text_status": "complete",
+      "original_language": "غير محددة",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-web",
+          "name_ar": "البيبل العالمي الكلاسيكي",
+          "language": "en",
+          "chapters": 12,
+          "units": 715,
+          "characters": 87834,
+          "sha256": "8c99b6d6a16862002f62914aa1a052eb387bf580d87439f91584e816829d6ae8",
+          "translation_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "translation_notes": "ترجمة إنجليزية عامة؛ تستخدم أيضاً لاستكمال الأعمال التي لا يتوفر لها عربي، ومنها عزرا الثاني عند وجوده في المصدر.",
+          "book_source_name": "English parallel witness: 2 Esdras 3–14",
+          "book_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "book_source_notes": "شاهد إنجليزي موازي من البيبل العالمي للأصحاحات 3–14 من 2 Esdras، وهي تقابل متن 4 Ezra المرتبط بعزرا سوتوئيل. أُعيد ترقيمها هنا من 1 إلى 12. هذا ليس نصاً جعزياً ولا يغطي المقدمات والملحقات المسيحية في 2 Esdras. بيان المقابلة: https://crosswire.org/~dfh/Files/EthiopianCanonAndParatext.pdf",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "GIANTS",
+      "name_ar": "سفر العمالقة",
+      "local_text_status": "partial",
+      "original_language": "الآرامية واللغات الإيرانية في شواهد متعددة",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-henning-manichaean-book-giants",
+          "name_ar": "الترجمة الإنجليزية لكتاب العمالقة المانوي",
+          "language": "en",
+          "chapters": 10,
+          "units": 169,
+          "characters": 13480,
+          "sha256": "6930d098eecf84c4ccb9d562f765177aa054a9eb224e546b663dab914ed147af",
+          "translation_source_url": "https://othergospels.com/2giants/henning.json",
+          "translation_notes": "ترجمة وليم ب. هننغ المنشورة سنة 1943 للنسخة المانوية المجزأة؛ تحفظ هنا كتقليد ماني مستقل عن شواهد قمران الآرامية، ولا تدعي أنها نص كامل أو إعادة بناء نهائية.",
+          "book_source_name": "W. B. Henning English Manichaean Book of Giants",
+          "book_source_url": "https://othergospels.com/2giants/henning.json",
+          "book_source_notes": "ترجمة وليم ب. هننغ المنشورة سنة 1943 للنسخة المانوية المجزأة؛ تحفظ هنا كتقليد ماني مستقل عن شواهد قمران الآرامية، ولا تدعي أنها نص كامل أو إعادة بناء نهائية.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_partial",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "GJUD",
+      "name_ar": "إنجيل يهوذا",
+      "local_text_status": "partial",
+      "original_language": "القبطية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-mattison-gospel-judas",
+          "name_ar": "الترجمة الإنجليزية لإنجيل يهوذا",
+          "language": "en",
+          "chapters": 1,
+          "units": 71,
+          "characters": 17388,
+          "sha256": "7b43472dda6ada631b45cf3e7b737b173dbb9978fe01d3ff5e9f299e03e4f70d",
+          "translation_source_url": "https://www.gospels.net/judas",
+          "translation_notes": "ترجمة مارك م. ماتيسون المعلنة ملكيتها العامة، مبنية على النص القبطي لمخطوط كودكس تشاكوس 3. لا يملك المصدر تقسيماً ثابتاً إلى إصحاحات، لذلك تحفظ الفقرات والعناوين في إصحاح واحد، مع إبقاء الفجوات والإضافات التحريرية كما في المصدر.",
+          "book_source_name": "Mark M. Mattison Public Domain English Gospel of Judas",
+          "book_source_url": "https://www.gospels.net/judas",
+          "book_source_notes": "ترجمة مارك م. ماتيسون المعلنة ملكيتها العامة، مبنية على النص القبطي لمخطوط كودكس تشاكوس 3. لا يملك المصدر تقسيماً ثابتاً إلى إصحاحات، لذلك تحفظ الفقرات والعناوين في إصحاح واحد، مع إبقاء الفجوات والإضافات التحريرية كما في المصدر.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_partial",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "GMA",
+      "name_ar": "إنجيل مريم",
+      "local_text_status": "partial",
+      "original_language": "القبطية واليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-gnostic-society-gospel-mary",
+          "name_ar": "الترجمة الإنجليزية لإنجيل مريم",
+          "language": "en",
+          "chapters": 4,
+          "units": 54,
+          "characters": 5694,
+          "sha256": "85b8e832a366a2ecfbee04acf5e0dd2ddfedf31e2a89f91d9ba1152bd08c2b8a",
+          "translation_source_url": "https://www.earlychristianwritings.com/text/gospelmary.html",
+          "translation_notes": "ترجمة إنجليزية للشاهد القبطي المجزأ؛ الإصحاحات ١–٣ مفقودة، والمتاح في المصدر هو ٤ و٥ و٨ و٩، لذلك يحفظ الموقع الفجوات كما هي ولا يعرضها كنص كامل.",
+          "book_source_name": "Gnostic Society English Gospel of Mary",
+          "book_source_url": "https://www.earlychristianwritings.com/text/gospelmary.html",
+          "book_source_notes": "ترجمة إنجليزية للشاهد القبطي المجزأ؛ الإصحاحات ١–٣ مفقودة، والمتاح في المصدر هو ٤ و٥ و٨ و٩، لذلك يحفظ الموقع الفجوات كما هي ولا يعرضها كنص كامل.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_partial",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "GNIC",
+      "name_ar": "إنجيل نيقوديموس (أعمال بيلاطس)",
+      "local_text_status": "complete",
+      "original_language": "اليونانية واللاتينية مع صيغ موازية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-mr-james-gospel-nicodemus",
+          "name_ar": "الترجمة الإنجليزية لإنجيل نيقوديموس",
+          "language": "en",
+          "chapters": 1,
+          "units": 1,
+          "characters": 89766,
+          "sha256": "278760068d948a21b672f1428e23011a8fb0416bc5c3818d7029b22f2b1fc522",
+          "translation_source_url": "https://earlychristianwritings.com/text/gospelnicodemus.html",
+          "translation_notes": "ترجمة م. ر. جيمس التاريخية لنص إنجيل نيقوديموس/أعمال بيلاطس؛ المصدر نفسه يصف اختلاف الصيغ اليونانية واللاتينية والقبطية والسريانية والأرمنية، لذلك يحفظ هذا السجل الشاهد المنشور فقط ولا يدمج الصيغ.",
+          "book_source_name": "M. R. James English Gospel of Nicodemus",
+          "book_source_url": "https://earlychristianwritings.com/text/gospelnicodemus.html",
+          "book_source_notes": "ترجمة م. ر. جيمس التاريخية لنص إنجيل نيقوديموس/أعمال بيلاطس؛ المصدر نفسه يصف اختلاف الصيغ اليونانية واللاتينية والقبطية والسريانية والأرمنية، لذلك يحفظ هذا السجل الشاهد المنشور فقط ولا يدمج الصيغ.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "GPE",
+      "name_ar": "إنجيل بطرس",
+      "local_text_status": "partial",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-mr-james-gospel-peter",
+          "name_ar": "الترجمة الإنجليزية لإنجيل بطرس",
+          "language": "en",
+          "chapters": 1,
+          "units": 1,
+          "characters": 17812,
+          "sha256": "40aecdf658e9c2dbc36ab49cec0890b242717b55094e83441e833f2a1bacd647",
+          "translation_source_url": "https://www.earlychristianwritings.com/text/gospelpeter-mrjames.html",
+          "translation_notes": "ترجمة م. ر. جيمس للشاهد اليوناني المجزأ من إنجيل بطرس؛ يحفظه الموقع في سجل واحد لأن المصدر لا يقدم تقسيماً مستقراً إلى إصحاحات وأعداد، مع وسمه نصاً مجزأً.",
+          "book_source_name": "M. R. James English Gospel of Peter",
+          "book_source_url": "https://www.earlychristianwritings.com/text/gospelpeter-mrjames.html",
+          "book_source_notes": "ترجمة م. ر. جيمس للشاهد اليوناني المجزأ من إنجيل بطرس؛ يحفظه الموقع في سجل واحد لأن المصدر لا يقدم تقسيماً مستقراً إلى إصحاحات وأعداد، مع وسمه نصاً مجزأً.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_partial",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "GTH",
+      "name_ar": "إنجيل توما",
+      "local_text_status": "complete",
+      "original_language": "القبطية مع شواهد يونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-lambdin-gospel-thomas",
+          "name_ar": "الترجمة الإنجليزية لإنجيل توما",
+          "language": "en",
+          "chapters": 1,
+          "units": 114,
+          "characters": 26719,
+          "sha256": "9465de585c10d5b7c048d2ebca1989f5ff9caeced8154b27797b017d6bfb8f8e",
+          "translation_source_url": "https://www.earlychristianwritings.com/text/thomas-lambdin.html",
+          "translation_notes": "ترجمة توماس أو. لامبدين لأقوال إنجيل توما المحفوظة في مخطوط نجع حمادي؛ تعرض في سجل واحد و١١٤ قولاً مرقماً، مع ترك مكان للغة القبطية والترجمة العربية والمقارنة مع الشواهد اليونانية.",
+          "book_source_name": "Thomas O. Lambdin English Gospel of Thomas",
+          "book_source_url": "https://www.earlychristianwritings.com/text/thomas-lambdin.html",
+          "book_source_notes": "ترجمة توماس أو. لامبدين لأقوال إنجيل توما المحفوظة في مخطوط نجع حمادي؛ تعرض في سجل واحد و١١٤ قولاً مرقماً، مع ترك مكان للغة القبطية والترجمة العربية والمقارنة مع الشواهد اليونانية.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "GTINF",
+      "name_ar": "إنجيل طفولة توما",
+      "local_text_status": "complete",
+      "original_language": "اللاتينية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-walker-infant-thomas-greek-a",
+          "name_ar": "الترجمة الإنجليزية لإنجيل طفولة توما، الصيغة اليونانية الأولى",
+          "language": "en",
+          "chapters": 19,
+          "units": 20,
+          "characters": 15377,
+          "sha256": "7016b405ef576c5a9496865f5c1bc760bb6d7eb682ef8369e264f19d567d3c50",
+          "translation_source_url": "https://en.wikisource.org/wiki/The_Apocryphal_Gospels_and_other_documents_relating_to_the_History_of_Christ/The_Gospel_of_Thomas_(I.)",
+          "translation_notes": "ترجمة ألكسندر ووكر التاريخية للصيغة اليونانية الأولى، محفوظة في ١٩ إصحاحاً كما يقسمها ويكي مصدر، مع إبقائها شاهداً مستقلاً لا نصاً موحداً لكل صيغ إنجيل الطفولة.",
+          "book_source_name": "Alexander Walker English Infancy Gospel of Thomas, Latin",
+          "book_source_url": "https://en.wikisource.org/wiki/The_Apocryphal_Gospels_and_other_documents_relating_to_the_History_of_Christ/The_Gospel_of_Thomas_(III.)",
+          "book_source_notes": "ترجمة ألكسندر ووكر التاريخية للصيغة اللاتينية، محفوظة في ١٥ إصحاحاً، وتعرض منفصلة عن الشاهدين اليونانيين للمقارنة اللاحقة.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "en-walker-infant-thomas-greek-b",
+          "name_ar": "الترجمة الإنجليزية لإنجيل طفولة توما، الصيغة اليونانية الثانية",
+          "language": "en",
+          "chapters": 11,
+          "units": 12,
+          "characters": 7938,
+          "sha256": "1c5ab5dd397ec66695c2901e8c14debfaa3df6352e7240d5ff4ac1b1bea8571f",
+          "translation_source_url": "https://en.wikisource.org/wiki/The_Apocryphal_Gospels_and_other_documents_relating_to_the_History_of_Christ/The_Gospel_of_Thomas_(II.)",
+          "translation_notes": "ترجمة ألكسندر ووكر التاريخية للصيغة اليونانية الثانية الأقصر، محفوظة في ١١ إصحاحاً، وتعرض منفصلة عن الصيغة الأطول لإظهار الفروق النصية.",
+          "book_source_name": "Alexander Walker English Infancy Gospel of Thomas, Latin",
+          "book_source_url": "https://en.wikisource.org/wiki/The_Apocryphal_Gospels_and_other_documents_relating_to_the_History_of_Christ/The_Gospel_of_Thomas_(III.)",
+          "book_source_notes": "ترجمة ألكسندر ووكر التاريخية للصيغة اللاتينية، محفوظة في ١٥ إصحاحاً، وتعرض منفصلة عن الشاهدين اليونانيين للمقارنة اللاحقة.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "en-walker-infant-thomas-latin",
+          "name_ar": "الترجمة الإنجليزية لإنجيل طفولة توما، الصيغة اللاتينية",
+          "language": "en",
+          "chapters": 15,
+          "units": 42,
+          "characters": 26765,
+          "sha256": "6bac1e4e5e1eba2fdc4e48c4ce0a567f3c73fd88bbd3913b136e398ddc0d9a32",
+          "translation_source_url": "https://en.wikisource.org/wiki/The_Apocryphal_Gospels_and_other_documents_relating_to_the_History_of_Christ/The_Gospel_of_Thomas_(III.)",
+          "translation_notes": "ترجمة ألكسندر ووكر التاريخية للصيغة اللاتينية، محفوظة في ١٥ إصحاحاً، وتعرض منفصلة عن الشاهدين اليونانيين للمقارنة اللاحقة.",
+          "book_source_name": "Alexander Walker English Infancy Gospel of Thomas, Latin",
+          "book_source_url": "https://en.wikisource.org/wiki/The_Apocryphal_Gospels_and_other_documents_relating_to_the_History_of_Christ/The_Gospel_of_Thomas_(III.)",
+          "book_source_notes": "ترجمة ألكسندر ووكر التاريخية للصيغة اللاتينية، محفوظة في ١٥ إصحاحاً، وتعرض منفصلة عن الشاهدين اليونانيين للمقارنة اللاحقة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "HERM",
+      "name_ar": "راعي هرماس",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-newadvent-shepherd-hermas-book-1",
+          "name_ar": "الترجمة الإنجليزية لراعي هرماس، الكتاب الأول",
+          "language": "en",
+          "chapters": 24,
+          "units": 24,
+          "characters": 43660,
+          "sha256": "4c3516b3c2972ae218c0c26602d84c6ed06b5205b1de90030e9230d8dec41acc",
+          "translation_source_url": "https://www.newadvent.org/fathers/02011.htm",
+          "translation_notes": "الكتاب الأول من راعي هرماس في ترجمة تاريخية منشورة في نيو أدفنت، ويحفظ مستقلاً حتى يمكن مقارنة تقسيمات الرؤى والوصايا والأمثال.",
+          "book_source_name": "New Advent English Shepherd of Hermas Book III",
+          "book_source_url": "https://www.newadvent.org/fathers/02013.htm",
+          "book_source_notes": "الكتاب الثالث من راعي هرماس في ترجمة تاريخية منشورة في نيو أدفنت، يحفظ بفصوله الثلاثة والثلاثين وبسجل مستقل للمقارنة.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "en-newadvent-shepherd-hermas-book-2",
+          "name_ar": "الترجمة الإنجليزية لراعي هرماس، الكتاب الثاني",
+          "language": "en",
+          "chapters": 16,
+          "units": 16,
+          "characters": 41141,
+          "sha256": "20c9f8b95cd88faf75b7846e609a2fabec0d4d46cdc6084e48aee8199fc5d2ad",
+          "translation_source_url": "https://www.newadvent.org/fathers/02012.htm",
+          "translation_notes": "الكتاب الثاني من راعي هرماس في ترجمة تاريخية منشورة في نيو أدفنت، يحفظ كترجمة مستقلة عن الكتابين الأول والثالث.",
+          "book_source_name": "New Advent English Shepherd of Hermas Book III",
+          "book_source_url": "https://www.newadvent.org/fathers/02013.htm",
+          "book_source_notes": "الكتاب الثالث من راعي هرماس في ترجمة تاريخية منشورة في نيو أدفنت، يحفظ بفصوله الثلاثة والثلاثين وبسجل مستقل للمقارنة.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "en-newadvent-shepherd-hermas-book-3",
+          "name_ar": "الترجمة الإنجليزية لراعي هرماس، الكتاب الثالث",
+          "language": "en",
+          "chapters": 60,
+          "units": 60,
+          "characters": 103717,
+          "sha256": "637890702dd809266c532ff06d43ca9ddbaee8c6ee77b97222f46ed48620c061",
+          "translation_source_url": "https://www.newadvent.org/fathers/02013.htm",
+          "translation_notes": "الكتاب الثالث من راعي هرماس في ترجمة تاريخية منشورة في نيو أدفنت، يحفظ بفصوله الثلاثة والثلاثين وبسجل مستقل للمقارنة.",
+          "book_source_name": "New Advent English Shepherd of Hermas Book III",
+          "book_source_url": "https://www.newadvent.org/fathers/02013.htm",
+          "book_source_notes": "الكتاب الثالث من راعي هرماس في ترجمة تاريخية منشورة في نيو أدفنت، يحفظ بفصوله الثلاثة والثلاثين وبسجل مستقل للمقارنة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "IGNEPH",
+      "name_ar": "رسالة إغناطيوس إلى أفسس",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-anf-ephesians",
+          "name_ar": "الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى أفسس",
+          "language": "en",
+          "chapters": 21,
+          "units": 21,
+          "characters": 16021,
+          "sha256": "948a078569172287ac23651250de1151e29adf3bde9165a061eb7b12dc600249",
+          "translation_source_url": "https://www.newadvent.org/fathers/0104.htm",
+          "translation_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى أفسس، 21 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "book_source_name": "ANF English Ignatius to the Ephesians",
+          "book_source_url": "https://www.newadvent.org/fathers/0104.htm",
+          "book_source_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى أفسس، 21 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "IGNMAG",
+      "name_ar": "رسالة إغناطيوس إلى مغنيسية",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-anf-magnesians",
+          "name_ar": "الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى مغنيسية",
+          "language": "en",
+          "chapters": 15,
+          "units": 15,
+          "characters": 9132,
+          "sha256": "9a329cf64a19f808cb7d20657e592af475d3aecc7176810f4e42b0bda03813d5",
+          "translation_source_url": "https://www.newadvent.org/fathers/0105.htm",
+          "translation_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى مغنيسية، 15 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "book_source_name": "ANF English Ignatius to the Magnesians",
+          "book_source_url": "https://www.newadvent.org/fathers/0105.htm",
+          "book_source_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى مغنيسية، 15 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "IGNPHI",
+      "name_ar": "رسالة إغناطيوس إلى فيلادلفية",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-anf-philadelphians",
+          "name_ar": "الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى فيلادلفية",
+          "language": "en",
+          "chapters": 11,
+          "units": 11,
+          "characters": 8498,
+          "sha256": "d73fca122e9ecd341bd8ba82f18433fdf6e471141749ac2fd72dc63496bd66f8",
+          "translation_source_url": "https://www.newadvent.org/fathers/0108.htm",
+          "translation_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى فيلادلفية، 11 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "book_source_name": "ANF English Ignatius to the Philadelphians",
+          "book_source_url": "https://www.newadvent.org/fathers/0108.htm",
+          "book_source_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى فيلادلفية، 11 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "IGNPOL",
+      "name_ar": "رسالة إغناطيوس إلى بوليكاربوس",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-anf-polycarp",
+          "name_ar": "الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى بوليكاربوس",
+          "language": "en",
+          "chapters": 8,
+          "units": 8,
+          "characters": 7331,
+          "sha256": "41ef4bd489a5156f670f6283211ae03bcb3cd990daa5562e145a43ffa12fc3af",
+          "translation_source_url": "https://www.newadvent.org/fathers/0110.htm",
+          "translation_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى بوليكاربوس، 8 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "book_source_name": "ANF English Ignatius to Polycarp",
+          "book_source_url": "https://www.newadvent.org/fathers/0110.htm",
+          "book_source_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى بوليكاربوس، 8 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "IGNROM",
+      "name_ar": "رسالة إغناطيوس إلى رومية",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-anf-romans",
+          "name_ar": "الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى رومية",
+          "language": "en",
+          "chapters": 10,
+          "units": 10,
+          "characters": 9591,
+          "sha256": "a695c5cef606a1e45a586445416f0e483b6e8a0729d91bbda6e2bfb15c27976e",
+          "translation_source_url": "https://www.newadvent.org/fathers/0107.htm",
+          "translation_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى رومية، 10 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "book_source_name": "ANF English Ignatius to the Romans",
+          "book_source_url": "https://www.newadvent.org/fathers/0107.htm",
+          "book_source_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى رومية، 10 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "IGNSMY",
+      "name_ar": "رسالة إغناطيوس إلى سميرنا",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-anf-smyrnaeans",
+          "name_ar": "الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى سميرنا",
+          "language": "en",
+          "chapters": 13,
+          "units": 13,
+          "characters": 10350,
+          "sha256": "ff64a5baa63f54acc48b99f80ccc876a33966d46748558a95cfa7b8d5d4a2b37",
+          "translation_source_url": "https://www.newadvent.org/fathers/0109.htm",
+          "translation_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى سميرنا، 13 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "book_source_name": "ANF English Ignatius to the Smyrnaeans",
+          "book_source_url": "https://www.newadvent.org/fathers/0109.htm",
+          "book_source_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى سميرنا، 13 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "IGNTRA",
+      "name_ar": "رسالة إغناطيوس إلى ترالس",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-anf-trallians",
+          "name_ar": "الترجمة الإنجليزية القديمة: رسالة إغناطيوس إلى ترالس",
+          "language": "en",
+          "chapters": 13,
+          "units": 13,
+          "characters": 8404,
+          "sha256": "d2ceafb916fe188b354059385ccab1fba660a78abf91c19b882766873b9e7228",
+          "translation_source_url": "https://www.newadvent.org/fathers/0106.htm",
+          "translation_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى ترالس، 13 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "book_source_name": "ANF English Ignatius to the Trallians",
+          "book_source_url": "https://www.newadvent.org/fathers/0106.htm",
+          "book_source_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة إغناطيوس إلى ترالس، 13 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. النص يمثل الرسالة في الصيغة المتوسطة ذات الرسائل السبع المقبولة لدى الباحثين، ولا يدمج إضافات الصيغة المطولة. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "JASHER",
+      "name_ar": "كتاب ياشر (الصيغة الوسيطة)",
+      "local_text_status": "complete",
+      "original_language": "العبرية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "targeted_search_found_no_complete_arabic_text",
+      "source_selection_status": "selected_ccel_1887_reprint_pending_rights_and_human_review",
+      "witnesses": [
+        {
+          "slug": "en-wikisource-sefer-hayashar-1840",
+          "name_ar": "ترجمة 1840 الإنجليزية لصيغة كتاب ياشر الوسيطة",
+          "language": "en",
+          "chapters": 91,
+          "units": 3910,
+          "characters": 772405,
+          "sha256": "11166779307f64a4d55086f67ffa640710833b4b6ec3998e784b16cfb4d51240",
+          "translation_source_url": "https://en.wikisource.org/wiki/Sefer_Ha-yashar,_or,_the_Book_of_Jasher_(1840)",
+          "translation_notes": "طبعة إنجليزية تاريخية للنص اليهودي الوسيط Sefer ha-Yashar. هذا ليس كتاب ياشر القديم المفقود المذكور في يشوع 10:13 وصموئيل الثاني 1:18.",
+          "book_source_name": "English Sefer ha-Yashar 1840",
+          "book_source_url": "https://en.wikisource.org/wiki/Sefer_Ha-yashar,_or,_the_Book_of_Jasher_(1840)",
+          "book_source_notes": "طبعة إنجليزية تاريخية للنص اليهودي الوسيط Sefer ha-Yashar. هذا ليس كتاب ياشر القديم المفقود المذكور في يشوع 10:13 وصموئيل الثاني 1:18.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "jasher-ccel-1887-reprint",
+          "name_ar": "طبعة ١٨٨٧ الإنجليزية المعيدة لترجمة ١٨٤٠",
+          "language": "en",
+          "chapters": 91,
+          "units": 3910,
+          "characters": 772446,
+          "sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+          "translation_source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+          "translation_notes": "إعادة طبع ١٨٨٧ للنص الذي يعرّفه المركز المسيحي بأنه ترجمة ١٨٤٠ من العبرية إلى الإنجليزية؛ تطابق عدد وحدات كل فصل مع مراجع رفيق، وبقيت سبعة فروق نصية عن تفريغ ويكي مصدر فلم يخلط الشاهدان.",
+          "book_source_name": "Jasher 1840 English translation, CCEL 1887 exact-edition reprint",
+          "book_source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+          "book_source_notes": "تم اختيار هذا الشاهد بعد التحقق من اكتمال ٩١ فصلاً و٣٩١٠ وحدة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "verified_complete_91_chapters_3910_units",
+        "database_status_is_not_approval": true
+      },
+      "arabic_draft_progress": {
+        "units": 180,
+        "total_units": 3910,
+        "successful_batches": 18,
+        "failed_batches": 8,
+        "untranslated_units": 3730,
+        "published": false,
+        "imported": false,
+        "review_status": "pending_human",
+        "budget_remaining_usd": 0.0053611
+      }
+    },
+    {
+      "code": "JOSEPH",
+      "name_ar": "يوسف وأسنات",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-sparks-joseph-aseneth",
+          "name_ar": "الترجمة الإنجليزية ليوسف وأسنات",
+          "language": "en",
+          "chapters": 29,
+          "units": 357,
+          "characters": 78803,
+          "sha256": "7492e9cdb17a68ca1391d37df56caa7d98618ef3a5dc252abafe302632b8adec",
+          "translation_source_url": "https://www.thefirmament.org/scripture/joseph-and-aseneth/",
+          "translation_notes": "نص إنجليزي كامل في صفحة ويب واحدة من ٢٩ إصحاحاً و٣٥٨ وحدة مدخلة؛ المترجم أو الطبعة غير معلنين بوضوح في الصفحة، لذلك يسجل كشاهد ويب يحتاج إلى توثيق ومقارنة لاحقين، ولا يخلط مع الصيغة الأقصر المنسوبة إلى يوجين ماسون.",
+          "book_source_name": "The Firmament English Joseph and Aseneth",
+          "book_source_url": "https://www.thefirmament.org/scripture/joseph-and-aseneth/",
+          "book_source_notes": "نص إنجليزي كامل في صفحة ويب واحدة من ٢٩ إصحاحاً و٣٥٨ وحدة مدخلة؛ المترجم أو الطبعة غير معلنين بوضوح في الصفحة، لذلك يسجل كشاهد ويب يحتاج إلى توثيق ومقارنة لاحقين، ولا يخلط مع الصيغة الأقصر المنسوبة إلى يوجين ماسون.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "JUB",
+      "name_ar": "اليوبيلات",
+      "local_text_status": "complete",
+      "original_language": "غير محددة",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-charles-jubilees",
+          "name_ar": "ترجمة تشارلز الإنجليزية لسفر اليوبيلات",
+          "language": "en",
+          "chapters": 50,
+          "units": 1305,
+          "characters": 265082,
+          "sha256": "e16bf721b8c6ec7e76977cff8b25e829c1aa4f70ba74da0434f1f5e7a7694b06",
+          "translation_source_url": "https://enocharchive.com/books/the-book-of-jubilees/{chapter}",
+          "translation_notes": "ترجمة آر. هـ. تشارلز، طبعة 1902، من نسخة منظمة تنقل النص الإنجليزي المعلن ملكيته العامة.",
+          "book_source_name": "R. H. Charles English Jubilees",
+          "book_source_url": "https://enocharchive.com/books/the-book-of-jubilees/{chapter}",
+          "book_source_notes": "ترجمة آر. هـ. تشارلز، طبعة 1902، من نسخة منظمة تنقل النص الإنجليزي المعلن ملكيته العامة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "LAOD",
+      "name_ar": "رسالة إلى اللاودكيين",
+      "local_text_status": "complete",
+      "original_language": "اللاتينية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "عُثر على شاهد عربي مخطوط وطبعة عربية مفهرسة، كما نُشر نص عربي مرقم من ٢٠ فقرة؛ لا يُعاد إنتاج ترجمة للعمل له شاهد عربي قائم.",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-james-laodiceans",
+          "name_ar": "ترجمة جيمس الإنجليزية للرسالة إلى اللاودكيين",
+          "language": "en",
+          "chapters": 1,
+          "units": 20,
+          "characters": 1838,
+          "sha256": "27d7fdc80d149f231ac5eaf2cf502067b68ed33f0f6dff21c8e2481a711fca9b",
+          "translation_source_url": "https://en.wikisource.org/wiki/The_Apocryphal_New_Testament_(1924)/Epistles/The_Epistle_to_the_Laodiceans?action=render",
+          "translation_notes": "ترجمة مونتاغيو رودس جيمس من اللاتينية، العهد الجديد الأبوكريفي، أكسفورد، ١٩٢٤، الصفحتان ٤٧٨–٤٧٩؛ عشرون عدداً متصلة، في فصل واحد. الترجمة القديمة ملك عام. رسالة منسوبة إلى بولس، ولا تعني إضافتها إثبات نسبتها إليه.",
+          "book_source_name": "M. R. James English Epistle to the Laodiceans",
+          "book_source_url": "https://en.wikisource.org/wiki/The_Apocryphal_New_Testament_(1924)/Epistles/The_Epistle_to_the_Laodiceans?action=render",
+          "book_source_notes": "ترجمة مونتاغيو رودس جيمس من اللاتينية، العهد الجديد الأبوكريفي، أكسفورد، ١٩٢٤، الصفحتان ٤٧٨–٤٧٩؛ عشرون عدداً متصلة، في فصل واحد. الترجمة القديمة ملك عام. رسالة منسوبة إلى بولس، ولا تعني إضافتها إثبات نسبتها إليه.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "existing_arabic_text_attested_and_online",
+        "execution": "pending_connection_and_rights_review",
+        "evidence_file": "2026-11-13-laodiceans-pilot.json"
+      }
+    },
+    {
+      "code": "MAN",
+      "name_ar": "صلاة منسى",
+      "local_text_status": "complete",
+      "original_language": "العربية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-web",
+          "name_ar": "البيبل العالمي الكلاسيكي",
+          "language": "en",
+          "chapters": 1,
+          "units": 15,
+          "characters": 2266,
+          "sha256": "bc520b7607a24bfa5aac6b51dbd4f985166ef380c6b8fbc2384d6d035af0dbc9",
+          "translation_source_url": "https://ebible.org/Scriptures/eng-web_vpl.zip",
+          "translation_notes": "ترجمة إنجليزية عامة؛ تستخدم أيضاً لاستكمال الأعمال التي لا يتوفر لها عربي، ومنها عزرا الثاني عند وجوده في المصدر.",
+          "book_source_name": "World English Bible Classic",
+          "book_source_url": "https://ebible.org/eng-web/MAN01.htm",
+          "book_source_notes": "مُضاف إلى كتالوج موقع البيبل فقط.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "MOS",
+      "name_ar": "وصية موسى (المعروفة تقليدياً بصعود موسى)",
+      "local_text_status": "complete",
+      "original_language": "اللاتينية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-charles-assumption-moses",
+          "name_ar": "الترجمة الإنجليزية لصعود موسى / وصية موسى",
+          "language": "en",
+          "chapters": 12,
+          "units": 129,
+          "characters": 16958,
+          "sha256": "bab082a22fed47804f4d473ff0733fd6d95dc3ccc8a0b9f45cac57c92e8a78e2",
+          "translation_source_url": "https://www.sacredthings.org/docs/assumption-1/",
+          "translation_notes": "نص إنجليزي منسوب إلى طبعة آر. هـ. تشارلز، مع التنبيه إلى أن المخطوط الباقي ناقص وأن الاسم الأكاديمي الشائع هو وصية موسى.",
+          "book_source_name": "OCP Latin Assumption of Moses",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Mois.xml",
+          "book_source_notes": "الشاهد اللاتيني الإلكتروني من Online Critical Pseudepigrapha، مع حفظ التقسيم الإصحاحي والعددي للشاهد.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "la-ocp-assumption-moses",
+          "name_ar": "الشاهد اللاتيني لصعود موسى",
+          "language": "la",
+          "chapters": 12,
+          "units": 134,
+          "characters": 13935,
+          "sha256": "a402aee458c7fe324ea19caaf0afdb8d3584deb299fef46a35239cf01aad4ba8",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Mois.xml",
+          "translation_notes": "الشاهد اللاتيني الإلكتروني من Online Critical Pseudepigrapha، مع حفظ التقسيم الإصحاحي والعددي للشاهد.",
+          "book_source_name": "OCP Latin Assumption of Moses",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Mois.xml",
+          "book_source_notes": "الشاهد اللاتيني الإلكتروني من Online Critical Pseudepigrapha، مع حفظ التقسيم الإصحاحي والعددي للشاهد.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "NARMOS",
+      "name_ar": "رواية موسى ويشوع",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "grc-ocp-narrative-moses-joshua",
+          "name_ar": "الشاهد اليوناني لرواية موسى ويشوع",
+          "language": "grc",
+          "chapters": 1,
+          "units": 152,
+          "characters": 14914,
+          "sha256": "95b21c9efda0e3ed6e26b279e553c2e4b56d024f418309aa2aa72f5d9cb213fe",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/NarrMois.xml",
+          "translation_notes": "النص اليوناني المحرر في طبعة فاسيليف 1893؛ صفحة واحدة طويلة تضم 154 وحدة مصدرية.",
+          "book_source_name": "OCP Greek Narrative of Moses and Joshua",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/NarrMois.xml",
+          "book_source_notes": "النص اليوناني المحرر في طبعة فاسيليف 1893؛ صفحة واحدة طويلة تضم 154 وحدة مصدرية.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "ODSO",
+      "name_ar": "أوديات سليمان",
+      "local_text_status": "complete",
+      "original_language": "السريانية واليونانية والقبطية في شواهد مختلفة",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-zinner-mattison-odes-solomon",
+          "name_ar": "الترجمة الإنجليزية لأوديات سليمان",
+          "language": "en",
+          "chapters": 42,
+          "units": 512,
+          "characters": 44261,
+          "sha256": "c18e20fbbeecb96f684dd0ae873bdced094b5b8183c15a52ddeeeb7059a48342",
+          "translation_source_url": "https://en.wikisource.org/w/api.php?action=parse&page=User%3ANebulousquasar%2FOdes_of_Solomon&prop=wikitext&format=json&origin=*",
+          "translation_notes": "ترجمة نُهرة 2021 المنسوبة إلى صموئيل زِنر للمواد السريانية ومارك م. ماتيسون للمواد القبطية واليونانية، وهي معلنة الملكية العامة. يحفظ السجل ٤٢ أوداً ويختار القسم السرياني عند وجود صيغتين؛ تُترك الصيغة القبطية المقابلة لسجل مقارنة مستقل لاحقاً.",
+          "book_source_name": "Samuel Zinner and Mark M. Mattison English Odes of Solomon",
+          "book_source_url": "https://en.wikisource.org/w/api.php?action=parse&page=User%3ANebulousquasar%2FOdes_of_Solomon&prop=wikitext&format=json&origin=*",
+          "book_source_notes": "ترجمة نُهرة 2021 المنسوبة إلى صموئيل زِنر للمواد السريانية ومارك م. ماتيسون للمواد القبطية واليونانية، وهي معلنة الملكية العامة. يحفظ السجل ٤٢ أوداً ويختار القسم السرياني عند وجود صيغتين؛ تُترك الصيغة القبطية المقابلة لسجل مقارنة مستقل لاحقاً.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "PJA",
+      "name_ar": "إنجيل يعقوب التمهيدي",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-roberts-donaldson-protevangelium-james",
+          "name_ar": "الترجمة الإنجليزية لإنجيل يعقوب التمهيدي",
+          "language": "en",
+          "chapters": 24,
+          "units": 24,
+          "characters": 25564,
+          "sha256": "237466f4ff1e9aedda255e1a8fc9f92d0e727f5185596233d9df1ae7a32c6733",
+          "translation_source_url": "https://en.wikisource.org/wiki/Protevangelion_of_James_(Roberts-Donaldson_translation)",
+          "translation_notes": "ترجمة ألكسندر ووكر ضمن طبعة الآباء قبل نيقية؛ تحفظ المقاطع الأربعة والعشرين المرقمة في المصدر، مع وسمها كنص طفولة أبوكريفي.",
+          "book_source_name": "Roberts-Donaldson English Protevangelium of James",
+          "book_source_url": "https://en.wikisource.org/wiki/Protevangelion_of_James_(Roberts-Donaldson_translation)",
+          "book_source_notes": "ترجمة ألكسندر ووكر ضمن طبعة الآباء قبل نيقية؛ تحفظ المقاطع الأربعة والعشرين المرقمة في المصدر، مع وسمها كنص طفولة أبوكريفي.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "POLPHI",
+      "name_ar": "رسالة بوليكاربوس إلى أهل فيلبي",
+      "local_text_status": "complete",
+      "original_language": "اليونانية مع ختام محفوظ باللاتينية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-anf-polycarp-philippians",
+          "name_ar": "الترجمة الإنجليزية القديمة: رسالة بوليكاربوس إلى أهل فيلبي",
+          "language": "en",
+          "chapters": 14,
+          "units": 14,
+          "characters": 13742,
+          "sha256": "bb1ca1ed5b5951c8470792a596af69c5d0c942b98c5d60fe89db2d3b4140a8f5",
+          "translation_source_url": "https://www.newadvent.org/fathers/0136.htm",
+          "translation_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة بوليكاربوس إلى أهل فيلبي، 14 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. الفصول الأخيرة محفوظة باللاتينية، ولا تدعي الإضافة وجود أصل يوناني كامل. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "book_source_name": "ANF English Polycarp to the Philippians",
+          "book_source_url": "https://www.newadvent.org/fathers/0136.htm",
+          "book_source_notes": "الترجمة الإنجليزية لألكسندر روبرتس وجيمس دونالدسن في آباء ما قبل نيقية، المجلد الأول، طبعة ١٨٨٥. رسالة بوليكاربوس إلى أهل فيلبي، 14 فصلاً، مع التحية وعناوين الفصول وخاتمة النص. الفصول الأخيرة محفوظة باللاتينية، ولا تدعي الإضافة وجود أصل يوناني كامل. الترجمة القديمة ملك عام؛ الاستيراد يستبعد إعلانات الموقع وتذييله.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "PSOL",
+      "name_ar": "مزامير سليمان",
+      "local_text_status": "complete",
+      "original_language": "اليونانية مع شواهد سريانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "found_a_full_arabic_text_covering_all_18_psalms; do_not_generate_duplicate_translation",
+      "source_selection_status": "not_selected_due_to_existing_arabic_text; verse_segmentation_differs_from_platt",
+      "witnesses": [
+        {
+          "slug": "en-platt-psalms-solomon",
+          "name_ar": "الترجمة الإنجليزية لمزامير سليمان",
+          "language": "en",
+          "chapters": 18,
+          "units": 303,
+          "characters": 34502,
+          "sha256": "753a4a96690e63d4f976f4c8588336aae5bedd8ee00387de0eb3af1f636d90b9",
+          "translation_source_url": "https://en.wikisource.org/w/api.php?action=parse&page=The_Forgotten_Books_of_Eden%2FThe_Psalms_of_Solomon&prop=wikitext&format=json&origin=*",
+          "translation_notes": "ترجمة إنجليزية تاريخية لمجموعة مزامير سليمان، 18 مزموراً؛ تُعرض كعمل يهودي منحول مستقل، لا كسفر قانوني ولا كجزء من المزامير الكتابية.",
+          "book_source_name": "Rutherford H. Platt English Psalms of Solomon",
+          "book_source_url": "https://en.wikisource.org/w/api.php?action=parse&page=The_Forgotten_Books_of_Eden%2FThe_Psalms_of_Solomon&prop=wikitext&format=json&origin=*",
+          "book_source_notes": "ترجمة إنجليزية تاريخية لمجموعة مزامير سليمان، 18 مزموراً؛ تُعرض كعمل يهودي منحول مستقل، لا كسفر قانوني ولا كجزء من المزامير الكتابية.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "complete_arabic_text_available_18_psalms",
+        "database_status_is_not_approval": true,
+        "local_english_source_units": 303,
+        "arabic_numbered_units": 292,
+        "arabic_psalm_headings": 18,
+        "alignment": "numbering differs by psalm; do not import as aligned to the Platt witness without a separate collation",
+        "evidence": "2026-11-14-source-audit.md",
+        "notes_ar": "وجدت متن مزامير سليمان عربياً كاملاً من 18 مزموراً؛ لكن أعداد الوحدات المرقمة تختلف عن الشاهد الإنجليزي المحلي (292 مقابل 303). وجود متن عربي كامل يمنع الترجمة المكررة، واختلاف التقسيم يمنع استيراده على أنه مطابق من غير مقابلة."
+      }
+    },
+    {
+      "code": "RESEZ",
+      "name_ar": "كلمة ورؤيا عزرا",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-anf-word-revelation-esdras",
+          "name_ar": "النص الإنجليزي لكلمة ورؤيا عزرا",
+          "language": "en",
+          "chapters": 1,
+          "units": 1,
+          "characters": 17106,
+          "sha256": "ae461072eeb854a9b19587ce578e0dd1330cad68eac36463525664e1f821fc63",
+          "translation_source_url": "https://www.tertullian.org/fathers2/ANF-08/anf08-106.htm",
+          "translation_notes": "نص قصير من مجموعة آباء ما قبل نيقية، محفوظ كوحدة واحدة لأن الطبعة لا تقسمه إلى فصول؛ مستقل عن عزرا الثاني ورؤيا عزرا اليونانية.",
+          "book_source_name": "English Word and Revelation of Esdras",
+          "book_source_url": "https://www.tertullian.org/fathers2/ANF-08/anf08-106.htm",
+          "book_source_notes": "نص قصير من مجموعة آباء ما قبل نيقية، محفوظ كوحدة واحدة لأن الطبعة لا تقسمه إلى فصول؛ مستقل عن عزرا الثاني ورؤيا عزرا اليونانية.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "REVEZRA",
+      "name_ar": "رؤيا صفات السنة المنسوبة إلى عزرا",
+      "local_text_status": "complete",
+      "original_language": "اللاتينية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-ocp-revelation-qualities-year-ezra",
+          "name_ar": "الترجمة الإنجليزية لرؤيا صفات السنة المنسوبة إلى عزرا",
+          "language": "en",
+          "chapters": 1,
+          "units": 7,
+          "characters": 2500,
+          "sha256": "af27e1fcd9693d0396d4f855a2a5a8f9dfa5563269c539c690aa5c0aa1a51602",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/RevEsdr.xml",
+          "translation_notes": "الترجمة الإنجليزية المضمنة في الطبعة الرقمية النقدية OCP تحت الشاهد Trans، مقترنة بالنص اللاتيني من طبعة ميركاتي 1901. حُفظت وحداتها السبع في فصل واحد وبترقيم المصدر. ترخيص مستودع OCP: CC BY 4.0، مع نسبة التحرير والمصدر.",
+          "book_source_name": "OCP English Revelation of Ezra on the Qualities of the Year",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/RevEsdr.xml",
+          "book_source_notes": "الترجمة الإنجليزية المضمنة في الطبعة الرقمية النقدية OCP تحت الشاهد Trans، مقترنة بالنص اللاتيني من طبعة ميركاتي 1901. حُفظت وحداتها السبع في فصل واحد وبترقيم المصدر. ترخيص مستودع OCP: CC BY 4.0، مع نسبة التحرير والمصدر.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "la-ocp-revelation-qualities-year-ezra",
+          "name_ar": "الشاهد اللاتيني لرؤيا صفات السنة المنسوبة إلى عزرا",
+          "language": "la",
+          "chapters": 1,
+          "units": 7,
+          "characters": 1867,
+          "sha256": "f95cd5efcd766eeeab8e620e4e8d8957cbe3c4cdbb94e16ad13fbfa22b67fe9c",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/RevEsdr.xml",
+          "translation_notes": "نص قصير من طبعة ميركاتي 1901 كما رقمنته OCP؛ يحفظ مستقلاً عن بقية رؤى عزرا.",
+          "book_source_name": "OCP English Revelation of Ezra on the Qualities of the Year",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/RevEsdr.xml",
+          "book_source_notes": "الترجمة الإنجليزية المضمنة في الطبعة الرقمية النقدية OCP تحت الشاهد Trans، مقترنة بالنص اللاتيني من طبعة ميركاتي 1901. حُفظت وحداتها السبع في فصل واحد وبترقيم المصدر. ترخيص مستودع OCP: CC BY 4.0، مع نسبة التحرير والمصدر.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "SEDRACH",
+      "name_ar": "رؤيا سدراخ",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-rutherford-apocalypse-sedrach",
+          "name_ar": "ترجمة رذرفورد الإنجليزية لرؤيا سدراخ",
+          "language": "en",
+          "chapters": 16,
+          "units": 16,
+          "characters": 14647,
+          "sha256": "a35c51aceffdb30ed9eee79396cf780d890f176e3d60b1a17969c5b0e776219e",
+          "translation_source_url": "https://www.tertullian.org/fathers2/ANF-10/anf10-17.htm",
+          "translation_notes": "ترجمة أندرو رذرفورد المنشورة ضمن آباء ما قبل نيقية؛ تحفظ أقسام النص الستة عشر، وهو عمل مسيحي متأخر لا سفر قانوني.",
+          "book_source_name": "Andrew Rutherford English Apocalypse of Sedrach",
+          "book_source_url": "https://www.tertullian.org/fathers2/ANF-10/anf10-17.htm",
+          "book_source_notes": "ترجمة أندرو رذرفورد المنشورة ضمن آباء ما قبل نيقية؛ تحفظ أقسام النص الستة عشر، وهو عمل مسيحي متأخر لا سفر قانوني.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "SEELI",
+      "name_ar": "كتاب إيليا العبري (سفر إلياهو)",
+      "local_text_status": "complete",
+      "original_language": "العبرية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-othergospels-sefer-elijah-zinner-public-domain",
+          "name_ar": "ترجمة صموئيل زينر الإنجليزية لكتاب إيليا العبري",
+          "language": "en",
+          "chapters": 1,
+          "units": 25,
+          "characters": 10267,
+          "sha256": "3d9f12c7e386a91c74bcc87a17abc7f42c7cf45039cacd3c3e50f4d2b8b6b635",
+          "translation_source_url": "https://othergospels.com/elijah/",
+          "translation_notes": "ترجمة صموئيل زينر الإنجليزية لكتاب إيليا العبري (سفر إلياهو)، شاهد عبري متأخر مستقل عن رؤيا إيليا القبطية واليونانية واللاتينية. أُهديت نصوص مبادرة النصوص المفتوحة إلى الملك العام بحسب سياسة صفحة المبادرة؛ استُخدم متن الترجمة وحده دون المقدمة أو التعليقات. حُفظت الوحدات الخمس والعشرون وإحالاتها وخاتمتها.",
+          "book_source_name": "Samuel Zinner Public-Domain English Sefer Elijah",
+          "book_source_url": "https://othergospels.com/elijah/",
+          "book_source_notes": "ترجمة صموئيل زينر الإنجليزية لكتاب إيليا العبري (سفر إلياهو)، شاهد عبري متأخر مستقل عن رؤيا إيليا القبطية واليونانية واللاتينية. أُهديت نصوص مبادرة النصوص المفتوحة إلى الملك العام بحسب سياسة صفحة المبادرة؛ استُخدم متن الترجمة وحده دون المقدمة أو التعليقات. حُفظت الوحدات الخمس والعشرون وإحالاتها وخاتمتها.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "SEVDAN",
+      "name_ar": "الرؤيا السابعة لدانيال",
+      "local_text_status": "complete",
+      "original_language": "الأرمنية (بوسيط الترجمة الألمانية)",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-project-seventh-vision-daniel",
+          "name_ar": "ترجمة إنجليزية جديدة للرؤيا السابعة لدانيال عن الترجمة الألمانية التاريخية",
+          "language": "en",
+          "chapters": 1,
+          "units": 14,
+          "characters": 24790,
+          "sha256": "13bfc5151b2cfaa701fc373956835e05c80e59a66b928ef4e584f60789d808f3",
+          "translation_source_url": "https://archive.org/download/WienerZeitschriftFrDieKundeDesMorgenlandes/bd6.pdf",
+          "translation_notes": "ترجمة إنجليزية جديدة أعدها المشروع عن ترجمة غريغوريس كاليمكيار الألمانية المنشورة سنة ١٨٩٢ في «دراسات في معرفة الشرق»، المجلد السادس، الصفحات المطبوعة ٢٢٧–٢٤٠. قُسم النص النثري المتتابع إلى ١٤ وحدة لتسهيل عرضه، وتغطي الصفحات المطبوعة المذكورة؛ ويصرح المصدر بخاتمة الصلاة وكلمة Amen. هذه ترجمة عن الألمانية وليست مباشرة عن الأرمنية، وتمثل هذا الشاهد فقط لا جميع روايات دانيال. أُبقيت علامتا المحقق على موضع القراءة الأرمنية غير المحسوم وكلمة الطريق التي علّمها بالشك. الترجمة الألمانية التاريخية للكاليمكيار (١٨٦٢–١٩١٧) ضمن الملك العام، والنص الإنجليزي ترجمة مشروع جديدة.",
+          "book_source_name": "Project English Translation of Daniel’s Seventh Vision from the 1892 German Edition",
+          "book_source_url": "https://archive.org/download/WienerZeitschriftFrDieKundeDesMorgenlandes/bd6.pdf",
+          "book_source_notes": "ترجمة إنجليزية جديدة أعدها المشروع عن ترجمة غريغوريس كاليمكيار الألمانية المنشورة سنة ١٨٩٢ في «دراسات في معرفة الشرق»، المجلد السادس، الصفحات المطبوعة ٢٢٧–٢٤٠. قُسم النص النثري المتتابع إلى ١٤ وحدة لتسهيل عرضه، وتغطي الصفحات المطبوعة المذكورة؛ ويصرح المصدر بخاتمة الصلاة وكلمة Amen. هذه ترجمة عن الألمانية وليست مباشرة عن الأرمنية، وتمثل هذا الشاهد فقط لا جميع روايات دانيال. أُبقيت علامتا المحقق على موضع القراءة الأرمنية غير المحسوم وكلمة الطريق التي علّمها بالشك. الترجمة الألمانية التاريخية للكاليمكيار (١٨٦٢–١٩١٧) ضمن الملك العام، والنص الإنجليزي ترجمة مشروع جديدة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "SIBYLL",
+      "name_ar": "أقوال العرافات",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-terry-sibylline-oracles",
+          "name_ar": "الترجمة الإنجليزية لأقوال العرافات",
+          "language": "en",
+          "chapters": 12,
+          "units": 12,
+          "characters": 231823,
+          "sha256": "249c15f07c2ee27cbd5724904484ca5506f9c682392f19f4b6785f4c011ae2fd",
+          "translation_source_url": "https://en.wikisource.org/wiki/The_Sibylline_Oracles_(Terry,_2nd_edition)",
+          "translation_notes": "ترجمة ميلتون سبنسر تيري المنشورة سنة 1899 في ويكي مصدر؛ تحفظ الكتب المتاحة 1–8 و11–14 كسجلات مستقلة، لأن الكتابين 9 و10 غير موجودين في هذه الطبعة المنشورة هناك.",
+          "book_source_name": "Milton Spenser Terry English Sibylline Oracles",
+          "book_source_url": "https://en.wikisource.org/wiki/The_Sibylline_Oracles_(Terry,_2nd_edition)",
+          "book_source_notes": "ترجمة ميلتون سبنسر تيري المنشورة سنة 1899 في ويكي مصدر؛ تحفظ الكتب المتاحة 1–8 و11–14 كسجلات مستقلة، لأن الكتابين 9 و10 غير موجودين في هذه الطبعة المنشورة هناك.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "SIN",
+      "name_ar": "السينودس الإثيوبي",
+      "local_text_status": "complete",
+      "original_language": "الجعزية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-horner-ethiopic-sinodos-teezaz",
+          "name_ar": "الترجمة الإنجليزية للسينودس الإثيوبي: تغسات الرسل",
+          "language": "en",
+          "chapters": 73,
+          "units": 73,
+          "characters": 146874,
+          "sha256": "1fd1e4afca016dab63a824045c07e671488e83fd77200c06d32d4e432618d6b8",
+          "translation_source_url": "https://ertale.com/bible/ethiopiancanon/teezaz/{chapter}/",
+          "translation_notes": "ترجمة جورج هورنر المنشورة سنة 1904 والمعلنة الملكية العامة؛ هذا سجل فرعي واحد من مجموعة السينودس الإثيوبي، وليس المجموعة كلها.",
+          "book_source_name": "George Horner English Ethiopic Sinodos Teezaz",
+          "book_source_url": "https://ertale.com/bible/ethiopiancanon/teezaz/{chapter}/",
+          "book_source_notes": "ترجمة جورج هورنر المنشورة سنة 1904 والمعلنة الملكية العامة؛ هذا سجل فرعي واحد من مجموعة السينودس الإثيوبي، وليس المجموعة كلها.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "SIRE",
+      "name_ar": "يشوع بن سيراخ الإثيوبي",
+      "local_text_status": "complete",
+      "original_language": "غير محددة",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-kjv-apocrypha",
+          "name_ar": "نسخة الملك جيمس الإنجليزية مع الأبوكريفا",
+          "language": "en",
+          "chapters": 51,
+          "units": 1393,
+          "characters": 148122,
+          "sha256": "dc71e24a1f77b4e14896a2fec3f721567867986e4afb5e44983eccd90d587ad7",
+          "translation_source_url": "https://ebible.org/Scriptures/eng-kjv_vpl.zip",
+          "translation_notes": "شاهد إنجليزي موازٍ كامل من نسخة الملك جيمس مع الأسفار القانونية الثانية. النص مترجم عن تقليد يوناني/لاتيني، وليس ترجمة عن الجعزية؛ وتوجد فروق بينه وبين مراجعة ابن سيراخ الإثيوبية.",
+          "book_source_name": "English parallel witness: King James Version with Apocrypha",
+          "book_source_url": "https://ebible.org/Scriptures/eng-kjv_vpl.zip",
+          "book_source_notes": "شاهد إنجليزي موازٍ كامل من نسخة الملك جيمس مع الأسفار القانونية الثانية. النص مترجم عن تقليد يوناني/لاتيني، وليس ترجمة عن الجعزية؛ وتوجد فروق بينه وبين مراجعة ابن سيراخ الإثيوبية.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "T12",
+      "name_ar": "وصايا الآباء الاثني عشر",
+      "local_text_status": "complete",
+      "original_language": "اليونانية مع شواهد عبرية وأرمينية وسلافية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-wikisource-twelve-patriarchs",
+          "name_ar": "الترجمة الإنجليزية لوصايا الآباء الاثني عشر",
+          "language": "en",
+          "chapters": 12,
+          "units": 142,
+          "characters": 139131,
+          "sha256": "dd57e7dc3e0fc70202e0084e4f791ba12603b75859357951aa6bbe7ca689c766",
+          "translation_source_url": "https://en.wikisource.org/wiki/Ante-Nicene_Fathers/Volume_VIII/The_Testaments_of_the_Twelve_Patriarchs",
+          "translation_notes": "نص إنجليزي من مجموعة آباء ما قبل نيقية المنشورة في ويكي مصدر، مقسم إلى وصية مستقلة لكل واحد من الآباء الاثني عشر. يحفظ المصدر ترقيم الفقرات، ولا توجد ترجمة عربية مدخلة في هذه المرحلة.",
+          "book_source_name": "Wikisource English Testaments of the Twelve Patriarchs",
+          "book_source_url": "https://en.wikisource.org/wiki/Ante-Nicene_Fathers/Volume_VIII/The_Testaments_of_the_Twelve_Patriarchs",
+          "book_source_notes": "نص إنجليزي من مجموعة آباء ما قبل نيقية المنشورة في ويكي مصدر، مقسم إلى وصية مستقلة لكل واحد من الآباء الاثني عشر. يحفظ المصدر ترقيم الفقرات، ولا توجد ترجمة عربية مدخلة في هذه المرحلة.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "TADAM",
+      "name_ar": "حياة آدم وحواء",
+      "local_text_status": "complete",
+      "original_language": "اليونانية واللاتينية مع صيغ موازية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "لم يظهر في البحث نص عربي كامل مطابق للصيغة اللاتينية؛ الدراسة الأكاديمية لعام ٢٠١٨ بيّنت أن المخطوط العربي المزعوم يعود إلى صراع آدم وحواء مع الشيطان، لا إلى هذا السفر. لا يحسم ذلك غياب كل ترجمة حديثة، لكنه يمنع اعتبار ذلك المخطوط ترجمة له.",
+      "source_selection_status": "selected_en-charles-1913-latin-recension; complete text verified with printed reference irregularities recorded",
+      "witnesses": [
+        {
+          "slug": "en-charles-life-adam-eve",
+          "name_ar": "الترجمة الإنجليزية لحياة آدم وحواء",
+          "language": "en",
+          "chapters": 57,
+          "units": 167,
+          "characters": 32439,
+          "sha256": "852773e95efb74deec2e26de0eef99647684f6c41f6a04bf81e946cde1b1d5e5",
+          "translation_source_url": "https://onthewaytoithaca.wordpress.com/apocrypha-collection/vita-adae-et-evae-en/",
+          "translation_notes": "ترجمة آر. هـ. تشارلز للنص اللاتيني من طبعة 1913، في ٥٧ إصحاحاً؛ يسجلها الموقع مستقلة عن رؤيا موسى اليونانية والصيغ السلافية والأرمنية والقبطية التي تحتاج إلى سجلات مقارنة لاحقة.",
+          "book_source_name": "R. H. Charles English Life of Adam and Eve",
+          "book_source_url": "https://onthewaytoithaca.wordpress.com/apocrypha-collection/vita-adae-et-evae-en/",
+          "book_source_notes": "ترجمة آر. هـ. تشارلز للنص اللاتيني من طبعة 1913، في ٥٧ إصحاحاً؛ يسجلها الموقع مستقلة عن رؤيا موسى اليونانية والصيغ السلافية والأرمنية والقبطية التي تحتاج إلى سجلات مقارنة لاحقة.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "en-charles-1913-latin-recension",
+          "name_ar": "ترجمة ر. هـ. تشارلز الإنجليزية للصيغة اللاتينية (١٩١٣)",
+          "language": "en",
+          "chapters": 51,
+          "units": 152,
+          "characters": 25480,
+          "sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+          "translation_source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+          "translation_notes": "طبعة ١٩١٣ ذات ٥١ إصحاحاً؛ كامل المتن حتى ٥١:٣. فُقد عنوانا الإصحاحين ٣٢ و٣٧ في التفريغ فأثبتا من تسلسل النص، وحُفظت علامتا الجمع ١،٢ و٢،٣ وفجوات الترقيم كما ظهرت. هذه الوحدات ليست مقابلة واحداً لواحد مع كل عدد في قاعدة رفيق.",
+          "book_source_name": "R. H. Charles, The Books of Adam and Eve (1913), Latin recension",
+          "book_source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+          "book_source_notes": "تفريغ رقمي لطبعة ر. هـ. تشارلز، أكسفورد ١٩١٣، الملكية العامة؛ قوبل بصفحة سي سي إي إل التي تنسب النص إلى طبعة ١٩١٣.",
+          "rights_review": "public_domain_1913"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "verified_complete_1913_latin_recension_with_reference_irregularities",
+        "database_status_is_not_approval": true
+      },
+      "active_witness_for_translation": "en-charles-1913-latin-recension",
+      "draft_translation_progress": {
+        "translation_name_ar": "ترجمة محمد بن شمس الدين",
+        "source_language": "en",
+        "units_translated": 152,
+        "units_total": 152,
+        "successful_batches": 31,
+        "providers": {
+          "Gemini 3.5 Flash Lite": 30,
+          "Groq free tier": 1
+        },
+        "successful_draft_cost_usd": 0.0332824,
+        "all_response_artifacts_estimated_cost_usd": 0.0363906,
+        "human_review": "pending",
+        "imported": false,
+        "published": false,
+        "reference_match": "exact; source grouped references retained"
+      }
+    },
+    {
+      "code": "TJOB",
+      "name_ar": "وصية أيوب",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "performed_no_full_arabic_text_found_not_exhaustive",
+      "source_selection_status": "selected_1897_james_witness_verified_complete",
+      "witnesses": [
+        {
+          "slug": "en-wesley-testament-job",
+          "name_ar": "الترجمة الإنجليزية لوصية أيوب",
+          "language": "en",
+          "chapters": 12,
+          "units": 326,
+          "characters": 44228,
+          "sha256": "0a4021ae215e314c7337a6555569b746a3ed2c4fde908b13bc19b62cea2c771f",
+          "translation_source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+          "translation_notes": "ترجمة م. ر. جيمس المنشورة سنة 1897، في ١٢ إصحاحاً؛ حُفظت الوحدات المرقمة بترتيب ظهورها لأن المصدر يكرر بعض أرقام الفقرات ويحتوي أحياناً على ترقيم غير منتظم.",
+          "book_source_name": "M. R. James English Testament of Job",
+          "book_source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+          "book_source_notes": "ترجمة م. ر. جيمس المنشورة سنة 1897، في ١٢ إصحاحاً؛ حُفظت الوحدات المرقمة بترتيب ظهورها لأن المصدر يكرر بعض أرقام الفقرات ويحتوي أحياناً على ترقيم غير منتظم.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "verified_complete_source_draft_complete_pending_human_review_and_rights",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "TSOL",
+      "name_ar": "وصية سليمان",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-wikisource-testament-solomon",
+          "name_ar": "الترجمة الإنجليزية لوصية سليمان",
+          "language": "en",
+          "chapters": 1,
+          "units": 136,
+          "characters": 66678,
+          "sha256": "8a56cac533b43ea70b1f8ae8e2d9adcbcdb5061d558338195bd8bafeddf17980",
+          "translation_source_url": "https://en.wikisource.org/wiki/Testament_of_Solomon",
+          "translation_notes": "ترجمة إنجليزية قديمة منشورة في طبعة ويكي مصدر تعود إلى سنة 1898؛ تحفظ هنا في فصل واحد مع أعداد متتابعة من فقرات الصفحة، لأن تقسيمها المنشور لا يطابق تقسيماً حديثاً ثابتاً.",
+          "book_source_name": "Wikisource English Testament of Solomon",
+          "book_source_url": "https://en.wikisource.org/wiki/Testament_of_Solomon",
+          "book_source_notes": "ترجمة إنجليزية قديمة منشورة في طبعة ويكي مصدر تعود إلى سنة 1898؛ تحفظ هنا في فصل واحد مع أعداد متتابعة من فقرات الصفحة، لأن تقسيمها المنشور لا يطابق تقسيماً حديثاً ثابتاً.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "TSTADAM",
+      "name_ar": "وصية آدم",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "وجدت شاهداً عربياً منشوراً في طبعة نقدية كاملة؛ لا تولّد ترجمة عربية مكررة قبل تحديد علاقته بالشاهدين اليوناني والسرياني في قاعدة رفيق.",
+      "source_selection_status": "not_selected_due_to_existing_arabic_recensions",
+      "witnesses": [
+        {
+          "slug": "en-ocp-greek-testament-adam",
+          "name_ar": "الترجمة الإنجليزية للشاهد اليوناني لوصية آدم",
+          "language": "en",
+          "chapters": 2,
+          "units": 24,
+          "characters": 2981,
+          "sha256": "dbbefdec0b5ccb2d6561bae282a56886ade9c33c1622af86680969c73d056c2f",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/TAdam.xml",
+          "translation_notes": "ترجمة OCP الإنجليزية للشاهد اليوناني؛ تحفظ مستقلة عن الترجمة الموازية للشاهد السرياني.",
+          "book_source_name": "OCP English Translation of Greek Testament of Adam",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/TAdam.xml",
+          "book_source_notes": "ترجمة OCP الإنجليزية للشاهد اليوناني؛ تحفظ مستقلة عن الترجمة الموازية للشاهد السرياني.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "en-ocp-syriac-testament-adam",
+          "name_ar": "الترجمة الإنجليزية للشاهد السرياني لوصية آدم",
+          "language": "en",
+          "chapters": 3,
+          "units": 31,
+          "characters": 5981,
+          "sha256": "dd7125b19bd75ef77f9a4922ca3c5e2ec339958298760ee8ce56c6f4abdaa206",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/TAdam.xml",
+          "translation_notes": "ترجمة OCP الإنجليزية للشاهد السرياني؛ تحفظ منفصلة عن ترجمة الشاهد اليوناني وعن النص السرياني.",
+          "book_source_name": "OCP English Translation of Greek Testament of Adam",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/TAdam.xml",
+          "book_source_notes": "ترجمة OCP الإنجليزية للشاهد اليوناني؛ تحفظ مستقلة عن الترجمة الموازية للشاهد السرياني.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "grc-ocp-testament-adam",
+          "name_ar": "الشاهد اليوناني لوصية آدم",
+          "language": "grc",
+          "chapters": 2,
+          "units": 24,
+          "characters": 2449,
+          "sha256": "ea1a55346c58f76e5355939069c76d4b24c932500f4ca60e1cce857882ddeca4",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/TAdam.xml",
+          "translation_notes": "الشاهد اليوناني في طبعة OCP النقدية، بتقسيم مستقل من ١٣ فصلاً؛ يختلف في بنية وحداته عن الشاهد السرياني.",
+          "book_source_name": "OCP English Translation of Greek Testament of Adam",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/TAdam.xml",
+          "book_source_notes": "ترجمة OCP الإنجليزية للشاهد اليوناني؛ تحفظ مستقلة عن الترجمة الموازية للشاهد السرياني.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "syr-ocp-testament-adam",
+          "name_ar": "الشاهد السرياني لوصية آدم",
+          "language": "syr",
+          "chapters": 3,
+          "units": 31,
+          "characters": 3541,
+          "sha256": "f6472493aa39c52efd33ee5c3126a1c7b73ddf270b33fa0296e6b7d0a334fe0a",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/TAdam.xml",
+          "translation_notes": "النص السرياني في الطبعة النقدية الرقمية لمشروع OCP؛ يحفظ شاهداً مستقلاً، ولا يخلط مع حياة آدم وحواء أو رؤيا موسى.",
+          "book_source_name": "OCP English Translation of Greek Testament of Adam",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/TAdam.xml",
+          "book_source_notes": "ترجمة OCP الإنجليزية للشاهد اليوناني؛ تحفظ مستقلة عن الترجمة الموازية للشاهد السرياني.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "existing_arabic_recension_critical_edition_available_do_not_duplicate",
+        "database_status_is_not_approval": true,
+        "source_alignment": "pending_comparison_if_importing_existing_arabic_witness",
+        "evidence": "2026-11-14-source-audit.md",
+        "notes_ar": "تثبت المراجع الأكاديمية وجود وصية آدم بالعربية في روايتين، وأصدرت طبعة نقدية عربية وإسبانية سنة 2019 مقارَنة بالشاهدين السرياني واليوناني. لا تُنشأ ترجمة جديدة قبل فحص إمكان إعادة استخدام النص العربي القائم."
+      }
+    },
+    {
+      "code": "VIRGINAP",
+      "name_ar": "رؤيا العذراء مريم",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-rutherford-apocalypse-virgin",
+          "name_ar": "ترجمة رذرفورد الإنجليزية لرؤيا العذراء",
+          "language": "en",
+          "chapters": 1,
+          "units": 30,
+          "characters": 23820,
+          "sha256": "6f6abf19efcdd11db63453b8f1cf51b147b7c91c3994089217ead54b88b96813",
+          "translation_source_url": "https://www.newadvent.org/fathers/1005.htm",
+          "translation_notes": "ترجمة أندرو رذرفورد المنشورة سنة ١٨٩٦ في آباء ما قبل نيقية، المجلد ٩؛ النص الكامل مقسم إلى ٣٠ فقرة مرقمة ويحفظ كسجل فصل واحد.",
+          "book_source_name": "Andrew Rutherford English Apocalypse of the Virgin",
+          "book_source_url": "https://www.newadvent.org/fathers/1005.htm",
+          "book_source_notes": "ترجمة أندرو رذرفورد المنشورة سنة ١٨٩٦ في آباء ما قبل نيقية، المجلد ٩؛ النص الكامل مقسم إلى ٣٠ فقرة مرقمة ويحفظ كسجل فصل واحد.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "VISEL",
+      "name_ar": "رؤيا إيليا",
+      "local_text_status": "complete",
+      "original_language": "اللاتينية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-project-vision-elijah-latin",
+          "name_ar": "ترجمة إنجليزية لشاهد رؤيا إيليا اللاتيني",
+          "language": "en",
+          "chapters": 1,
+          "units": 11,
+          "characters": 1294,
+          "sha256": "c91392b48c221a5860d45097be4e4590b72851a4eaa214c36ef92e538c742d28",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/VisEl.xml",
+          "translation_notes": "ترجمة إنجليزية جديدة أعدها المشروع مباشرة عن وحدات شاهد OCP اللاتيني الكامل الإحدى عشرة؛ حُفظ اللفظ اللاتيني الملتبس بعلامة صريحة ولم يُستكمل بالتخمين. بيانات الطبعة تنسب النص إلى دي بروين 1925، المجلد 37، ص 58، الأسطر 400–417. ملفات OCP النصية متاحة بموجب تراخيص مفتوحة معلنة على موقع المشروع.",
+          "book_source_name": "Project English Translation of the Latin Vision of Elijah",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/VisEl.xml",
+          "book_source_notes": "ترجمة إنجليزية جديدة أعدها المشروع مباشرة عن وحدات شاهد OCP اللاتيني الكامل الإحدى عشرة؛ حُفظ اللفظ اللاتيني الملتبس بعلامة صريحة ولم يُستكمل بالتخمين. بيانات الطبعة تنسب النص إلى دي بروين 1925، المجلد 37، ص 58، الأسطر 400–417. ملفات OCP النصية متاحة بموجب تراخيص مفتوحة معلنة على موقع المشروع.",
+          "rights_review": "pending"
+        },
+        {
+          "slug": "la-ocp-vision-elijah",
+          "name_ar": "الشاهد اللاتيني لرؤيا إيليا",
+          "language": "la",
+          "chapters": 1,
+          "units": 11,
+          "characters": 1106,
+          "sha256": "9bb959ea97d18f3dff54b0ff0741dc7d985275e1cdb7d9e03cd8b25079896f98",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/VisEl.xml",
+          "translation_notes": "شاهد لاتيني من طبعة دي بروين 1925، مستقل عن النص اليوناني الآخر المعروف برؤيا إيليا.",
+          "book_source_name": "Project English Translation of the Latin Vision of Elijah",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/VisEl.xml",
+          "book_source_notes": "ترجمة إنجليزية جديدة أعدها المشروع مباشرة عن وحدات شاهد OCP اللاتيني الكامل الإحدى عشرة؛ حُفظ اللفظ اللاتيني الملتبس بعلامة صريحة ولم يُستكمل بالتخمين. بيانات الطبعة تنسب النص إلى دي بروين 1925، المجلد 37، ص 58، الأسطر 400–417. ملفات OCP النصية متاحة بموجب تراخيص مفتوحة معلنة على موقع المشروع.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "VISZEZRA",
+      "name_ar": "رؤيا عزرا اللاتينية",
+      "local_text_status": "complete",
+      "original_language": "اللاتينية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-ocp-latin-vision-ezra",
+          "name_ar": "الترجمة الإنجليزية لرؤيا عزرا اللاتينية",
+          "language": "en",
+          "chapters": 1,
+          "units": 113,
+          "characters": 14419,
+          "sha256": "82e5cc70834bc7f9860e83f18a193749536ef8cf0efca81d7e40494340a42bec",
+          "translation_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Esdl.xml",
+          "translation_notes": "ترجمة OCP الإنجليزية للشاهد اللاتيني في الطبعة الرقمية النقدية لرؤيا عزرا. النص المنشور يتضمن 113 وحدة مرقمة في فصل واحد وينتهي بعبارة الختام؛ أرقام الوحدات الأصلية محفوظة مع وجود أربع قفزات في الترقيم (17 و42 و65 و66) كما في ملف الطبعة. وحدات اللاتينية والإنجليزية متطابقة في الترقيم؛ لا تدل القفزات وحدها على نص مفقود. مستودع OCP مرخص بنسبة العمل للمصدر 4.0.",
+          "book_source_name": "OCP English Vision of Ezra (Latin witness)",
+          "book_source_url": "https://raw.githubusercontent.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/master/static/docs/Esdl.xml",
+          "book_source_notes": "ترجمة OCP الإنجليزية للشاهد اللاتيني في الطبعة الرقمية النقدية لرؤيا عزرا. النص المنشور يتضمن 113 وحدة مرقمة في فصل واحد وينتهي بعبارة الختام؛ أرقام الوحدات الأصلية محفوظة مع وجود أربع قفزات في الترقيم (17 و42 و65 و66) كما في ملف الطبعة. وحدات اللاتينية والإنجليزية متطابقة في الترقيم؛ لا تدل القفزات وحدها على نص مفقود. مستودع OCP مرخص بنسبة العمل للمصدر 4.0.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    },
+    {
+      "code": "ZOSIMUS",
+      "name_ar": "رواية زوسيموس عن أرض المباركين",
+      "local_text_status": "complete",
+      "original_language": "اليونانية",
+      "arabic_in_local_database": false,
+      "external_arabic_translation_search": "not_performed",
+      "source_selection_status": "pending_manual_review",
+      "witnesses": [
+        {
+          "slug": "en-craigie-narrative-zosimus",
+          "name_ar": "ترجمة كريغي الإنجليزية لرواية زوسيموس",
+          "language": "en",
+          "chapters": 21,
+          "units": 21,
+          "characters": 19952,
+          "sha256": "d1a5d7c63541d2f6357fd397147eef5cefeab6cdd3289e2f823bf92ca65e85fe",
+          "translation_source_url": "https://www.tertullian.org/fathers2/ANF-10/anf10-23.htm",
+          "translation_notes": "ترجمة و. أ. كريغي في آباء ما قبل نيقية، المجلد العاشر؛ تحفظ الفصول الرومانية الـ21 وتعرض بوصفها رواية رؤيوية عن أرض المباركين.",
+          "book_source_name": "W. A. Craigie English Narrative of Zosimus",
+          "book_source_url": "https://www.tertullian.org/fathers2/ANF-10/anf10-23.htm",
+          "book_source_notes": "ترجمة و. أ. كريغي في آباء ما قبل نيقية، المجلد العاشر؛ تحفظ الفصول الرومانية الـ21 وتعرض بوصفها رواية رؤيوية عن أرض المباركين.",
+          "rights_review": "pending"
+        }
+      ],
+      "translation_eligibility": {
+        "completeness": "blocked_pending_source_completeness_review",
+        "database_status_is_not_approval": true
+      }
+    }
+  ],
+  "completeness_policy": {
+    "rule": "No translation until the selected source edition is verified complete and the imported text matches it. A database complete label or chapter count alone is insufficient.",
+    "partial_action": "blocked_no_translation",
+    "unknown_action": "blocked_pending_completeness_review",
+    "communication": "Inform the user of the work name and completeness finding before translation. Pause that work if incomplete or uncertain.",
+    "scope": "Completeness of the identified edition; no claim to reconstruct a lost ancient original."
+  }
+}

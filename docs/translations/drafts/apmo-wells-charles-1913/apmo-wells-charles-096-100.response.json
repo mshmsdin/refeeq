@@ -1,0 +1,37 @@
+{
+  "request_id": "20f4a170-5b85-4a64-8e26-65e4d9acf2d1",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 28,\n      \"verse\": 2,\n      \"text_ar\": \"فأجاب آدم وقال: \\\"امنحني يا رب من شجرة الحياة لكي آكل منها، قبل أن\"\n    },\n    {\n      \"chapter\": 28,\n      \"verse\": 3,\n      \"text_ar\": \"أُطرد.\\\" ثم كلم الرب آدم قائلاً: \\\"لن تأخذ منها الآن، لأني أمرت الكروبيم بسيف اللهيب المتحول (في كل اتجاه) أن يحرسوها منك لكي\"\n    },\n    {\n      \"chapter\": 28,\n      \"verse\": 4,\n      \"text_ar\": \"لا تذوق منها؛ ولكن لديك الحرب التي وضعها العدو فيك، أما متى خرجت من الفردوس، فإن حفظت نفسك من كل شر، كمن هو ميت، ومتى حدثت القيامة مرة أخرى، فسأقيمك وعندئذ تُعطى لك شجرة الحياة.\\\"\"\n    },\n    {\n      \"chapter\": 29,\n      \"verse\": 1,\n      \"text_ar\": \"هكذا تكلم الرب وأمر أن نُطرد من الفردوس. أما أبوكم آدم فبكى أمام الملائكة تجاه الفردوس وتقول له الملائكة: \\\"ماذا تريد منا أن نعل،\"\n    },\n    {\n      \"chapter\": 29,\n      \"verse\": 3,\n      \"text_ar\": \"يا آدم؟\\\" فقال لهم أبوكم: \\\"ها أنتم تطردونني. أرجوكم أن تسمحوا لي أن آخذ أعشاباً زكية من الفردوس، لكي أقدم تقدمة لله بعد أن أخرج من الفردوس لكي يستجيب لي.\\\" واقترب الملائكة إلى الله وقالوا: \\\"يا إيل، الملك الأبدي، مر يا ربي أن يُعطى آدم بخوراً ذا رائحة طيبة من الفردوس وبذوراً\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 505,
+    "output": 477,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.001344,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 505,
+      "outputTokens": 477,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.001344,
+      "latencyMs": 1771
+    }
+  ]
+}

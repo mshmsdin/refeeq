@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "89fde78d-723d-4efd-8b18-0f96910ed2dc",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":6,\"verses\":[{\"chapter\":6,\"verse\":11,\"text\":\"Who had camels laden with goods. and they were brought into remote lands to the poor, and now she sells her hair for bread!\"},{\"chapter\":6,\"verse\":12,\"text\":\"Behold her who had seven tables immovably set in her house at which each poor man and each stranger ate, and now she sells her hair for bread!\"},{\"chapter\":6,\"verse\":13,\"text\":\"Behold her who had the basin wherewith to wash her feet made of gold and silver, and now she walks upon the ground and [sells her hair for bread !]\"},{\"chapter\":6,\"verse\":14,\"text\":\"Behold her who had her garments made of byssus interwoven with gold, and now she exchanges her hair for bread!\"},{\"chapter\":6,\"verse\":15,\"text\":\"Behold her who had couches of gold and of silver, and now she sells her hair for bread!\\\"\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter."
+}

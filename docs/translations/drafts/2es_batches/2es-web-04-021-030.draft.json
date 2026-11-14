@@ -1,0 +1,104 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 4,
+  "range": "21-30",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "b040bb5d-3060-4bd6-b52a-6d65293bae57",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 591,
+      "outputTokens": 827,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0022448000000000004,
+      "latencyMs": 2376
+    }
+  ],
+  "usage": {
+    "input": 591,
+    "output": 827,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0022448000000000004,
+  "verses": [
+    {
+      "chapter": 4,
+      "verse": 21,
+      "text_ar": "لأنه كما أُعطيت الأرض للشجر، والبحر لأمواجه، هكذا لا يمكن للساكنين على الأرض أن يفهموا إلا ما هو على الأرض. وحدَه الساكن فوق السماوات يفهم الأمور التي هي فوق ارتفاع السماوات.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 4,
+      "verse": 22,
+      "text_ar": "فأجبت وقلت: «أرجوك يا رب، لماذا أُعطيت لي قوة الفهم؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 4,
+      "verse": 23,
+      "text_ar": "فإنه لم يكن في ذهني أن أستقصي عن الطرق العلوية، بل عن الأمور التي تمر بنا يومياً، لأن إسرائيل قد سُلّم ليكون عاراً لدى الأمم. والشعب الذي أحببته قد سُلّم لأمم فاجرة. وشريعة آبائنا أصبحت بلا أثر، والعهود المكتوبة لا يُلتفت إليها في أي مكان.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 4,
+      "verse": 24,
+      "text_ar": "نحن نمر من العالم كالجَراد. وحياتنا مثل البخار، ولست مستحقين أن ننال رحمة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 4,
+      "verse": 25,
+      "text_ar": "فماذا سيصنع إذن من أجل اسمه الذي دُعي علينا؟ لقد سألت عن هذه الأمور».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 4,
+      "verse": 26,
+      "text_ar": "فأجابني وقال: «إن عشتَ سترى، وإن طال بك العمر ستعجب، لأن العالم يسرع في العبور.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 4,
+      "verse": 27,
+      "text_ar": "لأنه غير قادر على احتمال الأمور الموعودة للأبرار في الأوقات القادمة؛ لأن هذا العالم مملوء حزناً وضعفات.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 4,
+      "verse": 28,
+      "text_ar": "فإن الشر الذي سألتني عنه قد زُْرع، لكن حصاده لم يأتِ بعد.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 4,
+      "verse": 29,
+      "text_ar": "فإن لم يُحْصَد ما زُْرع، وإن لم يزل المكان الذي زُرع فيه الشر، فلن يأتي الحقل الذي يُزرع فيه الخير.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 4,
+      "verse": 30,
+      "text_ar": "لأنه قد زُرعت حبة من بذر الشر في قلب آدم منذ البدء، وكم من الشر أفرزت حتى الآن! وكم ستفرز أيضاً حتى يأتي وقت الدرس!"
+    }
+  ]
+}

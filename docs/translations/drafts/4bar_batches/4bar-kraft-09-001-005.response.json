@@ -1,0 +1,37 @@
+{
+  "request_id": "eca5418a-4604-41a1-a2c4-5af6b480ba1c",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"أما أولئك الذين كانوا مع إرميا فكانوا يفرحون ويقدمون الذبائح لأجل الشعب لمدة تسعة أيام.\",\n      \"verse\": 1\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"ولكن في اليوم العاشر، قدم إرميا الذبيحة وحده.\",\n      \"verse\": 2\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"وصلى صلاة قائلاً: «قدوس، قدوس، قدوس، العبير الذكي للأشجار الحية،\",\n      \"verse\": 3\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"من أجل رحمتك، أتوسل إليك،\",\n      \"verse\": 4\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"وليكن ميخائيل، رئيس ملائكة البر،\",\n      \"verse\": 5\n    }\n  ],\n  \"book_code\": \"4BAR\"\n}",
+  "usage": {
+    "input": 238,
+    "output": 268,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0007414,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 238,
+      "outputTokens": 268,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0007414,
+      "latencyMs": 1890
+    }
+  ]
+}

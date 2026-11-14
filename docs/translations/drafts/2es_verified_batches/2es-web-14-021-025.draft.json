@@ -1,0 +1,70 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  14,
+    "range":  "21-25",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "9d7a9e5e-7821-4f7d-bb9a-4bde4d281217",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  366,
+                         "outputTokens":  405,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0011223,
+                         "latencyMs":  2553
+                     }
+                 ],
+    "usage":  {
+                  "input":  366,
+                  "output":  405,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0011223,
+    "verses":  [
+                   {
+                       "chapter":  14,
+                       "text_ar":  "لأن ناموسك قد احترق، ولذلك لا يعرف أحد الأمور التي تُصنع منك، أو الأعمال التي ستُصنع.",
+                       "verse":  21
+                   },
+                   {
+                       "chapter":  14,
+                       "text_ar":  "ولكن إن كنت قد وجدت نعمة أمامك، فأرسل إليّ الروح القدس، وسأكتب كل ما صنع في العالم منذ البدء، بل حتى الأمور التي كُتبت في ناموسك، لكي يستطيع الناس أن يجدوا الطريق، ولكي يحيا أولئك الذين سيحيوْن في الأيام الأخيرة.",
+                       "verse":  22
+                   },
+                   {
+                       "chapter":  14,
+                       "text_ar":  "فأجابني وقال: اذهب في طريقك، واجمع الشعب معاً، وقل لهم ألا يطلبوه لمدة أربعين يوماً.",
+                       "verse":  23
+                   },
+                   {
+                       "chapter":  14,
+                       "text_ar":  "ولكن أعدَّ لنفسك ألواحاً كثيرة، وخذ معك ساريا، ودابريا، وسليميا، وأيثانوس، وأسائيل، هؤلاء الخمسة الذين هم مستعدون للكتابة بسرعة.",
+                       "verse":  24
+                   },
+                   {
+                       "chapter":  14,
+                       "text_ar":  "وتعَالَ إلى هنا، وسأوقد سراج الفهم في قلبك، والذي لن ينطفئ حتى تنتهي الأمور التي ستكتبها.",
+                       "verse":  25
+                   }
+               ]
+}

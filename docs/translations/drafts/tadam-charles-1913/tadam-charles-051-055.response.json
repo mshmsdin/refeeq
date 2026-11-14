@@ -1,0 +1,37 @@
+{
+  "request_id": "ad6454d7-bdb2-46d6-b24d-78b2a7a32c31",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 20,\n      \"verse\": 1,\n      \"text_ar\": \"ولكن في تلك الساعة قال آدم: «لقد أتى إليَّ تظلم حواء. لعل الحية قد حاربتها مرة أخرى».\"\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 2,\n      \"text_ar\": \"ومضى فوجدها في كرب شديد. وقالت حواء: «منذ اللحظة التي رأيتك فيها يا سيدي، انتعشت نفسي المثقلة بالأحزان. والآن توسل إلى الرب الإله من أجلي لكي\"\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 3,\n      \"text_ar\": \"يستجيب لك وينظر إليَّ ويحررني من أوجاعي الرهيبة». وتوسل آدم إلى الرب من أجل حواء.\"\n    },\n    {\n      \"chapter\": 21,\n      \"verse\": 1,\n      \"text_ar\": \"وإذا بإثنا عشر ملاكاً واثنين من «الفضائل» قد أتوا، واقفين عن اليمين وعن اليسار\"\n    },\n    {\n      \"chapter\": 21,\n      \"verse\": 2,\n      \"text_ar\": \"لحواء؛ وكان ميخائيل واقفاً عن اليمين؛ فمسح وجهها حتى الثدي وقال لحواء: «مباركة أنتِ يا حواء من أجل آدم. وحيث إن صلواته وشفاعاته عظيمة، فقد أُرسلت لكي تنالي مساعدتنا. قومي الآن، و\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 419,
+    "output": 405,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0011382,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 419,
+      "outputTokens": 405,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011382,
+      "latencyMs": 1497
+    }
+  ]
+}

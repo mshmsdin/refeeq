@@ -1,0 +1,51 @@
+{
+  "request_id": "a07cbe29-b021-4686-bae8-2de723bc6364",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 5,\n      \"verse\": 6,\n      \"text_ar\": \"6 فَسَأَقُومُ وَأَسْتَمِرُّ فِي الْحَرَارَةِ الْمُحْتَرِقَةِ، أَلَيْسَ هُنَاكَ حَرَارَةٌ، أَلَيْسَ هُنَاكَ عَمَلٌ شَدِيدٌ كُلَّ يَوْمٍ؟\"\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 7,\n      \"text_ar\": \"7 فَقَامَ وَأَخَذَ سَلَّةَ التِينِ وَوَضَعَهَا عَلَى كَتِفَيهِ، فَدَخَلَ إِلَى أُورُشَلِيمَ وَلَمْ يَعْرِفْهَا، لا بَيْتَهُ، ولا المَكَانَ، ولم يَجِدْ أَسْرَتَهُ ولا أَحَدًا مِنْ أَعْرَافِهِ.\"\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 8,\n      \"text_ar\": \"8 فَقَالَ: \\\"مُبَارَكٌ الرَّبُّ، فَقَدْ وَقَعَ عَلَيَّ سُكْرٌ عَظِيمٌ الْيَوْمَ!\\\"\"\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 9,\n      \"text_ar\": \"9 هَذِهِ لَيسَتْ أُورُشَلِيمَ، وَضَعْتُ سَبِيلِي لِأَنِّي جِئْتُ بِطَرِيقِ الجَبَلِ عِنْدَ استِيقَاظِي مِنْ نَوْمِي؛ وَإذَا رَأَسِي ثَقِيلٌ لِأَنِّي لَمْ أَحْصُلْ عَلَى كَفَايَةٍ مِنَ النَّوْمِ، فَضَلَلْتُ سَبِيلِي.\"\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 10,\n      \"text_ar\": \"10 سَيَكُونُ لِإِرْمِيَا رَجَاءٌ أَنَّهُ سَيَتَعَجَّبُ مِنْ ضَلَالَتِي!\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 495,
+    "output": 626,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 495,
+      "outputTokens": 626,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1662
+    }
+  ]
+}

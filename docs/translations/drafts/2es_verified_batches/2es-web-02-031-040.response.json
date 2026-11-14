@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "86d7ae33-9ada-47e6-95a2-e89a0375afe3",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"اذكروا أولادكم الراقدين، فإني سأخرجهم من مخادع الأرض وأظهر لهم الرحمة، لأني رحوم، يقول الرب القدير.\",\n      \"verse\": 31\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"احتضنوا أولادكم حتى أتي، وأعلنوا لهم الرحمة، لأن ينابيع طافحة ونعمتي لن تزول.\",\n      \"verse\": 32\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"أنا عزرا، تلقيت أمراً من الرب على جبل حوريب لأذهب إلى إسرائيل، ولكن عندما جئت إليهم، رفضوني ورفضوا وصية الرب.\",\n      \"verse\": 33\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"لذلك أقول لكم، أيها الأمم الذين تسمعون وتفهمون: انتظروا راعيكم، فهو سيمنحكم راحة أبدية، لأن القريب الذي يأتي في نهاية الدهر قد اقتراب.\",\n      \"verse\": 34\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"كونوا مستعدين لمكافآت الملكوت، لأن النور الأبدي سيشرق عليكم إلى الأبد.\",\n      \"verse\": 35\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"اهربوا من ظل هذا العالم، وتقبلوا فرح مجدكم. إني أشهد مخلصي جهاراً.\",\n      \"verse\": 36\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"اقبلوا ما أتاكم به الرب، وتكونوا فرحين، شاكرين للذي دعاكم إلى الممالك السماوية.\",\n      \"verse\": 37\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"قوموا وقفوا، وانظروا عدد المكتومين في وليمة الرب.\",\n      \"verse\": 38\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"إن الذين انفصلوا عن ظل العالم قد نالوا حللاً مجيدة من الرب.\",\n      \"verse\": 39\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"استردي عددك كاملاً يا صهيون، وأحصي الذين لك والذين يلبسون الثياب البيضاء، والذين أكملوا ناموس الرب.\",\n      \"verse\": 40\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  523,
+                  "output":  643,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0017644000000000002,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  523,
+                         "outputTokens":  643,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017644000000000002,
+                         "latencyMs":  2538
+                     }
+                 ]
+}

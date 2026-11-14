@@ -1,0 +1,37 @@
+{
+  "request_id": "59449b08-2dc2-4936-8987-4907717754f9",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"1 عندما سُبي بنو إسرائيل على يد ملك الكلدانيين، كلم الله إرميا قائلاً: \\\"يا إرميا، يا مختاري، قم واخرج من هذه المدينة، أنت وباروخ، لأني أوشك أن أدمّرها بسبب خطايا الكثيرين ممن يسكنون فيها.\",\n      \"verse\": 1\n    },\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"2 لأن صلواتكم هي مثل عمود راسخ في داخلها، ومثل سور لا يُهدم يحيط بها.\",\n      \"verse\": 2\n    },\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"3 الآن إذن، قم واخرج قبل أن يحيط بها جيش الكلدانيين.\\\"\",\n      \"verse\": 3\n    },\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"4 فأجاب إرميا قائلاً: \\\"أرجوك يا رب، اسمح لي، أنا خادمك، أن أتكلم في حضرتك.\\\"\",\n      \"verse\": 4\n    },\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"5 فقال له الرب: \\\"تكلم يا مختاري إرميا.\\\"\",\n      \"verse\": 5\n    }\n  ],\n  \"book_code\": \"4BAR\"\n}",
+  "usage": {
+    "input": 310,
+    "output": 337,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009355,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 310,
+      "outputTokens": 337,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009355,
+      "latencyMs": 1518
+    }
+  ]
+}

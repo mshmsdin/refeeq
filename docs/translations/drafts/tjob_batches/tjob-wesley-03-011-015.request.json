@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "1b33aa85-928e-40e0-81da-a20f090e5b17",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":3,\"verses\":[{\"chapter\":3,\"verse\":11,\"text\":\"I also had fifty bakeries from which I sent [the bread] to the table for the poor.\"},{\"chapter\":3,\"verse\":12,\"text\":\"And I had slaves selected for their service.\"},{\"chapter\":3,\"verse\":13,\"text\":\"There were also some strangers who saw my good will; they wished to serve as waiters themselves.\"},{\"chapter\":3,\"verse\":14,\"text\":\"Others, being in distress and unable to obtain a living, came with the request saying:\"},{\"chapter\":3,\"verse\":15,\"text\":\"\\\"We pray thee, since we also can fill this office of waiters (deacons) and have no possession, have pity upon us and advance money to us in order that we may go into the great cities and sell merchandise.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter."
+}

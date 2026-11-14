@@ -1,0 +1,37 @@
+{
+  "request_id": "f77cf818-797b-4b0a-8f87-6249747ec8a0",
+  "content": "{\n  \"book_code\": \"2MCE\",\n  \"chapter\": 10,\n  \"verses\": [\n    {\n      \"chapter\": 10,\n      \"verse\": 9,\n      \"text_ar\": \"عندما باركهم، حزن وبالاك بن زبور وغضب، فأمره مرة أخرى أن يلعنهم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 10,\n      \"verse\": 10,\n      \"text_ar\": \"لأن الشعب الذي باركه الرب جاء إلى هذه البلاد، وقال له بلعام: «لن ألعن إسرائيل التي باركها الرب».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 10,\n      \"verse\": 11,\n      \"text_ar\": \"قال بالاك لبلعام: «كنت أرغب أن تلعني من أجلي، لكنك باركتهم أمامي. لو لعنتهم وطلبت مني أن أعطيك، لكنت أعطيتك بيتًا مليئًا بالفضة والذهب. لكنك باركتهم بالكامل؛ لم تفعل شيئًا صالحًا لي، لذا لن أفعل شيئًا صالحًا لك».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 10,\n      \"verse\": 12,\n      \"text_ar\": \"قال بلعام: «ما يأمرني الرب أن أقوله بلساني، سأقوله؛ لأني لا أجرؤ على تجاهل أمر الرب».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 10,\n      \"verse\": 13,\n      \"text_ar\": \"«لن ألعن شعبًا مباركًا، فإن الرب سيغضب علي إذا أحببت المال. لا أحب المال أكثر من نفسي».\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 10,\n      \"verse\": 14,\n      \"text_ar\": \"كما أخبر الرب أباهم يعقوب: «من يبارككم فليبارككم، ومن يلعنكم فليُلعَنْ». «لن ألعن يعقوب المبارك؛ لا أحب المال أكثر من نفسي»، قال. وكما قال له الرب: «من يبارككم فهو مبارك…»\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 10,\n      \"verse\": 15,\n      \"text_ar\": \"«…ومن يلعنك ظلمًا فليُلعَن». أكمِل طريقك وعملك لكي يحبك الرب.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 937,
+    "output": 594,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 937,
+      "outputTokens": 594,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1598
+    }
+  ]
+}

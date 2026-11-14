@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":39,\"source_ref\":\"39:1\",\"text\":\"Then said Seth to the beast: 'God the Lord revile thee. Be silent, be dumb, shut thy mouth, accursed enemy of Truth, confounder and destroyer. Avaunt from the image of God till the day when the Lord God shall order thee to be brought to the ordeal.' And the beast said to Seth: 'See, I leave the presence of the image of God, as thou hast said.' Forthwith he left Seth, wounded by his teeth.\"},{\"chapter\":40,\"source_ref\":\"40:1\",\"text\":\"But Seth and his mother walked to the regions of paradise for the oil of mercy to anoint the sick Adam: and they arrived at the gates of paradise, (and) they took dust from the earth and placed it on their heads, and bowed themselves with their faces to the earth and began to lament and\"},{\"chapter\":40,\"source_ref\":\"40:2\",\"text\":\"make loud moaning, imploring the Lord God to pity Adam in his pains and to send His angel to give them the oil from the 'tree of His mercy'.\"},{\"chapter\":41,\"source_ref\":\"41:1\",\"text\":\"But when they had been praying and imploring for many hours, behold, the angel Michael ap-\"},{\"chapter\":41,\"source_ref\":\"41:2\",\"text\":\"peared to them and said: 'I have been sent to you from the Lord -I am set by God over the\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "31f81fb8-a72f-4b5e-8ebf-ff023f362691",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 39:1, 40:1, 40:2, 41:1, 41:2.",
+  "tenant_id": "rafeeq-bible-translation"
+}

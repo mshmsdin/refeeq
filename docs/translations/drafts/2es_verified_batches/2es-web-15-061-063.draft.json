@@ -1,0 +1,102 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 15,
+  "range": "61-63",
+  "status": "machine_translated_structured",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "dd049fed-471b-4f95-be02-952301321d88",
+  "failovers": 3,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "05dfb509-43ee-4357-a629-e560369080e7",
+      "provider": "Gemini",
+      "model": "gemini-3.8-flash",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.7500000000",
+      "outputPrice": "3.7500000000",
+      "currency": "USD",
+      "cachedPrice": "0.0750000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "error",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 56
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 382,
+      "outputTokens": 615,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1385
+    }
+  ],
+  "usage": {
+    "input": 382,
+    "output": 615,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "verses": [
+    {
+      "chapter": 15,
+      "verse": 61,
+      "text_ar": "سَتُسْقَطُ مِنْ قِبَلِهِمْ كَالعُشْبِ الجافِّ، وَسَيَكُونُونَ لَكَ كالنَّارِ."
+    },
+    {
+      "chapter": 15,
+      "verse": 62,
+      "text_ar": "سَيَأْكُلُونَكَ وَمُدُنَكَ وَأَرْضَكَ وَجِبَالَكَ. سَيُحْرِقُونَ جَمِيعَ غَابَاتِكَ وَأَشْجَارَكَ الثَّمْرِيَّةَ بالنَّارِ."
+    },
+    {
+      "chapter": 15,
+      "verse": 63,
+      "text_ar": "سَيَأْخُذُونَ أَوْلادَك أَسْرًا، وَيَنهَبُونَ مَمتَلَكَاتِكَ، وَيُشَوِّهُونَ مَجْدَ وَجْهِكَ."
+    }
+  ]
+}

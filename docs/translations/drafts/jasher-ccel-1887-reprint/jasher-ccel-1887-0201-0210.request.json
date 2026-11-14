@@ -1,0 +1,17 @@
+{
+  "messages": [
+    {
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"chapter\":6,\"verse\":33,\"source_ref\":\"6:33\",\"text\":\"And a wind passed over the earth, and the waters were still and the ark rested.\"},{\"chapter\":6,\"verse\":34,\"source_ref\":\"6:34\",\"text\":\"And the fountains of the deep and the windows of heaven were stopped, and the rain from heaven was restrained.\"},{\"chapter\":6,\"verse\":35,\"source_ref\":\"6:35\",\"text\":\"And the waters decreased in those days, and the ark rested upon the mountains of Ararat.\"},{\"chapter\":6,\"verse\":36,\"source_ref\":\"6:36\",\"text\":\"And Noah then opened the windows of the ark, and Noah still called out to the Lord at that time and he said, O Lord, who didst form the earth and the heavens and all that are therein, bring forth our souls from this confinement, and from the prison wherein thou hast placed us, for I am much wearied with sighing.\"},{\"chapter\":6,\"verse\":37,\"source_ref\":\"6:37\",\"text\":\"And the Lord hearkened to the voice of Noah, and said to him, When though shalt have completed a full year thou shalt then go forth.\"},{\"chapter\":6,\"verse\":38,\"source_ref\":\"6:38\",\"text\":\"And at the revolution of the year, when a full year was completed to Noah's dwelling in the ark, the waters were dried from off the earth, and Noah put off the covering of the ark.\"},{\"chapter\":6,\"verse\":39,\"source_ref\":\"6:39\",\"text\":\"At that time, on the twenty-seventh day of the second month, the earth was dry, but Noah and his sons, and those that were with him, did not go out from the ark until the Lord told them.\"},{\"chapter\":6,\"verse\":40,\"source_ref\":\"6:40\",\"text\":\"And the day came that the Lord told them to go out, and they all went out from the ark.\"},{\"chapter\":6,\"verse\":41,\"source_ref\":\"6:41\",\"text\":\"And they went and returned every one to his way and to his place, and Noah and his sons dwelt in the land that God had told them, and they served the Lord all their days, and the Lord blessed Noah and his sons on their going out from the ark.\"},{\"chapter\":6,\"verse\":42,\"source_ref\":\"6:42\",\"text\":\"And he said to them, Be fruitful and fill all the earth; become strong and increase abundantly in the earth and multiply therein.\"}]}",
+      "role": "user"
+    }
+  ],
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "6283725b-46ba-4d02-a5f4-836da79afb6e"
+}

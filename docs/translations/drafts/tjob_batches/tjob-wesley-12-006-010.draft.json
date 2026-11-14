@@ -1,0 +1,71 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 12,
+  "range": "6-10",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "a7c9ce0f-bf10-462d-8a9b-41876e489e04",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 340,
+      "outputTokens": 286,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.000817,
+      "latencyMs": 1506
+    }
+  ],
+  "usage": {
+    "input": 340,
+    "output": 286,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.000817,
+  "verses": [
+    {
+      "text_ar": "وأما قسيا فأعطاها مجمرة (وفيها عطر = قسيا)، وقرن أمالثيا (= الموسيقى) أعطاه دفاً لكي يباركا الملائكة القديسين الذين أتوا من أجل نفسه.",
+      "chapter": 12,
+      "verse": 6
+    },
+    {
+      "text_ar": "وأخذا هذه، ورنما، وعزفا على المزمار، وسبحا ومجدا الله باللسان المقدس.",
+      "chapter": 12,
+      "verse": 7
+    },
+    {
+      "text_ar": "وبعد هذا أتى الجالس على المركبة العظيمة وقبل أيوب، بينما كانت بناته الثلاث ينظرن، وأما الأخريات فلم يرين ذلك.",
+      "chapter": 12,
+      "verse": 8
+    },
+    {
+      "text_ar": "وأخذ نفس أيوب وارتفع إلى فوق، آخذاً إياها (النفس) من ذراعها وحامل إياها على المركبة، ومضى نحو الشرق.",
+      "chapter": 12,
+      "verse": 9
+    },
+    {
+      "text_ar": "وأما جسده فحمل إلى القبر بينما كانت البنات الثلاث يتقدمهن المسير، وقد تقططقن بمناطقهم وكن يرتلن ترانيم تسبيح لله.",
+      "chapter": 12,
+      "verse": 10
+    }
+  ]
+}

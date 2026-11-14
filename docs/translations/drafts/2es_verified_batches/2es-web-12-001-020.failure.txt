@@ -1,0 +1,1 @@
+Conversion from JSON failed with error: Unterminated string. Expected delimiter: ". Path 'verses[19].text_ar', line 100, position 58.

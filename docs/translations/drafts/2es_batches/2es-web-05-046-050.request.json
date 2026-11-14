@@ -1,0 +1,18 @@
+{
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "request_id": "52185a64-05b4-42d6-98c8-2194957d04ae",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي كأعداد صحيحة بأرقام 0-9 فقط، بلا فاصلة أو كلمة ملحقة، وعنصراً واحداً لكل وحدة.",
+      "role": "system"
+    },
+    {
+      "content": "{\"verses\":[{\"verse\":46,\"chapter\":5,\"text\":\"And he said to me, “Ask the womb of a woman, and say to her, ‘If you bear ten children, why do you it at different times? Ask her therefore to give birth to ten children at once.”\"},{\"verse\":47,\"chapter\":5,\"text\":\"I said, “She can’t, but must do it each in their own time.”\"},{\"verse\":48,\"chapter\":5,\"text\":\"Then said he to me, “Even so, I have given the womb of the earth to those who are sown in it in their own times.\"},{\"verse\":49,\"chapter\":5,\"text\":\"For just as a young child may not give birth, neither she who has grown old any more, even so have I organized the world which I created.”\"},{\"verse\":50,\"chapter\":5,\"text\":\"I asked, “Seeing that you have now shown me the way, I will speak before you. Is our mother, of whom you have told me, still young? Or does she now draw near to old age?”\"}],\"book_code\":\"2ES\",\"chapter\":5}",
+      "role": "user"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 46,47,48,49,50 in this chapter.",
+  "service_key": "bible-translation"
+}

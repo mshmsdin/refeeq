@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"verses\":[{\"text\":\"My mouth was opened, and shut no more.\",\"verse\":41,\"chapter\":14},{\"text\":\"The Most High gave understanding to the five men, and they wrote by course the things that were told them, in characters which they didn’t know, and they sat forty days. Now they wrote in the day-time, and at night they ate bread.\",\"verse\":42,\"chapter\":14},{\"text\":\"As for me, I spoke in the day, and by night I didn’t hold my tongue.\",\"verse\":43,\"chapter\":14},{\"text\":\"So in forty days, ninety-four books were written.\",\"verse\":44,\"chapter\":14},{\"text\":\"It came to pass, when the forty days were fulfilled, that the Most High spoke to me, saying, “The first books that you have written, publish openly, and let the worthy and unworthy read them;\",\"verse\":45,\"chapter\":14},{\"text\":\"but keep the last seventy, that you may deliver them to those who are wise among your people;\",\"verse\":46,\"chapter\":14},{\"text\":\"for in them is the spring of understanding, the fountain of wisdom, and the stream of knowledge.”\",\"verse\":47,\"chapter\":14},{\"text\":\"I did so.\",\"verse\":48,\"chapter\":14}],\"chapter\":14,\"book_code\":\"2ES\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "b7319f07-56e5-4c01-bcf9-b5eeb7b981b2",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 41,42,43,44,45,46,47,48 in this chapter."
+}

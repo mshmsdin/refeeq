@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"text\":\"After seven days, the thoughts of my heart were very grievous to me again,\",\"verse\":21},{\"chapter\":5,\"text\":\"and my soul recovered the spirit of understanding, and I began to speak words before the Most High again.\",\"verse\":22},{\"chapter\":5,\"text\":\"I said, â€œO sovereign Lord of all the woods of the earth, and of all the trees thereof, you have chosen one vine for yourself.\",\"verse\":23},{\"chapter\":5,\"text\":\"Of all the lands of the world you have chosen one country for yourself. Of all the flowers of the world, you have chosen one lily for yourself.\",\"verse\":24},{\"chapter\":5,\"text\":\"Of all the depths of the sea, you have filled one river for yourself. Of all built cities, you have consecrated Zion for yourself.\",\"verse\":25},{\"chapter\":5,\"text\":\"Of all the birds that are created you have named for yourself one dove. Of all the livestock that have been made, you have provided for yourself one sheep.\",\"verse\":26},{\"chapter\":5,\"text\":\"Among all the multitudes of peoples you have gotten yourself one people. To this people, whom you loved, you gave a law that is approved by all.\",\"verse\":27},{\"chapter\":5,\"text\":\"Now, O Lord, why have you given this one people over to many, and have dishonored the one root above others, and have scattered your only one among many?\",\"verse\":28},{\"chapter\":5,\"text\":\"Those who opposed your promises have trampled down those who believed your covenants.\",\"verse\":29},{\"chapter\":5,\"text\":\"If you really do hate your people so much, they should be punished with your own hands.â€‌\",\"verse\":30}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "672111e8-9ee5-443d-adcb-08dcd018e30d",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24,25,26,27,28,29,30 in this chapter."
+}

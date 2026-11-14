@@ -1,0 +1,17 @@
+{
+  "messages": [
+    {
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"chapter\":7,\"verse\":11,\"source_ref\":\"7:11\",\"text\":\"And the sons of Mitzraim were Lud, Anom and Pathros, Chasloth and Chaphtor.\"},{\"chapter\":7,\"verse\":12,\"source_ref\":\"7:12\",\"text\":\"And the sons of Phut were Gebul, Hadan, Benah and Adan.\"},{\"chapter\":7,\"verse\":13,\"source_ref\":\"7:13\",\"text\":\"And the sons of Canaan were Zidon, Heth, Amori, Gergashi, Hivi, Arkee, Seni, Arodi, Zimodi and Chamothi.\"},{\"chapter\":7,\"verse\":14,\"source_ref\":\"7:14\",\"text\":\"These are the sons of Ham, according to their families, and their numbers in those days were about seven hundred and thirty men.\"},{\"chapter\":7,\"verse\":15,\"source_ref\":\"7:15\",\"text\":\"And these are the sons of Shem; Elam, Ashur, Arpachshad, Lud and Aram, five sons; and the sons of Elam were Shushan, Machul and Harmon.\"},{\"chapter\":7,\"verse\":16,\"source_ref\":\"7:16\",\"text\":\"And the sons of Ashar were Mirus and Mokil, and the sons of Arpachshad were Shelach, Anar and Ashcol.\"},{\"chapter\":7,\"verse\":17,\"source_ref\":\"7:17\",\"text\":\"And the sons of Lud were Pethor and Bizayon, and the sons of Aram were Uz, Chul, Gather and Mash.\"},{\"chapter\":7,\"verse\":18,\"source_ref\":\"7:18\",\"text\":\"These are the sons of Shem, according to their families; and their numbers in those days were about three hundred men.\"},{\"chapter\":7,\"verse\":19,\"source_ref\":\"7:19\",\"text\":\"These are the generations of Shem; Shem begat Arpachshad and Arpachshad begat Shelach, and Shelach begat Eber and to Eber were born two children, the name of one was Peleg, for in his days the sons of men were divided, and in the latter days, the earth was divided.\"},{\"chapter\":7,\"verse\":20,\"source_ref\":\"7:20\",\"text\":\"And the name of the second was Yoktan, meaning that in his day the lives of the sons of men were diminished and lessened.\"}]}",
+      "role": "user"
+    }
+  ],
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "63beddae-c431-4f50-b9a3-e7d0082f2b37"
+}

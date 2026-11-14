@@ -1,0 +1,37 @@
+{
+  "request_id": "165790c7-12f1-4bb4-baf7-bc23f7decbc2",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"ولما رأوني أهز رأسي طرحوا أنفسهم على الأرض، وقد غلبهم التأثر تماماً.\",\n      \"verse\": 16\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وبينما كان مضيفوهم واقفين حولهم، رأيت الملوك الثلاثة ملقين على الأرض مدة ثلاث ساعات كالأموات.\",\n      \"verse\": 17\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"ثم نهضوا وقال بعضهم لبعض: «لا يمكننا أن نصدق أن هذا هو أيوب».\",\n      \"verse\": 18\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وأخيراً، بعد أن استفسروا طوال سبعة أيام عن كل ما يتعلق بي وبحثوا عن قطيعي وممتلكات الأخرى، قالوا:\",\n      \"verse\": 19\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"«أما نعلم كم من الخيرات أرسلها إلى المدن والقرى المجاورة لتُعطى للفقراء، بغض النظر عن كل ما أعطاه بداخل بيته؟ فكيف إذن سقط إلى حالة الهلاك والشقاء هذه!»\",\n      \"verse\": 20\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 317,
+    "output": 354,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009801,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 317,
+      "outputTokens": 354,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009801,
+      "latencyMs": 1449
+    }
+  ]
+}

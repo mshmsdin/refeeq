@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":9,\"verses\":[{\"chapter\":9,\"text\":\"like a wave is greater than a drop.â€‌\",\"verse\":16},{\"chapter\":9,\"text\":\"He answered me, â€œJust as the field is, so also the seed. As the flowers are, so are the colors. As the work is, so also is the judgment on it. As is the farmer, so also is his threshing floor. For there was a time in the world\",\"verse\":17},{\"chapter\":9,\"text\":\"when I was preparing for those who now live, before the world was made for them to dwell in. Then no one spoke against me,\",\"verse\":18},{\"chapter\":9,\"text\":\"for no one existed. But now those who are created in this world that is prepared, both with a table that doesnâ€™t fail and a law which is unsearchable, are corrupted in their ways.\",\"verse\":19},{\"chapter\":9,\"text\":\"So I considered my world, and behold, it was destroyed, and my earth, and behold, it was in peril, because of the plans that had come into it.\",\"verse\":20}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "e500ae3d-195a-4287-b569-046dc782eb53",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 16,17,18,19,20 in this chapter."
+}

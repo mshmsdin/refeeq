@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "58a01903-89b5-4711-a70d-53f175a293ab",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":26,\"text\":\"thy malice and causedst them to be cast out of paradise; and I will put enmity between thee and his seed: he shall bruise thy head and thou shalt bruise his heel until the day of Judgement.\\\"\",\"source_ref\":\"26:4\"},{\"chapter\":27,\"text\":\"Thus he spake and bade the angels have us cast out of paradise: and as we were being driven out amid our loud lamentations, your father Adam besought the angels and said: \\\"Leave me a little (space) that I may entreat the Lord that he have compassion on me and pity me, for I only\",\"source_ref\":\"27:1\"},{\"chapter\":27,\"text\":\"have sinned.\\\" And they left off driving him and Adam cried aloud and wept saying: \\\"Pardon me O Lord, my deed.\\\" Then the Lord saith to the angels, \\\"Why have ye ceased from driving Adam from paradise? Why do ye not cast him out? Is it I who have done wrong? Or is my judgement\",\"source_ref\":\"27:3\"},{\"chapter\":27,\"text\":\"badly judged?\\\" Then the angels fell down on the ground and worshipped the Lord saying, \\\"Thou art just, O Lord, and thou judgest righteous judgement.\\\"\",\"source_ref\":\"27:5\"},{\"chapter\":28,\"text\":\"But the Lord turned to Adam and said: 'I will not suffer thee henceforward to be in paradise.\\\"\",\"source_ref\":\"28:1\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 26:4, 27:1, 27:3, 27:5, 28:1.",
+  "application_id": "rafeeq-bible-translation"
+}

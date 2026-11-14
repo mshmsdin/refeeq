@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "aa60ff4f-0e19-40b7-8728-5ddf35fe2eb6",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"كيف يستطيع عقلك إذن أن يدرك طريق العلي؟ كيف يمكن لمن سبق أن أنهكه العالم الفاسد أن يفهم غير الفساد؟ ولماذا عندما سمعت هذا سقطت على وجهي\",\n      \"verse\": 11\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"وقلت له: كان خيراً لنا لو لم نكن هنا قط، بدلاً من أن نأتي إلى هنا ونعيش في وسط الفجور، ونعاني، ولا نعرف لماذا.\",\n      \"verse\": 12\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فأجابني وقال: خرجت غابة من أشجار الحقل وتشاوروا معاً،\",\n      \"verse\": 13\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"وقالو: تعالوا! لنذهب ونصنع حرباً ضد البحر، لكي ينصرف عنا، ولكي نصنع لأنفسنا غابات أكثر.\",\n      \"verse\": 14\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"كما تشاورت أمواج البحر أيضاً بنفس الطريقة، وقالت: تعالوا! لنصعد ونخضع غابة السهل، لكي نكسب هناك أيضاً مساحة أكبر.\",\n      \"verse\": 15\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"كانت مشورة الخشب باطلة، لأن النار جاءت واستهلكتها.\",\n      \"verse\": 16\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"وكذلك أيضاً مشورة أمواج البحر، لأن الرمل وقف وأوقفهم.\",\n      \"verse\": 17\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"لو كنت قاضياً الآن بين هذين الاثنين، فأيهما تبرر، وأيهما تدين؟\",\n      \"verse\": 18\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فأجبت وقلت: إنها مشورة حمقاء أخذاها كلاهما، لأن الأرض معطاة للخشب، ومكان البحر معطى ليحمل أمواجه.\",\n      \"verse\": 19\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فأجابني حينئذ وقال: لقد أصدرت حكماً صحيحاً. فلماذا لا تحكم في قضيتك الخاصة؟\",\n      \"verse\": 20\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  560,
+                  "output":  641,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0017705,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  560,
+                         "outputTokens":  641,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017705,
+                         "latencyMs":  2192
+                     }
+                 ]
+}

@@ -1,0 +1,93 @@
+{
+  "request_id": "e5b5a92e-13ba-4927-8f3d-346b7f930f0b",
+  "content": "{\"book_code\": \"TJOB\", \"verses\": [{\"chapter\": 6, \"text_ar\": \"فإِذْ أَقْبَلَتِ امْرَأَتِي عَلَى حَالٍ وَشَيْخُوعٍ خَاصِمَةٌ، وَبَكَاؤُهَا صَاحَتْ: «إِزَائِي! تَتَبَلَّغُ إِلَى دِرْهِمٍ؟ كَمْ يَوْمًا تَضَعُ حَيَاتَكَ عَلَى بَعِيرٍ، وَهَذِهِ لَا تُنَاصِحُكَ عَنْ رَدِّ حَاجَتِكَ؟» وَفِي كُلِّ مَرَّةٍ إِنَّهَا لَا تَكَلَّمَتْ، وَإِذْ أَبْصَرَتهَا، قَالَ: «يَا ابْنَتِي، إحْذَاكِ قَدْ بَكَيتِ يَا ابْنَتِي!» وَالْمَكَارِهُ الْكَثِيرَةُ وَاحْتِرَاقُ النَّارِ الَّذِي اتَّصَلَ عَلَى عَجْلَه، وَالْحُزْنُ الّذِي ذَبَلَهُ وَاحْتَرَقَ كُلُّ وَاحِدٍ مِنْبِحَالَة مَاسَوِيَة.\", \"verse\": 1}, {\"chapter\": 6, \"text_ar\": \"وَأَنَا ضَاحِلٌ مِنْ مَكَانٍ إِلَى مَكَانٍ، كَأَنِّي رَبٌّ لِلنَّاسِ، فَإِنَّ ذَلِكَ ذَهَبَ مِنَ الْأَرْضِ.\", \"verse\": 2}, {\"chapter\": 6, \"text_ar\": \"وَأَبْنَائِي وَالْبِنَاتُ الّذِينَ حَمَلْتُهُمْ بَيْنَ فَخِذَيَّ، وَشَقَائِي وَجَعِي، صَارَتَا بَاطِلًا.\", \"verse\": 3}, {\"chapter\": 6, \"text_ar\": \"وَأَنْتَ جَالِسٌ فِي بِئْرٍ وَرِجْلٌ سَاقِطَةٌ، تُقْصِرُ لَيْلَكَ فِي بُرُودَةِ الهَوَاءِ.\", \"verse\": 4}, {\"chapter\": 6, \"text_ar\": \"وَأَنَا تَعَبٌ فِي كُلِّ مَرَّةٍ وَاحِدَةٍ، يَوْمًا وَلَيْلًا، حَتَّى قَدِيرٌ أَنْ يُؤْتِيكَ خُبْزًا.\", \"verse\": 5}]}",
+  "usage": {
+    "input": 325,
+    "output": 523,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+  "provider": "Groq Paid",
+  "model": "qwen/qwen3.8-27b",
+  "estimatedCost": 0.002352,
+  "estimatedCostCurrency": "USD",
+  "failovers": 4,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "error",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 50
+    },
+    {
+      "modelId": "99274687-1d7c-4d9e-a6f4-aab3765418ca",
+      "provider": "Mistral",
+      "model": "mistral-small-2603",
+      "status": "error",
+      "inputPrice": "0.1500000000",
+      "outputPrice": "0.6000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0150000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 198
+    },
+    {
+      "modelId": "05dfb509-43ee-4357-a629-e560369080e7",
+      "provider": "Gemini",
+      "model": "gemini-3.8-flash",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.7500000000",
+      "outputPrice": "3.7500000000",
+      "currency": "USD",
+      "cachedPrice": "0.0750000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "success",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 325,
+      "outputTokens": 523,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.002352,
+      "latencyMs": 1132
+    }
+  ]
+}

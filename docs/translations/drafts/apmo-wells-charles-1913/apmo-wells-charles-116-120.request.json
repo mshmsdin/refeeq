@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "71b3f58d-3db3-4d2c-998e-b803e2460a4d",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":34,\"text\":\"And I Eve beheld two great and fearful wonders standing in the presence of God and I wept for\",\"source_ref\":\"34:1\"},{\"chapter\":34,\"text\":\"fear, and I cried aloud to my son Seth and said, 'Rise up, Seth, from the body of thy father Adam and come to me, and thou shalt see a spectacle which no man's eye hath yet beheld.'\",\"source_ref\":\"34:2\"},{\"chapter\":35,\"text\":\"Then Seth arose and came to his mother and to her he saith: 'What is thy trouble? Why weepest thou?' (And) she saith to him: 'Look\",\"source_ref\":\"35:1\"},{\"chapter\":35,\"text\":\"up and see with thine eyes the seven heavens opened, and see how the soul of thy father lies on its face and all the holy angels are praying on his behalf and saying: 'Pardon him, Father of All, for he is Thine image.\\\" 'Pray, my child\",\"source_ref\":\"35:2\"},{\"chapter\":35,\"text\":\"Seth, what shall this mean? And will he one day be delivered into the hands of the Invisible Father, even our God? But who are the two\",\"source_ref\":\"35:3\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 34:1, 34:2, 35:1, 35:2, 35:3.",
+  "application_id": "rafeeq-bible-translation"
+}

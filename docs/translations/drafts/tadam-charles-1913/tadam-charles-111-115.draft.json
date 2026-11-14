@@ -1,0 +1,74 @@
+{
+  "book_code": "TADAM",
+  "source_license_notice": "English translation by R. H. Charles, Oxford 1913; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-charles-1913-latin-recension",
+  "source_name": "The Books of Adam and Eve (Latin recension)",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "batch_start": 111,
+  "batch_end": 115,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "ac9eec02-bc9f-47a8-83ac-a1042301977c",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 467,
+      "outputTokens": 466,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0013051,
+      "latencyMs": 1965
+    }
+  ],
+  "usage": {
+    "input": 467,
+    "output": 466,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0013051,
+  "units": [
+    {
+      "chapter": 39,
+      "source_ref": "39:1",
+      "text_ar": "حينئذ قال سيث للوحش: 'الرب الإله يلعنُك. اخرس، اصمت، أغلقْ فمَك أيها العدو الملعون للحق، والمشوش والمدمر. تنحَ عن صورة الله إلى اليوم الذي يأمر فيه الرب الإله بأن تُجْلَب إلى المحنة'. وقال الوحش لسيث: 'هَا أنا أُغادر حضرة صورة الله، كما قلتَ'. وفي الحال فارق سيثَ مجروحاً بأسنانه."
+    },
+    {
+      "chapter": 40,
+      "source_ref": "40:1",
+      "text_ar": "أما سيث وأمه فمشيا إلى نواحي الفردوس ليأخذا زيت الرحمة لمسح آدم المريض، ووصلا إلى أبواب الفردوس، وأخذا تراباً من الأرض ووضعاه على رؤوسهما، وانحنيا بوجوههما إلى الأرض وشرعا ينوحان"
+    },
+    {
+      "chapter": 40,
+      "source_ref": "40:2",
+      "text_ar": "ويصدران أَنِيناً عالياً، متوسلين إلى الرب الإله أن يرأف بآ آدم في أوجاعه وأن يرسل ملاكه ليُعطِيَهما الزيت من 'شجرة رحمته'."
+    },
+    {
+      "chapter": 41,
+      "source_ref": "41:1",
+      "text_ar": "ولما كانا يصليان ويتضرعان لساعات طوال، هوذا الملاك ميخائيل"
+    },
+    {
+      "chapter": 41,
+      "source_ref": "41:2",
+      "text_ar": "يظهر لهما ويقول: 'لقد أُرسلتُ إليكم من الرب -فقد أقامني الله على"
+    }
+  ]
+}

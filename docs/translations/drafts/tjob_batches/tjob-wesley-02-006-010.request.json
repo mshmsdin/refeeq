@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "9cc10f0f-6ad1-42d3-af51-9bd3d4c47925",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":2,\"verses\":[{\"chapter\":2,\"verse\":6,\"text\":\"And the door-keeper came in and told me that, but heard from me that I was studying.\"},{\"chapter\":2,\"verse\":7,\"text\":\"The Evil One, having failed in this, went away and took upon his shoulder an old, torn basket and went in and spoke to the doorkeeper saying: \\\"Tell Job : Give me bread from thine hands that I may eat\\\".\"},{\"chapter\":2,\"verse\":8,\"text\":\"And when I heard this, I gave her burnt bread to give it to him, and I made known to him : \\\"Expect not to eat of my bread, for it is forbidden to thee\\\".\"},{\"chapter\":2,\"verse\":9,\"text\":\"But the door-keeper, being ashamed to hand him the burnt and ashy bread, as she did not know that it was Satan, took of her own fine bread and gave it to him.\"},{\"chapter\":2,\"verse\":10,\"text\":\"But he took it and, knowing what occured, said to the maiden : \\\"Go hence, bad servant, and bring me the bread that was given thee to hand to me\\\".\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter."
+}

@@ -1,0 +1,51 @@
+{
+  "request_id": "f4fb0ef2-1368-4197-bfa1-5976644fab43",
+  "content": "{\n  \"book_code\": \"JASHER\",\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"verse\": 1,\n      \"source_ref\": \"7:1\",\n      \"text_ar\": \"وهؤلاء أسماء أبناء نوح: يافث، وحام، وشيم؛ وُلد لهم أولاد بعد الطوفان، لأنهم قد أخذوا نساء قبل الطوفان.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 2,\n      \"source_ref\": \"7:2\",\n      \"text_ar\": \"هؤلاء أبناء يافث: قمر، ماجوج، ماداي، يافان، طوبال، مشح، وتيراس، سبعة أبناء.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 3,\n      \"source_ref\": \"7:3\",\n      \"text_ar\": \"وأبناء قمر هم أسكيناز، ريفاث وتجارما.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 4,\n      \"source_ref\": \"7:4\",\n      \"text_ar\": \"وأبناء ماجوج هم إليكاناف ولوبال.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 5,\n      \"source_ref\": \"7:5\",\n      \"text_ar\": \"وأولاد ماداي هم أكون، زيلو، خازوني ولوط.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 6,\n      \"source_ref\": \"7:6\",\n      \"text_ar\": \"وأبناء يافان هم إليشا، ترشيش، شطيم ودودونيم.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 7,\n      \"source_ref\": \"7:7\",\n      \"text_ar\": \"وأبناء طوبال هم أريفي، كيسد وتاري.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 8,\n      \"source_ref\": \"7:8\",\n      \"text_ar\": \"وأبناء مشح هم ديدون، زارون وشباشني.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 9,\n      \"source_ref\": \"7:9\",\n      \"text_ar\": \"وأبناء تيراس هم بنب، جيرا، لبيريون وجيلك؛ هؤلاء هم أبناء يافث بحسب عائلاتهم، وكان عددهم في ذلك الوقت حوالي أربعمائة وستين رجلاً.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 10,\n      \"source_ref\": \"7:10\",\n      \"text_ar\": \"وهؤلاء أبناء حام: كوش، مصر، فوت وكانعان، أربعة أبناء؛ وأبناء كوش هم سبة، حافيلاه، سبتا، رعام وساتكة، وأبناء رعام هم شبة وديدان.\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 742,
+    "output": 669,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 742,
+      "outputTokens": 669,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1684
+    }
+  ]
+}

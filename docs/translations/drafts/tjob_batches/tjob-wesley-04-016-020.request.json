@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "b3c8baa0-de77-44e1-a3fc-eda3a7b3ef36",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":4,\"verses\":[{\"chapter\":4,\"verse\":16,\"text\":\"Now come with me and we shall pillage all that is left in his house.\\\"\"},{\"chapter\":4,\"verse\":17,\"text\":\"And they answered and said to him: \\\"He has seven sons and three daughters.\"},{\"chapter\":4,\"verse\":18,\"text\":\"Take heed lest they flee into other lands and they may become our tyrants and then come over us with force and kill us.\"},{\"chapter\":4,\"verse\":19,\"text\":\"And he said: Be not at all afraid. His flocks and his wealth have I destroyed by fire, and the rest have I captured, and behold, his children shall I kill.\\\"\"},{\"chapter\":4,\"verse\":20,\"text\":\"And having spoken thus, he went and threw the house upon my children and killed them.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 16,17,18,19,20 in this chapter."
+}

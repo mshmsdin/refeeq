@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"verse\":21,\"text\":\"21 Even if the heavenly torrents had descended on them, there has not yet been time for them to go into Babylon!\"},{\"chapter\":5,\"verse\":22,\"text\":\"22 For how much time has passed since my father Jeremiah sent me to the estate of Agrippa to bring a few figs, so that I might give them to the sick among the people?\"},{\"chapter\":5,\"verse\":23,\"text\":\"23 And I went and got them, and when I came to a certain tree in the burning heat, I sat to rest a little, and I leaned my head on the basket and fell asleep.\"},{\"chapter\":5,\"verse\":24,\"text\":\"24 And when I awoke I uncovered the basket of figs, supposing that I was late, and I found the figs dripping milk, just as I had collected them.\"},{\"chapter\":5,\"verse\":25,\"text\":\"25 But you claim that the people have been taken captive into Babylon.\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "49ce46da-d835-4237-8783-31985935806c",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24,25 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

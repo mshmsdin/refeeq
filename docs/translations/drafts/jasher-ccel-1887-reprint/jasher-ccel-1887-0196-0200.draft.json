@@ -1,0 +1,89 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 196,
+  "batch_end": 200,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "42186438-db6f-4e34-aa6f-1bcdc42b421c",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 619,
+      "outputTokens": 776,
+      "cachedTokens": 256,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 2088
+    }
+  ],
+  "usage": {
+    "input": 619,
+    "output": 776,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "source_ref": "6:28",
+      "chapter": 6,
+      "text_ar": "وكان الفُلك يطفو على سطح المياه، وكان يُقذف في المياه بحيث تدور جميع المخلوقات الحية داخله كالحساء في قدر."
+    },
+    {
+      "source_ref": "6:29",
+      "chapter": 6,
+      "text_ar": "وشعور بالقلق الشديد أصاب جميع المخلوقات الحية التي في الفُلك، وكان الفُلك كأنه سيتكسر."
+    },
+    {
+      "source_ref": "6:30",
+      "chapter": 6,
+      "text_ar": "ارتعبت جميع المخلوقات الحية التي في الفُلك، وصاحت الأسود، وزئرت الثيران، وعوت الذئاب، وتكلم كل مخلوق حي في الفُلك ونحى بلغته الخاصة، فت وصلت أصواتهم إلى مسافة كبيرة، فبكى نوح وأبناؤه في مشكلاتهم؛ كانوا خائفين كثيرًا أنهم وصلوا إلى أبواب الموت."
+    },
+    {
+      "source_ref": "6:31",
+      "chapter": 6,
+      "text_ar": "فصلى نوح إلى الرب، وناحه بسببه، وقال: يا رب أعننا، فلا قوة لنا على تحمل هذا الشر الذي أحاط بنا، فالأمواج قد أحاطتنا، والفيضانات المخيفة أرعبتنا، وفخاخ الموت قُدمت أمامنا؛ أجبنا يا رب، أجبنا، أنر وجهك نحونا وكن رحيماً بنا، فدنا وانقذنا."
+    },
+    {
+      "source_ref": "6:32",
+      "chapter": 6,
+      "text_ar": "فاستمع الرب لصوت نوح، وتذكره الرب."
+    }
+  ]
+}

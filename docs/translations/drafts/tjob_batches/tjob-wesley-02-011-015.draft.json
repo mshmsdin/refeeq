@@ -1,0 +1,71 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 2,
+  "range": "11-15",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "903b1dbe-1ea5-4ae1-ae12-0e20e4a397e8",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 354,
+      "outputTokens": 384,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010662,
+      "latencyMs": 1536
+    }
+  ],
+  "usage": {
+    "input": 354,
+    "output": 384,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0010662,
+  "verses": [
+    {
+      "chapter": 2,
+      "text_ar": "فصرخ الخادم وتكلم بحزن: \"أنت تقول الحق إذ تقول إنني خادم سيء. لأنني لم أفعَلْ كما أمرني سيدي\".",
+      "verse": 11
+    },
+    {
+      "chapter": 2,
+      "text_ar": "وعاد إلى الوراء وأتاه بالخبز المحروق وقال له: \"هكذا يقول سيدي: لا تأكل من خبزي بعد الآن، لأنه محرم عليك\".",
+      "verse": 12
+    },
+    {
+      "chapter": 2,
+      "text_ar": "وهذا أعطاني إياه [قائلاً: هذا أعطيه] لئلا تُوجَّه ضدي التهمة بأنني لم أُعطِ العدو الذي سأل\".",
+      "verse": 13
+    },
+    {
+      "chapter": 2,
+      "text_ar": "ولما سمع الشيطان هذا، أرجع الخادم إليَّ، قائلاً: \"كما ترى هذا الخبز محروقاً برمته، هكذا سأحرق جسدك قريباً لأجعله مثل هذا\".",
+      "verse": 14
+    },
+    {
+      "chapter": 2,
+      "text_ar": "فأجبت: \"اصنع ما تشاء أن تصنعه وتمم كل ما تدبره. فإني مستعد لاحتمال كل ما تجلبه عليَّ\".",
+      "verse": 15
+    }
+  ]
+}

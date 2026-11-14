@@ -1,0 +1,70 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  10,
+    "range":  "36-40",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "d8b934a0-a347-450f-952d-f5d6ceb2fbe6",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  278,
+                         "outputTokens":  297,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0008259,
+                         "latencyMs":  1363
+                     }
+                 ],
+    "usage":  {
+                  "input":  278,
+                  "output":  297,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0008259,
+    "verses":  [
+                   {
+                       "chapter":  10,
+                       "text_ar":  "أو أن حسي مخدوع، أم أن نفسي في حلم؟",
+                       "verse":  36
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "والآن لذلك أرجوك أن تفسر لعبدك ما تعنيه هذه الرؤيا.",
+                       "verse":  37
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "فأجابني: استمع إلي، وسأعلمك، وأخبرك بالأمور التي تخاف منها، لأن العلي كشف لك أموراً سرية كثيرة.",
+                       "verse":  38
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "لقد رأى أن طريقك بار، لأنك تأسف باستمرار على شعبك، وتنوح نوحاً عظيماً على صهيون.",
+                       "verse":  39
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "هذا إذن هو معنى الرؤيا.",
+                       "verse":  40
+                   }
+               ]
+}

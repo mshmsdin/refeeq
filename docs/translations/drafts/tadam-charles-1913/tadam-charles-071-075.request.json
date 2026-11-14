@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":27,\"source_ref\":\"27:1\",\"text\":\"And when I heard these words of God, I fell prone on the earth and worshipped the Lord and said, 'My Lord, All powerful and merciful God, Holy and Righteous One, let not the name that is mindful of Thy majesty be blotted out, but convert my soul, for I die and my\"},{\"chapter\":27,\"source_ref\":\"27:2\",\"text\":\"breath will go out of my mouth. Cast me not out from Thy presence, (me) whom Thou didst form of the clay of the earth. Do not banish from Thy favour him whom Thou didst nourish.'\"},{\"chapter\":27,\"source_ref\":\"27:3\",\"text\":\"And lo! a word concerning thee came upon me and the Lord said to me, 'Since thy days were fashioned, thou hast been created with a love of knowledge; therefore there shall not be taken from thy seed for ever the (right) to serve Me.'\"},{\"chapter\":28,\"source_ref\":\"28:1\",\"text\":\"And when I heard these words. I threw myself on the earth and adored the Lord God and said, 'Thou art the eternal and supreme God; and all creatures give thee honour and praise.\"},{\"chapter\":28,\"source_ref\":\"28:2\",\"text\":\"'Thou art the true Light gleaming above all light(s), the Living Life, infinite mighty Power. To Thee, the spiritual powers give honour and praise. Thou workest on the race of men the abundance of Thy mercy.'\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "7d6ecabc-3d27-49ad-9886-51e34b4f1695",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 27:1, 27:2, 27:3, 28:1, 28:2.",
+  "tenant_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "21b6d4d7-7cd7-4fd2-b1ce-6856d2285d70",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ثم قالت في نفسها: \\\"ما هو شعر رأسي مقارنة بزوجي الجائع؟\\\"\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ولما تأملت في الأمر قالت له: \\\"قم واحلق شعري\\\".\",\n      \"verse\": 22\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ثم أخذ مقصاً وأزال شعر رأسمها بحضور الجميع، وأعطاها ثلاثة أرغفة من الخبز.\",\n      \"verse\": 23\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ثم أخذتها وأحضرتها إليّ. وسار الشيطان خلفها في الطريق، مختبئاً وهو يمشي ومزعجاً قلبها جداً.\",\n      \"verse\": 24\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 261,
+    "output": 244,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0006883,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 261,
+      "outputTokens": 244,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0006883,
+      "latencyMs": 1245
+    }
+  ]
+}

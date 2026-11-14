@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "d999daa4-c08a-4fc3-b9fc-6aa264dc9f43",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"الأطفال أبناء السنة سيتكلمون بأصواتهم. والنساء الحوامل ستلدن أطفالاً قبل الأوان في ثلاثة أو أربعة أشهر، وسيعيشون ويرقصون.\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"فجأة ستظهر الأماكن المزروعة كأنها غير مزروعة. والمخازن المملوءة ستوجد فجأة فارغة.\",\n      \"verse\": 22\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"البوق سيصدر صوتاً عندما يسمعه كل إنسان، فسيخافون فجأة.\",\n      \"verse\": 23\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"في ذلك الوقت سيشن الأصدقاء حرباً بعضهم على بعض مثل الأعداء. والأرض ستقف في خوف مع الساكنين فيها. ينابيع العيون ستقف، بحيث لا تجري لمدة ثلاث ساعات.\",\n      \"verse\": 24\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"سيكون أنه كل من يبقى بعد كل هذه الأمور التي أخبرتك بها، فإنه سيخلص وسيرى خلاصي ونهاية عالمي.\",\n      \"verse\": 25\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"سيرون الرجال الذين رُفعوا، الذين لم يذوقوا الموت منذ ولادتهم. قلب السكان سيتغير ويتحول إلى روح أخرى.\",\n      \"verse\": 26\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"لأن الشر سيمحى والمكر سيُطفأ.\",\n      \"verse\": 27\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"الإيمان سيزهر. الفساد سَيُهزم، والحق الذي ظل طويلاً بلا ثمر سيُعلن.\",\n      \"verse\": 28\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وعندما كلمني، هوذا قليلاً قليلاً، المكان الذي وقفت عليه اهتز ذهاباً وإياباً.\",\n      \"verse\": 29\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وقال لي: جئت لأريك هذه الأمور هذه الليلة.\",\n      \"verse\": 30\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  494,
+                  "output":  624,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0017082,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  494,
+                         "outputTokens":  624,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017082,
+                         "latencyMs":  2023
+                     }
+                 ]
+}

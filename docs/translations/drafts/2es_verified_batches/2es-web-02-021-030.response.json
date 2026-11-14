@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "c58a921a-11d7-4c03-a780-d7e18b4f6847",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"اشف المكسور والضعيف. لا تهزأ بالأعرج. دافع عن المشوه. دع الأعمى يرى مجدي.\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"احمِ الشيوخ والصغار داخل أسوارك.\",\n      \"verse\": 22\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"حيثما تجد الموتى، ضع عليهم علامة وسلمهم للقبور، وسأعطيك المكان الأول في قيامتي.\",\n      \"verse\": 23\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"اثبتوا يا شعبي واستريحوا، فإن راحتكم ستأتي.\",\n      \"verse\": 24\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"أغذي أولادك أيتها المرضعة الصالحة، وثبت أقدامهم.\",\n      \"verse\": 25\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"أما عن الخدام الذين أعطيتكم إياهم، فلن يهلك منهم واحد، لأني سأطلبهم من بين عددهم.\",\n      \"verse\": 26\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"لا تقلقوا، لأنه عندما يأتي يوم الضيق والكرب، سيبكي الآخرون ويحزنون، أما أنتم ستفرحون ويكون لكم وفور.\",\n      \"verse\": 27\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"ستحسدكم الأمم، لكنهم لن يقدروا أن يفعلوا شيئاً ضدكم، يقول الرب.\",\n      \"verse\": 28\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"ستغطيكم يدي، لكي لا يرى أولادكم جهنم.\",\n      \"verse\": 29\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"افرحي أيتها الأم مع أولادك، لأني أنقذكم، يقول الرب.\",\n      \"verse\": 30\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  452,
+                  "output":  574,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0015706,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  452,
+                         "outputTokens":  574,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0015706,
+                         "latencyMs":  2348
+                     }
+                 ]
+}

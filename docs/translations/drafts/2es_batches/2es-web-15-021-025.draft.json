@@ -1,0 +1,75 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 15,
+  "range": "21-25",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "3d876f15-ba53-44a1-bafc-93ba5df774a7",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 310,
+      "outputTokens": 265,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0007555,
+      "latencyMs": 1376
+    }
+  ],
+  "usage": {
+    "input": 310,
+    "output": 265,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0007555,
+  "verses": [
+    {
+      "chapter": 15,
+      "verse": 21,
+      "text_ar": "وكما يفعلون حتى هذا اليوم لمختاريَّ، هكذا سأفعل أنا أيضاً، وأجازيهم في أحضانهم»، يقول السيد الرب:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 22,
+      "text_ar": "«يميني لن تشفق على الخطاة، وسيفي لن يتوقف عن أولئك الذين يسفكون الدم البريء على الأرض.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 23,
+      "text_ar": "لقد خرجت نارٌ من غضبه وأكلت أساسات الأرض والخطاة، كالقش المحترق.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 24,
+      "text_ar": "ويل للذين يخطئون ولا يحفظون وصاياي!» يقول الرب.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 25,
+      "text_ar": "«لن أشفَق عليهم. امضوا في طريقكم أيها الأبناء المتمردون! لا تدنسوا مقدسي!»",
+      "review_notes_ar": []
+    }
+  ]
+}

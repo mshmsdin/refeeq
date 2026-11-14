@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":16,\"verses\":[{\"chapter\":16,\"text\":\"even so in those days, there will be three or four left by those who search their houses with the sword.\",\"verse\":31},{\"chapter\":16,\"text\":\"The earth will be left desolate, and its fields will be for briers, and its roads and all her paths will grow thorns, because no sheep will pass along them.\",\"verse\":32},{\"chapter\":16,\"text\":\"The virgins will mourn, having no bridegrooms. The women will mourn, having no husbands. Their daughters will mourn, having no helpers.\",\"verse\":33},{\"chapter\":16,\"text\":\"Their bridegrooms will be destroyed in the wars, and their husbands will perish of famine.\",\"verse\":34},{\"chapter\":16,\"text\":\"Hear now these things, and understand them, you servants of the Lord.\",\"verse\":35},{\"chapter\":16,\"text\":\"Behold, the Lordâ€™s word: receive it. Donâ€™t doubt the things about which the Lord speaks.\",\"verse\":36},{\"chapter\":16,\"text\":\"Behold, the calamities draw near, and are not delayed.\",\"verse\":37},{\"chapter\":16,\"text\":\"Just as a woman with child in the ninth month, when the hour of her delivery draws near, within two or three hours great pains surround her womb, and when the child comes out from the womb, there will be no waiting for a moment,\",\"verse\":38},{\"chapter\":16,\"text\":\"even so the calamities wonâ€™t delay coming upon the earth. The world will groan, and sorrows will seize it on every side.\",\"verse\":39},{\"chapter\":16,\"text\":\"â€œO my people, hear my word: prepare for battle, and in those calamities be like strangers on the earth.\",\"verse\":40}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "ce11b5f9-5582-49a8-a090-13aab38f134b",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 31,32,33,34,35,36,37,38,39,40 in this chapter."
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":16,\"book_code\":\"2ES\",\"verses\":[{\"verse\":61,\"chapter\":16,\"text\":\"He formed man, and put a heart in the midst of the body, and gave him breath, life, and understanding,\"},{\"verse\":62,\"chapter\":16,\"text\":\"yes, the spirit of God Almighty. He who made all things and searches out hidden things in hidden places,\"},{\"verse\":63,\"chapter\":16,\"text\":\"surely he knows your imagination, and what you think in your hearts. Woe to those who sin, and try to hide their sin!\"},{\"verse\":64,\"chapter\":16,\"text\":\"Because the Lord will exactly investigate all your works, and he will put you all to shame.\"},{\"verse\":65,\"chapter\":16,\"text\":\"When your sins are brought out before men, you will be ashamed, and your own iniquities will stand as your accusers in that day.\"},{\"verse\":66,\"chapter\":16,\"text\":\"What will you do? Or how will you hide your sins before God and his angels?\"},{\"verse\":67,\"chapter\":16,\"text\":\"Behold, God is the judge. Fear him! Stop sinning, and forget your iniquities, to never again commit them. So will God lead you out, and deliver you from all suffering.\"},{\"verse\":68,\"chapter\":16,\"text\":\"For, behold, the burning wrath of a great multitude is kindled over you, and they will take away some of you, and feed you with that which is sacrificed to idols.\"},{\"verse\":69,\"chapter\":16,\"text\":\"Those who consent to them will be held in derision and in contempt, and be trodden under foot.\"},{\"verse\":70,\"chapter\":16,\"text\":\"For there will be in various places, and in the next cities, a great insurrection against those who fear the Lord.\"}]}"
+    }
+  ],
+  "request_id": "72b0d6f1-4dc7-425b-89db-fa418a42e1af",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 61,62,63,64,65,66,67,68,69,70 in this chapter.",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "tenant_id": "rafeeq-bible-translation"
+}

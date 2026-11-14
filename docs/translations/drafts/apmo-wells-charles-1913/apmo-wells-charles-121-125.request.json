@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "c994cc7c-6ae1-432c-9625-6ca22cdae077",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":35,\"text\":\"negroes who stand by at the prayers for thy father Adam?'\",\"source_ref\":\"35:4\"},{\"chapter\":36,\"text\":\"And Seth telleth his mother, that they are the sun and moon and themselves fall down and pray on behalf of my father Adam. Eve saith\",\"source_ref\":\"36:1\"},{\"chapter\":36,\"text\":\"to him: 'And where is their light and why have they taken on such a black appearance?' And\",\"source_ref\":\"36:2\"},{\"chapter\":36,\"text\":\"Seth answereth her, 'The light hath not left them, but they cannot shine before the Light of the Universe, the Father of Light; and on this account their light hath been hidden from them.\",\"source_ref\":\"36:3\"},{\"chapter\":37,\"text\":\"Now while Seth was saying this to his mother, lo, an angel blew the trumpet, and there stood up all the angels (and they were) lying on their faces, and they cried aloud in an awful voice and said: 'Blessed (be) the glory of the Lord from\",\"source_ref\":\"37:1\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 35:4, 36:1, 36:2, 36:3, 37:1.",
+  "application_id": "rafeeq-bible-translation"
+}

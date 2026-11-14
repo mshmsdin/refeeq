@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":13,\"verses\":[{\"chapter\":13,\"text\":\"It came to pass after seven days, I dreamed a dream by night.\",\"verse\":1},{\"chapter\":13,\"text\":\"Behold, a wind arose from the sea that moved all its waves.\",\"verse\":2},{\"chapter\":13,\"text\":\"I saw, and behold, [this wind caused to come up from the midst of the sea something like the appearance of a man. I saw, and behold,] that man flew with the clouds of heaven. When he turned his face to look, everything that he saw trembled.\",\"verse\":3},{\"chapter\":13,\"text\":\"Whenever the voice went out of his mouth, all who heard his voice melted, like the wax melts when it feels the fire.\",\"verse\":4},{\"chapter\":13,\"text\":\"After this I saw, and behold, an innumerable multitude of people was gathered together from the four winds of heaven to make war against the man who came out of the sea.\",\"verse\":5},{\"chapter\":13,\"text\":\"I saw, and behold, he carved himself a great mountain, and flew up onto it.\",\"verse\":6},{\"chapter\":13,\"text\":\"I tried to see the region or place from which the mountain was carved, and I couldnâ€™t.\",\"verse\":7},{\"chapter\":13,\"text\":\"After this I saw, and behold, all those who were gathered together to fight against him were very afraid, and yet they dared to fight.\",\"verse\":8},{\"chapter\":13,\"text\":\"Behold, as he saw the assault of the multitude that came, he didnâ€™t lift up his hand, or hold a spear or any weapon of war;\",\"verse\":9},{\"chapter\":13,\"text\":\"but I saw only how he sent out of his mouth something like a flood of fire, and out of his lips a flaming breath, and out of his tongue he shot out a storm of sparks.\",\"verse\":10}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "6880d6b7-6570-4c37-a38b-6efed7415401",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5,6,7,8,9,10 in this chapter."
+}

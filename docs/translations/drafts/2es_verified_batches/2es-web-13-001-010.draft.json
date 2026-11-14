@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  13,
+    "range":  "1-10",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "0557f4db-732f-4041-84a5-2d06078097b9",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  520,
+                         "outputTokens":  612,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.001686,
+                         "latencyMs":  2081
+                     }
+                 ],
+    "usage":  {
+                  "input":  520,
+                  "output":  612,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.001686,
+    "verses":  [
+                   {
+                       "chapter":  13,
+                       "text_ar":  "وكان بعد سبعة أيام أني حلمت حلماً بالليل.",
+                       "verse":  1
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "هوذا ريح هبت من البحر وحركت كل أمواجه.",
+                       "verse":  2
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "رأيت وإذا بريح أصعدت من وسط البحر شبهاً لمنظر إنسان، ورأيت وإذا بذلك الإنسان طار مع سحاب السماء. وحول وجهه لينظر، وكل ما رآه ارتعد.",
+                       "verse":  3
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "وكلما خرج صوت من فمه، ذاب كل من سمع صوته، كالشمع حين يذوب إذا حس بالنار.",
+                       "verse":  4
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "وبعد هذا رأيت وإذا بجمهور لا يحصى من الناس مجتمع من رياح السماء الأربع ليشنوا حرباً على الإنسان الخارج من البحر.",
+                       "verse":  5
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "ورأيت وإذا به نحت لنفسه جبلاً عظيماً وطار عليه.",
+                       "verse":  6
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "وحاولت أن أرى الناحية أو المكان الذي نُحت منه الجبل فلم أستطع.",
+                       "verse":  7
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "وبعد هذا رأيت وإذا بكل الذين اجتمعوا ليحاربوه خافوا جداً ومع ذلك تجرأوا أن يحاربوا.",
+                       "verse":  8
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "وهو إذ رأى هجوم الجمهور الآتي، لم يرفع يده ولا أمسك رمحاً ولا أي سلاح حرب،",
+                       "verse":  9
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "بل رأيت فقط كيف أرسل من فمه شبه سيل من نار، ومن شفتيه نفخة ملتهبة، ومن لسانه أطلق عاصفة من شرر.",
+                       "verse":  10
+                   }
+               ]
+}

@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "aeac6f17-53ae-4ab1-80f4-c619ce9d6577",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لأنكم ترون أن قدسنا قد خرب، ومذبحنا هدم، وهيكلنا دمر،\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"وقد حط عودنا، وسكت تسبيحنا، وانتهى فرحنا، وانطفأ نور منارتنا، ونهب تابوت عهدنا، ونجست أقداسنا، ودنس الاسم الذي ندعى به، وعامل أحرارنا باحتقار، وأحرق كهنتنا، وذهب لاويونا إلى السبي، ونجست عذارانا واغتصبت نساؤنا، وسبي أبرارنا، وأسلم صغارنا، واستعبد شباننا، وأقوياؤنا صاروا ضعفاء.\",\n      \"verse\": 22\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"وما هو أعظم من ذلك كله، فإن ختم صهيون قد فقد الآن ختم كرامتها، وسلمت إلى أيدي مبغضينا.\",\n      \"verse\": 23\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لذلك انفضوا عنكم ثقلكم العظيم، واطرحوا عنكم كثرة الأحزان، لكي يرحمكم القدير مرة أخرى، ويعطيكم العلي راحة، بل طمأنينة من شقائكم.\",\n      \"verse\": 24\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"وحدث بينما كنت أتكلم معها، إذا وجهها يبدأ فجأة في الإشراق جدا، ولمح محياها كالبَرْق، حتى خفت جدا منها، وتعجبت مما يعنيه هذا.\",\n      \"verse\": 25\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  430,
+                  "output":  465,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0012915,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  430,
+                         "outputTokens":  465,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0012915,
+                         "latencyMs":  1841
+                     }
+                 ]
+}

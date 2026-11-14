@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  11,
+    "range":  "31-40",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "b0db2a05-0ad6-4bdf-a20b-b393ffe02f2b",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  533,
+                         "outputTokens":  629,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017324,
+                         "latencyMs":  1640
+                     }
+                 ],
+    "usage":  {
+                  "input":  533,
+                  "output":  629,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0017324,
+    "verses":  [
+                   {
+                       "chapter":  11,
+                       "text_ar":  "Behold, the head turned with those who were with it, and ate the two under wings that planned to reign.",
+                       "verse":  31
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "But this head held the whole earth in possession, and ruled over those who dwell in it with much oppression. It had stronger governance over the world than all the wings that had gone before.",
+                       "verse":  32
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "After this I saw, and behold, the head also that was in the middle suddenly disappeared, like the wings.",
+                       "verse":  33
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "But the two heads remained, which also reigned the same way over the earth and over those who dwell in it.",
+                       "verse":  34
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "I saw, and behold, the head on the right side devoured the one that was on the left side.",
+                       "verse":  35
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "Then I heard a voice, which said to me, ?oLook in front of you, and consider the thing that you see.??",
+                       "verse":  36
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "I saw, and behold, something like a lion roused out of the woods roaring. I heard how he sent out a man?Ts voice to the eagle, and spoke, saying,",
+                       "verse":  37
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "?oListen and I will talk with you. The Most High will say to you,",
+                       "verse":  38
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "??Aren?Tt you the one that remains of the four animals whom I made to reign in my world, that the end of my times might come through them?",
+                       "verse":  39
+                   },
+                   {
+                       "chapter":  11,
+                       "text_ar":  "The fourth came and overcame all the animals that were past, and ruled the world with great trembling, and the whole extent of the earth with grievous oppression. He lived on the earth such a long time with deceit.",
+                       "verse":  40
+                   }
+               ]
+}

@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  3,
+    "range":  "21-30",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "7dae3dc1-83b8-4f3b-8411-61faceefb01d",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  494,
+                         "outputTokens":  556,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0015382,
+                         "latencyMs":  2373
+                     }
+                 ],
+    "usage":  {
+                  "input":  494,
+                  "output":  556,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0015382,
+    "verses":  [
+                   {
+                       "chapter":  3,
+                       "text_ar":  "لان آدم الاول لما حمل قلبا شريرا تعدى وغلب وكذلك جميع الذين نسلوه",
+                       "verse":  21
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "فصار المرض لازما والشريعة كانت في قلب الشعب مع شر الاصل فزالت الخيرات وبقى الشر",
+                       "verse":  22
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "ومضت الاوقات وانقضت السنون فاقمت عبدا لك اسمه داود",
+                       "verse":  23
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "الذي امرته ان يبني مدينة لاسمك وان يقرب لك فيها محرقات مما هو لك",
+                       "verse":  24
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "فلما صنع هذا سنين كثيرة عمل الساكنون في المدينة الشر",
+                       "verse":  25
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "في كل شيء عاملين كما عمل آدم وكل اجياله لانهم هم ايضا كان لهم قلب شرير",
+                       "verse":  26
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "فاسلمت مدينتك لايدي اعدائك",
+                       "verse":  27
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "فقلت في نفسي افعل الساكنين في بابل افضل وبذلك تسلطت على صهيون",
+                       "verse":  28
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "فانه كان لما جئت هنا اني رايت فجورات بلا عدد ورات نفسي خطاة كثيرين في هذه السنة الثلاثين حتى غشي علي قلبي",
+                       "verse":  29
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "لاني رايت كيف تحتملهم وهم يخطئون وتشفق على الفاجرين وتهلك شعبك وتبقي اعداءك",
+                       "verse":  30
+                   }
+               ]
+}

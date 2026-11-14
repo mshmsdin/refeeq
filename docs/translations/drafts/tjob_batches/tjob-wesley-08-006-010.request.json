@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "ed42c780-5cc9-49e5-b2c2-d76527e52578",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":8,\"verses\":[{\"chapter\":8,\"verse\":6,\"text\":\"Let me speak plainly. Let us be magnanimous and learn what is the cause Must he in remembering his former days of happiness not become mad in his mind\"},{\"chapter\":8,\"verse\":7,\"text\":\"Who should not be altogether perplexed seeing himself thus lapse into misfortune and plagues But let me step near him that I may find by what cause is he thus\\\"\"},{\"chapter\":8,\"verse\":8,\"text\":\"And Baldad rose and approached me saying: \\\"Art thou Job\\\" and he said : \\\"Is thy heart still in good keeping\"},{\"chapter\":8,\"verse\":9,\"text\":\"And I said: \\\"I did not hold fast to the earthly things, since the earth with all that inhabit it is unstable. But my heart holds fast to the heaven, because there is no trouble in heaven\\\".\"},{\"chapter\":8,\"verse\":10,\"text\":\"Then Baldad rejoined and said : \\\"We know that the earth is unstable, for it changes according to season. At times it is in a state of peace, and at times it is in a state of war. But of the heaven we hear that it is perfectly steady.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter."
+}

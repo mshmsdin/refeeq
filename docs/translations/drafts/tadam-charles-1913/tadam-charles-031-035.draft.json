@@ -1,0 +1,74 @@
+{
+  "book_code": "TADAM",
+  "source_license_notice": "English translation by R. H. Charles, Oxford 1913; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-charles-1913-latin-recension",
+  "source_name": "The Books of Adam and Eve (Latin recension)",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "batch_start": 31,
+  "batch_end": 35,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "b607065a-3470-4b59-9c74-424b41a127f5",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 442,
+      "outputTokens": 422,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011875999999999998,
+      "latencyMs": 2690
+    }
+  ],
+  "usage": {
+    "input": 442,
+    "output": 422,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0011875999999999998,
+  "units": [
+    {
+      "chapter": 12,
+      "source_ref": "12:2",
+      "text_ar": "في وسط الملائكة، ومن أجلك طُرِحتُ أنا في الأرض'. فأجاب آدم: 'ماذا"
+    },
+    {
+      "chapter": 12,
+      "source_ref": "12:3",
+      "text_ar": "تخبرني؟ ماذا صنعتُ إليك، أو ما هو ذنبي ضدك، وبما أنك لم تتلقَّ أضراراً أو إصابات منا، فلماذا تلاحقنا؟'"
+    },
+    {
+      "chapter": 13,
+      "source_ref": "13:1",
+      "text_ar": "فأجاب إبليس: 'يا آدم، ماذا تخبرني؟ من أجلك أنتَ جرى طرحي"
+    },
+    {
+      "chapter": 13,
+      "source_ref": "13:2",
+      "text_ar": "من ذلك المكان. فعندما صُوِّرتَ، طُرِحتُ أنا من حضرة الله ونُفِيتُ من شركة الملائكة. وعندما نفخ الله فيك نسمة الحياة وصُنِع وجهك وشبهك على صورة الله، أتاك ميخائيل أيضاً وجعلنا نسجد لك أمام الله؛ وتكلم الله الرب قائلاً: هوذا آدم. لقد صنعْتُك على صورتنا وشبهنا'."
+    },
+    {
+      "chapter": 14,
+      "source_ref": "14:1",
+      "text_ar": "وخرج ميخائيل ودعا جميع الملائكة قائلاً: 'اسجدوا لصورة الله كما أمر الرب الإله'. وسجد ميخائيل بنفسه أولاً؛ ثم دعاني وقال: 'اسجد لصورة الله'"
+    }
+  ]
+}

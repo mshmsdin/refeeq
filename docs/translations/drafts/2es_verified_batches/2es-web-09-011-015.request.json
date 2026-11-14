@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":9,\"verses\":[{\"chapter\":9,\"text\":\"and as many as have scorned my law, while they still had liberty and when an opportunity to repent was open to them, didnâ€™t understand, but despised it,\",\"verse\":11},{\"chapter\":9,\"text\":\"must know it in torment after death.\",\"verse\":12},{\"chapter\":9,\"text\":\"Therefore donâ€™t be curious any longer how the ungodly will be punished, but inquire how the righteous will be saved, those who the world belongs to, and for whom the world was created.â€‌\",\"verse\":13},{\"chapter\":9,\"text\":\"I answered,\",\"verse\":14},{\"chapter\":9,\"text\":\"â€œI have said before, and now speak, and will say it again hereafter, that there are more of those who perish than of those who will be saved,\",\"verse\":15}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "5fea42bd-713b-4036-808f-030674d44d8c",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter."
+}

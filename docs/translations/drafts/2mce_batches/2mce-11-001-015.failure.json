@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "http_status": 503,
+  "router_code": null,
+  "error": "All eligible providers failed",
+  "request": "2mce-11-001-015.request.json",
+  "attempt": 1,
+  "retry_policy": "Wait for provider cooldown, then retry with a new idempotency key."
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "490c012a-a3ce-426b-82b2-5c8584fd6f8d",
+  "content": "{\"verses\":[{\"chapter\":11,\"text_ar\":\"فقال لهما أبوهما: «ليست عندكم هنا الكفاية وحدها لتعيشوا، بل إن هذه تدخل بكم إلى عالم أفضل لتعيشوا فيه في السماوات.\",\"verse\":16},{\"chapter\":11,\"text_ar\":\"أو ما تعلمون يا أبنائي قيمة هذه الأشياء هنا؟ اسمعوا إذن! عندما حَسِبني الرب مستحقاً أن يرحمني ويرفع عن جسدي الضربات والدود، دعاني وسلمني هذه الأوتار الثلاثة.\",\"verse\":17},{\"chapter\":11,\"text_ar\":\"وقال لي: قُم واشدد حقويك كَرَجُلٍ، فأنا أطالبك وأنت تخبرني.\",\"verse\":18},{\"chapter\":11,\"text_ar\":\"وأخذتها وشددت بها حقوي، وفي الحال فارق الدود جسدي، وكذلك الضربات، وأخذ جسدي كله قوة جديدة من قبل الرب، وهكذا عبرت كأنني لم أتألم قط.\",\"verse\":19},{\"chapter\":11,\"text_ar\":\"لكنني نسيت الأوجاع أيضاً في قلبي. ثم كلمني الرب بقوته العظيمة وأراني كل ما كان وما سيكون.»\",\"verse\":20}],\"book_code\":\"TJOB\"}",
+  "usage": {
+    "input": 374,
+    "output": 288,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0008322000000000001,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 374,
+      "outputTokens": 288,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008322000000000001,
+      "latencyMs": 1508
+    }
+  ]
+}

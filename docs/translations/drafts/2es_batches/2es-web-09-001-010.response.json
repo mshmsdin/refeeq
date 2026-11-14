@@ -1,0 +1,37 @@
+{
+  "request_id": "24ef2f36-d85f-40cb-8cf0-0505780a694c",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 9,\n      \"verse\": 1,\n      \"text_ar\": \"فأجابني وقال: «قسْ بدقة في نفسك؛ فحين ترى أن جزءاً معيناً من الآلام قد انقضى، والتي أُخبرت بها من قبل،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 2,\n      \"text_ar\": \"حينئذ تفهم أنه هو الوقت عينه الذي فيه سيفتقد العلي العالم الذي صُنِع بواسطته.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 3,\n      \"text_ar\": \"فحين تُرى في العالم زلازل، وضجيج شعوب، ومؤامرات أمم، وتزعزع قادة، واضطراب رؤساء،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 4,\n      \"text_ar\": \"حينئذ تفهم أن العلي تكلم عن هذه الأمور منذ الأيام القديمة، منذ البدء.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 5,\n      \"text_ar\": \"لأنه كما هو الحال في كل ما يُصنع في العالم، فإن البداية واضحة والنهاية ظاهرة،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 6,\n      \"text_ar\": \"هكذا أيضاً أزمنة العلي: البدايات ظاهرة بالعجائب والأعمال العظيمة، والنهاية بالأفعال والآيات.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 7,\n      \"text_ar\": \"وكل من سيُخلَّص، ويستطيع النجاة بأعماله، أو بالإيمان الذي به آمنوا،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 8,\n      \"text_ar\": \"سيُحفظ من الأخطار المذكورة، وسيرى خلاصي في أرضي وفي تخومي التي قدّستها لنفسي منذ البدء.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 9,\n      \"text_ar\": \"حينئذ يتعجب أولئك الذين أساءوا استخدام طرقي الآن، والذين نبذوها باحتقار سيعيشون في العذاب.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 10,\n      \"text_ar\": \"لأنه بقدر ما نال كثيرون من الخيرات في حياتهم، ومع ذلك لم يعرفوني،\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 464,
+    "output": 744,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0019992,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 464,
+      "outputTokens": 744,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0019992,
+      "latencyMs": 2420
+    }
+  ]
+}

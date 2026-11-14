@@ -1,0 +1,37 @@
+{
+  "request_id": "dbd2aee6-f367-4368-b756-8eb9a716cb28",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 32,\n      \"verse\": 4,\n      \"text_ar\": \"وأقامت وقالت: «قومي يا حواء (من توبتك)، فإن هوذا آدم زوجك قد خرج من جسده. قومي وانظري روحه المحمولة في العلاء إلى صانعه».\"\n    },\n    {\n      \"chapter\": 33,\n      \"verse\": 1,\n      \"text_ar\": \"وقامت حواء ومسحت دموعها بيدها، فقال لها الملاك: «ارفعي نفسك\"\n    },\n    {\n      \"chapter\": 33,\n      \"verse\": 2,\n      \"text_ar\": \"عن الأرض». وفتحت عينها بثبات نحو السماء، فرأت مركبة نور، تحملها أربعة نسور لامعة، وكان يستحيل على أي إنسان مولود من امرأة أن يصف مجدها أو\"\n    },\n    {\n      \"chapter\": 33,\n      \"verse\": 3,\n      \"text_ar\": \"ينظر إلى وجهها - والملائكة تسير قدام المركبة - ولما وصلوا إلى المكان الذي كان فيه أبوكم آدم، توقفت المركبة والسيرافيم. ورأيت مجامر من ذهب، بين أبيكم والمركبة، وكل الملائكة بالمجامر والبخور أقبلوا مسرعين نحو\"\n    },\n    {\n      \"chapter\": 33,\n      \"verse\": 5,\n      \"text_ar\": \"تقدمة البخور ونفخوا عليها فغطى دخان البخور الجلادير. وسقطت الملائكة وسجدت لله، صارخين بصوت عال وقائلين: «أيها القدوس، اغفر، لأنه صورتك وعمل يداك المقدستان».\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 461,
+    "output": 436,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0012282999999999999,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 461,
+      "outputTokens": 436,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0012282999999999999,
+      "latencyMs": 1724
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":16,\"source_ref\":\"16:3\",\"text\":\"straightway we were overcome with grief, since we had been spoiled of so great glory. And we\"},{\"chapter\":16,\"source_ref\":\"16:4\",\"text\":\"were grieved when we saw thee in such joy and luxury. And with guile I cheated thy wife and caused thee to be expelled through her (doing) from thy joy and luxury, as I have been driven out of my glory.\"},{\"chapter\":17,\"source_ref\":\"17:1\",\"text\":\"When Adam heard the devil say this, he cried out and wept and spake: 'O Lord my God, my life is in thy hands. Banish this Adversary far from me, who seeketh to destroy my soul, and give\"},{\"chapter\":17,\"source_ref\":\"17:2,3\",\"text\":\"me his glory which he himself hath lost.' And at that moment, the devil vanished before him. But Adam endured in his penance, standing for forty days (on end) in the water of Jordan.\"},{\"chapter\":18,\"source_ref\":\"18:1\",\"text\":\"And Eve said to Adam: 'Live thou, my Lord, to thee life is granted, since thou hast committed neither the first nor the second error. But I have erred and been led astray for I have not kept the commandment of God; and now banish me from the light of thy life and I will go to the sunsetting,\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "7e231f5d-824c-418e-9cbb-91573a4c5c65",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 16:3, 16:4, 17:1, 17:2,3, 18:1.",
+  "tenant_id": "rafeeq-bible-translation"
+}

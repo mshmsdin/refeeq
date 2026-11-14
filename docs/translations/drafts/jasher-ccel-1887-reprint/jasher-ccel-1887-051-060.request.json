@@ -1,0 +1,16 @@
+{
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate every English source unit into accurate, complete Modern Standard Arabic. Stay faithful to the supplied text; add nothing from memory or other Bible versions. Use natural, grammatically correct Arabic. Return JSON only with book_code and verses[{chapter,verse,text_ar}]. Return exactly one item for each source unit in the same order with exact numeric references. No Latin letters. Expected refs: 2:15, 2:16, 2:17, 2:18, 2:19, 2:20, 2:21, 2:22, 2:23, 2:24"
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"source_ref\":\"2:15\",\"chapter\":2,\"verse\":15,\"text\":\"And when Cainan was seventy years old, he begat three sons and two daughters.\"},{\"source_ref\":\"2:16\",\"chapter\":2,\"verse\":16,\"text\":\"And these are the names of the children of Cainan; the name of the first born Mahlallel, the second Enan, and the third Mered, and their sisters were Adah and Zillah; these are the five children of Cainan that were born to him.\"},{\"source_ref\":\"2:17\",\"chapter\":2,\"verse\":17,\"text\":\"And Lamech, the son of Methusael, became related to Cainan by marriage, and he took his two daughters for his wives, and Adah conceived and bare a son to Lamech, and she called his name Jabal.\"},{\"source_ref\":\"2:18\",\"chapter\":2,\"verse\":18,\"text\":\"And she again conceived and bare a son, and called his name Jubal; and Zillah, her sister, was barren in those days and had no offspring.\"},{\"source_ref\":\"2:19\",\"chapter\":2,\"verse\":19,\"text\":\"For in those days the sons of men began to trespass against God, and to transgress the commandments which he had commanded to Adam, to be fruitful and multiply in the earth.\"},{\"source_ref\":\"2:20\",\"chapter\":2,\"verse\":20,\"text\":\"And some of the sons of men caused their wives to drink a draught that would render them barren, in order that they might retain their figures and whereby their beautiful appearance might not fade.\"},{\"source_ref\":\"2:21\",\"chapter\":2,\"verse\":21,\"text\":\"And when the sons of men caused some of their wives to drink, Zillah drank with them.\"},{\"source_ref\":\"2:22\",\"chapter\":2,\"verse\":22,\"text\":\"And the child-bearing women appeared abominable in the sight of their husbands as widows, whilst their husbands lived, for to the barren ones only they were attached.\"},{\"source_ref\":\"2:23\",\"chapter\":2,\"verse\":23,\"text\":\"And in the end of days and years, when Zillah became old, the Lord opened her womb.\"},{\"source_ref\":\"2:24\",\"chapter\":2,\"verse\":24,\"text\":\"And she conceived and bare a son and she called his name Tubal Cain, saying, After I had withered away have I obtained him from the Almighty God.\"}]}"
+    }
+  ]
+}

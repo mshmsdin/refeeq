@@ -1,0 +1,51 @@
+{
+  "request_id": "c243a365-dcc9-4eec-9d2e-cbe2c682e67a",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 5,\n      \"verse\": 31,\n      \"text_ar\": \"31 ولاحظ أن التين ليس في موسمِه، وافهم.\"\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 32,\n      \"text_ar\": \"32 فصاح أبيمليس بصوتٍ عالٍ قائلاً: «أباركك يا إله السماء والأرض، وبقية أرواح الأبرار في كل مكان!»\"\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 33,\n      \"text_ar\": \"33 ثم قال للشيخ: «ما هذا الشهر؟»\"\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 34,\n      \"text_ar\": \"34 فأجاب: «نيسان، وهو أبيب.»\"\n    },\n    {\n      \"chapter\": 5,\n      \"verse\": 35,\n      \"text_ar\": \"35 فأخذ بعض التين وأعطاه للشيخ وقال له: «ليُنِر الله طريقك إلى المدينة العليا، القدس.»\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 447,
+    "output": 592,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "error",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "503",
+      "estimatedCost": null,
+      "latencyMs": 1328
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 447,
+      "outputTokens": 592,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1546
+    }
+  ]
+}

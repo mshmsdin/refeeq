@@ -1,0 +1,51 @@
+{
+  "request_id": "39d12101-270e-4e30-bc61-b246f46fc854",
+  "content": "{\n  \"book_code\": \"APMO\",\n  \"verses\": [\n    {\n      \"chapter\": 38,\n      \"verse\": 4,\n      \"text_ar\": \"جاؤوا إلى الجنة وكل أوراق الجنة ارتجفت فنام جميع البشر الذين ولدوا من آدم من رائحة الجنة إلا شيث وحده، لأنه ولد \\\"حسب تعيين الله\\\". ثم ارتوى جسد آدم هناك في\"\n    },\n    {\n      \"chapter\": 38,\n      \"verse\": 5,\n      \"text_ar\": \"الجنة على الأرض وشيث حزن بشدة عليه.\"\n    },\n    {\n      \"chapter\": 40,\n      \"verse\": 1,\n      \"text_ar\": \"ثم قال الله للملائكة الكبيرة ميخائيل (غابرييل، أوريل، ورافائيل): \\\"اذهبوا\"\n    },\n    {\n      \"chapter\": 40,\n      \"verse\": 2,\n      \"text_ar\": \"إلى الجنة في السماء الثالثة، وانثروا ملابس من الكتان وغطوا جسد آدم وأحضروا زيت \\\"زيت العطر\\\" وصبوه عليه. فقام الملائكة الثلاثة العظام بذلك وأعدوه للدفن. فقال الله: \\\"لتُجلب جسد أبيل أيضًا\\\".\"\n    },\n    {\n      \"chapter\": 40,\n      \"verse\": 3,\n      \"text_ar\": \"فأحضروا ملابس كتان أخرى وأعدوا جسده أيضًا. لأنه لم يُدفن منذ اليوم الذي قتله فيه أخوه قايين؛ فقد سعى قايين الشرير جاهدًا لإخفائه لكنه لم يستطع، لأن الأرض لم تستقبله فخرج الجسد من الأرض وصوت صادر من الأرض قال: \\\"لن\\\"\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 609,
+    "output": 448,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 609,
+      "outputTokens": 448,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1133
+    }
+  ]
+}

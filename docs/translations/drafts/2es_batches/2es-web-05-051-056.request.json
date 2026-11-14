@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":5,\"book_code\":\"2ES\",\"verses\":[{\"verse\":51,\"chapter\":5,\"text\":\"He answered me, “Ask a woman who bears children, and she will tell you.\"},{\"verse\":52,\"chapter\":5,\"text\":\"Say to her, ‘Why aren’t they whom you have now brought forth like those who were before, but smaller in stature?’\"},{\"verse\":53,\"chapter\":5,\"text\":\"She also will answer you, ‘Those who are born in the strength of youth are different from those who are born in the time of old age, when the womb fails.’\"},{\"verse\":54,\"chapter\":5,\"text\":\"Consider therefore you also, how you are shorter than those who were before you.\"},{\"verse\":55,\"chapter\":5,\"text\":\"So are those who come after you smaller than you, as born of the creature which now begins to be old, and is past the strength of youth.”\"},{\"verse\":56,\"chapter\":5,\"text\":\"Then I said, “Lord, I implore you, if I have found favor in your sight, show your servant by whom you visit your creation.”\"}]}"
+    }
+  ],
+  "request_id": "3dbf48e5-ce87-44ab-9d19-5cfd9b42aff0",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 51,52,53,54,55,56 in this chapter.",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "tenant_id": "rafeeq-bible-translation"
+}

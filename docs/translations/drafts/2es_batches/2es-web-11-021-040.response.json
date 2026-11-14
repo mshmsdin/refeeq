@@ -1,0 +1,65 @@
+{
+  "request_id": "8f9a0ff0-3dca-4cfc-a37e-bbaeb0e09104",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":11,\"verse\":21,\"text_ar\":\"بعضهم أيضًا أقاموا، لكن لم يتسلطوا.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":22,\"text_ar\":\"بعد ذلك رأيت، ها هو، انقضت الأجنحة الثانية عشرة، مع اثنتين من الأجنحة الصغيرة.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":23,\"text_ar\":\"لم يبقَ على جسد النسر أي شيء سوى الرؤوس الثلاثة التي استقرت، وستة أجنحة صغيرة.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":24,\"text_ar\":\"رأيت، ها هو، انقسمت الأجنحة الصغيرة ذات الأجل الثاني من الستة وظلت تحت الرأس الموجود على الجانب الأيمن؛ أما الأربعة فظلت في مكانها.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":25,\"text_ar\":\"رأيت، ها هو، هذه الأجنحة السفلى خططت لتؤسس وتتحكم.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":26,\"text_ar\":\"رأيت، ها هو، تم تأسيس واحد، لكنه اختفى بعد فترة قصيرة.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":27,\"text_ar\":\"ثاني أيضًا فعل ذلك، واختفى أسرع من الأول.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":28,\"text_ar\":\"رأيت، ها هو، الاثنان المتبقّيان خططوا أيضًا للسلط بينهما.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":29,\"text_ar\":\"أثناء تفكيرهما، ها هو أحد الرؤوس الراحة استيقظ، وهو الذي كان في الوسط، لأنه كان أعظم من الرأسين الآخرين.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":30,\"text_ar\":\"رأيت كيف انضم إلى الرأسين الآخرين معًا.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":31,\"text_ar\":\"ها هو رأس مرفق مع من كان معه، وأكل الأجنحة السفلى التي كانت تخطط للسلط.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":32,\"text_ar\":\"لكن هذا الرأس احتفظ بالأرض كلها في قبضته، وسلط عليها الذين يعيشون فيها بقسوة كبيرة. كان حاكمته أقوى من كل الأجنحة التي مرت من قبل.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":33,\"text_ar\":\"بعد ذلك رأيت، ها هو، الرأس في الوسط اختفى فجأة مثل الأجنحة.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":34,\"text_ar\":\"لكن الرؤوس الاثنين ظلوا، كما سطروا أيضًا على الأرض وعلى من يعيش فيها بنفس الطريقة.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":35,\"text_ar\":\"رأيت، ها هو، الرأس على الجانب الأيمن أكل الذي كان على الجانب الأيسر.\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":36,\"text_ar\":\"ثم سمع صوتًا قال لي: \\\"انظر أمامك، وتمعن في ما تراه.\\\"\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":37,\"text_ar\":\"رأيت، ها هو، شيء شبيه بالأسد خرج من الغابات وهو يزمجر. سمعته يبعث صوت رجل للنسور، ويقول،\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":38,\"text_ar\":\"\\\"استمع وسأتحدث معك. السمو الأعلى سيقول لك،\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":39,\"text_ar\":\"أليس أنت الذي تبقى من الحيوانات الأربعة التي صنعتها لتتولى العرش في عالمي، لكي يأتِ نهاية عروضي من خلالهم؟\",\"review_notes_ar\":[]},{\"chapter\":11,\"verse\":40,\"text_ar\":\"الرباعية جاءت وتغلبت على جميع الحيوانات التي مضت، وسلطت العالم بارتعاش عظيم، وامتدت الأرض كلها بقسوة مرعبة. عاش على الأرض لفترة طويلة بخداع.\\\"\",\"review_notes_ar:\":[]}]}",
+  "usage": {
+    "input": 891,
+    "output": 901,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-20b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 2,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "error",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 58
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "error",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "503",
+      "estimatedCost": null,
+      "latencyMs": 1122
+    },
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 891,
+      "outputTokens": 901,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1149
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "84d28787-2a6f-4291-84ca-2178b1a82fae",
+  "service_key": "bible-translation-gemini-test",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 71,72,73,74,75 in this chapter.",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي كأعداد صحيحة بأرقام 0-9 فقط، بلا فاصلة أو كلمة ملحقة، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"verses\":[{\"chapter\":16,\"verse\":71,\"text\":\"They will be like mad men, sparing none, but spoiling and destroying those who still fear the Lord.\"},{\"chapter\":16,\"verse\":72,\"text\":\"For they will destroy and plunder their goods, and throw them out of their houses.\"},{\"chapter\":16,\"verse\":73,\"text\":\"Then the trial of my elect will be made known, even as the gold that is tried in the fire.\"},{\"chapter\":16,\"verse\":74,\"text\":\"Hear, my elect ones, says the Lord: “Behold, the days of suffering are at hand, and I will deliver you from them.\"},{\"chapter\":16,\"verse\":75,\"text\":\"Don’t be afraid, and don’t doubt, for God is your guide.\"}],\"chapter\":16,\"book_code\":\"2ES\"}"
+    }
+  ]
+}

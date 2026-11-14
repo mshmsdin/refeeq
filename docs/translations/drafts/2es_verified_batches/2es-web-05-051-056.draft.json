@@ -1,0 +1,75 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  5,
+    "range":  "51-56",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "587d774b-61e7-4e58-9fd4-084563de6d5b",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  354,
+                         "outputTokens":  369,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0010287,
+                         "latencyMs":  1547
+                     }
+                 ],
+    "usage":  {
+                  "input":  354,
+                  "output":  369,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0010287,
+    "verses":  [
+                   {
+                       "chapter":  5,
+                       "text_ar":  "فأجابني: «سل امرأة تلد وهي تخبرك.",
+                       "verse":  51
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "وقل لها: لماذا ليس الذين ولدتهم الآن مثل الذين سبقوهم، بل هم أصغر قامة؟",
+                       "verse":  52
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "وهي أيضاً ستجيبك: إن الذين يولدون في قوة الشباب يختلفون عن الذين يولدون في زمن الشيخوخة عندما يوهن الرحم.",
+                       "verse":  53
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "فتأمل أنت أيضاً كيف أنكم أقصر قامة من الذين سبقوكم.",
+                       "verse":  54
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "وهكذا فإن الذين يأتون بعدكم أصغر منكم، لأنهم ولدوا من الخليقة التي بدأت تشيخ، وقد تجاوزت قوة الشباب».",
+                       "verse":  55
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "فقلت: «يا رب، أتوسل إليك، إن كنت قد وجدت نعمة في عينيك، فأرني عبدك بمن تفتقد خليقتك».",
+                       "verse":  56
+                   }
+               ]
+}

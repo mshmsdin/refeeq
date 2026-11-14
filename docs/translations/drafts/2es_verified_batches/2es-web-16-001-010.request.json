@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":16,\"verses\":[{\"chapter\":16,\"text\":\"Woe to you, Babylon, and Asia! Woe to you, Egypt and Syria!\",\"verse\":1},{\"chapter\":16,\"text\":\"Put on sackcloth and garments of goatsâ€™ hair, wail for your children and lament; for your destruction is at hand.\",\"verse\":2},{\"chapter\":16,\"text\":\"A sword has been sent upon you, and who is there to turn it back?\",\"verse\":3},{\"chapter\":16,\"text\":\"A fire has been sent upon you, and who is there to quench it?\",\"verse\":4},{\"chapter\":16,\"text\":\"Calamities are sent upon you, and who is there to drive them away?\",\"verse\":5},{\"chapter\":16,\"text\":\"Can one drive away a hungry lion in the forest? Can one quench a fire in stubble, once it has begun to burn?\",\"verse\":6},{\"chapter\":16,\"text\":\"Can one turn back an arrow that is shot by a strong archer?\",\"verse\":7},{\"chapter\":16,\"text\":\"The Lord God sends the calamities, and who will drive them away?\",\"verse\":8},{\"chapter\":16,\"text\":\"A fire will go out from his wrath, and who may quench it?\",\"verse\":9},{\"chapter\":16,\"text\":\"He will flash lightning, and who will not fear? He will thunder, and who wouldnâ€™t tremble?\",\"verse\":10}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "7da14e0b-a802-4c7a-83a1-d9274f64e06a",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5,6,7,8,9,10 in this chapter."
+}

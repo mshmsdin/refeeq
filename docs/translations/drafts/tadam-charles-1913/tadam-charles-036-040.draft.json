@@ -1,0 +1,74 @@
+{
+  "book_code": "TADAM",
+  "source_license_notice": "English translation by R. H. Charles, Oxford 1913; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-charles-1913-latin-recension",
+  "source_name": "The Books of Adam and Eve (Latin recension)",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "batch_start": 36,
+  "batch_end": 40,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "c55130c7-8c26-4378-9dda-84e82ac0c9e7",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 423,
+      "outputTokens": 411,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011544,
+      "latencyMs": 1611
+    }
+  ],
+  "usage": {
+    "input": 423,
+    "output": 411,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0011544,
+  "units": [
+    {
+      "chapter": 14,
+      "source_ref": "14:3",
+      "text_ar": "للرب. فأجبتُ: \"ليس لي حاجةٌ لأن أسجد لآدَمَ\". ولما دأب ميخائيل على حثي على السجود، قلتُ له: \"لماذا تحثني؟ لن أسجد لكائن أدنى وأصغر مني. أنا أقدمُ منه في الخليقة، فقبل أن يُصنع قُدْتُ أنا خُلقْتُ. ومن واجبه هو أن يسجد لي\"."
+    },
+    {
+      "chapter": 15,
+      "source_ref": "15:1,2",
+      "text_ar": "فلما سمع الملائكة الذين تحت إمرتي بهذا، أبوا أن يسجُدوا له. فقال ميخائيل: \"اسجُدْ لصورة الله، ولكن إن لم تسجد له، فإن الرب الإله سيغضب"
+    },
+    {
+      "chapter": 15,
+      "source_ref": "15:3",
+      "text_ar": "عليك\". فقلتُ: \"إن غضب عليّ، فسأقيم عرشي فوق كواكب السماء وأكون مثل العلي\"."
+    },
+    {
+      "chapter": 16,
+      "source_ref": "16:1",
+      "text_ar": "وغضب الله الرب عليّ وطردني أنا وملائكتي من مجدنا؛ ومن أجل"
+    },
+    {
+      "chapter": 16,
+      "source_ref": "16:2",
+      "text_ar": "أجلكَ طُردنا من مساكننا إلى هذا العالم وطُرِحنا على الأرض. و"
+    }
+  ]
+}

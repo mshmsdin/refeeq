@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "046cd7dc-1a1d-4ead-8871-c0ab33cb29bc",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":10,\"verses\":[{\"chapter\":10,\"verse\":21,\"text\":\"Let the saints rejoice, and let their hearts exult in gladness; for they shall receive the glory which is in store for them.\"},{\"chapter\":10,\"verse\":22,\"text\":\"Our sins are forgiven, our injustice has been cleansed, but Elihu hath no remembrance among the living\\\".\"},{\"chapter\":10,\"verse\":23,\"text\":\"After Eliphaz had finished the hymn, we rose and went back to the city, each to the house where they lived.\"},{\"chapter\":10,\"verse\":24,\"text\":\"And the people made a feast for me in gratitude and delight of God, and all my friends came back to me.\"},{\"chapter\":10,\"verse\":25,\"text\":\"And all those who had seen me in my former state of happiness, asked me saying: \\\"What are those three things here amongst us\\\"\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24,25 in this chapter."
+}

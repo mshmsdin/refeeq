@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  16,
+    "range":  "21-30",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "28fdc4cb-2aea-46f9-b0ef-ed3329e454f6",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  474,
+                         "outputTokens":  616,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016822,
+                         "latencyMs":  1962
+                     }
+                 ],
+    "usage":  {
+                  "input":  474,
+                  "output":  616,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0016822,
+    "verses":  [
+                   {
+                       "chapter":  16,
+                       "text_ar":  "هوذا الطعام سيكون رخيصاً جداً على الأرض بحيث يظنون أنهم في حالة جيدة، وحتى عندئذ سترتفع البلايا على الأرض: السيف، والجوع، والاضطراب العظيم.",
+                       "verse":  21
+                   },
+                   {
+                       "chapter":  16,
+                       "text_ar":  "لأن كثيرين ممن يسكنون على الأرض سيتهلكون بالجوع، والآخرون الذين ينجون من الجوع، سيهلكهم السيف.",
+                       "verse":  22
+                   },
+                   {
+                       "chapter":  16,
+                       "text_ar":  "ستطرح الجثث مثل الزبل، ولن يكون هناك من يعزيهم؛ لأن الأرض ستترك مقفرة، وستطرح مدنها أرضاً.",
+                       "verse":  23
+                   },
+                   {
+                       "chapter":  16,
+                       "text_ar":  "لن يبقى فلاح لفلاحة الأرض أو لبذرها.",
+                       "verse":  24
+                   },
+                   {
+                       "chapter":  16,
+                       "text_ar":  "الأشجار ستعطي ثمراً، ولكن من سيجمعه؟",
+                       "verse":  25
+                   },
+                   {
+                       "chapter":  16,
+                       "text_ar":  "العنب سينضج، ولكن من سيدوسه؟ لأنه في كل الأماكن سيكون هناك عزلة عظيمة؛",
+                       "verse":  26
+                   },
+                   {
+                       "chapter":  16,
+                       "text_ar":  "لأن الإنسان الواحد سيشتهي أن يرى آخر، أو يسمع صوته.",
+                       "verse":  27
+                   },
+                   {
+                       "chapter":  16,
+                       "text_ar":  "لأنه من المدينة سيبقى عشرة، واثنان من الحقل، اللذين اختبأا في الغابات الكثيفة، وفي شقوق الصخور.",
+                       "verse":  28
+                   },
+                   {
+                       "chapter":  16,
+                       "text_ar":  "كما في بستان زيتون قد تبقى في كل شجرة ثلاث أو أربع زيتونات،",
+                       "verse":  29
+                   },
+                   {
+                       "chapter":  16,
+                       "text_ar":  "أو كما عندما يجمع الكرم، تبقى بعض العناقيد لأولئك الذين يفتشون باجتهاد في الكرم،",
+                       "verse":  30
+                   }
+               ]
+}

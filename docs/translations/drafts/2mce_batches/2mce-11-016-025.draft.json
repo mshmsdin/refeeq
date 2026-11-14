@@ -1,0 +1,90 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "2MCE",
+  "book_name_ar": "المكابيون الإثيوبي الثاني",
+  "source_translation": "en-wikisource-2-meqabyan",
+  "source_url": "https://en.wikisource.org/wiki/Translation:2_Meqabyan",
+  "source_license": "CC BY-SA 4.0; attribution and share-alike required for any release",
+  "source_quality": "Community English translation from Ge ez; not a critical edition.",
+  "source_sha256": "51c64f57d3bf57592839651226f2afb05610cfed090fd99da374cee7067a7cc9",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "model_id": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "request_id": "7762b660-4028-40bc-a20b-a65cdf04ae2c",
+  "usage": {
+    "input": 988,
+    "output": 726,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "estimated_cost_currency": "USD",
+  "translation": {
+    "book_code": "2MCE",
+    "chapter": 11,
+    "verses": [
+      {
+        "chapter": 11,
+        "verse": 16,
+        "text_ar": "لم يسخروا من أن يكونوا خاضعين لخالقهم الرب، لكي يُمجَّد اسمه منهم في خيمة شريعة الرب، الذي وعد أن يمنحهم ميراث آبائهم—أرض تجري عسلًا ولبنًا—الذي أقسم به على إبراهيم.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 11,
+        "verse": 17,
+        "text_ar": "لم يسخروا من أن يكونوا خاضعين لخالقهم، الذي أقسم على إسحاق وأسّ عبادته ليعقوب…",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 11,
+        "verse": 18,
+        "text_ar": "…والذي أسّ لعارون وموسى الخيمة التي تُحفظ فيها عبادته…",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 11,
+        "verse": 19,
+        "text_ar": "…والذي أسّ عبادته لكل من إلياس وصموئيل في الهيكل والخيمة التي بنى لها سليمان، حتى صارت مسكنًا للرب في أورشليم—المكان الذي كرم إسرائيل.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 11,
+        "verse": 20,
+        "text_ar": "فإن الهيكل هو مكان للابتهال والكفارة عن الخطيئة للذين يعيشون في البراءة وللكهنة.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 11,
+        "verse": 21,
+        "text_ar": "هو مكان للذين يعملون مشيئته، حيث يسمع صلواتهم…",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 11,
+        "verse": 22,
+        "text_ar": "…وبناء شريعة الرب التي كرمَت إسرائيل.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 11,
+        "verse": 23,
+        "text_ar": "هو حيث تُقدَّم الذبائح ويحترق البخور، لكي يكون الرب الذي كرم إسرائيل في عبقٍ طيب.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 11,
+        "verse": 24,
+        "text_ar": "سيتكلم من عرش الرحمة (الموصل) حيث يغفر في الخيمة الخاصة؛ سيظهر نور الرب لأبناء يعقوب الذين اختارهم وللأصدقاء الذين يعيشون بثبات في شريعته وأوامره.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 11,
+        "verse": 25,
+        "text_ar": "وأما الذين تجاهلوا شريعة الرب فسيكونون كأبناء قوره الذين ابتلعتهم الأرض؛ وكذلك سيدخل الخطاة إلى جهنم التي لا مخرج لها إلى الأبد.",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

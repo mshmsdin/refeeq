@@ -1,0 +1,89 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 16,
+  "range": "66-70",
+  "status": "draft_for_review",
+  "provider": "Groq Paid",
+  "model": "qwen/qwen3.8-27b",
+  "request_id": "b7c12906-0a40-47ee-8bfd-55889ba8c9d0",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "success",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 335,
+      "outputTokens": 391,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.001832,
+      "latencyMs": 863
+    }
+  ],
+  "usage": {
+    "input": 335,
+    "output": 391,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.001832,
+  "verses": [
+    {
+      "chapter": 16,
+      "verse": 66,
+      "text_ar": "ماذا ستفعلون؟ أو كيف ستخفون خطاياكم أمام الله وملائكته؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 67,
+      "text_ar": "ها إن الله هو الحاقد. فخافوه، وانتهوا عن الخطيئة، ونسَوا إثمكم، فلا تكرروا ارتكابها. فسيقوم الله بإرشادكم، وينجّيكم من كل شر.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 68,
+      "text_ar": "لأنها، ها إن غضباً حارقاً من سواد كثير قد أشتعل عليكم، وسينالون منكم بعدد، وسيسخّروكم لتأكلوا مما ذُبح للأوثان.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 69,
+      "text_ar": "فالموافقون لهم سيكونون موضع شتم وازدراء، وسيُداسون تحت الأقدام.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 70,
+      "text_ar": "لأنه سيكون في أماكن مختلفة، وفي المدن المجاورة، انتفاضة عظيمة على الذين يتقون الرب.",
+      "review_notes_ar": []
+    }
+  ]
+}

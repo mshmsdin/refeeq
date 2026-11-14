@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":3,\"verses\":[{\"chapter\":3,\"text\":\"Nevertheless, you left one of them, Noah with his household, and all the righteous men who descended from him.\",\"verse\":11},{\"chapter\":3,\"text\":\"â€œIt came to pass that when those who lived upon the earth began to multiply, they also multiplied children, peoples, and many nations, and began again to be more ungodly than their ancestors.\",\"verse\":12},{\"chapter\":3,\"text\":\"It came to pass, when they did wickedly before you, you chose one from among them, whose name was Abraham.\",\"verse\":13},{\"chapter\":3,\"text\":\"You loved, and to him only you showed the end of the times secretly by night,\",\"verse\":14},{\"chapter\":3,\"text\":\"and made an everlasting covenant with him, promising him that you would never forsake his descendants. To him, you gave Isaac, and to Isaac you gave Jacob and Esau.\",\"verse\":15},{\"chapter\":3,\"text\":\"You set apart Jacob for yourself, but rejected Esau. Jacob became a great multitude.\",\"verse\":16},{\"chapter\":3,\"text\":\"It came to pass that when you led his descendants out of Egypt, you brought them up to Mount Sinai.\",\"verse\":17},{\"chapter\":3,\"text\":\"You bowed the heavens also, shook the earth, moved the whole world, made the depths tremble, and troubled the age.\",\"verse\":18},{\"chapter\":3,\"text\":\"Your glory went through four gates, of fire, of earthquake, of wind, and of ice, that you might give the law to the descendants of Jacob, and the commandment to the descendants of Israel.\",\"verse\":19},{\"chapter\":3,\"text\":\"â€œYet you didnâ€™t take away from them their wicked heart, that your law might produce fruit in them.\",\"verse\":20}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "9a2ee174-90ab-400b-9c84-860e7aaa2031",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15,16,17,18,19,20 in this chapter."
+}

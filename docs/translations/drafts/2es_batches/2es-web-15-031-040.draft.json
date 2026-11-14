@@ -1,0 +1,105 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 15,
+  "range": "31-40",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "4a47c821-b5d2-49d5-aef4-6606f137f7f3",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 538,
+      "outputTokens": 786,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0021264,
+      "latencyMs": 3366
+    }
+  ],
+  "usage": {
+    "input": 538,
+    "output": 786,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0021264,
+  "verses": [
+    {
+      "chapter": 15,
+      "verse": 31,
+      "text_ar": "حينئذٍ تتغلب التنانين، متذكرة طبيعتها، وإن هي تحولت متآمرة معاً بقدرة عظيمة لاضطهادهم،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 32,
+      "text_ar": "حينئذٍ يضطرب هؤلاء، ويصمتون بسبب قدرتهم، ويستديرون ويهربون.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 33,
+      "text_ar": "من أرض الأشوريين، يهاجمهم عدو كامن ويهلك واحداً منهم. ويحل بجيشهم خوف ورعدة، وتردد على ملوكهم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 34,
+      "text_ar": "هوذا سحب من الشرق، ومن الشمال إلى الجنوب! وهي مخيفة جداً للمنظر، ومليئة بالغضب والعاصفة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 35,
+      "text_ar": "ستصطدم الواحدة بالأخرى، وتصب عاصفة ثقيلة على الأرض، بل وعاصفتها الخاصة. وسيكون هناك دم من السيف حتى بطن الحصان،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 36,
+      "text_ar": "وحتى فخذ الإنسان، وحتى عرقوب الجمل.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 37,
+      "text_ar": "سيكون هناك خوف ورعدة عظيمة على الأرض، والذين يرون ذلك الغضب سيخافون، وتستولي عليهم الرعدة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 38,
+      "text_ar": "بعد هذا، تثار عواصف عظيمة من الجنوب ومن الشمال، وقسم آخر من الغرب.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 39,
+      "text_ar": "وستقوم رياح قوية من الشرق، فتغلق عليها، أعني السحابة التي أثارها بغضب؛ والعاصفة التي كان مقدراً لها أن تسبب الهلاك بريح الشرق ستندفع بعنف نحو الجنوب والغرب.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 40,
+      "text_ar": "وسترتفع سحب عظيمة وقوية، مليئة بالغضب، مع العاصفة، لكي تهلك كل الأرض والساكنين فيها، وستصب على كل عالٍ ومرفوع عاصفة رهيبة،",
+      "review_notes_ar": []
+    }
+  ]
+}

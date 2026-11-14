@@ -1,0 +1,37 @@
+{
+  "request_id": "b26f693e-6127-44c9-8071-89046338d397",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 22,\n      \"verse\": 4,\n      \"text_ar\": \"وأما شجرتي فأخرجت أزهاراً. وثُبِّت عرش الله حيث كانت شجرة الحياة.\"\n    },\n    {\n      \"chapter\": 23,\n      \"verse\": 1,\n      \"text_ar\": \"ودعا الله آدم قائلاً: «آدم، أين أنت؟ أيمكن أن يخفي البيت عن حضرة\"\n    },\n    {\n      \"chapter\": 23,\n      \"verse\": 2,\n      \"text_ar\": \"بانيه؟» فأجاب أبوك: «ليس لأننا نظن أننا لا نُوجَد منك يا رب نتخفى، بل خفتُ لأني عريان، واستحييتُ أمام جبروتك،\"\n    },\n    {\n      \"chapter\": 23,\n      \"verse\": 3,\n      \"text_ar\": \"يا سيدي». فقال له الله: «من أراها لك أنك عريان، إلا إن كنت قد تركتَ\"\n    },\n    {\n      \"chapter\": 23,\n      \"verse\": 4,\n      \"text_ar\": \"وصيتي التي سلمتها إليك لتحفظها؟» فحينئذ تذكر آدم الكلمة التي كلمته بها (قائلاً): «سأجعلك آمناً أمام الله»؛ فالتفت وقال لي: «لماذا فعلتَ هذا؟» فقلت: «الحية خدعتني».\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 410,
+    "output": 378,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.001068,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 410,
+      "outputTokens": 378,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.001068,
+      "latencyMs": 2146
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "61fb37e7-7dbf-4feb-a0a8-6ca784dc44e7",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لِيَفْرَحِ الْقِدِّيسُونَ، وَلْتَبْتَهِجْ قُلُوبُهُمْ بِالْبَهْجَةِ، لِأَنَّهُمْ سَيَنْالُونَ الْمَجْدَ الْمُخَزَّنَ لَهُمْ.\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"قَدْ غُفِرَتْ خَطَايَانَا، وَطُهِرَ إِثْمُنَا، أَمَّا أَلِيهُو فَلَيْسَ لَهُ ذِكْرٌ بَيْنَ الْأَحْيَاءِ.\",\n      \"verse\": 22\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"وَبَعْدَ أَنْ أَنْتَهَى أَلِيفَازُ مِنَ التَّسْبِحَةِ، قُمْنَا وَرَجَعْنَا إِلَى الْمَدِينَةِ، كُلُّ وَاحِدٍ إِلَى الْمَنْزِلِ الَّذِي كَانَ يَسْكُنُ فِيهِ.\",\n      \"verse\": 23\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"وَصَنَعَ لِيَ الشَّعْبُ وَلِيمَةً امْتِنَانًا وَبَهْجَةً لِلَّهِ، وَرَجَعَ إِلَيَّ جَمِيعُ أَصْدِقَائِي.\",\n      \"verse\": 24\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"وَجَمِيعُ الَّذِينَ رَأَوْنِي فِي حَالَةِ سَعَادَتِي السَّابِقَةِ، سَأَلُونِي قَائِلِينَ: «مَا هَذِهِ الْأُمُورُ الثَّلَاثَةُ هُنَا بَيْنَنَا»\",\n      \"verse\": 25\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 304,
+    "output": 523,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0013987000000000001,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 304,
+      "outputTokens": 523,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0013987000000000001,
+      "latencyMs": 1827
+    }
+  ]
+}

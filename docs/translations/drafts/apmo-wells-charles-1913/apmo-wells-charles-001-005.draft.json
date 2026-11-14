@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 1,
+  "batch_end": 5,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "b7d36e8d-aadd-43c6-b4ea-2ea3cebd2294",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 370,
+      "outputTokens": 354,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.000996,
+      "latencyMs": 1928
+    }
+  ],
+  "usage": {
+    "input": 370,
+    "output": 354,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.000996,
+  "units": [
+    {
+      "chapter": 1,
+      "text_ar": "هذه هي قصة آدم وحواء بعد أن خرجا من الفردوس. وعَرَف آدم امرأته",
+      "source_ref": "1:1"
+    },
+    {
+      "chapter": 1,
+      "text_ar": "حواء وصعد نحو مشارق الشمس وأقام هناك ثمن عشرة سنة وشهرين. و",
+      "source_ref": "1:2"
+    },
+    {
+      "chapter": 1,
+      "text_ar": "حبلت حواء وولدت ابنين: أديابوتوس الذي يدعى قايين، وأمي لابيس الذي يدعى هابيل.",
+      "source_ref": "1:3"
+    },
+    {
+      "chapter": 2,
+      "text_ar": "وبعد هذا، كان آدم وحواء الواحد مع الآخر، وبينما كانا نائمين، قالت حواء لآدم سيدها: \"يا سيدى آدم، هأنذا",
+      "source_ref": "2:1"
+    },
+    {
+      "chapter": 2,
+      "text_ar": "قد رأيت في حلم هذه الليلة دم ابني أميلابيس الملقب بهابيل يُصبّ في فم قايين أخيه، فما زال يشربه بلا شفقة. غير أنه تذلل إليه أن يترك له منه قسماً يسيراً. فلم يسمع له",
+      "source_ref": "2:2"
+    }
+  ]
+}

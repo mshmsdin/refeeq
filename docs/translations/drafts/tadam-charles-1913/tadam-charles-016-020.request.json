@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":8,\"source_ref\":\"8:1\",\"text\":\"And Adam said: 'I tell thee, water of Jordan, grieve with me, and assemble to me all swimming (creatures), which are in thee, and let them surround me and mourn in company with me. Not for themselves let them lament, but for me; for it is not they that have sinned, but I.'\"},{\"chapter\":8,\"source_ref\":\"8:3\",\"text\":\"Forthwith, all living things came and surrounded him, and, from that hour, the water of Jordan stood (still) and its current was stayed.'\"},{\"chapter\":9,\"source_ref\":\"9:1\",\"text\":\"And eighteen days passed by; then Satan was wroth and transformed himself into the brightness of angels, and went away to the river\"},{\"chapter\":9,\"source_ref\":\"9:2\",\"text\":\"Tigris to Eve, and found her weeping, and the devil himself pretended to grieve with her, and he began to weep and said to her: 'Come out of the river and lament no more. Cease now from sorrow and moans. Why art thou anxious\"},{\"chapter\":9,\"source_ref\":\"9:3\",\"text\":\"and thy husband Adam The Lord God hath heard your groaning and hath accepted your penitence, and all we angels have entreated on your behalf, and made supplication to the Lord;\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "c2ee305a-a317-4cbf-925c-8fc93757a9ab",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 8:1, 8:3, 9:1, 9:2, 9:3.",
+  "tenant_id": "rafeeq-bible-translation"
+}

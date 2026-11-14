@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "a24cc5a7-595c-4e99-aa37-3eea84db7afc",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":28,\"text\":\"And Adam answered and said, \\\" Grant me, O Lord, of the Tree of Life that I may eat of it, before\",\"source_ref\":\"28:2\"},{\"chapter\":28,\"text\":\"I be cast out.\\\" Then the Lord spake to Adam, \\\"Thou shalt not take of it now, for I have commanded the cherubim with the flaming sword that turneth (every way) to guard it from thee that\",\"source_ref\":\"28:3\"},{\"chapter\":28,\"text\":\"thou taste not of it; but thou hast the war which the adversary hath put into thee, yet when thou art gone out of paradise, if thou shouldst keep thyself from all evil, as one about to die, when again the Resurrection hath come to pass, I will raise thee up and then there shall be given to thee the Tree of Life.\\\"\",\"source_ref\":\"28:4\"},{\"chapter\":29,\"text\":\"Thus spake the Lord and ordered us to be cast out of paradise. But your father Adam wept before the angels opposite paradise and the angels say to him: \\\"What wouldst thou have us to do,\",\"source_ref\":\"29:1\"},{\"chapter\":29,\"text\":\"Adam? \\\"And your father saith to them, \\\"Behold, ye cast me out. I pray you, allow me to take away fragrant herbs from paradise, so that I may offer an offering to God after I have gone out of paradise that he hear me.\\\" And the angels approached God and said: \\\"JA'EL, Eternal King, command, my Lord, that there be given to Adam incense of sweet odour from paradise and seeds\",\"source_ref\":\"29:3\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 28:2, 28:3, 28:4, 29:1, 29:3.",
+  "application_id": "rafeeq-bible-translation"
+}

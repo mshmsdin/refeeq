@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "http_status": 400,
+  "router_code": null,
+  "error": "Generated JSON does not match the expected schema. Please adjust your prompt. See 'failed_generation' for more details. Error: jsonschema: '/verses/6' does not validate with /properties/verses/items/required: missing properties: 'review_notes_ar'",
+  "request": "docs\\translations\\drafts\\2mce_batches\\2mce-13-001-014.request.json",
+  "attempt": 1
+}

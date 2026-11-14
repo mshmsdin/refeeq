@@ -1,0 +1,37 @@
+{
+  "request_id": "cb05c5d7-90a0-4c11-b74c-a51503cec45d",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 48,\n      \"verse\": 5,\n      \"text_ar\": \"وسارت كل «قوات» الملائكة أمام آدم، وتقرّس نوم الموتى.\"\n    },\n    {\n      \"chapter\": 48,\n      \"verse\": 6,\n      \"text_ar\": \"ودفن الملاكان ميخائيل وأوريئيل آدم وهابيل في أجزاء الفردوس، أمام عيني شيث وأمه\"\n    },\n    {\n      \"chapter\": 48,\n      \"verse\": 7,\n      \"text_ar\": \"[ولا أحد آخر]، وقال ميخائيل وأوريئيل: «مثلما رأيتم، هكذا أيضاً ادفنوا موتاكم».\"\n    },\n    {\n      \"chapter\": 49,\n      \"verse\": 1,\n      \"text_ar\": \"وبعد ستة أيام، مات آدم؛ وأدركت حواء أنها ستوت، (فـ)جمعت كل أبنائها\"\n    },\n    {\n      \"chapter\": 49,\n      \"verse\": 2,\n      \"text_ar\": \"وبناتها، شيثاً مع ثلاثين أخاً وثلاثين أختًا، وقالت حواء للجميع: «اسمعوني يا أبنائي، فأخبركم بما قاله لنا رئيس الملائكة ميخائيل عندما تعديت أنا وأبوكم وصية الله».\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 377,
+    "output": 354,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009981,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 377,
+      "outputTokens": 354,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009981,
+      "latencyMs": 1476
+    }
+  ]
+}

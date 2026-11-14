@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  13,
+    "range":  "11-20",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "0235a1a7-39e3-4501-9723-92923abada08",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  555,
+                         "outputTokens":  706,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0019315,
+                         "latencyMs":  2459
+                     }
+                 ],
+    "usage":  {
+                  "input":  555,
+                  "output":  706,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0019315,
+    "verses":  [
+                   {
+                       "chapter":  13,
+                       "text_ar":  "وكانت هذه كلها تمتزج معا: سيل النار، والنفخ الملتهب، والعاصفة العظيمة، وسقطت على هجوم الجمهور الذي كان مستعدا للقتال، وأحرقت كل واحد منهم، بحيث ظهر فجأة جمهور لا يُحصى أنه لم يكن شيئاً سوى رماد تراب ورائحة دخان. ولما رأيت هذا تعجبت.",
+                       "verse":  11
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "وبعد ذلك، رأيت نفس الرجل ينزل من الجبل، ويستدعي إليه جماعة أخرى مسالمة.",
+                       "verse":  12
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "أتى إليه كثير من الناس. وكان بعضهم فرحين، وبعضهم حزانى، وبعضهم مقيدين، وآخرون أحضروا بعض أولئك كتقدمات. حينئذ بخوف عظيم استيقظت وصليت إلى العلي وقلت:",
+                       "verse":  13
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "أنت أريت عبدك هذه العجائب منذ البدء، وحسبتني مستحقا لأن تقبل صلاتي.",
+                       "verse":  14
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "والآن أرني أيضا تفسير هذا الحلم.",
+                       "verse":  15
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "لأنه كما أتصور في فهمي، الويل للذين سيُتركون في تلك الأيام! وأكثر بكثير الويل للذين لا يُتركون!",
+                       "verse":  16
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "لأن الذين لم يُتركوا سيكونون في حزن،",
+                       "verse":  17
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "إذ يفهمون الأمور المخزونة في الأيام الأخيرة، ولكنهم لا يبلغونها.",
+                       "verse":  18
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "ولكن الويل لهم أيضا الذين يُتركون، لأنهم سيَرَوْن أخطاراً عظيمة وضيقاً شديداً، كما تُعلن هذه الأحلام.",
+                       "verse":  19
+                   },
+                   {
+                       "chapter":  13,
+                       "text_ar":  "مع ذلك فهو خير للإنسان أن يكون في خطر وأن يأتي إلى هذه الأمور، من أن يزول كسحابة خارج العالم، ولا يرى الأمور التي ستحدث في الأيام الأخيرة. فأجابني،",
+                       "verse":  20
+                   }
+               ]
+}

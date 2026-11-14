@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"text\":\"I said, â€œBut, behold, O Lord, you have made the promise to those who are alive at the end. What should they do who have been before us, or we ourselves, or those who will come after us?â€‌\",\"verse\":41},{\"chapter\":5,\"text\":\"He said to me, â€œI will compare my judgment to a ring. Just as there is no slowness of those who are last, even so there is no swiftness of those who be first.â€‌\",\"verse\":42},{\"chapter\":5,\"text\":\"So I answered, â€œCouldnâ€™t you make them all at once that have been made, and that are now, and that are yet to come, that you might show your judgment sooner?â€‌\",\"verse\":43},{\"chapter\":5,\"text\":\"Then he answered me, â€œThe creature may not move faster than the creator, nor can the world hold them at once who will be created in it.â€‌\",\"verse\":44},{\"chapter\":5,\"text\":\"And I said, â€œHow have you said to your servant, that you will surely make alive at once the creature that you have created? If therefore they will be alive at once, and the creation will sustain them, even so it might now also support them to be present at once.â€‌\",\"verse\":45},{\"chapter\":5,\"text\":\"And he said to me, â€œAsk the womb of a woman, and say to her, â€کIf you bear ten children, why do you it at different times? Ask her therefore to give birth to ten children at once.â€‌\",\"verse\":46},{\"chapter\":5,\"text\":\"I said, â€œShe canâ€™t, but must do it each in their own time.â€‌\",\"verse\":47},{\"chapter\":5,\"text\":\"Then said he to me, â€œEven so, I have given the womb of the earth to those who are sown in it in their own times.\",\"verse\":48},{\"chapter\":5,\"text\":\"For just as a young child may not give birth, neither she who has grown old any more, even so have I organized the world which I created.â€‌\",\"verse\":49},{\"chapter\":5,\"text\":\"I asked, â€œSeeing that you have now shown me the way, I will speak before you. Is our mother, of whom you have told me, still young? Or does she now draw near to old age?â€‌\",\"verse\":50}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "b86c91d0-d7d7-4413-97de-9dfb6db5fad7",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 41,42,43,44,45,46,47,48,49,50 in this chapter."
+}

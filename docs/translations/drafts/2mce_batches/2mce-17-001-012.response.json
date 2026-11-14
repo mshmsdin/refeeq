@@ -1,0 +1,37 @@
+{
+  "request_id": "5260ef99-f0e6-4b5c-9d04-33756310aa8b",
+  "content": "{\n  \"book_code\": \"2MCE\",\n  \"chapter\": 17,\n  \"verses\": [\n    {\n      \"chapter\": 17,\n      \"verse\": 1,\n      \"text_ar\": \"حبّة القمح لا تنمو ولا تُثمر إلا إذا سُحقت أولاً (دُمرت). ولكن إذا سُحقت حبّة القمح، فإنها تُرسل جذورها إلى الأرض، وتُخرج أوراقها، وتُنتج براعم، وتُثمر.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 2,\n      \"text_ar\": \"أنت تعلم أن حبة قمح واحدة تصبح عدة حبات.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 3,\n      \"text_ar\": \"كذلك، تنمو هذه الحبة من خلال ارتفاعها من الماء والرياح وندى الأرض. لا يمكن للقمح أن يُثمر دون الشمس، وتعمل الشمس محلًّا للنار.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 4,\n      \"text_ar\": \"تعمل الرياح محلًّا للروح؛ فالقُمح لا يثمر بلا ريح، والماء يروي الأرض لتُشبعها.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 5,\n      \"text_ar\": \"بعد أن تشرب الأرض، التي هي رماد، الماء، تُنتج جذورها، وتعلو أطرافها. تُثمر وفقًا لما باركها الرب.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 6,\n      \"text_ar\": \"حبّة القمح مثال على آدم، فيه تسكن روحٌ حية خلقها الرب. وكذلك، يَشرب كرمة العنب الماء وتُرسل جذورها.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 7,\n      \"text_ar\": \"ندى الغفران من الرب يروي أطراف الكروم الطويلة، يرسل الماء صعودًا إلى الأوراق. تُبرعم من حرارة الشمس، وبإرادة الرب تُثمر.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 8,\n      \"text_ar\": \"تُنتج عبقًا طيبًا يُبهج العقل. عندما يُؤكل، يُشبع كالْماء الذي يطفئ العطش أو كالحبوب التي تُشبع الجوع. عندما يُعصر، يصبح دمّ العنقود.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 9,\n      \"text_ar\": \"كما قيل في المزامير: «النبيذ يُبهج قلب الإنسان». عندما يشربونه، يُبهج القلب. عندما يفتح الإنسان فمه ويشرب، يمتلئ، وتدفق الدم إلى قلبه.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 10,\n      \"text_ar\": \"لأن سُكْر العنب قد يضلّ الإنسان ويحرم عقله، فيجعل الحفر والجبال تبدو كالمروج الواسعة؛ ولا يلحظ العقبات أو الأشواك تحت قدميه ويديه.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 11,\n      \"text_ar\": \"فعل الرب ذلك بالثمرة والكرم حتى يُمجد اسمه الذين يؤمنون بأن الموتى سيقيمون والذين يطيعون إرادته.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 17,\n      \"verse\": 12,\n      \"text_ar\": \"في ملكوت السماء، سيُبهج الذين يؤمنون بالقيامة.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 1122,
+    "output": 916,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 1122,
+      "outputTokens": 916,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 2071
+    }
+  ]
+}

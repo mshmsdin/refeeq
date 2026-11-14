@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"4BAR\",\"chapter\":3,\"verses\":[{\"chapter\":3,\"text\":\"1 And when the hour of the night arrived, Jeremiah and Baruch went up together onto the city walls, as the Lord had told Jeremiah.\",\"verse\":1},{\"chapter\":3,\"text\":\"2 And there was a sound of trumpets, and angels emerged from heaven holding torches in their hands, and they set them on the walls of the city.\",\"verse\":2},{\"chapter\":3,\"text\":\"3 And when Jeremiah and Baruch saw them, they wept, saying: “Now we know that the word is true!”\",\"verse\":3},{\"chapter\":3,\"text\":\"4 And Jeremiah begged the angels, saying: “I beg you, do not destroy the city yet, until I say something to the Lord.”\",\"verse\":4},{\"chapter\":3,\"text\":\"5 And the Lord spoke to the angels, saying: “Do not destroy the city until I speak to my chosen one, Jeremiah.”\",\"verse\":5}]}"
+    }
+  ],
+  "tenant_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "eb899ddf-b62e-4962-96ce-7f22607381a8",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5 in this chapter.",
+  "application_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "218b66d8-ec98-4324-b4e4-79130336acfb",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"هوذا يعيرنا، فلنرجع إذن إلى بلداننا.\",\n      \"verse\": 1\n    },\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"هذا الرجل جالس هنا في شقاء منقود الوسط وسط حالة لا تُطاق من التفسخ، ومع ذلك فهو يتحدى خلاصها: «ستبيد الممالك وحكامها، أما مملكتي، كما يقول، فستدوم إلى الأبد».\",\n      \"verse\": 2\n    },\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"فقام أليفاز في اضطراب شديد، والتفت بعيداً عنه بغضب عظيم، وقال: «أنا ذاهب من هنا. لقد جئنا حقاً لنعزيه، لكنه يعلن علينا الحرب أمام جيوشنا».\",\n      \"verse\": 3\n    },\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"ولكن بَلْدَد أمسكه بيده وقال: «ليس هكذا ينبغي للمرء أن يخاطب رجلاً مبتلى، ولا سيما من ضربته بلايا كثيرة».\",\n      \"verse\": 4\n    },\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"هوذا نحن، إذ كنا بصحة جيدة، لم نجرؤ على الاقتراب منه بسبب الرائحة الكريهة، إلا بمساعدة الكثير من العبير الطيب الرائحة. أما أنت يا أليفاز فتنسى كل هذا.\",\n      \"verse\": 5\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 361,
+    "output": 396,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010983,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 361,
+      "outputTokens": 396,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010983,
+      "latencyMs": 1736
+    }
+  ]
+}

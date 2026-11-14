@@ -1,0 +1,114 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 81,
+  "batch_end": 90,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "168110ec-2f11-43e7-8e84-19e9123a044e",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 893,
+      "outputTokens": 841,
+      "cachedTokens": 256,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1880
+    }
+  ],
+  "usage": {
+    "input": 893,
+    "output": 841,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "chapter": 3,
+      "source_ref": "3:8",
+      "text_ar": "وكان روح الله على أخنوخ، فكان يعلِّم جميع رجاله حكمة الله وطرقه، وكان أبناء البشر يعبدون الرب طوال أيام أخنوخ، فكانوا يأتون لسماع حكمته."
+    },
+    {
+      "chapter": 3,
+      "source_ref": "3:9",
+      "text_ar": "وكان جميع ملوك أبناء البشر، الأول والآخر، مع أمرائهم وقضاتهم، يأتون إلى أخنوخ عندما سمعوا بحكمته، فكانوا يركعون له، وطلبوا من أخنوخ أن يحكمهم، فوافق على ذلك."
+    },
+    {
+      "chapter": 3,
+      "source_ref": "3:10",
+      "text_ar": "وتجمعوا جميعًا، مائة وثلاثون ملكًا وأميرًا، فجعلوا أخنوخ ملكًا عليهم وكانوا جميعًا تحت سلطته وأمره."
+    },
+    {
+      "chapter": 3,
+      "source_ref": "3:11",
+      "text_ar": "وعلَّمهم أخنوخ الحكمة والعلم وطرقات الرب؛ فصنع بينهم سلامًا، وكان السلام سائدًا في الأرض طوال حياة أخنوخ."
+    },
+    {
+      "chapter": 3,
+      "source_ref": "3:12",
+      "text_ar": "وحكم أخنوخ على أبناء البشر مدة مئتي وثلاثة وأربعين سنة، فكان يطبق العدل والبر مع جميع قومه، ويقودهم إلى سبل الرب."
+    },
+    {
+      "chapter": 3,
+      "source_ref": "3:13",
+      "text_ar": "وهذه أجيال أخنوخ، متوشالح، وإليشع، وإليملخ، ثلاثة أبناء؛ وكانت أخواتهم ملقة وناما، وعاش متوشالح سبعًا وثمانين سنة وأنجب لاميك."
+    },
+    {
+      "chapter": 3,
+      "source_ref": "3:14",
+      "text_ar": "وكان ذلك في السنة السادسة والخمسين من حياة لاميك حين مات آدم؛ كان عمره تسعمائة وثلاثين سنة عند وفاته، فدفنه ابناه مع أخنوخ ومتوشالح ابنه، بطقوسٍ عظيمة كما في دفن الملوك، في الكهف الذي أخبره الله به."
+    },
+    {
+      "chapter": 3,
+      "source_ref": "3:15",
+      "text_ar": "وفي ذلك المكان أبى جميع أبناء البشر حزنًا كبيرًا وبكاءً على آدم؛ فصار ذلك عادةً عند أبناء البشر إلى اليوم."
+    },
+    {
+      "chapter": 3,
+      "source_ref": "3:16",
+      "text_ar": "مات آدم لأنه أكل من شجرة المعرفة؛ هو وذريته من بعده، كما قال ربّ الله."
+    },
+    {
+      "chapter": 3,
+      "source_ref": "3:17",
+      "text_ar": "وكان ذلك في سنة وفاة آدم، وهي السنة المئتين والثلاثة والأربعين من حكم أخنوخ؛ فقرر أخنوخ في ذلك الوقت أن ينفصل عن أبناء البشر ويختفي كما كان في البداية ليخدم الرب."
+    }
+  ]
+}

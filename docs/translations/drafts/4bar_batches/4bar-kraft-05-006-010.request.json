@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"verse\":6,\"text\":\"6 So I will get up, and go on in the burning heat, for isn’t there heat, isn’t there hard work every day?”\"},{\"chapter\":5,\"verse\":7,\"text\":\"7 So he got up and took the basket of figs and placed it on his shoulders, and he entered Jerusalem and did not recognize it, neither his own house, nor the place, nor did he find his own family or any of his acquaintances.\"},{\"chapter\":5,\"verse\":8,\"text\":\"8 And he said: “Blessed be the Lord, for a great trance has come over me today!\"},{\"chapter\":5,\"verse\":9,\"text\":\"9 This is not the city Jerusalem, and I have lost my way because I came by the mountain road when I woke from my sleep; and since my head was heavy because I did not get enough sleep, I lost my way.\"},{\"chapter\":5,\"verse\":10,\"text\":\"10 It will seem incredible to Jeremiah that I lost my way!”\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "939e2e41-e000-4b90-a284-5d82016efc89",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

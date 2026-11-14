@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 56,
+  "batch_end": 60,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "9cc539a9-4884-4471-b376-13f344a2f39f",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 558,
+      "outputTokens": 896,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0024074,
+      "latencyMs": 3035
+    }
+  ],
+  "usage": {
+    "input": 558,
+    "output": 896,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0024074,
+  "units": [
+    {
+      "chapter": 17,
+      "source_ref": "17:5",
+      "text_ar": "مِنْ كُلِّ شَجَرَةٍ». وَقُلْتُ: «نَعَمْ، نَحْنُ نَأْكُلُ مِنْ كُلِّ شَيْءٍ، مَا عَدَا وَاحِدَةً فَقَطْ تُوجَدُ فِي وَسَطِ الْفِرْدَوْسِ، وَالَّتِي أَوْصَانَا اللهُ أَلَّا نَأْكُلَ مِنْهَا، لِأَنَّهُ قَالَ لَنَا: فِي الْيَوْمِ الَّذِي تَأْكُلُونَ مِنْهَا، تَمُوتُونَ مَوْتاً»."
+    },
+    {
+      "chapter": 18,
+      "source_ref": "18:1",
+      "text_ar": "ثُمَّ قَالَ لِيَ الْحَيَّةُ: «حَيٌّ هُوَ اللهُ! لَكِنِّي مَحْزُونٌ مِنْ أَجْلِكُمْ، لِأَنِّي لَا أُرِيدُ أَنْ تَكُونُوا جَاهِلِينَ. بَلْ قُومُوا، هَاتِمُوا إِلَى هُنَا، اسْمَعُوا لِي وَكُلُوا وَاعْرِفُوا قِيمَةَ تِلْكَ الشَّجَرَةِ». وَلَكِنِّي قُلْتُ لَهُ: «أَخَافُ لِئَلَّا يَغْضَبَ اللهُ عَلَيَّ كَمَا قَالَ لَنَا». فَقَالَ لِي: «لَا تَخْفَ، فَإِنَّهُ بِمَجَرَدِ أَنْ تَأْكُلَ مِنْهَا، تَكُونُونَ أَنْتُمْ أَيْضاً مِثْلَ اللهِ، إِذْ تَعْرِفُونَ الْخَيْرَ وَالشَّرَّ»."
+    },
+    {
+      "chapter": 18,
+      "source_ref": "18:4",
+      "text_ar": "وَلَكِنَّ اللهَ أَدْرَكَ هَذَا بِأَنَّكُمْ تَكُونُونَ مِثْلَهُ، فَلِذَلِكَ حَسَدَكُمْ وَقَالَ: لَا تَأْكُلُوا مِنْهَا. بَلْ أَنْتَ انْتَبِهْ إِلَى النَّبْتَةِ وَسَتَرَى مَجْدَهَا الْعَظِيمَ». وَمَعَ ذَلِكَ خَفْتُ أَنْ آخُذَ مِنَ الثَّمَرِ. وَقَالَ لِي: «تَعَالَ إِلَى هُنَا، وَأَنَا أُعْطِيكَ إِيَّاهُ. اتْبَعْنِي»."
+    },
+    {
+      "chapter": 19,
+      "source_ref": "19:1",
+      "text_ar": "فَفَتَحْتُ لَهُ وَمَشَى قَلِيلاً، ثُمَّ الْتَفَتَ وَقَالَ لِي: «لَقَدْ غَيَّرْتُ"
+    },
+    {
+      "chapter": 19,
+      "source_ref": "19:2",
+      "text_ar": "رَأْيِي وَلَنْ أُعْطِيَكَ لِتَأْكُلَ حَتَّى تُحْلِفَ لِي أَنْ تُعْطِيَ زَوْجَكَ أَيْضاً». (وَ) قُلْتُ: «أَيَّ نَوْعٍ مِنَ الْقَسَمِ أُحْلِفُ لَكَ؟ وَلَكِنْ مَا أَعْرِفُهُ أَقُولُهُ لَكَ: بِعَرْشِ"
+    }
+  ]
+}

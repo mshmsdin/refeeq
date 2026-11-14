@@ -1,0 +1,165 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 6,
+  "range": "1-20",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "7b39dd0b-ac73-453c-b820-8dc1e31e1e35",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 875,
+      "outputTokens": 1505,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.004025,
+      "latencyMs": 3848
+    }
+  ],
+  "usage": {
+    "input": 875,
+    "output": 1505,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.004025,
+  "verses": [
+    {
+      "chapter": 6,
+      "verse": 1,
+      "text_ar": "فقال لي: «في البداءة، عندما صُنعت الأرض، وقبل أن تُثبَّت أبواب العالم وقبل أن تهبَّ مجاميع الرياح،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 2,
+      "text_ar": "وقبل أن تُسمع أصوات الرعود وقبل أن تلمع ومضات البروق، وقبل أن تُوضع أساسات الفردوس،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 3,
+      "text_ar": "وققبل أن تُرَى الأزهار الجميلة، وقبل أن تُؤسَّس قوى الزلزلة، وقبل أن يُجمع جيش الملائكة الذي لا يُحصى،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 4,
+      "text_ar": "وقبل أن تُرفَع أعالي الهواء، وقبل أن تُسمَّى مقاييس الجلد، وقبل أن يُثبَّت موطئ قدم صهيون،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 5,
+      "text_ar": "وقبل أن تُحسَب السنين الحالية، وقبل أن تُقصى أفكار أولئك الذين يخطئون الآن، وقبل أن يُختم الذين جمعوا الإيمان ككنز —",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 6,
+      "text_ar": "حينئذٍ تأملتُ هذه الأشياء، وكلها صُنعت بي وحدي وليس بغيري؛ وكما أنه بي أيضاً ستنتهي وليس بغيري».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 7,
+      "text_ar": "فأجبتُ وقلتُ: «ما يكون انقسام الأزمان؟ أم متى تكون نهاية الأول وبداءة الدهر الآتي؟»",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 8,
+      "text_ar": "فقال لي: «من إبراهيم إلى إسحاق، لأنه وُلد له يعقوب وعيسو، فإن يد يعقوب أمسكت بعقب عيسو منذ البداءة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 9,
+      "text_ar": "فإن عيسو هو نهاية هذا الدهر، ويعقوب هو بداءة الدهر الآتي.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 10,
+      "text_ar": "بداءة الإنسان هي يده، ونهاية الإنسان هي عقبه. فلا تطلب شيئاً آخر بين العقب واليد، يا عزرا!»",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 11,
+      "text_ar": "فأجبتُ وقلتُ: «أيها الرب السيد، إن كنتُ قد وجدتُ نعمةً في عينيك،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 12,
+      "text_ar": "فأرجوك أن تُري عبدك نهاية آياتك التي أريتني قسماً منها في ليلة سابقة».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 13,
+      "text_ar": "فأجابني وقال: «قم على قدميك، وستسمع صوتاً عظيماً مدوياً.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 14,
+      "text_ar": "وإن كان المكان الذي تقف عليه يتزعزع كثيراً",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 15,
+      "text_ar": "عندما يتكلم فلا تفزع، لأن الكلمة هي للنهاية، وأساسات الأرض ستفهم",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 16,
+      "text_ar": "أن الحديث هو عنها. فإنها سترتجف وتتزعزع، لأنها تعلم أن نهايتها لا بد أن تتغير».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 17,
+      "text_ar": "وحدث عندما سمعتُ ذلك أنني قمتُ على قدمي، وأصغيتُ، وإذا بصوت يتكلم، وكان صوته كصوت مياه كثيرة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 18,
+      "text_ar": "وقال: «هوذا الأيام آتية حين أتقرب لأفتقد الساكنين على الأرض،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 19,
+      "text_ar": "وحين أبحث في أمر الذين ألحقوا الأذى ظلماً بإثمهم، وحين تكتمل مضرة صهيون،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 6,
+      "verse": 20,
+      "text_ar": "وحين يُوضع الختم على الدهر المزمع أن يزول، فحينئذٍ سأُري هذه الآيات: ستفتح الأسفار أمام الجلد، والجميع سيعاينون معاً.",
+      "review_notes_ar": []
+    }
+  ]
+}

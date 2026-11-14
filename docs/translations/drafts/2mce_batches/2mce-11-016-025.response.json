@@ -1,0 +1,37 @@
+{
+  "request_id": "7762b660-4028-40bc-a20b-a65cdf04ae2c",
+  "content": "{\n  \"book_code\": \"2MCE\",\n  \"chapter\": 11,\n  \"verses\": [\n    {\n      \"chapter\": 11,\n      \"verse\": 16,\n      \"text_ar\": \"لم يسخروا من أن يكونوا خاضعين لخالقهم الرب، لكي يُمجَّد اسمه منهم في خيمة شريعة الرب، الذي وعد أن يمنحهم ميراث آبائهم—أرض تجري عسلًا ولبنًا—الذي أقسم به على إبراهيم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 17,\n      \"text_ar\": \"لم يسخروا من أن يكونوا خاضعين لخالقهم، الذي أقسم على إسحاق وأسّ عبادته ليعقوب…\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 18,\n      \"text_ar\": \"…والذي أسّ لعارون وموسى الخيمة التي تُحفظ فيها عبادته…\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 19,\n      \"text_ar\": \"…والذي أسّ عبادته لكل من إلياس وصموئيل في الهيكل والخيمة التي بنى لها سليمان، حتى صارت مسكنًا للرب في أورشليم—المكان الذي كرم إسرائيل.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 20,\n      \"text_ar\": \"فإن الهيكل هو مكان للابتهال والكفارة عن الخطيئة للذين يعيشون في البراءة وللكهنة.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 21,\n      \"text_ar\": \"هو مكان للذين يعملون مشيئته، حيث يسمع صلواتهم…\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 22,\n      \"text_ar\": \"…وبناء شريعة الرب التي كرمَت إسرائيل.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 23,\n      \"text_ar\": \"هو حيث تُقدَّم الذبائح ويحترق البخور، لكي يكون الرب الذي كرم إسرائيل في عبقٍ طيب.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 24,\n      \"text_ar\": \"سيتكلم من عرش الرحمة (الموصل) حيث يغفر في الخيمة الخاصة؛ سيظهر نور الرب لأبناء يعقوب الذين اختارهم وللأصدقاء الذين يعيشون بثبات في شريعته وأوامره.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 25,\n      \"text_ar\": \"وأما الذين تجاهلوا شريعة الرب فسيكونون كأبناء قوره الذين ابتلعتهم الأرض؛ وكذلك سيدخل الخطاة إلى جهنم التي لا مخرج لها إلى الأبد.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 988,
+    "output": 726,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 988,
+      "outputTokens": 726,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1835
+    }
+  ]
+}

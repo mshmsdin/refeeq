@@ -1,0 +1,17 @@
+{
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "3ed3b56b-fd7e-4bbf-8a8e-fa503940e2e3",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"chapter\":7,\"source_ref\":\"7:1\",\"verse\":1,\"text\":\"And these are the names of the sons of Noah: Japheth, Ham and Shem; and children were born to them after the flood, for they had taken wives before the flood.\"},{\"chapter\":7,\"source_ref\":\"7:2\",\"verse\":2,\"text\":\"These are the sons of Japheth; Gomer, Magog, Madai, Javan, Tubal, Meshech, and Tiras, seven sons.\"},{\"chapter\":7,\"source_ref\":\"7:3\",\"verse\":3,\"text\":\"And the sons of Gomer were Askinaz, Rephath and Tegarmah.\"},{\"chapter\":7,\"source_ref\":\"7:4\",\"verse\":4,\"text\":\"And the sons of Magog were Elichanaf and Lubal.\"},{\"chapter\":7,\"source_ref\":\"7:5\",\"verse\":5,\"text\":\"And the children of Madai were Achon, Zeelo, Chazoni and Lot.\"},{\"chapter\":7,\"source_ref\":\"7:6\",\"verse\":6,\"text\":\"And the sons of Javan were Elisha, Tarshish, Chittim and Dudonim.\"},{\"chapter\":7,\"source_ref\":\"7:7\",\"verse\":7,\"text\":\"And the sons of Tubal were Ariphi, Kesed and Taari.\"},{\"chapter\":7,\"source_ref\":\"7:8\",\"verse\":8,\"text\":\"And the sons of Meshech were Dedon, Zaron and Shebashni.\"},{\"chapter\":7,\"source_ref\":\"7:9\",\"verse\":9,\"text\":\"And the sons of Tiras were Benib, Gera, Lupirion and Gilak; these are the sons of Japheth according to their families, and their numbers in those days were about four hundred and sixty men.\"},{\"chapter\":7,\"source_ref\":\"7:10\",\"verse\":10,\"text\":\"And these are the sons of Ham; Cush, Mitzraim, Phut and Canaan, four sons; and the sons of Cush were Seba, Havilah, Sabta, Raama and Satecha, and the sons of Raama were Sheba and Dedan.\"}]}"
+    }
+  ]
+}

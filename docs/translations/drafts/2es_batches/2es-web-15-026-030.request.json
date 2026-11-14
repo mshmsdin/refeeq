@@ -1,0 +1,18 @@
+{
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "request_id": "703239e0-8fdc-43e8-95ff-ae30ea99eb1b",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي كأعداد صحيحة بأرقام 0-9 فقط، بلا فاصلة أو كلمة ملحقة، وعنصراً واحداً لكل وحدة.",
+      "role": "system"
+    },
+    {
+      "content": "{\"verses\":[{\"verse\":26,\"chapter\":15,\"text\":\"For the Lord knows all those who trespass against him, therefore he will deliver them to death and destruction.\"},{\"verse\":27,\"chapter\":15,\"text\":\"For now evils have come upon the whole earth, and you will remain in them; for God will not deliver you, because you have sinned against him.\"},{\"verse\":28,\"chapter\":15,\"text\":\"Behold, a horrible sight appearing from the east!\"},{\"verse\":29,\"chapter\":15,\"text\":\"The nations of the dragons of Arabia will come out with many chariots. From the day that they set out, their hissing is carried over the earth, so that all those who will hear them may also fear and tremble.\"},{\"verse\":30,\"chapter\":15,\"text\":\"Also the Carmonians, raging in wrath, will go out like the wild boars of the forest. They will come with great power and join battle with them, and will devastate a portion of the land of the Assyrians with their teeth.\"}],\"book_code\":\"2ES\",\"chapter\":15}",
+      "role": "user"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 26,27,28,29,30 in this chapter.",
+  "service_key": "bible-translation"
+}

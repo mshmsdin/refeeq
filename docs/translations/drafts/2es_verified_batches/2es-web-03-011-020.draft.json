@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  3,
+    "range":  "11-20",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "e693d5d4-8c71-45cc-9a57-0513bdd12b06",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  504,
+                         "outputTokens":  645,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017637,
+                         "latencyMs":  2480
+                     }
+                 ],
+    "usage":  {
+                  "input":  504,
+                  "output":  645,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0017637,
+    "verses":  [
+                   {
+                       "chapter":  3,
+                       "text_ar":  "ولكنك تركت واحدا منهم، نوحا مع أهل بيته، وكل الأبرار الذين تناسلوا منه.",
+                       "verse":  11
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "وحدث أنه عندما بدأ الذين عاشوا على الأرض في التكاثر، أكثروا أيضا الأولاد والشعوب والأمم الكثيرة، وبدأوا مرة أخرى يصيرون أكثر فجورا من آبائهم.",
+                       "verse":  12
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "وحدث عندما صنعوا الشر قدامك، اخترت واحدا من بينهم، كان اسمه إبراهيم.",
+                       "verse":  13
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "أحببته، وله وحده أظهرت نهاية الأوقات سرا بالليل،",
+                       "verse":  14
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "وصنعت معه عهدا أبديا، واعدا إياه أنك لن تترك نسله أبدا. وله أعطيت إسحاق، ولإسحاق أعطيت يعقوب وعيسو.",
+                       "verse":  15
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "وأفرزت يعقوب لنفسك، ورفضت عيسو. فصار يعقوب جماعة عظيمة.",
+                       "verse":  16
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "وحدث عندما أخرجت نسله من مصر، صعدت بهم إلى جبل سيناء.",
+                       "verse":  17
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "وطأطأت السماوات أيضا، وزلزلت الأرض، وحركت العالم كله، وجعلت الأعماق ترتعد، وأزعجت الدهر.",
+                       "verse":  18
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "واجتاز مجدك عبر أربعة أبواب: من نار، وزلزلة، وريح، وجليد، لكي تعطي الشريعة لنسل يعقوب، والوصية لنسل إسرائيل.",
+                       "verse":  19
+                   },
+                   {
+                       "chapter":  3,
+                       "text_ar":  "ومع ذلك لم تنزع منهم قلبهم الشرير، لكي تثمر شريعتك فيهم.",
+                       "verse":  20
+                   }
+               ]
+}

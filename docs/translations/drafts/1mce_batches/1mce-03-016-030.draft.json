@@ -1,0 +1,120 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "1MCE",
+  "book_name_ar": "المكابيون الإثيوبي الأول",
+  "source_translation": "en-wikisource-1-meqabyan",
+  "source_url": "https://en.wikisource.org/wiki/Translation:1_Meqabyan",
+  "source_license": "CC BY-SA 4.0; attribution and share-alike required for any release",
+  "source_quality": "Community English translation from Ge ez; not a critical edition, page under deletion discussion",
+  "source_sha256": "5615a85aab3db5a116478c7e8c884a10f7c7d61ba7d5cbbb5fc8d13627461ed1",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "model_id": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "request_id": "0acfadfd-3793-4c07-85c5-d7fb836a9136",
+  "usage": {
+    "input": 1322,
+    "output": 1119,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "estimated_cost_currency": "USD",
+  "translation": {
+    "book_code": "1MCE",
+    "chapter": 3,
+    "verses": [
+      {
+        "chapter": 3,
+        "verse": 16,
+        "text_ar": "وبعد اليوم الثالث أمر الملك أن يُعلن المتحدث الرسمي، وأن يُجمع المستشارون والنبلاء وشيوخ البلاد والمسؤولون.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 17,
+        "text_ar": "وفي ذلك الوقت جلس الملك تسيروتسايدان في الساحة، وأمر أن يُجلب إليه الشرفاء سيلا وعبيا وفنتوس، وهم جرحى ومقيدون.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 18,
+        "text_ar": "وقال لهم الملك: «خلال هذه الأيام الثلاثة التي جلستم فيها، هل ندمتم حقًا وتبرأتم عن طرقكم الشريرة السابقة؟»",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 19,
+        "text_ar": "فأجاب جنود جاه الشرفاء قائلاً: «لم نعبد الأصنام المملوءة بالخطيئة والشر التي وضعتموها أمامنا. لن نتخلى عن شريعة جاه.»",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 20,
+        "text_ar": "فغضب الملك وأمر بنقلهم إلى مكان مرتفع، وإعادة فتح جروحهم، وسفك دمائهم على الأرض.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 21,
+        "text_ar": "وأمر بحرقهم بمصباح مشعل وإحراق لحومهم، فقام خدماه بما أمر. لكن الشرفاء قالوا له: «أنت الذي نسيت شريعة جاه، تحدث. سيكون جزاؤنا بقدر عظم عقوبتك.»",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 22,
+        "text_ar": "وأمر بإرسال الدببة والنمور والأسود، وحيوانات شريرة، لتلتهم لحومهم وعظامهم.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 23,
+        "text_ar": "وأمر القائمين على الحيوانات أن يطلقوها على الرجال، ففعلوا ما أُمِر. وقد رُبطت أقدام الشهداء المشرفين وضُربوا وربطوا مرة أخرى بأوتاد الخيام.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 24,
+        "text_ar": "فُقِطت الحيوانات عليهم وهم يزأرون، ولكن عندما اقتربوا من الشهداء، سلّموهم وانحنى لهم.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 25,
+        "text_ar": "عادوا إلى القائمين عليهم وهم يزأرون، فأخافوا القائمين. ثم نُقلوا إلى الساحة حتى سُلموا أمام الملك.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 26,
+        "text_ar": "وقُتل هناك خمسة وسبعون رجلاً من جيش المجرم.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 27,
+        "text_ar": "انبهر كثير من الناس، بعضهم في شدة الألم وآخرون في الخوف، حتى ترك الملك عرشه وفر هاربًا. وصُدت الحيوانات بصعوبة ونُقلت إلى مساكنها.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 28,
+        "text_ar": "جاء سيلا وعبيا وفنتوس، الأخوان، وأطلقوا سراح السجناء من قيودهم. قالوا لهم: «تعالوا، لنفرّ، لئلا يجدنا هؤلاء المشككون والمجرمون.»",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 29,
+        "text_ar": "فأجاب الشهداء إخوانهم: «ليس من اللائق أن نهرب بعد أن وضعنا هذه الشهادة، كما لو أنكم خُفتم. افروا إذاً.»",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 30,
+        "text_ar": "وقال الإخوة الصغار: «سنقف معكم أمام الملك، وإن متتم فسنموت معكم.»",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":44,\"source_ref\":\"44:2\",\"text\":\"bit Seth. And Adam said to Eve: 'What hast thou done A great plague hast thou brought upon us, transgression and sin for all our generations: and this which thou hast done, tell thy\"},{\"chapter\":44,\"source_ref\":\"44:3\",\"text\":\"children after my death, [for those who arise from us shall toil and fail but they shall be\"},{\"chapter\":44,\"source_ref\":\"44:4\",\"text\":\"wanting and curse us (and) say, All evils have our parents brought upon us, who were at the\"},{\"chapter\":44,\"source_ref\":\"44:5\",\"text\":\"beginning].' When Eve heard these words, she began to weep and moan.\"},{\"chapter\":45,\"source_ref\":\"45:1\",\"text\":\"And just as Michael the archangel had fore-\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "3f5b96ea-7f41-4ac2-b146-083abc912002",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 44:2, 44:3, 44:4, 44:5, 45:1.",
+  "tenant_id": "rafeeq-bible-translation"
+}

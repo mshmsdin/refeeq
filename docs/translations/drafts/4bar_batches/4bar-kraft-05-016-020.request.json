@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"verse\":16,\"text\":\"16 And he said to him: “It is Jerusalem.”\"},{\"chapter\":5,\"verse\":17,\"text\":\"17 And Abimelech said to him: “Where is Jeremiah the priest, and Baruch the secretary, and all the people of this city, for I could not find them?”\"},{\"chapter\":5,\"verse\":18,\"text\":\"18 And the old man said to him: “Are you not from this city, since you mention Jeremiah today and ask about him after such a long time?\"},{\"chapter\":5,\"verse\":19,\"text\":\"19 For Jeremiah is in Babylon with the people, for they were taken captive by King Nebuchadnezzar, and Jeremiah is with them to preach the good news to them and to teach them the word.”\"},{\"chapter\":5,\"verse\":20,\"text\":\"20 As soon as Abimelech heard this from the old man, he said: “If you were not an old man, and if it were lawful for someone to scold an older person, I would laugh at you and say that you are out of your mind, since you say that the people have been taken captive into Babylon.\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "30145ac4-8282-4c18-815c-45970a0fd5ca",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 16,17,18,19,20 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

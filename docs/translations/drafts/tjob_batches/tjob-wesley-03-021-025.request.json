@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "b87e5597-4125-434f-90f2-64092d5efd29",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":3,\"verses\":[{\"chapter\":3,\"verse\":21,\"text\":\"Then they would come and say: \\\"We pray thee, act generously towards us in order that we may see how we can restore to you thine own\\\".\"},{\"chapter\":3,\"verse\":22,\"text\":\"And when I heard this, I had sympathy with them, and handed to them their bond, and often having read it before them tore it up and released them of their debt. saying to them :\"},{\"chapter\":3,\"verse\":23,\"text\":\"\\\"What I have consecrated for the benefit of the poor, I shall not take from you.\"},{\"chapter\":3,\"verse\":24,\"text\":\"And so I accepted nothing from my debtor.\"},{\"chapter\":3,\"verse\":25,\"text\":\"And when a man with cheerful heart came to me saying: I am not in need to be compelled to he a paid worker for the poor.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24,25 in this chapter."
+}

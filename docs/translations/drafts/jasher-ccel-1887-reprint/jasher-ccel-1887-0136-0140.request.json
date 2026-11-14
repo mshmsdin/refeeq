@@ -1,0 +1,17 @@
+{
+  "request_id": "8b08b15a-846f-4af4-b956-c71bb118c8c1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"units\":[{\"text\":\"And Jared the son of Mahlallel died in those days, in the three hundred and thirty-sixth year of the life of Noah; and all the days of Jared were nine hundred and sixty-two years, and he died.\",\"source_ref\":\"5:4\",\"verse\":4,\"chapter\":5},{\"text\":\"And all who followed the Lord died in those days, before they saw the evil which God declared to do upon earth.\",\"source_ref\":\"5:5\",\"verse\":5,\"chapter\":5},{\"text\":\"And after the lapse of many years, in the four hundred and eightieth year of the life of Noah, when all those men, who followed the Lord had died away from amongst the sons of men, and only Methuselah was then left, God said unto Noah and Methuselah, saying,\",\"source_ref\":\"5:6\",\"verse\":6,\"chapter\":5},{\"text\":\"Speak ye, and proclaim to the sons of men, saying, Thus saith the Lord, return from your evil ways and forsake your works, and the Lord will repent of the evil that he declared to do to you, so that it shall not come to pass.\",\"source_ref\":\"5:7\",\"verse\":7,\"chapter\":5},{\"text\":\"For thus saith the Lord, Behold I give you a period of one hundred and twenty years; if you will turn to me and forsake your evil ways, then will I also turn away from the evil which I told you, and it shall not exist, saith the Lord.\",\"source_ref\":\"5:8\",\"verse\":8,\"chapter\":5}],\"book_code\":\"JASHER\"}"
+    }
+  ],
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "tenant_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation"
+}

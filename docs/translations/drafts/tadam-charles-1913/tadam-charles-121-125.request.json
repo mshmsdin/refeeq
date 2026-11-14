@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":42,\"source_ref\":\"42:5\",\"text\":\"water and the Holy Spirit to life eternal. Then the most beloved Son of God, Christ, descending on earth shall lead thy father Adam to Paradise to the tree of mercy.]\"},{\"chapter\":43,\"source_ref\":\"43:1\",\"text\":\"'But do thou, Seth, go to thy father Adam, since the time of his life is fulfilled. Six days hence, his soul shall go off his body and when it shall have gone out, thou shalt see great marvels in the heaven and in the earth and the\"},{\"chapter\":43,\"source_ref\":\"43:2\",\"text\":\"luminaries of heaven. With these words, straightway Michael departed from Seth.\"},{\"chapter\":43,\"source_ref\":\"43:3\",\"text\":\"And Eve and Seth returned bearing with them herbs of fragrance, i.e. nard and crocus and calamus and cinnamon.\"},{\"chapter\":44,\"source_ref\":\"44:1\",\"text\":\"And when Seth and his mother had reached Adam, they told him, how the beast [the serpent]\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "bd87da26-559f-4ce0-ba42-22246b613e53",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 42:5, 43:1, 43:2, 43:3, 44:1.",
+  "tenant_id": "rafeeq-bible-translation"
+}

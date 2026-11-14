@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 86,
+  "batch_end": 90,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "edeb2aa6-a5c4-4ba9-a47a-bc8f2f0c0cd9",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 403,
+      "outputTokens": 393,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011034,
+      "latencyMs": 1908
+    }
+  ],
+  "usage": {
+    "input": 403,
+    "output": 393,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0011034,
+  "units": [
+    {
+      "chapter": 25,
+      "source_ref": "25:3",
+      "text_ar": "الحياة، من بلاياك القاسية وضيقتك. بل تعترفين وتقولين: «يا رب، يا رب، خلّصني، و»"
+    },
+    {
+      "chapter": 25,
+      "source_ref": "25:4",
+      "text_ar": "لن أعود إلى خطيئة الجسد». ولهذا السبب، من أقوالكِ وحدكِ أيدينكِ، بسبب العداوة التي زرعها العدو فيكِ»."
+    },
+    {
+      "chapter": 26,
+      "source_ref": "26:1",
+      "text_ar": "لكنه التفت إلى الحية [بغضب شديد] وقال: «بما أنكِ فعلتِ هذا، وأصبحتِ إناءً ناكراً للجميلة حتى خدعتِ القلوب البريئة، فملعونة أنتِ بين جميع الوحوش."
+    },
+    {
+      "chapter": 26,
+      "source_ref": "26:2",
+      "text_ar": "تُحرمين من الطعام الذي كنتِ تأكلينه وتقتاتين على التراب كل أيام"
+    },
+    {
+      "chapter": 26,
+      "source_ref": "26:3",
+      "text_ar": "حياتكِ: على صدركِ وبطنكِ تمشين وتُسلبين الأيدي والأرجل. ولن يُبقى لكِ أذن ولا جناح، ولا عضو واحد من كل ما به أوقعتِهم في"
+    }
+  ]
+}

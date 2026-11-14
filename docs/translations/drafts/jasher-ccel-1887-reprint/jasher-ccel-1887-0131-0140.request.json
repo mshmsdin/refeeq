@@ -1,0 +1,17 @@
+{
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "messages": [
+    {
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"chapter\":4,\"verse\":20,\"source_ref\":\"4:20\",\"text\":\"And all men who walked in the ways of the Lord, died in those days, before the Lord brought the evil upon man which he had declared, for this was from the Lord, that they should not see the evil which the Lord spoke of concerning the sons of men.\"},{\"chapter\":4,\"verse\":21,\"source_ref\":\"4:21\",\"text\":\"And Noah found grace in the sight of the Lord, and the Lord chose him and his children to raise up seed from them upon the face of the whole earth.\"},{\"chapter\":5,\"verse\":1,\"source_ref\":\"5:1\",\"text\":\"And it was in the eighty-fourth year of the life of Noah, that Enoch the son of Seth died, he was nine hundred and five years old at his death.\"},{\"chapter\":5,\"verse\":2,\"source_ref\":\"5:2\",\"text\":\"And in the one hundred and seventy ninth year of the life of Noah, Cainan the son of Enosh died, and all the days of Cainan were nine hundred and ten years, and he died.\"},{\"chapter\":5,\"verse\":3,\"source_ref\":\"5:3\",\"text\":\"And in the two hundred and thirty fourth year of the life of Noah, Mahlallel the son of Cainan died, and the days of Mahlallel were eight hundred and ninety-five years, and he died.\"},{\"chapter\":5,\"verse\":4,\"source_ref\":\"5:4\",\"text\":\"And Jared the son of Mahlallel died in those days, in the three hundred and thirty-sixth year of the life of Noah; and all the days of Jared were nine hundred and sixty-two years, and he died.\"},{\"chapter\":5,\"verse\":5,\"source_ref\":\"5:5\",\"text\":\"And all who followed the Lord died in those days, before they saw the evil which God declared to do upon earth.\"},{\"chapter\":5,\"verse\":6,\"source_ref\":\"5:6\",\"text\":\"And after the lapse of many years, in the four hundred and eightieth year of the life of Noah, when all those men, who followed the Lord had died away from amongst the sons of men, and only Methuselah was then left, God said unto Noah and Methuselah, saying,\"},{\"chapter\":5,\"verse\":7,\"source_ref\":\"5:7\",\"text\":\"Speak ye, and proclaim to the sons of men, saying, Thus saith the Lord, return from your evil ways and forsake your works, and the Lord will repent of the evil that he declared to do to you, so that it shall not come to pass.\"},{\"chapter\":5,\"verse\":8,\"source_ref\":\"5:8\",\"text\":\"For thus saith the Lord, Behold I give you a period of one hundred and twenty years; if you will turn to me and forsake your evil ways, then will I also turn away from the evil which I told you, and it shall not exist, saith the Lord.\"}]}",
+      "role": "user"
+    }
+  ],
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "request_id": "a762c207-de65-4a32-83ae-cddab90f7546",
+  "tenant_id": "rafeeq-bible-translation"
+}

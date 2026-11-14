@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "318baecb-2b7b-44e2-a458-51900269b30b",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"كذا أيضا في تلك الأيام يبقى ثلاثة أو أربعة ممن يفتشون بيوتهم بالسيف.\",\n      \"verse\": 31\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"وتترك الأرض مقفرة وحقولها للشوك وطرقها وكل سبلها تنبت حسكا لأنه لا يمر بها غنم.\",\n      \"verse\": 32\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"وتنوح العذارى إذ ليس لهن أزواج. وتنوح النساء إذ ليس لهن رجال. وتنوح بناتهتن إذ ليس لهن معينون.\",\n      \"verse\": 33\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"يهلك أزواجهن في الحروب ويموت رجالهن بالجوع.\",\n      \"verse\": 34\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"اسمعوا الآن هذه الأشياء وافهموها يا عبيد الرب.\",\n      \"verse\": 35\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"هوذا كلمة الرب فاقبلوها ولا تشكوا في الأمور التي يتكلم بها الرب.\",\n      \"verse\": 36\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"هوذا البلايا تقترب ولا تتباطأ.\",\n      \"verse\": 37\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"وكما أن المرأة الحامل في الشهر التاسع عندما تقترب ساعة ولادتها تحيط برحمها أوجاع شديدة في غضون ساعتين أو ثلاث وعندما يخرج الولد من الرحم لا يكون هناك إبطاء البتة،\",\n      \"verse\": 38\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"هكذا أيضا البلايا لن تتباطأ في المجيء على الأرض. وتئن المسكونة وتأخذها الأوجاع من كل جانب.\",\n      \"verse\": 39\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"يا شعبي اسمعوا كلامي وتأهبوا للحرب وكونوا في تلك البلايا كغرباء على الأرض.\",\n      \"verse\": 40\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  503,
+                  "output":  607,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0016684,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  503,
+                         "outputTokens":  607,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016684,
+                         "latencyMs":  2160
+                     }
+                 ]
+}

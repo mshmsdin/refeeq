@@ -1,0 +1,179 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 7,
+  "range": "61-80",
+  "status": "draft_for_review",
+  "provider": "Groq Paid",
+  "model": "qwen/qwen3.8-27b",
+  "request_id": "03e5df54-4ead-4f13-bae4-fd2594903437",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "error",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "503",
+      "estimatedCost": null,
+      "latencyMs": 3035
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "success",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 1001,
+      "outputTokens": 1499,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0067968,
+      "latencyMs": 3297
+    }
+  ],
+  "usage": {
+    "input": 1001,
+    "output": 1499,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0067968,
+  "verses": [
+    {
+      "chapter": 7,
+      "verse": 61,
+      "text_ar": "لن أترحّم على كثرة من يهلكون؛ لأنهم صاروا الآن كالضباب، وصاروا كالهيب والدخان، وأُضرموا وحُمُّوا بشدة ثم خُمِدوا.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 62,
+      "text_ar": "فأجبتُ قائلًا: «يا أرضُ، لماذا أنتِ قد أخرجتِ إذا كان العقل قد خُلق من تراب كسائر المخلوقات؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 63,
+      "text_ar": "فإنه كان خيرًا أن لا يُخلق التراب نفسه، فأما كان العقل قد خُلق من هذا التراب خُلقا.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 64,
+      "text_ar": "ولكن العقل ينمو فينا الآن، ولهذا نحن في أوجاع مع ما نعلم أن الأوجاع ستطبق علينا، مع ما نعلم أن النهاية ستكون على الموت.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 65,
+      "text_ar": "لتبكِ جنس بني آدم ولترحَم حيوانات الحقل، ولتبك المولودون، ولتفرح الحيوانات ذات الأربع والماشية.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 66,
+      "text_ar": "فإنها أهنأ حالًا منّا؛ لأنهم لا ينتظرون دينونة، ولا يتعلّمون عذابًا لآخر الدهر ولا يستنقذون.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 67,
+      "text_ar": "فالآن ماذا تنتفعون به منذ لم تبقَ لنا ما عدا ضيقات العذاب؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 68,
+      "text_ar": "لأن كل المولودين قد دنَّس بأثم، وملؤوا خطايا وأثقالوا بخطايا كثيرة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 69,
+      "text_ar": "حتى لو لم نُدعَ إلى دينونة بعد الموت لكان خيرًا لنا».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 70,
+      "text_ar": "فأجابني قائلًا: «حين جعل الأعظم العالمَ وآدمَ وجميع المولودين من آدم، سبق ففرد دينونة، ووفّرات ما يبعدين عن الدينونة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 71,
+      "text_ar": "فالآن اعلم من كلامك، لأنه أنت تقول أن العقل ينمو فينا.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 72,
+      "text_ar": "لكن الساكنين على الأرض يصيبهم العذاب من أجل هذا، إذ من حيث فهموا وأثموا، ومن حيث أخذوا وصايا ولم يحفظوها، ومن حيث صنعوا خيانة فيما تسلّموه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 73,
+      "text_ar": "فماذا يقولون عند الدعوة إلى دينونة، وبماذا يجيبون في آخر الدهر؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 74,
+      "text_ar": "فإلى كم الحين تَبَطلت الأبديّاتُ على الساكنين في العالم، لا لأجلهم ولكن لأجل الأيام التي هي مقدّمة من قبل!»",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 75,
+      "text_ar": "فقلت: «إذا أنا وجدتُ نعمةً في عينيك، يا سيدي، فالحقِّ فيّ بعد الموت، أي نقيمون في سلام حتى تأتي الأيام التي فيها ستجدّد الخلائق، أم أن الأوجاع ستحتّ في الحال؟»",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 76,
+      "text_ar": "فاجابني قائلًا: «الحقّ فيّ عن هذا أيضًا، لكن لمة نفسك لا ممّن هم استخفاة بل ممّن هم في أوجاع",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 77,
+      "text_ar": "لأن لك كنزًا شُماخًا محفوظًا عند الأعظم، وهو لا يفتح لك حتى آخر الأيام،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 78,
+      "text_ar": "إذ منذ خلا الكلمةُ الهالكُ من الأعظم، أن يمسك الإنسانُ عرشَ الأرض ويترك نفسه إلى الذي خصلت من عنده،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 79,
+      "text_ar": "وإذا كان واحدًا ممّن استخفن ولم يحفظوا طريقَ الأعظم، بل استضعفوا شريعته وضعّفوا الذين يخافون الله،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 80,
+      "text_ar": "فلا هذه الأرواح تدخل إلى دارٍ مُثبَّتة، بل تجوب وتضطرب في الحال وتتألم في الفداء، وتَبكُ وتفتّخر في سبعة مواقف.",
+      "review_notes_ar": []
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "b7991914-9db0-4e5f-9ee4-829e20b99614",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"verse\":1,\"text\":\"And when Satan saw that he could riot put me to despair, he went and asked my body of the Lord in order to inflict plague on me, for the Evil one could not bear my patience.\"},{\"chapter\":5,\"verse\":2,\"text\":\"Then the Lord delivered me into his hands to use my body as he wanted, but he gave him no power over my soul.\"},{\"chapter\":5,\"verse\":3,\"text\":\"And he came to me as I was sitting on my throne still mourning over my children.\"},{\"chapter\":5,\"verse\":4,\"text\":\"And he resembled a great hurricane and turned over my throne and threw me upon the ground.\"},{\"chapter\":5,\"verse\":5,\"text\":\"And I continued lying on the floor for three hours. and he smote me with a hard plague from the top of my head to the toes of my feet.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5 in this chapter."
+}

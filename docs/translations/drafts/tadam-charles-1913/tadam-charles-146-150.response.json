@@ -1,0 +1,37 @@
+{
+  "request_id": "5e24cf60-ad98-4601-b6fe-7d7d0a790020",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 49,\n      \"verse\": 3,\n      \"text_ar\": \"بسبب معصيتكم، سيجلب ربنا على نسلكم غضب دينونته، أولاً بالماء، والمرّة الثانية بالنار؛ وبهذين الاثنين، سيدين الرب الجنس البشري بأسره.\"\n    },\n    {\n      \"chapter\": 50,\n      \"verse\": 1,\n      \"text_ar\": \"ولكن استمعوا إليَّ يا أولادي. اصنعوا إذن ألواحاً من حجر وأخرى من طين، واكتبوا\"\n    },\n    {\n      \"chapter\": 50,\n      \"verse\": 2,\n      \"text_ar\": \"عليها، كل حياتي وحياة أبيكم (كل) ما سمعتموه ورأيتموه منا. إن أدان الرب نسلنا بالماء، فإن ألواح الطين ستذوب وتبقى ألواح الحجر؛ ولكن إن أداننا بالنار، فإن ألواح الحجر ستتحطم وتتصلب ألواح الطين بالنار'.\"\n    },\n    {\n      \"chapter\": 50,\n      \"verse\": 3,\n      \"text_ar\": \"ولما قالت حواء كل هذا لأولادها، بسطت يديها نحو السماء بالصلاة، وثنت ركبتيها على الأرض، وبينما كانت تسجد للرب وتقدم له الشكر، أسلمت الروح. وبعد ذلك، دفنها جميع أولادها بنواحٍ عظيم.\"\n    },\n    {\n      \"chapter\": 51,\n      \"verse\": 1,\n      \"text_ar\": \"ولما كانوا يناحون أربعة أيام، ظهر رئيس الملائكة ميخائيل وقال\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 439,
+    "output": 427,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0011992,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 439,
+      "outputTokens": 427,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011992,
+      "latencyMs": 1705
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "request_id": "6acf3249-12f4-4979-b637-c61b53f81f45",
+  "content": "{\n  \"book_code\": \"2MCE\",\n  \"chapter\": 20,\n  \"verses\": [\n    {\n      \"chapter\": 20,\n      \"verse\": 1,\n      \"text_ar\": \"صَدِّقْنِي، كلُّ ما فعلناه في هذا العالم لن يبقى مخفياً عندما نقف أمامه بالخوف والرعشة.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 2,\n      \"text_ar\": \"في الساعة التي لا يكون لدينا فيها ما نحتاجه لطريقنا ولا ملابس لأجسادنا…\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 3,\n      \"text_ar\": \"…في الساعة التي لا نملك فيها عصاً لأيدينا ولا أحذية لأقدامنا…\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 4,\n      \"text_ar\": \"…وفي الساعة التي لا نعرف فيها الطرق التي تأخذنا إليها الشياطين—سواء كانت زلقة أو ملساء، مظلمة، مليئة بالأشواك أو اللبلاب، أو عمق ماء أو حفرة—صَدِّقْنِي، ما فعلناه في هذا العالم لن يبقى مخفياً.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 5,\n      \"text_ar\": \"لن نعرف الشياطين التي تأخذنا، ولا سنسمع كلامهم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 6,\n      \"text_ar\": \"وبما أنهم سودٌ ويقودوننا نحو الظلام، فلن نرى وجوههم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 7,\n      \"text_ar\": \"كما تكلم النبي قائلاً: «في الساعة التي انفصلت فيها روحي عن جسدي—يا رب، يا رب، أنت تعلم طريقي. أخفوا فخاً على الطريق الذي سلكته، ونظرت لأعود إلى الصواب، لكن لم يكن لي من يعرفني؛ ليس لي شيء أستعين به للفرار». كما يأخذنا نحو الظلام، فلن نرى وجوههم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 8,\n      \"text_ar\": \"لأنه يعلم أن الشياطين تسخر منه وستقوده إلى طريق لا يعرفه، فقال هذا. فإذا انحنى إلى اليسار أو إلى اليمين، لا أحد يعرفه.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 9,\n      \"text_ar\": \"هو وحده بين الشياطين، ولا أحد يعرفه.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 10,\n      \"text_ar\": \"ملائكة النور، الذين هم رقيقون، يُرسلون إلى الأبرار لتلقِّي أرواحهم وأخذهم إلى مكان النور—إلى الجنة حيث يُوجد الرفاه.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 11,\n      \"text_ar\": \"الشياطين وملائكة الظلام يُرسلون لتلقِّي الخطاة وأخذهم إلى جهنم، التي أُعِدَّت لهم لتتلقى المشقة بسبب الذنوب التي ارتكبوها.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 12,\n      \"text_ar\": \"ويلٌ لِأَرْوَاحِ الخطاة الذين يُؤخذون إلى الهلاك، الذين لا يَجِدُون رَفَاهٍ ولا راحة، ولا مَخْرَج من الضِّيق الذي يَصِدُهم، ولا فَرَار من جهنم إلى الأبد.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 13,\n      \"text_ar\": \"لأنهم استقرّوا في عمل قايِن، وهلكوا بسعر إثم بَلْعام، ولم يكن لديهم خطة—ويلٌ للخطاة. لأن عذرهما كان تلقي الفائدة والهدايا، وفي معصيتهم أخذوا مالاً من أجنبي ليس لهم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 20,\n      \"verse\": 14,\n      \"text_ar\": \"سَيَتَلَقَّونَ مشقتهم في جهنم بسبب الذنوب التي ارتكبوها.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 1208,
+    "output": 1098,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "error",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "503",
+      "estimatedCost": null,
+      "latencyMs": 2147
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 1208,
+      "outputTokens": 1098,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 2446
+    }
+  ]
+}

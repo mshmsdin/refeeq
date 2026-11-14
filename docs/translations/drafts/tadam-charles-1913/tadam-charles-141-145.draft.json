@@ -1,0 +1,74 @@
+{
+  "book_code": "TADAM",
+  "source_license_notice": "English translation by R. H. Charles, Oxford 1913; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-charles-1913-latin-recension",
+  "source_name": "The Books of Adam and Eve (Latin recension)",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "batch_start": 141,
+  "batch_end": 145,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "cb05c5d7-90a0-4c11-b74c-a51503cec45d",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 377,
+      "outputTokens": 354,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009981,
+      "latencyMs": 1476
+    }
+  ],
+  "usage": {
+    "input": 377,
+    "output": 354,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0009981,
+  "units": [
+    {
+      "chapter": 48,
+      "source_ref": "48:5",
+      "text_ar": "وسارت كل «قوات» الملائكة أمام آدم، وتقرّس نوم الموتى."
+    },
+    {
+      "chapter": 48,
+      "source_ref": "48:6",
+      "text_ar": "ودفن الملاكان ميخائيل وأوريئيل آدم وهابيل في أجزاء الفردوس، أمام عيني شيث وأمه"
+    },
+    {
+      "chapter": 48,
+      "source_ref": "48:7",
+      "text_ar": "[ولا أحد آخر]، وقال ميخائيل وأوريئيل: «مثلما رأيتم، هكذا أيضاً ادفنوا موتاكم»."
+    },
+    {
+      "chapter": 49,
+      "source_ref": "49:1",
+      "text_ar": "وبعد ستة أيام، مات آدم؛ وأدركت حواء أنها ستوت، (فـ)جمعت كل أبنائها"
+    },
+    {
+      "chapter": 49,
+      "source_ref": "49:2",
+      "text_ar": "وبناتها، شيثاً مع ثلاثين أخاً وثلاثين أختًا، وقالت حواء للجميع: «اسمعوني يا أبنائي، فأخبركم بما قاله لنا رئيس الملائكة ميخائيل عندما تعديت أنا وأبوكم وصية الله»."
+    }
+  ]
+}

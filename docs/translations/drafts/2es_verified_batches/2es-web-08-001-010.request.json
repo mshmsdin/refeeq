@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":8,\"verses\":[{\"chapter\":8,\"text\":\"He answered me, â€œThe Most High has made this world for many, but the world to come for few.\",\"verse\":1},{\"chapter\":8,\"text\":\"Now I will tell you a parable, Esdras. Just as when you ask the earth, it will say to you that it gives very much clay from which earthen vessels are made, but little dust that gold comes from. Even so is the course of the present world.\",\"verse\":2},{\"chapter\":8,\"text\":\"Many have been created, but few will be saved.â€‌\",\"verse\":3},{\"chapter\":8,\"text\":\"I answered, â€œDrink your fill of understanding then, O my soul, and let my heart devour wisdom.\",\"verse\":4},{\"chapter\":8,\"text\":\"For you have come here apart from your will, and depart against your will, for you have only been given a short time to live.\",\"verse\":5},{\"chapter\":8,\"text\":\"O Lord over us, grant to your servant that we may pray before you, and give us seed for our heart and cultivation for our understanding, that fruit may grow from it, by which everyone who is corrupt, who bears the likeness of a man, may live.\",\"verse\":6},{\"chapter\":8,\"text\":\"For you alone exist, and we all one workmanship of your hands, just as you have said.\",\"verse\":7},{\"chapter\":8,\"text\":\"Because you give life to the body that is now fashioned in the womb, and give it members, your creature is preserved in fire and water, and your workmanship endures nine months as your creation which is created in it.\",\"verse\":8},{\"chapter\":8,\"text\":\"But that which keeps and that which is kept will both be kept by your keeping. When the womb gives up again what has grown in it,\",\"verse\":9},{\"chapter\":8,\"text\":\"you have commanded that out of the parts of the body, that is to say, out of the breasts, be given milk, which is the fruit of the breasts,\",\"verse\":10}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "db3ff511-3511-476b-be80-9ac84d69f2d6",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5,6,7,8,9,10 in this chapter."
+}

@@ -1,0 +1,106 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 7,
+  "range": "21-30",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "17d3fd84-ad14-4ae6-8258-0f067f502fc8",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 484,
+      "outputTokens": 547,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0015127,
+      "latencyMs": 1835
+    }
+  ],
+  "usage": {
+    "input": 484,
+    "output": 547,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0015127,
+  "verses": [
+    {
+      "chapter": 7,
+      "verse": 21,
+      "text_ar": "لأن الله أمر بدقة الذين أتوا، بل وحالما أتوا، بما يجب أن يصنعوه لكي يحيا، وما يجب أن يحفظوه ليتجنبوا العقاب.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 22,
+      "text_ar": "مع ذلك، لم يطيعوه، بل تكلموا ضده وتخيلوا لأنفسهم أباطيل.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 23,
+      "text_ar": "وضعوا خططاً مكارة للشر، وقالوا علاوة على ذلك عن العلي إنه غير موجود، ولم يعرفوا طرقه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 24,
+      "text_ar5": null,
+      "text_ar": "احتقروا ناموسه وأنكروا عهوده. ولم يكونوا أمناء لفرائضه، ولم يتمموا أعماله.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 25,
+      "text_ar": "لذلك، يا عزرا، للفارغين هي الأشياء الفارغة، وللممتلئين هي الأشياء الممتلئة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 26,
+      "text_ar": "لأنه هوذا، سيأتي الزمان، ويكون، عندما تتم هذه العلامات التي أخبرتك بها من قبل، أن العروس ستظهر، بل والمدينة الخارجة، وسيُرى من هو محتجب الآن عن الأرض.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 27,
+      "text_ar": "كل من ينجو من الشرور المذكورة سيبصر عجائبي.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 28,
+      "text_ar": "لأن ابني يسوع سيُعلن مع الذين هم معه، والذين يبقون سيفرحون أربعمائة سنة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 29,
+      "text_ar": "وبعد هذه السنوات سيموت ابني المسيح، مع كل أولئك الذين لهم نسمة الحياة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 30,
+      "text_ar": "حينئذ يُرد العالم إلى السكون القديم سبعة أيام، كما في البدء الأول، حتى لا يبقى إنسان واحد.",
+      "review_notes_ar": []
+    }
+  ]
+}

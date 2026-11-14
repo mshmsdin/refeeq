@@ -1,0 +1,74 @@
+{
+  "book_code": "TADAM",
+  "source_license_notice": "English translation by R. H. Charles, Oxford 1913; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-charles-1913-latin-recension",
+  "source_name": "The Books of Adam and Eve (Latin recension)",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "batch_start": 101,
+  "batch_end": 105,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "0eb9f3e7-5450-40be-8fb9-080e018d4945",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 471,
+      "outputTokens": 445,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0012538,
+      "latencyMs": 1769
+    }
+  ],
+  "usage": {
+    "input": 471,
+    "output": 445,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0012538,
+  "units": [
+    {
+      "chapter": 34,
+      "source_ref": "34:2",
+      "text_ar": "عضواً منفصلاً. لقد عين الله هذه للتأديب. كل هذه الأمور أرسلها الرب إلي وإلى كل جنسنا."
+    },
+    {
+      "chapter": 35,
+      "source_ref": "35:1",
+      "text_ar": "هكذا تكلم آدم إلى بنيه، فاستولى عليه ألم شديد، وصرخ بصوت عالٍ: \"ماذا أعفعل؟ إني في ضيق. فما أقسى الآلام التي أحاطت بي!\" فلما رأته حواء يبكي، شرعت هي أيضاً تبكي، وقالت: \"أيها الرب إلهي، سلّمني ألمه، فإني أنا التي أخطأت\"."
+    },
+    {
+      "chapter": 35,
+      "source_ref": "35:3",
+      "text_ar": "وقالت حواء لآدم: \"يا سيدي، اعطني جزءاً من آلامك، فإن هذا قد أتى عليك بسبب ذنبي\"."
+    },
+    {
+      "chapter": 36,
+      "source_ref": "36:1",
+      "text_ar": "فقال آدم لحواء: \"قومي واذهبي مع ابني شيث إلى جوار الفردوس، وضِعا تراباً على رؤوسكما واطرحا نفسيكما على الأرض وناحا أمام"
+    },
+    {
+      "chapter": 36,
+      "source_ref": "36:2",
+      "text_ar": "الله. لعلّه يشفق (عليكما) ويرسل ملاكه إلى شجرة رحمته، حيث ينبع زيت الحياة، فيعطيكم قطرة منه لتدهنوني بها، لكي أستريح من هذه الآلام التي تأكلني\"."
+    }
+  ]
+}

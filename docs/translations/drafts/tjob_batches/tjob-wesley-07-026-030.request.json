@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "0f5bf149-3f9e-4f7c-b642-8e542927b121",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":7,\"verses\":[{\"chapter\":7,\"verse\":26,\"text\":\"And I answered him and said: \\\"I am\\\", and thereupon all wept and lamented, and they sang a royal song of lamentation, their whole army joining them in a chorus.\"},{\"chapter\":7,\"verse\":27,\"text\":\"And again Eliphaz said to me : \\\"Art thou he who had ordered seven thousand sheep to be given for the clothing of the poor Whither, then hath gone the glory of thy throne\"},{\"chapter\":7,\"verse\":28,\"text\":\"Art thou he who had ordered three thousand cattle to do the plowing of the field for the poor Wither, then hath thy glory gone!\"},{\"chapter\":7,\"verse\":29,\"text\":\"Art thou he who had golden couches, and now thou sittest upon a dung hill [\\\" Whither then hath thy glory gone !\\\"]\"},{\"chapter\":7,\"verse\":30,\"text\":\"Art thou he who had sixty tables set for the poor Art thou he who had censers for the fine perfume made of precious stones, and now thou art in a malodorous state Whither then hath thy glory gone!\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 26,27,28,29,30 in this chapter."
+}

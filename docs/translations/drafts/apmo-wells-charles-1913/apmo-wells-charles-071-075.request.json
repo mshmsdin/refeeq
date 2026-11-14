@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "ca479676-4ec5-4f2d-9354-0c539621a6cb",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":21,\"text\":\"him, \\\"Fear not, for as soon as thou hast eaten thou shalt know good and evil.\\\" And speedily I persuaded him, and he ate and straightway his eyes were opened and he too knew his nakedness.\",\"source_ref\":\"21:5\"},{\"chapter\":21,\"text\":\"And to me he saith, \\\"O wicked woman! what have I done to thee that thou hast deprived me of the glory of God?\\\"\",\"source_ref\":\"21:6\"},{\"chapter\":22,\"text\":\"And in that same hour, we heard the archangel Michael blowing with his trumpet and calling to\",\"source_ref\":\"22:1\"},{\"chapter\":22,\"text\":\"the angels and saying: \\\"Thus saith the Lord, Come with me to Paradise and hear the judgement with which I shall judge Adam.\\\"\",\"source_ref\":\"22:2\"},{\"chapter\":22,\"text\":\"And when God appeared in paradise, mounted on the chariot of his cherubim with the angels proceeding before him and singing hymns of praises, all the plants of paradise, both of your father's lot\",\"source_ref\":\"22:3\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 21:5, 21:6, 22:1, 22:2, 22:3.",
+  "application_id": "rafeeq-bible-translation"
+}

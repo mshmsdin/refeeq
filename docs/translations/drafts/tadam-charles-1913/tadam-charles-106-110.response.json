@@ -1,0 +1,37 @@
+{
+  "request_id": "603095e0-1ce1-4884-aff7-c549a65793be",
+  "content": "{\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":37,\"verse\":1,\"text_ar\":\"ثم مضى شيث وأمه نحو أبواب الفردوس. وبينما كانا يشيان، إذا بوحش -حية- بغتة هاجم شيث وعضَّهُ. ولما رأته حواء للتو، بكت وقالت: «آهٍ، يا لي من امرأة شقيّة! إنني ملعونة إذ لم أحفظ وصية الله».\"},{\"chapter\":37,\"verse\":2,\"text_ar\":\"[أهملت الآية هنا لكونها مدمجة في ترجمة الوحدة السابقة]\"},{\"chapter\":37,\"verse\":3,\"text_ar\":\"وقالت حواء للححية بصوت عالٍ: «أيها الوحش الملعون! كيف لم تخف أن تطلق العنان لنفسك ضد صورة الله، بل جَسُرْتَ أن تحاربها؟»\"},{\"chapter\":38,\"verse\":1,\"text_ar\":\"أجاب الوحش بلغة البشر: «أليس ضدكم أنتم يا حواء توجه خبثنا؟ ألستم أنتم موضوع غضبنا؟»\"},{\"chapter\":38,\"verse\":2,\"text_ar\":\"«أخبريني يا حواء، كيف انفتح فمك لتأكلي من الثمرة؟ أما الآن فإني إن بدأت أوبخك فلن تطيقي ذلك».\"}]}",
+  "usage": {
+    "input": 412,
+    "output": 307,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0008911,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 412,
+      "outputTokens": 307,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008911,
+      "latencyMs": 1577
+    }
+  ]
+}

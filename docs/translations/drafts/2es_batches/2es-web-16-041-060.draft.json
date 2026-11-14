@@ -1,0 +1,165 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 16,
+  "range": "41-60",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "b9e1fff8-88a6-4b25-83eb-665531d770f0",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 837,
+      "outputTokens": 1383,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0037086,
+      "latencyMs": 3146
+    }
+  ],
+  "usage": {
+    "input": 837,
+    "output": 1383,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0037086,
+  "verses": [
+    {
+      "chapter": 16,
+      "verse": 41,
+      "text_ar": "البائع فلْيَكُنْ كالهارب، والمشتري كالخاسر.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 42,
+      "text_ar": "والتاجر كالذي لا يربح شيئاً، والباني كالذي لن يسكن فيه،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 43,
+      "text_ar": "والزارع كالذي لن يحصد، وكذلك مقلم الكروم كالذي لن يجني العنب،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 44,
+      "text_ar": " والمتزوجون كالذين لن يكون لهم أطفال، والذين لا يتزوجون كالارامل.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 45,
+      "text_ar": "لذلك، فإن الذين يتعبون، يتعبون باطلاً؛",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 46,
+      "text_ar": "فإن الغرباء سيحصدون ثمارهم، وينهبون ممتلكاتهم، ويهدمون بيوتهم، ويأبون أطفالهم سبايا، لأنه في السبي والجوع سيُحبل بأطفالهم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 47,
+      "text_ar": "والذين يمارسون التجارة، إنما يفعلون ذلك ليُنهبوا فقط. وكلما زادوا في تزيين مدنهم، وبيوتهم، وممتلكاتهم، وأشخاصهم،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 48,
+      "text_ar": "كلما أبغضتهم أكثر بسبب خطاياهم، يقول الرب.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 49,
+      "text_ar": "وكما أن المرأة المحترمة والفضلى تبغض الزانية،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 50,
+      "text_ar": "هكذا ستُبغض البّرية الإثم حين تتزين، وستوبخها وجهاً لوجه عندما يأتي ذاك الذي سيدفع عن الذي يفحص باجتهاد كل خطيئة على الأرض.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 51,
+      "text_ar": "لذلك لا تكونوا مثلها ولا مثل أعمالها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 52,
+      "text_ar": "لأنه بعد قليل جداً، سَيُزال الإثم من الأرض، ويملُك البر علينا.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 53,
+      "text_ar": "فلا يقل الخاطئ إنه لم يخطئ؛ لأن الله سيحرق جمر نار على رأس من يقول: «إنني لم أخطئ أمام الله ومجده».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 54,
+      "text_ar": "هوذا، الرب يعلم جميع أعمال البشر، وتخيلاتهم، وأفكارهم، وقلوبهم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 55,
+      "text_ar": "هو قال: «لتُصنع الأرض» فصنعت، «ليُصنع السحاب» فصُنع.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 56,
+      "text_ar": "بكلمته ثبتت النجوم، وهو يعرف عدد النجوم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 57,
+      "text_ar": "وهو يفحص اللجج وكنوزها، وقد قاس البحر وما يحويه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 58,
+      "text_ar": "وقد حصر البحر في وسط المياه، وبكلمته علق الأرض فوق المياه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 59,
+      "text_ar": "وبسط السماء كقبة، وأسسها فوق المياه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 60,
+      "text_ar": "وصنع ينابيع مياه في البرية وبكلاود على قمم الجبال ليرسل أنهاراً من المرتفعات لتروي الأرض.",
+      "review_notes_ar": []
+    }
+  ]
+}

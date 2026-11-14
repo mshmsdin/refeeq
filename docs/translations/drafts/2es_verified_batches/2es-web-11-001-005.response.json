@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "c05aac7b-422f-475a-bea4-d25f5ebcf0c6",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"وكان في الليلة الثانية أني رأيت حلما، وإذا بعقاب لها اثنا عشر جناحا مكسوا بالريش وثلاث رؤوس طلعت من البحر.\",\n      \"verse\": 1\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"ورأيت، وإذا بها بسطت أجنحتها على الأرض كلها، وهبت عليها كل رياح السماء، وتجمعت السحب ضدها.\",\n      \"verse\": 2\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"ورأيت، ومن أجنحتها نمت أجنحة أخرى بجانبها، وصارت أجنحة صغيرة دقيقة.\",\n      \"verse\": 3\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"أما رؤوسها فكانت استراحة. وكان الرأس الذي في الوسط أكبر من الرأسين الآخرين، ولكنه استراح معهما.\",\n      \"verse\": 4\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"وأيضا رأيت، وإذا بالعقاب طارت بأجنحتها لتمسح على الأرض وعلى الساكنين فيها.\",\n      \"verse\": 5\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  307,
+                  "output":  332,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0009221,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  307,
+                         "outputTokens":  332,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0009221,
+                         "latencyMs":  1916
+                     }
+                 ]
+}

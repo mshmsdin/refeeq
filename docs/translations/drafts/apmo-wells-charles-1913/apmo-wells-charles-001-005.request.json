@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":1,\"text\":\"This is the story of Adam and Eve after they had gone out of Paradise. And Adam knew his wife\",\"source_ref\":\"1:1\"},{\"chapter\":1,\"text\":\"Eve and went upwards to the sun-rising and abode there eighteen years and two months. And\",\"source_ref\":\"1:2\"},{\"chapter\":1,\"text\":\"Eve conceived and bare two sons; Adiaphotos, who is called Cain and Amilabes who is called Abel.\",\"source_ref\":\"1:3\"},{\"chapter\":2,\"text\":\"And after this, Adam and Eve were with one another and while they were sleeping, Eve said to Adam her lord: 'My lord, Adam, behold,\",\"source_ref\":\"2:1\"},{\"chapter\":2,\"text\":\"I have seen in a dream this night the blood of my son Amilabes who is styled Abel being poured into the mouth of Cain his brother and he went on drinking it without pity. But he begged him to leave him a little of it. Yet he hearkened\",\"source_ref\":\"2:2\"}]}"
+    }
+  ],
+  "request_id": "f801953e-d5bd-4d0f-ba0f-4faafaa732e9",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 1:1, 1:2, 1:3, 2:1, 2:2.",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

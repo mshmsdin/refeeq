@@ -1,0 +1,74 @@
+{
+  "book_code": "TADAM",
+  "source_license_notice": "English translation by R. H. Charles, Oxford 1913; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-charles-1913-latin-recension",
+  "source_name": "The Books of Adam and Eve (Latin recension)",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "batch_start": 11,
+  "batch_end": 15,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "25874dc6-3197-4105-a36a-bede4649ea90",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 423,
+      "outputTokens": 411,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011544,
+      "latencyMs": 2009
+    }
+  ],
+  "usage": {
+    "input": 423,
+    "output": 411,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0011544,
+  "units": [
+    {
+      "chapter": 5,
+      "source_ref": "5:3",
+      "text_ar": "أتممنا ما وعدناه. يا سيدي، كم من التوبة فكرت (أن تصنع) لأني جلبت عليك التعب والضيق؟"
+    },
+    {
+      "chapter": 6,
+      "source_ref": "6:1",
+      "text_ar": "وقال آدم لحواء: \"لا يمكنك أن تفعلي مثلي، بل افعلي فقط ما لديك قوة له. فإني سأقضي أربعين يوماً صائماً، وأما أنت فقومي واذهبي إلى نهر دجلة وارفعي حجراً وقفي عليه في الماء حتى عنقك في عمق النهر. ولا يصدر كلام من فمك، فنحن غير مستحقين أن نخاطب الرب، لأن شفاهنا نجسة من الشجرة المحرمة الممنوعة."
+    },
+    {
+      "chapter": 6,
+      "source_ref": "6:2",
+      "text_ar": "وقفي أنت في ماء النهر سبعة وثلاثين يوماً. وأما أنا فسأقضي أربعين يوماً في ماء الأردن، لعل الرب الإله يتحنن علينا\"."
+    },
+    {
+      "chapter": 7,
+      "source_ref": "7:1",
+      "text_ar": "ومشت حواء إلى نهر دجلة و"
+    },
+    {
+      "chapter": 7,
+      "source_ref": "7:2",
+      "text_ar": "فعلت كما قاله لها آدم. وبالمثل، مشى آدم إلى نهر الأردن وقرّ على حجر حتى عنقه في الماء."
+    }
+  ]
+}

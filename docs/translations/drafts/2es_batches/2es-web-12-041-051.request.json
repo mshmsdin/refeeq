@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "request_id": "ba618421-35ac-42da-b324-209d3d2b58eb",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 41,42,43,44,45,46,47,48,49,50,51 in this chapter.",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"2ES\",\"chapter\":12,\"verses\":[{\"verse\":41,\"chapter\":12,\"text\":\"“How have we offended you? What evil have we done against you, that you have utterly forsaken us, and sit in this place?\"},{\"verse\":42,\"chapter\":12,\"text\":\"For of all the prophets, only you are left to us, like a cluster of the vintage, and like a lamp in a dark place, and like a harbor for a ship saved from the tempest.\"},{\"verse\":43,\"chapter\":12,\"text\":\"Aren’t the evils which have come to us sufficient?\"},{\"verse\":44,\"chapter\":12,\"text\":\"If you will forsake us, how much better had it been for us if we also had been consumed in the burning of Zion!\"},{\"verse\":45,\"chapter\":12,\"text\":\"For we are not better than those who died there.” Then they wept with a loud voice. I answered them,\"},{\"verse\":46,\"chapter\":12,\"text\":\"“Take courage, O Israel! Don’t be sorrowful, you house of Jacob;\"},{\"verse\":47,\"chapter\":12,\"text\":\"for the Most High remembers you. The Mighty has not forgotten you forever.\"},{\"verse\":48,\"chapter\":12,\"text\":\"As for me, I have not forsaken you. I haven’t departed from you; but I have come into this place to pray for the desolation of Zion, and that I might seek mercy for the humiliation of your sanctuary.\"},{\"verse\":49,\"chapter\":12,\"text\":\"Now go your way, every man to his own house, and after these days I will come to you.”\"},{\"verse\":50,\"chapter\":12,\"text\":\"So the people went their way into the city, as I told them to do.\"},{\"verse\":51,\"chapter\":12,\"text\":\"But I sat in the field seven days, as the angel commanded me. In those days, I ate only of the flowers of the field, and my food was from plants.\"}]}"
+    }
+  ],
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,51 @@
+{
+  "request_id": "45a89c32-0f95-491c-bb4c-591990ba3442",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":8,\"verse\":61,\"text_ar\":\"لذلك فإن قضائي هو الآن قريب،\",\"review_notes_ar\":[]},{\"chapter\":8,\"verse\":62,\"text_ar\":\"الذي لم أظهره لكل الناس، بل لك ولأقليّة مثلك.» ثُمّ أجبت،\",\"review_notes_ar\":[]},{\"chapter\":8,\"verse\":63,\"text_ar\":\"«هوذا يا رب، لقد أريتني الآن كثرة العجائب التي ستفعلها في الأيام الأخيرة، لكنك لم ترني متى.»\",\"review_notes_ar\":[]}]}",
+  "usage": {
+    "input": 201,
+    "output": 147,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0004278,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 201,
+      "outputTokens": 147,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0004278,
+      "latencyMs": 3065
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "f2f809e5-3fba-413f-91b6-a2f16500512c",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"طَارَ النَّسْرُ وَجَاءَ إِلَى أُورُشَلِيمَ وَأَعْطَى الرِّسَالَةَ لَبَارُوخَ؛ وَلَمَّا حَلَّهَا قَرَأَهَا وَقَبَّلَهَا وَبَكَى عِنْدَمَا سَمِعَ عَنْ ضِيقِ الشَّعْبِ وَمَعَانَاتِهِمْ.\",\n      \"verse\": 36\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"أَمَّا إِرْمِيَا فَأَخَذَ التِّينَ وَوَزَّعَهُ عَلَى الْمَرْضَى بَيْنَ الشَّعْبِ، وَظَلَّ يُعَلِّمُهُمْ أَنْ يَمْتَنِعُوا عَنْ م مَارَسَاتِ أُمَمِ بَابِلَ الْمُنَجِّسَةِ.\",\n      \"verse\": 37\n    }\n  ]\n}",
+  "usage": {
+    "input": 216,
+    "output": 271,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0007423,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 216,
+      "outputTokens": 271,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0007423,
+      "latencyMs": 1449
+    }
+  ]
+}

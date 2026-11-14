@@ -1,0 +1,37 @@
+{
+  "request_id": "7dfb1c1e-12ae-4df7-af94-1b8f410b9b28",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"ثم انصرف من وراء امرأتي ووقف أمامي صارخاً وقال: هوذا يا أيوب، أستسلم وأفسح لك المجال، أنت الذي لست إلا لحماً بينما أنا روح.\",\n      \"verse\": 26\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"أنت مصاب بالضربات، أما أنا فأنا في ضيق شديد.\",\n      \"verse\": 27\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"لأني أشبه مصارعاً ينازل مصارعاً استطاع في قتال فردي أن يطرح خصمه أرضاً ويغطيه بالتراب ويكسر كل عظم فيه، في حين أن الآخر الطريح في الأسفل، إذ أظهر شجاعته، يصدر أصوات ظفر تشهد بتفوقه السامي.\",\n      \"verse\": 28\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"هكذا أنت يا أيوب، في الأسفل ومصاب بالضربات والأوجاع، ومع ذلك فقد أحرزت النصر في مباراة المصارعة معي، وها أنا أستسلم لك.\",\n      \"verse\": 29\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"ثم تركني خجِلاً.\",\n      \"verse\": 30\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 329,
+    "output": 361,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010012,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 329,
+      "outputTokens": 361,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010012,
+      "latencyMs": 1628
+    }
+  ]
+}

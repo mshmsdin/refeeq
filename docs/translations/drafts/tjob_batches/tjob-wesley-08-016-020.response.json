@@ -1,0 +1,37 @@
+{
+  "request_id": "ba46533f-3429-4765-a6a1-72d08ae6adc2",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"[وأجبت قائلاً]: \\\"من يفهم أعماق الرب وحكمته لكي يقدر أن يتهم الله بالظلم\\\"؟\",\n      \"verse\": 16\n    },\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"[وقال بلداد]: \\\"أجبني يا أيوب عن هذا. أقول لك ثانية: إن كنت في حالة عقل هادئ، فعلمني إن كانت لديك حكمة:\",\n      \"verse\": 17\n    },\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"لماذا نرى الشمس تشرق في الشرق وتغرب في الغرب؟ وثانية عندما نرتفع في الصباح نجدها تشرق في الشرق. أخبرني برأيك في هذا\\\"\",\n      \"verse\": 18\n    },\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"ثم قلت: \\\"لماذا أخون (أثرثر بـ) أسرار الله العظيمة؟ وهل يتعثر فمي في كشف الأمور التي تخص السيد؟ حاشا!\\\"\",\n      \"verse\": 19\n    },\n    {\n      \"chapter\": 8,\n      \"text_ar\": \"من نحن حتى نفتش في الأمور التي تخص العالم العلوي بينما نحن لسنا سوى لحم، بل أرض ورماد!\\\"\",\n      \"verse\": 20\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 337,
+    "output": 359,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009986,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 337,
+      "outputTokens": 359,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009986,
+      "latencyMs": 1497
+    }
+  ]
+}

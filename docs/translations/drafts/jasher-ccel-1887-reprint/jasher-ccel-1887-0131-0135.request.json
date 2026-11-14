@@ -1,0 +1,17 @@
+{
+  "request_id": "f16b94e0-e1ec-48de-9496-76be693b7a4d",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"units\":[{\"text\":\"And all men who walked in the ways of the Lord, died in those days, before the Lord brought the evil upon man which he had declared, for this was from the Lord, that they should not see the evil which the Lord spoke of concerning the sons of men.\",\"source_ref\":\"4:20\",\"verse\":20,\"chapter\":4},{\"text\":\"And Noah found grace in the sight of the Lord, and the Lord chose him and his children to raise up seed from them upon the face of the whole earth.\",\"source_ref\":\"4:21\",\"verse\":21,\"chapter\":4},{\"text\":\"And it was in the eighty-fourth year of the life of Noah, that Enoch the son of Seth died, he was nine hundred and five years old at his death.\",\"source_ref\":\"5:1\",\"verse\":1,\"chapter\":5},{\"text\":\"And in the one hundred and seventy ninth year of the life of Noah, Cainan the son of Enosh died, and all the days of Cainan were nine hundred and ten years, and he died.\",\"source_ref\":\"5:2\",\"verse\":2,\"chapter\":5},{\"text\":\"And in the two hundred and thirty fourth year of the life of Noah, Mahlallel the son of Cainan died, and the days of Mahlallel were eight hundred and ninety-five years, and he died.\",\"source_ref\":\"5:3\",\"verse\":3,\"chapter\":5}],\"book_code\":\"JASHER\"}"
+    }
+  ],
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "tenant_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":9,\"verses\":[{\"chapter\":9,\"verse\":21,\"text\":\"21 When Jeremiah was saying this about the son of God, that he is coming into the world, the people became very angry and said: “This is a repetition of the words spoken by Isaiah son of Amos, when he said: ‘I saw God and the son of God.’\"},{\"chapter\":9,\"verse\":22,\"text\":\"22 Come, then, and let us avoid killing him in the same way we killed Isaiah, but let us stone him.”\"},{\"chapter\":9,\"verse\":23,\"text\":\"23 And Baruch and Abimelech were deeply grieved because they wanted to hear in full the mysteries that he had seen.\"},{\"chapter\":9,\"verse\":24,\"text\":\"24 But Jeremiah said to them: “Be quiet and do not weep, for they cannot kill me until I describe for you everything I saw.”\"},{\"chapter\":9,\"verse\":25,\"text\":\"25 And he said to them: “Bring a stone here to me.”\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "1079f9f1-a00b-4918-a46c-d10a76357a10",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24,25 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 46,
+  "batch_end": 50,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "871e05d1-9e4c-419a-be83-871820601998",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 408,
+      "outputTokens": 371,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010499,
+      "latencyMs": 1468
+    }
+  ],
+  "usage": {
+    "input": 408,
+    "output": 371,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0010499,
+  "units": [
+    {
+      "chapter": 15,
+      "source_ref": "15:3",
+      "text_ar": "التي قسّمها لنا الله. أما أنا فحرستُ نصيبي، الغرب والجنوب. لكن إبليس ذهب إلى نصيب آدم، حيث كانت الكريات الذكورية. [لأن الله قسّم الخلائق؛ فكل الذكور أعطاها لأبيكم وكل الإناث أعطاها لي]."
+    },
+    {
+      "chapter": 16,
+      "source_ref": "16:1",
+      "text_ar": "وتكلم إبليس مع الحية قائلاً: قم، تعال إليّ فأخبرك بكلمة"
+    },
+    {
+      "chapter": 16,
+      "source_ref": "16:2",
+      "text_ar": "بها تنال ربحاً. فقامت وأتت إليه. فقال لها إبليس:"
+    },
+    {
+      "chapter": 16,
+      "source_ref": "16:3",
+      "text_ar": "أسمع أنك أحكم من جميع الحيوانات، وقد جئت لأشير عليك. لماذا تأكلين من زوان آدم وليس من الفردوس؟ قم فلنجعله يطرد من الفردوس،"
+    },
+    {
+      "chapter": 16,
+      "source_ref": "16:4",
+      "text_ar": "كما طردنا نحن بسببه. فقالت له الحية: أنا أخاف لئلا يغضب الرب"
+    }
+  ]
+}

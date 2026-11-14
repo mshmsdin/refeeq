@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  10,
+    "range":  "41-50",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "79e4af08-7176-4119-905f-c8bc8de65a40",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  509,
+                         "outputTokens":  611,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016802,
+                         "latencyMs":  2273
+                     }
+                 ],
+    "usage":  {
+                  "input":  509,
+                  "output":  611,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0016802,
+    "verses":  [
+                   {
+                       "chapter":  10,
+                       "text_ar":  "المرأة التي ظهرت لك قبل قليل، التي رأيتها تنوح وبدأت تعزيها،",
+                       "verse":  41
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "ولكن الآن لا ترى شبه المرأة بعد، بل ظهرت لك مدينة قيد البناء،",
+                       "verse":  42
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "وهي أخبرتك بموت ابنها، فهذا هو التفسير:",
+                       "verse":  43
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "هذه المرأة التي رأيتها هي صيون التي تراها الآن كمدينة تُبنى.",
+                       "verse":  44
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "أخبرتك أنها كانت عاقراً لمدة ثلاثين سنة لأنه كانت هناك ثلاثة آلاف سنة في العالم لم يُقدم فيها تقدمة بعد.",
+                       "verse":  45
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "وحدث بعد ثلاثة آلاف سنة أن سليمان بنى المدينة وقدم التقادم. وعندئذ ولدت العاقر ابناً.",
+                       "verse":  46
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "أخبرتك أنها ربته بعناية فائقة. وكان ذلك هو المسكن في أورشليم.",
+                       "verse":  47
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "وحين قالت لك إن ابني مات حين دخل حجرة عرسه، وأصابتها تلك المصيبة، فهذا هو الدمار الذي حل بأورشليم.",
+                       "verse":  48
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "هوذا قد رأيت شبهها كيف ناحت على ابنها، وبدأت تعزيها عما حدث لها. هذه هي الأمور التي كان ينبغي أن تُكشف لك.",
+                       "verse":  49
+                   },
+                   {
+                       "chapter":  10,
+                       "text_ar":  "لأن العلي الآن، إذ يرى أنك حزين بإخلاص وتتألم من كل قلبك من أجلها، قد أراكم بهاء مجدها وجمال حسنها.",
+                       "verse":  50
+                   }
+               ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "rejected_by_router_http_503_after_retries",
+  "reason": "All eligible providers failed",
+  "attempts": 4,
+  "retry_interval_seconds": 70,
+  "draft_saved": false,
+  "action": "Resume later with a fresh idempotency key after provider availability returns.",
+  "checked_at_utc": "2026-11-14T05:08:48.5859348Z"
+}

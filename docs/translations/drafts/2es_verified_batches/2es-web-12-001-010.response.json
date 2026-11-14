@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "e9b86d37-b434-48b1-b9de-6314250569f9",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"وحدث بينما كان الأسد يتكلم بهذه الكلمات إلى النسر، أنني رأيت،\",\n      \"verse\": 1\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"وهوذا الرأس الذي بقي قد اختفى، والجناحان اللذان عبرا إليه قاما ونصبا نفسيهما ليملكا، وكانت مملكتهما قصيرة ومليئة بالصخب.\",\n      \"verse\": 2\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"رأيت وهوذا هما قد اختفيا، وأحرق جسد النسر كله حتى صارت الأرض في خوف شديد. ثم استيقظت بسبب ارتباك الذهن العظيم والخوف الشديد، وقلت لروحي:\",\n      \"verse\": 3\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"هوذا أنت فعلت بي هذا، لأنك تفحصين طرق العلي.\",\n      \"verse\": 4\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"هوذا ما زلت متعبا في ذهني، وضعيقا جدا في روحي، وليس في حتى القليل من القوة، بسبب الخوف الشديد الذي ارتعبت به الليلة.\",\n      \"verse\": 5\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"لذلك سأطلب الآن من العلي أن يقويني إلى النهاية.\",\n      \"verse\": 6\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"ثم قلت: أيها السيد السيادة، إن كنت قد وجدت نعمة في عينيك، وإن كنت مبررا معك أكثر من كثيرين غيرهم، وإن كانت صلاتي قد صعدت حقا أمام وجهك،\",\n      \"verse\": 7\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"فقوني إذن، وأرني أنا عبدك، تفسير ومعنى هذه الرؤيا المخيفة، لكي تعزي نفسي تماما.\",\n      \"verse\": 8\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"لأنك حسبتني أهلا لأن تريني نهاية الزمان وأحداث الأزمنة الأخيرة.\",\n      \"verse\": 9\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"فقال لي: هذا هو تفسير هذه الرؤيا التي رأيتها:\",\n      \"verse\": 10\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  533,
+                  "output":  634,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0017449000000000002,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  533,
+                         "outputTokens":  634,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017449000000000002,
+                         "latencyMs":  1965
+                     }
+                 ]
+}

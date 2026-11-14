@@ -1,0 +1,18 @@
+{
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "request_id": "dd019a81-9ea4-4f21-85f1-750bd0cefca7",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي كأعداد صحيحة بأرقام 0-9 فقط، بلا فاصلة أو كلمة ملحقة، وعنصراً واحداً لكل وحدة.",
+      "role": "system"
+    },
+    {
+      "content": "{\"verses\":[{\"verse\":21,\"chapter\":15,\"text\":\"Just as they do yet this day to my chosen, so I will do also, and repay into their bosom.” The Lord God says:\"},{\"verse\":22,\"chapter\":15,\"text\":\"“My right hand won’t spare the sinners, and my sword won’t cease over those who shed innocent blood on the earth.\"},{\"verse\":23,\"chapter\":15,\"text\":\"A fire has gone out from his wrath and has consumed the foundations of the earth and the sinners, like burnt straw.\"},{\"verse\":24,\"chapter\":15,\"text\":\"Woe to those who sin and don’t keep my commandments!” says the Lord.\"},{\"verse\":25,\"chapter\":15,\"text\":\"“I will not spare them. Go your way, you rebellious children! Don’t defile my sanctuary!”\"}],\"book_code\":\"2ES\",\"chapter\":15}",
+      "role": "user"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 21,22,23,24,25 in this chapter.",
+  "service_key": "bible-translation"
+}

@@ -1,0 +1,1653 @@
+{
+  "book_code": "ABR",
+  "book_name_ar": "رؤيا إبراهيم",
+  "source_translation": "en-pseudepigrapha-apocalypse-abraham",
+  "source_name": "English Apocalypse of Abraham",
+  "source_url": "https://www.pseudepigrapha.com/pseudepigrapha/Apocalypse_of_Abraham.html",
+  "source_license": "The website presents two English translations with translator attribution unclear; rights review remains pending. Internal draft only; do not publish until provenance and rights are resolved.",
+  "source_quality": "Web edition with two anonymous English translations; only the first column was imported. The extant work survives only in Slavonic manuscripts.",
+  "source_integrity": "Importer parsed all 32 chapters and 302 nonempty units. Every reference and text matched the live Rafiq witness after whitespace normalization.",
+  "source_sha256": "4e934e2ebab18eaaa5d33ad7eb1f6da9986ad65c0bf3898257a6e5e79b484921",
+  "chapter_counts": [
+    {
+      "chapter": 1,
+      "count": 9
+    },
+    {
+      "chapter": 2,
+      "count": 9
+    },
+    {
+      "chapter": 3,
+      "count": 8
+    },
+    {
+      "chapter": 4,
+      "count": 6
+    },
+    {
+      "chapter": 5,
+      "count": 13
+    },
+    {
+      "chapter": 6,
+      "count": 16
+    },
+    {
+      "chapter": 7,
+      "count": 12
+    },
+    {
+      "chapter": 8,
+      "count": 6
+    },
+    {
+      "chapter": 9,
+      "count": 9
+    },
+    {
+      "chapter": 10,
+      "count": 15
+    },
+    {
+      "chapter": 11,
+      "count": 6
+    },
+    {
+      "chapter": 12,
+      "count": 8
+    },
+    {
+      "chapter": 13,
+      "count": 13
+    },
+    {
+      "chapter": 14,
+      "count": 12
+    },
+    {
+      "chapter": 15,
+      "count": 7
+    },
+    {
+      "chapter": 16,
+      "count": 4
+    },
+    {
+      "chapter": 17,
+      "count": 19
+    },
+    {
+      "chapter": 18,
+      "count": 14
+    },
+    {
+      "chapter": 19,
+      "count": 8
+    },
+    {
+      "chapter": 20,
+      "count": 6
+    },
+    {
+      "chapter": 21,
+      "count": 7
+    },
+    {
+      "chapter": 22,
+      "count": 3
+    },
+    {
+      "chapter": 23,
+      "count": 14
+    },
+    {
+      "chapter": 24,
+      "count": 9
+    },
+    {
+      "chapter": 25,
+      "count": 6
+    },
+    {
+      "chapter": 26,
+      "count": 6
+    },
+    {
+      "chapter": 27,
+      "count": 12
+    },
+    {
+      "chapter": 28,
+      "count": 4
+    },
+    {
+      "chapter": 29,
+      "count": 20
+    },
+    {
+      "chapter": 30,
+      "count": 8
+    },
+    {
+      "chapter": 31,
+      "count": 8
+    },
+    {
+      "chapter": 32,
+      "count": 5
+    }
+  ],
+  "verses": [
+    {
+      "chapter": 1,
+      "verse": 1,
+      "text": "On the day I was guarding the gods of my father Terah and the gods of my brother Nahor, while I was testing (to find out) which god is in truth the strongest,"
+    },
+    {
+      "chapter": 1,
+      "verse": 2,
+      "text": "I (then) Abraham, at the time when my lot came, when I was completing the services, of my father Terah�s sacrifice to his gods of wood, of stone, of gold, of"
+    },
+    {
+      "chapter": 1,
+      "verse": 3,
+      "text": "silver, of copper, and of iron, having entered their temple for the service, I found a god named Marumath, carved from stone, fallen at the feet of the iron god"
+    },
+    {
+      "chapter": 1,
+      "verse": 4,
+      "text": "Nakhin. And it came to pass, that when I saw it my heart was perplexed and I thought in my mind that I, Abraham, could not put it back in its place alone,"
+    },
+    {
+      "chapter": 1,
+      "verse": 5,
+      "text": "because it was heavy, (being made) of a big stone. But I went and told my father,"
+    },
+    {
+      "chapter": 1,
+      "verse": 6,
+      "text": "and he came in with me. And when we both lifted it to put it in its place, its head"
+    },
+    {
+      "chapter": 1,
+      "verse": 7,
+      "text": "fell off, even while I was holding it by its head. And it came to pass, when my father saw that the head of his god Marumath had fallen, he said to me, \"Abraham!:"
+    },
+    {
+      "chapter": 1,
+      "verse": 8,
+      "text": "And I said, \"Here I am!\" And he said to me, \"Bring me the axes and chiselsfrom the house. \"And I brought them to him"
+    },
+    {
+      "chapter": 1,
+      "verse": 9,
+      "text": "from the house. And he cut another Marumath from another stone, without a head, and he smashed the head that had fallen off Marumath and the rest of Marumath."
+    },
+    {
+      "chapter": 2,
+      "verse": 1,
+      "text": "He made five other gods and he gave then to me and ordered me to sell them"
+    },
+    {
+      "chapter": 2,
+      "verse": 2,
+      "text": "outside on the town road. I saddled my father�s ass and loaded them on it and"
+    },
+    {
+      "chapter": 2,
+      "verse": 3,
+      "text": "went out on the highway to sell them. And behold merchants from Phandana of Syria were coming with camels, on their way to Egypt to buy kokonil from"
+    },
+    {
+      "chapter": 2,
+      "verse": 4,
+      "text": "the Nile. I asked them a question and they answered me. And walking along I conversed with them. One of their camels screamed. The ass took fright and ran away and threw off the gods. Three of them were crushed and two remained"
+    },
+    {
+      "chapter": 2,
+      "verse": 5,
+      "text": "(intact). And it came to pass that when the Syrians saw that I had gods, they said to me. \"\"Why did you not tell us that you had gods? We would have bought them"
+    },
+    {
+      "chapter": 2,
+      "verse": 6,
+      "text": "before the ass.heard the camel�s voice and you have had no loss. Give us"
+    },
+    {
+      "chapter": 2,
+      "verse": 7,
+      "text": "at least the gods that remain and we will give you a suitable price.\" I considered it in my heart. And they paid both for the smashed gods and the gods which"
+    },
+    {
+      "chapter": 2,
+      "verse": 8,
+      "text": "remained. For I had been grieving in my heart how I would bring payment to my"
+    },
+    {
+      "chapter": 2,
+      "verse": 9,
+      "text": "father. I threw three broken (gods) into the water of the river Gur, which was in this place. And they sank into the depths of the river Gur and were no more."
+    },
+    {
+      "chapter": 3,
+      "verse": 1,
+      "text": "As I was still walking on the road, my heart was disturbed and my mind"
+    },
+    {
+      "chapter": 3,
+      "verse": 2,
+      "text": "distracted. I said in my heart, \"What is the inequality of activity which my"
+    },
+    {
+      "chapter": 3,
+      "verse": 3,
+      "text": "father is doing? Is it not he rather who is god for his gods, because they come"
+    },
+    {
+      "chapter": 3,
+      "verse": 4,
+      "text": "into being from his sculpting, his planning, and his skill? They ought to honor my father because they are his work. What is this food of my father in his works?"
+    },
+    {
+      "chapter": 3,
+      "verse": 5,
+      "text": "Behold, Marumath fell and could not stand up in his sanctuary, nor could I myself"
+    },
+    {
+      "chapter": 3,
+      "verse": 6,
+      "text": "lift him until my father came and we raised him up. And even so we were not able (to do it) and his head fell off of him. And he put it on another stone of"
+    },
+    {
+      "chapter": 3,
+      "verse": 7,
+      "text": "another god, which he had made without a head. And... the other five gods which got smashed (in falling) from the ass, who could not save themselves and injure the ass because it smashed them, nor did their shards come up out of the"
+    },
+    {
+      "chapter": 3,
+      "verse": 8,
+      "text": "river. And I said to my heart, \"If it is so, how then can my father�s god Marumath, which has the head of another stone and which is made from another stone, save a man, or heart a man�s prayer, or give him any gift?\""
+    },
+    {
+      "chapter": 4,
+      "verse": 1,
+      "text": "And thinking thus, I came to my father�s house. And I watered the ass and gave him hay. And I took out the silver and placed it in the hand of my father Terah."
+    },
+    {
+      "chapter": 4,
+      "verse": 2,
+      "text": "And when he saw it, he was glad, and he said, \"You are blessed. Abraham, by the god of my gods, since you have brought me the price for the gods, so that my"
+    },
+    {
+      "chapter": 4,
+      "verse": 3,
+      "text": "labor was not (in) vain.\" And answering I said to him, \"Listen, father Terah! The gods are blessing in you, because you are a god for them, because you made"
+    },
+    {
+      "chapter": 4,
+      "verse": 4,
+      "text": "them, for their blessing is their perdition and their power is vain. They did not"
+    },
+    {
+      "chapter": 4,
+      "verse": 5,
+      "text": "help themselves; how then can they help you or bless me? I was good for you in this transaction, for through my good sense I brought you the silver for the"
+    },
+    {
+      "chapter": 4,
+      "verse": 6,
+      "text": "smashed (gods).\" And when he heard my speech he became furiously angry with me, because I had spoken harsh words against his gods."
+    },
+    {
+      "chapter": 5,
+      "verse": 1,
+      "text": "1But having pondered my father�s anger, I went out. And afterward when I had"
+    },
+    {
+      "chapter": 5,
+      "verse": 2,
+      "text": "gone out, he called me saying, \"Abraham!\" And I said, \"Here I am!\" And he said, \"Up, gather wood chips, for I was making gods from fir before you came,"
+    },
+    {
+      "chapter": 5,
+      "verse": 4,
+      "text": "and prepare with them food for my midday meal.\" And it came to pass, when I was choosing the wooden chips, I found among them a small god which would"
+    },
+    {
+      "chapter": 5,
+      "verse": 5,
+      "text": "fit...in my left hand. And on its forehead was written: god Barisat. And it came to pass when I put the chips on the fire in order to prepare the food for my father, and going out to inquire about the food, I put Barisat near the enkindling"
+    },
+    {
+      "chapter": 5,
+      "verse": 7,
+      "text": "fire, saying to him threateningly, \"Barisat, watch that the fire does not go out"
+    },
+    {
+      "chapter": 5,
+      "verse": 8,
+      "text": "before I come back! If the fire goes out, blow on it so it flares up.\" I went out"
+    },
+    {
+      "chapter": 5,
+      "verse": 9,
+      "text": "and I made my counsel. When I returned I found Barisat fallen on his back. His"
+    },
+    {
+      "chapter": 5,
+      "verse": 10,
+      "text": "feet enveloped by fire and burning fiercely. And it came to pass when I saw it, I laughed (and) said to myself, \"Barisat, truly you know how to light a fire and"
+    },
+    {
+      "chapter": 5,
+      "verse": 11,
+      "text": "cook food!\" And it came to pass while saying this in my laughter, I saw (that)"
+    },
+    {
+      "chapter": 5,
+      "verse": 12,
+      "text": "he burned up slowly from the fire and became ashes. I carried the food to my"
+    },
+    {
+      "chapter": 5,
+      "verse": 13,
+      "text": "father to eat. I gave him wine and milk, and he drank and he enjoyed himself"
+    },
+    {
+      "chapter": 5,
+      "verse": 14,
+      "text": "and he blessed Marumath his god. And I said to him, \"Father Terah, do not bless Marumath your god, do not praise him! Praise rather Barisat, your god, because, as though loving you, he threw himself into the fire in order to cook your food.\""
+    },
+    {
+      "chapter": 5,
+      "verse": 15,
+      "text": "And he said to me, \"Then where is he now?\" And I said, \"He has burned in the fierceness of the fire and become dust.\" And he said, \"Great is the power of Barisat! I will make another today, and tomorrow he will prepare my food.\""
+    },
+    {
+      "chapter": 6,
+      "verse": 1,
+      "text": "When I, Abraham, heard words like this from my father, I laughed in my mind,"
+    },
+    {
+      "chapter": 6,
+      "verse": 2,
+      "text": "and I groaned in the bitterness and anger of my soul. I said, \"How then is a"
+    },
+    {
+      "chapter": 6,
+      "verse": 3,
+      "text": "figment of a body made by him (Terah) an aid for my father? Or can he have subordinated (his) body to his soul, his soul to a spirit, and the spirit to stupidity"
+    },
+    {
+      "chapter": 6,
+      "verse": 4,
+      "text": "and ignorance?\" And I said, \"It is only proper to endure evil that I may throw"
+    },
+    {
+      "chapter": 6,
+      "verse": 5,
+      "text": "my mind to purity and I will expose my thoughts clearly to him.\" I answered and said, \"Father Terah, whichever of these gods you extol, you err in your thought."
+    },
+    {
+      "chapter": 6,
+      "verse": 6,
+      "text": "Behold, the gods of my brother Nahor standing in the holy sanctuary are more"
+    },
+    {
+      "chapter": 6,
+      "verse": 7,
+      "text": "venerable than yours. For behold, Zouchaios, my brother Nahor�s god is more venerable than your god Marumath because he is made of gold, valued by man."
+    },
+    {
+      "chapter": 6,
+      "verse": 8,
+      "text": "And if he grows old with time, he will be remolded, whereas Marumath, if h"
+    },
+    {
+      "chapter": 6,
+      "verse": 9,
+      "text": "e is changed or broken, will not be renewed, because he is stone. What about Ioav, the god on the other god, who stands with Zouchaios? For he is also more venerable than the god Barisat; he is carved from wood and forged from silver. Because he too is a term of comparison, being valued by man according to external 10,11experience. But Barisat, your god, when he was still not carved, rooted in the"
+    },
+    {
+      "chapter": 6,
+      "verse": 12,
+      "text": "earth, being great and wondrous, with branches and flowers; and praise...But"
+    },
+    {
+      "chapter": 6,
+      "verse": 13,
+      "text": "you made him with an axe, and by your skill he was made a god. And behold"
+    },
+    {
+      "chapter": 6,
+      "verse": 14,
+      "text": "he has already dried up and his fatness has perished. He fell from the height to"
+    },
+    {
+      "chapter": 6,
+      "verse": 15,
+      "text": "the earth, he came from greatness to smallness, and the appearance of his face"
+    },
+    {
+      "chapter": 6,
+      "verse": 17,
+      "text": "wasted away. And, he himself was burned up by the fire and he became ashes"
+    },
+    {
+      "chapter": 6,
+      "verse": 18,
+      "text": "and is no more. And you say, Let me make another and tomorrow he will make"
+    },
+    {
+      "chapter": 6,
+      "verse": 19,
+      "text": "my food for me. But in perishing he left himself no strength for his (own) destruction.\""
+    },
+    {
+      "chapter": 7,
+      "verse": 1,
+      "text": "This I say:"
+    },
+    {
+      "chapter": 7,
+      "verse": 2,
+      "text": "Fire is more venerable in formation, for even the unsubdued (things) are subdued in it, and it mocks that which perishes easily by means of its"
+    },
+    {
+      "chapter": 7,
+      "verse": 3,
+      "text": "burning. But neither is it venerable, for it is subject to the waters."
+    },
+    {
+      "chapter": 7,
+      "verse": 4,
+      "text": "But rather the waters are more venerable than it (fire), because they overcome fire and sweeten the earth"
+    },
+    {
+      "chapter": 7,
+      "verse": 5,
+      "text": "with fruits. But I will not call them god either, for the waters subside under the"
+    },
+    {
+      "chapter": 7,
+      "verse": 6,
+      "text": "earth and are subject to it. But I will not call it a goddess either, for it is dried by the sun (and) subordinated to man for his work."
+    },
+    {
+      "chapter": 7,
+      "verse": 7,
+      "text": "More venerable among the gods, I say, is the sun, for with its rays it illuminates the whole universe and the various airs."
+    },
+    {
+      "chapter": 7,
+      "verse": 8,
+      "text": "Nor will I place among the gods the one who obscures his course by means of the moon and the clouds."
+    },
+    {
+      "chapter": 7,
+      "verse": 9,
+      "text": "Nor again shall I call the moon or the stars gods, because they too at times during the night dim their light."
+    },
+    {
+      "chapter": 7,
+      "verse": 10,
+      "text": "Listen, Terah my father, I shall seek before you the God who created all the gods supposed by us (to exist)."
+    },
+    {
+      "chapter": 7,
+      "verse": 11,
+      "text": "For who is it, or which one is it who made the heavens crimson and the sun golden, who has given light to the moon and the stars with it, who has dried the earth in the midst of the many waters, who set you yourself among the things and who has sought me out in the perplexity of my thoughts?"
+    },
+    {
+      "chapter": 7,
+      "verse": 12,
+      "text": "I (only) God will reveal himself by himself to us!\""
+    },
+    {
+      "chapter": 8,
+      "verse": 1,
+      "text": "And it cane to pass as I was thinking things like these with regard to my father Terah in the court of my house, the voice of the Mighty One came down from"
+    },
+    {
+      "chapter": 8,
+      "verse": 2,
+      "text": "the heavens in a stream of fire, saying and calling, \"Abraham, Abraham!\" And"
+    },
+    {
+      "chapter": 8,
+      "verse": 3,
+      "text": "I said, \"Here I am.\" And he said, \"You are searching of the God of gods, the"
+    },
+    {
+      "chapter": 8,
+      "verse": 4,
+      "text": "Creator, in the understanding of your heart. I am he. Go out from Terah, your father, and go out of the house, that you too may not be slain in the sins of your"
+    },
+    {
+      "chapter": 8,
+      "verse": 5,
+      "text": "father�s house.\" And it came to pass as I went out-I was not"
+    },
+    {
+      "chapter": 8,
+      "verse": 6,
+      "text": "yet outside the entrance of the court- that the sound of a great thunder came and burned him and his house and everything in his house, down to the ground, forty cubits."
+    },
+    {
+      "chapter": 9,
+      "verse": 1,
+      "text": "Then a voice came speaking to me twice: \"Abraham, Abraham!\" And I said,"
+    },
+    {
+      "chapter": 9,
+      "verse": 3,
+      "text": "\"Here I am.\" And he said, \"Behold, it is I, Fear not, for I an Before-the-World"
+    },
+    {
+      "chapter": 9,
+      "verse": 4,
+      "text": "and Mighty, the God who created previously, before the light of the age. I am"
+    },
+    {
+      "chapter": 9,
+      "verse": 5,
+      "text": "the protector for you and I am your helper."
+    },
+    {
+      "chapter": 9,
+      "verse": 6,
+      "text": "and make me a pure sacrifice. And in this sacrifice I will place the ages. I will announce to you guarded things and you will see great things which you have not"
+    },
+    {
+      "chapter": 9,
+      "verse": 7,
+      "text": "seen,"
+    },
+    {
+      "chapter": 9,
+      "verse": 8,
+      "text": "of wine and from anointing (yourself) with oil. And then you shall set out for me the sacrifice, which I have commanded you, in the place which I will show you"
+    },
+    {
+      "chapter": 9,
+      "verse": 9,
+      "text": "on a high mountain. And there I will show you the things which were made by"
+    },
+    {
+      "chapter": 9,
+      "verse": 10,
+      "text": "the ages and by my word, and affirmed, created, and renewed. And I will announce to you in them what will come upon those who have done evil and just things in the race of man.\""
+    },
+    {
+      "chapter": 10,
+      "verse": 1,
+      "text": "And it came to pass when I heard the voice pronouncing such words to me"
+    },
+    {
+      "chapter": 10,
+      "verse": 2,
+      "text": "that I looked this way and that. And behold there was no breath of man. And my spirit was amazed, and my soul fled from me. And I became like a stone, and fell face down upon the earth, for there was no longer strength in me to stand up on"
+    },
+    {
+      "chapter": 10,
+      "verse": 3,
+      "text": "the earth. And while I was still face down on the ground, I heard the voice speaking, \"Go, Iaoel of the same name, through the meditation of my ineffable"
+    },
+    {
+      "chapter": 10,
+      "verse": 4,
+      "text": "name, consecrate this man for me and strengthen him against his trembling.\""
+    },
+    {
+      "chapter": 10,
+      "verse": 5,
+      "text": "hand and stood me on my feet. And he said to me, \"Stand up, Abraham, friend"
+    },
+    {
+      "chapter": 10,
+      "verse": 6,
+      "text": "of God who has loved you, let human trembling not enfold you! For lo! I am sent to you to strengthen you and to bless you in the name of God, creator of heavenly"
+    },
+    {
+      "chapter": 10,
+      "verse": 7,
+      "text": "and earthly things, who has loved you. Be bold and hasten to him. I am Iaoel and I was called so by him who causes those with me on the seventh expanse, on the firmament, to shake, a power through the medium of his ineffable name in"
+    },
+    {
+      "chapter": 10,
+      "verse": 9,
+      "text": "me. I am the one who has been charged according to his commandment, to restrain the threats of the living creatures of the cherubim against one another, and I teach those who carry the song through the medium of man�s night of the seventh hour."
+    },
+    {
+      "chapter": 10,
+      "verse": 10,
+      "text": "I am appointed to hold the Leviathans, because through me is subjugated the"
+    },
+    {
+      "chapter": 10,
+      "verse": 11,
+      "text": "attack and menace of every reptile. I am ordered to loosen Hades and to destroy"
+    },
+    {
+      "chapter": 10,
+      "verse": 12,
+      "text": "those who wondered at the dead. I am the one who ordered you father�s house"
+    },
+    {
+      "chapter": 10,
+      "verse": 13,
+      "text": "to be burned with him, for he honored the dead. I am sent to you now to bless you and the land which he whom you have called the Eternal One has prepared"
+    },
+    {
+      "chapter": 10,
+      "verse": 14,
+      "text": "for you. For your sake I have indicated the way of the land."
+    },
+    {
+      "chapter": 10,
+      "verse": 16,
+      "text": "honor has been prepared for you by the Eternal One. Go, complete the sacrifice of the command, Behold, I am assigned (to be) with you and with the generation"
+    },
+    {
+      "chapter": 10,
+      "verse": 17,
+      "text": "which is predestined (to be born) from you. And with me Michael blesses you forever. Be bold, go!\""
+    },
+    {
+      "chapter": 11,
+      "verse": 1,
+      "text": "And I stood up and saw him who had taken my right hand and set me on my"
+    },
+    {
+      "chapter": 11,
+      "verse": 2,
+      "text": "feet. The appearance of his body was like sapphire, and the aspect of his face"
+    },
+    {
+      "chapter": 11,
+      "verse": 3,
+      "text": "was like chrysolite, and the hair of his head like snow. And a kidaris (was) on his head, its look that of a rainbow, and the clothing of his garments (was) purple;"
+    },
+    {
+      "chapter": 11,
+      "verse": 4,
+      "text": "and a golden staff (was) in his right hand."
+    },
+    {
+      "chapter": 11,
+      "verse": 5,
+      "text": "you, nor my speech trouble your soul. Come with me! And I will go with you"
+    },
+    {
+      "chapter": 11,
+      "verse": 6,
+      "text": "visible until the sacrifice, but after the sacrifice invisible forever. Be bold and go!\""
+    },
+    {
+      "chapter": 12,
+      "verse": 1,
+      "text": "And we went, the two of us alone together, forty days and nights. And I ate no bread and drank no water, because (my) food was to see the angel who was"
+    },
+    {
+      "chapter": 12,
+      "verse": 3,
+      "text": "with me, and his discourse with me was my drink. We came to God�s mountain,"
+    },
+    {
+      "chapter": 12,
+      "verse": 4,
+      "text": "glorious Horeb. And I said to the angel, \"Singer of the Eternal One, behold I have no sacrifice with me, nor do I know a place for an altar on the mountain, so how"
+    },
+    {
+      "chapter": 12,
+      "verse": 5,
+      "text": "shall I make the sacrifice?\" And he said, \"Look behind you.\" And I liked behind me. And behold all the prescribed sacrifices were following us: the calf,"
+    },
+    {
+      "chapter": 12,
+      "verse": 7,
+      "text": "the she-goat, the ram, the turtledove, and the pigeon."
+    },
+    {
+      "chapter": 12,
+      "verse": 8,
+      "text": "\"Abraham.\" And I said, \"Here I am.\" And he said to me, \"Slaughter all these"
+    },
+    {
+      "chapter": 12,
+      "verse": 9,
+      "text": "and divide the animals exactly into halves. But do not cut the birds apart. And give them to the men whom I will show you standing beside you, for they are the"
+    },
+    {
+      "chapter": 12,
+      "verse": 10,
+      "text": "altar on the mountain, to offer sacrifice to the Eternal One. The turtledove and the pigeon you will give to me for I will ascend on the wings of the birds to show you (what) is in the heavens, on the earth and in the sea, in the abyss, and in the lower depths, in the garden of Eden and in its rivers, in the fullness of the universe. And you will see its circles in all.\""
+    },
+    {
+      "chapter": 13,
+      "verse": 1,
+      "text": "And I did everything according to the angel�s command. And I gave the angels who had come to us the divided parts of the animals. And the angel Iaoel took"
+    },
+    {
+      "chapter": 13,
+      "verse": 2,
+      "text": "the two birds. And I waited for the evening gift. And an unclean bird flew down"
+    },
+    {
+      "chapter": 13,
+      "verse": 4,
+      "text": "on the carcasses, and I drove it away. And the unclean bird spoke to me and said, \"What are you doing, Abraham, on the holy heights where no one eats or drinks, nor is there upon them food for men. But these all will be consumed by fire and"
+    },
+    {
+      "chapter": 13,
+      "verse": 5,
+      "text": "they will burn you up. Leave the man who is with you and flee! For if you"
+    },
+    {
+      "chapter": 13,
+      "verse": 6,
+      "text": "ascend to the height, they will destroy you.\""
+    },
+    {
+      "chapter": 13,
+      "verse": 7,
+      "text": "\"This is disgrace, this is Azazel!\" And he said to him, \"Shame on you,"
+    },
+    {
+      "chapter": 13,
+      "verse": 8,
+      "text": "Azazel! For Abraham�s portion is in heaven, and yours is on the earth, for you have selected here, (and) become enamored of the swelling place of your blemish. Therefore the Eternal Ruler, the Mighty One, has given you a dwelling on earth."
+    },
+    {
+      "chapter": 13,
+      "verse": 9,
+      "text": "Through you the all-evil spirit (is) a liar, and through you (are) wrath and trials"
+    },
+    {
+      "chapter": 13,
+      "verse": 10,
+      "text": "on the generations of men who live impiously. For the Eternal, Mighty One did not allow the bodies of the righteous to be in your hand, so through them the"
+    },
+    {
+      "chapter": 13,
+      "verse": 11,
+      "text": "righteous life is affirmed and the destruction of ungodliness. Hear, counselor, be"
+    },
+    {
+      "chapter": 13,
+      "verse": 12,
+      "text": "shamed by me! You have no permission to tempt all the righteous. Depart from"
+    },
+    {
+      "chapter": 13,
+      "verse": 13,
+      "text": "this man! You cannot deceive him, because he is the enemy of you and of those"
+    },
+    {
+      "chapter": 13,
+      "verse": 14,
+      "text": "who follow you and who love what you wish. For behold, the garment which is heaven was formerly yours has been set aside for him, and the corruption which was on him has gone over to you.\""
+    },
+    {
+      "chapter": 14,
+      "verse": 1,
+      "text": "And the angel said to me, \"Abraham!\" And I said, \"Here I am, your"
+    },
+    {
+      "chapter": 14,
+      "verse": 2,
+      "text": "servant.\" And he said, \"Know from this that the Eternal One whom you have"
+    },
+    {
+      "chapter": 14,
+      "verse": 3,
+      "text": "loved has chosen you. Be bold and do through your authority whatever I order"
+    },
+    {
+      "chapter": 14,
+      "verse": 4,
+      "text": "you against him who reviles justice. Will I not be able to revile him who has scattered about the earth the secrets of heaven and who has taken counsel against"
+    },
+    {
+      "chapter": 14,
+      "verse": 5,
+      "text": "the Mighty One? Say to him, �May you be the firebrand of the furnace of the"
+    },
+    {
+      "chapter": 14,
+      "verse": 6,
+      "text": "earth! Go, Azazel, into the untrodden parts of the earth. For your heritage is over those who are with you, with the stars and with the men born by the clouds,"
+    },
+    {
+      "chapter": 14,
+      "verse": 7,
+      "text": "whose portion you are, indeed they exist through your being. Enmity is for you"
+    },
+    {
+      "chapter": 14,
+      "verse": 8,
+      "text": "a pious act. Therefore through your own destruction be gone from me!�"
+    },
+    {
+      "chapter": 14,
+      "verse": 9,
+      "text": "I said the words as the angel had taught me. And he said, \"Abraham.\" And I"
+    },
+    {
+      "chapter": 14,
+      "verse": 10,
+      "text": "said, \"Here I am, your servant!\" And the angel said to me, \"Answer him not!\""
+    },
+    {
+      "chapter": 14,
+      "verse": 11,
+      "text": "And he spoke to me a second time. And the angel said, \"Now, whatever he says to you, answer him not, lest his will run up to you. For the Eternal, Mighty"
+    },
+    {
+      "chapter": 14,
+      "verse": 14,
+      "text": "One gave him the gravity and the will. Answer him not.\" And I did what the angel had commanded me. And whatever he said to me about the descent, I answered him not."
+    },
+    {
+      "chapter": 15,
+      "verse": 1,
+      "text": "And it came to pass when the sun was setting, and behold a smoke like that of a furnace, and the angels who had the divided portions of the sacrifice ascended"
+    },
+    {
+      "chapter": 15,
+      "verse": 2,
+      "text": "from the top of the furnace of smoke. And the angel took me with his right hand and set me on the right wing of the pigeon and he himself sat on the left wing of"
+    },
+    {
+      "chapter": 15,
+      "verse": 3,
+      "text": "the turtledove, (both of) which were as of neither slaughtered nor divided. And"
+    },
+    {
+      "chapter": 15,
+      "verse": 4,
+      "text": "he carried me up to the edge of the fiery flames. And we ascended as if (carried)"
+    },
+    {
+      "chapter": 15,
+      "verse": 5,
+      "text": "by many winds to the heaven that is fixed on the expanses. And I saw on the air"
+    },
+    {
+      "chapter": 15,
+      "verse": 6,
+      "text": "to whose height we had ascended a strong light which can not be described And behold, in this light a fiery Gehenna was enkindled, and a great crowd in the"
+    },
+    {
+      "chapter": 15,
+      "verse": 7,
+      "text": "likeness of men. They all were changing in aspect and shape, running and changing form and prostrating themselves and crying words I did not know."
+    },
+    {
+      "chapter": 16,
+      "verse": 1,
+      "text": "And I said to the angel, \"Why is it you now brought me here? For now I can"
+    },
+    {
+      "chapter": 16,
+      "verse": 2,
+      "text": "no longer see, because I am weakened and my spirit is departing from me.\" And"
+    },
+    {
+      "chapter": 16,
+      "verse": 3,
+      "text": "he said to me, \"Remain with me, do not fear. He whom you will see coming directly toward us in a great sound of sanctification is the Eternal One who has"
+    },
+    {
+      "chapter": 16,
+      "verse": 4,
+      "text": "loved you. You will not look at him himself. But let your spirit not weaken, for I am with you, strengthening you.\""
+    },
+    {
+      "chapter": 17,
+      "verse": 1,
+      "text": "And while he was still speaking, behold the fire coming toward us round about, and a voice was in the fire like a voice of many waters, like voice of the"
+    },
+    {
+      "chapter": 17,
+      "verse": 2,
+      "text": "sea in its uproar. And the angel knelt down with me and worshipped. And I wanted to fall face down on the earth. And the place of highness on which we"
+    },
+    {
+      "chapter": 17,
+      "verse": 4,
+      "text": "were standing now stopped on high, now rolled down low."
+    },
+    {
+      "chapter": 17,
+      "verse": 5,
+      "text": "worship, Abraham, and recite the song which I taught you.\" Since there was no ground to which I could fall prostrate, I only bowed down, and I recited the song"
+    },
+    {
+      "chapter": 17,
+      "verse": 6,
+      "text": "which he had taught me. And he said, \"Recite without ceasing.\" And I recited, and he himself recited the song"
+    },
+    {
+      "chapter": 17,
+      "verse": 8,
+      "text": "Eternal One, Mighty One, Holy El, God autocrat"
+    },
+    {
+      "chapter": 17,
+      "verse": 9,
+      "text": "Self-originate, incorruptible, immaculate,"
+    },
+    {
+      "chapter": 17,
+      "verse": 10,
+      "text": "Self-perfected, self-devised,"
+    },
+    {
+      "chapter": 17,
+      "verse": 11,
+      "text": "Exalted, fiery, Exalted, Fiery One! Lover of men, Benevolent One, Bountiful One,"
+    },
+    {
+      "chapter": 17,
+      "verse": 12,
+      "text": "Just, lover of men, benevolent, compassionate, bountiful,"
+    },
+    {
+      "chapter": 17,
+      "verse": 13,
+      "text": "Eli,"
+    },
+    {
+      "chapter": 17,
+      "verse": 14,
+      "text": "You are he my soul has loved,"
+    },
+    {
+      "chapter": 17,
+      "verse": 15,
+      "text": "Eternal, fiery, shining,"
+    },
+    {
+      "chapter": 17,
+      "verse": 16,
+      "text": "receiving the petitions of those who honor you"
+    },
+    {
+      "chapter": 17,
+      "verse": 17,
+      "text": "redeemer of those who dwell in the midst of the wicked ones, of those who are dispersed among the just of the world, in the corruptible age."
+    },
+    {
+      "chapter": 17,
+      "verse": 18,
+      "text": "Showing forth the age of the just, '"
+    },
+    {
+      "chapter": 17,
+      "verse": 19,
+      "text": "And in your heavenly dwelling place (there is) an inexhaustible light of a invincible dawning from the light of your face."
+    },
+    {
+      "chapter": 17,
+      "verse": 20,
+      "text": "Accept my prayer and delight in it,"
+    },
+    {
+      "chapter": 17,
+      "verse": 21,
+      "text": "Receive me favorably,"
+    },
+    {
+      "chapter": 18,
+      "verse": 1,
+      "text": "And as I was still reciting the song, the mouth of the fire which was on the"
+    },
+    {
+      "chapter": 18,
+      "verse": 2,
+      "text": "firmament was rising up on high. And I heard a voice like the roaring of the sea,"
+    },
+    {
+      "chapter": 18,
+      "verse": 3,
+      "text": "and it did not cease from the plentitude of the fire. And as the fire rose up, soaring to the highest point, I saw under the fire a throne of fire and the many-eyed ones round about, reciting the song, under the throne four fiery living creatures, singing."
+    },
+    {
+      "chapter": 18,
+      "verse": 4,
+      "text": ",5And the appearance of each of them was the same, each having four faces, And this (was) the aspect of their faces: of a lion, of a man, of an ox, and of an eagle."
+    },
+    {
+      "chapter": 18,
+      "verse": 5,
+      "text": "Each one had four heads on its body so that the four living creatures had sixteen"
+    },
+    {
+      "chapter": 18,
+      "verse": 6,
+      "text": "faces. And each one had six wings: two on the shoulders, two halfway down, and"
+    },
+    {
+      "chapter": 18,
+      "verse": 7,
+      "text": "two at the loins. With the wings which were on their shoulders they covered their faces, with the wings at their loins they clothed their feet, and they would stretch"
+    },
+    {
+      "chapter": 18,
+      "verse": 8,
+      "text": "the two middle wings out and fly, erect."
+    },
+    {
+      "chapter": 18,
+      "verse": 9,
+      "text": "would look at one another and threaten one another."
+    },
+    {
+      "chapter": 18,
+      "verse": 10,
+      "text": "and went running to them. And he turned the face of each living creature from the face which was opposite it so that they could not see each other�s faces"
+    },
+    {
+      "chapter": 18,
+      "verse": 11,
+      "text": "threatening each other. And he taught them the song of peace which the Eternal"
+    },
+    {
+      "chapter": 18,
+      "verse": 12,
+      "text": "One has in himself."
+    },
+    {
+      "chapter": 18,
+      "verse": 13,
+      "text": "about. And above the wheels was the throne which I had seen. And it was covered with fire and the fire encircled it round about, and an indescribable light surrounded"
+    },
+    {
+      "chapter": 18,
+      "verse": 14,
+      "text": "the fiery crowd. And I heard the voice of their sanctification like the voice of a single man."
+    },
+    {
+      "chapter": 19,
+      "verse": 1,
+      "text": "And a voice came to me out of the midst of the fire, saying, \"Abraham,"
+    },
+    {
+      "chapter": 19,
+      "verse": 2,
+      "text": "Abraham!\" And I said, \"Here I am!\" And he said, \"Look at the expanses which are under the firmament to which you have now been directed and see that on no single expanse is there any other but the one whom you have searched for"
+    },
+    {
+      "chapter": 19,
+      "verse": 4,
+      "text": "or who has loved you.\""
+    },
+    {
+      "chapter": 19,
+      "verse": 5,
+      "text": "else there,"
+    },
+    {
+      "chapter": 19,
+      "verse": 6,
+      "text": "sixth firmament. And I saw there a multitude of spiritual angels, incorporeal, carrying out the orders of the fiery angels who were on the eighth firmament, as"
+    },
+    {
+      "chapter": 19,
+      "verse": 7,
+      "text": "I was standing on its elevation. And lo, neither on this firmament was there"
+    },
+    {
+      "chapter": 19,
+      "verse": 8,
+      "text": "in any shape any other host, but only the spiritual angels."
+    },
+    {
+      "chapter": 19,
+      "verse": 9,
+      "text": "the seventh firmament commanded the sixth firmament and it removed itself. I saw there, on the fifth (firmament), host of stars, and the orders they were commanded to carry out, and the elements of earth obeying them."
+    },
+    {
+      "chapter": 20,
+      "verse": 1,
+      "text": "And the Eternal, Mighty One said to me, \"Abraham, Abraham!\" And I said,"
+    },
+    {
+      "chapter": 20,
+      "verse": 3,
+      "text": "\"Here I am !\" And he said, :Look from on high at the stars which are beneath"
+    },
+    {
+      "chapter": 20,
+      "verse": 4,
+      "text": "you and count them for me and tell me their number!\" And I said, \"When can"
+    },
+    {
+      "chapter": 20,
+      "verse": 5,
+      "text": "I? For I am a man.\" And he said to me, \"As the number of the stars and their power so shall I place for your seed the nations and men, set apart for me in my"
+    },
+    {
+      "chapter": 20,
+      "verse": 6,
+      "text": "lot with Azazel.\""
+    },
+    {
+      "chapter": 20,
+      "verse": 7,
+      "text": "before you and let your fury not rage against your chosen one. Behold, before you led me up, Azazel insulted me. How then, since he is now not before you, did you establish yourself with them?\""
+    },
+    {
+      "chapter": 21,
+      "verse": 1,
+      "text": "And he said to me, \"Look now beneath your feet at the firmament and understand the creation that was depicted of old on this expanse, (and) the creatures"
+    },
+    {
+      "chapter": 21,
+      "verse": 2,
+      "text": "which are in it and the age prepared after it.\""
+    },
+    {
+      "chapter": 21,
+      "verse": 3,
+      "text": "And (I saw) there the earth and its fruit, and its moving things and its things that had souls, and its host of men and the impiety of their souls and their justification, and their pursuit of their works and the abyss and its torments,"
+    },
+    {
+      "chapter": 21,
+      "verse": 4,
+      "text": "and its lower depths and (the) perdition in it. And I saw there the sea and its islands, and its cattle and its fish, and Leviathan and his realm and his bed and his lairs, and the world which lay upon him, and his motions and the destruction"
+    },
+    {
+      "chapter": 21,
+      "verse": 5,
+      "text": "he caused the world. I saw there the rivers and their upper (reaches) and their circles."
+    },
+    {
+      "chapter": 21,
+      "verse": 6,
+      "text": "And I saw there the garden of Eden and its fruits, and the source and the river flowing from it, and its trees and their flowering, making fruits, and I saw men doing justice in it, their food and their rest."
+    },
+    {
+      "chapter": 21,
+      "verse": 7,
+      "text": "And I saw there a great crowd of men and women and children, half of them on the right side of the portrayal, and half of them on the left side of the portrayal."
+    },
+    {
+      "chapter": 22,
+      "verse": 1,
+      "text": "And I said, \"Eternal, Mighty One! What is this picture of creation?\" And he said to me, \"This is my will with regard to what is in the light and it was good before my face. And then, afterward, I gave them a command by my word and they came into existence. Whatever I had decreed was to exist had already been outlined in this and all the previously created (things) you have seen stood before"
+    },
+    {
+      "chapter": 22,
+      "verse": 3,
+      "text": "me.\""
+    },
+    {
+      "chapter": 22,
+      "verse": 5,
+      "text": "at the end of the age. Those on the right side of the picture are the people set apart for me of the people with Azazel; these are the ones I have prepared to be born of you and to be called my people."
+    },
+    {
+      "chapter": 23,
+      "verse": 1,
+      "text": "\"Look again at the picture: Who is the one who seduced Eve, and what is"
+    },
+    {
+      "chapter": 23,
+      "verse": 2,
+      "text": "the fruit of the tree? And you will know what will be and how much will be for"
+    },
+    {
+      "chapter": 23,
+      "verse": 3,
+      "text": "your seed in the last days. And what you cannot understand, I will make known to you because you have been pleasing before my face and I will tell you what"
+    },
+    {
+      "chapter": 23,
+      "verse": 4,
+      "text": "I have kept in my heart.\""
+    },
+    {
+      "chapter": 23,
+      "verse": 5,
+      "text": "side of the garden of Eden. And I saw there a man very great in height and terrible in breadth, incomparable in aspect, entwined with a woman who was also equal"
+    },
+    {
+      "chapter": 23,
+      "verse": 6,
+      "text": "to the man in aspect and size. And they were standing under a tree of Eden, and"
+    },
+    {
+      "chapter": 23,
+      "verse": 7,
+      "text": "the fruit of the tree was like the appearance of a bunch of grapes of the vine. And behind the tree was standing (something) like a dragon in form, but having hands"
+    },
+    {
+      "chapter": 23,
+      "verse": 8,
+      "text": "and feet like a man�s, on his back six wings on the right and six on the left. And he was holding the grapes of the tree and feeding them to the two I saw entwined"
+    },
+    {
+      "chapter": 23,
+      "verse": 9,
+      "text": "with each other."
+    },
+    {
+      "chapter": 23,
+      "verse": 10,
+      "text": "One, Eternal?\" And he said. \"This is the world of men, this is Adam and this"
+    },
+    {
+      "chapter": 23,
+      "verse": 11,
+      "text": "is their thought on earth, this is Eve. And he who is between them is the impiety"
+    },
+    {
+      "chapter": 23,
+      "verse": 12,
+      "text": "of their behavior unto perdition, Azazel himself.\""
+    },
+    {
+      "chapter": 23,
+      "verse": 13,
+      "text": "he could ruin humankind on earth?\" And he said to me, \"Hear, Abraham! Those who desire evil, and all whom I have hated as they commit them- over them"
+    },
+    {
+      "chapter": 23,
+      "verse": 14,
+      "text": "did I give him dominion, and he was to be beloved of them.\""
+    },
+    {
+      "chapter": 24,
+      "verse": 1,
+      "text": "And he said to me thus, \"Close to the nations...for your sake and for the sake of those set apart after you, the people of your tribe, as you will see in the"
+    },
+    {
+      "chapter": 24,
+      "verse": 2,
+      "text": "picture, what is burdened on them. And I will explain to you what will be, and"
+    },
+    {
+      "chapter": 24,
+      "verse": 3,
+      "text": "everything that will be in the last days. Look now at everything in the picture.\""
+    },
+    {
+      "chapter": 24,
+      "verse": 4,
+      "text": "And I looked and saw there the creatures that had come into being before me."
+    },
+    {
+      "chapter": 24,
+      "verse": 5,
+      "text": "And I saw, as it were, Adam and Eve who was with him, and with them the crafty adversary and Cain, who had been led by the adversary to break the law, and (I saw) the murdered Abel (and) the perdition brought on him and given"
+    },
+    {
+      "chapter": 24,
+      "verse": 6,
+      "text": "through the lawless one. And I saw there fornication and those who desired it, and its defilement and their zeal; and the fire of the corruption in the lower depths"
+    },
+    {
+      "chapter": 24,
+      "verse": 7,
+      "text": "of the earth."
+    },
+    {
+      "chapter": 24,
+      "verse": 8,
+      "text": "of their retribution, the judgment of the great court. I saw there naked men, forehead to forehead, and their shame and the harm (they wrought) against their"
+    },
+    {
+      "chapter": 24,
+      "verse": 9,
+      "text": "friends and the retribution. And I saw there desire, and in her hand (was) the head of every kind of lawlessness, and her torment and her dispersal destined to destruction."
+    },
+    {
+      "chapter": 25,
+      "verse": 1,
+      "text": "I saw there the likeness of the idol of jealousy, like a carpenter�s figure such as my father used to make, and its body was of glittering copper, and before it"
+    },
+    {
+      "chapter": 25,
+      "verse": 2,
+      "text": "a man, and he was worshipping it. And (there was) an altar opposite it and boys"
+    },
+    {
+      "chapter": 25,
+      "verse": 3,
+      "text": "being slaughtered on it in the face of the idol."
+    },
+    {
+      "chapter": 25,
+      "verse": 4,
+      "text": "lies beneath your throne?\""
+    },
+    {
+      "chapter": 25,
+      "verse": 5,
+      "text": "among my coming people, even of your tribe. And the body you saw is my anger, because the people who will come to me out of you will make me angry."
+    },
+    {
+      "chapter": 25,
+      "verse": 6,
+      "text": "And the man you saw slaughtering is he who angers me, and the sacrifice is a killing of those who are for me a testimony of the judgment of the completion at the beginning of creation.\""
+    },
+    {
+      "chapter": 26,
+      "verse": 1,
+      "text": "And I said, \"Eternal, Mighty One! Why did you establish it to be so and to"
+    },
+    {
+      "chapter": 26,
+      "verse": 2,
+      "text": "call on the testimonies of this one?\" And he said to me, \"Hear, Abraham, and"
+    },
+    {
+      "chapter": 26,
+      "verse": 3,
+      "text": "understand what I will explain to you, and answer whatever I ask you. Why did your father Terah not obey your voice and abandon the demonic worship of idols"
+    },
+    {
+      "chapter": 26,
+      "verse": 4,
+      "text": "until he perished, and all his house with him?\""
+    },
+    {
+      "chapter": 26,
+      "verse": 5,
+      "text": "And he said to me. \"Hear. Abraham. As the counsel of your father is in him, as"
+    },
+    {
+      "chapter": 26,
+      "verse": 6,
+      "text": "your counsel is in you, so also the counsel of my will is ready. In days to come you will not know them in advance, nor the future (men) you will see with your own eyes that they are of your seed. Look at the picture!"
+    },
+    {
+      "chapter": 27,
+      "verse": 1,
+      "text": "And I looked and I saw, and behold the picture swayed. And from its lift side a crowd of heathens ran out and they captured the men, women, and children who"
+    },
+    {
+      "chapter": 27,
+      "verse": 2,
+      "text": "were on its right side. And some they slaughtered and others they kept with"
+    },
+    {
+      "chapter": 27,
+      "verse": 3,
+      "text": "them. Behold I saw (them) running to them by way of four ascents and they burned the Temple with fire, and they plundered the holy things that were in it."
+    },
+    {
+      "chapter": 27,
+      "verse": 4,
+      "text": "And I said, \"Eternal One, the people you received from me are being robbed by"
+    },
+    {
+      "chapter": 27,
+      "verse": 5,
+      "text": "the hordes of the heathen. They are killing some and holding others as aliens, and they burned the Temple with fire and they are stealing and destroying the beautiful"
+    },
+    {
+      "chapter": 27,
+      "verse": 6,
+      "text": "things which are in it. Eternal, Mighty One! If this is so, why now have you"
+    },
+    {
+      "chapter": 27,
+      "verse": 7,
+      "text": "afflicted my heart and why will it be so?\""
+    },
+    {
+      "chapter": 27,
+      "verse": 8,
+      "text": "depicted in the Temple of jealousy, and everything you saw will be so.\""
+    },
+    {
+      "chapter": 27,
+      "verse": 9,
+      "text": "but make commandments in them more than his just works. For you can do"
+    },
+    {
+      "chapter": 27,
+      "verse": 10,
+      "text": "this.\""
+    },
+    {
+      "chapter": 27,
+      "verse": 11,
+      "text": "first through the holiness of kings. And I will judge with justice those whom I"
+    },
+    {
+      "chapter": 27,
+      "verse": 12,
+      "text": "created earlier, to rule from them in them. And from these same ones will come men who will have regard for them. As I announced to you and you saw.\""
+    },
+    {
+      "chapter": 28,
+      "verse": 1,
+      "text": "And I answered and said, \"Mighty, Eternal One, you who are sanctified by your power, be merciful in my petition, since for this you informed me and"
+    },
+    {
+      "chapter": 28,
+      "verse": 2,
+      "text": "showed me. Since you have brought me up on to your height, therefore inform me, your beloved, about whatever I ask: Will what I saw be their lot for long?\""
+    },
+    {
+      "chapter": 28,
+      "verse": 3,
+      "text": "And he showed me a multitude of his people. And he said to me, \"For this reason (it is) through the four ascents you say (that) my anger will be because"
+    },
+    {
+      "chapter": 28,
+      "verse": 5,
+      "text": "of them, and in them will be retribution for their works. And in the fourth ascent is one hundred years. And one hour of the age will also be one hundred years in evil among the heathen and an hour in their mercy, even with reproaches as among the heathen.\""
+    },
+    {
+      "chapter": 29,
+      "verse": 1,
+      "text": "And I said, \"Eternal, Mighty One! How long a time is an hour of the age?\""
+    },
+    {
+      "chapter": 29,
+      "verse": 2,
+      "text": "And he said, \"I decreed to keep twelve periods of the impious age among the heathens and among your seed, and what you have seen will be until the end of"
+    },
+    {
+      "chapter": 29,
+      "verse": 3,
+      "text": "time. Count (it) up, and you will understand. Look down at the picture.\""
+    },
+    {
+      "chapter": 29,
+      "verse": 5,
+      "text": "worshipped him. And while I was still looking, those on the right side came out,"
+    },
+    {
+      "chapter": 29,
+      "verse": 6,
+      "text": "and some insulted this man, and some struck him and others worshiped him. And I saw that as they worshiped him Azazel ran and worshiped and, kissing his face,"
+    },
+    {
+      "chapter": 29,
+      "verse": 7,
+      "text": "he turned and stood behind him."
+    },
+    {
+      "chapter": 29,
+      "verse": 8,
+      "text": "man insulted and beaten by the heathen, with Azazel worshiped?\" And he answered and said, \"Hear, Abraham, the man whom you say insulted and beaten and again worshiped is the liberation from the heathen for the people who will"
+    },
+    {
+      "chapter": 29,
+      "verse": 9,
+      "text": "be (born) from you. In the last days, in this twelfth period of the age of my fulfillment, I will set up this man from your tribe, the one"
+    },
+    {
+      "chapter": 29,
+      "verse": 10,
+      "text": "whom you have seen from my people. All will imitate him,,,(you) consider"
+    },
+    {
+      "chapter": 29,
+      "verse": 11,
+      "text": "him as one called by me...(they) are changed in their counsels. And those you saw coming out from the left side of the picture and worshipping him, this"
+    },
+    {
+      "chapter": 29,
+      "verse": 12,
+      "text": "(means that) many of the heathen will trust in him. And those of your seed you saw on the right side, some insulting him, some beating him, and others worshiping"
+    },
+    {
+      "chapter": 29,
+      "verse": 13,
+      "text": "him, many of them shall be offended because of him. It is he who will test those of your seed who have worshiped him in the fulfillment of the twelfth hour, in the"
+    },
+    {
+      "chapter": 29,
+      "verse": 14,
+      "text": "curtailing of the age of impiety."
+    },
+    {
+      "chapter": 29,
+      "verse": 15,
+      "text": "of your seed who have been set apart for me. In those days I will bring upon all earthly creation ten plagues through evil and disease and the groaning of the"
+    },
+    {
+      "chapter": 29,
+      "verse": 16,
+      "text": "bitterness of their souls. Such will I bring upon the generations of those who are on it, out of anger and corruption of their creations with which they provoke me."
+    },
+    {
+      "chapter": 29,
+      "verse": 17,
+      "text": "And then from your seed will be left the righteous men in their number, protected by me, who strive in the glory of my name toward the place prepared beforehand"
+    },
+    {
+      "chapter": 29,
+      "verse": 18,
+      "text": "for them which you saw deserted in the picture. And they will live, being affirmed"
+    },
+    {
+      "chapter": 29,
+      "verse": 19,
+      "text": "by the sacrifices and the gifts of justice and truth in the age of justice. And they will rejoice forever in me, and they will destroy those who have destroyed them, they will rebuke those who have rebuked them through their mockery, and they"
+    },
+    {
+      "chapter": 29,
+      "verse": 20,
+      "text": "will spit in their faces. Those rebuked by me when they are to see me rejoicing"
+    },
+    {
+      "chapter": 29,
+      "verse": 21,
+      "text": "with my people for those who rejoice and receive and truly return to me.\""
+    },
+    {
+      "chapter": 30,
+      "verse": 1,
+      "text": "And while he was still speaking, I found myself on the earth, and I said, \"Eternal, Mighty One, I am no longer in the glory in which I was above, and all"
+    },
+    {
+      "chapter": 30,
+      "verse": 2,
+      "text": "that my soul desired to understand in my heart I do not understand.\""
+    },
+    {
+      "chapter": 30,
+      "verse": 3,
+      "text": "prepared them beforehand in the passing of the twelve hours on earth. Hear what"
+    },
+    {
+      "chapter": 30,
+      "verse": 4,
+      "text": "I tell you, it will be thus. The first: sorrow from much need. The second: fiery"
+    },
+    {
+      "chapter": 30,
+      "verse": 5,
+      "text": "conflagrations for the cities. The third: destruction by pestilence among the cattle."
+    },
+    {
+      "chapter": 30,
+      "verse": 6,
+      "text": "The fourth: famine of the world, of their generation. The fifth: among the rulers, destruction by earthquake and the sword. The sixth: increase of hail and snow."
+    },
+    {
+      "chapter": 30,
+      "verse": 7,
+      "text": "The seventh: wild beasts will be their grave. The eighth: pestilence and hunger"
+    },
+    {
+      "chapter": 30,
+      "verse": 8,
+      "text": "will change their destruction. The ninth: execution by the sword and flight in distress. The tenth: thunder, voices, and destroying earthquakes."
+    },
+    {
+      "chapter": 31,
+      "verse": 1,
+      "text": "\"And then I will sound the trumpet out of the air, and I will send my chosen one, having in him one measure of all my power, and he will summon my people,"
+    },
+    {
+      "chapter": 31,
+      "verse": 2,
+      "text": "humiliated by the heathen. And I will burn with fire those who mocked them and ruled over them in this age and I will deliver those who have covered me with"
+    },
+    {
+      "chapter": 31,
+      "verse": 3,
+      "text": "mockery over to the scorn of the coming age. Because I have prepared them (to be) food for the fire of Hades, and (to be) ceaseless soaring in the air of the underworld (regions) of the uttermost depths, (to be) the contents of a wormy"
+    },
+    {
+      "chapter": 31,
+      "verse": 4,
+      "text": "belly. For the makers will see in them justice, (the makers) who have chosen my desire and manifestly kept my commandments, and they will rejoice with merrymaking over the downfall of the men who remain and who followed after the"
+    },
+    {
+      "chapter": 31,
+      "verse": 5,
+      "text": "idols and after their murders. For they shall putrefy in the belly of the crafty"
+    },
+    {
+      "chapter": 31,
+      "verse": 6,
+      "text": "worm Azazel, and be burned by the fire of Azazel�s tongue. For I waited so they"
+    },
+    {
+      "chapter": 31,
+      "verse": 7,
+      "text": "might come to me, and they did not deign to. And they glorified an alien (god)."
+    },
+    {
+      "chapter": 31,
+      "verse": 8,
+      "text": "And they joined one to whom they had not been allotted, and they abandoned the Lord who gave them strength."
+    },
+    {
+      "chapter": 32,
+      "verse": 1,
+      "text": "\"Therefore, hear Abraham, and see, behold your seventh generation shall"
+    },
+    {
+      "chapter": 32,
+      "verse": 2,
+      "text": "go with you. And they will go out into an alien land. And they will enslave them and oppress"
+    },
+    {
+      "chapter": 32,
+      "verse": 4,
+      "text": "them as for one hour of the impious age. But of the nation"
+    },
+    {
+      "chapter": 32,
+      "verse": 5,
+      "text": "whom they shall serve I am the judge.\" And the Lord said this too, \"Have you heard, Abraham, what I told you, what your tribe will encounter in the last days?\""
+    },
+    {
+      "chapter": 32,
+      "verse": 6,
+      "text": "Abraham, having heard, accepted the words of God in his heart."
+    }
+  ]
+}

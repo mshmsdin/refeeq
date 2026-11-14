@@ -1,0 +1,71 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 7,
+  "range": "21-25",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "6a2543df-1f41-463c-8d86-b2a72c117ebf",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 336,
+      "outputTokens": 373,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010333,
+      "latencyMs": 1340
+    }
+  ],
+  "usage": {
+    "input": 336,
+    "output": 373,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0010333,
+  "verses": [
+    {
+      "chapter": 7,
+      "text_ar": "وبعد سبعة أيام قال أليهو للملوك: \"هلم لنقترب ونفحصه بدقة، أهو حقاً أيوب أم لا\"",
+      "verse": 21
+    },
+    {
+      "chapter": 7,
+      "text_ar": "وإذ كانوا على بعد أقل من نصف ميل (استديون) من جسده المنتن، قاموا واقتربوا حاملين طيوباً في أيديهم، بينما ذهب جنودهم معهم وطرحوا بخوراً عطراً حولهم لكي يستطيعوا الاقتراب مني.",
+      "verse": 22
+    },
+    {
+      "chapter": 7,
+      "text_ar": "وبعد أن قضوا ثلاث ساعات هكذا، مغطين الطريق بالعطر، اقتربوا.",
+      "verse": 23
+    },
+    {
+      "chapter": 7,
+      "text_ar": "وابتدأ أليفاز وقال: \"أأنت حقاً أيوب، ملكنا الرفيق؟ أأنت هو الذي ملك المجد العظيم؟\"",
+      "verse": 24
+    },
+    {
+      "chapter": 7,
+      "text_ar": "أأنت هو الذي أشرق يوماً كشمس النهار على الأرض كلها؟ أأنت هو الذي كان يشبه مرة القمر والنجوم المضيئة طوال الليل؟\"",
+      "verse": 25
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "b676f3c7-1d7d-4fe8-b89d-5be7bf2bf42a",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":22,\"text\":\"and mine, broke out into flowers. And the throne of God was fixed where the Tree of Life was.\",\"source_ref\":\"22:4\"},{\"chapter\":23,\"text\":\"And God called Adam saying, \\\"Adam, where art thou? Can the house be hidden from the presence\",\"source_ref\":\"23:1\"},{\"chapter\":23,\"text\":\"of its builder? \\\"Then your father answered; \\\"It is not because we think not to be found by thee, Lord, that we hide, but I was afraid, because I am naked, and I was ashamed before thy might,\",\"source_ref\":\"23:2\"},{\"chapter\":23,\"text\":\"(my) Master.\\\" God saith to him, \\\"Who showed thee that thou art naked, unless thou hast forsaken my\",\"source_ref\":\"23:3\"},{\"chapter\":23,\"text\":\"commandment, which I delivered thee to keep (it).\\\" Then Adam called to mind the word which I spake to him, (saying) \\\"I will make thee secure before God\\\"; and he turned and said to me: \\\"Why hast thou done this?\\\" And I said, \\\"The serpent deceived me.\\\"\",\"source_ref\":\"23:4\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 22:4, 23:1, 23:2, 23:3, 23:4.",
+  "application_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,17 @@
+{
+  "messages": [
+    {
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"chapter\":7,\"verse\":31,\"source_ref\":\"7:31\",\"text\":\"And Nimrod strengthened himself, and he rose up from amongst his brethren, and he fought the battles of his brethren against all their enemies round about.\"},{\"chapter\":7,\"verse\":32,\"source_ref\":\"7:32\",\"text\":\"And the Lord delivered all the enemies of his brethren in his hands, and God prospered him from time to time in his battles, and he reigned upon earth.\"},{\"chapter\":7,\"verse\":33,\"source_ref\":\"7:33\",\"text\":\"Therefore it became current in those days, when a man ushered forth those that he had trained up for battle, he would say to them, Like God did to Nimrod, who was a mighty hunter in the earth, and who succeeded in the battles that prevailed against his brethren, that he delivered them from the hands of their enemies, so may God strengthen us and deliver us this day.\"},{\"chapter\":7,\"verse\":34,\"source_ref\":\"7:34\",\"text\":\"And when Nimrod was forty years old, at that time there was a war between his brethren and the children of Japheth, so that they were in the power of their enemies.\"},{\"chapter\":7,\"verse\":35,\"source_ref\":\"7:35\",\"text\":\"And Nimrod went forth at that time, and he assembled all the sons of Cush and their families, about four hundred and sixty men, and he hired also from some of his friends and acquaintances about eighty men, and be gave them their hire, and he went with them to battle, and when he was on the road, Nimrod strengthened the hearts of the people that went with him.\"},{\"chapter\":7,\"verse\":36,\"source_ref\":\"7:36\",\"text\":\"And he said to them, Do not fear, neither be alarmed, for all our enemies will be delivered into our hands, and you may do with them as you please.\"},{\"chapter\":7,\"verse\":37,\"source_ref\":\"7:37\",\"text\":\"And all the men that went were about five hundred, and they fought against their enemies, and they destroyed them, and subdued them, and Nimrod placed standing officers over them in their respective places.\"},{\"chapter\":7,\"verse\":38,\"source_ref\":\"7:38\",\"text\":\"And he took some of their children as security, and they were all servants to Nimrod and to his brethren, and Nimrod and all the people that were with him turned homeward.\"},{\"chapter\":7,\"verse\":39,\"source_ref\":\"7:39\",\"text\":\"And when Nimrod had joyfully returned from battle, after having conquered his enemies, all his brethren, together with those who knew him before, assembled to make him king over them, and they placed the regal crown upon his head.\"},{\"chapter\":7,\"verse\":40,\"source_ref\":\"7:40\",\"text\":\"And he set over his subjects and people, princes, judges, and rulers, as is the custom amongst kings.\"}]}",
+      "role": "user"
+    }
+  ],
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "3071c169-0755-4a90-9e1c-bbc7ee345c50"
+}

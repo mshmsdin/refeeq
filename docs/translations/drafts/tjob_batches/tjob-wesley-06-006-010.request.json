@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "417aceb2-e842-4e25-bf7f-27595ff54aef",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":6,\"verses\":[{\"chapter\":6,\"verse\":6,\"text\":\"For your surplus of bread is no longer allowed to me; and as I can scarcely take my own food and divide it between us, I pondered in my heart that it was not right that thou shouldst be in pain and hunger for bread.\"},{\"chapter\":6,\"verse\":7,\"text\":\"And so I ventured to go to the market without bashfulness. and when the bread-seller told me: \\\"Give me money. and thou shalt have bread. I disclosed to him our state of distress.\"},{\"chapter\":6,\"verse\":8,\"text\":\"Then I heard him say : \\\"If thou hast no money, hand me the hair of thy head, and take three loaves of bread in order that ye may live on these for three days.\"},{\"chapter\":6,\"verse\":9,\"text\":\"And I yielded to the wrong and said to him \\\"Rise and cut off my hair ! and he rose and in disgrace cut off with the scissors the hair of my head on the market place while the crowd stood by and wondered.\"},{\"chapter\":6,\"verse\":10,\"text\":\"Who would then not be astonished saying: \\\"Is this Sitis, the wife of Job, who had fourteen curtains to cover her inner sitting room, and doors within doors so that he was greatly honored who would be brought near her, and now behold, she barters off her hair for bread!\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter."
+}

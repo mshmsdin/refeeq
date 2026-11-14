@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "34e84a45-68a6-4302-8678-178d69eb0ac8",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"فإن صليت أيضا الآن، وصمت سبعة أيام أخر، أعود فأخبرك بعظائم أعظم من هذه.\",\n      \"verse\": 31\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"لأن صوتك قد سمع أمام العلي، فإن القوي قد رأى بلك، وعاين طهاراتك التي حفظتها منذ صباك.\",\n      \"verse\": 32\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"لذلك أرسلني لأريك كل هذه، وأقول لك: آمن ولا تخف.\",\n      \"verse\": 33\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"ولا تعجل لتعتقد بالبواطل في الأزمنة الأولى، لكيلا تعجل في الأزمنة الأخيرة.\",\n      \"verse\": 34\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وكان بعد هذا أني بكيت أيضا، وصمت سبعة أيام هكذا، حتى أكملت الأسابيع الثلاثة التي قال لي.\",\n      \"verse\": 35\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وفي الليلة الثامنة اضطرب قلبي في داخلي جدا، وابتدأت أتكلم أمام العلي.\",\n      \"verse\": 36\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"لأن روحي كانت متقدة جدا، ونفسي في ضيق.\",\n      \"verse\": 37\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"فقلت: أيها الرب، أنت حقا تكلمت في مبتدأ الخليقة في اليوم الأول، وقلت هكذا: لتصنع السماء والأرض، وأكملت كلمتك العمل.\",\n      \"verse\": 38\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"حينئذ كان الروح يحوم، وكانت الظلمة والسكون من كل جانب، ولم يكن بعد صوت الإنسان.\",\n      \"verse\": 39\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"حينئذ أمرت أن يخرج شعاع نور من خزائنك، لكي تظهر أعمالك حينئذ.\",\n      \"verse\": 40\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  517,
+                  "output":  599,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0016526,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  517,
+                         "outputTokens":  599,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016526,
+                         "latencyMs":  2092
+                     }
+                 ]
+}

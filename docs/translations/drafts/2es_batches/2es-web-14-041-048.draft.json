@@ -1,0 +1,135 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 14,
+  "range": "41-48",
+  "status": "draft_for_review",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "54b645a0-e21a-489a-b70f-dfabf550a635",
+  "failovers": 3,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "error",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "503",
+      "estimatedCost": null,
+      "latencyMs": 1830
+    },
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "error",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 46
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 457,
+      "outputTokens": 377,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1050
+    }
+  ],
+  "usage": {
+    "input": 457,
+    "output": 377,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "verses": [
+    {
+      "chapter": 14,
+      "verse": 41,
+      "text_ar": "انفتحت فمي، ولم يغلق بعد الآن.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 42,
+      "text_ar": "أعطى العلي فهمًا للخمسة رجال، فكتبوا بحسب ما قيل لهم، بحروف لم يعرفوها، وجلسوا أربعين يومًا. كتبوا في نهار النهار، وفي الليل أكلوا خبزًا.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 43,
+      "text_ar": "وأما أنا فتكلمت في النهار، وفي الليل لم أحبس لساني.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 44,
+      "text_ar": "وهكذا خلال أربعين يومًا كُتبت أربعة وتسعون كتابًا.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 45,
+      "text_ar": "فحدث عندما انتهت الأربعون يوماً أن العلي قال لي: «انشر الكتب الأولى التي كتبتها علنًا، ودع الصالحين وغير الصالحين يقرؤونها؛",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 46,
+      "text_ar": "ولكن احتفظ بآخر سبعين، لتسلمها إلى الحكماء بين قومك؛",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 47,
+      "text_ar": "ففيها ينابيع الفهم، ومنابع الحكمة، وجداول المعرفة».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 48,
+      "text_ar": "ففعلت ذلك.",
+      "review_notes_ar": []
+    }
+  ]
+}

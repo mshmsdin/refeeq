@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 91,
+  "batch_end": 95,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "2092996e-1ba4-4691-aaa3-ddfa67a61398",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 458,
+      "outputTokens": 444,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0012474,
+      "latencyMs": 1732
+    }
+  ],
+  "usage": {
+    "input": 458,
+    "output": 444,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0012474,
+  "units": [
+    {
+      "chapter": 26,
+      "source_ref": "26:4",
+      "text_ar": "خبثك وجعلته يُطرد من الفردوس؛ وسأضع عداوة بينك وبين نسله: فهو يسحق رأسك وأنت تسحق عقبه إلى يوم الدين."
+    },
+    {
+      "chapter": 27,
+      "source_ref": "27:1",
+      "text_ar": "هكذا تكلم وأمر الملائكة أن يطردونا من الفردوس: وإذ كنا نُطرد وسط نحيبنا العالي، تضرع أبوكم آدم إلى الملائكة وقال: \"اتركني قليلاً (من الوقت) لكي أتضرع إلى الرب لكي يتحنن عليَّ ويرحمني، لأني وحدي"
+    },
+    {
+      "chapter": 27,
+      "source_ref": "27:3",
+      "text_ar": "أخطأتُ\". وتوقفوا عن طرده فصرخ آدم بصوت عال وبكى قائلاً: \"اغفر لي يا رب صنيعي\". ثم قال الرب للملائكة: \"لماذا توقفتم عن طرد آدم من الفردوس؟ لماذا لا تطردونه؟ هل أنا الذي أخطأتُ؟ أم أن حكمي"
+    },
+    {
+      "chapter": 27,
+      "source_ref": "27:5",
+      "text_ar": "قضى بالسوء؟\" فحينئذ خر الملائكة على الأرض وسجدوا للرب قائلين: \"أنت عادل يا رب، وحكمك حقُّ\"."
+    },
+    {
+      "chapter": 28,
+      "source_ref": "28:1",
+      "text_ar": "ولكن الرب التفت إلى آدم وقال: \"لن أسمح لك من الآن فصاعداً أن تكون في الفردوس\"."
+    }
+  ]
+}

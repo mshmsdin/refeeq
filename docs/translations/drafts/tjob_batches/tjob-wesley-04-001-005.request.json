@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "552bee10-fcf3-4ff0-a06c-652de4fec062",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":4,\"verses\":[{\"chapter\":4,\"verse\":1,\"text\":\"And my children, after having taken charge of the service, took their meals each day along with their three sisters beginning with the older brother, and made a feast.\"},{\"chapter\":4,\"verse\":2,\"text\":\"And I rose in the morning and offered as sin-offering for them fifty rams and nineteen sheep, and what remained as a residue was consecrated to the poor.\"},{\"chapter\":4,\"verse\":3,\"text\":\"And I said to them : \\\"Take these as residue and pray for my children.\"},{\"chapter\":4,\"verse\":4,\"text\":\"Perchance my sons have sinned before the Lord, speaking in haughtiness of spirit: We are children of this rich man. Ours are all these goods; why should we be servants of the poor\"},{\"chapter\":4,\"verse\":5,\"text\":\"And speaking thus in a haughty spirit they may have provoked the anger of God, for overbearing pride is an abomination before the Lord.\\\"\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5 in this chapter."
+}

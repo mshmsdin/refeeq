@@ -1,0 +1,93 @@
+{
+  "request_id": "9644a6f9-8033-4f37-ac69-9efb7784597c",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":13,\"verse\":1,\"text_ar\":\"جاء بعد سبعة أيام، حلمت بحلم ليلاً.\"},{\"chapter\":13,\"verse\":2,\"text_ar\":\"ها هو، شُعِب رياح من البحر حركت كل أمواجه.\"},{\"chapter\":13,\"verse\":3,\"text_ar\":\"رأيت، وها، هذا الريح جلب من وسط البحر شيء يشبه ظهور إنسان. رأيت، وها، طار ذلك الرجل مع غيوم السماء. عندما أدار وجهه للنظر، اهتز كل ما رأى.\"},{\"chapter\":13,\"verse\":4,\"text_ar\":\"كل من سمع صوته انتحس، كأن الشمع يذوب عندما يلمس النار.\"},{\"chapter\":13,\"verse\":5,\"text_ar\":\"بعد ذلك رأيت، وها، ثرٍ لا يُحصى من الناس جمعوا من أربع رياح السماء ليفتقدوا الرجل الذي خرج من البحر.\"},{\"chapter\":13,\"verse\":6,\"text_ar\":\"رأيت، وها، صمم نفسه جبلًا عظيمًا وطار عليه.\"},{\"chapter\":13,\"verse\":7,\"text_ar\":\"حاولت أن أرى المنطقة أو المكان الذي صُنع منه الجبل، ولم أستطع.\"},{\"chapter\":13,\"verse\":8,\"text_ar\":\"بعد ذلك رأيت، وها، كل من جمعوا للقتال ضده خائف جدًا، ومع ذلك تجرأوا على القتال.\"},{\"chapter\":13,\"verse\":9,\"text_ar\":\"ها هو حين رأى هجوم الثرى، لم يرفع يده، ولا يحمل رمحًا أو أي سلاح حرب.\"},{\"chapter\":13,\"verse\":10,\"text_ar\":\"لكني رأيت فقط كيف أرسل من فمه شيئًا يشبه دُمَة النار، ومن شفتيه نفسٍ مشتعلة، ومن لسانه أطلق عاصفةً من الشرار.\"},{\"chapter\":13,\"verse\":11,\"text_ar\":\"كل ذلك تداخل: دُمَة النار، النفس المشعلة، والعاصفة العظيمة، وسقّت على هجوم الثرى الذي كان مستعدًا للقتال، وحترقت كلٌ منهم، حتى صار الثرى لا شيء سوى رماد الغبار ورائحة الدخان. عندما رأيت ذلك، اندهشت.\"},{\"chapter\":13,\"verse\":12,\"text_ar\":\"بعد ذلك رأيت نفس الرجل ينزل من الجبل، ويستدعي نفسه ثرى أخرى سلمية.\"},{\"chapter\":13,\"verse\":13,\"text_ar\":\"جاء إليه كثير من الناس. بعضهم فرح، بعضهم أسف، بعضهم مقيد، وبعضهم جلب بعضهم كعروض. ثم بفضل الخوف استيقظت وتدعت إلى العلي، وقلت:\"},{\"chapter\":13,\"verse\":14,\"text_ar\":\"«لقد أظهرت خادمي هذه العجائب من البداية، وحسبتني لائقًا لتلقي دعائي.\"},{\"chapter\":13,\"verse\":15,\"text_ar\":\"أظهر لي أيضًا تفسير هذا الحلم.\"},{\"chapter\":13,\"verse\":16,\"text_ar\":\"لأنني أفهم، يا ويل للذين سيبقون في تلك الأيام! يا ويل أكثر للذين غير موجودين!\"},{\"chapter\":13,\"verse\":17,\"text_ar\":\"لأن الذين لم يبقوا سيبقون في أعباء،\"},{\"chapter\":13,\"verse\":18,\"text_ar\":\"فهم الأشياء التي محفوظة في الأيام الأخيرة، لكنهم لا يصلون إليها.\"},{\"chapter\":13,\"verse\":19,\"text_ar\":\"لكن يا ويل لهم أيضًا الذين يبقون، لأنهم سيرون مصائب عظيمة وعذابًا كثيرًا، مثل ما تكشف هذه الأحلام.\"},{\"chapter\":13,\"verse\":20,\"text_ar\":\"لكن هل من الأفضل أن يكون شخص في خطر وأن يمر بهذه الأمور، بدلاً من أن يذهب مثل سحابة من العالم، ولا يرى الأشياء التي ستحدث في الأيام الأخيرة؟\"}] }",
+  "usage": {
+    "input": 1008,
+    "output": 888,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-20b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 4,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "99274687-1d7c-4d9e-a6f4-aab3765418ca",
+      "provider": "Mistral",
+      "model": "mistral-small-2603",
+      "status": "error",
+      "inputPrice": "0.1500000000",
+      "outputPrice": "0.6000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0150000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 156
+    },
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 1008,
+      "outputTokens": 888,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1240
+    }
+  ]
+}

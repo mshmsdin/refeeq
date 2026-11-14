@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "5dcb18cc-80f5-4ce2-b15c-85066c4c61fe",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"ثم أجبت وقلت: أيها السيد الرب، إن كنت قد وجدت نعمة في عينيك،\",\n      \"verse\": 11\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"فأطلبت إليك أن تظهر لعبدك نهاية آياتك التي أريتني جزءاً منها في ليلة سابقة.\",\n      \"verse\": 12\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"فأجابني وقال: قف على قدميك وستسمع صوتاً عظيماً.\",\n      \"verse\": 13\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وإن تحرك المكان الذي تقف عليه جداً\",\n      \"verse\": 14\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"فلا تخف عندما يتكلم، لأن الكلام هو عن النهاية، وأسس الأرض ستفهم\",\n      \"verse\": 15\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"أن الخطاب هو عنها، وسوف ترتجف وتتزعزع لأنها تعلم أن نهايتها لابد أن تتغير.\",\n      \"verse\": 16\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وحدث لما سمعت ذلك أني قمت على قدمي وصغيت، وإذا صوت يتكلم وصوته كصوت مياه كثيرة.\",\n      \"verse\": 17\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"فقال: هوذا أيام تأتي حين أقترب لأفتقد الساكنين على الأرض،\",\n      \"verse\": 18\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وحين أبحث في أمر الذين صنعوا الشر ظلماً بإثمهم، وحين تكتمل بلية صيون،\",\n      \"verse\": 19\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وحين يُختم الدهر العتيد أن يزول، فحينئذ أظهر هذه الآيات: تفتح الأسفار أمام الجلد والكل يرون معاً.\",\n      \"verse\": 20\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  484,
+                  "output":  581,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0015977,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  484,
+                         "outputTokens":  581,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0015977,
+                         "latencyMs":  2425
+                     }
+                 ]
+}

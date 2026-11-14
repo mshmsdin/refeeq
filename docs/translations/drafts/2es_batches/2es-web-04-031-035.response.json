@@ -1,0 +1,37 @@
+{
+  "request_id": "d593cf49-6555-433d-8497-87abee629c50",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":4,\"verse\":31,\"text_ar\":\"تأمل الآن في نفسك، كم من ثمر الشر قد أنتجت حبة بذر الشر.\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":32,\"text_ar\":\"وحين تزرع الحبات التي لا عدد لها، فكم سيكون كبيرًا البيدر الذي ستملؤه!\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":33,\"text_ar\":\"حينئذ أجبت وقلت: إلى متى؟ ومتى ستحدث هذه الأمور؟ ولماذا سنيننا قليلة وشريرة؟\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":34,\"text_ar\":\"فأجابني وقال: لا تسرع أسرع من العلي؛ لأن سرعتك تخصك وحدك، أما الذي هو في العلاء فيسرع لأجل الكثيرين.\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":35,\"text_ar\":\"ألم تسأل نفوس الأبرار عن هذه الأمور في مخادعها قائلة: إلى متى سنبقى هنا؟ ومتى يأتي ثمر البيدر؟\",\"review_notes_ar\":[]}]}",
+  "usage": {
+    "input": 324,
+    "output": 279,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0007947000000000001,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 324,
+      "outputTokens": 279,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0007947000000000001,
+      "latencyMs": 1183
+    }
+  ]
+}

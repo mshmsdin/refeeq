@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 21,
+  "batch_end": 25,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "5a211587-b7bd-4774-afff-830b0e84fd29",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 495,
+      "outputTokens": 475,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.001336,
+      "latencyMs": 1700
+    }
+  ],
+  "usage": {
+    "input": 495,
+    "output": 475,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.001336,
+  "units": [
+    {
+      "chapter": 7,
+      "source_ref": "7:1",
+      "text_ar": "فقال له آدم: «حين صنعنا الله، أنا وأمك التي بسببها أنا أيضا أموت، أعطانا سلطانا لنأكل من كل شجرة في الفردوس، وأما تلك وحدها فأوصانا أن لا نأكل منها، ومن خلالها سنموت. واقتربت الساعة لكي يصعد الملائكة"
+    },
+    {
+      "chapter": 7,
+      "source_ref": "7:2",
+      "text_ar": "الذين كانوا يحرسون أمك ليسجدوا للرب، وكنت بعيداً عنها، وعلم العدو أنها وحدها فأعطاها، وأكلت من الشجرة التي قيل لها ألا تأكل منها."
+    },
+    {
+      "chapter": 7,
+      "source_ref": "7:3",
+      "text_ar": "ثم أعطتني أنا أيضاً لأكل»."
+    },
+    {
+      "chapter": 8,
+      "source_ref": "8:1",
+      "text_ar": "«وغضب الله علينا، ودخل الرب الفردوس ودعاني بصوت مهيب وقال: \"يا آدم، أين أنت؟ ولماذا تختفي عن وجهي؟ أليست الدار قادرة أن تختفي عن بانيها؟\" وقال لي: \"بما أنك تركت عهدي، فقد جلبت على جسدك اثنتين وسبعين ضربة؛ ووجع الضربة الأولى هو ألم في العينين، والضربة الثانية علة في السمع، وهكذا تباعاً ستصيبك كل الضربات\"»."
+    },
+    {
+      "chapter": 9,
+      "source_ref": "9:1",
+      "text_ar": "وفيما قال هذا لبنيه، تنهد آدم بمرارة وقال: «ماذا أفعل؟ إني في ضيق شديد». وبكت حواء وقالت: «يا سيدي»"
+    }
+  ]
+}

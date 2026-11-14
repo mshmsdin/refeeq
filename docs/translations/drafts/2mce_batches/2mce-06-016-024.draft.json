@@ -1,0 +1,84 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "2MCE",
+  "book_name_ar": "المكابيون الإثيوبي الثاني",
+  "source_translation": "en-wikisource-2-meqabyan",
+  "source_url": "https://en.wikisource.org/wiki/Translation:2_Meqabyan",
+  "source_license": "CC BY-SA 4.0; attribution and share-alike required for any release",
+  "source_quality": "Community English translation from Ge ez; not a critical edition.",
+  "source_sha256": "51c64f57d3bf57592839651226f2afb05610cfed090fd99da374cee7067a7cc9",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "model_id": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "request_id": "53bd6b57-1db0-4307-89ed-5f692f43618a",
+  "usage": {
+    "input": 1100,
+    "output": 789,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "estimated_cost_currency": "USD",
+  "translation": {
+    "book_code": "2MCE",
+    "chapter": 6,
+    "verses": [
+      {
+        "chapter": 6,
+        "verse": 16,
+        "text_ar": "قالوا له كل ما هو مطلوب منه، قائلين: «تذكر أن الرب هو خالقك. هو الرب الذي سيزيلك من هذا الملك الذي تتكبر فيه، والذي سيطرحك إلى جهنم النار مع أبيك، الشيطان. بما أننا كنا نعبد خالقنا، الرب، بلا إثم ولم نؤذيك، فقد انحنينا إليه خوفًا من إلهيته – كما أحرقنا بالنار، كذلك ستلقى حظك في تلك النار نفسها».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 17,
+        "text_ar": "لأنه هو الذي خلق كل شيء: الأرض والسماء والبحر وكل ما فيهما.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 18,
+        "text_ar": "وهو الذي خلق القمر والشمس والنجوم؛ الرب هو مؤلف جميع الخلق.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 19,
+        "text_ar": "فلا خالق آخر سواه في الأرض ولا في السماء؛ هو قادر على كل شيء، ولا شيء مستحيل عليه. لأنه هو القاتل والمنقذ، الضارب بالضيق والغافر – لأننا انحنينا إليه خوفًا من الرب، ومع ذلك أحرقتمونا بالنار – فستُنهي مشقتكم بنفس الطريقة»، قالوا له.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 20,
+        "text_ar": "«كما هو هو الحاكم للأرض والسماء، لا أحد يستطيع الهروب من سلطانه».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 21,
+        "text_ar": "لا شيء من خلقه قد خالف أمره، إلا أنتم، أيها المجرمون؛ ومجرمون مثلكم، الذين خفيت عقولهم بوالدهم الشيطان. أنتم، كاهنكم، وأوثانكم ستنزلون جميعًا إلى جهنم، حيث لا مخرج أبدي.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 22,
+        "text_ar": "معلمكم هو الشيطان، الذي علمكم هذا العمل الشرير لتفعلوا الشر ضدنا؛ ومع ذلك، لأنكم لستم الوحيدين الذين يفعلون ذلك، فستنزلون جميعًا إلى جهنم معًا.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 23,
+        "text_ar": "أنتم تصنعون أنفسكم مثل خالقكم، الرب، لكنكم لا تعرفون الرب الذي خلقكم.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 6,
+        "verse": 24,
+        "text_ar": "أنتم متكبرون في آلهتكم وعمل أيديكم، إلى أن يجعلكم الرب بائسين. سيحكم عليكم على كل خطاياكم وإثمكم الذي ارتدتموه في هذا العالم.",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "6e404c20-7ac9-4270-b4fb-6225be5e0e92",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 10,\n      \"verse\": 4,\n      \"text_ar\": \"صرخ وقال:\"\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 1,\n      \"text_ar\": \"«ليس شأننا يا حواء جشعك ونوحك، بل شأنك وحدك؛ لأنه منك نشأ سلطان الوحوش. كيف انفتح\"\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 2,\n      \"text_ar\": \"فمك لتأكلي من الشجرة التي أوصاك الله ألا تأكلي منها؟ ولهذا السبب تحولت طبيعتنا أيضاً. فالآن إذاً لا تقوين على تحمل الأمر،\"\n    },\n    {\n      \"chapter\": 11,\n      \"verse\": 3,\n      \"text_ar\": \"إن شرعت في توبيخك».\"\n    },\n    {\n      \"chapter\": 12,\n      \"verse\": 1,\n      \"text_ar\": \"حينئذ خاطب شيث الوحش قائلاً: «أغلق فمك واصمت وابعد عن صورة الله إلى يوم الدينونة». ثم قال\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 350,
+    "output": 307,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0008725,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 350,
+      "outputTokens": 307,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008725,
+      "latencyMs": 1450
+    }
+  ]
+}

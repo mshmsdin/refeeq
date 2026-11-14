@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "a6d9a532-08db-4521-a622-4d290000e8f4",
+    "content":  "{\"book_code\": \"2ES\", \"verses\": [{\"chapter\": 9, \"text_ar\": \"رَبِيتُهُ بِكُلِّ عِنايةٍ وَرِعايةٍ.\", \"verse\": 46}, {\"chapter\": 9, \"text_ar\": \"لِذَلِكَ، لَمَّا كَبِرَ، جِئْتُ لِيَتَّخِذَ لَهُ زَوْجَةً، فَجَعَلْتُ لَهُ يَوْمَ نَدِيمِةٍ.\", \"verse\": 47}]}",
+    "usage":  {
+                  "input":  166,
+                  "output":  117,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+    "provider":  "Groq Paid",
+    "model":  "qwen/qwen3.8-27b",
+    "estimatedCost":  0.0006008,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+                         "provider":  "Groq Paid",
+                         "model":  "qwen/qwen3.8-27b",
+                         "status":  "success",
+                         "inputPrice":  "0.8000000000",
+                         "outputPrice":  "4.0000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.8000000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  166,
+                         "outputTokens":  117,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0006008,
+                         "latencyMs":  706
+                     }
+                 ]
+}

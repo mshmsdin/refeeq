@@ -1,0 +1,120 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "1MCE",
+  "book_name_ar": "المكابيون الإثيوبي الأول",
+  "source_translation": "en-wikisource-1-meqabyan",
+  "source_url": "https://en.wikisource.org/wiki/Translation:1_Meqabyan",
+  "source_license": "CC BY-SA 4.0; attribution and share-alike required for any release",
+  "source_quality": "Community English translation from Ge ez; not a critical edition, page under deletion discussion",
+  "source_sha256": "5615a85aab3db5a116478c7e8c884a10f7c7d61ba7d5cbbb5fc8d13627461ed1",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "model_id": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "request_id": "0f12fc73-d7fe-4325-aab6-2ae13bb6faa1",
+  "usage": {
+    "input": 1322,
+    "output": 1157,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "estimated_cost_currency": "USD",
+  "translation": {
+    "book_code": "1MCE",
+    "chapter": 3,
+    "verses": [
+      {
+        "chapter": 3,
+        "verse": 1,
+        "text_ar": "مثلما أنتم، هؤلاء كانوا عبيد الله الأعلى ياه، أبيّا، سِيلا، وفينتوس، الذين ماتوا وقاموا، لكي تقوموا أنتم أيضًا بعد موتكم، وتشرق وجوهكم كالشمس في مملكة السماء.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 2,
+        "text_ar": "وذهبوا مع هؤلاء الرجال وتلقوا الشهادة هناك.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 3,
+        "text_ar": "في ذلك الوقت، توسلوا، وسبّحوا، وسجدوا ليه ياه. لم يخافهم الموت، ولا عقاب الملك.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 4,
+        "text_ar": "توجهوا إلى أولئك الشباب وكانوا هادئين كالأغنام التي لا شر فيها. ومع ذلك، لم يخفوا. عندما وصلوا إليهم، قبضوا عليهم، وضربوهم، وربطوهم، وجلبوهم إلى الملك ووقفوهم أمامه.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 5,
+        "text_ar": "أجابهم الملك قائلاً: «كيف لا يضحي العنيدون ولا يسجدون لأصنامي؟»",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 6,
+        "text_ar": "الأخوة الذين طهروا من الخطيئة، ومكرمون، ومختارون، ومباركون، وتلألأوا كالجواهر ذات القيمة العظيمة – سِيلا، أبيّا، وفينتوس – أجابوه بكلمة واحدة.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 7,
+        "text_ar": "قالوا للملك، الذي كان طاعونًا: «أما نحن، فلن نسجد ولا نضحي للأصنام النجسة التي لا علم لها ولا عقل».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 8,
+        "text_ar": "وقالوا له مرة أخرى: «لن نسجد للأصنام التي صُنعت من الفضة أو الذهب، أو التي صُنعت يدوياً، أو التي كانت من حجر وخشب، ولا عقل لها ولا روح ولا علم، ولا تنفع أصدقاءها ولا تضر أعداءها».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 9,
+        "text_ar": "سألهم الملك: «لماذا تفعلون ذلك؟ وبما أنكم تعلمون من أهانكم ومن أساء إليكم، فلماذا تهينون الأصنام الممجدة؟»",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 10,
+        "text_ar": "أجابوه قائلاً: «لأنهم لا شيء مقارنةً بنا، سنهينهم ولا نُمجِّدهم».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 11,
+        "text_ar": "قال لهم الملك: «سأعاقبكم كما فعلتم بأعمالكم الشريرة، وسأدمر وجوهكم الجميلة بالجلد، والتجربة القاسية، والنار».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 12,
+        "text_ar": "«الآن أخبروني ما إذا كنتم ستقدمون أو لا تقدمون قربانات لأصنامي. وإلا سأعاقبكم بالسيف والجلد».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 13,
+        "text_ar": "أجابوه قائلاً: «أما نحن، فلن نضحي ولا نسجد للأصنام النجسة»، فأمر الملك بضربهم بعصا سميكة، والجلد بالسوط، وتفتيتهم حتى ظهرت أعضاؤهم الداخلية.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 14,
+        "text_ar": "بعد ذلك رُبطوا وحُجزوا في سجن حتى قرر مجلس الملك أن يعاقبهم ويقتلهم.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 15,
+        "text_ar": "أُخذوا دون رحمة، وربطوا، وحُجزوا في سجن محكم، وجلسوا هناك ثلاثة ليالٍ وثلاثة أيام.",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

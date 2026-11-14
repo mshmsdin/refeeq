@@ -1,0 +1,221 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 7,
+  "range": "81-100",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "2d813322-4f43-4952-9708-16119d3645e1",
+  "failovers": 4,
+  "attempts": [
+    {
+      "modelId": "05dfb509-43ee-4357-a629-e560369080e7",
+      "provider": "Gemini",
+      "model": "gemini-3.8-flash",
+      "status": "error",
+      "inputPrice": "0.7500000000",
+      "outputPrice": "3.7500000000",
+      "currency": "USD",
+      "cachedPrice": "0.0750000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 150
+    },
+    {
+      "modelId": "99274687-1d7c-4d9e-a6f4-aab3765418ca",
+      "provider": "Mistral",
+      "model": "mistral-small-2603",
+      "status": "error",
+      "inputPrice": "0.1500000000",
+      "outputPrice": "0.6000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0150000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 215
+    },
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 981,
+      "outputTokens": 1598,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0042893,
+      "latencyMs": 4030
+    }
+  ],
+  "usage": {
+    "input": 981,
+    "output": 1598,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0042893,
+  "verses": [
+    {
+      "chapter": 7,
+      "verse": 81,
+      "text_ar": "الطريق الأول، لأنهم ازدراءوا شريعة العلي.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 82,
+      "text_ar": "الطريق الثاني، لأنهم لا يستطيعون الآن تقديم توبة مقبولة لكي يحبوا.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 83,
+      "text_ar": "الطريق الثالث، سيرون الجزاء المعدّ لأولئك الذين آمنوا بعهود العلي.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 84,
+      "text_ar": "الطريق الرابع، سيتأملون العذاب المعدّ لهم في الأيام الأخيرة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 85,
+      "text_ar": "الطريق الخامس، سيرون مساكن الآخرين محروسة من الملائكة في طمأنينة عظيمة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 86,
+      "text_ar": "الطريق السادس، سيرون كيف يعبر بعضهم فوراً إلى العذاب.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 87,
+      "text_ar": "الطريق السابع، وهو أشد قسوة من كل الطرق المذكورة آنفاً، لأنهم سيذوبون في الارتباك ويحترقون بالخزي، وتذويهم المخاوف، إذ يرون مجد العلي الذي أخطأوا أمامه وهم أحياء، والذي سيُدانونه أمامه في الأزمان الأخيرة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 88,
+      "text_ar": "\"والآن هذا هو ترتيب الذين حفظوا طرق العلي، عندما ينفصلون عن جسدهم المائت.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 89,
+      "text_ar": "في الوقت الذي عاشوا فيه فيه، خدموا العلي بمشقة، وكانوا في خطر في كل ساعة، لكي يحفظوا شريعة الواضع بإتقان.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 90,
+      "text_ar": "لذلك فهذا هو التعليم بشأنهم:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 91,
+      "text_ar": "أول كل شيء سيرون بفرح عظيم مجد ذاك الذي يرفعهم، لأنهم سيستريحون في سبعة مراتب.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 92,
+      "text_ar": "المرتبة الأولى، لأنهم جاهدوا بجهد عظيم للتغلب على الفكر الشرير الذي صُور معهم، لكيلا يضلهم عن الحياة إلى الموت.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 93,
+      "text_ar": "المرتبة الثانية، لأنهم يرون الحيرة التي تتجول فيها نفوس الأشرار، والعقاب المنتظر لهم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 94,
+      "text_ar": "المرتبة الثالثة، يرون الشهادة التي يشهد بها صانعهم من جهتهم، بأنهم في حياتهم حفظوا الشريعة التي أودعت لديهم أمانة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 95,
+      "text_ar": "المرتبة الرابعة، يدركون الراحة التي يتمتعون بها الآن وهم مجتمعون في مخادعهم بطمأنينة عظيمة، محروسين بالملائكة، والمجد المنتظر لهم في الأيام الأخيرة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 96,
+      "text_ar": "المرتبة الخامسة، يفرحون لأنهم نجوا الآن مما هو قابل للفساد، وأنهم سيرثون ما هو آتٍ، بينما يرون فوق ذلك الصعوبة والألم اللذين نُجوا منهما، والحرية الواسعة التي ينالونها بفرح وعدم فساد.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 97,
+      "text_ar": "المرتبة السادسة، حين يُظهر لهم كيف ستشرق وجوههم مثل الشمس، وكيف سيصيرون كضياء النجوم، غير قابلين للفساد منذ ذلك الحين.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 98,
+      "text_ar": "المرتبة السابعة، وهي أعظم من جميع المراتب المذكورة سابقاً، لأنهم سيفرجون بثقة، ولأنهم سيجرؤون بلا ارتباك، ويفرحون بلا خوف، لأنهم يسرعون ليروا وجه ذاك الذي خدموه في حياتهم، ومنه ينالون جزاءهم في المجد.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 99,
+      "text_ar": "هذا هو ترتيب نفوس الأبرار، كما يُعلن لهم من الآن فصاعداً. وسبق ذكر طرق العذاب التي سيعاني منها أولئك الذين لم يصغوا بعد هذا.\"",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 100,
+      "text_ar": "فأجبت وقُلْت: \"أَفَتُعْطَى إذن مُهْلَةٌ للنفس بعد انفصالها عن الأجساد، لكي ترى ما وصفتَهُ لي؟\"",
+      "review_notes_ar": []
+    }
+  ]
+}

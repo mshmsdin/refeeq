@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 41,42,43,44,45,46 in this chapter.",
+  "request_id": "85a96e49-b28a-4f61-b4fb-9c849901984a",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":11,\"book_code\":\"2ES\",\"verses\":[{\"chapter\":11,\"text\":\"You have judged the earth, but not with truth.\",\"verse\":41},{\"chapter\":11,\"text\":\"For you have afflicted the meek, you have hurt the peaceful, you have hated those who speak truth, you have loved liars, destroyed the dwellings of those who produced fruit, and threw down the walls of those who did you no harm.\",\"verse\":42},{\"chapter\":11,\"text\":\"Your insolence has come up to the Most High, and your pride to the Mighty.\",\"verse\":43},{\"chapter\":11,\"text\":\"The Most High also has looked at his times, and behold, they are ended, and his ages are fulfilled.\",\"verse\":44},{\"chapter\":11,\"text\":\"Therefore appear no more, you eagle, nor your horrible wings, nor your evil little wings, nor your cruel heads, nor your hurtful talons, nor all your worthless body,\",\"verse\":45},{\"chapter\":11,\"text\":\"that all the earth may be refreshed and relieved, being delivered from your violence, and that she may hope for the judgment and mercy of him who made her.’”\",\"verse\":46}]}"
+    }
+  ]
+}

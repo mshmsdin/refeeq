@@ -1,0 +1,6 @@
+{
+  "status": "rejected_by_router_http_400",
+  "reason": "Failed to generate JSON. Please adjust your prompt.",
+  "action": "Split into smaller same-chapter batches; no draft saved.",
+  "timestamp_utc": "2026-11-14T04:34:40.631Z"
+}

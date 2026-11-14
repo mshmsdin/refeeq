@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "51a84d8f-f815-4382-95a6-5ce6abced00a",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":25,\"text\":\"life, from thy sore trouble and anguish. But thou shalt confess and say: 'Lord, Lord, save me, and\",\"source_ref\":\"25:3\"},{\"chapter\":25,\"text\":\"I will turn no more to the sin of the flesh.' And on this account, from thine own words I will judge thee, by reason of the enmity which the enemy has planted in thee.\\\"\",\"source_ref\":\"25:4\"},{\"chapter\":26,\"text\":\"But he turned to the serpent [in great wrath] and said: \\\"Since thou hast done this, and become a thankless vessel until thou hast deceived the innocent hearts, accursed art thou among all beasts.\",\"source_ref\":\"26:1\"},{\"chapter\":26,\"text\":\"Thou shalt be deprived of the victual of which thou didst eat and shalt feed on dust all the days of\",\"source_ref\":\"26:2\"},{\"chapter\":26,\"text\":\"thy life: on thy breast and thy belly shalt thou walk and be robbed of hands and feet. There shall not be left thee ear nor wing, nor one limb of all that with which thou didst ensnare them in\",\"source_ref\":\"26:3\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 25:3, 25:4, 26:1, 26:2, 26:3.",
+  "application_id": "rafeeq-bible-translation"
+}

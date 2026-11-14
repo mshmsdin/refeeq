@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  6,
+    "range":  "11-20",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "5dcb18cc-80f5-4ce2-b15c-85066c4c61fe",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  484,
+                         "outputTokens":  581,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0015977,
+                         "latencyMs":  2425
+                     }
+                 ],
+    "usage":  {
+                  "input":  484,
+                  "output":  581,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0015977,
+    "verses":  [
+                   {
+                       "chapter":  6,
+                       "text_ar":  "ثم أجبت وقلت: أيها السيد الرب، إن كنت قد وجدت نعمة في عينيك،",
+                       "verse":  11
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "فأطلبت إليك أن تظهر لعبدك نهاية آياتك التي أريتني جزءاً منها في ليلة سابقة.",
+                       "verse":  12
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "فأجابني وقال: قف على قدميك وستسمع صوتاً عظيماً.",
+                       "verse":  13
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وإن تحرك المكان الذي تقف عليه جداً",
+                       "verse":  14
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "فلا تخف عندما يتكلم، لأن الكلام هو عن النهاية، وأسس الأرض ستفهم",
+                       "verse":  15
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "أن الخطاب هو عنها، وسوف ترتجف وتتزعزع لأنها تعلم أن نهايتها لابد أن تتغير.",
+                       "verse":  16
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وحدث لما سمعت ذلك أني قمت على قدمي وصغيت، وإذا صوت يتكلم وصوته كصوت مياه كثيرة.",
+                       "verse":  17
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "فقال: هوذا أيام تأتي حين أقترب لأفتقد الساكنين على الأرض،",
+                       "verse":  18
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وحين أبحث في أمر الذين صنعوا الشر ظلماً بإثمهم، وحين تكتمل بلية صيون،",
+                       "verse":  19
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وحين يُختم الدهر العتيد أن يزول، فحينئذ أظهر هذه الآيات: تفتح الأسفار أمام الجلد والكل يرون معاً.",
+                       "verse":  20
+                   }
+               ]
+}

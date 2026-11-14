@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  6,
+    "range":  "41-50",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "5a1dc004-4920-4aa5-82d5-879a33f27594",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  533,
+                         "outputTokens":  630,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017349000000000002,
+                         "latencyMs":  2271
+                     }
+                 ],
+    "usage":  {
+                  "input":  533,
+                  "output":  630,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0017349000000000002,
+    "verses":  [
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وفي اليوم الثاني صنعت أيضا روح الفلك وأمرته أن يقسم ويفصل المياه، لكي يصعد جزء منها ويبقى الآخر تحته.",
+                       "verse":  41
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وفي اليوم الثالث أمرت أن تجتمع المياه في الجزء السابع من الأرض. وجففت ستة أجزاء وأبقيتها، لكي يخدمك منها ما يُزرع ويُفلح.",
+                       "verse":  42
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "لأنه ما إن خرجت كلمتك حتى تم العمل.",
+                       "verse":  43
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وفوراً نبتت ثمار عظيمة لا تُحصى، بمذاقات كثيرة لطيفة، وأزهار بألوان لا تُبارى، وعطور ذات رائحة زكية جداً. وقد تم ذلك في اليوم الثالث.",
+                       "verse":  44
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وفي اليوم الرابع أمرت أن تشرق الشمس، ويعطي القمر ضوءه، وتكون النجوم في نظامها؛",
+                       "verse":  45
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وأعطيتها أمراً لخدمة البشرية التي كان سيوُجد.",
+                       "verse":  46
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وفي اليوم الخامس قلت للجزء السابع، حيث جُمِعت المياه، أن ينتج كائنات حية وطيوراً وأسماكاً؛ وهكذا كان.",
+                       "verse":  47
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "حيث أنتج الماء الأبكم وعديم الحياة أشياء حية كما وُصي، لكي تسبح الأمم أعمالك العجيبة.",
+                       "verse":  48
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "ثم حفظت كائنين حيّين. أحدهما سميته بهيموث، والآخر سميته لواياثان.",
+                       "verse":  49
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وفصلت الواحد عن الآخر؛ لأن الجزء السابع، أعني حيث جُمِعت المياه، لم يكن ليحتويهما معاً.",
+                       "verse":  50
+                   }
+               ]
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":5,\"source_ref\":\"5:3\",\"text\":\"fulfilled what we promised. My lord, how much penitence hast thou thought (to do) for I have brought trouble and anguish upon thee'\"},{\"chapter\":6,\"source_ref\":\"6:1\",\"text\":\"And Adam said to Eve: 'Thou canst not do so much as I, but do only so much as thou hast strength for. For I will spend forty days fasting, but do thou arise and go to the river Tigris and lift up a stone and stand on it in the water up to thy neck in the deep of the river. And let no speech proceed out of thy mouth, since we are unworthy to address the Lord, for our lips are unclean from the unlawful and forbidden tree.\"},{\"chapter\":6,\"source_ref\":\"6:2\",\"text\":\"And do thou stand in the water of the river thirty-seven days. But I will spend forty days in the water of Jordan, perchance the Lord God will take pity upon us.'\"},{\"chapter\":7,\"source_ref\":\"7:1\",\"text\":\"And Eve walked to the river Tigris and did\"},{\"chapter\":7,\"source_ref\":\"7:2\",\"text\":\"as Adam had told her. Likewise, Adam walked to the river Jordan and stood on a stone up to his neck in water.\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "8ad2babb-d88c-4bff-9c72-a425491b72a8",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 5:3, 6:1, 6:2, 7:1, 7:2.",
+  "tenant_id": "rafeeq-bible-translation"
+}

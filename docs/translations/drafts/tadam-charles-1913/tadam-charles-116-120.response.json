@@ -1,0 +1,37 @@
+{
+  "request_id": "f417ab31-30b4-4421-91ce-c760a76c9c94",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 41,\n      \"verse\": 3,\n      \"text_ar\": \"أجساد البشر- أقول لك يا شيث، (أنت) رجل الله، لا تبكِ ولا تصلِّ وتضرع لأجل زيت شجرة الرحمة لتمسح به أباك آدم لأجل أوجاع جسده.\"\n    },\n    {\n      \"chapter\": 42,\n      \"verse\": 1,\n      \"text_ar\": \"«لأني أقول لك إنك لن تستطيع البتة أن تنال منه شيئاً إلا في الأيام الأخيرة».\"\n    },\n    {\n      \"chapter\": 42,\n      \"verse\": 2,\n      \"text_ar\": \"[وعندما تتم خمسة آلاف وخمسمائة سنة، حينئذ سيأتي إلى الأرض الملك المحبوب جداً المسيح، ابن الله، ليحيي جسد آدم ومعهم ليحيي\"\n    },\n    {\n      \"chapter\": 42,\n      \"verse\": 3,\n      \"text_ar\": \"أجساد الأموات. وهو نفسه، ابن الله، عندما يأتي سيعتمد في نهر الأردن، وعندما يخرج من ماء الأردن، فحينئذ سيمسح من\"\n    },\n    {\n      \"chapter\": 42,\n      \"verse\": 4,\n      \"text_ar\": \"زيت الرحمة كل من يؤمن به. ويكون زيت الرحمة جيلاً بعد جيل لأولئك المستعدين ليولَدوا ثانية من\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 413,
+    "output": 386,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010889,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 413,
+      "outputTokens": 386,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010889,
+      "latencyMs": 1415
+    }
+  ]
+}

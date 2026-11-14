@@ -1,0 +1,72 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "2MCE",
+  "book_name_ar": "المكابيون الإثيوبي الثاني",
+  "source_translation": "en-wikisource-2-meqabyan",
+  "source_url": "https://en.wikisource.org/wiki/Translation:2_Meqabyan",
+  "source_license": "CC BY-SA 4.0; attribution and share-alike required for any release",
+  "source_quality": "Community English translation from Ge ez; not a critical edition.",
+  "source_sha256": "51c64f57d3bf57592839651226f2afb05610cfed090fd99da374cee7067a7cc9",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "model_id": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "request_id": "f77cf818-797b-4b0a-8f87-6249747ec8a0",
+  "usage": {
+    "input": 937,
+    "output": 594,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "estimated_cost_currency": "USD",
+  "translation": {
+    "book_code": "2MCE",
+    "chapter": 10,
+    "verses": [
+      {
+        "chapter": 10,
+        "verse": 9,
+        "text_ar": "عندما باركهم، حزن وبالاك بن زبور وغضب، فأمره مرة أخرى أن يلعنهم.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 10,
+        "verse": 10,
+        "text_ar": "لأن الشعب الذي باركه الرب جاء إلى هذه البلاد، وقال له بلعام: «لن ألعن إسرائيل التي باركها الرب».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 10,
+        "verse": 11,
+        "text_ar": "قال بالاك لبلعام: «كنت أرغب أن تلعني من أجلي، لكنك باركتهم أمامي. لو لعنتهم وطلبت مني أن أعطيك، لكنت أعطيتك بيتًا مليئًا بالفضة والذهب. لكنك باركتهم بالكامل؛ لم تفعل شيئًا صالحًا لي، لذا لن أفعل شيئًا صالحًا لك».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 10,
+        "verse": 12,
+        "text_ar": "قال بلعام: «ما يأمرني الرب أن أقوله بلساني، سأقوله؛ لأني لا أجرؤ على تجاهل أمر الرب».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 10,
+        "verse": 13,
+        "text_ar": "«لن ألعن شعبًا مباركًا، فإن الرب سيغضب علي إذا أحببت المال. لا أحب المال أكثر من نفسي».",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 10,
+        "verse": 14,
+        "text_ar": "كما أخبر الرب أباهم يعقوب: «من يبارككم فليبارككم، ومن يلعنكم فليُلعَنْ». «لن ألعن يعقوب المبارك؛ لا أحب المال أكثر من نفسي»، قال. وكما قال له الرب: «من يبارككم فهو مبارك…»",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 10,
+        "verse": 15,
+        "text_ar": "«…ومن يلعنك ظلمًا فليُلعَن». أكمِل طريقك وعملك لكي يحبك الرب.",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

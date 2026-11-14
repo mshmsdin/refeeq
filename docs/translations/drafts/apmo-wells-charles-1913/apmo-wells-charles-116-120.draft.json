@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 116,
+  "batch_end": 120,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "0fdc7de2-e296-42f9-a20e-51a92099e7be",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 417,
+      "outputTokens": 396,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011151,
+      "latencyMs": 2080
+    }
+  ],
+  "usage": {
+    "input": 417,
+    "output": 396,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0011151,
+  "units": [
+    {
+      "chapter": 34,
+      "source_ref": "34:1",
+      "text_ar": "وأنا حواء عاينت أعجوبتين عظيمتين ومخوفتين واقفتين في حضرة الله فبكيت من"
+    },
+    {
+      "chapter": 34,
+      "source_ref": "34:2",
+      "text_ar": "الخوف، وصرخت بصوت عالٍ إلى ابني شيث وقلت: 'قم يا شيث من جسد أبيك آدم وتعال إليَّ، وسترى منظراً لم يعاينه قط عين إنسان'."
+    },
+    {
+      "chapter": 35,
+      "source_ref": "35:1",
+      "text_ar": "ثم قام شيث وأتى إلى أمه وقال لها: 'ما هي بليتك؟ لماذا تبكين؟' (و) قالت له: 'انظر"
+    },
+    {
+      "chapter": 35,
+      "source_ref": "35:2",
+      "text_ar": "إلى فوق وترى بعينيك السموات السبع مفتوحة، وانظر كيف تضطجع نفس أبيك على وجهها وجميع الملائكة القديسين يصلون لأجله قائلين: 'اغفر له يا أب الكل، لأنه صورتك'. 'توسل يا ولدي"
+    },
+    {
+      "chapter": 35,
+      "source_ref": "35:3",
+      "text_ar": "شيث، ما معنى هذا؟ وهل يُسلم يوماً إلى يدي الآب غير المنظور، إلهنا أيضاً؟ ولكن من هما الاثنان"
+    }
+  ]
+}

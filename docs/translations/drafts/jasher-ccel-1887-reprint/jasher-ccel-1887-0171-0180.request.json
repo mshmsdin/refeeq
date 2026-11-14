@@ -1,0 +1,17 @@
+{
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "541b2051-52bd-4a2d-8fa0-78c934368487",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"chapter\":6,\"source_ref\":\"6:3\",\"verse\":3,\"text\":\"And the Lord brought this about on the next day, and animals, beasts and fowls came in great multitudes and surrounded the ark.\"},{\"chapter\":6,\"source_ref\":\"6:4\",\"verse\":4,\"text\":\"And Noah went and seated himself by the door of the ark, and of all flesh that crouched before him, he brought into the ark, and all that stood before him he left upon earth.\"},{\"chapter\":6,\"source_ref\":\"6:5\",\"verse\":5,\"text\":\"And a lioness came, with her two whelps, male and female, and the three crouched before Noah, and the two whelps rose up against the lioness and smote her, and made her flee from her place, and she went away, and they returned to their places, and crouched upon the earth before Noah.\"},{\"chapter\":6,\"source_ref\":\"6:6\",\"verse\":6,\"text\":\"And the lioness ran away, and stood in the place of the lions.\"},{\"chapter\":6,\"source_ref\":\"6:7\",\"verse\":7,\"text\":\"And Noah saw this, and wondered greatly, and he rose and took the two whelps, and brought them into the ark.\"},{\"chapter\":6,\"source_ref\":\"6:8\",\"verse\":8,\"text\":\"And Noah brought into the ark from all living creatures that were upon earth, so that there was none left but which Noah brought into the ark.\"},{\"chapter\":6,\"source_ref\":\"6:9\",\"verse\":9,\"text\":\"Two and two came to Noah into the ark, but from the clean animals, and clean fowls, he brought seven couples, as God had commanded him.\"},{\"chapter\":6,\"source_ref\":\"6:10\",\"verse\":10,\"text\":\"And all the animals, and beasts, and fowls, were still there, and they surrounded the ark at every place, and the rain had not descended till seven days after.\"},{\"chapter\":6,\"source_ref\":\"6:11\",\"verse\":11,\"text\":\"And on that day, the Lord caused the whole earth to shake, and the sun darkened, and the foundations of the world raged, and the whole earth was moved violently, and the lightning flashed, and the thunder roared, and all the fountains in the earth were broken up, such as was not known to the inhabitants before; and God did this mighty act, in order to terrify the sons of men, that there might be no more evil upon earth.\"},{\"chapter\":6,\"source_ref\":\"6:12\",\"verse\":12,\"text\":\"And still the sons of men would not return from their evil ways, and they increased the anger of the Lord at that time, and did not even direct their hearts to all this.\"}]}"
+    }
+  ]
+}

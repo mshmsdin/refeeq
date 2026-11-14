@@ -1,0 +1,37 @@
+{
+  "request_id": "dff98128-bddf-4e8e-8d69-ac91dcbf5338",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 27,\n      \"verse\": 1,\n      \"text_ar\": \"ولما سمعت كلمات الله هذه، خررت على الأرض وساجدت للرب وقلت: «يا رب، الإله القدير والرحوح، القدوس والبار، لا تمسح الاسم الذي يتذكر جلالك، بل رد نفسي، فإني أموت و\"\n    },\n    {\n      \"chapter\": 27,\n      \"verse\": 2,\n      \"text_ar\": \"نفسي تخرج من فمي. لا تطردني من حضورتك، أنا الذي صورته من طين الأرض. لا تبعد عن نعمتك من غذيته».\"\n    },\n    {\n      \"chapter\": 27,\n      \"verse\": 3,\n      \"text_ar\": \"وهوذا! كلمة تخصك أتت عليّ وقال لي الرب: «منذ صُوِّرت أيامك، خلقتَ بحب المعرفة؛ لذلك لن يُنزع من نسلك إلى الأبد (حق) خدمتي».\"\n    },\n    {\n      \"chapter\": 28,\n      \"verse\": 1,\n      \"text_ar\": \"ولما سمعت هذه الكلمات، طرحت نفسي على الأرض وعبدْت الرب الإله وقلت: «أنت هو الإله الأبدي العلي؛ وكل الخلائق تعطيك إكراماً وتسبيحاً.\"\n    },\n    {\n      \"chapter\": 28,\n      \"verse\": 2,\n      \"text_ar\": \"«أنت النور الحقيقي الساطع فوق كل الأنوار، الحياة الحية، القدرة العظيمة الغير المتناهية. لك تعطي القوات الروحية الإكرام والتسبيح. أنت تعمل في جنس البشر بوفرة رحمتك».\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 475,
+    "output": 435,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.00123,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 475,
+      "outputTokens": 435,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.00123,
+      "latencyMs": 1729
+    }
+  ]
+}

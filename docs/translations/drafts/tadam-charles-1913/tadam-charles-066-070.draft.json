@@ -1,0 +1,75 @@
+{
+  "book_code": "TADAM",
+  "source_license_notice": "English translation by R. H. Charles, Oxford 1913; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-charles-1913-latin-recension",
+  "source_name": "The Books of Adam and Eve (Latin recension)",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "batch_start": 66,
+  "batch_end": 70,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "requested_model": "",
+  "request_id": "620b9f4c-5a79-4c0f-a4f4-c3c8362786ab",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 602,
+      "outputTokens": 503,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1318
+    }
+  ],
+  "usage": {
+    "input": 602,
+    "output": 503,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "chapter": 25,
+      "text_ar": "وقال آدم لسِيث: «اسمع يا بني سِيث ما سأتحدث إليك به ما سمعته ورأيته بعد أن طُردتُ أنتَ وأمك من الجنة.",
+      "source_ref": "25:1"
+    },
+    {
+      "chapter": 25,
+      "text_ar": "وعندما كنا في صلاة، جاء إليّ الملاك ميخائيل رئيس الملائكة، رسول الله.",
+      "source_ref": "25:2"
+    },
+    {
+      "chapter": 25,
+      "text_ar": " ورأيت عربةً كالريح وعجلاتها نارية فأُخذت إلى جنة البر، ورأيت الرب جالسًا، وكان وجهه نيرانًا مشتعلة لا تُطاق. وكان آلاف الملائكة على يمين ويسار تلك العربة.",
+      "source_ref": "25:3"
+    },
+    {
+      "chapter": 26,
+      "text_ar": "عندما رأيت ذلك، ارتاب قلبي وغمرني الرعب، فركعتُ أمام الله وجهًا إلى الأرض.",
+      "source_ref": "26:1"
+    },
+    {
+      "chapter": 26,
+      "text_ar": "فقال لي الله: «انظر، أنت تموت لأنك خالفت وصية الله، إذ صغت لصوت زوجتك التي أعطيتها إلى سلطانك لتستطيع أن تمسك بها حسب إرادتك. لكنك استمعت إليها وتجاوزت كلماتي.",
+      "source_ref": "26:2"
+    }
+  ]
+}

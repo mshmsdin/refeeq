@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":9,\"book_code\":\"2ES\",\"verses\":[{\"verse\":1,\"chapter\":9,\"text\":\"He answered me, “Measure diligently within yourself. When you see that a certain part of the signs are past, which have been told you beforehand,\"},{\"verse\":2,\"chapter\":9,\"text\":\"then will you understand that it is the very time in which the Most High will visit the world which was made by him.\"},{\"verse\":3,\"chapter\":9,\"text\":\"When earthquakes, tumult of peoples, plans of nations, wavering of leaders, and confusion of princes are seen in the world,\"},{\"verse\":4,\"chapter\":9,\"text\":\"then will you understand that the Most High spoke of these things from the days that were of old, from the beginning.\"},{\"verse\":5,\"chapter\":9,\"text\":\"For just as with everything that is made in the world, the beginning is evident and the end manifest,\"},{\"verse\":6,\"chapter\":9,\"text\":\"so also are the times of the Most High: the beginnings are manifest in wonders and mighty works, and the end in effects and signs.\"},{\"verse\":7,\"chapter\":9,\"text\":\"Everyone who will be saved, and will be able to escape by his works, or by faith by which they have believed,\"},{\"verse\":8,\"chapter\":9,\"text\":\"will be preserved from the said perils, and will see my salvation in my land and within my borders, which I have sanctified for myself from the beginning.\"},{\"verse\":9,\"chapter\":9,\"text\":\"Then those who now have abused my ways will be amazed. Those who have cast them away despitefully will live in torments.\"},{\"verse\":10,\"chapter\":9,\"text\":\"For as many as in their life have received benefits, and yet have not known me,\"}]}"
+    }
+  ],
+  "request_id": "29b81334-f417-4208-b251-2e3cfdfa85ac",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 1,2,3,4,5,6,7,8,9,10 in this chapter.",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "tenant_id": "rafeeq-bible-translation"
+}

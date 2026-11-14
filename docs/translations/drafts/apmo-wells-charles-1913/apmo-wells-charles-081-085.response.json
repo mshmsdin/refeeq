@@ -1,0 +1,37 @@
+{
+  "request_id": "bbf8c768-7e27-4330-a108-a9e052cbc037",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 24,\n      \"verse\": 1,\n      \"text_ar\": \"قال الله لآدم: «بما أنك لم تبالِ بوصيتي وسمعت لامرأتك، ملعونة هي الأرض في أتعابك. إياها تفحر فلا تعطي قوتها: شوكاً وحسكاً تنبت لك، وبِعَرَق وجهك تأكل خبزك. [تكون في أتعاب مضاعفة، وتُسحق بالمرارة، ولكن من الحلاوة لا تذوق].\"\n    },\n    {\n      \"chapter\": 24,\n      \"verse\": 3,\n      \"text_ar\": \"تعباناً تكون ولا تستريح؛ وبالحر تتعب، وبالبرد تتضايق؛ بغزارة تشغل نفسك، ولكنك لا تسترعي غنىً؛ وتسمن، ولكن لا تصل إلى نهاية.\"\n    },\n    {\n      \"chapter\": 24,\n      \"verse\": 4,\n      \"text_ar\": \"الوحوش التي كنت تسيطر عليها، تقوم متمردة عليك، لأنك لم تحفظ وصيتي».\"\n    },\n    {\n      \"chapter\": 25,\n      \"verse\": 1,\n      \"text_ar\": \"والتفت إليَّ الرب وقال: «بما أنك سمعت للحية، وأعرضت\"\n    },\n    {\n      \"chapter\": 25,\n      \"verse\": 2,\n      \"text_ar\": \"أذنيك عن وصيتي، فسوف تكونين في مخاض وولادة وعذابات لا تُطاق؛ وتلدين أولاداً برعدة شديدة وفي ساعة واحدة تلدين، وتفقدين\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 456,
+    "output": 417,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0011792999999999999,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 456,
+      "outputTokens": 417,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011792999999999999,
+      "latencyMs": 1639
+    }
+  ]
+}

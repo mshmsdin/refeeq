@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":29,\"source_ref\":\"29:4\",\"text\":\"to his creation of the race of men. The Lord will appear in a flame of fire (and) from the mouth of His majesty He will give commandments and statutes [from His mouth will proceed a two-edged sword] and they will sanctify Him in the house of the habitation of His majesty.\"},{\"chapter\":29,\"source_ref\":\"29:5\",\"text\":\"And He will show them the marvellous place of His majesty. And then they will build a house to the Lord their God in the land which He shall prepare for them and there they will transgress His statutes and their sanctuary will be burnt up and their land will be deserted and they\"},{\"chapter\":29,\"source_ref\":\"29:6\",\"text\":\"themselves will be dispersed; because they have kindled the wrath of God. And once more He will cause them to come back from their dispersion; and again they will build the house of God;\"},{\"chapter\":29,\"source_ref\":\"29:7\",\"text\":\"and in the last time the house of God will be exalted greater than of old. And once more iniquity will exceed righteousness. And thereafter God will dwell with men on earth [in visible form]; and then, righteousness will begin to shine. And the house of God will be honoured in the age and their enemies will no more be able to hurt the men, who are believing in God; and God will stir up for Himself a faithful people, whom He shall save for eternity, and the impious shall be punished\"},{\"chapter\":29,\"source_ref\":\"29:8\",\"text\":\"by God their king, the men who refused to love His law. Heaven and earth, nights and days, and all creatures shall obey Him, and not overstep His commandment. Men shall not change their\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "90b19499-7052-4543-8071-998efb7d5a92",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 29:4, 29:5, 29:6, 29:7, 29:8.",
+  "tenant_id": "rafeeq-bible-translation"
+}

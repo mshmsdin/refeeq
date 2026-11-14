@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"verses\":[{\"text\":\"Therefore my judgment is now at hand,\",\"verse\":61,\"chapter\":8},{\"text\":\"which I have not shown to all men, but to you, and a few like you.” Then I answered,\",\"verse\":62,\"chapter\":8},{\"text\":\"“Behold, O Lord, now you have shown me the multitude of the wonders which you will do in the last times, but you haven’t shown me when.”\",\"verse\":63,\"chapter\":8}],\"chapter\":8,\"book_code\":\"2ES\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "8f3c372e-010e-4c58-ac5f-08441448a034",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 61,62,63 in this chapter."
+}

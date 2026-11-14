@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":45,\"source_ref\":\"45:2\",\"text\":\"told, after six days came Adam's death. When Adam perceived that the hour of his death was at hand, he said to all his sons: 'Behold, I am nine hundred and thirty years old, and if I die,\"},{\"chapter\":45,\"source_ref\":\"45:3\",\"text\":\"bury me towards the sunrising in the field of yonder dwelling.' And it came to pass that when he had finished all his discourse, he gave up the ghost. (Then) was the sun darkened and the moon\"},{\"chapter\":46,\"source_ref\":\"46:1\",\"text\":\"and the stars for seven days, and Seth in his mourning embraced from above the body of his father, and Eve was looking on the ground with hands folded over her head, and all her children wept most bitterly. And behold, there appeared\"},{\"chapter\":46,\"source_ref\":\"46:2\",\"text\":\"Michael the angel and stood at the head of Adam and said to Seth: 'Rise up from the body of thy\"},{\"chapter\":46,\"source_ref\":\"46:3\",\"text\":\"father and come to me and see what is the doom of the Lord God concerning him. His creature is he, and God hath pitied him.' And all angels blew their trumpets, and cried:\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "d3802ccd-5509-4a30-a324-d8f83838a9c0",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 45:2, 45:3, 46:1, 46:2, 46:3.",
+  "tenant_id": "rafeeq-bible-translation"
+}

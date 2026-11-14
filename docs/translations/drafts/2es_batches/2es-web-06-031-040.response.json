@@ -1,0 +1,37 @@
+{
+  "request_id": "48271848-753d-4e2c-939d-523b01229155",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 6,\n      \"verse\": 31,\n      \"text_ar\": \"فإن صليت أيضاً مرة أخرى، وصمت سبعة أيام أخر، فسأخبرك أيضاً بأمور أعظم من هذه.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 32,\n      \"text_ar\": \"لأن صوتك قد سُمع حقاً أمام العلي. فإن القدير قد رأى برك. ورأى أيضاً نقاوتك التي حافظت عليها منذ صباك.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 33,\n      \"text_ar\": \"ولذلك أرسلني لأريك كل هذه الأمور، وأقول لك: «آمن ولا تخف!»\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 34,\n      \"text_ar\": \"لا تستعجل في التفكير بأمور باطلة حول الأزمان السالفة، لكيلا تتسرع في الأزمان اللاحقة.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 35,\n      \"text_ar\": \"وحدث بعد هذا أنني بكيت أيضاً، وصمت سبعة أيام على النحو ذاته، لكي أتمم الأسابيع الثلاثة التي قال لي عنها.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 36,\n      \"text_ar\": \"وفي الليلة الثامنة، اضطرب قلبي في داخلي مرة أخرى، وشرعت أتكلم في حضرة العلي.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 37,\n      \"text_ar\": \"لأن روحي كانت مهتاجة جداً، وكانت نفسي في ضيق.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 38,\n      \"text_ar\": \"فقلت: «أيها الرب، حقاً إنك تكلمت في بدء الخليقة، في اليوم الأول، وقلت هكذا: «لتُصنع السماء والأرض»، فأكملت كلمتك العمل.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 39,\n      \"text_ar\": \"حينئذ كان الروح يحوم، وكانت الظلمة والسكون في كل جانب. ولم يكن صوت الإنسان موجوداً بعد.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 40,\n      \"text_ar\": \"ثم أمرتَ أن يُخرج شعاع من النور من خزائنك، لكي تظهر أعمالك حينئذ.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 493,
+    "output": 743,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0020054,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 493,
+      "outputTokens": 743,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0020054,
+      "latencyMs": 2116
+    }
+  ]
+}

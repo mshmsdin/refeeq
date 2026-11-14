@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "aec329d2-526a-4828-84fc-09ad9f0ae4a0",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"Then I prayed, and said, O Do you think that I will live until that time? Or who will be alive in those days? O\",\n      \"verse\": 51\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"He answered me, O As for the signs you asked me about, I may tell you of them in part; but I wasn T sent to tell you about your life, for I don T know.\",\n      \"verse\": 52\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  210,
+                  "output":  154,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.000448,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  210,
+                         "outputTokens":  154,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.000448,
+                         "latencyMs":  820
+                     }
+                 ]
+}

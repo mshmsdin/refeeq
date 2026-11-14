@@ -1,0 +1,37 @@
+{
+  "request_id": "1b1ed24e-0b90-4c10-b69c-add39605bae9",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"يهلك العالم بأسره وتزول مجده، وكل من يتمسك به يبقى في الأسفل، أما عرشي ففي العالم العلوي ومجده وبهائه سيكونان عن يمين المخلص في السموات.\",\n      \"verse\": 36\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"عرشي قائم في حياة \\\"القديسين\\\" ومجده في العالم غير البائد.\",\n      \"verse\": 37\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لأن الأنهار ستجف وغطرستها ستنزل إلى عمق الهاوية، أما جداول أرضي التي نُصب فيها عرشي فلن تجف، بل ستظل ثابتة بلا انكسار في القوة.\",\n      \"verse\": 38\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"الملوك يهلكون والحكام يزولون، ومجدهم وفخرهم كظل في مرآة، أما ملكوتي فيدوم إلى أبد الآبدين، ومجده وجماله في مركبة أبي.\",\n      \"verse\": 39\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 316,
+    "output": 308,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0008648,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 316,
+      "outputTokens": 308,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008648,
+      "latencyMs": 1333
+    }
+  ]
+}

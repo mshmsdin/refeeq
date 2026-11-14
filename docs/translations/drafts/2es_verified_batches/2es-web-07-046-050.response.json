@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "0dfe45d7-231c-4c75-af56-364f1223da0e",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"ولكن ماذا عن أولئك الذين صلّيت لأجلهم؟ لأنه من هو من الأحياء الذي لم يُخطئ، ومن من بني البشر لم يتعدَ عهدك؟\",\n      \"verse\": 46\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"والآن أرى أن العالم الآتي سيجلب مسرة لقليلين، ولكن عذاباً لكثيرين.\",\n      \"verse\": 47\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لأنه قد نما فينا قلب شرير، وهو الذي أضلنا عن هذه الوصايا وأدخلنا في الفساد وفي طرق الموت، وأرانا سبل الهلاك وأبعدنا جداً عن الحياة؛ وليس هذا لقليلين فقط، بل لكل من خُلقوا تقريبا.\",\n      \"verse\": 48\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"فأجابني قائلاً: استمع إليَّ فأعلمك، وأنذرك أيضاً.\",\n      \"verse\": 49\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لهذا السبب لم يصنع العلي عالماً واحداً بل عالمين.\",\n      \"verse\": 50\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  337,
+                  "output":  338,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0009461000000000001,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  337,
+                         "outputTokens":  338,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0009461000000000001,
+                         "latencyMs":  1729
+                     }
+                 ]
+}

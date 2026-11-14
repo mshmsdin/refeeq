@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "af5ac093-c3e6-438d-8b0e-f04f6b354e90",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":10,\"verses\":[{\"chapter\":10,\"verse\":11,\"text\":\"Then when Eliphaz, Baldad and Sophar saw that God had graciously pardoned their sin through His servant Job, but that He did not deign to pardon Elihu, then did Eliphaz begin to sing a hymn, while the others responded, their soldiers also joining while standing by the altar.\"},{\"chapter\":10,\"verse\":12,\"text\":\"And Eliphaz spoke thus\"},{\"chapter\":10,\"verse\":13,\"text\":\"But Elihu, the evil one, shall have no remembrance among the living; his luminary is extinguished and has lost its light.\"},{\"chapter\":10,\"verse\":14,\"text\":\"The glory of his lamp will announce itself for him, for he is the son of darkness. and not of light.\"},{\"chapter\":10,\"verse\":15,\"text\":\"The doorkeepers of the place of darkness shall give him their glory and beauty as share; His Kingdom hath vanished, his throne hath moldered, and the honor of his stature is in (Sheol) Hades.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter."
+}

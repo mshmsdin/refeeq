@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "11a760fc-dfbb-4edb-a314-f16e06d382d1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":31,\"text\":\"after a single day from the sickness which had fastened upon him, she saith to him: 'How is it that\",\"source_ref\":\"31:2\"},{\"chapter\":31,\"text\":\"thou diest and I live or how long have I to live after thou art dead? Tell me.' And Adam saith to her: 'Reck not of this, for thou tarriest not after me, but even both of us are to die together. And she shall lie in my place. But when I die, anoint me and let no man touch me till the\",\"source_ref\":\"31:3\"},{\"chapter\":31,\"text\":\"angel of the Lord shall speak somewhat concerning me. For God will not forget me, but will seek His own creature; and now arise rather and pray to God till I give up my spirit into His hands who gave it me. For we know not how we are to meet our Maker, whether He be wroth with us, or be merciful and intend to pity and receive us.'\",\"source_ref\":\"31:4\"},{\"chapter\":32,\"text\":\"And Eve rose up and went outside and fell on the ground and began to say: I have sinned, O God, I have sinned, O God of All, I have sinned against Thee. I have sinned against the elect angels. I have sinned against the Cherubim. I have sinned against Thy fearful and unshakable Throne. I have sinned before Thee and all sin hath begun through my doing in the creation.'\",\"source_ref\":\"32:1\"},{\"chapter\":32,\"text\":\"Even thus prayed Eve on her knees; (and) behold, the angel of humanity came to her, and raised\",\"source_ref\":\"32:3\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 31:2, 31:3, 31:4, 32:1, 32:3.",
+  "application_id": "rafeeq-bible-translation"
+}

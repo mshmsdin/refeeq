@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "48ced99a-644f-4f0c-8100-14a1ca2a9925",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":8,\"verses\":[{\"chapter\":8,\"verse\":16,\"text\":\"[And I answered saying] : \\\"Who understands the depths of the Lord and of His wisdom to be able to accuse God of injustice\\\"\"},{\"chapter\":8,\"verse\":17,\"text\":\"[And Baldad said] : \\\"Answer me, o Job, to this. Again I say to thee : If thou art in a state of calm reason, teach me if thou hast wisdom:\"},{\"chapter\":8,\"verse\":18,\"text\":\"Why do we see the sun rise in the East and set in the West And again when rising in the morning we find him rise in the East Tell me thy- thought about this\"},{\"chapter\":8,\"verse\":19,\"text\":\"Then said I: \\\"Why shall I betray (babble forth) the mighty mysteries of God And should my mouth stumble in revealing things belonging to the Master Never!\"},{\"chapter\":8,\"verse\":20,\"text\":\"Who are we that we should pry into matters concerning the upper world while we are only of flesh, nay, earth and ashes!\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 16,17,18,19,20 in this chapter."
+}

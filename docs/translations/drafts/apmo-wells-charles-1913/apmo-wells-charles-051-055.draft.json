@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 51,
+  "batch_end": 55,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "be95e71e-047b-40e4-a334-46ecfcbfe915",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 375,
+      "outputTokens": 349,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.000985,
+      "latencyMs": 1332
+    }
+  ],
+  "usage": {
+    "input": 375,
+    "output": 349,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.000985,
+  "units": [
+    {
+      "chapter": 16,
+      "source_ref": "16:5",
+      "text_ar": "قال له إبليس: «لا تخف، بل كن إناثتي وسأتكلم من فمك بكلمات لأخدعه»."
+    },
+    {
+      "chapter": 17,
+      "source_ref": "17:1",
+      "text_ar": "وفي الحال شنق نفسه من سور الفردوس، ولما صعد الملائكة إلى"
+    },
+    {
+      "chapter": 17,
+      "source_ref": "17:2",
+      "text_ar": "عبادة الله، ظهر الشيطان حينئذ في هيئة ملاك ورتل الترانيم مثل الملائكة. وأنا انحنيت على السور ورأيته مثل ملاك. فقال لي: «أأنت حواء؟» وقلت"
+    },
+    {
+      "chapter": 17,
+      "source_ref": "17:3",
+      "text_ar": "له: «أنا هي». «ماذا تفعلين في الفردوس؟» وقلت له: «أقامنا الله لنحرس ونأكل منه»."
+    },
+    {
+      "chapter": 17,
+      "source_ref": "17:4",
+      "text_ar": "فأجاب إبليس على فم الحية: «تنعمان حسناً ولكنكما لا تأكلان»."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":29,\"source_ref\":\"29:9\",\"text\":\"works, but they shall be changed from forsaking the law of the Lord. Therefore the Lord shall repel from Himself the wicked, and the just shall shine like the sun, in the sight of God. And\"},{\"chapter\":29,\"source_ref\":\"29:10\",\"text\":\"in that time, shall men be purified by water from their sins. But those who are unwilling to be purified by water shall be condemned. And happy shall the man be, who hath ruled his soul, when the Judgement shall come to pass and the greatness of God be seen among men and their deeds be inquired into by God the just judge.\"},{\"chapter\":30,\"source_ref\":\"30:1\",\"text\":\"After Adam was nine hundred and thirty years old, since he knew that his days were coming to an end, he said: 'Let all my sons assemble themselves to me, that I may bless them before I die, and speak with them.'\"},{\"chapter\":30,\"source_ref\":\"30:2\",\"text\":\"And they were assembled in three parts, before his sight, in the house of prayer, where they used\"},{\"chapter\":30,\"source_ref\":\"30:3\",\"text\":\"to worship the Lord God. And they asked him (saying): 'What concerns thee, Father, that thou shouldst assemble us, and why dost thou lie on\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "90a5d024-2bdb-440e-989a-9aed75db3733",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 29:9, 29:10, 30:1, 30:2, 30:3.",
+  "tenant_id": "rafeeq-bible-translation"
+}

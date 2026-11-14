@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"verses\":[{\"text\":\"Then I said, “No, Lord, that can it not.” He said to me, “In Hades, the chambers of souls are like the womb.\",\"verse\":41,\"chapter\":4},{\"text\":\"For just like a woman in labor hurries to escape the anguish of the labor pains, even so these places hurry to deliver those things that are committed to them from the beginning.\",\"verse\":42,\"chapter\":4},{\"text\":\"Then you will be shown those things which you desire to see.”\",\"verse\":43,\"chapter\":4},{\"text\":\"Then I answered, “If I have found favor in your sight, and if it is possible, and if I am worthy,\",\"verse\":44,\"chapter\":4},{\"text\":\"show me this also, whether there is more to come than is past, or whether the greater part has gone over us.\",\"verse\":45,\"chapter\":4},{\"text\":\"For what is gone I know, but I don’t know what is to come.”\",\"verse\":46,\"chapter\":4},{\"text\":\"He said to me, “Stand up on my right side, and I will explain the parable to you.”\",\"verse\":47,\"chapter\":4},{\"text\":\"So I stood, looked, and saw a hot burning oven passed by before me. It happened that when the flame had gone by I looked, and saw that the smoke remained.\",\"verse\":48,\"chapter\":4},{\"text\":\"After this, a watery cloud passed in front of me, and sent down much rain with a storm. When the stormy rain was past, the drops still remained in it.”\",\"verse\":49,\"chapter\":4},{\"text\":\"Then said he to me, “Consider with yourself; as the rain is more than the drops, and the fire is greater than the smoke, so the quantity which is past was far greater; but the drops and the smoke still remained.”\",\"verse\":50,\"chapter\":4},{\"text\":\"Then I prayed, and said, “Do you think that I will live until that time? Or who will be alive in those days?”\",\"verse\":51,\"chapter\":4},{\"text\":\"He answered me, “As for the signs you asked me about, I may tell you of them in part; but I wasn’t sent to tell you about your life, for I don’t know.\",\"verse\":52,\"chapter\":4}],\"chapter\":4,\"book_code\":\"2ES\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "d1abb593-78c0-439e-8a7a-69fae1a07758",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 41,42,43,44,45,46,47,48,49,50,51,52 in this chapter."
+}

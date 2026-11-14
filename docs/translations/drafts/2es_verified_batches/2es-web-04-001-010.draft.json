@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  4,
+    "range":  "1-10",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "58e973af-cc0a-4def-81e3-0177afc507ee",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  608,
+                         "outputTokens":  644,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017924,
+                         "latencyMs":  2048
+                     }
+                 ],
+    "usage":  {
+                  "input":  608,
+                  "output":  644,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0017924,
+    "verses":  [
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فأجابني الملاك الذي أرسل إلي، والذي كان اسمه أوريئيل،",
+                       "verse":  1
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "وقال لي: لقد قصر فهمك تماماً في أمر هذا العالم، فهل تظن أنك تستطيع أن تدرك طريق العلي؟",
+                       "verse":  2
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فقلت: نعم يا سيدي. فأجابني: لقد أرسلت لأريك ثلاثة طرق، وأعرض عليك ثلاثة أمور.",
+                       "verse":  3
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فإن استطعت أن تحل لي واحداً منها، فسأريك أيضاً الطريق الذي تشتهي أن تراه، وأعلمك لماذا القلب شرير.",
+                       "verse":  4
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فقلت: تكلم يا سيدي. فقال لي: اذهب، زن لي وزن النار، أو قس لي نفخة الريح، أو استرجع لي اليوم الذي مضى.",
+                       "verse":  5
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فأجبت وقلت: من من بني البشر يستطيع أن يفعل هذا، حتى تسألني عن مثل هذه الأمور؟",
+                       "verse":  6
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فقال لي: لو سألتك: كم مسكناً في قلب البحر؟ أو كم ينبوعاً في رأس غماقة الهاء؟ أو كم مجرى مائياً فوق الجلد؟ أو ما هي مخارج الجهاء؟ أو ما هي مداخل الفردوس؟",
+                       "verse":  7
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "لربما قلت لي: لم أنزل قط إلى الغماقة، ولا إلى الجهاء بعد، ولا صعدت إلى السماء قط.",
+                       "verse":  8
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "ولكن الآن لم أسالك إلا عن النار والريح واليوم، وهي أمور اختبرتها ولا يمكنك أن تنفصل عنها، ومع ذلك لم تعطني عنها أي جواب.",
+                       "verse":  9
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "ثم قال لي أيضاً: لا يمكنك أن تفهم أمور الخاصة التي نشأت معها.",
+                       "verse":  10
+                   }
+               ]
+}

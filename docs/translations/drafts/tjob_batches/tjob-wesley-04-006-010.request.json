@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "dbab5081-902e-4ac8-8974-15efa43266b9",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":4,\"verses\":[{\"chapter\":4,\"verse\":6,\"text\":\"So I brought oxen as offerings to the priest at the altar saying: \\\"May my children never think evil towards God in their hearts.\"},{\"chapter\":4,\"verse\":7,\"text\":\"While I lived in this manner, the Seducer could not bear to see the good [I did], and he demanded the warfare of God against me.\"},{\"chapter\":4,\"verse\":8,\"text\":\"And he came upon me cruelly.\"},{\"chapter\":4,\"verse\":9,\"text\":\"First he burnt up the large number of sheep, then the camels, then he burnt up the cattle and all my herds; or they were captured not only by enemies but also by such as had received benefits from me.\"},{\"chapter\":4,\"verse\":10,\"text\":\"And the shepherds came and announced that to me.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter."
+}

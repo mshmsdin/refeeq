@@ -1,0 +1,37 @@
+{
+  "request_id": "6055e945-261f-4a71-b615-2888dce0e88f",
+  "content": "{\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":9,\"verse\":4,\"text_ar\":\"وقد أرسلني لأخرجكم من الماء وأعطيكم القوت الذي كان لكم في الفردوس، والذي تبكون لأجله.\"},{\"chapter\":9,\"verse\":5,\"text_ar\":\"الآن اخرجوا من الماء وسأقودكم إلى المكان الذي أُعدَّ فيه طعامكم.'\"},{\"chapter\":10,\"verse\":1,\"text_ar\":\"فسمعت حواء وصدقت وخرجت من ماء النهر، وكان جسدها يرتجف\"},{\"chapter\":10,\"verse\":2,\"text_ar\":\"مثل العشب من برودة الماء. ولما خرجت، سقطت على الأرض فأقامها إبليس وأقادها إلى آدم.\"},{\"chapter\":10,\"verse\":3,\"text_ar\":\"ولما راها آدم وإبليس معها، بكى وصرخ بصوت عالٍ وقال: 'يا حواء، يا حواء، أين تعب توبتك'\"}]}",
+  "usage": {
+    "input": 371,
+    "output": 229,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0006837999999999999,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 371,
+      "outputTokens": 229,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0006837999999999999,
+      "latencyMs": 1418
+    }
+  ]
+}

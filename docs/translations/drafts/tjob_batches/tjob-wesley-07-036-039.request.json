@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "95689a66-2c9d-407b-b1e2-6a8f3da7f480",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":7,\"verses\":[{\"chapter\":7,\"verse\":36,\"text\":\"The whole world shall perish, and its glory shall vanish, and all those who hold fast to it, will remain beneath, but my throne is in the upper world and its glory and splendor will be to the right of the Savior in the heavens.\"},{\"chapter\":7,\"verse\":37,\"text\":\"My throne exists in the life of the \\\"holy ones\\\" and its glory in the imperishable world.\"},{\"chapter\":7,\"verse\":38,\"text\":\"For rivers will he dried up and their arrogance shall go down to the depth of the abyss, but the streams of my land in which my throne is erected, shall not dry up, but shall remain unbroken in strength.\"},{\"chapter\":7,\"verse\":39,\"text\":\"The kings perish and the rulers vanish, and their glory and pride is as the shadow in a looking glass, but my Kingdom lasts forever and ever, and its glory and beauty is in the chariot of my Father).\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 36,37,38,39 in this chapter."
+}

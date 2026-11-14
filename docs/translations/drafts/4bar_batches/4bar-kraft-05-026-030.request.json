@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"verse\":26,\"text\":\"26 But so that you can know, take the figs and see!”\"},{\"chapter\":5,\"verse\":27,\"text\":\"27 And he uncovered the basket of figs for the old man, and he saw them dripping milk.\"},{\"chapter\":5,\"verse\":28,\"text\":\"28 And when the old man saw them, he said: “My son, you are a righteous man, and God did not want you to see the desolation of the city, so he brought this trance upon you.\"},{\"chapter\":5,\"verse\":29,\"text\":\"29 For it is 66 years today since the people were taken captive into Babylon.\"},{\"chapter\":5,\"verse\":30,\"text\":\"30 But so that you can learn, my son, that what I tell you is true, look into the field and see that the crops have not yet begun to ripen.\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "35b5357b-b2b7-4b7d-8388-0bff1f29f5b4",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 26,27,28,29,30 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

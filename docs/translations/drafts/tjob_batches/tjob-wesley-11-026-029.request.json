@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "a32e68ad-9daf-4685-a65c-5ce2cbee7f0b",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":11,\"verses\":[{\"chapter\":11,\"verse\":26,\"text\":\"And her mouth assumed the dialect of the heavenly rulers (Archonts) and she sang the donology of the work of the High Place and if any one wishes to know the work of the heavens he may take an insight into the hymns of Kassia.\"},{\"chapter\":11,\"verse\":27,\"text\":\"Then did the other daughter by the name of Amaltheas Horn (Keren Happukh) gird herself and her mouth spoke in the language of those on high; for her heart was transformed, being lifted above the worldly things.\"},{\"chapter\":11,\"verse\":28,\"text\":\"She spoke in the dialect of the Cherubim, singing the praise of the Ruler of the cosmic powers (virtues) and extolling their (His) glory.\"},{\"chapter\":11,\"verse\":29,\"text\":\"And he who desires to follow the vestiges of the \\\"Glory of the Father\\\" will find them written down in the Prayers of Amaltheas Horn.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 26,27,28,29 in this chapter."
+}

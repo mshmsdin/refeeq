@@ -1,0 +1,185 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 3,
+  "range": "21-36",
+  "status": "draft_for_review",
+  "provider": "Groq Paid",
+  "model": "qwen/qwen3.8-27b",
+  "request_id": "e055734a-6121-4d8c-85a2-01598c1fed19",
+  "failovers": 3,
+  "attempts": [
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "05dfb509-43ee-4357-a629-e560369080e7",
+      "provider": "Gemini",
+      "model": "gemini-3.8-flash",
+      "status": "error",
+      "inputPrice": "0.7500000000",
+      "outputPrice": "3.7500000000",
+      "currency": "USD",
+      "cachedPrice": "0.0750000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "502",
+      "estimatedCost": null,
+      "latencyMs": 30004
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "success",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 744,
+      "outputTokens": 1126,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0050992,
+      "latencyMs": 2373
+    }
+  ],
+  "usage": {
+    "input": 744,
+    "output": 1126,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0050992,
+  "verses": [
+    {
+      "chapter": 3,
+      "verse": 21,
+      "text_ar": "فقد خالف آدم الأول، وقد كان مثقلًا بقلب فاسد، فخُلب وغُلب، وكذلك الجميع المنحدرون منه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 22,
+      "text_ar": "فصارت الأمراض دائمة. وكان الناموس في قلب الشعب مع شر الجذر، فمضى الذي هو صالح وبقي الذي هو شرير.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 23,
+      "text_ar": "فمضت الأزمنة واكتملت السنوات، ثم أعددت عبدًا اسمه داود،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 24,
+      "text_ar": "فأمَرته أن يقيم مدينةً لاسمك، وأن يُقدّم لك فيها محرقات مما لك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 25,
+      "text_ar": "فلمّا تمّ هذا بعد سنين، عمل أسوان المدينة الشرّ،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 26,
+      "text_ar": "فرضة جميع الأمور التي عملها آدم فابنوه، لأَن لهم قلوبًا شريرة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 27,
+      "text_ar": "فأمنت مدينتك بيد أعدائك.",
+      "review_notes_ar": [
+        "يجب إصلاح 'أمنت' إلى 'سلّمت' في النص المترجم النهائي، هذا مجرد اقتراح للمراجعة."
+      ]
+    },
+    {
+      "chapter": 3,
+      "verse": 28,
+      "text_ar": "ثم قلت في قلبي: أوَهَلْ تفوق أعمال ساكني بابل؟ ولماذا سادوا على صهيون؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 29,
+      "text_ar": "فحدث أنه لما أقبلت إلى هنا رأيت أيضًا أمواجًا لا تُحصى، ورأت روحي خطاةً كثيرين في هذه السنة الثلاثين، فأخنقت قلبي.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 30,
+      "text_ar": "لأنني رأيت كيف صبرت على ذنوبهم، ونجيت غير المقنّعين، وأهلكت قومك، وحفظت أعداءك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 31,
+      "text_ar": "ولم تُظهر كيف تُفهم طرقك، أوأعمل بابل أفضلُ من أعمال صهيون؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 32,
+      "text_ar": "أوأيّ أمةٍ أخرى علمتك إلا إسرائيل؟ أوأيّ قبائلٍ صدقتِ أحقادك كهذه قبائل يعقوب؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 33,
+      "text_ar": "وَلَكِن لا يبدو ثوابهم، ومشقتهم بلا ثمر، لأنني جُلتُ هناّ وهناك في الشعوب، فأبصرهم يكثرُ أغنياءًا، ولا يفكرون في وصاياك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 34,
+      "text_ar": "فważن الآن خطاياهم في الميزان، وكذلك هي الساكنين في العالم، فيُرى أيّ جانبٍ يترجح الميزان إليه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 35,
+      "text_ar": "ومتى لم يعصي الساكنون في الأرض دونك؟ أوأيّة أمةٍ حفظت أوامرك هكذا؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 3,
+      "verse": 36,
+      "text_ar": "وتجد رجَالاً بأسمائهم حفظوا وصاياك، ولكن لا تجد أمماً.",
+      "review_notes_ar": []
+    }
+  ]
+}

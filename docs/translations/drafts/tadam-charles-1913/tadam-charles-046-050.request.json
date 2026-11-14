@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":18,\"source_ref\":\"18:2\",\"text\":\"and there will I be, until I die.' And she began to walk towards the western parts and to mourn\"},{\"chapter\":18,\"source_ref\":\"18:3\",\"text\":\"and to weep bitterly and groan aloud. And she made there a booth, while she had in her womb offspring of three months old.\"},{\"chapter\":19,\"source_ref\":\"19:1\",\"text\":\"And when the time of her bearing approached, she began to be distressed with pains, and she\"},{\"chapter\":19,\"source_ref\":\"19:2\",\"text\":\"cried aloud to the Lord and said: 'Pity me, O Lord, assist me.' And she was not heard and the\"},{\"chapter\":19,\"source_ref\":\"19:3\",\"text\":\"mercy of God did not encircle her. And she said to herself: 'Who shall tell my lord Adam I implore you, ye luminaries of heaven, what time ye return to the east, bear a message to my lord Adam.'\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "b5468f44-8f3c-428e-9ab6-d9f89bd4d9c9",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 18:2, 18:3, 19:1, 19:2, 19:3.",
+  "tenant_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"4BAR\",\"chapter\":1,\"verses\":[{\"chapter\":1,\"text\":\"1 When the children of Israel were taken captive by the king of the Chaldeans, God spoke to Jeremiah saying: “Jeremiah, my chosen one, get up and leave from this city, you and Baruch, since I am going to destroy it because of the many sins of those who live in it.\",\"verse\":1},{\"chapter\":1,\"text\":\"2 For your prayers are like a solid pillar within it, and like an indestructible wall surrounding it.\",\"verse\":2},{\"chapter\":1,\"text\":\"3 Now, then, get up and leave before the army of the Chaldeans surrounds it.”\",\"verse\":3},{\"chapter\":1,\"text\":\"4 And Jeremiah answered, saying: “I beg you, Lord, allow me, your servant, to speak in your presence.”\",\"verse\":4},{\"chapter\":1,\"text\":\"5 And the Lord said to him: “Speak, my chosen one Jeremiah.”\",\"verse\":5}]}"
+    }
+  ],
+  "tenant_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "b7f4cda3-2b96-429e-84b4-cc7911363743",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5 in this chapter.",
+  "application_id": "rafeeq-bible-translation"
+}

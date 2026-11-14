@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":32,\"source_ref\":\"32:2\",\"text\":\"'Do not eat of it.' But God gave a part of paradise to me and (a part) to your mother: the trees of the eastern part and the north, which is over against Aquilo he gave to me, and to your mother he gave the part of the south and the western part.\"},{\"chapter\":33,\"source_ref\":\"33:1\",\"text\":\"(Moreover) God the Lord gave us two angels\"},{\"chapter\":33,\"source_ref\":\"33:2\",\"text\":\"to guard us. The hour came when the angels had ascended to worship in the sight of God; forthwith the adversary [the devil] found an opportunity while the angels were absent and the devil led your mother astray to eat of the\"},{\"chapter\":33,\"source_ref\":\"33:3\",\"text\":\"unlawful and forbidden tree. And she did eat and gave to me.\"},{\"chapter\":34,\"source_ref\":\"34:1\",\"text\":\"And immediately, the Lord God was wrath with us, and the Lord said to me: 'In that thou hast left behind my commandment and hast not kept my word, which I confirmed to thee; behold, I will bring upon thy body, seventy blows; with divers griefs, shalt thou be tormented, beginning at thy head and thine eyes and thine ears down to thy nails on thy toes, and in every\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "ce744e12-0df6-4436-bba0-d9751ebd4568",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 32:2, 33:1, 33:2, 33:3, 34:1.",
+  "tenant_id": "rafeeq-bible-translation"
+}

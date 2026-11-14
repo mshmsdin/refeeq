@@ -1,0 +1,17 @@
+{
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "2f8bf684-14d8-49cc-aaad-1599ac87e956",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"chapter\":6,\"source_ref\":\"6:13\",\"verse\":13,\"text\":\"And at the end of seven days, in the six hundredth year of the life of Noah, the waters of the flood were upon the earth.\"},{\"chapter\":6,\"source_ref\":\"6:14\",\"verse\":14,\"text\":\"And all the fountains of the deep were broken up, and the windows of heaven were opened, and the rain was upon the earth forty days and forty nights.\"},{\"chapter\":6,\"source_ref\":\"6:15\",\"verse\":15,\"text\":\"And Noah and his household, and all the living creatures that were with him, came into the ark on account of the waters of the flood, and the Lord shut him in.\"},{\"chapter\":6,\"source_ref\":\"6:16\",\"verse\":16,\"text\":\"And all the sons of men that were left upon the earth, became exhausted through evil on account of the rain, for the waters were coming more violently upon the earth, and the animals and beasts were still surrounding the ark.\"},{\"chapter\":6,\"source_ref\":\"6:17\",\"verse\":17,\"text\":\"And the sons of men assembled together, about seven hundred thousand men and women, and they came unto Noah to the ark.\"},{\"chapter\":6,\"source_ref\":\"6:18\",\"verse\":18,\"text\":\"And they called to Noah, saying, Open for us that we may come to thee in the ark--and wherefore shall we die?\"},{\"chapter\":6,\"source_ref\":\"6:19\",\"verse\":19,\"text\":\"And Noah, with a loud voice, answered them from the ark, saying, Have you not all rebelled against the Lord, and said that he does not exist? and therefore the Lord brought upon you this evil, to destroy and cut you off from the face of the earth.\"},{\"chapter\":6,\"source_ref\":\"6:20\",\"verse\":20,\"text\":\"Is not this the thing that I spoke to you of one hundred and twenty years back, and you would not hearken to the voice of the Lord, and now do you desire to live upon earth?\"},{\"chapter\":6,\"source_ref\":\"6:21\",\"verse\":21,\"text\":\"And they said to Noah, We are ready to return to the Lord; only open for us that we may live and not die.\"},{\"chapter\":6,\"source_ref\":\"6:22\",\"verse\":22,\"text\":\"And Noah answered them, saying, Behold now that you see the trouble of your souls, you wish to return to the Lord; why did you not return during these hundred and twenty years, which the Lord granted you as the determined period?\"}]}"
+    }
+  ]
+}

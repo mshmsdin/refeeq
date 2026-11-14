@@ -1,0 +1,51 @@
+﻿{
+    "request_id":  "f361a147-c235-432e-8f8b-3a5d5f460948",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"فذهبت في طريقي كما أمرني إلى الحقل الذي يدعونه أردات، وهناك جلست بين الزهور وأكلت من عشب الحقل، فشبعني هذا الطعام.\",\n      \"verse\": 26\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"وكان بعد سبعة أيام أنني اضطجعت على العشب، فاضطرب قلبي مرة أخرى كالسابق.\",\n      \"verse\": 27\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"وانفتح فمي فابتديت أتكلم أمام الرب العلي وقلت:\",\n      \"verse\": 28\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"أيها الرب، لقد أظهرت نفسك لنا، ولآبائنا في البرية حين خرجوا من مصر وعندما أتوا إلى البرية حيث لا يطؤها إنسان ولا تثمر.\",\n      \"verse\": 29\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"وقلت: اسمعوا لي يا إسرائيل، وأصغوا إلى كلامي يا نسل يعقوب.\",\n      \"verse\": 30\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  318,
+                  "output":  326,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0009104,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  1,
+    "attempts":  [
+                     {
+                         "modelId":  "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+                         "provider":  "Groq Paid",
+                         "model":  "qwen/qwen3.8-27b",
+                         "status":  "skipped",
+                         "errorCode":  "quota",
+                         "estimatedCost":  null,
+                         "latencyMs":  0,
+                         "inputPrice":  "0.8000000000",
+                         "outputPrice":  "4.0000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.8000000000",
+                         "imagePrice":  "0.0000000000"
+                     },
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  318,
+                         "outputTokens":  326,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0009104,
+                         "latencyMs":  1543
+                     }
+                 ]
+}

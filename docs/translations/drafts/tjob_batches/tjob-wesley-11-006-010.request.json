@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+      "role": "system"
+    },
+    {
+      "content": "{\"verses\":[{\"chapter\":11,\"verse\":6,\"text\":\"Only do not forsake the Lord. Be charitable towards the poor; Do not disregard the feeble. Take not unto yourselves wives from strangers.\"},{\"chapter\":11,\"verse\":7,\"text\":\"Behold, my children, I shall divide among you what I possess, so that each may have control over his own and have full power to do good with his share\\\".\"},{\"chapter\":11,\"verse\":8,\"text\":\"And after he had spoken thus, he brought all his goods and divided them among his seven sons, but he gave nothing of his goods to his daughters.\"},{\"chapter\":11,\"verse\":9,\"text\":\"Then they said to their father: \\\"Our lord and father! Are we not also thy children Why, then, dost thou not also give us a share of thy possessions\\\"\"},{\"chapter\":11,\"verse\":10,\"text\":\"Then said Job to his daughters : \\\"Do not become angry my daughters. I have not forgotten you. Behold, I have preserved for you a possession better than that which your brothers have taken\\\".\"}],\"chapter\":11,\"book_code\":\"TJOB\"}",
+      "role": "user"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter.",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "78ac9d40-de62-4cd4-bb32-24767090d065"
+}

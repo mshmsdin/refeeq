@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":16,\"book_code\":\"2ES\",\"verses\":[{\"verse\":71,\"chapter\":16,\"text\":\"They will be like mad men, sparing none, but spoiling and destroying those who still fear the Lord.\"},{\"verse\":72,\"chapter\":16,\"text\":\"For they will destroy and plunder their goods, and throw them out of their houses.\"},{\"verse\":73,\"chapter\":16,\"text\":\"Then the trial of my elect will be made known, even as the gold that is tried in the fire.\"},{\"verse\":74,\"chapter\":16,\"text\":\"Hear, my elect ones, says the Lord: “Behold, the days of suffering are at hand, and I will deliver you from them.\"},{\"verse\":75,\"chapter\":16,\"text\":\"Don’t be afraid, and don’t doubt, for God is your guide.\"},{\"verse\":76,\"chapter\":16,\"text\":\"You who keep my commandments and precepts,” says the Lord God, “don’t let your sins weigh you down, and don’t let your iniquities lift themselves up.”\"},{\"verse\":77,\"chapter\":16,\"text\":\"Woe to those who are choked with their sins and covered with their iniquities, like a field is choked with bushes, and its path covered with thorns, that no one may travel through!\"},{\"verse\":78,\"chapter\":16,\"text\":\"It is shut off and given up to be consumed by fire.\"}]}"
+    }
+  ],
+  "request_id": "5d259f4d-490b-4c6f-bd0f-eb1c8afb5464",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 71,72,73,74,75,76,77,78 in this chapter.",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "tenant_id": "rafeeq-bible-translation"
+}

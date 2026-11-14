@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "f4fcc679-6526-457e-a697-76155e78fa56",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"ثم صليت وقلت: «أتظن أنني سأعيش حتى ذلك الحقبة؟ أم من سيحيا في تلك الأيام؟»\",\n      \"verse\": 51\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فأجابني: «أما عن الآلام التي سألتني عنها، فربما أحدثك عنها جزئياً؛ ولكني لم أُرْسَل لأخبرك عن حياتك، لأني لا أعرف».\",\n      \"verse\": 52\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  214,
+                  "output":  168,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0004842,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  214,
+                         "outputTokens":  168,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0004842,
+                         "latencyMs":  1243
+                     }
+                 ]
+}

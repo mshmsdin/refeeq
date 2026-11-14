@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":11,\"verses\":[{\"chapter\":11,\"text\":\"I counted her wings that were near the others, and behold, there were eight of them.\",\"verse\":11},{\"chapter\":11,\"text\":\"I saw, and behold, on the right side one wing arose and reigned over all the earth.\",\"verse\":12},{\"chapter\":11,\"text\":\"When it reigned, the end of it came, and it disappeared, so that its place appeared no more. The next wing rose up and reigned, and it ruled a long time.\",\"verse\":13},{\"chapter\":11,\"text\":\"It happened that when it reigned, its end came also, so that it disappeared, like the first.\",\"verse\":14},{\"chapter\":11,\"text\":\"Behold, a voice came to it, and said,\",\"verse\":15}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "0bf6793d-d3e9-4cfd-81e8-52de9c3ecf63",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter."
+}

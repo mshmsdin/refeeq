@@ -1,0 +1,37 @@
+{
+  "request_id": "b47a2153-3a73-4118-8543-817712de9d81",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"١١ ولما قال باروخ هذا، قال لأبيمالك: «قم لنصل لكي يرينا الرب كيف سنكون قادرين على إرسال التقرير إلى إرميا في بابل عن المأوى الذي جُهِّز لك في الطريق».\",\n      \"verse\": 11\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"١٢ وصلى باروخ قائلاً: «أيها الرب الإله، قوتنا هي النور المختار الخارج من فمك.\",\n      \"verse\": 12\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"١٣ نرجوك بصلاحك، يا من لا يقدر أحد أن يعرف اسمك العظيم، أن تسمع صوت عبيدك وتجعل المعرفة تدخل إلى قلوبنا.\",\n      \"verse\": 13\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"١٤ ماذا سنفعل، وكيف سنرسل هذا التقرير إلى إرميا في بابل؟»\",\n      \"verse\": 14\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"١٥ وبينا كان باروخ لا يزال يصلي، جاء ملاك الرب وقال كل هذه الكلمات لباروخ: «يا وكيل النور، لا تقلق بشأن كيف سترسل إلى إرميا، فإن نسراً آتٍ إليك في ساعة النور غداً، وستوجهه إلى إرميا».\",\n      \"verse\": 15\n    }\n  ]\n}",
+  "usage": {
+    "input": 364,
+    "output": 400,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0011092,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 364,
+      "outputTokens": 400,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011092,
+      "latencyMs": 1655
+    }
+  ]
+}

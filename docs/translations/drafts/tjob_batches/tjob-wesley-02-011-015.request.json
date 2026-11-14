@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "94d30625-8263-4317-9013-a0e449ac76e2",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":2,\"verses\":[{\"chapter\":2,\"verse\":11,\"text\":\"And the servant cried and spoke in grief: \\\"Thou speakest the truth, saying that I am a bad servant. because I have not done as I was instructed by my master\\\".\"},{\"chapter\":2,\"verse\":12,\"text\":\"And he turned back and brought him the burnt bread and said to him : \\\"Thus says my lord : Thou shalt not eat of my bread anymore, for it is forbidden to thee.\"},{\"chapter\":2,\"verse\":13,\"text\":\"And this he gave me [saying: This I give] in order that the charge may not be brought against me that I did not give to the enemy who asked\\\".)\"},{\"chapter\":2,\"verse\":14,\"text\":\"And when Satan heard this, he sent back the servant to me, saying: \\\"As thou seest this bread all burnt, so shall I soon burn thy body to make it like this\\\".\"},{\"chapter\":2,\"verse\":15,\"text\":\"And I replied: \\\"Do what thou desirest to do and accomplish whatever thou plottest. For I am ready to endure whatever thou bringest upon me\\\".\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter."
+}

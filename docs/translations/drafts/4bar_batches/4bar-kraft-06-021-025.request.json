@@ -1,0 +1,18 @@
+{
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "14211921-216e-4c56-8e31-724be5d020a5",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+      "role": "system"
+    },
+    {
+      "content": "{\"verses\":[{\"verse\":21,\"chapter\":6,\"text\":\"21 So the Lord has had compassion on our tears, and has remembered the covenant which he established with our ancestors Abraham, Isaac and Jacob.\"},{\"verse\":22,\"chapter\":6,\"text\":\"22 And he sent his angel to me, and he told me these words which I send to you.\"},{\"verse\":23,\"chapter\":6,\"text\":\"23 “These, then, are the words which the Lord, the God of Israel, spoke, who led us out of Egypt, out of the great furnace: ‘Because you did not keep my laws, but your heart grew proud, and you were arrogant before me, in anger and fury I handed you over to the furnace in Babylon.\"},{\"verse\":24,\"chapter\":6,\"text\":\"24 If, therefore, says the Lord, you listen to my voice, from the mouth of Jeremiah my servant, I will bring the one who listens up from Babylon; but the one who does not listen will become a stranger to Jerusalem and to Babylon.\"},{\"verse\":25,\"chapter\":6,\"text\":\"25 And you will test them by means of the water of the Jordan; whoever does not listen will be exposed. This is the sign of the great seal.’”\"}],\"book_code\":\"4BAR\",\"chapter\":6}",
+      "role": "user"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24,25 in this chapter."
+}

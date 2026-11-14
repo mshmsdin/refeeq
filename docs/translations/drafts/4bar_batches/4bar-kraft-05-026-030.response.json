@@ -1,0 +1,37 @@
+{
+  "request_id": "d4fb4ee2-3a35-450d-85e6-1086f179e4d2",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ولكي تعلم، خذ التين وانظر!\",\n      \"verse\": 26\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وكشف سلة التين للشيخ، فرآها تقطر حليباً.\",\n      \"verse\": 27\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فلما رأها الشيخ، قال: \\\"يا ابني، أنت رجل بار، ولم يشأ الله أن ترى خراب المدينة، لذلك أوقع عليك هذا السبات.\",\n      \"verse\": 28\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"لأنه قد مضى اليوم ست وستون سنة منذ سُبي الشعب إلى بابل.\",\n      \"verse\": 29\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"ولكي تتعلم يا ابني، أن ما أقوله لك هو حق، انظر إلى الحقل وترى أن المحاصيل لم تبدأ بعد في النضج.\",\n      \"verse\": 30\n    }\n  ]\n}",
+  "usage": {
+    "input": 307,
+    "output": 294,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0008271,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 307,
+      "outputTokens": 294,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008271,
+      "latencyMs": 1258
+    }
+  ]
+}

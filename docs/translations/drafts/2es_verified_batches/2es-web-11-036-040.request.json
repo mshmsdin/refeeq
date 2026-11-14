@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":11,\"verses\":[{\"chapter\":11,\"text\":\"Then I heard a voice, which said to me, â€œLook in front of you, and consider the thing that you see.â€‌\",\"verse\":36},{\"chapter\":11,\"text\":\"I saw, and behold, something like a lion roused out of the woods roaring. I heard how he sent out a manâ€™s voice to the eagle, and spoke, saying,\",\"verse\":37},{\"chapter\":11,\"text\":\"â€œListen and I will talk with you. The Most High will say to you,\",\"verse\":38},{\"chapter\":11,\"text\":\"â€کArenâ€™t you the one that remains of the four animals whom I made to reign in my world, that the end of my times might come through them?\",\"verse\":39},{\"chapter\":11,\"text\":\"The fourth came and overcame all the animals that were past, and ruled the world with great trembling, and the whole extent of the earth with grievous oppression. He lived on the earth such a long time with deceit.\",\"verse\":40}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "22247f4c-6715-45c2-8a1b-9cb44eef513d",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 36,37,38,39,40 in this chapter."
+}

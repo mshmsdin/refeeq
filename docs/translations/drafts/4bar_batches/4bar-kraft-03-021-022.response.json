@@ -1,0 +1,37 @@
+{
+  "request_id": "c7188a57-ab40-498a-90b9-d60518547449",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"ولما جاء الصباح، أرسل إرميا في طلب أبيمالك، قائلاً: \\\"خذ سلة واذهب إلى ضيعة أغريباس في طريق الجبل، وأحتضن بعض التين لتعطيه للمرضى بين الشعب، لأن نعمة الرب عليك ومجده على رأسك.\\\"\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"ولما قال هذا، صرفه إرميا، فذهب أبيمالك كما أمره.\",\n      \"verse\": 22\n    }\n  ]\n}",
+  "usage": {
+    "input": 222,
+    "output": 173,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0004991,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 222,
+      "outputTokens": 173,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0004991,
+      "latencyMs": 1185
+    }
+  ]
+}

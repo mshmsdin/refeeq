@@ -1,0 +1,114 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 61,
+  "batch_end": 70,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "a86b62ee-3365-468a-93a6-6dc6973796e0",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "error",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "503",
+      "estimatedCost": null,
+      "latencyMs": 3162
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 847,
+      "outputTokens": 805,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1883
+    }
+  ],
+  "usage": {
+    "input": 847,
+    "output": 805,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "text_ar": "وحملت مرة أخرى وأنجبت ابنة، فأسمتها ناما، لأنها قالت: بعد أن ذبلت حصلت على المتعة والسرور.",
+      "chapter": 2,
+      "source_ref": "2:25"
+    },
+    {
+      "text_ar": "وكان لاميك قد شاخ وتقدم في السن، وكانت عينيه ضعيفتين لا يرى بهما، وكان طوبال كاين، ابنه، يقوده، وفي يومٍ واحدٍ ذهب لاميك إلى الحقل وكان طوبال كاين ابنه معه، وبينما كانا يمشيان في الحقل اقترب منهما قايين ابن آدم؛ لأن لاميك كان كبيراً في السن ولا يرى كثيراً، وكان طوبال كاين ابنه صغيراً جداً.",
+      "chapter": 2,
+      "source_ref": "2:26"
+    },
+    {
+      "text_ar": "فأخبر طوبال كاين والده أن يشد قوسه، وبالسهام ضرب قايين الذي كان لا يزال بعيداً، وقتله، لأنه بدا لهم كحيوان.",
+      "chapter": 2,
+      "source_ref": "2:27"
+    },
+    {
+      "text_ar": "وَدَخَلَتِ السهامُ جسد قايين رغم بُعده عنهم، فَسَقَطَ على الأرض ومات.",
+      "chapter": 2,
+      "source_ref": "2:28"
+    },
+    {
+      "text_ar": "وأجَابَ الرَّبُّ قايين بالشر وفقاً لشره الذي ارتكبه على أخيه هابيل، بحسب كلمة الرب التي كان قد نطق بها.",
+      "chapter": 2,
+      "source_ref": "2:29"
+    },
+    {
+      "text_ar": "وعندما مات قايين، ذهب لاميك وطوبال ليروا الحيوان الذي قتلوا، فرأوا، فإليك قايين جدهم سقط ميتاً على الأرض.",
+      "chapter": 2,
+      "source_ref": "2:30"
+    },
+    {
+      "text_ar": "فحزن لاميك كثيراً لما فعله، وبصفق يديه ضرب ابنه فتسبب في موته.",
+      "chapter": 2,
+      "source_ref": "2:31"
+    },
+    {
+      "text_ar": "وسمعت زوجات لاميك ما فعله، فطلبن قتلَه.",
+      "chapter": 2,
+      "source_ref": "2:32"
+    },
+    {
+      "text_ar": "وبدأت زوجات لاميك يكرهنه من ذلك اليوم، لأنه قتل قايين وطوبال كاين، فابتعدن عنه ولم يكن يلتفتن له في تلك الأيام.",
+      "chapter": 2,
+      "source_ref": "2:33"
+    },
+    {
+      "text_ar": "فجاء لاميك إلى زوجاته، وضغط عليهن ليستمعن إليه فيما يخص هذا الأمر.",
+      "chapter": 2,
+      "source_ref": "2:34"
+    }
+  ]
+}

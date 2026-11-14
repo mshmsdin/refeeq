@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":37,\"source_ref\":\"37:1\",\"text\":\"Then Seth and his mother went off towards the gates of paradise. And while they were walking, lo! suddenly there came a beast\"},{\"chapter\":37,\"source_ref\":\"37:2\",\"text\":\"[a serpent] and attacked and bit Seth. And as soon as Eve saw it, she wept and said: 'Alas, wretched woman that I am. I am accursed since I have not kept the commandment of God.'\"},{\"chapter\":37,\"source_ref\":\"37:3\",\"text\":\"And Eve said to the serpent in a loud voice: 'Accursed beast! how (is it that) thou hast not feared to let thyself loose against the image of God, but hast dared to fight with it'\"},{\"chapter\":38,\"source_ref\":\"38:1\",\"text\":\"The beast answered in the language of men: 'Is it not against you, Eve, that our malice (is directed) Are not ye the objects of our rage\"},{\"chapter\":38,\"source_ref\":\"38:2\",\"text\":\"Tell me, Eve, how was thy mouth opened to eat of the fruit But now if I shall begin to reprove thee thou canst not bear it.'\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "85f11002-e2f6-4b40-8c65-d2bc7847b9c2",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 37:1, 37:2, 37:3, 38:1, 38:2.",
+  "tenant_id": "rafeeq-bible-translation"
+}

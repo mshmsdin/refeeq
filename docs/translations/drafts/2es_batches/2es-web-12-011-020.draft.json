@@ -1,0 +1,105 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 12,
+  "range": "11-20",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "f56c33e4-6a5d-4232-a6e4-248231ee0938",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 458,
+      "outputTokens": 715,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0019249,
+      "latencyMs": 2061
+    }
+  ],
+  "usage": {
+    "input": 458,
+    "output": 715,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0019249,
+  "verses": [
+    {
+      "chapter": 12,
+      "verse": 11,
+      "text_ar": "أما النسر الذي رأيته طالعاً من البحر، فهو المملكة الرابعة التي ظهرت في رؤيا لأخيك دانيال.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 12,
+      "verse": 12,
+      "text_ar": "ولكنها لم تُفسر له، كما أفسرها أنا لك الآن أو كما فسرتها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 12,
+      "verse": 13,
+      "text_ar": "هوَذا الأيام آتية لتقوم مملكة على الأرض، وستكون مهوبة أكثر من جميع الممالك التي كانت قبلها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 12,
+      "verse": 14,
+      "text_ar": "وسيملك فيها اثنا عشر ملكاً، الواحد بعد الآخر.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 12,
+      "verse": 15,
+      "text_ar": "ومن بين هؤلاء، يبدأ الثاني في الملك، وسيملك مدة أطول من باقي الاثني عشر.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 12,
+      "verse": 16,
+      "text_ar": "هذا هو تفسير الأجنحة الاثني عشر التي رأيتها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 12,
+      "verse": 17,
+      "text_ar": "وأما متى سمعت صوتاً يتكلم، لا يصدر عن الرؤوس، بل من وسط جسدها، فهذا هو تفسيره:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 12,
+      "verse": 18,
+      "text_ar": "أنه بعد زمان تلك المملكة، ستحدث منازعات ليست قليلة، وستكون في خطر السقوط. ومع ذلك، فلن تسقط حينئذ، بل ستُستعاد مرة أخرى إلى قوتها السابقة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 12,
+      "verse": 19,
+      "text_ar": "ورأيت الأجنحة الثمانية التحتية الملتصقة بأجنحتها. هذا هو تفسيره:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 12,
+      "verse": 20,
+      "text_ar": "أنه سيقوم فيها ثمانية ملوك، تكون أوقاتهم قصيرة وسنواتهم سريعة.",
+      "review_notes_ar": []
+    }
+  ]
+}

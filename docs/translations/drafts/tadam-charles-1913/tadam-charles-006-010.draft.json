@@ -1,0 +1,74 @@
+{
+  "book_code": "TADAM",
+  "source_license_notice": "English translation by R. H. Charles, Oxford 1913; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-charles-1913-latin-recension",
+  "source_name": "The Books of Adam and Eve (Latin recension)",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "batch_start": 6,
+  "batch_end": 10,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "98e29591-b93d-4ffb-a9be-ca6297d38fbb",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 455,
+      "outputTokens": 424,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011965,
+      "latencyMs": 2307
+    }
+  ],
+  "usage": {
+    "input": 455,
+    "output": 424,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0011965,
+  "units": [
+    {
+      "chapter": 3,
+      "source_ref": "3:3",
+      "text_ar": "أجاب آدم: «كفّي يا حواء عن مثل هذا الكلام لعلّ الله لا يجلب علينا لعنة أخرى. كيف يُعقل أن أمدّ يدي على جسدي الخاص؟ كلا، بل لنقم ونبحث عن شيء لنعيش به لئلا نفشل»."
+    },
+    {
+      "chapter": 4,
+      "source_ref": "4:1",
+      "text_ar": "وسارا وبحثا لمدة تسعة أيام، فلم يجعدا شيئاً مما كانا قد اعتدنا أن يمتلكاه في الفردوس، بل وجدا فقط طعاماً"
+    },
+    {
+      "chapter": 4,
+      "source_ref": "4:2",
+      "text_ar": "للحيوانات والبهائم لتأكله؛"
+    },
+    {
+      "chapter": 4,
+      "source_ref": "4:3",
+      "text_ar": "أما نحن فكنا نأكل طعام الملائكة. لكنه لعادل وحق أن نحزن أمام وجه الله الذي صنعنا. فلنتتب توبة عظيمة: فلعل الرب يتحنن علينا ويرحمنا ويعطينا نصيباً من شيء لقوتنا."
+    },
+    {
+      "chapter": 5,
+      "source_ref": "5:1",
+      "text_ar": "وقالت حواء لآدم: «ما هي التوبة؟ أخبرني، أي نوع من التوبة يجب أن أصنع؟ دعنا لا نضع على أنفسنا تعباً عظيماً لا نستטיع احتماله، لئلا لا يستمع الرب إلى صلواتنا، ويصرف وجهه عنا، لأننا لم"
+    }
+  ]
+}

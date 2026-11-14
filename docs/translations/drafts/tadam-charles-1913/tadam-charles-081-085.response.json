@@ -1,0 +1,37 @@
+{
+  "request_id": "f959f465-72ea-4e30-8f82-837ecb45689a",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 29,\n      \"verse\": 4,\n      \"text_ar\": \"لخلقه جنس البشر. سيظهر الرب بلهيب نار (ومن) فم جلاله يعطي وصايا وفرائض [ومن فمه سيخرج سيف ذو حدين] ويقدسونه في بيت مسكن جلاله.\"\n    },\n    {\n      \"chapter\": 29,\n      \"verse\": 5,\n      \"text_ar\": \"ويريهم موضع جلاله العجيب. وحينئذ يبنون بيتاً للرب إلههم في الأرض التي يهيئها لهم وهناك يتعدون فرائضهم ويحترق مقدسه وتصير أرضهم خراباً وهم\"\n    },\n    {\n      \"chapter\": 29,\n      \"verse\": 6,\n      \"text_ar\": \"أنفسهم يتشتتون؛ لأنهم أضرموا غضب الله. ومرة أخرى يردّهم من شتاتهم؛ وأيضاً يبنون بيت الله؛\"\n    },\n    {\n      \"chapter\": 29,\n      \"verse\": 7,\n      \"text_ar\": \"وفي الزمان الأخير سيرتفع بيت الله أعظم من ذي قبل. ومرة أخرى يزيد الإثم على البر. وبعد ذلك يسكن الله مع البشر على الأرض [بشكل مرئي]؛ وحينئذ يبدأ البر في الإشراق. ويهاب بيت الله في الدهر ولا يقدر أعداؤهم بعد على أذية الناس المؤمنين بالله؛ ويقيم الله لنفسه شعباً أكيناً يخلصه إلى الأبد، ويعاقب الأشرار\"\n    },\n    {\n      \"chapter\": 29,\n      \"verse\": 8,\n      \"text_ar\": \"من الله ملكهم، الناس الذين رفضوا محبة شريعته. السماء والأرض، الليل والنهار، وكل الخلائق تطيعه، ولا تتعدى وصيته. ولا يغير البشر\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 531,
+    "output": 473,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0013418,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 531,
+      "outputTokens": 473,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0013418,
+      "latencyMs": 1704
+    }
+  ]
+}

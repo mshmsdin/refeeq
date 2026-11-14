@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":7,\"verses\":[{\"chapter\":7,\"verse\":31,\"text\":\"31 “But I remembered festival days which we celebrated in Jerusalem before our captivity; and when I remembered, I groaned, and returned to my house wailing and weeping.\"},{\"chapter\":7,\"verse\":32,\"text\":\"32 “Now, then, pray in the place where you and Abimelech are, for this people, that they may listen to my voice and to the decrees of my mouth, so that we can leave from here.\"},{\"chapter\":7,\"verse\":33,\"text\":\"33 For I tell you that the entire time that we have spent here they have kept us under their control, saying: ‘Recite for us a song from the songs of Zion — the song of your God.’\"},{\"chapter\":7,\"verse\":34,\"text\":\"34 And we reply to them: ‘How can we sing for you since we are in a foreign land?’”\"},{\"chapter\":7,\"verse\":35,\"text\":\"35 And after this, Jeremiah tied the letter to the eagle’s neck, saying: “Go in peace, and may the Lord watch over both of us.”\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "9867be32-e7b1-483b-9d11-4d06c3d42f65",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 31,32,33,34,35 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

@@ -1,0 +1,90 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  6,
+    "range":  "51-59",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "58d87771-6fe9-42d5-b0a3-0a28a53f8a22",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  490,
+                         "outputTokens":  575,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0015845,
+                         "latencyMs":  2045
+                     }
+                 ],
+    "usage":  {
+                  "input":  490,
+                  "output":  575,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0015845,
+    "verses":  [
+                   {
+                       "chapter":  6,
+                       "text_ar":  "أعطית بهيموث القسم الواحد الذي جف في اليوم الثالث لیسكن فیه? حیث توجد ألف تل?",
+                       "verse":  51
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "أما لواياثان فأعطیته القسم السابع? أي القسم المائي? وحفظتهما لیؤكلا ممن تشاء وفي الوقت الذي تشاء.",
+                       "verse":  52
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وفي الیوم السادس أمرت الأرض أن تنتج أمامك بهائم وحیوانات ودبابات.",
+                       "verse":  53
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "وعلى هذه أقمت أدم رئيساً على كل أعمالك التي صنعتها. ومنه خرجنا نحن جميعاً? الشعب الذي اخترته.",
+                       "verse":  54
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "كل هذا تكلمت به قدامك يا رب? لأنك قلت إنك من أجلنا خلقت هذا العالم.",
+                       "verse":  55
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "أما الأمم الأخرى التي هي أيضاً من نسل آدم? فقد قلت إنهم لا شيء ومثل البصاق? وشبهت كثرتهم بقطرة تسقط من دلو.",
+                       "verse":  56
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "والآن يا رب? انظر إلى هذه الأمم التي تُحسب لا شيء? وكيف أنها تتسلط علينا وتلتهمنا.",
+                       "verse":  57
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "أما نحن شعبك الذي دعوته بكَركَ البكر? ابنك الوحيد? ومحبوبك الغيور? فقد أُسلمنا إلى أيديهم.",
+                       "verse":  58
+                   },
+                   {
+                       "chapter":  6,
+                       "text_ar":  "فإن كان العالم قد صُنع من أجلنا? فلماذا لا نرتث عالمنا ميراثاً؟ إلى متى يستمر هذا؟",
+                       "verse":  59
+                   }
+               ]
+}

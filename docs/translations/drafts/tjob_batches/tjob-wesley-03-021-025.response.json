@@ -1,0 +1,37 @@
+{
+  "request_id": "0c028f36-da26-418d-a11d-7fc15aeef58a",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"حينئذ يأتون ويقولون: \\\"نسألك أن تتعامل معنا بسخاء لكي نرى كيف يمكننا أن نرد لك ما هو لك\\\".\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"ولما سمعت هذا، أشفقت عليهم، وسلمتهم صكهم، وكنت قد قرأته مراراً أمامهم فمزقته وأعفيتهم من دينهم، قائلاً لهم:\",\n      \"verse\": 22\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"\\\"إن ما خصصته لمنفعة الفقراء، لن آخذه منكم\\\".\",\n      \"verse\": 23\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"وهكذا لم أقبل شيئاً من مديوني.\",\n      \"verse\": 24\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"ولما جاءني رجل بقلب منشرح قائلاً: لست محتاجاً لأكون مجبراً على أن أكون عاملاً بأجر لأجل الفقراء.\",\n      \"verse\": 25\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 301,
+    "output": 325,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009027999999999999,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 301,
+      "outputTokens": 325,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009027999999999999,
+      "latencyMs": 1751
+    }
+  ]
+}

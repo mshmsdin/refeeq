@@ -1,0 +1,16 @@
+{
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate every English source unit into accurate, complete Modern Standard Arabic. Stay faithful to the supplied text; add nothing from memory or other Bible versions. Use natural, grammatically correct Arabic. Return JSON only with book_code and verses[{chapter,verse,text_ar}]. Return exactly one item for each source unit in the same order with exact numeric references. No Latin letters. Expected refs: 1:21, 1:22, 1:23, 1:24, 1:25, 1:26, 1:27, 1:28, 1:29, 1:30"
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"source_ref\":\"1:21\",\"chapter\":1,\"verse\":21,\"text\":\"And Cain said to his brother Abel, Surely if I slay thee this day, who will require thy blood from me?\"},{\"source_ref\":\"1:22\",\"chapter\":1,\"verse\":22,\"text\":\"And Abel answered Cain, saying, Surely God who has made us in the earth, he will avenge my cause, and he will require my blood from thee shouldst thou slay me, for the Lord is the judge and arbiter, and it is he who will requite man according to his evil, and the wicked man according to the wickedness that he may do upon earth.\"},{\"source_ref\":\"1:23\",\"chapter\":1,\"verse\":23,\"text\":\"And now, if thou shouldst slay me here, surely God knoweth thy secret views, and will judge thee for the evil which thou didst declare to do unto me this day.\"},{\"source_ref\":\"1:24\",\"chapter\":1,\"verse\":24,\"text\":\"And when Cain heard the words which Abel his brother had spoken, behold the anger of Cain was kindled against his brother Abel for declaring this thing.\"},{\"source_ref\":\"1:25\",\"chapter\":1,\"verse\":25,\"text\":\"And Cain hastened and rose up, and took the iron part of his ploughing instrument, with which he suddenly smote his brother and he slew him, and Cain spilt the blood of his brother Abel upon the earth, and the blood of Abel streamed upon the earth before the flock.\"},{\"source_ref\":\"1:26\",\"chapter\":1,\"verse\":26,\"text\":\"And after this Cain repented having slain his brother, and he was sadly grieved, and he wept over him and it vexed him exceedingly.\"},{\"source_ref\":\"1:27\",\"chapter\":1,\"verse\":27,\"text\":\"And Cain rose up and dug a hole in the field, wherein he put his brother's body, and he turned the dust over it.\"},{\"source_ref\":\"1:28\",\"chapter\":1,\"verse\":28,\"text\":\"And the Lord knew what Cain had done to his brother, and the Lord appeared to Cain and said unto him, Where is Abel thy brother that was with thee?\"},{\"source_ref\":\"1:29\",\"chapter\":1,\"verse\":29,\"text\":\"And Cain dissembled, and said, I do not know, am I my brother's keeper? And the Lord said unto him, What hast thou done? The voice of thy brother's blood crieth unto me from the ground where thou hast slain him.\"},{\"source_ref\":\"1:30\",\"chapter\":1,\"verse\":30,\"text\":\"For thou hast slain thy brother and hast dissembled before me, and didst imagine in thy heart that I saw thee not, nor knew all thy actions.\"}]}"
+    }
+  ]
+}

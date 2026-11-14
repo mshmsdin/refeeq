@@ -1,0 +1,193 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 7,
+  "range": "41-60",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "19a21c59-7a8e-438a-93ec-3fdbf68f9d73",
+  "failovers": 2,
+  "attempts": [
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 894,
+      "outputTokens": 1522,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0040732,
+      "latencyMs": 4168
+    }
+  ],
+  "usage": {
+    "input": 894,
+    "output": 1522,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0040732,
+  "verses": [
+    {
+      "chapter": 7,
+      "verse": 41,
+      "text_ar": "لا صيفٌ، ولا ربيعٌ، ولا حرٌّ، ولا شتاءٌ، ولا صقيعٌ، ولا بردٌ، ولا بَرَدٌ، ولا مطرٌ، ولا ندىً،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 42,
+      "text_ar": "ولا ظهيرةٌ، ولا ليلٌ، ولا فجرٌ، ولا إشراقٌ، ولا ضياءٌ، ولا نورٌ، إلا فقط بهاء مجد العليّ، الذي به يرى الجميع الأمور الموضوعة أمامهم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 43,
+      "text_ar": "ستدوم كأنها أسبوع سنين.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 44,
+      "text_ar": "هذا هو قضاؤي وترتيبه المرسوم؛ ولكني ما أريتك هذه الأمور إلا لك وحدك.\"",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 45,
+      "text_ar": "فأجبتُ وقلتُ: \"لقد قلتُ يا رب حينئذٍ، وأقول الآن: طوبى للذين هم أحياءٌ الآن ويحفظون وصاياك!",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 46,
+      "text_ar": "ولكن ماذا عن أولئك الذين صلّيتُ لأجلهم؟ لأنه مَن ذا من الأحياء لم يخطئ، ومَن من بني البشر لم يتعدَّ عهدك؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 47,
+      "text_ar": "ها إنني أرى أن العالم الآتي سيجلب مسرةً لقليلين، وعذاباتٍ لكثيرين.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 48,
+      "text_ar": "لأن قلباً شرّيراً قد نما فينا، وهو الذي أضلّنا عن هذه الوصايا وأدخلنا في الفساد وفي طرق الموت، وأرانا سبل الهلاك وأبعدنا كثيراً عن الحياة، وليس ذلك لقليلين فحسب، بل تقريباً لكل الذين خُلقوا.\"",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 49,
+      "text_ar": "فأجابني وقال: \"اسمعْ مني فأعلمك، وأنذرك أيضاً مرة أخرى.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 50,
+      "text_ar": "لهذا السبب، لم يصنع العليّ عالماً واحداً بل عالمين.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 51,
+      "text_ar": "ولأنك قلتَ إن الأبرار ليسوا كثيرين بل قليلون، وإن الأشرار يكثرون، فاسمع التفسير.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 52,
+      "text_ar": "لو كان لديك حجارة كريمة قليلة فقط، أفتضمها إلى الرصاص والطين؟\"",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 53,
+      "text_ar": "فقلتُ: \"يا رب، كيف يكون ذلك؟\"",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 54,
+      "text_ar": "فقال لي: \"ليس هكذا فحسب، بل اسأل الأرض وهي تخبرك، واسئلها فتبين لك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 55,
+      "text_ar": "وقل لها: أنتِ تنتجين ذهباً وفضةً ونحاساً، وأيضاً حديداً ورصاصاً وطیناً،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 56,
+      "text_ar": "ولكن الفضة أكثر وفرةً من الذهب، والنحاس من الفضة، والحديد من النحاس، والرصاص من الحديد، والطين من الرصاص.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 57,
+      "text_ar": "فاحكم إذن أيّ الأشياء ثمينٌ ومُشتهى، وما هو الكثير الوفير وما هو النادر؟\"",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 58,
+      "text_ar": "فقلتُ: \"أيها الرب السيد، إن ما يكثر وجوده فهو أقل قيمةً، لأن ما هو نادرٌ فهو أكثر ثمناً.\"",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 59,
+      "text_ar": "فأجابني وقال: \"زنْ في نفسك الأمور التي تفكر فيها، فإن من يملك ما يصعب نيله يفرح بمن يملك ما هو وفير.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 60,
+      "text_ar": "وهكذا أيضاً هو القضاء الذي وعدتُ به؛ فإني سأفرح بالقلة الذين سيخلصون، لأنهم هم الذين جعلوا مجدي يغلب الآن، وبهم يُקרَم اسمي الآن.\"",
+      "review_notes_ar": []
+    }
+  ]
+}

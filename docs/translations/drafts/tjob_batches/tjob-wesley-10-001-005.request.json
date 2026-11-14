@@ -1,0 +1,18 @@
+{
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5 in this chapter.",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"TJOB\",\"chapter\":10,\"verses\":[{\"verse\":1,\"chapter\":10,\"text\":\"They repeated it again and again that I suffered deservedly thus for having committed many sins, and that there was no hope left for me, but I retorted to these men in zest of contention myself.\"},{\"verse\":2,\"chapter\":10,\"text\":\"And they rose in anger, ready to part in wrathful spirit. But Elihu conjured them to stay yet a little while until he would have shown them what it was.\"},{\"verse\":3,\"chapter\":10,\"text\":\"\\\"For\\\", said he, \\\"so many days did you pass, allowing Job to boast that he is just. But I shall no longer suffer it.\"},{\"verse\":4,\"chapter\":10,\"text\":\"For from the beginning did I continue crying over him, remembering his former happiness. But now he speaks boastfully and in overbearing pride he says that he has his throne in the heavens.\"},{\"verse\":5,\"chapter\":10,\"text\":\"Therefore, hear me, and I will tell you what is the cause of his destiny.\"}]}"
+    }
+  ],
+  "request_id": "798ca546-d902-4e1f-ad3d-ab28e084b0f7",
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad"
+}

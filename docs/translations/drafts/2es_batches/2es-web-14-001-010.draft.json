@@ -1,0 +1,105 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 14,
+  "range": "1-10",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "f2abd19d-0e3c-4eca-930e-26d6521fe9ff",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 459,
+      "outputTokens": 693,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0018702,
+      "latencyMs": 2831
+    }
+  ],
+  "usage": {
+    "input": 459,
+    "output": 693,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0018702,
+  "verses": [
+    {
+      "chapter": 14,
+      "verse": 1,
+      "text_ar": "وكان في اليوم الثالث، أنني جلست تحت شجرة بلوط، وإذا صوت خرج من عليقة قريبة مني وقال: «يا عزرا، يا عزرا!».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 2,
+      "text_ar": "فقلت: «هأنذا يا رب»، وقمت على قدمي.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 3,
+      "text_ar": "فقال لي حينئذ: «لقد أعلنت نفسي في عليقة وتكلمت مع موسى حين كان شعبي في العبودية بمصر.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 4,
+      "text_ar": "وأرسلته فأخرج شعبي من مصر، وصعدت به إلى جبل سيناء حيث أقمته معي لأيام كثيرة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 5,
+      "text_ar": "وأخبرته بأمور عجيبة كثيرة، وأريته أسرار الأزمنة ونهاية الأوقات، وأمرته قائلًا:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 6,
+      "text_ar": "هذه تعلنها علانية، وهذه تخفيها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 7,
+      "text_ar": "والآن أقول لك:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 8,
+      "text_ar": "احفظ في قلبك الآيات التي أريتك إياها، والأحلام التي رأيتها، والتفسيرات التي سمعتها؛",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 9,
+      "text_ar": "لأنك سترفع عن البشر، ومن الآن فصاعداً ستعيش مع ابني ومع أولئك الذين هم مثلك، حتى تنقضي الأزمنة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 14,
+      "verse": 10,
+      "text_ar": "فإن العالم قد فقد شبابه، والأزمنة تشرع في الشيخوخة.",
+      "review_notes_ar": []
+    }
+  ]
+}

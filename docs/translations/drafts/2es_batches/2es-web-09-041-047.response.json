@@ -1,0 +1,37 @@
+{
+  "request_id": "271869d1-0f59-4de2-a116-6249808f02d7",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 9,\n      \"verse\": 41,\n      \"text_ar\": \"قالت لي: “اتركني، يا سيدي، لأبكي على نفسي وأزيد حُزني، فقد اضطرب قلبي جداً، وخُطَّني جداً.”\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 42,\n      \"text_ar\": \"فقلت لها: “ما بك؟ أخبريني.”\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 43,\n      \"text_ar\": \"قالت لي: “أنا، أمةُك، كنت عاقرَ فلا لي ولدٍ، ولقد تزوجت ثلاثة وثلاثين سنة.”\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 44,\n      \"text_ar\": \"كل ساعة وكل يوم من هذه الثلاثين سنة كنت أدعو العلي ليلاً ونهاراً.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 45,\n      \"text_ar\": \"وكان بعد الثلاثين سنة أن سمع الله صلاتي، أمتك، ورأى انكساري، ونظر إلى شكواي، وأعطاني ابناً. ففرحت به فرحاً عظيماً، أنا وزوجي وكل جيراني. وقدَّمنا مجدًا عظيماً للعتيد.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 46,\n      \"text_ar\": \"فربَّيته بعناية فائقة.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 47,\n      \"text_ar\": \"فلما شبّ، ووددت أن أتزوجه، أعددت له وليمةً يومًا.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 373,
+    "output": 500,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+  "provider": "Groq Paid",
+  "model": "qwen/qwen3.8-27b",
+  "estimatedCost": 0.0022984,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "success",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 373,
+      "outputTokens": 500,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0022984,
+      "latencyMs": 1113
+    }
+  ]
+}

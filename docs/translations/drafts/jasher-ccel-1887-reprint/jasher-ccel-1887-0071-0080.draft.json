@@ -1,0 +1,114 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 71,
+  "batch_end": 80,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "b20ab28e-a843-4dca-a2db-5beab1e201d7",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "error",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "503",
+      "estimatedCost": null,
+      "latencyMs": 1740
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 996,
+      "outputTokens": 935,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 2335
+    }
+  ],
+  "usage": {
+    "input": 996,
+    "output": 935,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "text_ar": "وقال لزوجتيه أداه وزيلة: اسمعوا صوتي يا زوجات لاميك، انتبهن إلى كلماتي، فإنكم تخيلتم وقالتم إنني قتلت رجلاً بجروحي، وطفلاً بخطاي لأنهم لم يرتكبوا عنفاً، لكن اعلموا أنني كبير في السن وشعر رأسي رمادي، وعينيّ ثقيلة من كبر السن، وقد فعلت ذلك دون علم.",
+      "chapter": 2,
+      "source_ref": "2:35"
+    },
+    {
+      "text_ar": "فاستمعت زوجات لاميك إليه في هذا الأمر، وعادوا إليه بنصيحة أبيهن آدم، ولم ينجبن له أطفالاً من ذلك الحين، مدركاتً أن غضب الله كان يتصاعد في تلك الأيام ضد بني البشر، ليهلكهم بمياه الطوفان بسبب شرورهم.",
+      "chapter": 2,
+      "source_ref": "2:36"
+    },
+    {
+      "text_ar": "وعاش مهلال بن كاينان خمسة وستين سنة وأنجب يارد؛ وعاش يارد اثنتين وستين سنة وأنجب أخنوخ.",
+      "chapter": 2,
+      "source_ref": "2:37"
+    },
+    {
+      "text_ar": "وعاش أخنوخ خمسة وستين سنة وأنجب متوشالح؛ وسار أخنوخ مع الله بعد أن أنجب متوشالح، وخدم الرب، واستهين بطُرق الناس الشريرة.",
+      "chapter": 3,
+      "source_ref": "3:1"
+    },
+    {
+      "text_ar": "فكانت روح أخنوخ ملفوفة في تعاليم الرب، في المعرفة والفهم؛ فتقاعس بحكمة عن أبناء الناس، واختفى عنهم لسنوات عديدة.",
+      "chapter": 3,
+      "source_ref": "3:2"
+    },
+    {
+      "text_ar": "وعند انتهاء سنوات عديدة وهو يخدم الرب ويصلي أمامه في بيته، نادى إليه ملاك الرب من السماء، فقال: ها أنا.",
+      "chapter": 3,
+      "source_ref": "3:3"
+    },
+    {
+      "text_ar": "وقال: انهض، اخْرُج من بيتك ومن المكان الذي تختبئ فيه، وظهر أمام أبناء البشر، لكي تعلمهم الطريق الذي يجب أن يسلكوه والعمل الذي يجب أن يؤدوه لدخول سُبُل الله.",
+      "chapter": 3,
+      "source_ref": "3:4"
+    },
+    {
+      "text_ar": "فقام أخنوخ وفق كلمة الرب، فخرج من بيته ومن مكانه ومن الغرفة التي كان يختبئ فيها؛ فذهب إلى أبناء البشر وعلمهم سُبُل الرب، وفي ذلك الوقت جمع أبناء البشر وأطلعهم على تعاليم الرب.",
+      "chapter": 3,
+      "source_ref": "3:5"
+    },
+    {
+      "text_ar": "وأمر بأن يُعلَن في جميع الأماكن التي يسكن فيها أبناء البشر، قائلاً: أين الرجل الذي يرغب في معرفة سُبُل الرب والأعمال الصالحة؟ فليأتِ إلى أخنوخ.",
+      "chapter": 3,
+      "source_ref": "3:6"
+    },
+    {
+      "text_ar": "فاجتمع كل أبناء البشر إليه، لأن كل من أراد ذلك جاء إلى أخنوخ، وحكم أخنوخ على أبناء البشر وفق كلمة الرب، فأتوا وسجدوا له وسمعوا كلمته.",
+      "chapter": 3,
+      "source_ref": "3:7"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "request_id": "580419cb-77f6-440f-9892-1daafab53cc3",
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate every English source unit into accurate, complete Modern Standard Arabic. Do not add commentary. Preserve meaning and names, and do not omit text. Return JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. Return exactly one item per input, in the same order, with exact numeric references. Arabic only; do not use Latin letters. Expected refs: 1:1, 1:2, 1:3, 1:4, 1:5, 1:6, 1:7, 1:8, 1:9, 1:10"
+    },
+    {
+      "role": "user",
+      "content": "{\"units\":[{\"verse\":1,\"source_ref\":\"1:1\",\"text\":\"And God said, Let us make man in our image, after our likeness, and God created man in his own image.\",\"chapter\":1},{\"verse\":2,\"source_ref\":\"1:2\",\"text\":\"And God formed man from the ground, and he blew into his nostrils the breath of life, and man became a living soul endowed with speech.\",\"chapter\":1},{\"verse\":3,\"source_ref\":\"1:3\",\"text\":\"And the Lord said, It is not good for man to be alone; I will make unto him a helpmeet.\",\"chapter\":1},{\"verse\":4,\"source_ref\":\"1:4\",\"text\":\"And the Lord caused a deep sleep to fall upon Adam, and he slept, and he took away one of his ribs, and he built flesh upon it, and formed it and brought it to Adam, and Adam awoke from his sleep, and behold a woman was standing before him.\",\"chapter\":1},{\"verse\":5,\"source_ref\":\"1:5\",\"text\":\"And he said, This is a bone of my bones and it shall be called woman, for this has been taken from man; and Adam called her name Eve, for she was the mother of all living.\",\"chapter\":1},{\"verse\":6,\"source_ref\":\"1:6\",\"text\":\"And God blessed them and called their names Adam and Eve in the day that he created them, and the Lord God said, Be fruitful and multiply and fill the earth.\",\"chapter\":1},{\"verse\":7,\"source_ref\":\"1:7\",\"text\":\"And the Lord God took Adam and his wife, and he placed them in the garden of Eden to dress it and to keep it; and he commanded them and said unto them, From every tree of the garden you may eat, but from the tree of the knowledge of good and evil you shall not eat, for in the day that you eat thereof you shall surely die.\",\"chapter\":1},{\"verse\":8,\"source_ref\":\"1:8\",\"text\":\"And when God had blessed and commanded them, he went from them, and Adam and his wife dwelt in the garden according to the command which the Lord had commanded them.\",\"chapter\":1},{\"verse\":9,\"source_ref\":\"1:9\",\"text\":\"And the serpent, which God had created with them in the earth, came to them to incite them to transgress the command of God which he had commanded them.\",\"chapter\":1},{\"verse\":10,\"source_ref\":\"1:10\",\"text\":\"And the serpent enticed and persuaded the woman to eat from the tree of knowledge, and the woman hearkened to the voice of the serpent, and she transgressed the word of God, and took from the tree of the knowledge of good and evil, and she ate, and she took from it and gave also to her husband and he ate.\",\"chapter\":1}],\"book_code\":\"JASHER\"}"
+    }
+  ]
+}

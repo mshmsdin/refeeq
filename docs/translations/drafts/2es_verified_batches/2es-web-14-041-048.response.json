@@ -1,0 +1,37 @@
+{
+  "request_id": "1b257664-97fd-4e28-aaba-d8fb716e2de4",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"text_ar\": \"انفتح فمي ولم أغلقه بعد.\",\n      \"chapter\": 14,\n      \"verse\": 41\n    },\n    {\n      \"text_ar\": \"وأعطى العلي فهماً للرجال الخمسة، فكتبوا تباعاً الأمور التي قيلت لهم بحروف لم يكونوا يعرفونها، وجلسوا أربعين يوماً. وكانوا يكتبون في النهار، وفي الليل يأكلون خبزاً.\",\n      \"chapter\": 14,\n      \"verse\": 42\n    },\n    {\n      \"text_ar\": \"أما أنا فتكلمت في النهار، ولم أصمت في الليل.\",\n      \"chapter\": 14,\n      \"verse\": 43\n    },\n    {\n      \"text_ar\": \"هكذا في أربعين يوماً، كُتبت أربعة وتسعون كتاباً.\",\n      \"chapter\": 14,\n      \"verse\": 44\n    },\n    {\n      \"text_ar\": \"وحدث عندما كملت الأيام الأربعون، أن العلي كلمني قائلاً: \\\"الكتب الأولى التي كتبتها، انشرها علانية، وليقرأها المستحقون وغير المستحقين؛\",\n      \"chapter\": 14,\n      \"verse\": 45\n    },\n    {\n      \"text_ar\": \"أما السبعون الأخيرة فاحفظها لكي تسلمها إلى الحكماء من شعبك؛\",\n      \"chapter\": 14,\n      \"verse\": 46\n    },\n    {\n      \"text_ar\": \"لأنه فيهم نبع الفهم، ومصدر الحكمة، ونهل المعرفة.\\\"\",\n      \"chapter\": 14,\n      \"verse\": 47\n    },\n    {\n      \"text_ar\": \"ففعلت هكذا.\",\n      \"chapter\": 14,\n      \"verse\": 48\n    }\n  ]\n}",
+  "usage": {
+    "input": 397,
+    "output": 478,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0013141,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 397,
+      "outputTokens": 478,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0013141,
+      "latencyMs": 1557
+    }
+  ]
+}

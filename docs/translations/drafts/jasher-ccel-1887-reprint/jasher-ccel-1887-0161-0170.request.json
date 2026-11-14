@@ -1,0 +1,17 @@
+{
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "8f2a4228-8c61-4568-b40f-be5a3db72130",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"chapter\":5,\"source_ref\":\"5:29\",\"verse\":29,\"text\":\"And behold I will bring the flood of waters upon the earth, and all flesh be destroyed, from under the heavens all that is upon earth shall perish.\"},{\"chapter\":5,\"source_ref\":\"5:30\",\"verse\":30,\"text\":\"And thou and thy household shall go and gather two couple of all living things, male and female, and shall bring them to the ark, to raise up seed from them upon earth.\"},{\"chapter\":5,\"source_ref\":\"5:31\",\"verse\":31,\"text\":\"And gather unto thee all food that is eaten by all the animals, that there may be food for thee and for them.\"},{\"chapter\":5,\"source_ref\":\"5:32\",\"verse\":32,\"text\":\"And thou shalt choose for thy sons three maidens, from the daughters of men, and they shall be wives to thy sons.\"},{\"chapter\":5,\"source_ref\":\"5:33\",\"verse\":33,\"text\":\"And Noah rose up, and he made the ark, in the place where God had commanded him, and Noah did as God had ordered him.\"},{\"chapter\":5,\"source_ref\":\"5:34\",\"verse\":34,\"text\":\"In his five hundred and ninety-fifth year Noah commenced to make the ark, and he made the ark in five years, as the Lord had commanded.\"},{\"chapter\":5,\"source_ref\":\"5:35\",\"verse\":35,\"text\":\"Then Noah took the three daughters of Eliakim, son of Methuselah, for wives for his sons, as the Lord had commanded Noah.\"},{\"chapter\":5,\"source_ref\":\"5:36\",\"verse\":36,\"text\":\"And it was at that time Methuselah the son of Enoch died, nine hundred and sixty years old was he, at his death.\"},{\"chapter\":6,\"source_ref\":\"6:1\",\"verse\":1,\"text\":\"At that time, after the death of Methuselah, the Lord said to Noah, Go thou with thy household into the ark; behold I will gather to thee all the animals of the earth, the beasts of the field and the fowls of the air, and they shall all come and surround the ark.\"},{\"chapter\":6,\"source_ref\":\"6:2\",\"verse\":2,\"text\":\"And thou shalt go and seat thyself by the doors of the ark, and all the beasts, the animals, and the fowls, shall assemble and place themselves before thee, and such of them as shall come and crouch before thee, shalt thou take and deliver into the hands of thy sons, who shall bring them to the ark, and all that will stand before thee thou shalt leave.\"}]}"
+    }
+  ]
+}

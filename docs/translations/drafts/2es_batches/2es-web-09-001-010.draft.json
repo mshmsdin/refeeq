@@ -1,0 +1,105 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 9,
+  "range": "1-10",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "24ef2f36-d85f-40cb-8cf0-0505780a694c",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 464,
+      "outputTokens": 744,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0019992,
+      "latencyMs": 2420
+    }
+  ],
+  "usage": {
+    "input": 464,
+    "output": 744,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0019992,
+  "verses": [
+    {
+      "chapter": 9,
+      "verse": 1,
+      "text_ar": "فأجابني وقال: «قسْ بدقة في نفسك؛ فحين ترى أن جزءاً معيناً من الآلام قد انقضى، والتي أُخبرت بها من قبل،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 2,
+      "text_ar": "حينئذ تفهم أنه هو الوقت عينه الذي فيه سيفتقد العلي العالم الذي صُنِع بواسطته.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 3,
+      "text_ar": "فحين تُرى في العالم زلازل، وضجيج شعوب، ومؤامرات أمم، وتزعزع قادة، واضطراب رؤساء،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 4,
+      "text_ar": "حينئذ تفهم أن العلي تكلم عن هذه الأمور منذ الأيام القديمة، منذ البدء.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 5,
+      "text_ar": "لأنه كما هو الحال في كل ما يُصنع في العالم، فإن البداية واضحة والنهاية ظاهرة،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 6,
+      "text_ar": "هكذا أيضاً أزمنة العلي: البدايات ظاهرة بالعجائب والأعمال العظيمة، والنهاية بالأفعال والآيات.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 7,
+      "text_ar": "وكل من سيُخلَّص، ويستطيع النجاة بأعماله، أو بالإيمان الذي به آمنوا،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 8,
+      "text_ar": "سيُحفظ من الأخطار المذكورة، وسيرى خلاصي في أرضي وفي تخومي التي قدّستها لنفسي منذ البدء.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 9,
+      "text_ar": "حينئذ يتعجب أولئك الذين أساءوا استخدام طرقي الآن، والذين نبذوها باحتقار سيعيشون في العذاب.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 10,
+      "text_ar": "لأنه بقدر ما نال كثيرون من الخيرات في حياتهم، ومع ذلك لم يعرفوني،",
+      "review_notes_ar": []
+    }
+  ]
+}

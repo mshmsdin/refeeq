@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 121,
+  "batch_end": 125,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "834ca409-a3d4-40bb-b117-ec5c992c3fa1",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 390,
+      "outputTokens": 343,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009745,
+      "latencyMs": 1413
+    }
+  ],
+  "usage": {
+    "input": 390,
+    "output": 343,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0009745,
+  "units": [
+    {
+      "chapter": 35,
+      "source_ref": "35:4",
+      "text_ar": "الزنج الذين يقفون عند الصلوات من أجل أبيك آدم؟"
+    },
+    {
+      "chapter": 36,
+      "source_ref": "36:1",
+      "text_ar": "وأخبر شيث أمه أنهما الشمس والقمر وهما يخران ساجدين ويصليان نيابة عن أبي آدم. فقالت له حواء:"
+    },
+    {
+      "chapter": 36,
+      "source_ref": "36:2",
+      "text_ar": "وأين نورهم ولماذا اكتسيا هذا المظهر الأسود؟"
+    },
+    {
+      "chapter": 36,
+      "source_ref": "36:3",
+      "text_ar": "فأجابها شيث: لم يفارقهم النور، ولكن لا يقدران أن يضيئا أمام نور الكون، أب الأنوار؛ ولهذا السبب حُجب عنهما نورها."
+    },
+    {
+      "chapter": 37,
+      "source_ref": "37:1",
+      "text_ar": "وبينما كان شيث يقول هذا لأمه، إذا بملاك ينفخ في البوق، ووقف كل الملائكة (الذين كانوا) على وجوههم، وصرخوا بصوت مهيب وقالوا: مبارك مجد الرب من"
+    }
+  ]
+}

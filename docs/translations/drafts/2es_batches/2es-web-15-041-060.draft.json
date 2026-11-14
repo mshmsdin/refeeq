@@ -1,0 +1,179 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 15,
+  "range": "41-60",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "e17fdf42-4128-4df0-9ef0-2f14e268d086",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "error",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 48
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 870,
+      "outputTokens": 1458,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.003906,
+      "latencyMs": 4216
+    }
+  ],
+  "usage": {
+    "input": 870,
+    "output": 1458,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.003906,
+  "verses": [
+    {
+      "chapter": 15,
+      "verse": 41,
+      "text_ar": "ناراً وبَرَداً وسُيوفاً طائرةً ومياهاً كثيرةً، لكي تمتثل كل السهول، وكل الأنهار، بوفرة تلك المياه.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 42,
+      "text_ar": "سيهدمون المدن والأسوار، الجبال والتلول، أشجار الغابة، وعشب المروج، وغلاتها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 43,
+      "text_ar": "سيمضون بخطى ثابتة نحو بابل ويدمرونها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 44,
+      "text_ar": "سيأتون إليها ويحاصرونها، ويسكبون عليها العاصفة وكل الغضب، وحينئذ يصعد الغبار والدخان إلى السماء، وكل من حولها ينوحون عليها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 45,
+      "text_ar": "والذين يبقون سيخدمون أولئك الذين دمروها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 46,
+      "text_ar": "أيتها الآسيا، يا من تشاركين في جمال بابل، وفي مجد بهائها —",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 47,
+      "text_ar": "ويل لك أيتها الشقية، لأنك جعلت نفسِك مثلها، وزيّنت بناتك للزنى لكي يُرضين ويفتخرن بمحبيك الذين اشتهوك دائماً!",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 48,
+      "text_ar": "لقد اتبعتِ تلك البغيضة في كل أعمالها ومخترعاتها؛ ولذلك يقول الرب:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 49,
+      "text_ar": "«سأرسل عليك شروراً: أرملةً، وفقراً، ومجاعةً، وسيفاً، ووباءً، لتخريب بيوتك وتسليمك للدمار والموت.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 50,
+      "text_ar": "ومجد قوتك سيجف كزهرة حين ترتفع الحرارة المرسلة عليك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 51,
+      "text_ar": "ستضعفين كامرأة مسكينة مضروبة ومجروحة، حتى لا تستطيعي استقبال عظمائك ومحبيك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 52,
+      "text_ar": "أكنتُ أتعامل معك بمثل هذه الغيرة»، يقول الرب،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 53,
+      "text_ar": "«لو لم تقتلي دائماً مختاريّ، متبجحة ومصفقة بيديك، ومتحدثةً عن موتاهم وأنت سكرانة؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 54,
+      "text_ar": "جمّلي وجهك!",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 55,
+      "text_ar": "أجرة الزانية ستكون في حضنك، ولذلك ستجازين.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 56,
+      "text_ar": "وكما ستفعلين بمختاريّ»، يقول الرب، «هكذا يفعل بك الله ويسلمك إلى أعدائك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 57,
+      "text_ar": "أولادك سيحوتون جوعاً، وتسقطين بالسيف، وتهدم مدنك، ويهلك كل شعبك في الحقول بالسيف.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 58,
+      "text_ar": "والذين في الجبال سيموتون جوعاً، ويأكلون لحم أنفسهم ويشربون دم أنفسهم، بسبب الجوع إلى الخبز والعطش إلى الماء.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 59,
+      "text_ar": "وأنت، الشقية فوق الجميع، ستأتين وتقبلين الشرور مرة أخرى.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 15,
+      "verse": 60,
+      "text_ar": "في العبور، سيقحمون على المدينه البغيضة ويهدمون جزءاً من أرضك، ويشوهون قسماً من مجدك، ثم يعودون ثانية إلى بابل التي دُمرت.",
+      "review_notes_ar": []
+    }
+  ]
+}

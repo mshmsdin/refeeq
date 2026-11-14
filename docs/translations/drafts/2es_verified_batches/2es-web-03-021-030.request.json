@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":3,\"verses\":[{\"chapter\":3,\"text\":\"For the first Adam, burdened with a wicked heart transgressed and was overcome, as were all who are descended from him.\",\"verse\":21},{\"chapter\":3,\"text\":\"Thus disease was made permanent. The law was in the heart of the people along with the wickedness of the root. So the good departed away and that which was wicked remained.\",\"verse\":22},{\"chapter\":3,\"text\":\"So the times passed away, and the years were brought to an end. Then you raised up a servant, called David,\",\"verse\":23},{\"chapter\":3,\"text\":\"whom you commanded to build a city to your name, and to offer burnt offerings to you in it from what is yours.\",\"verse\":24},{\"chapter\":3,\"text\":\"When this was done many years, then those who inhabited the city did evil,\",\"verse\":25},{\"chapter\":3,\"text\":\"in all things doing as Adam and all his generations had done, for they also had a wicked heart.\",\"verse\":26},{\"chapter\":3,\"text\":\"So you gave your city over into the hands of your enemies.\",\"verse\":27},{\"chapter\":3,\"text\":\"â€œThen I said in my heart, â€کAre their deeds of those who inhabit Babylon any better? Is that why it gained dominion over Zion?â€™\",\"verse\":28},{\"chapter\":3,\"text\":\"For it came to pass when I came here, that I also saw impieties without number, and my soul saw many sinners in this thirtieth year, so that my heart failed me.\",\"verse\":29},{\"chapter\":3,\"text\":\"For I have seen how you endure them sinning, and have spared those who act ungodly, and have destroyed your people, and have preserved your enemies;\",\"verse\":30}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "b23149a1-2515-4141-821c-926457b7a772",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24,25,26,27,28,29,30 in this chapter."
+}

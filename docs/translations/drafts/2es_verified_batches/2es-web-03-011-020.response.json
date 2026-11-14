@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "e693d5d4-8c71-45cc-9a57-0513bdd12b06",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"ولكنك تركت واحدا منهم، نوحا مع أهل بيته، وكل الأبرار الذين تناسلوا منه.\",\n      \"verse\": 11\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"وحدث أنه عندما بدأ الذين عاشوا على الأرض في التكاثر، أكثروا أيضا الأولاد والشعوب والأمم الكثيرة، وبدأوا مرة أخرى يصيرون أكثر فجورا من آبائهم.\",\n      \"verse\": 12\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"وحدث عندما صنعوا الشر قدامك، اخترت واحدا من بينهم، كان اسمه إبراهيم.\",\n      \"verse\": 13\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"أحببته، وله وحده أظهرت نهاية الأوقات سرا بالليل،\",\n      \"verse\": 14\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"وصنعت معه عهدا أبديا، واعدا إياه أنك لن تترك نسله أبدا. وله أعطيت إسحاق، ولإسحاق أعطيت يعقوب وعيسو.\",\n      \"verse\": 15\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"وأفرزت يعقوب لنفسك، ورفضت عيسو. فصار يعقوب جماعة عظيمة.\",\n      \"verse\": 16\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"وحدث عندما أخرجت نسله من مصر، صعدت بهم إلى جبل سيناء.\",\n      \"verse\": 17\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"وطأطأت السماوات أيضا، وزلزلت الأرض، وحركت العالم كله، وجعلت الأعماق ترتعد، وأزعجت الدهر.\",\n      \"verse\": 18\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"واجتاز مجدك عبر أربعة أبواب: من نار، وزلزلة، وريح، وجليد، لكي تعطي الشريعة لنسل يعقوب، والوصية لنسل إسرائيل.\",\n      \"verse\": 19\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"ومع ذلك لم تنزع منهم قلبهم الشرير، لكي تثمر شريعتك فيهم.\",\n      \"verse\": 20\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  504,
+                  "output":  645,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0017637,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  504,
+                         "outputTokens":  645,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017637,
+                         "latencyMs":  2480
+                     }
+                 ]
+}

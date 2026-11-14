@@ -1,0 +1,37 @@
+{
+  "request_id": "1298fa89-6a71-4f66-86df-dff8bd97275b",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"ولما تحدثت هكذا إليهم، هوذا زوجتي سيتيس جاءت راكضة، مرتدية أسمالاً بالية من خدمة السيد الذي كانت تعمل عنده كأبدة رغم أنه مُنع عليها المغادرة، لكيلا يأخذها الملوك سبية إن رأوها.\",\n      \"verse\": 1\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"ولما حضرت، طرحت نفسها ساجدة عند أقدامهم، باكية وقائلة: \\\"تذكرا يا أليفاز وأيها الأصدقاء الآخرون ما كنتُه معكم يوماً، وككيف تغيرت، وكيف أنا مرتدية الآن لألقاكم\\\".\",\n      \"verse\": 2\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"حينئذ اندفع الملوك في بكاء شديد، وإذ كانوا في حيرة مزدوجة، لزموا الصمت. غير أن أليفاز أخذ رداءه الأرجواني وطرحه حولها لكي تلتف به.\",\n      \"verse\": 3\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"لكنها سألته قائلة: \\\"أسألكم معروفاً يا ساداتي، أن تأمروا جنودكم بأن يحفروا بين أنقاض بيتنا الذي سقط على أطفالي، لكي تُحمل عظامهم بحالة سليمة إلى القبور\\\".\",\n      \"verse\": 4\n    },\n    {\n      \"chapter\": 9,\n      \"text_ar\": \"إذ ليس لنا، بسبب بليتنا، أي قدرة البتة، وحتى نتمكن على الأقل من رؤية عظامهم.\",\n      \"verse\": 5\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 395,
+    "output": 443,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.001226,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 395,
+      "outputTokens": 443,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.001226,
+      "latencyMs": 2577
+    }
+  ]
+}

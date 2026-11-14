@@ -1,0 +1,37 @@
+{
+  "request_id": "348e46d0-f977-486e-a800-d8891d4ec771",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"وأولادي، بعد تولي مسؤولية الخدمة، تناولوا طعامهم كل يوم مع أخواتهم الثلاث مبتدئين بالأخ الأكبر، وصنعوا وليمة.\",\n      \"verse\": 1\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"وقمت في الصباح وقدمت ذبيحة خطيئة لأجلهم خمسين كشماً وتسعة عشر خروفاً، وما تبقى من الفائض قُدّس للفقراء.\",\n      \"verse\": 2\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"وقلت لهم: \\\"خذوا هذا كفائض وصلّوا من أجل أولادي.\",\n      \"verse\": 3\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"لعل أبنائي قد خطئوا أمام الرب متكلمين بتكبر الروح: نحن أبناء هذا الرجل الغني. لنا كل هذه الأموال؛ فلماذا نكون خدماً للفقراء؟\\\"\",\n      \"verse\": 4\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"وإذ تكلموا هكذا بروح متكبرة، ربما أثاروا غضب الله، لأن الكبرياء المفرطة هي رجاسة أمام الرب.\\\"\",\n      \"verse\": 5\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 318,
+    "output": 347,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009628999999999999,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 318,
+      "outputTokens": 347,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009628999999999999,
+      "latencyMs": 2020
+    }
+  ]
+}

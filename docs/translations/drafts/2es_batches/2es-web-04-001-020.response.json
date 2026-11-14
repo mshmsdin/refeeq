@@ -1,0 +1,79 @@
+{
+  "request_id": "10bb3b2e-92e7-459c-baf5-074706fe6473",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":4,\"verse\":1,\"text_ar\":\"فأجابني الملاك الذي أرسل لي، واسمه أوريل،\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":2,\"text_ar\":\"وقال لي: «لقد قصر فهمك تماماً فيما يتعلق بهذا العالم. أفتظن أنك تستطيع إدراك طريق العلي؟»\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":3,\"text_ar\":\"فقلت: «نعم يا رب». فأجابني: «لقد أرسلت لأريك ثلاثة طرق، وأعرض عليك ثلاثة أمور.\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":4,\"text_ar\":\"فإن استطعت أن تحل لي واحداً منها، فسأريك أيضاً الطريق الذي تشتهي أن تراه، وأعلمك لماذا القلب شرير».\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":5,\"text_ar\":\"فقلت: «تفضل بالتكلم يا رب». فقال لي: «اذهب فزن لي وزن النار، أو قس لي هبة ريح، أو استرجع لي اليوم الذي مضى».\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":6,\"text_ar\":\"فأجبت وقلت: «من من بني البشر قادراً على فعل هذا، حتى تسألني عن أمور كهذه؟»\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":7,\"text_ar\":\"فقال لي: «لو سألتك: كم مسكناً يوجد في قلب البحر؟ أو كم ينبوعاً في رأس ينبوع الغمر؟ أو كم نهراً فوق الجلد؟ أو ما هي مخارج الهاوية؟ أو ما هي مداخل الفردوس؟\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":8,\"text_ar\":\"لربما قلت لي: «إنني لم أنزل قط إلى الغمر، ولا إلى الهاوية بعد، ولم أصعد قط إلى السماء».\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":9,\"text_ar\":\"ومع ذلك فقد سألتك الآن فقط عن النار والريح واليوم، وهي أمور اختبرتها ولا يمكنك الانفكاك عنها، ومع ذلك لم تعطني عنها أي جواب».\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":10,\"text_ar\":\"وقال لي أيضاً: «إنك لا تستطيع أن تفهم أمور الخاصة بك التي نشأت معها.\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":11,\"text_ar\":\"فكيف إذن يمكن لعقلك أن يدرك طريق العلي؟ وكيف يمكن لمن قد أنهكه العالم الفاسد أصلاً أن يفهم عدم الفساد؟» ولما سمعت هذا الكلام، خررت على وجهي،\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":12,\"text_ar\":\"وقلت له: «لأكان خيراً لو لم نكن هنا قط، على أن نأتي إلى هنا ونعيش في وسط الفجور، ونتألم، ولا نعرف السبب».\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":13,\"text_ar\":\"فأجابني وقال: «خرجت غابة من أشجار الحقل وتشاوروا معاً،\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":14,\"text_ar\":\"وقالوا: تعالوا! لنذهب ونصنع حرباً ضد البحر، لكي ينحسر أمامنا، ولكي نصنع لأأنفسنا غابات أكثر.\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":15,\"text_ar\":\"وكذلك تشاورت أمواج البحر أيضاً على حد سواء، وقالت: تعالوا! لنصعد ونخضع غابة السهل، لكي نكتسب هناك أيضاً مساحة أكبر».\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":16,\"text_ar\":\"وكان مشورة الخشب باطلة، لأن النار أتت وأكلته.\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":17,\"text_ar\":\"وكذلك كانت مشورة أمواج البحر أيضاً، لأن الرمل وقف ومنعها.\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":18,\"text_ar\":\"فلو كنت قاضياً الآن بين هذين، فأيهما تبرر، أو أيهما تدين؟»\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":19,\"text_ar\":\"فأجبت وقلت: «إنها مشورة حمقاء أخذاها كلاهما، لأن الأرض أعطيت للخشب، وموضع البحر أعطى ليحمل أمواجه».\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":20,\"text_ar\":\"فأجابني وقال: «لقد أصدرت حكماً صحيحاً. فلماذا لا تحكم على قضيتك الخاصة؟»\",\"review_notes_ar\":[]}]}",
+  "usage": {
+    "input": 985,
+    "output": 1105,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.003058,
+  "estimatedCostCurrency": "USD",
+  "failovers": 3,
+  "attempts": [
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "error",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 33
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 985,
+      "outputTokens": 1105,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.003058,
+      "latencyMs": 4081
+    }
+  ]
+}

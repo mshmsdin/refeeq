@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "48016d83-0824-44b7-88d5-55573a550e1a",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"فقال لي: «في البداءة، عندما صُنعت الأرض، قبل أن تُثبت أبواب العالم وققبل أن تهب مجاميع الرياح،\",\n      \"verse\": 1\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"قبل أن تدوّي أصوات الرعد وقبل أن تلمع ومضات البرق، قبل أن تُرسي أسس الفردوس،\",\n      \"verse\": 2\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"قبل أن يُرى الزهر الجميل، قبل أن تثبت قوات الزلزال، قبل أن يجتمع جيش الملائكة لا يُحصى عدده،\",\n      \"verse\": 3\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"قبل أن تترتفع أعالي الهواء، قبل أن تُسمى مقاييس الجلد، قبل أن يُثبت موطئ قدم صهيون،\",\n      \"verse\": 4\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"قبل أن تُحسب السنوات الحالية، وقبل أن تُقصى تخيلات الذين يخطئون الآن، وققبل أن يُختم الذين جمعوا الإيمان ككنز -\",\n      \"verse\": 5\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  311,
+                  "output":  346,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0009582999999999999,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  311,
+                         "outputTokens":  346,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0009582999999999999,
+                         "latencyMs":  1491
+                     }
+                 ]
+}

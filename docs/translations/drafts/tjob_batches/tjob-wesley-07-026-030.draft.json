@@ -1,0 +1,71 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 7,
+  "range": "26-30",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "be55ec0e-6629-49f8-adab-0fbc5ea5691d",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 350,
+      "outputTokens": 681,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0018075,
+      "latencyMs": 2983
+    }
+  ],
+  "usage": {
+    "input": 350,
+    "output": 681,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0018075,
+  "verses": [
+    {
+      "chapter": 7,
+      "text_ar": "فأجَبْتُهُ وَقُلْتُ: «أنَا هُوَ»، وَعِنْدَ ذَلِكَ بَكَى الجَمِيعُ وَنَاحُوا، وَرَنَّمُوا تَرَنُّمَةَ نَوْحٍ مَلَكِيَّةً، وَانْضَمَّ إِلَيْهِمْ جَيْشُهُمْ بِأَسْرِهِ فِي جَوْقَةِ إنْشَادٍ.",
+      "verse": 26
+    },
+    {
+      "chapter": 7,
+      "text_ar": "وَقَالَ أَلِيفَازُ لِي مَرَّةً أُخْرَى: «أَأَنْتَ هُوَ الذِي أَمَرَ بِإِعْطَاءِ سَبْعَةِ آلَافِ خَرُوفٍ لِكِسْوَةِ الفُقَرَاءِ؟ فَإِلَى أَيْنَ إِذاً ذَهَبَ مَجْدُ عَرْشِكَ؟»",
+      "verse": 27
+    },
+    {
+      "chapter": 7,
+      "text_ar": "«أَأَنْتَ هُوَ الذِي أَمَرَ ثَلَاثَةَ آلَافِ ثَوْرٍ بِفِلَاحَةِ الحَقْلِ لِأَجْلِ الفُقَرَاءِ؟ فَإِلَى أَيْنَ إِذَنْ ذَهَبَ مَجْدُكَ!»",
+      "verse": 28
+    },
+    {
+      "chapter": 7,
+      "text_ar": "«أَأَنْتَ هُوَ الذِي كَانَتْ لَهُ أَسِرَّةٌ مِنْ ذَهَبٍ، وَهَا أَنْتَ الآنَ تَجْلِسُ عَلَى كَوْمَةِ دِمْنٍ [«فَإِلَى أَيْنَ إِذَنْ ذَهَبَ مَجْدُكَ!»]»",
+      "verse": 29
+    },
+    {
+      "chapter": 7,
+      "text_ar": "«أَأَنْتَ هُوَ الذِي أَعَدَّ سِتِّينَ مَائِدَةً لِفُقَرَاءِ؟ أَأَنْتَ هُوَ الذِي كَانَتْ لَدَيْهِ مَجَامِرُ لِلْعِطْرِ الفَاخِرِ مَصْنُوعَةٌ مِنْ أَحْجَارٍ كَرِيمَةٍ، وَهَا أَنْتَ الآنَ فِي حَالَةٍ ذَاتِ رَائِحَةٍ كَرِيهَةٍ؟ فَإِلَى أَيْنَ إِذَنْ ذَهَبَ مَجْدُكَ!»",
+      "verse": 30
+    }
+  ]
+}

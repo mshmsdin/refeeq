@@ -1,0 +1,102 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "2MCE",
+  "book_name_ar": "المكابيون الإثيوبي الثاني",
+  "source_translation": "en-wikisource-2-meqabyan",
+  "source_url": "https://en.wikisource.org/wiki/Translation:2_Meqabyan",
+  "source_license": "CC BY-SA 4.0; attribution and share-alike required for any release",
+  "source_quality": "Community English translation from Ge ez; not a critical edition.",
+  "source_sha256": "51c64f57d3bf57592839651226f2afb05610cfed090fd99da374cee7067a7cc9",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "model_id": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "request_id": "5260ef99-f0e6-4b5c-9d04-33756310aa8b",
+  "usage": {
+    "input": 1122,
+    "output": 916,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "estimated_cost_currency": "USD",
+  "translation": {
+    "book_code": "2MCE",
+    "chapter": 17,
+    "verses": [
+      {
+        "chapter": 17,
+        "verse": 1,
+        "text_ar": "حبّة القمح لا تنمو ولا تُثمر إلا إذا سُحقت أولاً (دُمرت). ولكن إذا سُحقت حبّة القمح، فإنها تُرسل جذورها إلى الأرض، وتُخرج أوراقها، وتُنتج براعم، وتُثمر.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 17,
+        "verse": 2,
+        "text_ar": "أنت تعلم أن حبة قمح واحدة تصبح عدة حبات.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 17,
+        "verse": 3,
+        "text_ar": "كذلك، تنمو هذه الحبة من خلال ارتفاعها من الماء والرياح وندى الأرض. لا يمكن للقمح أن يُثمر دون الشمس، وتعمل الشمس محلًّا للنار.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 17,
+        "verse": 4,
+        "text_ar": "تعمل الرياح محلًّا للروح؛ فالقُمح لا يثمر بلا ريح، والماء يروي الأرض لتُشبعها.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 17,
+        "verse": 5,
+        "text_ar": "بعد أن تشرب الأرض، التي هي رماد، الماء، تُنتج جذورها، وتعلو أطرافها. تُثمر وفقًا لما باركها الرب.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 17,
+        "verse": 6,
+        "text_ar": "حبّة القمح مثال على آدم، فيه تسكن روحٌ حية خلقها الرب. وكذلك، يَشرب كرمة العنب الماء وتُرسل جذورها.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 17,
+        "verse": 7,
+        "text_ar": "ندى الغفران من الرب يروي أطراف الكروم الطويلة، يرسل الماء صعودًا إلى الأوراق. تُبرعم من حرارة الشمس، وبإرادة الرب تُثمر.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 17,
+        "verse": 8,
+        "text_ar": "تُنتج عبقًا طيبًا يُبهج العقل. عندما يُؤكل، يُشبع كالْماء الذي يطفئ العطش أو كالحبوب التي تُشبع الجوع. عندما يُعصر، يصبح دمّ العنقود.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 17,
+        "verse": 9,
+        "text_ar": "كما قيل في المزامير: «النبيذ يُبهج قلب الإنسان». عندما يشربونه، يُبهج القلب. عندما يفتح الإنسان فمه ويشرب، يمتلئ، وتدفق الدم إلى قلبه.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 17,
+        "verse": 10,
+        "text_ar": "لأن سُكْر العنب قد يضلّ الإنسان ويحرم عقله، فيجعل الحفر والجبال تبدو كالمروج الواسعة؛ ولا يلحظ العقبات أو الأشواك تحت قدميه ويديه.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 17,
+        "verse": 11,
+        "text_ar": "فعل الرب ذلك بالثمرة والكرم حتى يُمجد اسمه الذين يؤمنون بأن الموتى سيقيمون والذين يطيعون إرادته.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 17,
+        "verse": 12,
+        "text_ar": "في ملكوت السماء، سيُبهج الذين يؤمنون بالقيامة.",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

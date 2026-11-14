@@ -1,0 +1,51 @@
+{
+  "request_id": "67b1581e-2c23-4242-b9d4-ba8227c10744",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":5,\"verse\":1,\"text_ar\":\"«ولكن فيما يتعلق بالعلامات، ها إن أياماً ستأتي يغتنم فيها الدهشة العظمى أولئك الساكنون على الأرض، ويختفي طريق الحق، وتخلو الأرض من الإيمان.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":2,\"text_ar\":\"سيزداد الإثم فوق ما ترونه الآن، وما سمعتموه منذ قديم الزمان.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":3,\"text_ar\":\"والأرض التي ترونها الآن تملك ستصير يباباً بلا آثار، ويرها الناس خراباً.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":4,\"text_ar\":\"ولكن إن منحكم العلي أن تعيشوا، فسوترون ضيقات بعد الفترة الثالثة. وستشرق الشمس بغتة في الليل، والقمر في النهار.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":5,\"text_ar\":\"وسقط الدم من الخشب، ويُسمع الحجر صوته، وتضطرب الشعوب وتسقط النجوم.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":6,\"text_ar\":\"وسيملك من لا يتوقعه الساكنون على الأرض، وتطير الطيور معاً.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":7,\"text_ar\":\"ويقذف بحر سدوم سمكاً، ويصدر صوتاً في الليل لم يعرفه كثيرون، لكن الكل سيسمع صوته.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":8,\"text_ar\":\"وسيكون هناك اضطراب في مواضع كثيرة، وتندلع النيران مراراً، وتغير الوحوش البرية أماكنها، وتلد النساء مسوخاً.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":9,\"text_ar\":\"وستوجد مياه مالحة في العذبة، ويهلك الأصدقاء بعضهم بعضاً. وحينئذ يختفي العقل، وينسحب الفهم إلى مخبئه.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":10,\"text_ar\":\"وسيطلبه كثيرون فلا يجدونه، ويتكاثر الظلم وانعدام الضبط على الأرض.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":11,\"text_ar\":\"وتسأل أمة أخرى: «أهل عبر فيكم البِر، أو إنسان يصنع البِر؟» فتقول: «لا».\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":12,\"text_ar\":\"ويحدث في ذلك الزمان أن يرجو الناس فلا ينالون، ويتعبون فلا تنجح طرقهم.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":13,\"text_ar\":\"قد سُمح لي أن أريكم مثل هذه العلامات، فإن صليتم ثانية، وبكيتم كالآن، وصمتم سبعة أيام، ستسمعون ما هو أعظم من هذه».\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":14,\"text_ar\":\"ثم استيقظت، وسرى ارتجاف شديد في جسدي، واضطرب عقلي حتى غشي عليه.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":15,\"text_ar\":\"فأمسكني الملاك الذي أتى ليكلمني وعزاني وأوقفني على قدمي.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":16,\"text_ar\":\"وفي الليلة الثانية حدث أن فالتئيل رئيس الشعب أتى إلي قائلاً: «أين كنت؟ ولماذا وجهك حزين؟\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":17,\"text_ar\":\"أم ما علمت أن إسرائيل استودعت لك في أرض سبيهم؟\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":18,\"text_ar\":\"فقم إذن وكل خبزاً، ولا تتركنا كالراعي الذي يترك القطيع في قبضة الذئاب الضواري».\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":19,\"text_ar\":\"فقلت له: «ابعد عني ولا تقرب مني سبعة أيام، وحينئذ تأتي إلي». فسمع ما قلته وتركني.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":20,\"text_ar\":\"فصمت سبعة أيام نائحاً وباكياً، كما أمرني أوريئيل الملاك.\",\"review_notes_ar\":[]}]}",
+  "usage": {
+    "input": 906,
+    "output": 1052,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0029018000000000004,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 906,
+      "outputTokens": 1052,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0029018000000000004,
+      "latencyMs": 3226
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 61,62,63 in this chapter.",
+  "request_id": "5af4b361-ff11-438f-a672-33fc0cfc159d",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":15,\"book_code\":\"2ES\",\"verses\":[{\"chapter\":15,\"text\":\"You will be cast down by them as stubble, and they will be to you as fire.\",\"verse\":61},{\"chapter\":15,\"text\":\"They will devour you, your cities, your land, and your mountains. They will burn all your forests and your fruitful trees with fire.\",\"verse\":62},{\"chapter\":15,\"text\":\"They will carry your children away captive, and will plunder your wealth, and mar the glory of your face.”\",\"verse\":63}]}"
+    }
+  ]
+}

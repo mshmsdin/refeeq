@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "e65c2740-aa3b-44d4-adde-7bf7964a8c15",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":24,\"text\":\"God saith to Adam: 'Since thou hast disregarded my commandment and hast hearkened to thy wife, cursed is the earth in thy labours. Thou shalt work it and it shall not give its strength: thorns and thistles shall spring up for thee, and in the sweat of thy face shalt thou eat thy bread. [Thou shalt be in manifold toils; thou shalt be crushed by bitterness, but of sweetness shalt thou not taste.]\",\"source_ref\":\"24:1\"},{\"chapter\":24,\"text\":\"Weary shalt thou be and shalt not rest; by heat shalt thou be tired, by cold shalt thou be straitened: abundantly shalt thou busy thyself, but thou shalt not be rich; and thou shalt grow fat, but come to no end.\",\"source_ref\":\"24:3\"},{\"chapter\":24,\"text\":\"The beasts, over whom thou didst rule, shall rise up in rebellion against thee, for thou hast not kept my commandment.\\\"\",\"source_ref\":\"24:4\"},{\"chapter\":25,\"text\":\"And the Lord turned to me and said: \\\"Since thou hast hearkened to the serpent, and turned\",\"source_ref\":\"25:1\"},{\"chapter\":25,\"text\":\"a deaf ear to my commandment, thou shalt be in throes of travail and intolerable agonies; thou shalt bear children in much trembling and in one hour thou shalt come to the birth, and lose thy\",\"source_ref\":\"25:2\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 24:1, 24:3, 24:4, 25:1, 25:2.",
+  "application_id": "rafeeq-bible-translation"
+}

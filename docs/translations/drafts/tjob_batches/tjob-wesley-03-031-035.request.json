@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "a06da5b6-8a48-4661-9b0e-570cd8bad662",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":3,\"verses\":[{\"chapter\":3,\"verse\":31,\"text\":\"For the milk flowed in such plenty that it curdled into butter on the hills and by the road side; and by the rocks and the hills the cattle lay which had given birth to their offspring.\"},{\"chapter\":3,\"verse\":32,\"text\":\"For my servants grew weary keeping the meat of the widows and the poor and dividing it into small pieces.\"},{\"chapter\":3,\"verse\":33,\"text\":\"For they would curse and say: \\\"Oh that we had of his flesh that we could be satisfied, although I was very kind to them,\"},{\"chapter\":3,\"verse\":34,\"text\":\"I also had six harps [and six slaves to play the harps] and also a cithara, a decachord, and I struck it during the day.\"},{\"chapter\":3,\"verse\":35,\"text\":\"And I took the cithara, and the widows responded after their meals.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 31,32,33,34,35 in this chapter."
+}

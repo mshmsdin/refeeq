@@ -1,0 +1,37 @@
+{
+  "request_id": "0a73df16-da82-4e36-9d1b-c4504de3f56e",
+  "content": "{\"book_code\": \"4BAR\", \"verses\": [{\"chapter\": 9, \"text_ar\": \"وأقامه وقال: \\\"يا نور الدهور، اجعل هذا الحجر يصير مثلي في المظهر، حتى أحدث باروخ وأبيمالك بكل ما رأيتُ\\\".\", \"verse\": 26}, {\"chapter\": 9, \"text_ar\": \"حينئذ أخذ الحجر، بأمر الله، مظهر إرميا.\", \"verse\": 27}, {\"chapter\": 9, \"text_ar\": \"وكانوا يرجمون الحجر ظانين أنه إرميا!\", \"verse\": 28}, {\"chapter\": 9, \"text_ar\": \"أما إرميا فأخبر باروخ وأبيمالك بكل الأسرار التي رأاها، وفي الحال وقف في وسط الشعب وهو يود أن يكمل خدمته.\", \"verse\": 29}, {\"chapter\": 9, \"text_ar\": \"حينئذ صرخ الحجر قائلاً: \\\"أيها الأولاد الأغبياء من إسرائيل، لماذا ترجمونني ظانين أنني إرميا؟ انظروا، ها إن إرميا واقف في وسطكم!\\\"\", \"verse\": 30}]}",
+  "usage": {
+    "input": 316,
+    "output": 271,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0007723,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 316,
+      "outputTokens": 271,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0007723,
+      "latencyMs": 1966
+    }
+  ]
+}

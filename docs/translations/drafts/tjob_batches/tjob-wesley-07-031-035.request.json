@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "0552b6d0-80ba-4933-8288-6c9651f05f57",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":7,\"verses\":[{\"chapter\":7,\"verse\":31,\"text\":\"Art thou he who had golden candelabras set upon silver stands; and now must thou long for the natural gleam of the moon [\\\"Whither then hath thy glory gone !\\\"]\"},{\"chapter\":7,\"verse\":32,\"text\":\"Art thou the one who had ointment made of the spices of frankincense, and now thou art in a state of repulsiveness! [Whither then hath thy glory gone !\\\"]\"},{\"chapter\":7,\"verse\":33,\"text\":\"Art thou he who laughed the wrong doers and sinners to scorn and now thou hast become a laughingstock to all !\\\" [Whither then hath thine glory gone]\"},{\"chapter\":7,\"verse\":34,\"text\":\"And when Eliphaz had for a long time cried and lamented, while all the others joined him, so that the commotion was very great, I said to them :\"},{\"chapter\":7,\"verse\":35,\"text\":\"Be silent and I will show you my throne, and the glory of its splendor: My glory will be everlasting.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 31,32,33,34,35 in this chapter."
+}

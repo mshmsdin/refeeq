@@ -1,0 +1,65 @@
+{
+  "request_id": "eb3d699f-4b04-41d1-954e-545a8c81186e",
+  "content": "{\"book_code\": \"2ES\", \"verses\": [{\"chapter\": 2, \"verse\": 21, \"text_ar\": \"اشفِ المنكسر والضعيف. ولا تهزأ بالأعرج. ودفع عن المشوه. ودع الأعمى يرى مجدي.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 22, \"text_ar\": \"احمِ الشيوخ والصغار داخل أسوارك.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 23, \"text_ar\": \"حيثما وجدت موتى، فاضرب عليهم علامة وسلمهم للقبور، وسأعطيك الموضع الأول في قيامتي.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 24, \"text_ar\": \"اثبتا يا شعبي وخذوا راحتكم، فإن راحتكم ستأتي.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 25, \"text_ar\": \"غذِّ أولادك أيتها المرضعة الصالحة، وثبت أقدامهم.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 26, \"text_ar\": \"أما عن العبيد الذين أعطيتكم إياهم، فلن يهلك واحد منهم، لأني سأطلبهم من بين عديدكم.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 27, \"text_ar\": \"لا تقلقوا، لأنه عندما تأتي أيام الآلام والشدائد، فإن الآخرين سيبكون ويحزنون، أما أنتم ستفرحون وتكون لكم وفرة.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 28, \"text_ar\": \"ستحسدكم الأمم، لكنها لن تستطيع فعل شيء ضدكم، يقول الرب.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 29, \"text_ar\": \"ستظللكم يداي لكي لا يرى أطفالكم جهنم.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 30, \"text_ar\": \"افرحي أيتها الأم مع أولادك، لأني سأنقذكم، يقول الرب.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 31, \"text_ar\": \"اذكروا أولادكم الراقدين، لأني سأخرجهم من مخادع الأرض وأظهر لهم رحمة، لأني رحيم، يقول الرب القدير.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 32, \"text_ar\": \"احتضنوا أولادكم إلى أن آتي، وأعلنوا لهم الرحمة، فإن آبارنا تفيض، ونعمتي لن تزول.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 33, \"text_ar\": \"أنا عزرا، تلقيت أمراً من الرب على جبل حوريب لأذهب إلى إسرائيل، ولكن عندما أتيت إليهم، رفضوني ورفضوا وصية الرب.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 34, \"text_ar\": \"لذلك أقول لكم أيتها الأمم السامعة والمفكرة: \\\"ابحثوا عن راعيكم. فهو سيمنحكم راحة أبدية، لأنه قريب جداً وسيأتي في نهاية الدهر.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 35, \"text_ar\": \"كونوا مستعدين لمكافآت الملكوت، فإن النور الأبدي سيشرق عليكم إلى الأبد.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 36, \"text_ar\": \"اهربوا من ظل هذا العالم، وانالوا فرح مجدكم. إني أشهد لمخلصي علانية.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 37, \"text_ar\": \"تقبلوا ما أعطاكم إياه الرب، وكونوا فرحين، شاكرين ذاك الذي دعاكم إلى الممالك السماوية.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 38, \"text_ar\": \"انتهضوا وقوفاً، وانظروا عديد الذين ختموا في وليمة الرب.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 39, \"text_ar\": \"أولئك الذين ابتعدوا عن ظل العالم قد نالوا ثياباً مجيدة من الرب.\", \"review_notes_ar\": []}, {\"chapter\": 2, \"verse\": 40, \"text_ar\": \"استردي عددك كاملاً يا صهيون، وأحصي عدد الذين لكِ الملبسين بالثياب البيضاء، والذين أتموا ناموس الرب.\", \"review_notes_ar\": []}]}",
+  "usage": {
+    "input": 850,
+    "output": 1154,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.00314,
+  "estimatedCostCurrency": "USD",
+  "failovers": 2,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "error",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 30
+    },
+    {
+      "modelId": "05dfb509-43ee-4357-a629-e560369080e7",
+      "provider": "Gemini",
+      "model": "gemini-3.8-flash",
+      "status": "error",
+      "inputPrice": "0.7500000000",
+      "outputPrice": "3.7500000000",
+      "currency": "USD",
+      "cachedPrice": "0.0750000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "503",
+      "estimatedCost": null,
+      "latencyMs": 1953
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 850,
+      "outputTokens": 1154,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.00314,
+      "latencyMs": 3160
+    }
+  ]
+}

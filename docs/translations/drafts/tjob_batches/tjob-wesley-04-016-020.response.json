@@ -1,0 +1,37 @@
+{
+  "request_id": "8527091c-b1e3-4884-a62e-d5a026b9503f",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"الآن تعال معي فننهب كل ما تبقى في منزله.\",\n      \"verse\": 16\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فأجابوا وقالوا له: \\\"له سبعة بنين وثلاث بنات.\",\n      \"verse\": 17\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"احذر لئلا يهربوا إلى أراضٍ أخرى فيصيروا طغاة علينا ثم يأتوا علينا بقوة ويقتلونا.\\\"\",\n      \"verse\": 18\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"فقال: لا تخافوا البتة. إن قطيعه وثروته قد أهلكتهما بالنار، وما تبقى فقد أسرته، وها أنا أقتل أولاده.\\\"\",\n      \"verse\": 19\n    },\n    {\n      \"chapter\": 4,\n      \"text_ar\": \"ولما تكلم هكذا، ذهب وأسقط البيت على أولادي فقتلهم.\",\n      \"verse\": 20\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 289,
+    "output": 300,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0008367,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 289,
+      "outputTokens": 300,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008367,
+      "latencyMs": 1532
+    }
+  ]
+}

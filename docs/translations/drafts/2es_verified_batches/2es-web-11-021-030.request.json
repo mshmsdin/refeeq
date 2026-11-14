@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":11,\"verses\":[{\"chapter\":11,\"text\":\"Some of them also were set up, but didnâ€™t rule.\",\"verse\":21},{\"chapter\":11,\"text\":\"After this I saw, and behold, the twelve wings disappeared, along with two of the little wings.\",\"verse\":22},{\"chapter\":11,\"text\":\"There was no more left on the eagleâ€™s body, except the three heads that rested, and six little wings.\",\"verse\":23},{\"chapter\":11,\"text\":\"I saw, and behold, two little wings divided themselves from the six and remained under the head that was on the right side; but four remained in their place.\",\"verse\":24},{\"chapter\":11,\"text\":\"I saw, and behold, these under wings planned to set themselves up and to rule.\",\"verse\":25},{\"chapter\":11,\"text\":\"I saw, and behold, there was one set up, but in a while it disappeared.\",\"verse\":26},{\"chapter\":11,\"text\":\"A second also did so, and it disappeared faster than the first.\",\"verse\":27},{\"chapter\":11,\"text\":\"I saw, and behold, the two that remained also planned between themselves to reign.\",\"verse\":28},{\"chapter\":11,\"text\":\"While they thought about it, behold, one of the heads at rest awakened, the one that was in the middle, for that was greater than the two other heads.\",\"verse\":29},{\"chapter\":11,\"text\":\"I saw how it joined the two other heads with it.\",\"verse\":30}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "444283da-8547-46ba-8fa4-2888d062bd58",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24,25,26,27,28,29,30 in this chapter."
+}

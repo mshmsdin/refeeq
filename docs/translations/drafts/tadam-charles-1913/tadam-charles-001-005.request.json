@@ -1,0 +1,18 @@
+{
+  "request_id": "abe1f43e-e221-4361-bf2a-bf19c3beb3d6",
+  "service_key": "bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"text\":\"When they were driven out from paradise, they made themselves a booth, and spent seven days mourning and lamenting in great grief.\",\"chapter\":1,\"source_ref\":\"1:1\"},{\"text\":\"But after seven days, they began to be hungry and started to look for victual to eat, and they\",\"chapter\":2,\"source_ref\":\"2:1\"},{\"text\":\"found it not. Then Eve said to Adam: 'My lord, I am hungry. Go, look for (something) for us to eat. Perchance the Lord God will look back and pity us and recall us to the place in which we were before.\",\"chapter\":2,\"source_ref\":\"2:2\"},{\"text\":\"And Adam arose and walked seven days over all that land, and found no victual such as they\",\"chapter\":3,\"source_ref\":\"3:1\"},{\"text\":\"used to have in paradise. And Eve said to Adam: 'Wilt thou slay me that I may die, and perchance God the Lord will bring thee into paradise, for on my account hast thou been driven thence.'\",\"chapter\":3,\"source_ref\":\"3:2\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 1:1, 2:1, 2:2, 3:1, 3:2.",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation"
+}

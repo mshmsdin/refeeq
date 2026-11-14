@@ -1,0 +1,74 @@
+{
+  "book_code": "TADAM",
+  "source_license_notice": "English translation by R. H. Charles, Oxford 1913; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-charles-1913-latin-recension",
+  "source_name": "The Books of Adam and Eve (Latin recension)",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "batch_start": 121,
+  "batch_end": 125,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "30fef366-2014-48b5-9b0c-b1e0e638fff6",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 384,
+      "outputTokens": 355,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010027,
+      "latencyMs": 1427
+    }
+  ],
+  "usage": {
+    "input": 384,
+    "output": 355,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0010027,
+  "units": [
+    {
+      "chapter": 42,
+      "source_ref": "42:5",
+      "text_ar": "الماء والروح القدس إلى الحياة الأبدية. ثم إن ابن الله المحبوب جداً، المسيح، نازلاً على الأرض، سيقود أباك آدم إلى الفردوس وإلى شجرة الرحمة.]"
+    },
+    {
+      "chapter": 43,
+      "source_ref": "43:1",
+      "text_ar": "'وأما أنت يا شيث، فاذهب إلى أبيك آدم، إذ قد تمّ زمان حياته. فبعد ستة أيام، تخرج نفسه من جسده، وحين تخرج، ستعاين عجائب عظيمة في السماء وعلى الأرض و"
+    },
+    {
+      "chapter": 43,
+      "source_ref": "43:2",
+      "text_ar": "نيرات السماء.' وبهذه الكلمات، انصرف ميخائيل للتو عن شيث."
+    },
+    {
+      "chapter": 43,
+      "source_ref": "43:3",
+      "text_ar": "ورجعت حواء وشيث حاملين معهما أعشاباً ذات رائحة طيبة، أي الناردين والزعفران والقصب والقرفة."
+    },
+    {
+      "chapter": 44,
+      "source_ref": "44:1",
+      "text_ar": "ولما بلغ شيث وأمه آدم، أخبراه بما فعله الوحش [الحية]."
+    }
+  ]
+}

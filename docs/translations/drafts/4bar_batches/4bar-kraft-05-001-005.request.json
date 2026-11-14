@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"4BAR\",\"chapter\":5,\"verses\":[{\"chapter\":5,\"text\":\"1 But Abimelech took the figs in the burning heat, and coming upon a tree, he sat under its shade to rest a bit.\",\"verse\":1},{\"chapter\":5,\"text\":\"2 And leaning his head on the basket of figs, he fell asleep and slept for 66 years without waking.\",\"verse\":2},{\"chapter\":5,\"text\":\"3 And afterward, when he awoke from his sleep, he said: “I slept well for a little while, but my head is heavy because I did not get enough sleep.”\",\"verse\":3},{\"chapter\":5,\"text\":\"4 Then he uncovered the basket of figs and found them dripping milk.\",\"verse\":4},{\"chapter\":5,\"text\":\"5 And he said: “I would like to sleep a little longer, because my head is heavy. But I am afraid that I might fall asleep and be slow to wake and my father Jeremiah would think badly of me, for if he were not in a hurry, he would not have sent me today at daybreak.\",\"verse\":5}]}"
+    }
+  ],
+  "tenant_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "6337cfbe-813a-49bf-acd5-c063254f83f5",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5 in this chapter.",
+  "application_id": "rafeeq-bible-translation"
+}

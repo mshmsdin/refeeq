@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":6,\"verses\":[{\"chapter\":6,\"verse\":11,\"text\":\"11 When Baruch had said this, he said to Abimelech: “Stand up and let us pray that the Lord may show us how we will be able to send to Jeremiah in Babylon the report about the shelter provided for you on the way.”\"},{\"chapter\":6,\"verse\":12,\"text\":\"12 And Baruch prayed, saying: “Lord God, our strength is the chosen light that comes from your mouth.\"},{\"chapter\":6,\"verse\":13,\"text\":\"13 We beg you in your goodness, you whose great name no one can know, to hear the voice of your servants and let knowledge come into our hearts.\"},{\"chapter\":6,\"verse\":14,\"text\":\"14 What will we do, and how will we send this report to Jeremiah in Babylon?”\"},{\"chapter\":6,\"verse\":15,\"text\":\"15 And while Baruch was still praying, an angel of the Lord came and said all these words to Baruch: “Agent of the light, do not be anxious about how you will send to Jeremiah, for an eagle is coming to you at the hour of light tomorrow, and you will direct him to Jeremiah.\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "8e780fe0-1a21-43e0-a1df-eb840508c5b8",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

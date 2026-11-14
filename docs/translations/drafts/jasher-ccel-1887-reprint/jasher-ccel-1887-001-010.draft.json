@@ -1,0 +1,136 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 1,
+  "batch_end": 10,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "temporary free-first policy; original budget ceiling preserved",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "a4bb88bc-79e0-4344-a4dd-0bc6f04ede64",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 923,
+      "outputTokens": 701,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1926
+    }
+  ],
+  "usage": {
+    "input": 923,
+    "output": 701,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "chapter": 1,
+      "source_ref": "1:1",
+      "text_ar": "وقال الله: لنصنع الإنسان على صورتنا، كشبهنا، وخلق الله الإنسان على صورته."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:2",
+      "text_ar": "وجبل الله الإنسان من التراب، ونفخ في أنفه نسمة الحياة، فأصبح الإنسان نفسًا حيةً ناطقةً."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:3",
+      "text_ar": "وقال الرب: ليس جيدًا أن يكون الإنسان وحدَهُ؛ فأصنع له معينًا."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:4",
+      "text_ar": "فأوقع الرب نومًا عميقًا على آدم، فنام، فأخذ إحدى أضلاعه وكساها لحمًا، وشكّلها وأحضرها إلى آدم، فاستيقظ آدم من نومه وإذا امرأة تقف أمامه."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:5",
+      "text_ar": "فقال: هذه عظم من عظامي، وتدعى امرأة لأنها من امرئ أُخذت؛ وسمى آدم امرأته حواء لأنها أم كل حي."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:6",
+      "text_ar": "وباركهما الله ودعا اسميهما آدم وحواء في اليوم الذي خلقهما فيه، وقال الرب الإله: أثمرا وتكاثرا واملأا الأرض."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:7",
+      "text_ar": "وأخذ الرب الإله آدم وزوجته، ووضعهما في جنة عدن ليفلحاها ويحفظاها؛ وأمرهما قائلاً: من كل شجرة في الجنة تأكلون، وأما شجرة معرفة الخير والشر فلا تأكلا منها، لأنكما يوم تأكلان منها تموتان موتًا."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:8",
+      "text_ar": "ولما باركهما الله وأوصاهما، انصرف عنهما، وسكن آدم وزوجته في الجنة بحسب الوصية التي أمرهما بها الرب."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:9",
+      "text_ar": "وجاءت الحية، التي خلقها الله معهما على الأرض، إليهما لتغويهما على تعدي وصية الله التي أمر بها."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:10",
+      "text_ar": "فأغرت الحية المرأة وأقنعتها بأن تأكل من شجرة المعرفة، وأصغت المرأة لصوت الحية، وتعدت كلام الله، فأخذت من شجرة معرفة الخير والشر وأكلت، وأخذت منها وأعطت لزوجها أيضًا فأكل."
+    }
+  ],
+  "quality_review": {
+    "provider": "Gemini 3.5 Flash Lite",
+    "model": "gemini-3.5-flash-lite",
+    "request_id": "985987fe-a298-4893-8319-9b5729aad118",
+    "failovers": 0,
+    "attempts": [
+      {
+        "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+        "provider": "Gemini 3.5 Flash Lite",
+        "model": "gemini-3.5-flash-lite",
+        "status": "success",
+        "inputPrice": "0.3000000000",
+        "outputPrice": "2.5000000000",
+        "currency": "USD",
+        "cachedPrice": "0.0300000000",
+        "imagePrice": "0.0000000000",
+        "inputTokens": 1210,
+        "outputTokens": 740,
+        "cachedTokens": 0,
+        "cacheCreationTokens": 0,
+        "imageTokens": 0,
+        "estimatedCost": 0.002213,
+        "latencyMs": 2270
+      }
+    ],
+    "usage": {
+      "input": 1210,
+      "output": 740,
+      "cached": 0,
+      "cacheCreation": 0,
+      "image": 0
+    },
+    "estimated_cost": 0.002213,
+    "review_status": "machine_second_pass_pending_human",
+    "manual_edits": "Removed one added clause and one added divine title to match the selected English source."
+  }
+}

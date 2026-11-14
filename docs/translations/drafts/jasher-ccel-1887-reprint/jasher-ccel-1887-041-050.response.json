@@ -1,0 +1,51 @@
+{
+  "request_id": "8680720b-4471-4100-8d24-f947bc883d8f",
+  "content": "{\n  \"book_code\": \"JASHER\",\n  \"verses\": [\n    {\n      \"chapter\": 2,\n      \"verse\": 5,\n      \"text_ar\": \"وكل رجل صنع إلهه وسجد له، فترك بني البشر الرب طوال أيام أونوش وذريةه؛ فأُشتعل غضب الرب بسبب أعمالهم وفجائرهم التي ارتكبوها على الأرض.\"\n    },\n    {\n      \"chapter\": 2,\n      \"verse\": 6,\n      \"text_ar\": \"فأغرق الرب مياه نهر جيهون عليهم، فأهلكهم واستهلكهم، فدمر الجزء الثالث من الأرض، ومع ذلك لم يتراجع بني البشر عن طرقهم الشريرة، وظلت أيديهم تمتد للشر في وجه الرب.\"\n    },\n    {\n      \"chapter\": 2,\n      \"verse\": 7,\n      \"text_ar\": \"وفي ذلك الوقت لم يكن هناك زرع ولا حصاد في الأرض؛ فلم يكن طعام لبنِي البشر وكان المجاعة شديدة جدًا في ذلك.\"\n    },\n    {\n      \"chapter\": 2,\n      \"verse\": 8,\n      \"text_ar\": \"وأصبح البذور التي زرعوها في ذلك الوقت شوكًا وشوكًا وسنامًا؛ لأن هذا الإعلان عن الأرض منذ أيام آدم كان من لعنة الله، الذي لعن الأرض بسبب الخطيئة التي ارتكبها آدم أمام الرب.\"\n    },\n    {\n      \"chapter\": 2,\n      \"verse\": 9,\n      \"text_ar\": \"وعندما استمر الناس في تمردهم وتجاوزهم لله، وإفساد طرقهم، صارت الأرض هي الأخرى فاسدة.\"\n    },\n    {\n      \"chapter\": 2,\n      \"verse\": 10,\n      \"text_ar\": \"وعاش أونوش تسعين سنة وأنجب قايين.\"\n    },\n    {\n      \"chapter\": 2,\n      \"verse\": 11,\n      \"text_ar\": \"فنشر قايين وهو في الأربعين من عمره، فأصبح حكيماً وعنده معرفة ومهارة في كل حكمة، وساد جميع بني البشر، وقادهم إلى الحكمة والعلم؛ لأن قايين كان رجلاً حكيمًا جدًا ويفهم كل حكمة، وبحكمته كان يملك على الأرواح والجن.\"\n    },\n    {\n      \"chapter\": 2,\n      \"verse\": 12,\n      \"text_ar\": \"وعلم قايين بحكمته أن الله سيهلك بني البشر لأنهم أخطأوا على الأرض، وأن الرب في الأيام الأخيرة سيجلب عليهم مياه الفيضان.\"\n    },\n    {\n      \"chapter\": 2,\n      \"verse\": 13,\n      \"text_ar\": \"وفي ذلك الوقت كتب قايين على ألواح حجرية ما سيحدث في المستقبل، ووضعها في كنوزه.\"\n    },\n    {\n      \"chapter\": 2,\n      \"verse\": 14,\n      \"text_ar\": \"وساد قايين على كل الأرض، وحوّل بعض بني البشر إلى خدمة الله.\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 918,
+    "output": 673,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 918,
+      "outputTokens": 673,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1843
+    }
+  ]
+}

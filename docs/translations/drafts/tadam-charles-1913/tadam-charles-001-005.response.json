@@ -1,0 +1,37 @@
+{
+  "request_id": "86da141d-a7b2-452f-ad1e-9c2a44858049",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"verse\": 1,\n      \"chapter\": 1,\n      \"text_ar\": \"ولما طردا من الفردوس، صنعا لنفسيهما مظلة، وقضيا سبعة أيام ينوحان ويندبان بحزن شديد.\"\n    },\n    {\n      \"verse\": 1,\n      \"chapter\": 2,\n      \"text_ar\": \"ولكن بعد سبعة أيام، بدأا يجوعان وشرعا يبحثان عن طعام ليأكلاه، وهما\"\n    },\n    {\n      \"verse\": 2,\n      \"chapter\": 2,\n      \"text_ar\": \"لم ينجداه. فقالت حواء لآدم: يا سيدي، إنا جائعة. اذهب وابحث لنا عن شيء لنأكله. فلعل الرب الإله يلتفت ويرحمنا ويعيدنا إلى المكان الذي كنا فيه من قبل.\"\n    },\n    {\n      \"verse\": 1,\n      \"chapter\": 3,\n      \"text_ar\": \"وقام آدم ومشى سبعة أيام في تلك الأرض كلها، فلم يجد طعاماً كالذي\"\n    },\n    {\n      \"verse\": 2,\n      \"chapter\": 3,\n      \"text_ar\": \"كانا يعتادان عليه في الفردوس. وقالت حواء لآدم: أَتَقتُلني لكي أموت، ولعل الله الرب يدخلك إلى الفردوس، فمن أجلي طُرِدتَ منه.\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 386,
+    "output": 373,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010483,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 386,
+      "outputTokens": 373,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010483,
+      "latencyMs": 1634
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":10,\"verses\":[{\"chapter\":10,\"text\":\"For you see that our sanctuary has been laid waste, our altar broken down, our temple destroyed,\",\"verse\":21},{\"chapter\":10,\"text\":\"our lute has been brought low, our song is put to silence, our rejoicing is at an end, the light of our candlestick is put out, the ark of our covenant is plundered, our holy things are defiled, and the name that we are called is profaned. Our free men are despitefully treated, our priests are burned, our Levites have gone into captivity, our virgins are defiled and our wives ravished, our righteous men carried away, our little ones betrayed, our young men are brought into bondage, and our strong men have become weak.\",\"verse\":22},{\"chapter\":10,\"text\":\"What is more than all, the seal of Zion has now lost the seal of her honor, and is delivered into the hands of those who hate us.\",\"verse\":23},{\"chapter\":10,\"text\":\"Therefore shake off your great heaviness, and put away from yourself the multitude of sorrows, that the Mighty One may be merciful to you again, and the Most High may give you rest, even ease from your troubles.â€‌\",\"verse\":24},{\"chapter\":10,\"text\":\"It came to pass while I was talking with her, behold, her face suddenly began to shine exceedingly, and her countenance flashed like lightning, so that I was very afraid of her, and wondered what this meant.\",\"verse\":25}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "a9d07aed-27c3-46a2-9e77-7c5b191363eb",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24,25 in this chapter."
+}

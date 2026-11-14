@@ -1,0 +1,37 @@
+{
+  "request_id": "1cbcdf27-525e-44f9-a917-c65c52ffe0d8",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":4,\"verse\":36,\"text_ar\":\"فأجابهم رئيس الملائكة يريمييل وقال: «متى تم عدد أمثالكم، لأنه قد وزن العالم بالميزان،\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":37,\"text_ar\":\"وبالمقياس قس الأوقات، وبالعدد عد الأزمنة، ولن يزحزحها أو يحركها حتى يمتلئ ذلك المقياس»\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":38,\"text_ar\":\"فأجبت وقلت: «أيها السيد الرب، إننا جميعاً مملوءون فجوراً،\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":39,\"text_ar\":\"فلعل من أجلنا يؤجل وقت بيدر الصديقين، بسبب خطايا الساكنين على الأرض»\",\"review_notes_ar\":[]},{\"chapter\":4,\"verse\":40,\"text_ar\":\"فأجابني وقال: «اذهب إلى امرأة حبلى، واسألها متى أكملت شهورها التسعة، هل يستطيع رحمها أن يحفظ الولد داخله بعد ذلك؟»\",\"review_notes_ar\":[]}]}",
+  "usage": {
+    "input": 338,
+    "output": 283,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0008089,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 338,
+      "outputTokens": 283,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008089,
+      "latencyMs": 2042
+    }
+  ]
+}

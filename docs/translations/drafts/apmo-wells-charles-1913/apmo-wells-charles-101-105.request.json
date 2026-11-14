@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "8901d940-83c9-4c6b-9c1b-de07771775c8",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":29,\"text\":\"for his food.\\\" And God bade Adam go in and take sweet spices and fragrant herbs from paradise\",\"source_ref\":\"29:5\"},{\"chapter\":29,\"text\":\"and seeds for his food. And the angels let him go and he took four kinds: crocus and nard and calamus and cinnamon and the other seeds for his food: and, after taking these, he went out of\",\"source_ref\":\"29:6\"},{\"chapter\":29,\"text\":\"paradise. And we were on the earth.\",\"source_ref\":\"29:7\"},{\"chapter\":30,\"text\":\"Now then, my children, I have shown you the way in which we were deceived; and do ye guard yourselves from transgressing against the good.'\",\"source_ref\":\"30:1\"},{\"chapter\":31,\"text\":\"And when Eve had said this in the midst of her sons, while Adam was lying ill and bound to die\",\"source_ref\":\"31:1\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 29:5, 29:6, 29:7, 30:1, 31:1.",
+  "application_id": "rafeeq-bible-translation"
+}

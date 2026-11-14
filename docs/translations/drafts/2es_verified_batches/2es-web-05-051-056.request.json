@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"text\":\"He answered me, â€œAsk a woman who bears children, and she will tell you.\",\"verse\":51},{\"chapter\":5,\"text\":\"Say to her, â€کWhy arenâ€™t they whom you have now brought forth like those who were before, but smaller in stature?â€™\",\"verse\":52},{\"chapter\":5,\"text\":\"She also will answer you, â€کThose who are born in the strength of youth are different from those who are born in the time of old age, when the womb fails.â€™\",\"verse\":53},{\"chapter\":5,\"text\":\"Consider therefore you also, how you are shorter than those who were before you.\",\"verse\":54},{\"chapter\":5,\"text\":\"So are those who come after you smaller than you, as born of the creature which now begins to be old, and is past the strength of youth.â€‌\",\"verse\":55},{\"chapter\":5,\"text\":\"Then I said, â€œLord, I implore you, if I have found favor in your sight, show your servant by whom you visit your creation.â€‌\",\"verse\":56}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "895fca63-0f78-4e8c-8675-6805d94c69eb",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 51,52,53,54,55,56 in this chapter."
+}

@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "ad13079d-92dc-4ede-a37d-2098758a1b32",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":10,\"text\":\"cried out and said:\",\"source_ref\":\"10:4\"},{\"chapter\":11,\"text\":\"'It is not our concern, Eve, thy greed and thy wailing, but thine own; for (it is) from thee that the rule of the beasts hath arisen. How was thy\",\"source_ref\":\"11:1\"},{\"chapter\":11,\"text\":\"mouth opened to eat of the tree concerning which God enjoined thee not to eat of it? On this account, our nature also hath been transformed. Now therefore thou canst not endure it,\",\"source_ref\":\"11:2\"},{\"chapter\":11,\"text\":\"if I begin to reprove thee.'\",\"source_ref\":\"11:3\"},{\"chapter\":12,\"text\":\"Then Seth speaketh to the beast, 'Close thy mouth and be silent and stand off from the image of God until the day of Judgment.' Then saith\",\"source_ref\":\"12:1\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 10:4, 11:1, 11:2, 11:3, 12:1.",
+  "application_id": "rafeeq-bible-translation"
+}

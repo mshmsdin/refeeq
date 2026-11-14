@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"text\":\"Now when I had spoken these words, the angel that came to me the night before was sent to me,\",\"verse\":31},{\"chapter\":5,\"text\":\"and said to me, â€œHear me, and I will instruct you. Listen to me, and I will tell you more.â€‌\",\"verse\":32},{\"chapter\":5,\"text\":\"I said, â€œSpeak on, my Lord.â€‌ Then said he to me, â€œYou are very troubled in mind for Israelâ€™s sake. Do you love that people more than he who made them?â€‌\",\"verse\":33},{\"chapter\":5,\"text\":\"I said, â€œNo, Lord; but I have spoken out of grief; for my heart is in agony every hour while I labor to comprehend the way of the Most High, and to seek out part of his judgment.â€‌\",\"verse\":34},{\"chapter\":5,\"text\":\"He said to me, â€œYou canâ€™t.â€‌ And I said, â€œWhy, Lord? Why was I born? Why wasnâ€™t my motherâ€™s womb my grave, that I might not have seen the travail of Jacob, and the wearisome toil of the people of Israel?â€‌\",\"verse\":35},{\"chapter\":5,\"text\":\"He said to me, â€œCount for me those who havenâ€™t yet come. Gather together for me the drops that are scattered abroad, and make the withered flowers green again for me.\",\"verse\":36},{\"chapter\":5,\"text\":\"Open for me the chambers that are closed, and bring out the winds for me that are shut up in them. Or show me the image of a voice. Then I will declare to you the travail that you asked to see.â€‌\",\"verse\":37},{\"chapter\":5,\"text\":\"And I said, â€œO sovereign Lord, who may know these things except he who doesnâ€™t have his dwelling with men?\",\"verse\":38},{\"chapter\":5,\"text\":\"As for me, I lack wisdom. How can I then speak of these things you asked me about?â€‌\",\"verse\":39},{\"chapter\":5,\"text\":\"Then said he to me, â€œJust as you can do none of these things that I have spoken of, even so you canâ€™t find out my judgment, or the end of the love that I have promised to my people.â€‌\",\"verse\":40}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "66baf636-49e7-4134-b3d4-db2013f358a1",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 31,32,33,34,35,36,37,38,39,40 in this chapter."
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "d4033d1c-b433-4be6-8c18-040e12478fb8",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"ومع ذلك فإنك ترغب في أن نقول كلمة ما ضد الله وأن يُستبدل ببلوتو العظيم [إله العالم السفلي].\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"لماذا لا تذكر تلك الخيرات العظيمة التي امتلكناها؟ إن كانت هذه الخيرات تأتي من أراضي الرب، أفلماذا لا نحتمل نحن أيضاً الشرور ونكون عاليي الهمة في كل شيء إلى أن يرحم الرب مرة أخرى ويتحنن علينا؟\",\n      \"verse\": 22\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"ألا ترى المضل واقفاً وراءك ومرتبكاً أفكارك لكي تغويني؟\",\n      \"verse\": 23\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"والتفت إلى الشیطان وقال: «لماذا لا تأتي إلي علانية؟ كف عن إخفاء نفسك أيها الشقي،»\",\n      \"verse\": 24\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"هل يُظهر الأسد قوته في قفص ابن عرس؟ أم هل يطير الطائر في السلة؟ إني أقول لك الآن: اذهب وشن حربك ضدي».\",\n      \"verse\": 25\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 333,
+    "output": 369,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010224,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 333,
+      "outputTokens": 369,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010224,
+      "latencyMs": 1530
+    }
+  ]
+}

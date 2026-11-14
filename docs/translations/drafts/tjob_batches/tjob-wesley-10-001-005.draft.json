@@ -1,0 +1,71 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 10,
+  "range": "1-5",
+  "status": "machine_translated_structured",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-20b",
+  "request_id": "26737520-6464-4176-af07-5f54ca718794",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 534,
+      "outputTokens": 315,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 509
+    }
+  ],
+  "usage": {
+    "input": 534,
+    "output": 315,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "verses": [
+    {
+      "chapter": 10,
+      "verse": 1,
+      "text_ar": "كرروا ذلك مرارًا وتكرارًا، فأنا أُصِبُ عارًا لأنني ارتكبت العديد من الخطيئة، ولم يبقَ لي أمل، لكنني ردّيت على هؤلاء الرجال بحماس الجدل بنفسي."
+    },
+    {
+      "chapter": 10,
+      "verse": 2,
+      "text_ar": "وبدأوا يغضبون، مستعدين للانفصال بروح الغضب. لكن إيليهو دعاهم ليقفون قليلاً حتى يريهم ما هو."
+    },
+    {
+      "chapter": 10,
+      "verse": 3,
+      "text_ar": "«لأنك» قال، «لقد قضيت أيامًا عديدة، سمحت لِعِبْرَةٍ بأن يفتخر بأنه عادل. لكنني لن أتحمل ذلك بعد الآن»."
+    },
+    {
+      "chapter": 10,
+      "verse": 4,
+      "text_ar": "منذ البداية كنت أبكي عليه، أتذكر سعادته السابقة. لكن الآن يتكلم بفخر، وبفخر متهور يقول إنه يجلس على عرشه في السماء."
+    },
+    {
+      "chapter": 10,
+      "verse": 5,
+      "text_ar": "لذلك، اسمعني، وسأخبرك ما هو سبب مصيره."
+    }
+  ]
+}

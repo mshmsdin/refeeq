@@ -1,0 +1,709 @@
+{
+ "book_code": "MOS",
+ "book_name_ar": "وصية موسى (المعروفة تقليدياً بصعود موسى)",
+ "source_translation": "en-charles-assumption-moses",
+ "source_name": "Charles, Assumption of Moses (English translation)",
+ "source_url": "https://www.sacredthings.org/docs/assumption-1/",
+ "source_license": "ترجمة تشارلز الإنجليزية من أواخر القرن التاسع عشر، يُرجَّح أنها في المشاع العام؛ تُراجع شروط موقع sacredthings.org قبل أي نشر.",
+ "source_quality": "ترجمة إنجليزية عن مخطوط لاتيني ناقص؛ في المتن علامات نقص عند ٣:٢ و٦:١ و٧:٢ و٧:٤ و٧:٨ و١٢:٥ و١٢:١٣.",
+ "source_integrity": "قارنت قاعدة رفيق الحية بصفحات المصدر الاثنتي عشرة (assumption-1 إلى assumption-12): ١٢٩ عدداً من ١٢٩ بترقيمها، والمتن متطابق في كل الأعداد، والفرق الوحيد مسافة قبل علامة ترقيم في ٤:٧ و٧:١ و٩:١.",
+ "source_sha256_of_normalized_verses": "10fb947d4a7229617b487dbf01a2a7d79662ca443d598903678ddaec8ee1e534",
+ "source_sha256_method": "sha256 لقائمة JSON من {chapter, verse, text} لكل الأعداد بحسب ترتيبها، بترميز UTF-8.",
+ "chapter_counts": [
+  {
+   "chapter": 1,
+   "count": 14
+  },
+  {
+   "chapter": 2,
+   "count": 10
+  },
+  {
+   "chapter": 3,
+   "count": 14
+  },
+  {
+   "chapter": 4,
+   "count": 9
+  },
+  {
+   "chapter": 5,
+   "count": 6
+  },
+  {
+   "chapter": 6,
+   "count": 9
+  },
+  {
+   "chapter": 7,
+   "count": 8
+  },
+  {
+   "chapter": 8,
+   "count": 5
+  },
+  {
+   "chapter": 9,
+   "count": 7
+  },
+  {
+   "chapter": 10,
+   "count": 15
+  },
+  {
+   "chapter": 11,
+   "count": 19
+  },
+  {
+   "chapter": 12,
+   "count": 13
+  }
+ ],
+ "verses": [
+  {
+   "chapter": 1,
+   "verse": 1,
+   "text": "And it came to pass in the one hundred and twentieth year of the life of Moses,"
+  },
+  {
+   "chapter": 1,
+   "verse": 2,
+   "text": "That is, the two thousand five hundredth year from the creation of the world,"
+  },
+  {
+   "chapter": 1,
+   "verse": 3,
+   "text": "That he called to him Joshua the son of Nun, a man approved of the Lord,"
+  },
+  {
+   "chapter": 1,
+   "verse": 4,
+   "text": "That he might be the minister of the people and of the tabernacle of the testimony with all its holy things,"
+  },
+  {
+   "chapter": 1,
+   "verse": 5,
+   "text": "And that he might bring the people into the land given to their fathers,"
+  },
+  {
+   "chapter": 1,
+   "verse": 6,
+   "text": "That it should be given to them according to the covenant and the oath, which he spake in the tabernacle to give it by Joshua: saying unto Joshua these words:"
+  },
+  {
+   "chapter": 1,
+   "verse": 7,
+   "text": "Be strong and of a good courage according to thy might, so as to do what has been commanded, that thou mayest be blameless unto God, saith the Lord of the world."
+  },
+  {
+   "chapter": 1,
+   "verse": 8,
+   "text": "For He hath created the world on behalf of His people."
+  },
+  {
+   "chapter": 1,
+   "verse": 9,
+   "text": "But He was not pleased to manifest this purpose of creation from the foundation of the world, in order that the Gentiles might thereby be convicted, yea to their own humiliation might by their arguments convict one another."
+  },
+  {
+   "chapter": 1,
+   "verse": 10,
+   "text": "Accordingly He designed and devised me, and He prepared me before the foundation of the world, that I should be the mediator of His covenant."
+  },
+  {
+   "chapter": 1,
+   "verse": 11,
+   "text": "And now I declare unto thee that the time of the years of my life is fulfilled and I am passing away to sleep with my fathers even in the presence of all the people."
+  },
+  {
+   "chapter": 1,
+   "verse": 12,
+   "text": "And receive thou this writing that thou mayst know how to preserve the books which I shall deliver unto thee:"
+  },
+  {
+   "chapter": 1,
+   "verse": 13,
+   "text": "And thou shalt set these in order and anoint them with oil of cedar and put them away in earthen vessels in the place which He made from the beginning of the creation of the world,"
+  },
+  {
+   "chapter": 1,
+   "verse": 14,
+   "text": "That His name should be called upon until the day of repentance in the visitation wherewith the Lord shall visit them in the consummation of the end of days."
+  },
+  {
+   "chapter": 2,
+   "verse": 1,
+   "text": "And now they will go by means of thee into the land which He determined and promised to give to their fathers, in the which thou shalt bless and give to them individually and confirm unto them their inheritance in me and establish for them the kingdom."
+  },
+  {
+   "chapter": 2,
+   "verse": 2,
+   "text": "And thou shalt appoint them prefectures according to the good pleasure of their Lord in judgment and righteousness."
+  },
+  {
+   "chapter": 2,
+   "verse": 3,
+   "text": "And it shall come to pass in the sixth year after they enter into the land, that thereafter they shall be ruled by chiefs and kings for eighteen years, and during nineteen years the ten tribes will be apostates."
+  },
+  {
+   "chapter": 2,
+   "verse": 4,
+   "text": "And the twelve tribes will go down and transfer the tabernacle of the testimony."
+  },
+  {
+   "chapter": 2,
+   "verse": 5,
+   "text": "Then shall the God of heaven make the court of His tabernacle and the tower of His sanctuary, and the two holy tribes will be there established:"
+  },
+  {
+   "chapter": 2,
+   "verse": 6,
+   "text": "But the ten tribes will establish kingdoms for themselves according to their own ordinances."
+  },
+  {
+   "chapter": 2,
+   "verse": 7,
+   "text": "And they will offer sacrifices throughout twenty years:"
+  },
+  {
+   "chapter": 2,
+   "verse": 8,
+   "text": "And seven will entrench the walls, and I will protect nine, but four will transgress the covenant of the Lord, and profane the oath which the Lord made with them."
+  },
+  {
+   "chapter": 2,
+   "verse": 9,
+   "text": "And they will sacrifice their sons to strange gods, and they will set up idols in the sanctuary, to worship them."
+  },
+  {
+   "chapter": 2,
+   "verse": 10,
+   "text": "And in the house of the Lord they will work impiety and engrave every (form) of beast, (even) many abominations."
+  },
+  {
+   "chapter": 3,
+   "verse": 1,
+   "text": "And in those days a king from the east will come against them and cover their land with (his) cavalry."
+  },
+  {
+   "chapter": 3,
+   "verse": 2,
+   "text": "And he will burn their colony with fire together with the holy temple of the Lord, and"
+  },
+  {
+   "chapter": 3,
+   "verse": 3,
+   "text": "And he will cast forth all the people, and he will take them to the land of his nativity, yea he will take the two tribes with him."
+  },
+  {
+   "chapter": 3,
+   "verse": 4,
+   "text": "Then the two tribes will call upon the ten tribes, and will be indignant as a lioness on the dusty plains, being hungry and thirsty."
+  },
+  {
+   "chapter": 3,
+   "verse": 5,
+   "text": "And they will cry aloud: Righteous and holy is the Lord, for, inasmuch as ye have sinned, we too, in like manner, have been carried away with you, together with our children."
+  },
+  {
+   "chapter": 3,
+   "verse": 6,
+   "text": "Then the ten tribes shall mourn on hearing the reproaches of the two tribes,"
+  },
+  {
+   "chapter": 3,
+   "verse": 7,
+   "text": "And they will say: What have we done unto you, brethren? Surely this tribulation has not come on all the house of Israel?"
+  },
+  {
+   "chapter": 3,
+   "verse": 8,
+   "text": "And all the tribes will mourn crying unto heaven and saying:"
+  },
+  {
+   "chapter": 3,
+   "verse": 9,
+   "text": "God of Abraham, God of Isaac, and God of Jacob, remember Thy covenant which Thou didst make with them, and the oath which Thou didst swear unto them by Thyself, that their seed should never fail in the land which Thou hast given them."
+  },
+  {
+   "chapter": 3,
+   "verse": 10,
+   "text": "Then they will remember me, saying, in that day, tribe unto tribe and each man unto his neighbour:"
+  },
+  {
+   "chapter": 3,
+   "verse": 11,
+   "text": "Is not this that which Moses did then declare unto us in prophecies, who suffered many things in Egypt and in the Red Sea and in the wilderness during forty years:"
+  },
+  {
+   "chapter": 3,
+   "verse": 12,
+   "text": "And assuredly called heaven and earth to witness against us, that we should not transgress His commandments, in the which he was a mediator unto us?"
+  },
+  {
+   "chapter": 3,
+   "verse": 13,
+   "text": "Behold these things have befallen us after his death according to his words and according to his declaration, as he declared to us at that time, yea behold these have taken place even to our being carried away captive into the country of the east."
+  },
+  {
+   "chapter": 3,
+   "verse": 14,
+   "text": "Who will be also in bondage for about seventy and seven years."
+  },
+  {
+   "chapter": 4,
+   "verse": 1,
+   "text": "Then there will enter one who is over them, and he will spread forth his hands, and kneel upon is knees and pray on their behalf saying:"
+  },
+  {
+   "chapter": 4,
+   "verse": 2,
+   "text": "Lord of all, King on the lofty throne, who rulest the world, and didst will that this people should be Thine elect people, then (indeed) Thou didst will that Thou shouldst be called their God, according to the covenant which Thou didst make with their fathers."
+  },
+  {
+   "chapter": 4,
+   "verse": 3,
+   "text": "And yet they have gone in captivity into another land with their wives and their children, and around the gates of strange peoples and where there is great vanity."
+  },
+  {
+   "chapter": 4,
+   "verse": 4,
+   "text": "Regard and have compassion on them, O Lord of heaven."
+  },
+  {
+   "chapter": 4,
+   "verse": 5,
+   "text": "Then God will remember them on account of the covenant which He made with their fathers, and He will manifest His compassion in those times also."
+  },
+  {
+   "chapter": 4,
+   "verse": 6,
+   "text": "And He will put it into the heart of a king to have compassion on them, and he will send them off to their land and country."
+  },
+  {
+   "chapter": 4,
+   "verse": 7,
+   "text": "Then some portions of the tribes will go up and they will come to their appointed place, and they will entrench the place renewing it ."
+  },
+  {
+   "chapter": 4,
+   "verse": 8,
+   "text": "And the two tribes shall continue in their prescribed faith, sad and lamenting because they will not be able to offer sacrifices to the Lord of their fathers."
+  },
+  {
+   "chapter": 4,
+   "verse": 9,
+   "text": "And the ten tribes will increase and multiply among the Gentiles during the time of their captivity."
+  },
+  {
+   "chapter": 5,
+   "verse": 1,
+   "text": "And when the times of chastisement draw nigh and vengeance arises through the kings who share in their guilt and punish them,"
+  },
+  {
+   "chapter": 5,
+   "verse": 2,
+   "text": "They themselves also will be divided as to the truth."
+  },
+  {
+   "chapter": 5,
+   "verse": 3,
+   "text": "Wherefore it hath come to pass: They will turn aside from righteousness and approach iniquity, and they will defile with pollutions the house of their worship, and they will go a whoring after strange gods."
+  },
+  {
+   "chapter": 5,
+   "verse": 4,
+   "text": "For they will not follow the truth of God, but some will pollute the altar with the very gifts which they offer to the Lord, who are not priests but slaves, sons of slaves."
+  },
+  {
+   "chapter": 5,
+   "verse": 5,
+   "text": "And many in those times will respect the persons of the rich and receive gifts, and wrest judgment on receiving gifts."
+  },
+  {
+   "chapter": 5,
+   "verse": 6,
+   "text": "And on this account the colony and the borders of their habitation will be filled with lawless deeds and iniquities: they will forsake the Lord: they will be impious judges: they will be ready to judge for money as each may wish."
+  },
+  {
+   "chapter": 6,
+   "verse": 1,
+   "text": "Then there will be raised up unto them Kings bearing rule, and they will call themselves"
+  },
+  {
+   "chapter": 6,
+   "verse": 2,
+   "text": "And an insolent king will succeed them, who will not be of the race of the priests, a man bold and shameless, and he will judge them as they shall deserve."
+  },
+  {
+   "chapter": 6,
+   "verse": 3,
+   "text": "And he will cut off their chief men with the sword, and will destroy them in secret places, so that no one may know where their bodies are."
+  },
+  {
+   "chapter": 6,
+   "verse": 4,
+   "text": "He will slay the old and the young, and he will not spare."
+  },
+  {
+   "chapter": 6,
+   "verse": 5,
+   "text": "Then the fear of him will be bitter unto them in their land."
+  },
+  {
+   "chapter": 6,
+   "verse": 6,
+   "text": "And he will execute judgments on them as the Egyptians executed upon them, during thirty and four years, and he will punish them."
+  },
+  {
+   "chapter": 6,
+   "verse": 7,
+   "text": "And he will beget children, who succeeding him will rule for shorter periods."
+  },
+  {
+   "chapter": 6,
+   "verse": 8,
+   "text": "Into their parts cohorts and a powerful king of the west will come, who will conquer them:"
+  },
+  {
+   "chapter": 6,
+   "verse": 9,
+   "text": "And he will take them captive, and burn a part of their temple with fire, and will crucify some around their colony."
+  },
+  {
+   "chapter": 7,
+   "verse": 1,
+   "text": "And when this is done the times will be ended, in a moment the second course will be ended , the four hours will come."
+  },
+  {
+   "chapter": 7,
+   "verse": 2,
+   "text": "They shall be forced..."
+  },
+  {
+   "chapter": 7,
+   "verse": 3,
+   "text": "And, in the time of these, scornful and impious men will rule, saying that they are just."
+  },
+  {
+   "chapter": 7,
+   "verse": 4,
+   "text": "And these will conceal the wrath of their minds, being treacherous men, self-pleasers, dissemblers in all their own affairs and"
+  },
+  {
+   "chapter": 7,
+   "verse": 5,
+   "text": "Devourers of the goods of the poor, saying that they do so on the ground of their justice, but in reality to destroy them. Complainers, deceitful, concealing themselves lest they should be recognised, impious, filled with lawlessness and iniquity from sunrise to sunset,"
+  },
+  {
+   "chapter": 7,
+   "verse": 6,
+   "text": "Saying: We shall have feastings and luxury, eating and drinking, yea we shall drink our fill, we shall be as princes."
+  },
+  {
+   "chapter": 7,
+   "verse": 7,
+   "text": "And though their hands and their hearts touch unclean things, yet their mouth will speak great things, and they will say furthermore:"
+  },
+  {
+   "chapter": 7,
+   "verse": 8,
+   "text": "Touch me not, lest thou shouldst pollute me in the place where I stand..."
+  },
+  {
+   "chapter": 8,
+   "verse": 1,
+   "text": "And there will come upon them a second visitation and wrath, such as has not befallen them from the beginning until that time, in which He will stir up against them the King of the kings of the earth and one that ruleth with great power, who will crucify those who confess to their circumcision:"
+  },
+  {
+   "chapter": 8,
+   "verse": 2,
+   "text": "And those who conceal it he will torture and deliver them up to be bound and led into prison."
+  },
+  {
+   "chapter": 8,
+   "verse": 3,
+   "text": "And their wives will be given to the gods among the Gentiles, and their young sons will be operated on by the physicians in order to bring forward their foreskin."
+  },
+  {
+   "chapter": 8,
+   "verse": 4,
+   "text": "And others amongst them will be punished by tortures and fire and sword, and they will be forced to bear in public their idols, which are as polluted as are the shrines that contain them."
+  },
+  {
+   "chapter": 8,
+   "verse": 5,
+   "text": "And they will likewise be forced by those who torture them to enter their inmost sanctuary, and they will be forced by goads to blaspheme with insolence the name, finally, after these things, the laws and what they had above their altar."
+  },
+  {
+   "chapter": 9,
+   "verse": 1,
+   "text": "Then in that day there will be a man of the tribe of Levi, whose name will be Taxo, who having seven sons will speak to them exhorting them :"
+  },
+  {
+   "chapter": 9,
+   "verse": 2,
+   "text": "Observe, my sons, behold a second ruthless and unclean visitation has come upon the people, and a punishment merciless and far exceeding the first."
+  },
+  {
+   "chapter": 9,
+   "verse": 3,
+   "text": "For what nation or what region or what people of those who are impious towards the Lord, who have done many abominations, have suffered as great calamities as have befallen us?"
+  },
+  {
+   "chapter": 9,
+   "verse": 4,
+   "text": "Now therefore, my sons, hear me: for observe and know that neither did our fathers nor their forefathers tempt God, so as to transgress His commands."
+  },
+  {
+   "chapter": 9,
+   "verse": 5,
+   "text": "And ye know that this is our strength, and thus we will do."
+  },
+  {
+   "chapter": 9,
+   "verse": 6,
+   "text": "Let us fast for the space of three days and on the fourth let us go into a cave which is in the field, and let us die rather than transgress the commands of the Lord of lords, the God of our fathers."
+  },
+  {
+   "chapter": 9,
+   "verse": 7,
+   "text": "For if we do this and die, our blood will be avenged before the Lord."
+  },
+  {
+   "chapter": 10,
+   "verse": 1,
+   "text": "And then His kingdom will appear throughout all His creation, and then Satan will be no more, and sorrow will depart with him."
+  },
+  {
+   "chapter": 10,
+   "verse": 2,
+   "text": "Then the hands of the angel will be filled and he will be appointed chief, and he will forthwith avenge them of their enemies."
+  },
+  {
+   "chapter": 10,
+   "verse": 3,
+   "text": "For the Heavenly One will arise from His royal throne, and He will go forth from His holy habitation, and His wrath will burn on account of His sons,"
+  },
+  {
+   "chapter": 10,
+   "verse": 4,
+   "text": "And the earth will tremble: to its confines will it be shaken, and the high mountains will be made low, and the hills will be shaken and fall."
+  },
+  {
+   "chapter": 10,
+   "verse": 5,
+   "text": "And the horns of the sun will be broken and he will be turned into darkness, and the moon will not give her light, and be turned wholly into blood, and the circle of the stars will be disturbed."
+  },
+  {
+   "chapter": 10,
+   "verse": 6,
+   "text": "And the sea will retire into the abyss, and the fountains of waters will fail, and the rivers will dry up."
+  },
+  {
+   "chapter": 10,
+   "verse": 7,
+   "text": "For the Most High will arise, the Eternal God alone, and He will appear to punish the Gentiles, and He will destroy all their idols."
+  },
+  {
+   "chapter": 10,
+   "verse": 8,
+   "text": "Then thou, O Israel, wilt be happy, and thou wilt mount upon the necks and wings of the eagle, and the days of thy mourning will be ended."
+  },
+  {
+   "chapter": 10,
+   "verse": 9,
+   "text": "And God will exalt thee, and He will cause thee to approach to the heaven of the stars, and He will establish thy habitation among them."
+  },
+  {
+   "chapter": 10,
+   "verse": 10,
+   "text": "And thou wilt look from on high and wilt see thy enemies in Gehenna, and thou wilt recognise them and rejoice, and thou wilt give thanks and confess thy Creator."
+  },
+  {
+   "chapter": 10,
+   "verse": 11,
+   "text": "And do thou, Joshua, the son of Nun, keep these words and this book;"
+  },
+  {
+   "chapter": 10,
+   "verse": 12,
+   "text": "For from my death—my assumption—until His advent there will be 250 times."
+  },
+  {
+   "chapter": 10,
+   "verse": 13,
+   "text": "And this is their course which they will pursue till they are consummated."
+  },
+  {
+   "chapter": 10,
+   "verse": 14,
+   "text": "And I shall go to sleep with my fathers."
+  },
+  {
+   "chapter": 10,
+   "verse": 15,
+   "text": "Wherefore, Joshua thou son of Nun, be strong and of good courage; for God hath chosen thee to be my successor in the same covenant."
+  },
+  {
+   "chapter": 11,
+   "verse": 1,
+   "text": "And when Joshua had heard the words of Moses that were written in his writing as well as all that he had before said, he rent his clothes and cast himself at Moses’ feet."
+  },
+  {
+   "chapter": 11,
+   "verse": 2,
+   "text": "And Moses comforted him and wept with him."
+  },
+  {
+   "chapter": 11,
+   "verse": 3,
+   "text": "And Joshua answered him and said:"
+  },
+  {
+   "chapter": 11,
+   "verse": 4,
+   "text": "Why dost thou comfort me, my lord Moses? And how shall I be comforted in regard to that which thou hast spoken the bitter word which has gone forth from thy mouth, which is full of tears and lamentation, in that thou departest from this people?"
+  },
+  {
+   "chapter": 11,
+   "verse": 5,
+   "text": "And now what place will receive thee?"
+  },
+  {
+   "chapter": 11,
+   "verse": 6,
+   "text": "Or what will be the sign that marks thy sepulehre?"
+  },
+  {
+   "chapter": 11,
+   "verse": 7,
+   "text": "Or who will dare to move thy body from thence as a man from place to place?"
+  },
+  {
+   "chapter": 11,
+   "verse": 8,
+   "text": "For all men when they die have according to their age their sepulchres on earth; but thy sepulchre is from the rising to the setting sun, and from the south to the confines of the north: all the world is thy sepulehre."
+  },
+  {
+   "chapter": 11,
+   "verse": 9,
+   "text": "My lord, thou art departing, and who will feed this people?"
+  },
+  {
+   "chapter": 11,
+   "verse": 10,
+   "text": "Or who is there that will have compassion on them and who will be their guide by the way?"
+  },
+  {
+   "chapter": 11,
+   "verse": 11,
+   "text": "Or who will pray for them, not omitting a single day, in order that I may lead them into the land of their forefathers?"
+  },
+  {
+   "chapter": 11,
+   "verse": 12,
+   "text": "How therefore am I to control this people as a father his only son, or as a mistress her virgin daughter, who is being prepared to be handed over to the husband she will revere, while she guards her person from the sun and takes care that her feet are not unshod for running upon the ground?"
+  },
+  {
+   "chapter": 11,
+   "verse": 13,
+   "text": "And how shall I supply them with food and drink according to the pleasure of their will?"
+  },
+  {
+   "chapter": 11,
+   "verse": 14,
+   "text": "For of them there will be 600,000 men, for these have multiplied to this degree through thy prayers, my lord Moses."
+  },
+  {
+   "chapter": 11,
+   "verse": 15,
+   "text": "And what wisdom or understanding have I that I should judge or answer by word in the house of the Lord?"
+  },
+  {
+   "chapter": 11,
+   "verse": 16,
+   "text": "And the kings of the Amorites also will then be emboldened to attack us; and believing that there is no longer amongst them the sacred spirit who was worthy of the Lord, manifold and incomprehensible, the lord of the word, who was faithful in all things, God's chief prophet throughout the earth, the most perfect teacher in the world, yea that he is no longer among them, they will say: Let us go against them."
+  },
+  {
+   "chapter": 11,
+   "verse": 17,
+   "text": "If the enemy have but once wrought impiously against their Lord, they have no advocate to offer prayers on their behalf to the Lord, as did Moses the great messenger, who every hour day and night had his knees fixed to the earth, praying and looking for help to Him that ruleth all the world with compassion and righteousness, calling to mind the covenant of the fathers and propitiating the Lord with the oath."
+  },
+  {
+   "chapter": 11,
+   "verse": 18,
+   "text": "For they will say: He is not with them: let us go therefore and destroy them from off the face of the earth."
+  },
+  {
+   "chapter": 11,
+   "verse": 19,
+   "text": "What will then become of this people, my lord Moses?"
+  },
+  {
+   "chapter": 12,
+   "verse": 1,
+   "text": "And when Joshua had finished these words, he cast himself again at the feet of Moses."
+  },
+  {
+   "chapter": 12,
+   "verse": 2,
+   "text": "And Moses took his hand and raised him into the seat before him, and answered and said unto him:"
+  },
+  {
+   "chapter": 12,
+   "verse": 3,
+   "text": "Joshua despise not thyself, but set thy mind at ease, and hearken to my words."
+  },
+  {
+   "chapter": 12,
+   "verse": 4,
+   "text": "All the nations which are in the earth God hath created as He hath us, He hath foreseen them and us from the beginning of the creation of the earth unto the end of the age, and nothing has been neglected by Him even to the least thing, but all things He hath foreseen and caused all to come forth."
+  },
+  {
+   "chapter": 12,
+   "verse": 5,
+   "text": "Yea, all things which are to be in this earth the Lord hath foreseen and lo, they are brought forward into the light..."
+  },
+  {
+   "chapter": 12,
+   "verse": 6,
+   "text": "The Lord hath on their behalf appointed me to pray for their sins and make intercession for them."
+  },
+  {
+   "chapter": 12,
+   "verse": 7,
+   "text": "For not for any virtue or strength of mine, but in His compassion and longsuffering was He pleased to call me."
+  },
+  {
+   "chapter": 12,
+   "verse": 8,
+   "text": "For I say unto you, Joshua: it is not on account of the godliness of this people that thou shalt root out the nations."
+  },
+  {
+   "chapter": 12,
+   "verse": 9,
+   "text": "The lights of, the heaven, the foundations of the earth have been made and approved by God and are under the signet ring of His right hand."
+  },
+  {
+   "chapter": 12,
+   "verse": 10,
+   "text": "Those, therefore, who do and fulfil the commandments of God will increase and be prospered:"
+  },
+  {
+   "chapter": 12,
+   "verse": 11,
+   "text": "But those who sin and set at naught the commandments will be without the blessings before mentioned, and they will be punished with many torments by the nations."
+  },
+  {
+   "chapter": 12,
+   "verse": 12,
+   "text": "But wholly to root out and destroy them is not permitted."
+  },
+  {
+   "chapter": 12,
+   "verse": 13,
+   "text": "For God will go forth who has foreseen all things for ever, and His covenant has been established, and the oath which..."
+  }
+ ]
+}

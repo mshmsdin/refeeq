@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 41,42,43,44,45,46,47,48,49,50,51,52 in this chapter.",
+  "request_id": "5b725bde-e2ec-45a4-90fb-fd0d2caeb4c7",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":4,\"book_code\":\"2ES\",\"verses\":[{\"chapter\":4,\"text\":\"Then I said, “No, Lord, that can it not.” He said to me, “In Hades, the chambers of souls are like the womb.\",\"verse\":41},{\"chapter\":4,\"text\":\"For just like a woman in labor hurries to escape the anguish of the labor pains, even so these places hurry to deliver those things that are committed to them from the beginning.\",\"verse\":42},{\"chapter\":4,\"text\":\"Then you will be shown those things which you desire to see.”\",\"verse\":43},{\"chapter\":4,\"text\":\"Then I answered, “If I have found favor in your sight, and if it is possible, and if I am worthy,\",\"verse\":44},{\"chapter\":4,\"text\":\"show me this also, whether there is more to come than is past, or whether the greater part has gone over us.\",\"verse\":45},{\"chapter\":4,\"text\":\"For what is gone I know, but I don’t know what is to come.”\",\"verse\":46},{\"chapter\":4,\"text\":\"He said to me, “Stand up on my right side, and I will explain the parable to you.”\",\"verse\":47},{\"chapter\":4,\"text\":\"So I stood, looked, and saw a hot burning oven passed by before me. It happened that when the flame had gone by I looked, and saw that the smoke remained.\",\"verse\":48},{\"chapter\":4,\"text\":\"After this, a watery cloud passed in front of me, and sent down much rain with a storm. When the stormy rain was past, the drops still remained in it.”\",\"verse\":49},{\"chapter\":4,\"text\":\"Then said he to me, “Consider with yourself; as the rain is more than the drops, and the fire is greater than the smoke, so the quantity which is past was far greater; but the drops and the smoke still remained.”\",\"verse\":50},{\"chapter\":4,\"text\":\"Then I prayed, and said, “Do you think that I will live until that time? Or who will be alive in those days?”\",\"verse\":51},{\"chapter\":4,\"text\":\"He answered me, “As for the signs you asked me about, I may tell you of them in part; but I wasn’t sent to tell you about your life, for I don’t know.\",\"verse\":52}]}"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 161,
+  "batch_end": 170,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-20b",
+  "request_id": "2336add9-53fc-43a6-a851-000c437cf82a",
+  "failovers": 5,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "error",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 54
+    },
+    {
+      "modelId": "99274687-1d7c-4d9e-a6f4-aab3765418ca",
+      "provider": "Mistral",
+      "model": "mistral-small-2603",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.1500000000",
+      "outputPrice": "0.6000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0150000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "05dfb509-43ee-4357-a629-e560369080e7",
+      "provider": "Gemini",
+      "model": "gemini-3.8-flash",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.7500000000",
+      "outputPrice": "3.7500000000",
+      "currency": "USD",
+      "cachedPrice": "0.0750000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "7321be47-f122-4b82-a587-02f38b82f746",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-20b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 839,
+      "outputTokens": 611,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 955
+    }
+  ],
+  "usage": {
+    "input": 839,
+    "output": 611,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "text_ar": "وها أنا أُحضر طوفاناً من المياه على الأرض، وتُدمّر كل الكائنات، فمن تحت السماوات، كل ما على الأرض سيتلاشى.",
+      "chapter": 5,
+      "source_ref": "5:29"
+    },
+    {
+      "text_ar": "أنت وأفراد عائلتك ستذهب وتجمع زوجين من كل الكائنات الحية، ذكوراً وأنثى، وتأتيهم إلى الفلك، لتستخرج منها ذرية على الأرض.",
+      "chapter": 5,
+      "source_ref": "5:30"
+    },
+    {
+      "text_ar": "وجمع لك جميع الطعام الذي تأكله جميع الحيوانات، حتى يكون الطعام لك ولهم.",
+      "chapter": 5,
+      "source_ref": "5:31"
+    },
+    {
+      "text_ar": "تختار لابنائك ثلاث عذارٍ، من بنات الرجال، ليكونوا زوجات لابنائك.",
+      "chapter": 5,
+      "source_ref": "5:32"
+    },
+    {
+      "text_ar": "نهض نوح، وأجلب الفلك، في المكان الذي أمره الله به، وفعَل نوح ما أمره الله.",
+      "chapter": 5,
+      "source_ref": "5:33"
+    },
+    {
+      "text_ar": "في سنه الخمسمائة و وخمسون سنة، بدأ نوح في بناء الفلك، وأنجزه خلال خمس سنوات، كما أمره الرب.",
+      "chapter": 5,
+      "source_ref": "5:34"
+    },
+    {
+      "text_ar": "ثم أخذ نوح ثلاث بنات لعليام، ابن متمثال، كزوجات لأبنائه، كما أمر الرب نوح.",
+      "chapter": 5,
+      "source_ref": "5:35"
+    },
+    {
+      "text_ar": "وكان ذلك حين توفي متمثال، ابن إنوخ، عند سن تسعمائة وستين سنة، عند وفاته.",
+      "chapter": 5,
+      "source_ref": "5:36"
+    },
+    {
+      "text_ar": "في ذلك الوقت، بعد وفاة متمثال، قال الرب لنوح: اذهب مع عائلتك إلى الفلك؛ فأنا أُجمع لك جميع حيوانات الأرض، وحيوانات المدى وتريّال الريح، وستجتمع كلها حول الفلك.",
+      "chapter": 6,
+      "source_ref": "6:1"
+    },
+    {
+      "text_ar": "وستذهب وتجلس عند أبواب الفلك، وستجتمع جميع الوحوش والحيوانات والتريّال، وتضع نفسها أمامك، وستأخذ وتُسلم في يد أبنائك، الذين سيجلبونها إلى الفلك، وكل ما يقف أمامك ستتركه.",
+      "chapter": 6,
+      "source_ref": "6:2"
+    }
+  ]
+}

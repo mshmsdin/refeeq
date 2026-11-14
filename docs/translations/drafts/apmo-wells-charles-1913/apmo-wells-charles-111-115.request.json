@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "3c5e7658-0fc5-4fe8-bb6f-eb73d4cd100f",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":32,\"text\":\"her up and said: 'Rise up, Eve, (from thy penitence), for behold, Adam thy husband hath gone out of his body. Rise up and behold his spirit borne aloft to his Maker.'\",\"source_ref\":\"32:4\"},{\"chapter\":33,\"text\":\"And Eve rose up and wiped off her tears with her hand, and the angel saith to her, ' Lift Up thyself\",\"source_ref\":\"33:1\"},{\"chapter\":33,\"text\":\"from the earth.' And she gazed steadfastly into heaven, and beheld a chariot of light, borne by four bright eagles, (and) it were impossible for any man born of woman to tell the glory of them or\",\"source_ref\":\"33:2\"},{\"chapter\":33,\"text\":\"behold their face -and angels going before the chariot- and when they came to the place where your father Adam was, the chariot halted and the Seraphim. And I beheld golden censers, between your father and the chariot, and all the angels with censers and frankincense came in haste to the\",\"source_ref\":\"33:3\"},{\"chapter\":33,\"text\":\"incense-offering and blew upon it and the smoke of the incense veiled the firmaments. And the angels fell down and worshipped God, crying aloud and saying, JA'EL, Holy One, have pardon, for he is Thy image, and the work of Thy holy hands.'\",\"source_ref\":\"33:5\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 32:4, 33:1, 33:2, 33:3, 33:5.",
+  "application_id": "rafeeq-bible-translation"
+}

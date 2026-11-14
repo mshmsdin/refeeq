@@ -1,0 +1,51 @@
+{
+  "request_id": "9a4ebcf5-aa3b-4bd7-be41-cdf3e880158d",
+  "content": "{\n  \"book_code\": \"TJOB\",\n  \"verses\": [\n    {\n      \"chapter\": 1,\n      \"verse\": 11,\n      \"text_ar\": \"ثم تأملت وقلت لنفسي: «هل هذا هو الذي خلق السماء والأرض والبحر وكلنا؟ كيف سأعرف الحقيقة؟»\"\n    },\n    {\n      \"chapter\": 1,\n      \"verse\": 12,\n      \"text_ar\": \"وفي تلك الليلة حين كنت نائمًا، جاء صوت نادى: «يا جوباب! يا جوباب! قوم، وسأخبرك من هو الذي تريد أن تعرفه.»\"\n    },\n    {\n      \"chapter\": 1,\n      \"verse\": 13,\n      \"text_ar\": \"هذا، مع ذلك، الذي يجلب الناس إليه الذبائح والقرابين، ليس الله، بل هو عمل وقوة المُغوي (الشيطان) الذي يضلّ الناس.\"\n    },\n    {\n      \"chapter\": 1,\n      \"verse\": 14,\n      \"text_ar\": \"وعندما سمعت ذلك سقطت على الأرض وسجّدت قائلاً:\"\n    },\n    {\n      \"chapter\": 1,\n      \"verse\": 15,\n      \"text_ar\": \"«يا ربّي الذي يتكلم من أجل خلاص نفسي. أطلبك، إذا كان هذا أصنام الشيطان، فإني أطلبك أن تسمح لي بالرحيل من هنا وتدميره وتطهير هذا المكان.»\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 550,
+    "output": 387,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "error",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "503",
+      "estimatedCost": null,
+      "latencyMs": 1070
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 550,
+      "outputTokens": 387,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1220
+    }
+  ]
+}

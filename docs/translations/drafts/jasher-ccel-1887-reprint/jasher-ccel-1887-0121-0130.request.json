@@ -1,0 +1,17 @@
+{
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "application_id": "rafeeq-bible-translation",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "0665f0c5-b9d1-4587-8db1-bd0ff323ea0a",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"chapter\":4,\"source_ref\":\"4:10\",\"verse\":10,\"text\":\"And all the days that Seth lived, were nine hundred and twelve years, and he died.\"},{\"chapter\":4,\"source_ref\":\"4:11\",\"verse\":11,\"text\":\"And Lamech was one hundred and eighty years old when he took Ashmua, the daughter of Elishaa the son of Enoch his uncle, and she conceived.\"},{\"chapter\":4,\"source_ref\":\"4:12\",\"verse\":12,\"text\":\"And at that time the sons of men sowed the ground, and a little food was produced, yet the sons of men did not turn from their evil ways, and they trespassed and rebelled against God.\"},{\"chapter\":4,\"source_ref\":\"4:13\",\"verse\":13,\"text\":\"And the wife of Lamech conceived and bare him a son at that time, at the revolution of the year.\"},{\"chapter\":4,\"source_ref\":\"4:14\",\"verse\":14,\"text\":\"And Methuselah called his name Noah, saying, The earth was in his days at rest and free from corruption, and Lamech his father called his name Menachem, saying, This one shall comfort us in our works and miserable toil in the earth, which God had cursed.\"},{\"chapter\":4,\"source_ref\":\"4:15\",\"verse\":15,\"text\":\"And the child grew up and was weaned, and he went in the ways of his father Methuselah, perfect and upright with God.\"},{\"chapter\":4,\"source_ref\":\"4:16\",\"verse\":16,\"text\":\"And all the sons of men departed from the ways of the Lord in those days as they multiplied upon the face of the earth with sons and daughters, and they taught one another their evil practices and they continued sinning against the Lord.\"},{\"chapter\":4,\"source_ref\":\"4:17\",\"verse\":17,\"text\":\"And every man made unto himself a god, and they robbed and plundered every man his neighbor as well as his relative, and they corrupted the earth, and the earth was filled with violence.\"},{\"chapter\":4,\"source_ref\":\"4:18\",\"verse\":18,\"text\":\"And their judges and rulers went to the daughters of men and took their wives by force from their husbands according to their choice, and the sons of men in those days took from the cattle of the earth, the beasts of the field and the fowls of the air, and taught the mixture of animals of one species with the other, in order therewith to provoke the Lord; and God saw the whole earth and it was corrupt, for all flesh had corrupted its ways upon earth, all men and all animals.\"},{\"chapter\":4,\"source_ref\":\"4:19\",\"verse\":19,\"text\":\"And the Lord said, I will blot out man that I created from the face of the earth, yea from man to the birds of the air, together with cattle and beasts that are in the field for I repent that I made them.\"}]}"
+    }
+  ]
+}

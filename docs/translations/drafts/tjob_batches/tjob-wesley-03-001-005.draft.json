@@ -1,0 +1,71 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 3,
+  "range": "1-5",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "61f946a2-425a-48d4-bcb5-61100d96a557",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 312,
+      "outputTokens": 266,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0007586,
+      "latencyMs": 1638
+    }
+  ],
+  "usage": {
+    "input": 312,
+    "output": 266,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0007586,
+  "verses": [
+    {
+      "chapter": 3,
+      "text_ar": "لأنه كان لي مئة وثلاثون ألف من الضأن، ومن هذه فرزت سبعة آلاف لكسوة الأيتام والأرامل والمحتاجين والمرضى.",
+      "verse": 1
+    },
+    {
+      "chapter": 3,
+      "text_ar": "وكان لي قطيع من ثمانمئة كلب تحرس غنمي، وعلاوة على ذلك مئتا كلب لحراسة بيتي.",
+      "verse": 2
+    },
+    {
+      "chapter": 3,
+      "text_ar": "وكان لي تسع طواحين تعمل لكل المدينة، وسفن لنقل البضائع، وكنت أرسلها إلى كل مدينة وإلى القرى للضعفاء والمرضى والذين كانوا سيئي الحظ.",
+      "verse": 3
+    },
+    {
+      "chapter": 3,
+      "text_ar": "وكان لي ثلاثمئة وأربعون ألفاً من الحمير البدوية، ومن هذه خصصت خمسمئة، وأمرت أن تُباع نتاجها وأن تُعطى العائدات للفقراء والمحتاجين.",
+      "verse": 4
+    },
+    {
+      "chapter": 3,
+      "text_ar": "لأنه من كل الأراضي كان الفقراء يأتون للقائي.",
+      "verse": 5
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"verses\":[{\"text\":\"You will be cast down by them as stubble, and they will be to you as fire.\",\"verse\":61,\"chapter\":15},{\"text\":\"They will devour you, your cities, your land, and your mountains. They will burn all your forests and your fruitful trees with fire.\",\"verse\":62,\"chapter\":15},{\"text\":\"They will carry your children away captive, and will plunder your wealth, and mar the glory of your face.”\",\"verse\":63,\"chapter\":15}],\"chapter\":15,\"book_code\":\"2ES\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "e0564bbd-459d-44de-bff9-69330786788c",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 61,62,63 in this chapter."
+}

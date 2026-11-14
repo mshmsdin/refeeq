@@ -1,0 +1,37 @@
+{
+  "request_id": "35d6aa0a-938a-481e-a664-b9b8d98ef1e2",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"فإن زوجتي الأولى ماتت مع أولادي العشرة الآخرين بموت مر.\",\n      \"verse\": 6\n    },\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"اسمعوا الآن يا أولادي، وسأكشف لكم ما حدث لي.\",\n      \"verse\": 7\n    },\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"كنت رجلاً غنياً جداً أعيش في المشرق في أرض أوسيتيس (عوص)، وقبل أن يسميني الرب أيوب، كنت أُدعى يوباب.\",\n      \"verse\": 8\n    },\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"وكانت بداية محنتي هكذا.\",\n      \"verse\": 9\n    },\n    {\n      \"chapter\": 1,\n      \"text_ar\": \"بالقرب من بيتي كان يوجد صنم لشخص يعبده الشعب؛ ورأيت باستمرار محرقة تُقدم له كإله.\",\n      \"verse\": 10\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 268,
+    "output": 287,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0007978999999999999,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 268,
+      "outputTokens": 287,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0007978999999999999,
+      "latencyMs": 1448
+    }
+  ]
+}

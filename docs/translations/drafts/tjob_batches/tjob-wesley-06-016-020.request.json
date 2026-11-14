@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "74bcbf33-d33a-449a-b592-31b9a64ecfa3",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":6,\"verses\":[{\"chapter\":6,\"verse\":16,\"text\":\"In short then, Job, after the many things that have been said to me, I now say in one word to thee :\"},{\"chapter\":6,\"verse\":17,\"text\":\"\\\"Since the feebleness of my heart has crushed my bones, rise then and take these loaves of bread and enjoy them, and then speak some word against the Lord and die!\"},{\"chapter\":6,\"verse\":18,\"text\":\"For I too, would exchange the torpor of death for the sustenance of my body\\\".\"},{\"chapter\":6,\"verse\":19,\"text\":\"But I replied to her \\\"Behold I have been for these seven years plague-stricken, and I have stood the worms of my body, and I was not weighed down in my soul by all these pains.\"},{\"chapter\":6,\"verse\":20,\"text\":\"And as to the word which thou sayest: Speak some word against God and die!, together with thee I will sustain the evil which thou seest. and let us endure the ruin of all that we have.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 16,17,18,19,20 in this chapter."
+}

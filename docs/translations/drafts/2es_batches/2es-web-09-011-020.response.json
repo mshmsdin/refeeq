@@ -1,0 +1,37 @@
+{
+  "request_id": "84935b1e-108b-4511-b17a-8eccf591d70c",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 9,\n      \"verse\": 11,\n      \"text_ar\": \"وكل الذين استخفوا بشريعتي بينما كانت لهم الحرية بعد، وحين أتيحت لهم فرصة للتوبة، لم يفهموا بل احتقروها،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 12,\n      \"text_ar\": \"فسيعرفونها في العذاب بعد الموت.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 13,\n      \"text_ar\": \"لذلك لا تكن فضولياً بعد اليوم في كيف يُعاقب الأشرار، بل استفسر كيف يخلص الأبرار، الذين يملكون العالم، ومن أجلهم خُلق العالم.»\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 14,\n      \"text_ar\": \"فأجبت:\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 15,\n      \"text_ar\": \"«لقد قلت من قبل، وأتكلم الآن، وسأقوله أيضاً فيما بعد، إن عدد الهالكين أكبر بكثير من عدد الذين سيخلصون،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 16,\n      \"text_ar\": \"مثلما أن الموجة أعظم من القطرة.»\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 17,\n      \"text_ar\": \"فأجابني قائلاً: «مثلما يكون الحقل هكذا يكون البذر أيضاً. ومثلما تكون الأزهار هكذا تكون الألوان. ومثلما يكون العمل هكذا يكون الدينونة عليه أيضاً. ومثلما يكون الفلاح هكذا يكون بيدره أيضاً. لأنه كان وقت في العالم\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 18,\n      \"text_ar\": \"حين كنت أعد لمن يعيشون الآن، قبل أن يُصنع العالم ليسكنوا فيه. وحينئذ لم يعارضني أحد،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 19,\n      \"text_ar\": \"لأنه لم يكن أحد موجوداً. أما الآن، فإن أولئك المخلوقين في هذا العالم المُعد، بكل من المائدة التي لا تزول والشريعة التي لا تُفحص، قد فسدوا في طرقهم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 9,\n      \"verse\": 20,\n      \"text_ar\": \"لذلك تأملت في عالمي، وإذا هو مُدمر، وفي أرضي، وإذا هي في خطر، بسبب الخطط التي دخلت إليها.»\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 512,
+    "output": 766,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0020686,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 512,
+      "outputTokens": 766,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0020686,
+      "latencyMs": 2174
+    }
+  ]
+}

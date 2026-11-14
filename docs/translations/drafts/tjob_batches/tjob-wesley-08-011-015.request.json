@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "1302b1a9-295f-48b2-9add-7ac5dcaebd3d",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":8,\"verses\":[{\"chapter\":8,\"verse\":11,\"text\":\"But art thou truly in a state of calmness Therefore let me ask and speak, and when thou answerest me to my first word, I shall have a second question to ask, and if again thou answerest in well-set words, it will be manifest that thy heart has not been unbalanced\\\".\"},{\"chapter\":8,\"verse\":12,\"text\":\"And I said : \\\"Upon what dost thou set thy hope\\\" And I said: \\\"Upon the living God\\\".\"},{\"chapter\":8,\"verse\":13,\"text\":\"And he said to me : \\\"Who deprived thee of all thou didst possess And who inflicted thee with these plagues 9\\\" And I said: \\\"God\\\".\"},{\"chapter\":8,\"verse\":14,\"text\":\"And he said: \\\"If thou still placest thy hope upon God, how can He do wrong in judgment, having brought upon thee these plagues and misfortunes, and having taken from thee all thy possessions\"},{\"chapter\":8,\"verse\":15,\"text\":\"And since He has taken these, it is clear that He has given thee nothing. No king will disgrace his soldier who has served him well as body-guard\\\"\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15 in this chapter."
+}

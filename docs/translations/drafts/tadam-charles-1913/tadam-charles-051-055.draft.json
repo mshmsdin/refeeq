@@ -1,0 +1,74 @@
+{
+  "book_code": "TADAM",
+  "source_license_notice": "English translation by R. H. Charles, Oxford 1913; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-charles-1913-latin-recension",
+  "source_name": "The Books of Adam and Eve (Latin recension)",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "batch_start": 51,
+  "batch_end": 55,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "ad6454d7-bdb2-46d6-b24d-78b2a7a32c31",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 419,
+      "outputTokens": 405,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011382,
+      "latencyMs": 1497
+    }
+  ],
+  "usage": {
+    "input": 419,
+    "output": 405,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0011382,
+  "units": [
+    {
+      "chapter": 20,
+      "source_ref": "20:1",
+      "text_ar": "ولكن في تلك الساعة قال آدم: «لقد أتى إليَّ تظلم حواء. لعل الحية قد حاربتها مرة أخرى»."
+    },
+    {
+      "chapter": 20,
+      "source_ref": "20:2",
+      "text_ar": "ومضى فوجدها في كرب شديد. وقالت حواء: «منذ اللحظة التي رأيتك فيها يا سيدي، انتعشت نفسي المثقلة بالأحزان. والآن توسل إلى الرب الإله من أجلي لكي"
+    },
+    {
+      "chapter": 20,
+      "source_ref": "20:3",
+      "text_ar": "يستجيب لك وينظر إليَّ ويحررني من أوجاعي الرهيبة». وتوسل آدم إلى الرب من أجل حواء."
+    },
+    {
+      "chapter": 21,
+      "source_ref": "21:1",
+      "text_ar": "وإذا بإثنا عشر ملاكاً واثنين من «الفضائل» قد أتوا، واقفين عن اليمين وعن اليسار"
+    },
+    {
+      "chapter": 21,
+      "source_ref": "21:2",
+      "text_ar": "لحواء؛ وكان ميخائيل واقفاً عن اليمين؛ فمسح وجهها حتى الثدي وقال لحواء: «مباركة أنتِ يا حواء من أجل آدم. وحيث إن صلواته وشفاعاته عظيمة، فقد أُرسلت لكي تنالي مساعدتنا. قومي الآن، و"
+    }
+  ]
+}

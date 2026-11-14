@@ -1,0 +1,100 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 31,
+  "batch_end": 40,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "97ae2d97-9f43-4c3d-8b10-22e05f51cabc",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 846,
+      "outputTokens": 816,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0022938000000000004,
+      "latencyMs": 2653
+    }
+  ],
+  "usage": {
+    "input": 846,
+    "output": 816,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0022938000000000004,
+  "units": [
+    {
+      "chapter": 1,
+      "source_ref": "1:31",
+      "text_ar": "ولكنك صنعت هذا الأمر وقتلت أخاك عبثاً لأنه كلمك بالحق، والآن، لذلك، ملعوناً تكون من الأرض التي فتحت فاها لتتقبل دم أخيك من يدهك، والتي فيها دفنته."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:32",
+      "text_ar": "ويكون متى فلحتها، فإنها لا تعود تعطيك قوتها كما في البدء، شوكاً وحسكاً تنتج الأرض، وتكون تائهاً وشارداً في الأرض إلى يوم موتك."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:33",
+      "text_ar": "وفي ذلك الوقت خرج قاين من حضور الرب، من المكان الذي كان فيه، وذهب تائهاً وشارداً في الأرض نحو شرقي عدن، هو وكل ما يخصه."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:34",
+      "text_ar": "وعرف قاين امرأته في تلك الأيام، فحبلت وولدت ابناً، ودعا اسمه أخنوخ، قائلاً: في ذلك الوقت ابتدأ الرب يعطيه راحة وهدوءاً في الأرض."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:35",
+      "text_ar": "وفي ذلك الوقت ابتدأ قاين أيضاً يبني مدينة، فبنى المدينة ودعا اسم المدينة أخنوخ، على اسم ابنه، لأنه في تلك الأيام أعطاه الرب راحة على الأرض، فلم يعد يتحرك ويطوف كما في البدء."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:36",
+      "text_ar": "وولد لإخنوخ إيراد، وإيراد ولد محويائيل، ومحويائيل ولد متوشائيل."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:1",
+      "text_ar": "وكان في السنة المئة والثلاثين لحياة آدم على الأرض، أنه عرف ثانية حواء امرأته، فحبلت وولدت ابناً على شبهه وكصورته، ودعت اسمه شيثاً، قائلة: لأن الله أقام لي نسلاً آخر مكان هابيل، لأن قاين قد قتله."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:2",
+      "text_ar": "وعاش شيث مئة وخمس سنين، وولد ابناً، ودعا شيث اسم ابنه أنوش، قائلة: لأنه في ذلك الوقت ابتدأ بنو البشر يكثرون، ويذلون نفوسهم وقلوبهم بتعديهم وعصيانهم لله."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:3",
+      "text_ar": "وكان في أيام أنوش أن بني البشر استمروا في العصيان والتعدي على الله، ليزيدوا غضب الرب على بني البشر."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:4",
+      "text_ar": "وذاب بنو البشر وخدموا آلهة أخرى، ونسوا الرب الذي خلقهم في الأرض: وفي تلك الأيام صنع بنو البشر تماثيل من نحاس وحديد وخشب وحجر، وسجدوا لها وخدموها."
+    }
+  ]
+}

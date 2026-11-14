@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":9,\"verses\":[{\"chapter\":9,\"verse\":6,\"text\":\"6 I beg you, almighty Lord of all creation, never born and incomprehensible, in whom all judgment was kept hidden before these things came into existence.”\"},{\"chapter\":9,\"verse\":7,\"text\":\"7 When Jeremiah had said this, and while he was standing in the area around the altar with Baruch and Abimelech, he became like someone whose soul had left him.\"},{\"chapter\":9,\"verse\":8,\"text\":\"8 And Baruch and Abimelech were weeping and crying out in a loud voice: “How terrible for us! For our father Jeremiah has left us. The priest of God has gone!”\"},{\"chapter\":9,\"verse\":9,\"text\":\"9 And all the people heard their weeping and they all ran to them and saw Jeremiah lying on the ground as if dead.\"},{\"chapter\":9,\"verse\":10,\"text\":\"10 And they tore their clothes and put dust on their heads and wept bitterly.\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "0524b858-44ae-4ad6-a703-be937ae0ef85",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

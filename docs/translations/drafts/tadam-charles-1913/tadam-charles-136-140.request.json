@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":47,\"source_ref\":\"47:1\",\"text\":\"'Blessed art thou, O Lord, for thou hast had pity on Thy creature.'\"},{\"chapter\":48,\"source_ref\":\"48:1\",\"text\":\"Then Seth saw the hand of God stretched out holding Adam and he handed him over to\"},{\"chapter\":48,\"source_ref\":\"48:2\",\"text\":\"Michael, saying: 'Let him be in thy charge till the day of Judgement in punishment, till the last years when I will convert his sorrow into joy.\"},{\"chapter\":48,\"source_ref\":\"48:3\",\"text\":\"Then shall he sit on the throne of him who hath been his supplanter.'\"},{\"chapter\":48,\"source_ref\":\"48:4\",\"text\":\"And the Lord said again to the angels Michael and Uriel: 'Bring me three linen clothes of byssus and spread them out over Adam and other linen clothes over Abel his son and bury Adam and Abel his son.'\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "40c15ad5-a9bf-4e89-b030-7f269f060d8f",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 47:1, 48:1, 48:2, 48:3, 48:4.",
+  "tenant_id": "rafeeq-bible-translation"
+}

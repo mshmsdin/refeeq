@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "587d774b-61e7-4e58-9fd4-084563de6d5b",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فأجابني: «سل امرأة تلد وهي تخبرك.\",\n      \"verse\": 51\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وقل لها: لماذا ليس الذين ولدتهم الآن مثل الذين سبقوهم، بل هم أصغر قامة؟\",\n      \"verse\": 52\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وهي أيضاً ستجيبك: إن الذين يولدون في قوة الشباب يختلفون عن الذين يولدون في زمن الشيخوخة عندما يوهن الرحم.\",\n      \"verse\": 53\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فتأمل أنت أيضاً كيف أنكم أقصر قامة من الذين سبقوكم.\",\n      \"verse\": 54\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"وهكذا فإن الذين يأتون بعدكم أصغر منكم، لأنهم ولدوا من الخليقة التي بدأت تشيخ، وقد تجاوزت قوة الشباب».\",\n      \"verse\": 55\n    },\n    {\n      \"chapter\": 5,\n      \"text_ar\": \"فقلت: «يا رب، أتوسل إليك، إن كنت قد وجدت نعمة في عينيك، فأرني عبدك بمن تفتقد خليقتك».\",\n      \"verse\": 56\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  354,
+                  "output":  369,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0010287,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  354,
+                         "outputTokens":  369,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0010287,
+                         "latencyMs":  1547
+                     }
+                 ]
+}

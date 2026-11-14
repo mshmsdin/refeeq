@@ -1,0 +1,71 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 5,
+  "range": "11-15",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "0c8fb5d6-f00f-4654-9ac9-625a717347b5",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 351,
+      "outputTokens": 393,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010877999999999999,
+      "latencyMs": 1664
+    }
+  ],
+  "usage": {
+    "input": 351,
+    "output": 393,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0010877999999999999,
+  "verses": [
+    {
+      "chapter": 5,
+      "text_ar": "وأما زوجتي المتضضعة التي أُحضِرت إلى مخدع عرسها بمثل هذا الترف العظيم ومع حراس شخصيين من الرماة، فرأيتها تقوم بعمل السقاء كأمة في بيت رجل عامي لتكسب بعض الخبز وتأتي به إليّ.",
+      "verse": 11
+    },
+    {
+      "chapter": 5,
+      "text_ar": "وفي ضيقي الشديد قلت: \"يا ليت هؤلاء الحكام المتفاخرين في المدينة، الذين ما كنت أظنهم يعادلون كلاب رعاتي، يستخدمون زوجتي الآن خادمة!\"",
+      "verse": 12
+    },
+    {
+      "chapter": 5,
+      "text_ar": "وبعد هذا تشجعت ثانية.",
+      "verse": 13
+    },
+    {
+      "chapter": 5,
+      "text_ar": "ولكنهم فيما بعد حجبوا حتى الخبز الذي كان ينبغي أن يكون لقوتها وحدها.",
+      "verse": 14
+    },
+    {
+      "chapter": 5,
+      "text_ar": "فأخذته وقسمته بينها وبيني، قائلة بأسى: \"الويل لي! فمن الآن فصاعداً قد لا يعتاش على الخبز، ولا يمكنه الذهاب إلى السوق ليطلب خبزاً من بائعي الخبز ليأتي به إليّ لكي يأكل\"",
+      "verse": 15
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"TADAM\",\"units\":[{\"chapter\":49,\"source_ref\":\"49:3\",\"text\":\"On account of your transgression, Our Lord will bring upon your race the anger of his judgement, first by water, the second time by fire; by these two, will the Lord judge the whole human race\"},{\"chapter\":50,\"source_ref\":\"50:1\",\"text\":\"But hearken unto me, my children. Make ye then tables of stone and others of clay, and write\"},{\"chapter\":50,\"source_ref\":\"50:2\",\"text\":\"on them, all my life and your father's (all) that ye have heard and seen from us. If by water the Lord judge our race, the tables of clay will be dissolved and the tables of stone will remain; but if by fire, the tables of stone will be broken up and the tables of clay will be baked (hard).'\"},{\"chapter\":50,\"source_ref\":\"50:3\",\"text\":\"When Eve had said all this to her children, she spread out her hands to heaven in prayer, and bent her knees to the earth, and while she worshipped the Lord and gave him thanks, she gave up the ghost. Thereafter, all her children buried her with loud lamentation.\"},{\"chapter\":51,\"source_ref\":\"51:1\",\"text\":\"When they had been mourning four days, (then) Michael the archangel appeared and said\"}]}",
+      "role": "user"
+    }
+  ],
+  "service_key": "bible-translation",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "2fdf9cb2-a4be-43ac-bccb-07c915be9a3f",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 49:3, 50:1, 50:2, 50:3, 51:1.",
+  "tenant_id": "rafeeq-bible-translation"
+}

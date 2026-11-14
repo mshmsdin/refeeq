@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":7,\"verses\":[{\"chapter\":7,\"text\":\"When I had finished speaking these words, the angel which had been sent to me the nights before was sent to me.\",\"verse\":1},{\"chapter\":7,\"text\":\"He said to me, â€œRise, Esdras, and hear the words that I have come to tell you.â€‌\",\"verse\":2},{\"chapter\":7,\"text\":\"I said, â€œSpeak on, my Lord.â€‌ Then he said to me, â€œThere is a sea set in a wide place, that it might be broad and vast,\",\"verse\":3},{\"chapter\":7,\"text\":\"but its entrance is set in a narrow place so as to be like a river.\",\"verse\":4},{\"chapter\":7,\"text\":\"Whoever desires to go into the sea to look at it, or to rule it, if he didnâ€™t go through the narrow entrance, how could he come into the broad part?\",\"verse\":5},{\"chapter\":7,\"text\":\"Another thing also: There is a city built and set in a plain country, and full of all good things,\",\"verse\":6},{\"chapter\":7,\"text\":\"but its entrance is narrow, and is set in a dangerous place to fall, having fire on the right hand, and deep water on the left.\",\"verse\":7},{\"chapter\":7,\"text\":\"There is only one path between them both, even between the fire and the water, so that only one person can go there at once.\",\"verse\":8},{\"chapter\":7,\"text\":\"If this city is now given to a man for an inheritance, if the heir doesnâ€™t pass the danger before him, how will he receive his inheritance?â€‌\",\"verse\":9},{\"chapter\":7,\"text\":\"I said, â€œThat is so, Lord.â€‌ Then said he to me, â€œEven so also is Israelâ€™s portion.\",\"verse\":10}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "5f7a1ed8-139d-411e-9bb1-0f37c256b56e",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5,6,7,8,9,10 in this chapter."
+}

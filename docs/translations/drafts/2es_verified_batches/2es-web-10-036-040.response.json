@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "d8b934a0-a347-450f-952d-f5d6ceb2fbe6",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"أو أن حسي مخدوع، أم أن نفسي في حلم؟\",\n      \"verse\": 36\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"والآن لذلك أرجوك أن تفسر لعبدك ما تعنيه هذه الرؤيا.\",\n      \"verse\": 37\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"فأجابني: استمع إلي، وسأعلمك، وأخبرك بالأمور التي تخاف منها، لأن العلي كشف لك أموراً سرية كثيرة.\",\n      \"verse\": 38\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"لقد رأى أن طريقك بار، لأنك تأسف باستمرار على شعبك، وتنوح نوحاً عظيماً على صهيون.\",\n      \"verse\": 39\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"هذا إذن هو معنى الرؤيا.\",\n      \"verse\": 40\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  278,
+                  "output":  297,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0008259,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  278,
+                         "outputTokens":  297,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0008259,
+                         "latencyMs":  1363
+                     }
+                 ]
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "1d8cec3d-0006-439f-b31f-3024474d86d1",
+  "content": "{\n  \"verses\": [\n    {\n      \"verse\": 16,\n      \"chapter\": 7,\n      \"text_ar\": \"فصرخ النسر بصوت عظيم قائلاً: «أقول لك يا إرميا المختار من الله، اذهب واجمع الشعب وتعال إلى ههنا لكي يسمعوا رسالة أتيْتُ بها إليك من باروخ وأبيمالك».\"\n    },\n    {\n      \"verse\": 17,\n      \"chapter\": 7,\n      \"text_ar\": \"ولما سمع إرميا هذا مجّد الله، ومضى فجمع الشعب مع نسائهم وأولادهم، وأتى إلى حيث كان النسر.\"\n    },\n    {\n      \"verse\": 18,\n      \"chapter\": 7,\n      \"text_ar\": \"ونزل النسر على الجثة فعادت إليها الحياة.\"\n    },\n    {\n      \"verse\": 19,\n      \"chapter\": 7,\n      \"text_ar\": \"وإنما حدث هذا لكي يؤمنوا.\"\n    },\n    {\n      \"verse\": 20,\n      \"chapter\": 7,\n      \"text_ar\": \"وتعجب جميع الشعب مما حدث، وقالوا: «هذا هو الإله الذي ظهر لآبائنا في البرية على يد موسى، وها قد ظهر لنا الآن بواسطة النسر».\"\n    }\n  ],\n  \"book_code\": \"4BAR\"\n}",
+  "usage": {
+    "input": 334,
+    "output": 338,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009452000000000001,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 334,
+      "outputTokens": 338,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009452000000000001,
+      "latencyMs": 1342
+    }
+  ]
+}

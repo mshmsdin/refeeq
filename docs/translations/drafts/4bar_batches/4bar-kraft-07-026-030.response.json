@@ -1,0 +1,37 @@
+{
+  "request_id": "bf5d5ae9-ce7a-45fb-a5b1-64aa0d655fb1",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لأنه يشبه أباً له ابن وحيد يُسلَّم للعقاب، والذين يرون أباه ويعزونه يغطون وجهه لكيلا يرى كيف يُعاقب ابنه، فيزداد تمزقاً بالحزن.\",\n      \"verse\": 26\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لأنه هكذا أشفق الله عليكم ولم يدعكم تدخلون بابل لكيلا تروا ضيق الشعب.\",\n      \"verse\": 27\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لأنه منذ أن أتينا إلى هنا لم يفارقنا الحزن، طوال ست وستين سنة حتى اليوم.\",\n      \"verse\": 28\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لأنه مرات عديدة عندما خرجتُ وجدتُ بعض الشعب معلقين بأمر الملك نبوخذ نصر، وهم يبكون ويقولون: «اർحمنا أيها الإله زار!»\",\n      \"verse\": 29\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"فلما سمعتُ هذا، حزنتُ وبكيتُ بنوح مضاعف، ليس فقط لأنهم كانوا معلقين، بل لأنهم كانوا يدعون إلهاً غريباً قائلين: «ارحمنا».\",\n      \"verse\": 30\n    }\n  ]\n}",
+  "usage": {
+    "input": 357,
+    "output": 378,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010520999999999998,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 357,
+      "outputTokens": 378,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010520999999999998,
+      "latencyMs": 1629
+    }
+  ]
+}

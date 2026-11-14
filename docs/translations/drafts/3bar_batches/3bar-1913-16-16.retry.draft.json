@@ -1,0 +1,56 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "3BAR",
+  "book_name_ar": "باروخ الثالث (الرؤيا اليونانية لباروخ)",
+  "source_translation": "en-hughes-charles-1913-3baruch",
+  "source_url": "https://archive.org/details/apocryphapseudep02charuoft",
+  "source_license": "الطبعة المطبوعة سنة ١٩١٣ في الملك العام",
+  "source_quality": "ترجمة هيوز الإنجليزية عن الشاهد اليوناني، طبعة تاريخية غير نقدية",
+  "source_sha256": "3a7ae105fe29022def9ed9c3a33c29af97fd6eea09769d9f064a3e21bf11f6b5",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "model_id": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "request_id": "cb914b71-5404-47c4-8ad7-c511386cc441",
+  "usage": {
+    "input": 629,
+    "output": 269,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0008612,
+  "estimated_cost_currency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 629,
+      "outputTokens": 269,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0008612,
+      "latencyMs": 1643
+    }
+  ],
+  "translation": {
+    "book_code": "3BAR",
+    "verses": [
+      {
+        "chapter": 16,
+        "verse": 1,
+        "text_ar": "1 وإذ التفت قال أيضاً للذين لم يحضروا شيئاً: هكذا يقول الرب، لا تكتئبوا الوجوه ولا تبكوا، ولا تتركوا بني البشر وحدهم. 2 ولكن بما أنهم أغاضوني بأعمالهم، فاذهبوا وأجعلوهم يغارون ويغضبون ويستفزون ضد شعب ليس بشعب، شعب ليس له فهم. 3 وعلاوة على ذلك، أرسلوا أيضاً اليرقة والجراد غير ذي الجناح، والصدأ، والجراد العادي (و) البرد بالبروق والغضب، 4 وعاقبوهم بشدة بالسيف والموت، وأولادهم بالشياطين. لأنهم لم يسمعوا لصوتي، ولم يحفظوا وصاياي، ولم يعملوها، بل كانوا مستخفين بوصايائي، ومتبجحين على الكهنة الذين أعلنوا كلامي لهم.",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

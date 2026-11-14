@@ -1,0 +1,5 @@
+{
+  "status": "rejected_by_router_http_503_then_duplicate_409",
+  "reason": "All eligible providers failed; the retry reused a consumed idempotency key. No draft was returned.",
+  "action": "Assigned a new request key before retry."
+}

@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "05d79527-013e-470e-b016-6ee02ee80d6d",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"هوذا فجأة صرخت صرخة عظيمة ومخفية جدا حتى اهتزت الأرض للصوت.\",\n      \"verse\": 26\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"نظرت وإذا بالمرأة لا تظهر لي بعد بل كانت هناك مدينة مبنية وموضع ظهر من أساسات عظيمة، فحينئذ خفت وصرخت بصوت عالٍ:\",\n      \"verse\": 27\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"أين الملاك أوريئيل الذي جاء إليّ في البدء؟ لأنه جعلني أقع في هذه الغشية العظيمة وصارت نهايتي فساداً وصلاتي عاراً!\",\n      \"verse\": 28\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"وبينما كنت أتكلم بهذا الكلام هوذا الملاك الذي أتى إليّ في البدء جاء ونظر إليّ.\",\n      \"verse\": 29\n    },\n    {\n      \"chapter\": 10,\n      \"text_ar\": \"وهوذا كنت مضطجعاً كالميت ونُزع فهمي مني، فأمسكني بيدي اليمنى وعزاني وأقامني على قدمي وقال لي:\",\n      \"verse\": 30\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  355,
+                  "output":  353,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.000989,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  355,
+                         "outputTokens":  353,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.000989,
+                         "latencyMs":  1473
+                     }
+                 ]
+}

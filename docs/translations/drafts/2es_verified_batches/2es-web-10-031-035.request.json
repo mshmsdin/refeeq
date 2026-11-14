@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":10,\"verses\":[{\"chapter\":10,\"text\":\"â€œWhat ails you? Why are you so troubled? Why is your understanding and the thoughts of your heart troubled?â€‌\",\"verse\":31},{\"chapter\":10,\"text\":\"I said, â€œBecause you have forsaken me; yet I did according to your words, and went into the field, and, behold, I have seen, and still see, that which I am not able to explain.â€‌\",\"verse\":32},{\"chapter\":10,\"text\":\"He said to me, â€œStand up like a man, and I will instruct you.â€‌\",\"verse\":33},{\"chapter\":10,\"text\":\"Then I said, â€œSpeak on, my Lord; only donâ€™t forsake me, lest I die before my time.\",\"verse\":34},{\"chapter\":10,\"text\":\"For I have seen what I didnâ€™t know, and hear what I donâ€™t know.\",\"verse\":35}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "cbb5823f-fdd4-442e-bf68-9a6e5a1c680c",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 31,32,33,34,35 in this chapter."
+}

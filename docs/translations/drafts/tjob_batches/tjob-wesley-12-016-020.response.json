@@ -1,0 +1,37 @@
+{
+  "request_id": "f4f5536a-1190-478a-b70b-0143605db847",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"وقد ترك سبعة بنين وثلاث بنات، ولم توجد في الأرض بنات جميلات كبنات أيوب.\",\n      \"verse\": 16\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"وكان اسم أيوب قديماً يوباب، ودعاه الرب أيوب.\",\n      \"verse\": 17\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"وقد عاش قبل بليته خمس وثمانين سنة، وبعد البلية أخذ ضعف الكل، ومن ثم تضاعفت سنوه أيضاً، وهي\",\n      \"verse\": 18\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"سنة. وهكذا عاش في الجملة\",\n      \"verse\": 19\n    },\n    {\n      \"chapter\": 12,\n      \"text_ar\": \"سنة.\",\n      \"verse\": 20\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 259,
+    "output": 266,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0007427,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 259,
+      "outputTokens": 266,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0007427,
+      "latencyMs": 1428
+    }
+  ]
+}

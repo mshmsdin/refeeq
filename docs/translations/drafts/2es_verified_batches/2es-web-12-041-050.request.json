@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":12,\"verses\":[{\"chapter\":12,\"text\":\"â€œHow have we offended you? What evil have we done against you, that you have utterly forsaken us, and sit in this place?\",\"verse\":41},{\"chapter\":12,\"text\":\"For of all the prophets, only you are left to us, like a cluster of the vintage, and like a lamp in a dark place, and like a harbor for a ship saved from the tempest.\",\"verse\":42},{\"chapter\":12,\"text\":\"Arenâ€™t the evils which have come to us sufficient?\",\"verse\":43},{\"chapter\":12,\"text\":\"If you will forsake us, how much better had it been for us if we also had been consumed in the burning of Zion!\",\"verse\":44},{\"chapter\":12,\"text\":\"For we are not better than those who died there.â€‌ Then they wept with a loud voice. I answered them,\",\"verse\":45},{\"chapter\":12,\"text\":\"â€œTake courage, O Israel! Donâ€™t be sorrowful, you house of Jacob;\",\"verse\":46},{\"chapter\":12,\"text\":\"for the Most High remembers you. The Mighty has not forgotten you forever.\",\"verse\":47},{\"chapter\":12,\"text\":\"As for me, I have not forsaken you. I havenâ€™t departed from you; but I have come into this place to pray for the desolation of Zion, and that I might seek mercy for the humiliation of your sanctuary.\",\"verse\":48},{\"chapter\":12,\"text\":\"Now go your way, every man to his own house, and after these days I will come to you.â€‌\",\"verse\":49},{\"chapter\":12,\"text\":\"So the people went their way into the city, as I told them to do.\",\"verse\":50}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "5af9d933-0ccf-4028-84cf-ae7531a14b83",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 41,42,43,44,45,46,47,48,49,50 in this chapter."
+}

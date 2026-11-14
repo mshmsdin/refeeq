@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "10174aa1-7f19-475d-9328-af1bb288a9f3",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":19,\"text\":\"Master, and by the Cherubim and the Tree of Life! I will give also to my husband to eat.\\\" And when he had received the oath from me, he went and poured upon the fruit the poison of his wickedness, which is lust, the root and beginning of every sin, and he bent the branch on the earth and I took of the fruit and I ate.\",\"source_ref\":\"19:3\"},{\"chapter\":20,\"text\":\"And in that very hour my eyes were opened, and forthwith I knew that I was bare of the righteousness\",\"source_ref\":\"20:1\"},{\"chapter\":20,\"text\":\"with which I had been clothed (upon), and I wept and said to him: \\\"Why hast thou\",\"source_ref\":\"20:2\"},{\"chapter\":20,\"text\":\"done this to me in that thou hast deprived me of the glory with which I was clothed?\\\" But I wept also about the oath, which I had sworn. But he descended from the tree and vanished.\",\"source_ref\":\"20:3\"},{\"chapter\":20,\"text\":\"And I began to seek, in my nakedness, in my part for leaves to hide my shame, but I found none, for, as soon as I had eaten, the leaves showered down from all the trees in my part, except the fig tree\",\"source_ref\":\"20:4\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 19:3, 20:1, 20:2, 20:3, 20:4.",
+  "application_id": "rafeeq-bible-translation"
+}

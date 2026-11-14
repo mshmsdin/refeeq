@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "28fdc4cb-2aea-46f9-b0ef-ed3329e454f6",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"هوذا الطعام سيكون رخيصاً جداً على الأرض بحيث يظنون أنهم في حالة جيدة، وحتى عندئذ سترتفع البلايا على الأرض: السيف، والجوع، والاضطراب العظيم.\",\n      \"verse\": 21\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"لأن كثيرين ممن يسكنون على الأرض سيتهلكون بالجوع، والآخرون الذين ينجون من الجوع، سيهلكهم السيف.\",\n      \"verse\": 22\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"ستطرح الجثث مثل الزبل، ولن يكون هناك من يعزيهم؛ لأن الأرض ستترك مقفرة، وستطرح مدنها أرضاً.\",\n      \"verse\": 23\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"لن يبقى فلاح لفلاحة الأرض أو لبذرها.\",\n      \"verse\": 24\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"الأشجار ستعطي ثمراً، ولكن من سيجمعه؟\",\n      \"verse\": 25\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"العنب سينضج، ولكن من سيدوسه؟ لأنه في كل الأماكن سيكون هناك عزلة عظيمة؛\",\n      \"verse\": 26\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"لأن الإنسان الواحد سيشتهي أن يرى آخر، أو يسمع صوته.\",\n      \"verse\": 27\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"لأنه من المدينة سيبقى عشرة، واثنان من الحقل، اللذين اختبأا في الغابات الكثيفة، وفي شقوق الصخور.\",\n      \"verse\": 28\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"كما في بستان زيتون قد تبقى في كل شجرة ثلاث أو أربع زيتونات،\",\n      \"verse\": 29\n    },\n    {\n      \"chapter\": 16,\n      \"text_ar\": \"أو كما عندما يجمع الكرم، تبقى بعض العناقيد لأولئك الذين يفتشون باجتهاد في الكرم،\",\n      \"verse\": 30\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  474,
+                  "output":  616,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0016822,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  474,
+                         "outputTokens":  616,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016822,
+                         "latencyMs":  1962
+                     }
+                 ]
+}

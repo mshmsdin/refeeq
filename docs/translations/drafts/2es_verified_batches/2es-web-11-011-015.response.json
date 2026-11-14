@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "62e2bdc3-bea3-4944-ad0e-216424f54ab5",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"احصيت أجنحتها التي كانت قريبة من الأخرى، وإذا بها ثمانية.\",\n      \"verse\": 11\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"رأيت وإذا على الجانب الأيمن جناح واحد قد ارتفع وملك على كل الأرض.\",\n      \"verse\": 12\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"ولما ملك، جاء نهايته واختفى، حتى لم يعد يظهر مكانه. وقام الجناح التالي وملك، وحكم طويلاً.\",\n      \"verse\": 13\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"وحدث أنه عندما ملك، جاءت نهايته أيضاً، حتى اختفى مثل الأول.\",\n      \"verse\": 14\n    },\n    {\n      \"chapter\": 11,\n      \"text_ar\": \"هوذا، جاء إليه صوت وقال:\",\n      \"verse\": 15\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  282,
+                  "output":  281,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0007871,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  282,
+                         "outputTokens":  281,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0007871,
+                         "latencyMs":  1310
+                     }
+                 ]
+}

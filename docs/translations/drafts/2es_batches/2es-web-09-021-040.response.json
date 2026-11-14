@@ -1,0 +1,65 @@
+{
+  "request_id": "56bef875-83c4-4f8e-b17e-7e98d44e8eb1",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":9,\"verse\":21,\"text_ar\":\"رأيتُ ونجوتُهم، لكن ليس كثيرًا، وأنقذتُ عنبًا من عنقود، ونبتةً من غابةٍ عظيمة.\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":22,\"text_ar\":\"فلتهلك الجموع إذن، التي وُلدت عبثًا. فليُحفظ عنبي، ونبتي، فقد أكملتُهما بعملٍ شاقٍ.\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":23,\"text_ar\":\"ومع ذلك، إذا انتظرت سبعة أيام أخرى—لكن لا تصوم فيها،\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":24,\"text_ar\":\"وإنّك إلى حقلٍ من الزهور، حيث لا يُبنى بيت، وتتناول فقط زهور الحقل، ولا تشرب لحمًا ولا نبيذًا، بل تأكل الزهور فقط—\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":25,\"text_ar\":\"وتصلي إلى العليّ باستمرار، حينئذٍ آتي وأتحدث معك.”\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":26,\"text_ar\":\"فذهبت بطريقي، كما أمرني، إلى الحقل المسمى أرضة. جلست هناك بين الزهور، وأكلت من أعشاب الحقل، وهذا الطعام أَرضاني.\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":27,\"text_ar\":\"بعد سبعة أيام سجدت على العشب، وانقلب قلبي مرةً أخرى، كما كان من قبل.\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":28,\"text_ar\":\"فتُح فمي، وبدأت أتكلم أمام الرب العليّ، وقالتُ،\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":29,\"text_ar\":\"«يا رب، أظهرتَ نفسك بيننا، لآبائنا في البرية، حين خرجوا من مصر، وعندما دخلوا البرية، حيث لا يمشي أحد ولا تحمل ثمرًا».\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":30,\"text_ar\":\"قلتَ: «اسمعني يا إسرائيل. أنصت لكلماتى يا نسل يعقوب».\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":31,\"text_ar\":\"«لأنني أزرع شريعتي فيكم، وستجلب لكم ثمرًا، وتُمجّدون بها إلى الأبد».\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":32,\"text_ar\":\"لكن آباؤنا الذين تلقوا الشريعة لم يحافظوا عليها، ولم يلتزموا بالأنظمة. فثمر الشريعة لم يهلك، لأنه لم يستطع، لأنه لكم».\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":33,\"text_ar\":\"ومع ذلك هلك الذين تلقوه، لأنهم لم يحافظوا على ما زرع فيهم.\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":34,\"text_ar\":\"هوى أن الأرض إذا استقبلت البذرة، أو البحر سفينة، أو أي وعاء طعامًا أو شرابًا، وعند حدوث ما زُرع أو ما أُطلق،\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":35,\"text_ar\":\"أو الأشياء التي استُقبلت، يجب أن تنتهي، فتنتهي هذه، لكن الأوعية تبقى. ومعنا، لا يحدث ذلك هكذا.\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":36,\"text_ar\":\"لأننا الذين تلقينا الشريعة سنهلك بالخطية، مع قلوبنا التي استقبلتها.\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":37,\"text_ar\":\"ومع ذلك لا تهلك الشريعة، بل تبقى في شرفها».\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":38,\"text_ar\":\"عندما قلتُ هذه الأمور في قلبي، نظرتُ حولي بعيني، وعلى يميني رأيت امرأة، وكانت تبكي وتنوح بصوت عالٍ، وكانت حزينة جدًا في ذهنها. ملابسها ممزقة، وكان عليها رماد على رأسها.\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":39,\"text_ar\":\"ثم تركت أفكاري التي شغلتني، وتحولتُ إليها،\",\"review_notes_ar\":[]},{\"chapter\":9,\"verse\":40,\"text_ar\":\"وقلتُ لها: «لماذا تبكين؟ لماذا حزنتِ في ذهنك؟»\",\"review_notes_ar\":[]}]}",
+  "usage": {
+    "input": 1000,
+    "output": 1035,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 2,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 1000,
+      "outputTokens": 1035,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 2291
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":1,\"verses\":[{\"chapter\":1,\"verse\":6,\"text\":\"6 And Jeremiah spoke, saying: “Lord Almighty, would you hand the chosen city over to the Chaldeans, so that the king with his many people might boast and say: ‘I have conquered the holy city of God’?\"},{\"chapter\":1,\"verse\":7,\"text\":\"7 No, my Lord, but if it is your will, let it be destroyed by your hands.”\"},{\"chapter\":1,\"verse\":8,\"text\":\"8 And the Lord said to Jeremiah: “Since you are my chosen one, get up and leave this city, you and Baruch, for I am going to destroy it because of the many sins of those who live in it.\"},{\"chapter\":1,\"verse\":9,\"text\":\"9 For neither the king nor his army will be able to enter it unless I first open its gates.\"},{\"chapter\":1,\"verse\":10,\"text\":\"10 Get up, then, and go to Baruch, and tell him these words.\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "de27fb46-baa2-49e3-bd18-8d6f5c2a1bd7",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

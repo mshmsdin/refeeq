@@ -1,0 +1,37 @@
+{
+  "request_id": "eb471c9a-a922-4c6c-bbcc-7df787392554",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 21,\n      \"verse\": 3,\n      \"text_ar\": \"استعدي للحمل. وولدت ابناً وكان مشرقاً؛ وفي الحال نهض الطفل وركض وحمل نبتة عشب في يديه، وأعطاها لأمه، ودعي اسمه قايين.\"\n    },\n    {\n      \"chapter\": 22,\n      \"verse\": 1,\n      \"text_ar\": \"وحمل آدم حواء والصبي وقادهما\"\n    },\n    {\n      \"chapter\": 22,\n      \"verse\": 2,\n      \"text_ar\": \"إلى الشرق. وأرسل الرب الإوهيم بذوراً متنوعة بواسطة رئيس الملائكة ميخائيل، وأعطى آدم وأراه كيف يعمل ويحرث الأرض، ليكون لهم ثمر تعيش به هم وجميع أجيالهم.\"\n    },\n    {\n      \"chapter\": 22,\n      \"verse\": 3,\n      \"text_ar\": \"لأنه بعد ذلك حبلت حواء وولدت ابناً، اسمه هابيل؛ وكان قايين وهابيل يقيمان معاً.\"\n    },\n    {\n      \"chapter\": 22,\n      \"verse\": 4,\n      \"text_ar\": \"وقالت حواء لآدم: يا سيد، بينما كنت نائمة، رأيت رؤيا، كأن دم ابننا هابيل في يد قايين، الذي كان يبتلعه في فمه. لذلك أنا في حزن.\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 405,
+    "output": 378,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010665,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 405,
+      "outputTokens": 378,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010665,
+      "latencyMs": 1655
+    }
+  ]
+}

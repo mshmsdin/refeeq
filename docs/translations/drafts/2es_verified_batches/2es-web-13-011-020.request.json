@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":13,\"verses\":[{\"chapter\":13,\"text\":\"These were all mixed together: the flood of fire, the flaming breath, and the great storm, and fell upon the assault of the multitude which was prepared to fight, and burned up every one of them, so that all of a sudden an innumerable multitude was seen to be nothing but the dust of ashes and the smell of smoke. When I saw this, I was amazed.\",\"verse\":11},{\"chapter\":13,\"text\":\"Afterward, I saw the same man come down from the mountain, and call to himself another multitude which was peaceful.\",\"verse\":12},{\"chapter\":13,\"text\":\"Many people came to him. Some of them were glad. Some were sorry. Some of them were bound, and some others brought some of those as offerings. Then through great fear I woke up and prayed to the Most High, and said,\",\"verse\":13},{\"chapter\":13,\"text\":\"â€œYou have shown your servant these wonders from the beginning, and have counted me worthy that you should receive my prayer.\",\"verse\":14},{\"chapter\":13,\"text\":\"Now show me also the interpretation of this dream.\",\"verse\":15},{\"chapter\":13,\"text\":\"For as I conceive in my understanding, woe to those who will be left in those days! Much more woe to those who are not left!\",\"verse\":16},{\"chapter\":13,\"text\":\"For those who were not left will be in heaviness,\",\"verse\":17},{\"chapter\":13,\"text\":\"understanding the things that are laid up in the latter days, but not attaining to them.\",\"verse\":18},{\"chapter\":13,\"text\":\"But woe to them also who are left, because they will see great perils and much distress, like these dreams declare.\",\"verse\":19},{\"chapter\":13,\"text\":\"Yet is it better for one to be in peril and to come into these things, than to pass away as a cloud out of the world, and not to see the things that will happen in the last days.â€‌ He answered me,\",\"verse\":20}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "664e2bd0-bcf3-46b0-a95d-8c8b3fe5b818",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 11,12,13,14,15,16,17,18,19,20 in this chapter."
+}

@@ -1,0 +1,71 @@
+{
+  "book_code": "TJOB",
+  "source_rights_review": "M. R. James translation dated 1897; reuse terms for this later web transcription are not stated on the page. Keep output as internal draft pending review.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wesley-testament-job",
+  "source_name": "M. R. James English Testament of Job",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/testament-of-job/",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "chapter": 8,
+  "range": "6-10",
+  "status": "machine_translated_structured",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "d608db13-d741-4f42-bdc5-0b7391a05ab3",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 355,
+      "outputTokens": 715,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.001894,
+      "latencyMs": 2495
+    }
+  ],
+  "usage": {
+    "input": 355,
+    "output": 715,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.001894,
+  "verses": [
+    {
+      "chapter": 8,
+      "text_ar": "دَعْنِي أَتَكَلَّمْ صَرَاحَةً. لِنَكُنْ كُرَمَاءَ وَلْنَتَعَلَّمْ مَا هُوَ السَّبَبُ أَلَا يَجِبُ عَلَيْهِ فِي تَذَكُّرِ أَيَّامِ سَعَادَتِهِ السَّابِقَةِ أَنْ يُجَنَّ فِي عَقْلِهِ؟",
+      "verse": 6
+    },
+    {
+      "chapter": 8,
+      "text_ar": "مَنْ لَا يَرْتَبِكُ تَمَاماً رُؤْيَةً لِنَفْسِهِ هَكَذَا يَنْزَلِقُ إِلَى الشِّقْوَةِ وَالضَّرَبَاتِ؟ وَلَكِنْ دَعْنِي أَقْتَرِبُ مِنْهُ لِكَيْ أَجِدَ بِأَيِّ سَبَبٍ هُوَ هَكَذَا؟",
+      "verse": 7
+    },
+    {
+      "chapter": 8,
+      "text_ar": "وَقَامَ بِلْدَدُ وَاقْتَرَبَ مِنِّي قَائِلاً: \"أَأَنْتَ أَيُّوبُ؟\" وَقَالَ: \"هَلْ قَلْبُكَ مَا زَالَ فِي حِفْظٍ جَيِّدٍ؟\"",
+      "verse": 8
+    },
+    {
+      "chapter": 8,
+      "text_ar": "وَقُلْتُ أَنَا: \"لَمْ أَتَمَسَّكْ بِالأَشْيَاءِ الأَرْضِيَّةِ، بِمَا أَنَّ الأَرْضَ مَعَ كُلِّ مَنْ يَسْكُنُ فِيهَا غَيْرُ ثَابِتَةٍ. لَكِنَّ قَلْبِي يَتَمَسَّكُ بِالسَّمَاءِ، لأَنَّهُ لَيْسَ هُنَاكَ ضِيقٌ فِي السَّمَاءِ\".",
+      "verse": 9
+    },
+    {
+      "chapter": 8,
+      "text_ar": "ثُمَّ عَادَ بِلْدَدُ وَقَالَ: \"نَحْنُ نَعْلَمُ أَنَّ الأَرْضَ غَيْرُ ثَابِتَةٍ، لأَنَّهَا تَتَغَيَّرُ حَسَبَ الْمَوْسِمِ. فَفِي أَوْقَاتٍ تَكُونُ فِي حَالَةِ سَلاَمٍ، وَفِي أَوْقَاتٍ أُخْرَى تَكُونُ فِي حَالَةِ حَرْبٍ. وَلَكِنَّنَا نَسْمَعُ عَنِ السَّمَاءِ أَنَّهَا ثَابِتَةٌ تَمَاماً\".",
+      "verse": 10
+    }
+  ]
+}

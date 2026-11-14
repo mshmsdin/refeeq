@@ -1,0 +1,37 @@
+{
+  "request_id": "834ca409-a3d4-40bb-b117-ec5c992c3fa1",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 35,\n      \"verse\": 4,\n      \"text_ar\": \"الزنج الذين يقفون عند الصلوات من أجل أبيك آدم؟\"\n    },\n    {\n      \"chapter\": 36,\n      \"verse\": 1,\n      \"text_ar\": \"وأخبر شيث أمه أنهما الشمس والقمر وهما يخران ساجدين ويصليان نيابة عن أبي آدم. فقالت له حواء:\"\n    },\n    {\n      \"chapter\": 36,\n      \"verse\": 2,\n      \"text_ar\": \"وأين نورهم ولماذا اكتسيا هذا المظهر الأسود؟\"\n    },\n    {\n      \"chapter\": 36,\n      \"verse\": 3,\n      \"text_ar\": \"فأجابها شيث: لم يفارقهم النور، ولكن لا يقدران أن يضيئا أمام نور الكون، أب الأنوار؛ ولهذا السبب حُجب عنهما نورها.\"\n    },\n    {\n      \"chapter\": 37,\n      \"verse\": 1,\n      \"text_ar\": \"وبينما كان شيث يقول هذا لأمه، إذا بملاك ينفخ في البوق، ووقف كل الملائكة (الذين كانوا) على وجوههم، وصرخوا بصوت مهيب وقالوا: مبارك مجد الرب من\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 390,
+    "output": 343,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009745,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 390,
+      "outputTokens": 343,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009745,
+      "latencyMs": 1413
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "request_id": "6eb46292-c6ee-4499-a3a1-10f53d0cc9c6",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 15,\n      \"verse\": 26,\n      \"text_ar\": \"لأنّ الربّ يعرف جميع الذين يخطئون في حَـدوده، فهو سِـيُسلِّمهم إلى الهلاك والعدم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 27,\n      \"text_ar\": \"لأنّ الشرّور قد جرت على الأرض كلّها، وستبقى في رعاها؛ لأنّ الله لن ينجيكم، لأنّكم خالفتموه بخُـطائكم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 28,\n      \"text_ar\": \"هأنذا أرى منظراً فظيعاً تطلع من المشرق!\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 29,\n      \"text_ar\": \"تخرج أمم الأُناضِل من الجزيرة بالخيول المركبة الكثيرة، وابتداء من اليوم الذي قالوا فيه، عُدوا على الأرض، حتى أن رفاقهم قد عدوا ورُعبوا ومن رُعب.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 30,\n      \"text_ar\": \"أيضاً القرمِاني الغاضبان في الغدر سينطلقون كخنازير الغاب، وينتفرون في جروحهم، كما تخرج الأسود في الخنادق. هؤلاء سيعدون كصواقب الخيل، وينهبون ديار الفلاّحين؛ ويوصدون الخراب، وأما ليّان فقد مزّقته تلك الصواعق.\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 354,
+    "output": 454,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+  "provider": "Groq Paid",
+  "model": "qwen/qwen3.8-27b",
+  "estimatedCost": 0.0020992,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "error",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "503",
+      "estimatedCost": null,
+      "latencyMs": 1183
+    },
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "success",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 354,
+      "outputTokens": 454,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0020992,
+      "latencyMs": 1006
+    }
+  ]
+}

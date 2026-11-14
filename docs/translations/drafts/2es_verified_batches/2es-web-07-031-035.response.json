@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "b4251a10-5e81-435e-8692-e0384fadcf66",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"بعد سبعة أيام، العالم الذي لم يستيقظ بعد سيقام، وما هو قابل للفساد سيموت.\",\n      \"verse\": 31\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"سترد الأرض أولئك الراقدين فيها، والتراب أولئك الساكنين فيه في سكوت، والأماكن السرية ستسلم تلك النفوس التي سلمت إليها.\",\n      \"verse\": 32\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"العلي سيعلن على كرسي الدينونة، والرحمة ستزول، والصبر سيسحب.\",\n      \"verse\": 33\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"الدينونة وحدها ستبقى. الحق سيقف. الإيمان سيقوى.\",\n      \"verse\": 34\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"المجازاة ستتبع. المكافأة ستظهر. الأعمال الصالحة ستستيقظ، والأعمال الشريرة لن تنام.\",\n      \"verse\": 35\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  289,
+                  "output":  310,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0008617000000000001,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  289,
+                         "outputTokens":  310,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0008617000000000001,
+                         "latencyMs":  1366
+                     }
+                 ]
+}

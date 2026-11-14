@@ -1,0 +1,37 @@
+{
+  "request_id": "1d2c1b1d-efcd-4a21-9dba-b65c556e975b",
+  "content": "{\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":10,\"verse\":4,\"text_ar\":\"كيف وقعتَ مرة أخرى في شرك عدونا، الذي بسببه انقطعنا عن مسكننا في الفردوس والفرح الروحي؟\"},{\"chapter\":11,\"verse\":1,\"text_ar\":\"ولما سمعت حواء هذا، فهمت أن إبليس هو الذي أغواها لتخرج من النهر؛ فسقطت على وجهها على الأرض وتضاعفت أحزانها وأنينها وبكاؤها.\"},{\"chapter\":11,\"verse\":2,\"text_ar\":\"فصرخت وقالت: \\\"الويل لك أيها إبليس. لماذا تهاجمنا بلا سبب؟ ماذا لك معنا؟ ماذا صنعتُ بك حتى تلاحقنا بالمكر؟ أو لماذا يهاجمنا شرك؟\"},{\"chapter\":11,\"verse\":3,\"text_ar\":\"هل أخذنا مجدك وجعلناك بلا كرامة؟ لماذا تضايقنا أيها العدو (وتضطهدنا) حتى الموت بالخبث والحسد؟\\\"\"},{\"chapter\":12,\"verse\":1,\"text_ar\":\"وبأنهيد ثقيل، تكلم إبليس وقال: \\\"يا آدم! إن كل عداوتي وحسدي وحزني هو من أجلك، إذ من أجلك طורُدت من مجدي الذي كنت أملكه في السماوات\\\"\"}]}",
+  "usage": {
+    "input": 443,
+    "output": 309,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009054,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 443,
+      "outputTokens": 309,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009054,
+      "latencyMs": 1926
+    }
+  ]
+}

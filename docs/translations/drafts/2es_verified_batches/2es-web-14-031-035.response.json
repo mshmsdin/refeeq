@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "08249877-b8ff-451b-8a75-bd663557b26d",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 14,\n      \"text_ar\": \"ثم أُعطيت لكم أرض صهيون ملكاً، أما أنتم وآباؤكم فقد ارتكبتم الإثم ولم تحفظوا الطرق التي أمركم بها العلي.\",\n      \"verse\": 31\n    },\n    {\n      \"chapter\": 14,\n      \"text_ar\": \"ولأنه قاضٍ عادل، فقد أخذ منكم في الوقت المناسب ما أعطاكم إياه.\",\n      \"verse\": 32\n    },\n    {\n      \"chapter\": 14,\n      \"text_ar\": \"والآن أنتم هنا، وأقرباؤكم بينكم.\",\n      \"verse\": 33\n    },\n    {\n      \"chapter\": 14,\n      \"text_ar\": \"لذلك إن كنتم ستسودون على فهمكم الخاص وتؤدبون قلوبكم، فستبقون أحياء، وبعد الموت تنالون رحمة.\",\n      \"verse\": 34\n    },\n    {\n      \"chapter\": 14,\n      \"text_ar\": \"لأنه بعد الموت ستأتي الدينونة، وحينئذ سنحيا من جديد. وعندئذ ستتضح أسماء الأبرار، وتُعلن أعمال الأشرار.\",\n      \"verse\": 35\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  308,
+                  "output":  336,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0009324,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  308,
+                         "outputTokens":  336,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0009324,
+                         "latencyMs":  1729
+                     }
+                 ]
+}

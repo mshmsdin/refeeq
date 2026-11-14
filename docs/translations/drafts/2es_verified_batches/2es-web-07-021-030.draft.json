@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  7,
+    "range":  "21-30",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "0989abcb-6282-4e3e-8cc3-f0d5f9842d91",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  498,
+                         "outputTokens":  635,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017369,
+                         "latencyMs":  2163
+                     }
+                 ],
+    "usage":  {
+                  "input":  498,
+                  "output":  635,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0017369,
+    "verses":  [
+                   {
+                       "chapter":  7,
+                       "text_ar":  "لان الله امر بصرامة اولئك الذين اتوا، حتى عندما اتوا، بما يجب عليهم فعله ليحيا، وما يجب عليهم مراعاته لتجنب العقاب.",
+                       "verse":  21
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "مع ذلك، لم يكونوا طائعين له، بل تحدثوا ضده وتخيلوا لانفسهم اموراً باطلة.",
+                       "verse":  22
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "لقد وضعوا خططاً ماكرة للشر، وقالوا علاوة على ذلك عن العلي إنه غير موجود، ولم يعرفوا طرقه.",
+                       "verse":  23
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "لقد احتقروا شريعته وانكروا عهوده. ولم يكونوا امناء لفرائضه، ولم يقوموا باعماله.",
+                       "verse":  24
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "لذلك، يا عزرا، للافراغ امور فارغة، وللامتلاء امور ممتلئة.",
+                       "verse":  25
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "لانه هوذا، سيأتي الوقت، ويكون، عندما تحدث هذه العلامات التي اخبرتك بها من قبل، ان العروس ستظهر، بل والمدينة الخارجة، وسوف يُرى من هي محجوبة الآن عن الارض.",
+                       "verse":  26
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "كل من ينجو من الشرور المتنبأ بها سيبصر عجائبي.",
+                       "verse":  27
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "لان ابني يسوع سيُعلن مع اولئك الذين معه، والذين يبقون سيفرحون اربعمائة سنة.",
+                       "verse":  28
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "بعد هذه السنوات سيموت ابني المسيح، مع كل اولئك الذين فيهم نسمة حياة.",
+                       "verse":  29
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "حينئذ يتحول العالم الى الصمت القديم سبعة ايام، كما في البدء الاول، لكي لا يبقى انسان.",
+                       "verse":  30
+                   }
+               ]
+}

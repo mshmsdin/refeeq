@@ -1,0 +1,37 @@
+{
+  "request_id": "5380670f-2367-4847-bc9a-0e43e8dfa5a7",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 14,\n      \"verse\": 1,\n      \"text_ar\": \"هكذا تكلم الملاك وانصرف عنهم. وأتى شيث وحواء إلى الكوخة حيث وُضع آدم. وقال آدم لحواء: «يا حواء، ماذا\"\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 2,\n      \"text_ar\": \"فعلتِ بنا؟ لقد جلبتِ علينا غضباً عظيماً وهو الموت، [متهكماً على كل جنسنا].» وقال لها: «ادعي كل\"\n    },\n    {\n      \"chapter\": 14,\n      \"verse\": 3,\n      \"text_ar\": \"أولادنا وأولاد أولادنا وأخبريهم بكيفية تعدينا.»\"\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 1,\n      \"text_ar\": \"ثم قالت حواء لهم: «اسمعوا يا جميع أولادي وأولاد أولادي وسأقص عليكم\"\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 2,\n      \"text_ar\": \"كيف خدعنا العدو. لقد حدث بينما كنا نحرس الفردوس، كل منا قسمه\"\n    }\n  ],\n  \"book_code\": \"APMO\"\n}",
+  "usage": {
+    "input": 357,
+    "output": 324,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009171,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 357,
+      "outputTokens": 324,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009171,
+      "latencyMs": 1343
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":4,\"verses\":[{\"chapter\":4,\"text\":\"The angel who was sent to me, whose name was Uriel, gave me an answer,\",\"verse\":1},{\"chapter\":4,\"text\":\"and said to me, â€œYour understanding has utterly failed you regarding this world. Do you think you can comprehend the way of the Most High?â€‌\",\"verse\":2},{\"chapter\":4,\"text\":\"Then I said, â€œYes, my Lord.â€‌ He answered me, â€œI have been sent to show you three ways, and to set before you three problems.\",\"verse\":3},{\"chapter\":4,\"text\":\"If you can solve one for me, I also will show you the way that you desire to see, and I will teach you why the heart is wicked.â€‌\",\"verse\":4},{\"chapter\":4,\"text\":\"I said, â€œSay on, my Lord.â€‌ Then said he to me, â€œGo, weigh for me the weight of a fire, or measure for me a blast of wind, or call back for me the day that is past.â€‌\",\"verse\":5},{\"chapter\":4,\"text\":\"Then answered I and said, â€œWho of the sons of men is able to do this, that you should ask me about such things?â€‌\",\"verse\":6},{\"chapter\":4,\"text\":\"He said to me, â€œIf I had asked you, â€کHow many dwellings are there in the heart of the sea? Or how many springs are there at the fountain head of the deep? Or how many streams are above the firmament? Or which are the exits of hell? Or which are the entrances of paradise?â€™\",\"verse\":7},{\"chapter\":4,\"text\":\"perhaps you would say to me, â€کI never went down into the deep, or as yet into hell, neither did I ever climb up into heaven.â€™\",\"verse\":8},{\"chapter\":4,\"text\":\"Nevertheless now I have only asked you about the fire, wind, and the day, things which you have experienced, and from which you canâ€™t be separated, and yet you have given me no answer about them. â€‌\",\"verse\":9},{\"chapter\":4,\"text\":\"He said moreover to me, â€œYou canâ€™t understand your own things that you grew up with.\",\"verse\":10}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "a243dabb-13b4-4e61-bb53-c565d2c4737f",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5,6,7,8,9,10 in this chapter."
+}

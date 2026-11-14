@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  7,
+    "range":  "11-20",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "482989bc-a05d-4000-8070-02ef3a6c7ee6",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  508,
+                         "outputTokens":  618,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016974000000000002,
+                         "latencyMs":  2813
+                     }
+                 ],
+    "usage":  {
+                  "input":  508,
+                  "output":  618,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0016974000000000002,
+    "verses":  [
+                   {
+                       "chapter":  7,
+                       "text_ar":  "لأجلهم صنعت الدهر، وأما ما حدث بعد ذلك فقد قضي به عندما خالف آدم فرائضي.",
+                       "verse":  11
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "حينئذ صارت مداخل هذا الدهر ضيقة ومحزنة ومتعبة، وقليلة وشريرة، ومليئة بالأخطار، ومكتنفة بأتعاب عظيمة.",
+                       "verse":  12
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "وأما مداخل الدهر الأعظم فواسعة وآمنة وتثمر ثمر الخلود.",
+                       "verse":  13
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "فإن لم يدخل الأحياء في هذه الأمور الصعبة والباطلة، فلن يستطيعوا أن ينالوا ما قد أعد لهم.",
+                       "verse":  14
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "والآن فلماذا تضطرب إذ أنت إنسان فاسد؟ ولماذا ترتجف إذ أنت مائت؟",
+                       "verse":  15
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "ولماذا لم تفكر في عقلك في المستقبل بدلاً من الحاضر؟",
+                       "verse":  16
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "فأجبت وقلت: أيها السيد الرب، ها إنك أمرت في شريعتك أن الأبرار يرثون هذه الأشياء، وأن الفجار يهلكون.",
+                       "verse":  17
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "فالأبرار يحتملون الأمور الصعبة ويرجون السهلة، وأما الذين عملوا الإثم فقد احتملوا الأمور الصعبة ولن يروا السهلة.",
+                       "verse":  18
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "فقال لي: لست أنت دياناً فوق الله، ولا لك فهم أكثر من العلي.",
+                       "verse":  19
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "بل ليهلك كثيرون ممن يعيشون الآن، ولا تستهان شريعة الله الموضوعة أمامهم.",
+                       "verse":  20
+                   }
+               ]
+}

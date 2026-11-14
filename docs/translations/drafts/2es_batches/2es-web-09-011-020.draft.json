@@ -1,0 +1,105 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 9,
+  "range": "11-20",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "84935b1e-108b-4511-b17a-8eccf591d70c",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 512,
+      "outputTokens": 766,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0020686,
+      "latencyMs": 2174
+    }
+  ],
+  "usage": {
+    "input": 512,
+    "output": 766,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0020686,
+  "verses": [
+    {
+      "chapter": 9,
+      "verse": 11,
+      "text_ar": "وكل الذين استخفوا بشريعتي بينما كانت لهم الحرية بعد، وحين أتيحت لهم فرصة للتوبة، لم يفهموا بل احتقروها،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 12,
+      "text_ar": "فسيعرفونها في العذاب بعد الموت.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 13,
+      "text_ar": "لذلك لا تكن فضولياً بعد اليوم في كيف يُعاقب الأشرار، بل استفسر كيف يخلص الأبرار، الذين يملكون العالم، ومن أجلهم خُلق العالم.»",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 14,
+      "text_ar": "فأجبت:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 15,
+      "text_ar": "«لقد قلت من قبل، وأتكلم الآن، وسأقوله أيضاً فيما بعد، إن عدد الهالكين أكبر بكثير من عدد الذين سيخلصون،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 16,
+      "text_ar": "مثلما أن الموجة أعظم من القطرة.»",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 17,
+      "text_ar": "فأجابني قائلاً: «مثلما يكون الحقل هكذا يكون البذر أيضاً. ومثلما تكون الأزهار هكذا تكون الألوان. ومثلما يكون العمل هكذا يكون الدينونة عليه أيضاً. ومثلما يكون الفلاح هكذا يكون بيدره أيضاً. لأنه كان وقت في العالم",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 18,
+      "text_ar": "حين كنت أعد لمن يعيشون الآن، قبل أن يُصنع العالم ليسكنوا فيه. وحينئذ لم يعارضني أحد،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 19,
+      "text_ar": "لأنه لم يكن أحد موجوداً. أما الآن، فإن أولئك المخلوقين في هذا العالم المُعد، بكل من المائدة التي لا تزول والشريعة التي لا تُفحص، قد فسدوا في طرقهم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 9,
+      "verse": 20,
+      "text_ar": "لذلك تأملت في عالمي، وإذا هو مُدمر، وفي أرضي، وإذا هي في خطر، بسبب الخطط التي دخلت إليها.»",
+      "review_notes_ar": []
+    }
+  ]
+}

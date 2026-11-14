@@ -1,0 +1,75 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 16,
+  "batch_end": 20,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "19fe3087-5ca2-4c93-9584-57c440b4c4ff",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 400,
+      "outputTokens": 384,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.00108,
+      "latencyMs": 1573
+    }
+  ],
+  "usage": {
+    "input": 400,
+    "output": 384,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.00108,
+  "units": [
+    {
+      "chapter": 5,
+      "source_ref": "5:4",
+      "text_ar": "«أيها الأب آدم، ما هي شكواك؟»"
+    },
+    {
+      "chapter": 5,
+      "source_ref": "5:5",
+      "text_ar": "وأجاب قائلاً: «يا أولادي، إني مسحوق بثقل الضيق». فقالا له: «وما هو الضيق؟»"
+    },
+    {
+      "chapter": 6,
+      "source_ref": "6:1",
+      "text_ar": "فأجاب شيث وقال له: «أما ذكرتَ يا أبانا ثمرة الفردوس التي كنت تأكل منها، فحزنتَ شوقاً إليها؟ إن كان الأمر هكذا، فقل لي، وسأذهب و"
+    },
+    {
+      "chapter": 6,
+      "source_ref": "6:2",
+      "text_ar": "أُحضِرُ لك ثمرة من الفردوس. فإني أضع رماداً على رأسي وأبكي وأصلي لكي يستجيب لي الرب ويرسل ملاكه (ويأتي لي بنبتة من الفردوس)، وسأحضرها لك لكي يزول عنك ضيقك». فقال له آدم: «كلا يا بني شيث، بل"
+    },
+    {
+      "chapter": 6,
+      "source_ref": "6:3",
+      "text_ar": "إن لي سقماً وضيقاً (كبيرين)!» فقال له شيث: «وكيف أتى عليك هذا؟»"
+    }
+  ]
+}

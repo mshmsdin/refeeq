@@ -1,0 +1,37 @@
+{
+  "request_id": "ac9eec02-bc9f-47a8-83ac-a1042301977c",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 39,\n      \"verse\": 1,\n      \"text_ar\": \"حينئذ قال سيث للوحش: 'الرب الإله يلعنُك. اخرس، اصمت، أغلقْ فمَك أيها العدو الملعون للحق، والمشوش والمدمر. تنحَ عن صورة الله إلى اليوم الذي يأمر فيه الرب الإله بأن تُجْلَب إلى المحنة'. وقال الوحش لسيث: 'هَا أنا أُغادر حضرة صورة الله، كما قلتَ'. وفي الحال فارق سيثَ مجروحاً بأسنانه.\"\n    },\n    {\n      \"chapter\": 40,\n      \"verse\": 1,\n      \"text_ar\": \"أما سيث وأمه فمشيا إلى نواحي الفردوس ليأخذا زيت الرحمة لمسح آدم المريض، ووصلا إلى أبواب الفردوس، وأخذا تراباً من الأرض ووضعاه على رؤوسهما، وانحنيا بوجوههما إلى الأرض وشرعا ينوحان\"\n    },\n    {\n      \"chapter\": 40,\n      \"verse\": 2,\n      \"text_ar\": \"ويصدران أَنِيناً عالياً، متوسلين إلى الرب الإله أن يرأف بآ آدم في أوجاعه وأن يرسل ملاكه ليُعطِيَهما الزيت من 'شجرة رحمته'.\"\n    },\n    {\n      \"chapter\": 41,\n      \"verse\": 1,\n      \"text_ar\": \"ولما كانا يصليان ويتضرعان لساعات طوال، هوذا الملاك ميخائيل\"\n    },\n    {\n      \"chapter\": 41,\n      \"verse\": 2,\n      \"text_ar\": \"يظهر لهما ويقول: 'لقد أُرسلتُ إليكم من الرب -فقد أقامني الله على\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 467,
+    "output": 466,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0013051,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 467,
+      "outputTokens": 466,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0013051,
+      "latencyMs": 1965
+    }
+  ]
+}

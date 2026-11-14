@@ -1,0 +1,5 @@
+{
+  "status": "rejected_by_router_http_400_and_503",
+  "reason": "Invalid request schema followed by all eligible providers failed. Original request preserved and split into two ranges.",
+  "draft_saved": false
+}

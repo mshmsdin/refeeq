@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "29b2b63e-e85a-4015-ba1c-b21be91a07cc",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":40,\"text\":\"receive a companion body, till the earth which was taken and fashioned in me cometh to me.' At that time, the angels took it and placed it on a rock, till Adam his father was buried. And\",\"source_ref\":\"40:5\"},{\"chapter\":40,\"text\":\"both were buried, according to the commandment of God, in the spot where God found the dust, and He caused the place to be dug for two. And God sent seven angels to paradise and they\",\"source_ref\":\"40:6\"},{\"chapter\":40,\"text\":\"brought many fragrant spices and placed them in the earth, and they took the two bodies and placed them in the spot which they had digged and builded.\",\"source_ref\":\"40:7\"},{\"chapter\":41,\"text\":\"And God called and said, 'Adam, Adam.' And the body answered from the earth and said: 'Here am I, Lord.' And God saith to him: 'I told\",\"source_ref\":\"41:1\"},{\"chapter\":41,\"text\":\"thee (that) earth thou art and to earth shalt thou return. Again I promise to thee the Resurrection; I will raise thee up in the Resurrection with every man who is of thy seed.'\",\"source_ref\":\"41:2\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 40:5, 40:6, 40:7, 41:1, 41:2.",
+  "application_id": "rafeeq-bible-translation"
+}

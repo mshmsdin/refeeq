@@ -1,0 +1,1036 @@
+{
+  "book_code": "4BAR",
+  "book_name_ar": "باروخ الرابع (بقية كلمات إرميا)",
+  "source_translation": "en-kraft-4-baruch-longer",
+  "source_name": "Kraft and Purintun English 4 Baruch (Longer Version)",
+  "source_url": "https://intertextual.bible/read/4-baruch/1",
+  "source_license": "CCAT edition; non-commercial use only. Preserve the complete supplied notice in any distributed copy and report errors or corrections as required.",
+  "source_quality": "Longer English translation based on Kraft and Purintun 1972; electronic edition 1987.",
+  "source_integrity": "Importer parsed 9 chapters and 197 sequential nonempty units. Every reference and text matched the live Rafiq English witness after whitespace normalization.",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "chapter_counts": [
+    {
+      "chapter": 1,
+      "count": 12
+    },
+    {
+      "chapter": 2,
+      "count": 10
+    },
+    {
+      "chapter": 3,
+      "count": 22
+    },
+    {
+      "chapter": 4,
+      "count": 12
+    },
+    {
+      "chapter": 5,
+      "count": 35
+    },
+    {
+      "chapter": 6,
+      "count": 25
+    },
+    {
+      "chapter": 7,
+      "count": 37
+    },
+    {
+      "chapter": 8,
+      "count": 12
+    },
+    {
+      "chapter": 9,
+      "count": 32
+    }
+  ],
+  "verses": [
+    {
+      "chapter": 1,
+      "verse": 1,
+      "text": "1 When the children of Israel were taken captive by the king of the Chaldeans, God spoke to Jeremiah saying: “Jeremiah, my chosen one, get up and leave from this city, you and Baruch, since I am going to destroy it because of the many sins of those who live in it."
+    },
+    {
+      "chapter": 1,
+      "verse": 2,
+      "text": "2 For your prayers are like a solid pillar within it, and like an indestructible wall surrounding it."
+    },
+    {
+      "chapter": 1,
+      "verse": 3,
+      "text": "3 Now, then, get up and leave before the army of the Chaldeans surrounds it.”"
+    },
+    {
+      "chapter": 1,
+      "verse": 4,
+      "text": "4 And Jeremiah answered, saying: “I beg you, Lord, allow me, your servant, to speak in your presence.”"
+    },
+    {
+      "chapter": 1,
+      "verse": 5,
+      "text": "5 And the Lord said to him: “Speak, my chosen one Jeremiah.”"
+    },
+    {
+      "chapter": 1,
+      "verse": 6,
+      "text": "6 And Jeremiah spoke, saying: “Lord Almighty, would you hand the chosen city over to the Chaldeans, so that the king with his many people might boast and say: ‘I have conquered the holy city of God’?"
+    },
+    {
+      "chapter": 1,
+      "verse": 7,
+      "text": "7 No, my Lord, but if it is your will, let it be destroyed by your hands.”"
+    },
+    {
+      "chapter": 1,
+      "verse": 8,
+      "text": "8 And the Lord said to Jeremiah: “Since you are my chosen one, get up and leave this city, you and Baruch, for I am going to destroy it because of the many sins of those who live in it."
+    },
+    {
+      "chapter": 1,
+      "verse": 9,
+      "text": "9 For neither the king nor his army will be able to enter it unless I first open its gates."
+    },
+    {
+      "chapter": 1,
+      "verse": 10,
+      "text": "10 Get up, then, and go to Baruch, and tell him these words."
+    },
+    {
+      "chapter": 1,
+      "verse": 11,
+      "text": "11 And when you have gotten up at the sixth hour of the night, go out on the city walls and I will show you that unless I first destroy the city, they cannot enter it.”"
+    },
+    {
+      "chapter": 1,
+      "verse": 12,
+      "text": "12 When the Lord had said this, he departed from Jeremiah."
+    },
+    {
+      "chapter": 2,
+      "verse": 1,
+      "text": "1 And Jeremiah ran and told these things to Baruch, and as they went into the temple of God, Jeremiah tore his clothes and put dust on his head and entered the holy place of God."
+    },
+    {
+      "chapter": 2,
+      "verse": 2,
+      "text": "2 And when Baruch saw him with dust sprinkled on his head and his clothes torn, he cried out in a loud voice, saying: “Father Jeremiah, what are you doing? What sin has the people committed?”"
+    },
+    {
+      "chapter": 2,
+      "verse": 3,
+      "text": "3 For whenever the people sinned, Jeremiah would sprinkle dust on his head and would pray for the people until their sin was forgiven."
+    },
+    {
+      "chapter": 2,
+      "verse": 4,
+      "text": "4 So Baruch asked him, saying: “Father, what is this?”"
+    },
+    {
+      "chapter": 2,
+      "verse": 5,
+      "text": "5 And Jeremiah said to him: “Let us stop tearing our clothes and tear our hearts instead! And let us stop drawing water for the troughs, but let us weep and fill them with tears! For the Lord will not have mercy on this people.”"
+    },
+    {
+      "chapter": 2,
+      "verse": 6,
+      "text": "6 And Baruch said: “Father Jeremiah, what has happened?”"
+    },
+    {
+      "chapter": 2,
+      "verse": 7,
+      "text": "7 And Jeremiah said: “God is delivering the city into the hands of the king of the Chaldeans, to take the people captive into Babylon.”"
+    },
+    {
+      "chapter": 2,
+      "verse": 8,
+      "text": "8 And when Baruch heard these things, he also tore his clothes and said: “Father Jeremiah, who has made this known to you?”"
+    },
+    {
+      "chapter": 2,
+      "verse": 9,
+      "text": "9 And Jeremiah said to him: “Stay with me awhile, until the sixth hour of the night, so that you can know that this word is true.”"
+    },
+    {
+      "chapter": 2,
+      "verse": 10,
+      "text": "10 Therefore they both remained in the area around the altar weeping, and their clothes were torn."
+    },
+    {
+      "chapter": 3,
+      "verse": 1,
+      "text": "1 And when the hour of the night arrived, Jeremiah and Baruch went up together onto the city walls, as the Lord had told Jeremiah."
+    },
+    {
+      "chapter": 3,
+      "verse": 2,
+      "text": "2 And there was a sound of trumpets, and angels emerged from heaven holding torches in their hands, and they set them on the walls of the city."
+    },
+    {
+      "chapter": 3,
+      "verse": 3,
+      "text": "3 And when Jeremiah and Baruch saw them, they wept, saying: “Now we know that the word is true!”"
+    },
+    {
+      "chapter": 3,
+      "verse": 4,
+      "text": "4 And Jeremiah begged the angels, saying: “I beg you, do not destroy the city yet, until I say something to the Lord.”"
+    },
+    {
+      "chapter": 3,
+      "verse": 5,
+      "text": "5 And the Lord spoke to the angels, saying: “Do not destroy the city until I speak to my chosen one, Jeremiah.”"
+    },
+    {
+      "chapter": 3,
+      "verse": 6,
+      "text": "6 Then Jeremiah spoke, saying: “I beg you, Lord, allow me to speak in your presence.”"
+    },
+    {
+      "chapter": 3,
+      "verse": 7,
+      "text": "7 And the Lord said: “Speak, my chosen one Jeremiah.”"
+    },
+    {
+      "chapter": 3,
+      "verse": 8,
+      "text": "8 And Jeremiah said: “Lord, now we know that you are handing the city over to its enemies, and they will take the people away to Babylon."
+    },
+    {
+      "chapter": 3,
+      "verse": 9,
+      "text": "9 What do you want me to do with the holy vessels of the temple service?”"
+    },
+    {
+      "chapter": 3,
+      "verse": 10,
+      "text": "10 And the Lord said to him: “Take them and entrust them to the earth, saying: ‘Hear, Earth, the voice of your creator who formed you in the abundance of waters, who sealed you with seven seals for seven epochs, and after this you will receive your ornaments."
+    },
+    {
+      "chapter": 3,
+      "verse": 11,
+      "text": "11 Guard the vessels of the temple service until the gathering of the beloved.’”"
+    },
+    {
+      "chapter": 3,
+      "verse": 12,
+      "text": "12 And Jeremiah spoke, saying: “I beg you, Lord, show me what I should do for Abimelech the Ethiopian, for he has done many kindnesses to your servant Jeremiah."
+    },
+    {
+      "chapter": 3,
+      "verse": 13,
+      "text": "13 For he pulled me out of the muddy pit, and I do not want him to see the destruction and desolation of this city, but I want you to be merciful to him and spare him grief.”"
+    },
+    {
+      "chapter": 3,
+      "verse": 14,
+      "text": "14 And the Lord said to Jeremiah: “Send him to the vineyard of Agrippa, and I will hide him in the shadow of the mountain until I cause the people to return to the city."
+    },
+    {
+      "chapter": 3,
+      "verse": 15,
+      "text": "15 And you, Jeremiah, go with your people into Babylon and stay with them, preaching to them, until I cause them to return to the city."
+    },
+    {
+      "chapter": 3,
+      "verse": 16,
+      "text": "16 But leave Baruch here until I speak with him.”"
+    },
+    {
+      "chapter": 3,
+      "verse": 17,
+      "text": "17 When he had said these things, the Lord left Jeremiah and went up into heaven."
+    },
+    {
+      "chapter": 3,
+      "verse": 18,
+      "text": "18 But Jeremiah and Baruch entered the holy place, and taking the vessels of the temple service, they entrusted them to the earth as the Lord had told them."
+    },
+    {
+      "chapter": 3,
+      "verse": 19,
+      "text": "19 And immediately the earth swallowed them."
+    },
+    {
+      "chapter": 3,
+      "verse": 20,
+      "text": "20 And they both sat down and wept."
+    },
+    {
+      "chapter": 3,
+      "verse": 21,
+      "text": "21 And when morning came, Jeremiah sent for Abimelech, saying: “Take a basket and go to the estate of Agrippa by the mountain road, and bring back some figs to give to the sick among the people, for the favor of the Lord is on you and his glory is on your head.”"
+    },
+    {
+      "chapter": 3,
+      "verse": 22,
+      "text": "22 And when he had said this, Jeremiah sent him away, and Abimelech went as he told him."
+    },
+    {
+      "chapter": 4,
+      "verse": 1,
+      "text": "1 And when morning came, the army of the Chaldeans surrounded the city."
+    },
+    {
+      "chapter": 4,
+      "verse": 2,
+      "text": "2 And the great angel sounded his trumpet, saying: “Enter the city, army of the Chaldeans, for the gate is opened for you."
+    },
+    {
+      "chapter": 4,
+      "verse": 3,
+      "text": "3 Therefore let the king enter, with his many troops, and let him take all the people captive.”"
+    },
+    {
+      "chapter": 4,
+      "verse": 4,
+      "text": "4 But taking the keys of the temple, Jeremiah went outside the city and threw them away in the presence of the sun, saying: “I say to you, Sun, take the keys of the temple of God and guard them until the day when the Lord asks you for them."
+    },
+    {
+      "chapter": 4,
+      "verse": 5,
+      "text": "5 For we have not been found worthy to keep them, for we have become unfaithful guardians.”"
+    },
+    {
+      "chapter": 4,
+      "verse": 6,
+      "text": "6 While Jeremiah was still weeping for the people, they brought him out with the people and dragged them into Babylon."
+    },
+    {
+      "chapter": 4,
+      "verse": 7,
+      "text": "7 But Baruch put dust on his head and sat and cried out this lament, saying: “"
+    },
+    {
+      "chapter": 4,
+      "verse": 8,
+      "text": "8 But do not let the lawless people boast and say: ‘We were strong enough to take the city of God by our strength.’"
+    },
+    {
+      "chapter": 4,
+      "verse": 9,
+      "text": "9 And God will pity us and cause us to return to our city, but you will not survive!"
+    },
+    {
+      "chapter": 4,
+      "verse": 10,
+      "text": "10 Blessed are our ancestors, Abraham, Isaac and Jacob,"
+    },
+    {
+      "chapter": 4,
+      "verse": 11,
+      "text": "11 When he had said this, Baruch left the city, weeping and saying: “"
+    },
+    {
+      "chapter": 4,
+      "verse": 12,
+      "text": "12 And he stayed in a tomb, while the angels came to him and explained to him everything that the Lord revealed to him through them."
+    },
+    {
+      "chapter": 5,
+      "verse": 1,
+      "text": "1 But Abimelech took the figs in the burning heat, and coming upon a tree, he sat under its shade to rest a bit."
+    },
+    {
+      "chapter": 5,
+      "verse": 2,
+      "text": "2 And leaning his head on the basket of figs, he fell asleep and slept for 66 years without waking."
+    },
+    {
+      "chapter": 5,
+      "verse": 3,
+      "text": "3 And afterward, when he awoke from his sleep, he said: “I slept well for a little while, but my head is heavy because I did not get enough sleep.”"
+    },
+    {
+      "chapter": 5,
+      "verse": 4,
+      "text": "4 Then he uncovered the basket of figs and found them dripping milk."
+    },
+    {
+      "chapter": 5,
+      "verse": 5,
+      "text": "5 And he said: “I would like to sleep a little longer, because my head is heavy. But I am afraid that I might fall asleep and be slow to wake and my father Jeremiah would think badly of me, for if he were not in a hurry, he would not have sent me today at daybreak."
+    },
+    {
+      "chapter": 5,
+      "verse": 6,
+      "text": "6 So I will get up, and go on in the burning heat, for isn’t there heat, isn’t there hard work every day?”"
+    },
+    {
+      "chapter": 5,
+      "verse": 7,
+      "text": "7 So he got up and took the basket of figs and placed it on his shoulders, and he entered Jerusalem and did not recognize it, neither his own house, nor the place, nor did he find his own family or any of his acquaintances."
+    },
+    {
+      "chapter": 5,
+      "verse": 8,
+      "text": "8 And he said: “Blessed be the Lord, for a great trance has come over me today!"
+    },
+    {
+      "chapter": 5,
+      "verse": 9,
+      "text": "9 This is not the city Jerusalem, and I have lost my way because I came by the mountain road when I woke from my sleep; and since my head was heavy because I did not get enough sleep, I lost my way."
+    },
+    {
+      "chapter": 5,
+      "verse": 10,
+      "text": "10 It will seem incredible to Jeremiah that I lost my way!”"
+    },
+    {
+      "chapter": 5,
+      "verse": 11,
+      "text": "11 And he left the city, and as he searched he saw the landmarks of the city, and he said: “Indeed, this is the city. I lost my way.”"
+    },
+    {
+      "chapter": 5,
+      "verse": 12,
+      "text": "12 And again he returned to the city and searched, and found no one of his own people, and he said: “Blessed be the Lord, for a great trance has come over me!”"
+    },
+    {
+      "chapter": 5,
+      "verse": 13,
+      "text": "13 And again he left the city, and he stayed there grieving, not knowing where he should go."
+    },
+    {
+      "chapter": 5,
+      "verse": 14,
+      "text": "14 And he put down the basket, saying: “I will sit here until the Lord takes this trance from me.”"
+    },
+    {
+      "chapter": 5,
+      "verse": 15,
+      "text": "15 And as he sat, he saw an old man coming from the field, and Abimelech said to him: “I say to you, old man, what city is this?”"
+    },
+    {
+      "chapter": 5,
+      "verse": 16,
+      "text": "16 And he said to him: “It is Jerusalem.”"
+    },
+    {
+      "chapter": 5,
+      "verse": 17,
+      "text": "17 And Abimelech said to him: “Where is Jeremiah the priest, and Baruch the secretary, and all the people of this city, for I could not find them?”"
+    },
+    {
+      "chapter": 5,
+      "verse": 18,
+      "text": "18 And the old man said to him: “Are you not from this city, since you mention Jeremiah today and ask about him after such a long time?"
+    },
+    {
+      "chapter": 5,
+      "verse": 19,
+      "text": "19 For Jeremiah is in Babylon with the people, for they were taken captive by King Nebuchadnezzar, and Jeremiah is with them to preach the good news to them and to teach them the word.”"
+    },
+    {
+      "chapter": 5,
+      "verse": 20,
+      "text": "20 As soon as Abimelech heard this from the old man, he said: “If you were not an old man, and if it were lawful for someone to scold an older person, I would laugh at you and say that you are out of your mind, since you say that the people have been taken captive into Babylon."
+    },
+    {
+      "chapter": 5,
+      "verse": 21,
+      "text": "21 Even if the heavenly torrents had descended on them, there has not yet been time for them to go into Babylon!"
+    },
+    {
+      "chapter": 5,
+      "verse": 22,
+      "text": "22 For how much time has passed since my father Jeremiah sent me to the estate of Agrippa to bring a few figs, so that I might give them to the sick among the people?"
+    },
+    {
+      "chapter": 5,
+      "verse": 23,
+      "text": "23 And I went and got them, and when I came to a certain tree in the burning heat, I sat to rest a little, and I leaned my head on the basket and fell asleep."
+    },
+    {
+      "chapter": 5,
+      "verse": 24,
+      "text": "24 And when I awoke I uncovered the basket of figs, supposing that I was late, and I found the figs dripping milk, just as I had collected them."
+    },
+    {
+      "chapter": 5,
+      "verse": 25,
+      "text": "25 But you claim that the people have been taken captive into Babylon."
+    },
+    {
+      "chapter": 5,
+      "verse": 26,
+      "text": "26 But so that you can know, take the figs and see!”"
+    },
+    {
+      "chapter": 5,
+      "verse": 27,
+      "text": "27 And he uncovered the basket of figs for the old man, and he saw them dripping milk."
+    },
+    {
+      "chapter": 5,
+      "verse": 28,
+      "text": "28 And when the old man saw them, he said: “My son, you are a righteous man, and God did not want you to see the desolation of the city, so he brought this trance upon you."
+    },
+    {
+      "chapter": 5,
+      "verse": 29,
+      "text": "29 For it is 66 years today since the people were taken captive into Babylon."
+    },
+    {
+      "chapter": 5,
+      "verse": 30,
+      "text": "30 But so that you can learn, my son, that what I tell you is true, look into the field and see that the crops have not yet begun to ripen."
+    },
+    {
+      "chapter": 5,
+      "verse": 31,
+      "text": "31 And notice that the figs are not in season, and understand.”"
+    },
+    {
+      "chapter": 5,
+      "verse": 32,
+      "text": "32 Then Abimelech cried out in a loud voice, saying: “I bless you, God of heaven and earth, the Rest of the souls of the righteous in every place!”"
+    },
+    {
+      "chapter": 5,
+      "verse": 33,
+      "text": "33 Then he said to the old man: “What month is this?”"
+    },
+    {
+      "chapter": 5,
+      "verse": 34,
+      "text": "34 And he said: “Nisan, which is Abib.”"
+    },
+    {
+      "chapter": 5,
+      "verse": 35,
+      "text": "35 And taking some of the figs, he gave them to the old man and said to him: “May God light your way to the city above, Jerusalem.”"
+    },
+    {
+      "chapter": 6,
+      "verse": 1,
+      "text": "1 After this, Abimelech went out of the city and prayed to the Lord."
+    },
+    {
+      "chapter": 6,
+      "verse": 2,
+      "text": "2 And an angel of the Lord came and took him by the right hand and brought him back to where Baruch was sitting, and he found him in a tomb."
+    },
+    {
+      "chapter": 6,
+      "verse": 3,
+      "text": "3 And when they saw each other, they both wept and kissed each other."
+    },
+    {
+      "chapter": 6,
+      "verse": 4,
+      "text": "4 But when Baruch looked up he saw with his own eyes the figs that were covered in Abimelech’s basket."
+    },
+    {
+      "chapter": 6,
+      "verse": 5,
+      "text": "5 And lifting his eyes to heaven, he prayed, saying:"
+    },
+    {
+      "chapter": 6,
+      "verse": 6,
+      "text": "6 “You are the God who gives a reward to those who love you."
+    },
+    {
+      "chapter": 6,
+      "verse": 7,
+      "text": "7 Come to life in your tent, in your virginal faith, and believe that you will live!"
+    },
+    {
+      "chapter": 6,
+      "verse": 8,
+      "text": "8 Look at this basket of figs,"
+    },
+    {
+      "chapter": 6,
+      "verse": 9,
+      "text": "9 So it will be with you, my flesh,"
+    },
+    {
+      "chapter": 6,
+      "verse": 10,
+      "text": "10 The one who preserved the basket of figs will again preserve you by his power.”"
+    },
+    {
+      "chapter": 6,
+      "verse": 11,
+      "text": "11 When Baruch had said this, he said to Abimelech: “Stand up and let us pray that the Lord may show us how we will be able to send to Jeremiah in Babylon the report about the shelter provided for you on the way.”"
+    },
+    {
+      "chapter": 6,
+      "verse": 12,
+      "text": "12 And Baruch prayed, saying: “Lord God, our strength is the chosen light that comes from your mouth."
+    },
+    {
+      "chapter": 6,
+      "verse": 13,
+      "text": "13 We beg you in your goodness, you whose great name no one can know, to hear the voice of your servants and let knowledge come into our hearts."
+    },
+    {
+      "chapter": 6,
+      "verse": 14,
+      "text": "14 What will we do, and how will we send this report to Jeremiah in Babylon?”"
+    },
+    {
+      "chapter": 6,
+      "verse": 15,
+      "text": "15 And while Baruch was still praying, an angel of the Lord came and said all these words to Baruch: “Agent of the light, do not be anxious about how you will send to Jeremiah, for an eagle is coming to you at the hour of light tomorrow, and you will direct him to Jeremiah."
+    },
+    {
+      "chapter": 6,
+      "verse": 16,
+      "text": "16 Therefore, write in a letter: ‘Say to the children of Israel: Let the stranger who comes among you be set apart and let 15 days go by; and after this I will lead you into your city, says the Lord."
+    },
+    {
+      "chapter": 6,
+      "verse": 17,
+      "text": "17 He who is not separated from Babylon will not enter into the city; and I will punish them by keeping them from being received back by the Babylonians, says the Lord.’”"
+    },
+    {
+      "chapter": 6,
+      "verse": 18,
+      "text": "18 And when the angel had said this, he departed from Baruch."
+    },
+    {
+      "chapter": 6,
+      "verse": 19,
+      "text": "19 And Baruch sent to the market of the gentiles and got papyrus and ink and wrote a letter with these words: “Baruch, the servant of God, writes to Jeremiah in the captivity of Babylon:"
+    },
+    {
+      "chapter": 6,
+      "verse": 20,
+      "text": "20 “Greetings! Rejoice, for God has not allowed us to depart from this body grieving for the city which was devastated and mistreated."
+    },
+    {
+      "chapter": 6,
+      "verse": 21,
+      "text": "21 So the Lord has had compassion on our tears, and has remembered the covenant which he established with our ancestors Abraham, Isaac and Jacob."
+    },
+    {
+      "chapter": 6,
+      "verse": 22,
+      "text": "22 And he sent his angel to me, and he told me these words which I send to you."
+    },
+    {
+      "chapter": 6,
+      "verse": 23,
+      "text": "23 “These, then, are the words which the Lord, the God of Israel, spoke, who led us out of Egypt, out of the great furnace: ‘Because you did not keep my laws, but your heart grew proud, and you were arrogant before me, in anger and fury I handed you over to the furnace in Babylon."
+    },
+    {
+      "chapter": 6,
+      "verse": 24,
+      "text": "24 If, therefore, says the Lord, you listen to my voice, from the mouth of Jeremiah my servant, I will bring the one who listens up from Babylon; but the one who does not listen will become a stranger to Jerusalem and to Babylon."
+    },
+    {
+      "chapter": 6,
+      "verse": 25,
+      "text": "25 And you will test them by means of the water of the Jordan; whoever does not listen will be exposed. This is the sign of the great seal.’”"
+    },
+    {
+      "chapter": 7,
+      "verse": 1,
+      "text": "1 And Baruch got up and left the tomb and found the eagle sitting outside the tomb."
+    },
+    {
+      "chapter": 7,
+      "verse": 2,
+      "text": "2 And the eagle said to him in a human voice: “Greetings, Baruch, steward of the faith.”"
+    },
+    {
+      "chapter": 7,
+      "verse": 3,
+      "text": "3 And Baruch said to him: “You who speak are chosen from among all the birds of heaven, for this is clear from the gleam of your eyes, tell me, then, what are you doing here?”"
+    },
+    {
+      "chapter": 7,
+      "verse": 4,
+      "text": "4 And the eagle said to him: “I was sent here so that you can use me to send whatever message you want.”"
+    },
+    {
+      "chapter": 7,
+      "verse": 5,
+      "text": "5 And Baruch said to him: “Can you carry this message to Jeremiah in Babylon?”"
+    },
+    {
+      "chapter": 7,
+      "verse": 6,
+      "text": "6 And the eagle said to him: “Indeed, it was for this reason I was sent.”"
+    },
+    {
+      "chapter": 7,
+      "verse": 7,
+      "text": "7 And Baruch took the letter, and fifteen figs from Abimelech’s basket, and tied them to the eagle’s neck and said to him: “I say to you, king of the birds, go in peace with good health and carry the message for me."
+    },
+    {
+      "chapter": 7,
+      "verse": 8,
+      "text": "8 Do not be like the raven which Noah sent out and which never came back to him in the ark; but be like the dove which, the third time, brought a report to the righteous man."
+    },
+    {
+      "chapter": 7,
+      "verse": 9,
+      "text": "9 So you also, take this good message to Jeremiah and to those held captive with him, so that things may go well for you. Take this papyrus to the people and to the chosen one of God."
+    },
+    {
+      "chapter": 7,
+      "verse": 10,
+      "text": "10 Even if all the birds of heaven surround you and want to fight with you, struggle, and the Lord will give you strength."
+    },
+    {
+      "chapter": 7,
+      "verse": 11,
+      "text": "11 And do not turn aside to the right or to the left, but go straight as a speeding arrow in the power of God,⁠ a and the glory of the Lord will be with you the entire way.”"
+    },
+    {
+      "chapter": 7,
+      "verse": 12,
+      "text": "12 Then the eagle took flight and went away to Babylon with the letter tied to his neck, and when he arrived he rested on a post outside the city in a desert place."
+    },
+    {
+      "chapter": 7,
+      "verse": 13,
+      "text": "13 And he kept silent until Jeremiah came along, for he and some of the people were coming out to bury a corpse outside the city."
+    },
+    {
+      "chapter": 7,
+      "verse": 14,
+      "text": "14 For Jeremiah had petitioned King Nebuchadnezzar, saying: ““Give me a place where I may bury those of my people who have died.”” And the king gave it to him."
+    },
+    {
+      "chapter": 7,
+      "verse": 15,
+      "text": "15 And as they were coming out with the body, and weeping, they came to where the eagle was."
+    },
+    {
+      "chapter": 7,
+      "verse": 16,
+      "text": "16 And the eagle cried out in a loud voice, saying: “I say to you, Jeremiah the chosen one of God, go and gather together the people and come here so that they may hear a letter which I have brought to you from Baruch and Abimelech.”"
+    },
+    {
+      "chapter": 7,
+      "verse": 17,
+      "text": "17 And when Jeremiah heard this, he glorified God; and he went and gathered together the people along with their wives and children, and he came to where the eagle was."
+    },
+    {
+      "chapter": 7,
+      "verse": 18,
+      "text": "18 And the eagle came down on the corpse, and it revived."
+    },
+    {
+      "chapter": 7,
+      "verse": 19,
+      "text": "19 Now this took place so that they might believe."
+    },
+    {
+      "chapter": 7,
+      "verse": 20,
+      "text": "20 And all the people were astounded at what had happened, and said: “This is the God who appeared to our fathers in the wilderness through Moses, and now he has appeared to us through the eagle.”"
+    },
+    {
+      "chapter": 7,
+      "verse": 21,
+      "text": "21 And the eagle said: “I say to you, Jeremiah, come, untie this letter and read it to the people.” So he untied the letter and read it to the people."
+    },
+    {
+      "chapter": 7,
+      "verse": 22,
+      "text": "22 And when the people heard it, they wept and put dust on their heads, and they said to Jeremiah: “Rescue us and tell us what to do so that we may once again enter our city.”"
+    },
+    {
+      "chapter": 7,
+      "verse": 23,
+      "text": "23 And Jeremiah answered and said to them: “Do whatever you heard from the letter, and the Lord will lead us into our city.”"
+    },
+    {
+      "chapter": 7,
+      "verse": 24,
+      "text": "24 And Jeremiah wrote a letter to Baruch, saying: “My beloved son, keep praying diligently and begging God on our behalf, so that he might direct our way until we come out of the jurisdiction of this lawless king."
+    },
+    {
+      "chapter": 7,
+      "verse": 25,
+      "text": "25 For you have been found righteous before God, and he did not let you come here, so that you would not see the affliction which has come upon the people at the hands of the Babylonians."
+    },
+    {
+      "chapter": 7,
+      "verse": 26,
+      "text": "26 For it is like a father with an only son, who is handed over for punishment; and those who see his father and console him cover his face, so that he will not see how his son is being punished, and be even more ravaged by grief."
+    },
+    {
+      "chapter": 7,
+      "verse": 27,
+      "text": "27 For in this way God took pity on you and did not let you enter Babylon so that you would not see the affliction of the people."
+    },
+    {
+      "chapter": 7,
+      "verse": 28,
+      "text": "28 For since we came here, grief has not left us, for sixty-six years as of today."
+    },
+    {
+      "chapter": 7,
+      "verse": 29,
+      "text": "29 “For many times when I went out I found some of the people hung up by King Nebuchadnezzar, crying and saying: ‘Have mercy on us, god Zar!’"
+    },
+    {
+      "chapter": 7,
+      "verse": 30,
+      "text": "30 When I heard this, I grieved and cried with double mourning, not only because they were hung up, but because they were calling on a foreign god, saying ‘Have mercy on us.’"
+    },
+    {
+      "chapter": 7,
+      "verse": 31,
+      "text": "31 “But I remembered festival days which we celebrated in Jerusalem before our captivity; and when I remembered, I groaned, and returned to my house wailing and weeping."
+    },
+    {
+      "chapter": 7,
+      "verse": 32,
+      "text": "32 “Now, then, pray in the place where you and Abimelech are, for this people, that they may listen to my voice and to the decrees of my mouth, so that we can leave from here."
+    },
+    {
+      "chapter": 7,
+      "verse": 33,
+      "text": "33 For I tell you that the entire time that we have spent here they have kept us under their control, saying: ‘Recite for us a song from the songs of Zion — the song of your God.’"
+    },
+    {
+      "chapter": 7,
+      "verse": 34,
+      "text": "34 And we reply to them: ‘How can we sing for you since we are in a foreign land?’”"
+    },
+    {
+      "chapter": 7,
+      "verse": 35,
+      "text": "35 And after this, Jeremiah tied the letter to the eagle’s neck, saying: “Go in peace, and may the Lord watch over both of us.”"
+    },
+    {
+      "chapter": 7,
+      "verse": 36,
+      "text": "36 And the eagle took flight and came to Jerusalem and gave the letter to Baruch; and when he had untied it he read it and kissed it and wept when he heard about the distress and suffering of the people."
+    },
+    {
+      "chapter": 7,
+      "verse": 37,
+      "text": "37 But Jeremiah took the figs and distributed them to the sick among the people, and he kept teaching them to abstain from the defiling practices of the gentiles of Babylon."
+    },
+    {
+      "chapter": 8,
+      "verse": 1,
+      "text": "1 And the day came when the Lord brought the people out of Babylon."
+    },
+    {
+      "chapter": 8,
+      "verse": 2,
+      "text": "2 And the Lord said to Jeremiah: “Get up with the people and come to the Jordan and say to the people: ‘Let anyone who wants the Lord abandon the works of Babylon."
+    },
+    {
+      "chapter": 8,
+      "verse": 3,
+      "text": "3 As for the men who took wives from them and the women who took husbands from them, those who listen to you will cross over, and you take them into Jerusalem; but those who do not listen to you, do not lead them there.’”"
+    },
+    {
+      "chapter": 8,
+      "verse": 4,
+      "text": "4 And Jeremiah spoke these words to the people, and they got up and came to the Jordan to cross over."
+    },
+    {
+      "chapter": 8,
+      "verse": 5,
+      "text": "5 As he told them the words that the Lord had spoken to him, half of those who had taken spouses from them did not want to listen to Jeremiah, but said to him: “We will never abandon our wives, but we will bring them back with us into our city.”"
+    },
+    {
+      "chapter": 8,
+      "verse": 6,
+      "text": "6 So they crossed the Jordan and came to Jerusalem."
+    },
+    {
+      "chapter": 8,
+      "verse": 7,
+      "text": "7 And Jeremiah and Baruch and Abimelech stood up and said: “No man married to a Babylonian may enter this city!”"
+    },
+    {
+      "chapter": 8,
+      "verse": 8,
+      "text": "8 And they said to one another: “Let us get up and return to Babylon to our place.” And they departed."
+    },
+    {
+      "chapter": 8,
+      "verse": 9,
+      "text": "9 But while they were coming to Babylon, the Babylonians came out to meet them, saying: “You may not enter our city, for you hated us and you left us secretly. So you cannot come in with us."
+    },
+    {
+      "chapter": 8,
+      "verse": 10,
+      "text": "10 For we have taken a solemn oath together in the name of our god to receive neither you nor your children, since you left us secretly.”"
+    },
+    {
+      "chapter": 8,
+      "verse": 11,
+      "text": "11 And when they heard this, they returned and came to a desert place some distance from Jerusalem and built a city for themselves and named it “Samaria.”"
+    },
+    {
+      "chapter": 8,
+      "verse": 12,
+      "text": "12 And Jeremiah sent to them, saying: “Repent, for the angel of righteousness is coming and will lead you to your high place.”"
+    },
+    {
+      "chapter": 9,
+      "verse": 1,
+      "text": "1 Now those who were with Jeremiah were rejoicing and offering sacrifices on behalf of the people for nine days."
+    },
+    {
+      "chapter": 9,
+      "verse": 2,
+      "text": "2 But on the tenth, Jeremiah alone offered sacrifice."
+    },
+    {
+      "chapter": 9,
+      "verse": 3,
+      "text": "3 And he prayed a prayer, saying: “Holy, holy, holy, fragrant aroma of the living trees,"
+    },
+    {
+      "chapter": 9,
+      "verse": 4,
+      "text": "4 For your mercy, I beg you,"
+    },
+    {
+      "chapter": 9,
+      "verse": 5,
+      "text": "5 And may Michael, archangel of righteousness,"
+    },
+    {
+      "chapter": 9,
+      "verse": 6,
+      "text": "6 I beg you, almighty Lord of all creation, never born and incomprehensible, in whom all judgment was kept hidden before these things came into existence.”"
+    },
+    {
+      "chapter": 9,
+      "verse": 7,
+      "text": "7 When Jeremiah had said this, and while he was standing in the area around the altar with Baruch and Abimelech, he became like someone whose soul had left him."
+    },
+    {
+      "chapter": 9,
+      "verse": 8,
+      "text": "8 And Baruch and Abimelech were weeping and crying out in a loud voice: “How terrible for us! For our father Jeremiah has left us. The priest of God has gone!”"
+    },
+    {
+      "chapter": 9,
+      "verse": 9,
+      "text": "9 And all the people heard their weeping and they all ran to them and saw Jeremiah lying on the ground as if dead."
+    },
+    {
+      "chapter": 9,
+      "verse": 10,
+      "text": "10 And they tore their clothes and put dust on their heads and wept bitterly."
+    },
+    {
+      "chapter": 9,
+      "verse": 11,
+      "text": "11 And after this they prepared to bury him."
+    },
+    {
+      "chapter": 9,
+      "verse": 12,
+      "text": "12 And there was a voice saying: “Do not bury the one who is still alive, for his soul is returning to his body!”"
+    },
+    {
+      "chapter": 9,
+      "verse": 13,
+      "text": "13 And when they heard the voice they did not bury him, but stayed around his tent for three days saying, “When will he get up?”"
+    },
+    {
+      "chapter": 9,
+      "verse": 14,
+      "text": "14 And after three days his soul came back into his body and he raised his voice among them all and said: “Glorify God with one voice! All of you glorify God and the son of God who awakens us, Messiah Jesus, the light of all the ages, the inextinguishable lamp, the life of faith."
+    },
+    {
+      "chapter": 9,
+      "verse": 15,
+      "text": "15 But after these times there will be 477 years more and he will come to earth."
+    },
+    {
+      "chapter": 9,
+      "verse": 16,
+      "text": "16 And the tree of life planted in the middle of paradise will cause all the fruitless trees to bear fruit, and they will grow and sprout."
+    },
+    {
+      "chapter": 9,
+      "verse": 17,
+      "text": "17 And the trees that had sprouted and became arrogant and said: ‘We have supplied our power to the air,’ he will cause them to wither, with the grandeur of their branches, and he will cause them to be judged, that firmly rooted tree!"
+    },
+    {
+      "chapter": 9,
+      "verse": 18,
+      "text": "18 And what is crimson will become white as wool. The snow will be blackened. The sweet waters will become salty, and the salty sweet, in the intense light of the joy of God."
+    },
+    {
+      "chapter": 9,
+      "verse": 19,
+      "text": "19 And he will bless the islands so that they become fruitful by the word of the mouth of his Messiah."
+    },
+    {
+      "chapter": 9,
+      "verse": 20,
+      "text": "20 “For he will come, and he will go out and choose for himself twelve apostles to proclaim the news among the nations, he whom I have seen adorned by his father and coming into the world on the Mount of Olives, and he will fill the hungry souls.”"
+    },
+    {
+      "chapter": 9,
+      "verse": 21,
+      "text": "21 When Jeremiah was saying this about the son of God, that he is coming into the world, the people became very angry and said: “This is a repetition of the words spoken by Isaiah son of Amos, when he said: ‘I saw God and the son of God.’"
+    },
+    {
+      "chapter": 9,
+      "verse": 22,
+      "text": "22 Come, then, and let us avoid killing him in the same way we killed Isaiah, but let us stone him.”"
+    },
+    {
+      "chapter": 9,
+      "verse": 23,
+      "text": "23 And Baruch and Abimelech were deeply grieved because they wanted to hear in full the mysteries that he had seen."
+    },
+    {
+      "chapter": 9,
+      "verse": 24,
+      "text": "24 But Jeremiah said to them: “Be quiet and do not weep, for they cannot kill me until I describe for you everything I saw.”"
+    },
+    {
+      "chapter": 9,
+      "verse": 25,
+      "text": "25 And he said to them: “Bring a stone here to me.”"
+    },
+    {
+      "chapter": 9,
+      "verse": 26,
+      "text": "26 And he set it up and said: “Light of the ages, make this stone become like me in appearance, until I have described to Baruch and Abimelech everything I saw.”"
+    },
+    {
+      "chapter": 9,
+      "verse": 27,
+      "text": "27 Then the stone, by God’s command, took on the appearance of Jeremiah."
+    },
+    {
+      "chapter": 9,
+      "verse": 28,
+      "text": "28 And they were stoning the stone, supposing that it was Jeremiah!"
+    },
+    {
+      "chapter": 9,
+      "verse": 29,
+      "text": "29 But Jeremiah told Baruch and to Abimelech all the mysteries he had seen, and at once he stood among the people, wanting to complete his ministry."
+    },
+    {
+      "chapter": 9,
+      "verse": 30,
+      "text": "30 Then the stone cried out, saying: “Foolish children of Israel, why do you stone me, supposing that I am Jeremiah? Look, Jeremiah is standing among you!”"
+    },
+    {
+      "chapter": 9,
+      "verse": 31,
+      "text": "31 And when they saw him, immediately they rushed at him with many stones, and his ministry was fulfilled."
+    },
+    {
+      "chapter": 9,
+      "verse": 32,
+      "text": "32 And when Baruch and Abimelech came, they buried him, and taking the stone they placed it on his tomb and inscribed it with these words: “This is the stone that was the ally of Jeremiah.”"
+    }
+  ]
+}

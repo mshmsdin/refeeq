@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":7,\"verses\":[{\"chapter\":7,\"text\":\"After seven days the world that is not yet awake will be raised up, and what is corruptible will die.\",\"verse\":31},{\"chapter\":7,\"text\":\"The earth will restore those who are asleep in it, and the dust those who dwell in it in silence, and the secret places will deliver those souls that were committed to them.\",\"verse\":32},{\"chapter\":7,\"text\":\"The Most High will be revealed on the judgment seat, and compassion will pass away, and patience will be withdrawn.\",\"verse\":33},{\"chapter\":7,\"text\":\"Only judgment will remain. Truth will stand. Faith will grow strong.\",\"verse\":34},{\"chapter\":7,\"text\":\"Recompense will follow. The reward will be shown. Good deeds will awake, and wicked deeds wonâ€™t sleep.\",\"verse\":35},{\"chapter\":7,\"text\":\"The pit of torment will appear, and near it will be the place of rest. The furnace of hellwill be shown, and near it the paradise of delight.\",\"verse\":36},{\"chapter\":7,\"text\":\"Then the Most High will say to the nations that are raised from the dead, â€کLook and understand whom you have denied, whom you havenâ€™t served, whose commandments you have despised.\",\"verse\":37},{\"chapter\":7,\"text\":\"Look on this side and on that. Here is delight and rest, and there fire and torments.â€™ Thus he will speak to them in the day of judgment.\",\"verse\":38},{\"chapter\":7,\"text\":\"This is a day that has neither sun, nor moon, nor stars,\",\"verse\":39},{\"chapter\":7,\"text\":\"neither cloud, nor thunder, nor lightning, neither wind, nor water, nor air, neither darkness, nor evening, nor morning,\",\"verse\":40}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "78a57b56-9e3f-4254-9f90-66e3c90e6c3d",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 31,32,33,34,35,36,37,38,39,40 in this chapter."
+}

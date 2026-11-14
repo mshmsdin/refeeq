@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  7,
+    "range":  "1-10",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "72a05735-8153-4374-a89e-7fad33676fb0",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  515,
+                         "outputTokens":  506,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0014195,
+                         "latencyMs":  1877
+                     }
+                 ],
+    "usage":  {
+                  "input":  515,
+                  "output":  506,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0014195,
+    "verses":  [
+                   {
+                       "chapter":  7,
+                       "text_ar":  "ولما فرغت من تكلَم بهذه الكلمات، أُرسِل إليَ الملاك الذي أُرسِل إليَ في الليالي السابقة.",
+                       "verse":  1
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "فقال لي: «قم، يا عزرا، واسمع الكلمات جئتُ لأقولها لك».",
+                       "verse":  2
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "فقلتُ: «تكلَم يا رب». ثم قال لي: «هناك بحرٌ موضوعٌ في مكان واسع ليكون عريضاً وشاسعاً،",
+                       "verse":  3
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "ولكن مدخله موضوع في مكان ضيق ليكون مثل النهر.",
+                       "verse":  4
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "كل من يرغب في النزول إلى البحر لينظر إليه أو لِيحكمه، إن لم يجُز عبر المدخل الضيق، فكيف يمكنه الدخول إلى الجزء العريض؟",
+                       "verse":  5
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "وأمرٌ آخر أيضاً: توجد مدينة مبنية وموضوعة في أرض سهلية، ومليئة بكل الخيرات،",
+                       "verse":  6
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "ولكن مدخلها ضيق، وموضوع في مكان خطير للسقوط، وله نارٌ عن اليمين، ومياه عميقة عن اليسار.",
+                       "verse":  7
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "وهناك طريق واحد فقط بينهما، أي بين النار والماء، بحيث يمكن لشخص واحد فقط أن يسير فيه في المرة الواحدة.",
+                       "verse":  8
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "إذا أُعطيت هذه المدينة الآن لإنسان ميراثاً، فإن لم يجُز الوارث الخطر الذي أمامه، فكيف سيتلقى ميراثه؟»",
+                       "verse":  9
+                   },
+                   {
+                       "chapter":  7,
+                       "text_ar":  "قلتُ: «هذا صحيح يا رب». ثم قال لي: «هكذا أيضاً هو نصيب إسرائيل».",
+                       "verse":  10
+                   }
+               ]
+}

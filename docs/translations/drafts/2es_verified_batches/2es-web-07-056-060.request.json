@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":7,\"verses\":[{\"chapter\":7,\"text\":\"but silver is more abundant than gold, and brass than silver, and iron than brass, and lead than iron, and clay than lead.â€™\",\"verse\":56},{\"chapter\":7,\"text\":\"Judge therefore which things are precious and to be desired, what is abundant or what is rare?â€‌\",\"verse\":57},{\"chapter\":7,\"text\":\"I said, â€œO sovereign Lord, that which is plentiful is of less worth, for that which is more rare is more precious.â€‌\",\"verse\":58},{\"chapter\":7,\"text\":\"He answered me, â€œWeigh within yourself the things that you have thought, for he who has what is hard to get rejoices over him who has what is plentiful.\",\"verse\":59},{\"chapter\":7,\"text\":\"So also is the judgment which I have promised; for I will rejoice over the few that will be saved, because these are those who have made my glory to prevail now, and through them, my name is now honored.\",\"verse\":60}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "2102332f-9548-4f4e-ac4b-8cbb930548da",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 56,57,58,59,60 in this chapter."
+}

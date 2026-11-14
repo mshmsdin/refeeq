@@ -1,0 +1,179 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 8,
+  "range": "21-40",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "f8608ca6-5c9f-478d-a46b-17044bb7bd43",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "error",
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 73
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 840,
+      "outputTokens": 1419,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0037995,
+      "latencyMs": 3684
+    }
+  ],
+  "usage": {
+    "input": 840,
+    "output": 1419,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0037995,
+  "verses": [
+    {
+      "chapter": 8,
+      "verse": 21,
+      "text_ar": "الذي عرشه لا يُقاس، ومجده لا يُدرك، والذي تقف أمامَه جنود الملائكة مرتعشة،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 22,
+      "text_ar": "الذين بأمره يتحولون إلى ريح ونار، وكلمته ثابتة، وأقواله راسخة، وأحكامه قوية، ووصيته مخيفة،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 23,
+      "text_ar": "الذي بنظرته تجف الأعماق، وبسخطه تذوب الجبال، وحقّه يشهد،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 24,
+      "text_ar": "اسمع، يا رب، صلاة عبدك، وأصغِ إلى طلبة صنع يديك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 25,
+      "text_ar": "انتبه إلى أقوالي، فما دمتُ حياً سأتكلم، وما دام لي فهمٌ سأجيب.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 26,
+      "text_ar": "لا تنظر إلى خطايا شعبك، بل إلى الذين خدموك بالحق.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 27,
+      "text_ar": "لا تلتفت إلى أفعال أولئك الذين يصنعون الشر، بل إلى الذين حفظوا عهودك في الضيق.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 28,
+      "text_ar": "لا تفكر في أولئك الذين عاشوا بالشر قدامك، بل تذكر الذين عرفوا مخافتك طوعاً.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 29,
+      "text_ar": "لا تكن إرادتك أن تهلك الذين عاشوا كالبهائم، بل انظر إلى الذين علموا ناموسك بوضوح.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 30,
+      "text_ar": "لا تغضب على الذين يُحسبون أسوأ من الحيوانات، بل أحبَّ الذين وضعوا رجاءهم دائماً في مجدك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 31,
+      "text_ar": "فإننا نحن وآباءنا قد قضينا أيام حياتنا في طرق تجلب الموت، أما أنت فتُدعى رحيماً لأجلنا نحن الخطاة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 32,
+      "text_ar": "فإن كانت رغبتك أن ترحمنا نحن الذين ليس لنا أعمال برّ، فحينئذ تُدعى رحيماً.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 33,
+      "text_ar": "لأن الأبرار الذين وُضعت لهم أعمال صالحة كثيرة عندك، سينالون مكافأة عن أعمالهم الخاصة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 34,
+      "text_ar": "فما هو الإنسان حتى تغضب عليه؟ وما هو الجنس الفاسد حتى تقسو عليه هكذا؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 35,
+      "text_ar": "لأنه حقاً، ليس بين المواليد إنسان لم يصنع الشر، ولا يوجد بين الذين عاشوا من لم يرتكب الإثم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 36,
+      "text_ar": "لأن في هذا يا رب، سيُعلن برّك وصلاحك، إن رحمتَ الذين ليس لديهم رصيد من الأعمال الصالحة».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 37,
+      "text_ar": "ثم أجابني قائلاً: «أنت تكلمت ببعض الأمور بالحق، وسيكون الأمر بحسب أقوالك.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 38,
+      "text_ar": "فإني حقاً لن أفكر في تكوين الذين خطئوا، ولا في موتهم، أو دينونتهم، أو هلاكهم؛",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 39,
+      "text_ar": "بل سأفرح بخليقة الأبرار وغربتهم، وخلاصهم، والمكافأة التي سيعانونها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 8,
+      "verse": 40,
+      "text_ar": "لذلك كما تكلمت، هكذا سيكون.",
+      "review_notes_ar": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "4a47c821-b5d2-49d5-aef4-6606f137f7f3",
+  "content": "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 15,\n      \"verse\": 31,\n      \"text_ar\": \"حينئذٍ تتغلب التنانين، متذكرة طبيعتها، وإن هي تحولت متآمرة معاً بقدرة عظيمة لاضطهادهم،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 32,\n      \"text_ar\": \"حينئذٍ يضطرب هؤلاء، ويصمتون بسبب قدرتهم، ويستديرون ويهربون.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 33,\n      \"text_ar\": \"من أرض الأشوريين، يهاجمهم عدو كامن ويهلك واحداً منهم. ويحل بجيشهم خوف ورعدة، وتردد على ملوكهم.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 34,\n      \"text_ar\": \"هوذا سحب من الشرق، ومن الشمال إلى الجنوب! وهي مخيفة جداً للمنظر، ومليئة بالغضب والعاصفة.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 35,\n      \"text_ar\": \"ستصطدم الواحدة بالأخرى، وتصب عاصفة ثقيلة على الأرض، بل وعاصفتها الخاصة. وسيكون هناك دم من السيف حتى بطن الحصان،\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 36,\n      \"text_ar\": \"وحتى فخذ الإنسان، وحتى عرقوب الجمل.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 37,\n      \"text_ar\": \"سيكون هناك خوف ورعدة عظيمة على الأرض، والذين يرون ذلك الغضب سيخافون، وتستولي عليهم الرعدة.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 38,\n      \"text_ar\": \"بعد هذا، تثار عواصف عظيمة من الجنوب ومن الشمال، وقسم آخر من الغرب.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 39,\n      \"text_ar\": \"وستقوم رياح قوية من الشرق، فتغلق عليها، أعني السحابة التي أثارها بغضب؛ والعاصفة التي كان مقدراً لها أن تسبب الهلاك بريح الشرق ستندفع بعنف نحو الجنوب والغرب.\",\n      \"review_notes_ar\": []\n    },\n    {\n      \"chapter\": 15,\n      \"verse\": 40,\n      \"text_ar\": \"وسترتفع سحب عظيمة وقوية، مليئة بالغضب، مع العاصفة، لكي تهلك كل الأرض والساكنين فيها، وستصب على كل عالٍ ومرفوع عاصفة رهيبة،\",\n      \"review_notes_ar\": []\n    }\n  ]\n}",
+  "usage": {
+    "input": 538,
+    "output": 786,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0021264,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 538,
+      "outputTokens": 786,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0021264,
+      "latencyMs": 3366
+    }
+  ]
+}

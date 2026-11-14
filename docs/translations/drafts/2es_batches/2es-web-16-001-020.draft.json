@@ -1,0 +1,179 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 16,
+  "range": "1-20",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "49d3bfa3-8ee9-4034-ba41-5f9f4837da4c",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 829,
+      "outputTokens": 1402,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0037537,
+      "latencyMs": 3354
+    }
+  ],
+  "usage": {
+    "input": 829,
+    "output": 1402,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0037537,
+  "verses": [
+    {
+      "chapter": 16,
+      "verse": 1,
+      "text_ar": "الويل لكِ يا بابل ويا آسيا! الوويل لكِ يا مصر ويا سوريا!",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 2,
+      "text_ar": "البسوا المسوح وثياب شعر المعزى، وولولوا على أولادكم وانوحوا، فإن هلاككم قريب.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 3,
+      "text_ar": "أُرسل عليكم سيف، فمن ذا الذي يرده؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 4,
+      "text_ar": "أُرسلت عليكم نار، فمن ذا الذي يطفئها؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 5,
+      "text_ar": "أُرسلت عليكم بلايا، فمن ذا الذي يطردها؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 6,
+      "text_ar": "أيمكن لأحد أن يطرد أسداً جائعاً في الغابة؟ أو أيمكن لأحد أن يطفئ ناراً في قش متى بدأت تحترق؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 7,
+      "text_ar": "أيمكن لأحد أن يرد سهماً أطلقه رامي قوي؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 8,
+      "text_ar": "الرب الإله هو الذي يرسل البلايا، فمن يطردها؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 9,
+      "text_ar": "ستخرج نار من غضبه، فمن يستطيع إطفاءها؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 10,
+      "text_ar": "يُبرق بروقاً، فمن لا يخاف؟ يُرعد، فمن لا يرتعد؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 11,
+      "text_ar": "يهدد الرب، فمن لا يتتحطم تماماً أمام حضرته؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 12,
+      "text_ar": "تتزعزع الأرض وأساساتها. ويرتفع البحر بأمواج من الأعماق، وتضطرب أمواجه مع السمك الذي فيه، أمام حضور الرب وأمام مجد قدرته.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 13,
+      "text_ar": "لأن يمينه التي تشد القوس قوية، وسهامه التي يطلقها حادة، ولن تخطئ عندما تبدأ في الانطلاق نحو أقاليم المسكونة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 14,
+      "text_ar": "هوذا البلايا قد أُرسلت، ولن ترجع مرة أخرى حتى تحل على الأرض.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 15,
+      "text_ar": "قد أُضرمت النار ولن تُطفأ حتى تستهلك أساسات الأرض.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 16,
+      "text_ar": "مثل السهم الذي يطلقه رامي جبار لا يرجع الى الوراء، هكذا أيضاً البلايا التي أُرسلت على الأرض لن ترجع مرة أخرى.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 17,
+      "text_ar": "يا ويل لي! يا ويل لي! من ينجيني في تلك الأيام؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 18,
+      "text_ar": "بدء الأوجاع، حين يكون مناحة عظيمة؛ وبدء الجوع، والكثيرون يهلكون؛ وبدء الحروب، والقوات تقف في خوف؛ وبدء البلايا، والجميع يرتعدون! ماذا يفعلون عندما تأتي البلايا؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 19,
+      "text_ar": "هوذا جوع ووبأ، ضيق وشدة! إنها مُرسلة كأدوات تأديب للإصلاح.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 16,
+      "verse": 20,
+      "text_ar": "ولكن مع كل هذه الأمور لن يرجعوا عن شرهم، ولا يكونون دائماً واضعين في بالهم أدوات التأديب.",
+      "review_notes_ar": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "3BAR",
+  "book_name_ar": "باروخ الثالث (الرؤيا اليونانية لباروخ)",
+  "source_translation": "en-hughes-charles-1913-3baruch",
+  "source_url": "https://archive.org/details/apocryphapseudep02charuoft",
+  "source_license": "الطبعة المطبوعة سنة ١٩١٣ في الملك العام",
+  "source_quality": "ترجمة هيوز الإنجليزية عن الشاهد اليوناني، طبعة تاريخية غير نقدية",
+  "source_sha256": "3a7ae105fe29022def9ed9c3a33c29af97fd6eea09769d9f064a3e21bf11f6b5",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "model_id": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "request_id": "fac6aff6-0431-46f1-be7f-91648febdbec",
+  "usage": {
+    "input": 563,
+    "output": 143,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0005264,
+  "estimated_cost_currency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 563,
+      "outputTokens": 143,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0005264,
+      "latencyMs": 1325
+    }
+  ],
+  "translation": {
+    "book_code": "3BAR",
+    "verses": [
+      {
+        "chapter": 17,
+        "verse": 1,
+        "text_ar": "1 وفيما كان يتكلم بعد، أُغلقت الباب، وانصرفنا. 2 وأخذني الملاك و3 ردني إلى المكان الذي كنت فيه في البدء. ولما رجعت إلى نفسي، مجدت الله، الذي أهلني لمثل هذا الكرامة. لذلك أنتم أيضاً، أيها الإخوة، الذين نلتم مثل هذا الإعلان، مجدوا الله أنتم أيضاً، لكي يمجدكم هو أيضاً، الآن وكل أوان وإلى دهر الأبد. آمين.",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

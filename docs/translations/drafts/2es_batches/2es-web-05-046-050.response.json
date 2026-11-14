@@ -1,0 +1,37 @@
+{
+  "request_id": "01761a28-3fbe-46a7-98e5-4441d22660f1",
+  "content": "{\"book_code\":\"2ES\",\"verses\":[{\"chapter\":5,\"verse\":46,\"text_ar\":\"فقال لي: «اسأل رحم امرأة، وقُل لها: \\\"إذا كنتِ تلدين عشرة أولاد، فلماذا تفعلين ذلك في أوقات متفاوتة؟ اسألها إذن أن تلد عشرة أولاد دفعة واحدة\\\".\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":47,\"text_ar\":\"فقلت: «لا تستطيع، بل لا بد أن تفعل ذلك كل واحد في وقته الخاص».\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":48,\"text_ar\":\"فقال لي حينئذ: «وهكذا أيضاً، لقد جعلتُ رحم الأرض لأولئك الذين يزرعون فيها في أوقاتهم الخاصة.\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":49,\"text_ar\":\"لأنه تماماً كما أن الطفل الصغير لا يمكنه أن يلد، وكذلك التي شاخت لم تعد قادرة، هكذا أيضاً نظرتُ إلى العالم الذي خلقتُه».\",\"review_notes_ar\":[]},{\"chapter\":5,\"verse\":50,\"text_ar\":\"فسألتُ: «بما أنك أريتني الطريق الآن، فسأتكلم أمامك: هل أمنا التي حدثتني عنها لا تزال شابّة؟ أم أنها تقترب الآن من الشيخوخة؟»\",\"review_notes_ar\":[]}]}",
+  "usage": {
+    "input": 353,
+    "output": 323,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009134,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 353,
+      "outputTokens": 323,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009134,
+      "latencyMs": 2305
+    }
+  ]
+}

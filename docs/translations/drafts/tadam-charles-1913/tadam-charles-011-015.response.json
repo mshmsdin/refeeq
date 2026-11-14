@@ -1,0 +1,37 @@
+{
+  "request_id": "25874dc6-3197-4105-a36a-bede4649ea90",
+  "content": "{\n  \"book_code\": \"TADAM\",\n  \"verses\": [\n    {\n      \"chapter\": 5,\n      \"verse\": 3,\n      \"text_ar\": \"أتممنا ما وعدناه. يا سيدي، كم من التوبة فكرت (أن تصنع) لأني جلبت عليك التعب والضيق؟\"\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 1,\n      \"text_ar\": \"وقال آدم لحواء: \\\"لا يمكنك أن تفعلي مثلي، بل افعلي فقط ما لديك قوة له. فإني سأقضي أربعين يوماً صائماً، وأما أنت فقومي واذهبي إلى نهر دجلة وارفعي حجراً وقفي عليه في الماء حتى عنقك في عمق النهر. ولا يصدر كلام من فمك، فنحن غير مستحقين أن نخاطب الرب، لأن شفاهنا نجسة من الشجرة المحرمة الممنوعة.\"\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 2,\n      \"text_ar\": \"وقفي أنت في ماء النهر سبعة وثلاثين يوماً. وأما أنا فسأقضي أربعين يوماً في ماء الأردن، لعل الرب الإله يتحنن علينا\\\".\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 1,\n      \"text_ar\": \"ومشت حواء إلى نهر دجلة و\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 2,\n      \"text_ar\": \"فعلت كما قاله لها آدم. وبالمثل، مشى آدم إلى نهر الأردن وقرّ على حجر حتى عنقه في الماء.\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 423,
+    "output": 411,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0011544,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 423,
+      "outputTokens": 411,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011544,
+      "latencyMs": 2009
+    }
+  ]
+}

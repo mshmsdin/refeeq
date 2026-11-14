@@ -1,0 +1,51 @@
+{
+  "request_id": "6562887b-abbd-4d16-b36d-54b5e7d0d070",
+  "content": "{\n  \"book_code\": \"APMO\",\n  \"verses\": [\n    {\n      \"chapter\": 40,\n      \"verse\": 5,\n      \"text_ar\": \"تلقى جسداً رفيقاً، حتى الأرض التي أُخذت وصُنعت فيّ تأتي إليّ. في ذلك الوقت، أخذها الملائكة ووضعوها على صخرة، حتى دُفن آدم أبوه.\"\n    },\n    {\n      \"chapter\": 40,\n      \"verse\": 6,\n      \"text_ar\": \"كلاهما دُفن وفقاً لأمر الله، في المكان الذي وجد فيه الله التراب، وجعل المكان يُحفر لاثنين. وأرسل الله سبعة ملائكة إلى الجنة وهم.\"\n    },\n    {\n      \"chapter\": 40,\n      \"verse\": 7,\n      \"text_ar\": \"جلبوا العديد من التوابل العطرة ووضعوها في الأرض، فأخذوا الجسدين ووضعواهما في المكان الذي حفروه وبنوه.\"\n    },\n    {\n      \"chapter\": 41,\n      \"verse\": 1,\n      \"text_ar\": \"نادى الله وقال: \\\"آدم، آدم.\\\" فأجاب الجسد من الأرض وقال: \\\"ها أنا يا رب.\\\" وقال له الله: \\\"قلت لك.\"\n    },\n    {\n      \"chapter\": 41,\n      \"verse\": 2,\n      \"text_ar\": \"أنك الأرض أنت وإلى الأرض ستعود. مرة أخرى أعدك بالقيامة؛ سأقيمك في القيامة مع كل إنسان من نسلك.\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 579,
+    "output": 675,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 579,
+      "outputTokens": 675,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1750
+    }
+  ]
+}

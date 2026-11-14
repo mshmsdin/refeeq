@@ -1,0 +1,74 @@
+{
+  "book_code": "TADAM",
+  "source_license_notice": "English translation by R. H. Charles, Oxford 1913; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-charles-1913-latin-recension",
+  "source_name": "The Books of Adam and Eve (Latin recension)",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "batch_start": 1,
+  "batch_end": 5,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "86da141d-a7b2-452f-ad1e-9c2a44858049",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 386,
+      "outputTokens": 373,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010483,
+      "latencyMs": 1634
+    }
+  ],
+  "usage": {
+    "input": 386,
+    "output": 373,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0010483,
+  "units": [
+    {
+      "chapter": 1,
+      "source_ref": "1:1",
+      "text_ar": "ولما طردا من الفردوس، صنعا لنفسيهما مظلة، وقضيا سبعة أيام ينوحان ويندبان بحزن شديد."
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:1",
+      "text_ar": "ولكن بعد سبعة أيام، بدأا يجوعان وشرعا يبحثان عن طعام ليأكلاه، وهما"
+    },
+    {
+      "chapter": 2,
+      "source_ref": "2:2",
+      "text_ar": "لم ينجداه. فقالت حواء لآدم: يا سيدي، إنا جائعة. اذهب وابحث لنا عن شيء لنأكله. فلعل الرب الإله يلتفت ويرحمنا ويعيدنا إلى المكان الذي كنا فيه من قبل."
+    },
+    {
+      "chapter": 3,
+      "source_ref": "3:1",
+      "text_ar": "وقام آدم ومشى سبعة أيام في تلك الأرض كلها، فلم يجد طعاماً كالذي"
+    },
+    {
+      "chapter": 3,
+      "source_ref": "3:2",
+      "text_ar": "كانا يعتادان عليه في الفردوس. وقالت حواء لآدم: أَتَقتُلني لكي أموت، ولعل الله الرب يدخلك إلى الفردوس، فمن أجلي طُرِدتَ منه."
+    }
+  ]
+}

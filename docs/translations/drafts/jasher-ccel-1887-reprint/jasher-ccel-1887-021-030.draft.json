@@ -1,0 +1,100 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 21,
+  "batch_end": 30,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "d3dd56d6-f893-44de-951e-862965a90046",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 766,
+      "outputTokens": 755,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0021173000000000003,
+      "latencyMs": 2171
+    }
+  ],
+  "usage": {
+    "input": 766,
+    "output": 755,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0021173000000000003,
+  "units": [
+    {
+      "chapter": 1,
+      "source_ref": "1:21",
+      "text_ar": "فقال قايين لأخيه هابيل: حقاً إن قتلته اليوم، فمن يطلب دمَك مني؟"
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:22",
+      "text_ar": "فأجاب هابيل قايين قائلاً: حقاً إن الله الذي صنعنا على الأرض، هو سينتقم لدعواي، وهو سيطلب دمك مني إن قتلتني، لأن الرب هو الديان والحكم، وهو الذي يجازي الإنسان بحسب شره، والرجل الشرير بحسب الشر الذي يفعله على الأرض."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:23",
+      "text_ar": "والآن، إن كنت ستقتلني هنا، فحقا إن الله يعلم مقاصدك السرية، وسيدينك على الشر الذي أعلنت أنك ستفعله بي اليوم."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:24",
+      "text_ar": "ولما سمع قايين الكلام الذي نطق به هابيل أخوه، هوذا غضب قايين اشتعل على أخيه هابيل لإعلانه هذا الأمر."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:25",
+      "text_ar": "وأسرع قايين وقام، وأخذ القطعة الحديدية من آلة حراثته، والتي ضرب بها أخاه بغتة فقتله، وسفك قايين دم أخيه هابيل على الأرض، وتدفق دم هابيل على الأرض أمام القطيع."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:26",
+      "text_ar": "وبعد هذا ندم قايين على قتله أخاه، وحزن حزناً شديداً، وبكى عليه وآلمه ذلك جداً."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:27",
+      "text_ar": "وقام قايين وحفر حفرة في الحقل، ووضع فيها جسد أخيه، وواراه التراب."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:28",
+      "text_ar": "وعلم الرب ما فعله قايين بأخيه، وتراءى الرب لقايين وقال له: أين هابيل أخوك الذي كان معك؟"
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:29",
+      "text_ar": "فتظاهر قايين وقال: لا أعلم، أحرّاساً أنا لأخي؟ فقال له الرب: ماذا فعلت؟ صوت دم أخيك يصرخ إليّ من الأرض حيث قتلته."
+    },
+    {
+      "chapter": 1,
+      "source_ref": "1:30",
+      "text_ar": "لأنك قتلت أخاك وتظاهرت أمامي، وتخيلت في قلبك أني لا أراك، ولا أعرف كل أفعالك."
+    }
+  ]
+}

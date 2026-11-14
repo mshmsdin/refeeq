@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":7,\"verses\":[{\"chapter\":7,\"verse\":6,\"text\":\"6 And the eagle said to him: “Indeed, it was for this reason I was sent.”\"},{\"chapter\":7,\"verse\":7,\"text\":\"7 And Baruch took the letter, and fifteen figs from Abimelech’s basket, and tied them to the eagle’s neck and said to him: “I say to you, king of the birds, go in peace with good health and carry the message for me.\"},{\"chapter\":7,\"verse\":8,\"text\":\"8 Do not be like the raven which Noah sent out and which never came back to him in the ark; but be like the dove which, the third time, brought a report to the righteous man.\"},{\"chapter\":7,\"verse\":9,\"text\":\"9 So you also, take this good message to Jeremiah and to those held captive with him, so that things may go well for you. Take this papyrus to the people and to the chosen one of God.\"},{\"chapter\":7,\"verse\":10,\"text\":\"10 Even if all the birds of heaven surround you and want to fight with you, struggle, and the Lord will give you strength.\"}],\"book_code\":\"4BAR\"}"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "1018a5f566468ffcf1eb51192b2319ccea7149c94ab2ab96c990c2196e38bb2d",
+  "request_id": "156d3414-68ca-4e61-b051-7a00e68c6987",
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter.",
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation"
+}

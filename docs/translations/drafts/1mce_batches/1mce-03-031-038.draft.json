@@ -1,0 +1,78 @@
+{
+  "status": "draft_for_human_review",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "book_code": "1MCE",
+  "book_name_ar": "المكابيون الإثيوبي الأول",
+  "source_translation": "en-wikisource-1-meqabyan",
+  "source_url": "https://en.wikisource.org/wiki/Translation:1_Meqabyan",
+  "source_license": "CC BY-SA 4.0; attribution and share-alike required for any release",
+  "source_quality": "Community English translation from Ge ez; not a critical edition, page under deletion discussion",
+  "source_sha256": "5615a85aab3db5a116478c7e8c884a10f7c7d61ba7d5cbbb5fc8d13627461ed1",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "model_id": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "request_id": "a3b5066b-9863-451c-a6e2-8bdc5adc528d",
+  "usage": {
+    "input": 1126,
+    "output": 794,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "estimated_cost_currency": "USD",
+  "translation": {
+    "book_code": "1MCE",
+    "chapter": 3,
+    "verses": [
+      {
+        "chapter": 3,
+        "verse": 31,
+        "text_ar": "وبعد ذلك كان الملك على شرفته الملوكية فرأى أن هؤلاء الرجال المكرمين أُطلق سراحهم وأن جميع الإخوة الخمسة وقفوا معًا. أولئك القادة الذين عملوا وعاقبوا القوات تساءلوا إنهم إخوان وأخبروا الملك. غضب الملك وصاح كخنزير بري في البرية.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 32,
+        "text_ar": "وحتى نصح الملك المال لعقاب جميع الإخوة الخمسة، أمر بأن يُقبض عليهم ويُضافوا إلى بيت السجن. وضعوهم في بيت السجن، وربطوهم بسجنٍ صارمٍ بلا رحمة بساقٍ جوفاء.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 33,
+        "text_ar": "وقال الملك تسيروتسايدن: \"هؤلاء الشباب الذين أخطأوا أرهقوني. لماذا ينبغي لهؤلاء الرجال أن يثبتوا حجتهم؟ وأولئك الذين يعملون الشر يشبهون من له قوة وصلابة. إذا قلت: 'سيرجعون'، فسيجعلون حجتهم شريرة.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 34,
+        "text_ar": "وأجلبُ عليهم مشقةً كقياس شرهم. وأحرق لحمهم في النار حتى يتحول إلى رماد محترق، ثم أنثر رماد لحمهم كالغبار على الجبال.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 35,
+        "text_ar": "وبعد أن قال هذا، انتظر ثلاثة أيام وأمر أن يُجلب هؤلاء الرجال المكرمين. وعندما اقترب هؤلاء الرجال المكرمون منه، أمر أن يُشعل نارًا في فرن الحفرة العظيم وأن يُضاف عمل خبيث إلى لهب النار، حيث غلى فيه قطًا، والدهون، وتوت الصابون، ورغوة البحر، والراتنج، والكبريت.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 36,
+        "text_ar": "وعند اشتعال النار في الحفرة، ذهب الرسول إلى الملك وقالوا: \"نفّذنا ما أمرتنا به. أرسل الرجال الذين سيُضافون.\"",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 37,
+        "text_ar": "وأمر أن يُستقبلوا ويُلقوا بهم في حفرة النار، وفعل الشبان ما أمرهم الملك به. وعندما دخل هؤلاء الرجال المكرمون النار، سَلموا أرواحهم إلى ياه.",
+        "review_notes_ar": []
+      },
+      {
+        "chapter": 3,
+        "verse": 38,
+        "text_ar": "وعندما رأى الذين ألقوا بهم، استقبل الملائكة أرواحهم وأخذوها إلى الجنة حيث إسحاق وإبراهيم ويعقوب، حيث يُوجد الصالحون.",
+        "review_notes_ar": []
+      }
+    ]
+  }
+}

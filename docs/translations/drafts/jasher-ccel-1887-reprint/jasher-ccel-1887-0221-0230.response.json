@@ -1,0 +1,51 @@
+{
+  "request_id": "971625d9-c71c-4f96-bfe8-97e9a0ee6b34",
+  "content": "{\n  \"book_code\": \"JASHER\",\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"verse\": 11,\n      \"source_ref\": \"7:11\",\n      \"text_ar\": \"وكان أولاد مِصر لود، أنوم وباثروس، تشاسلوث وشافتور.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 12,\n      \"source_ref\": \"7:12\",\n      \"text_ar\": \"وكان أولاد فُوت جيبول، هادان، بِنَّة وعَدَن.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 13,\n      \"source_ref\": \"7:13\",\n      \"text_ar\": \"وكان أولاد كنعان زِدُون، هيث، أموري، جرغاشي، هيفي، أركي، سيني، أرودي، زيمودي وشاموثي.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 14,\n      \"source_ref\": \"7:14\",\n      \"text_ar\": \"هؤلاء هم أولاد حام بحسب عائلاتهم، وكان عددهم في ذلك الوقت نحو سبعمائة وثلاثين رجلاً.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 15,\n      \"source_ref\": \"7:15\",\n      \"text_ar\": \"وهؤلاء هم أولاد شيم: عِلَام، آشور، أرباخشاد، لود وعَرام، خمسة أولاد؛ وكان أولاد عِلَام شوشان، ماخول وهرمون.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 16,\n      \"source_ref\": \"7:16\",\n      \"text_ar\": \"وكان أولاد آشَر ميروس وموكيل، وكان أولاد أرباخشاد شِلاح، أنار وأشْكول.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 17,\n      \"source_ref\": \"7:17\",\n      \"text_ar\": \"وكان أولاد لود بيثور وبيزايون، وكان أولاد عَرام أوز، خول، جاثر ومَش.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 18,\n      \"source_ref\": \"7:18\",\n      \"text_ar\": \"هؤلاء هم أولاد شيم بحسب عائلاتهم؛ وكان عددهم في ذلك الوقت نحو ثلاثمائة رجل.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 19,\n      \"source_ref\": \"7:19\",\n      \"text_ar\": \"هذه أجيال شيم؛ شيم أنجب أرباخشاد، وأرباخشاد أنجب شِلاح، وشِلاح أنجب إبر، وإبر كان له ولدان: أحدهما اسمه فِلق، لأن في أيامه انقسم أولاد البشر، وفي الأيام الأخيرة انقسمت الأرض.\"\n    },\n    {\n      \"chapter\": 7,\n      \"verse\": 20,\n      \"source_ref\": \"7:20\",\n      \"text_ar\": \"وكان اسم الثاني يُقْتَن، أي أن في أيامه قلّت حياة أولاد البشر وانخفضت.\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 798,
+    "output": 809,
+    "cached": 256,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 798,
+      "outputTokens": 809,
+      "cachedTokens": 256,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1929
+    }
+  ]
+}

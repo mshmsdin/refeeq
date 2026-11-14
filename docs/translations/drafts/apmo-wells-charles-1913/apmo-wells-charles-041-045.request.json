@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "00d01738-7300-41a7-a18f-3b267c0bd3b1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف معلومات غير موجودة، ولا تكتب ملاحظات أو شروحاً. أخرج JSON فقط وفق الشكل: {\"book_code\":\"APMO\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"...\"}]}. أخرج وحدة واحدة لكل مدخل بالترتيب. إذا كان مرجع المصدر مجمّعاً مثل 1,2 فترجم نصه مرة واحدة واجعل verse أول رقم فقط، ولا تقسّمه إلى وحدتين."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"APMO\",\"units\":[{\"chapter\":14,\"text\":\"Thus spake the angel and departed from them. And Seth and Eve came to the hut where Adam was laid. And Adam saith to Eve: 'Eve, what\",\"source_ref\":\"14:1\"},{\"chapter\":14,\"text\":\"hast thou wrought in us? Thou hast brought upon us great wrath which is death, [lording it over all our race].' And he saith to her, 'Call all\",\"source_ref\":\"14:2\"},{\"chapter\":14,\"text\":\"our children and our children's children and tell them the manner of our transgression.'\",\"source_ref\":\"14:3\"},{\"chapter\":15,\"text\":\"Then saith Eve to them: 'Hear all my children and children's children and I will relate to you\",\"source_ref\":\"15:1\"},{\"chapter\":15,\"text\":\"how the enemy deceived us. It befell that we were guarding paradise, each of us the portion\",\"source_ref\":\"15:2\"}]}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return one item per input unit, in input order, using the first printed number when a source label is grouped: 14:1, 14:2, 14:3, 15:1, 15:2.",
+  "application_id": "rafeeq-bible-translation"
+}

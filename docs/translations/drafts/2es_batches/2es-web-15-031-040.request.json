@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم الوحدات الإنجليزية إلى عربية فصحى أمينة. أخرج كائن JSON فقط بهذا الشكل: {\"book_code\":\"2ES\",\"verses\":[{\"chapter\":1,\"verse\":1,\"text_ar\":\"النص المترجم\",\"review_notes_ar\":[]}]}. انسخ أرقام الفصل والآية كما هي، وعنصراً واحداً لكل وحدة."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":15,\"book_code\":\"2ES\",\"verses\":[{\"verse\":31,\"chapter\":15,\"text\":\"Then the dragons will have the upper hand, remembering their nature. If they will turn themselves, conspiring together in great power to persecute them,\"},{\"verse\":32,\"chapter\":15,\"text\":\"then these will be troubled, and keep silence through their power, and will turn and flee.\"},{\"verse\":33,\"chapter\":15,\"text\":\"From the land of the Assyrians, an enemy in ambush will attack them and destroy one of them. Upon their army will be fear and trembling, and indecision upon their kings.\"},{\"verse\":34,\"chapter\":15,\"text\":\"Behold, clouds from the east, and from the north to the south! They are very horrible to look at, full of wrath and storm.\"},{\"verse\":35,\"chapter\":15,\"text\":\"They will clash against one another. They will pour out a heavy storm on the earth, even their own storm. There will be blood from the sword to the horse’s belly,\"},{\"verse\":36,\"chapter\":15,\"text\":\"and to the thigh of man, and to the camel’s hock.\"},{\"verse\":37,\"chapter\":15,\"text\":\"There will be fearfulness and great trembling upon earth. They who see that wrath will be afraid, and trembling will seize them.\"},{\"verse\":38,\"chapter\":15,\"text\":\"After this, great storms will be stirred up from the south, from the north, and another part from the west.\"},{\"verse\":39,\"chapter\":15,\"text\":\"Strong winds will arise from the east, and will shut it up, even the cloud which he raised up in wrath; and the storm that was to cause destruction by the east wind will be violently driven toward the south and west.\"},{\"verse\":40,\"chapter\":15,\"text\":\"Great and mighty clouds, full of wrath, will be lifted up with the storm, that they may destroy all the earth and those who dwell in it. They will pour out over every high and lofty one a terrible storm,\"}]}"
+    }
+  ],
+  "request_id": "3a0b2626-70a7-42d3-9a08-acf5d5f4f0fe",
+  "service_key": "bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "response_format": "JSON object with book_code='2ES' and verses array. Each item has chapter, verse, text_ar, review_notes_ar. Return exactly verse numbers 31,32,33,34,35,36,37,38,39,40 in this chapter.",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "tenant_id": "rafeeq-bible-translation"
+}

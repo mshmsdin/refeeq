@@ -1,0 +1,37 @@
+{
+  "request_id": "483fdc56-cf23-4544-81c4-a26a65cd0f5d",
+  "content": "{\n  \"verses\": [\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"ودخل البواب وأخبرني بذلك، لكنه سمع مني أنني كنت أدرس.\",\n      \"verse\": 6\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"أما الشرير، فلما فشل في ذلك، مضى وحمل على كتفه سلة قديمة ممزقة ودخل وكلم البواب قائلاً: \\\"قل لأيوب: أعطني خبزاً من يديك لآكل\\\".\",\n      \"verse\": 7\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"ولما سمعت هذا، أعطيتها خبزاً محروقاً لتعطيه إياه، وأعلمته قائلة: \\\"لا تنتظر أن تأكل من خبزي، لأنه ممنوع عليك\\\".\",\n      \"verse\": 8\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"ولكن البواب، إذ استحت أن تسلمه الخبز المحروق المليء بالرماد، إذ لم تكن تعلم أنه الشيطان، أخذت من خبزها الجيد وأعطته إياه.\",\n      \"verse\": 9\n    },\n    {\n      \"chapter\": 2,\n      \"text_ar\": \"فلما أخذه وعرف ما حدث، قال للفتية: \\\"اذهبي من هنا أيها الخادمة السيئة، وأحضري لي الخبز الذي أعطي لك لتسلميه لي\\\".\",\n      \"verse\": 10\n    }\n  ],\n  \"book_code\": \"TJOB\"\n}",
+  "usage": {
+    "input": 354,
+    "output": 382,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0010612,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 354,
+      "outputTokens": 382,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0010612,
+      "latencyMs": 1748
+    }
+  ]
+}

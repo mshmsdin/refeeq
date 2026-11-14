@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "58d87771-6fe9-42d5-b0a3-0a28a53f8a22",
+    "content":  "{\n  \"book_code\": \"2ES\",\n  \"verses\": [\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"أعطית بهيموث القسم الواحد الذي جف في اليوم الثالث لیسكن فیه? حیث توجد ألف تل?\",\n      \"verse\": 51\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"أما لواياثان فأعطیته القسم السابع? أي القسم المائي? وحفظتهما لیؤكلا ممن تشاء وفي الوقت الذي تشاء.\",\n      \"verse\": 52\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وفي الیوم السادس أمرت الأرض أن تنتج أمامك بهائم وحیوانات ودبابات.\",\n      \"verse\": 53\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"وعلى هذه أقمت أدم رئيساً على كل أعمالك التي صنعتها. ومنه خرجنا نحن جميعاً? الشعب الذي اخترته.\",\n      \"verse\": 54\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"كل هذا تكلمت به قدامك يا رب? لأنك قلت إنك من أجلنا خلقت هذا العالم.\",\n      \"verse\": 55\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"أما الأمم الأخرى التي هي أيضاً من نسل آدم? فقد قلت إنهم لا شيء ومثل البصاق? وشبهت كثرتهم بقطرة تسقط من دلو.\",\n      \"verse\": 56\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"والآن يا رب? انظر إلى هذه الأمم التي تُحسب لا شيء? وكيف أنها تتسلط علينا وتلتهمنا.\",\n      \"verse\": 57\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"أما نحن شعبك الذي دعوته بكَركَ البكر? ابنك الوحيد? ومحبوبك الغيور? فقد أُسلمنا إلى أيديهم.\",\n      \"verse\": 58\n    },\n    {\n      \"chapter\": 6,\n      \"text_ar\": \"فإن كان العالم قد صُنع من أجلنا? فلماذا لا نرتث عالمنا ميراثاً؟ إلى متى يستمر هذا؟\",\n      \"verse\": 59\n    }\n  ]\n}",
+    "usage":  {
+                  "input":  490,
+                  "output":  575,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "estimatedCost":  0.0015845,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  490,
+                         "outputTokens":  575,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0015845,
+                         "latencyMs":  2045
+                     }
+                 ]
+}

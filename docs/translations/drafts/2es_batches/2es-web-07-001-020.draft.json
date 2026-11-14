@@ -1,0 +1,179 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 7,
+  "range": "1-20",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "cc612e40-b987-4a91-b520-b4510ef1623e",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 877,
+      "outputTokens": 1063,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0029205999999999998,
+      "latencyMs": 2923
+    }
+  ],
+  "usage": {
+    "input": 877,
+    "output": 1063,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0029205999999999998,
+  "verses": [
+    {
+      "chapter": 7,
+      "verse": 1,
+      "text_ar": "ولما فرغت من كلامي بهذا، أُرسل إليّ الملاك الذي كان قد أُرسل إليّ في الليالي السابقة،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 2,
+      "text_ar": "فقال لي: «قُم يا عزرا، واسمع الكلام الذي جئت لأخبرك به».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 3,
+      "text_ar": "فقلت: «تكلم يا سيد، وقل. فقال لي: «يوجد بحر موضوع في موضع رحب، ليكون واسعاً وعظيماً،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 4,
+      "text_ar": "ولكن مدخله واقع في موضع ضيق ليكون مثل نهر.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 5,
+      "text_ar": "فمن أراد أن يدخل البحر لينظر إليه، أو يتسلط عليه، إن لم يجُزْ عبر المدخل الضيق، فكيف يمكنه أن يصل إلى الجزء الواسع؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 6,
+      "text_ar": "وأمر آخر أيضاً: توجد مدينة مبنية وموضوعة في أرض منبسطة، ومملوءة بكل الخيرات،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 7,
+      "text_ar": "ولكن مدخلها ضيق، وواقع في موضع خطر للسقوط، وفيه نار عن اليمين، ومياه عميقة عن اليسار.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 8,
+      "text_ar": "ويوجد طريق واحد فقط بينهما، أعني بين النار والماء، بحيث لا يمكن إلا لإنسان واحد أن يسير فيه في آن واحد.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 9,
+      "text_ar": "فإن مُنحت هذه المدينة الآن لإنسان ميراثاً، فإن لم يجُزِ الوارث الخطر الذي أمامه، فكيف سينال ميراثه؟»",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 10,
+      "text_ar": "فقلت: «هذا حق يا رب». فقال لي: «هكذا أيضاً نصيب إسرائيل.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 11,
+      "text_ar": "من أجلهم خلقت العالم. وما جرى الآن فقد قُضي به عندما تعدى آدم فرائضي.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 12,
+      "text_ar": "حينئذٍ صارت مداخل هذا العالم ضيقة، محزنة، ومؤلمة. إنها لقليلة وشريرة، مملوءة أخطاراً، ومكتنفة بأتعاب عظيمة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 13,
+      "text_ar": "أما مداخل العالم الأعظم فواسعة وآمنة، وتثمر ثمر الخلود.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 14,
+      "text_ar": "فإن لم يدخل الأحياءُ في هذه الأمور الصعبة والباطلة، فلن يمكنهم أبداً أن ينالوا تلك الأمور المحفوظة لهم.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 15,
+      "text_ar": "فلماذا إذن تضطرب وأنت إنسان فاسد؟ ولماذا ترتجف وأنت ممات؟",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 16,
+      "text_ar": "ولماذا لم تفكر في عقلك في الأمور العتيدة بدلاً من الأمور الحاضرة؟»",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 17,
+      "text_ar": "فأجبت وقلت: «أيها السيد الرب، ها إنك رسمت في شريعتك أن الأبرار يرثون هذه الأشياء، وأن الأشرار يهلكون.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 18,
+      "text_ar": "لذلك فإن الأبرار سيقاسون الأمور الصعبة ويرجون الأمور السهلة، أما الذين عملوا الشر فقد قاسو الأمور الصعبة، ومع ذلك لن يروا الأمور السهلة».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 19,
+      "text_ar": "فقال لي: «لست قاضياً فوق الله، ولا أنت أعظم فهماً من العلي.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 7,
+      "verse": 20,
+      "text_ar": "بل ليته يهلك كثيرون ممن يعيشون الآن، على ألا يُزدَرى شريعة الله الموضوعة أمامهم».",
+      "review_notes_ar": []
+    }
+  ]
+}

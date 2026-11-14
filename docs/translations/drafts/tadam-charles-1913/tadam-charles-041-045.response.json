@@ -1,0 +1,37 @@
+{
+  "request_id": "6b40cf47-f53a-4a91-a743-9386e7959abe",
+  "content": "{\"book_code\":\"TADAM\",\"verses\":[{\"chapter\":16,\"verse\":3,\"text_ar\":\"للوقت غلبنا الحزن، إذ سُلبنا مجداً عظيماً. وقد\"},{\"chapter\":16,\"verse\":4,\"text_ar\":\"حزنا عندما رأيناك في مثل هذا الفرح والترف. وبمكر خدعت زوجتك وجعلتك تُطرد من قبلها من فرحك وترفك، كما طורدت أنا من مجدي.\"},{\"chapter\":17,\"verse\":1,\"text_ar\":\"فلما سمع آدم إبليس يقول هذا، صرخ وبكى وقال: 'أيها الرب إلهي، حياتي في يدك. أبعد هذا المقاوم عني بعيداً، وهو الذي يطلب إهلاك نفسي، وأعطني\"},{\"chapter\":17,\"verse\":2,\"text_ar\":\"مجده الذي فقده هو بنفسه'. وفي تلك اللحظة، اختفى إبليس أمامه. أما آدم فصبر في توبته، واقفاً أربعين يوماً (متوالية) في مياه الأردن.\"},{\"chapter\":18,\"verse\":1,\"text_ar\":\"وقالت حواء لآدم: 'عش أنت يا سيدي، فقد وُهبت لك الحياة، إذ إنك لم تترك الخطأ الأول ولا الثاني. أما أنا فقد أخطأت وضللت لأني لم أحفظ وصية الله؛ والآن اطردني من نور حياتك وأنا سأذهب إلى مغيب الشمس،\"}]}",
+  "usage": {
+    "input": 459,
+    "output": 328,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009577,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 459,
+      "outputTokens": 328,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009577,
+      "latencyMs": 1796
+    }
+  ]
+}

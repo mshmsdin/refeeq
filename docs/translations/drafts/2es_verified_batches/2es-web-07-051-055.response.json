@@ -1,0 +1,37 @@
+﻿{
+    "request_id":  "e1336aea-6b6d-4a2c-93fd-b6f2de5745af",
+    "content":  "{\"book_code\": \"2ES\", \"verses\": [{\"chapter\": 7, \"text_ar\": \"لأَنَّكُمْ قُلْتُمْ إِنَّ الأَبْرَارَ لَيْسُوا كَثِيرِينَ وَإِنَّمَا هُمْ قِلَّةٌ، وَأَنَّ الْفُجَّارَ كَثِيرُونَ، فَاسْمَعْ التَّفْسِيرَ.\", \"verse\": 51}, {\"chapter\": 7, \"text_ar\": \"أَمْ أَتْرُكُ الْأَحْجَارَ الْكَرِيمَةَ الْقَلِيلَةَ وَأَضَعُهَا فِي الرَّصَاصِ وَالطِّينِ؟\", \"verse\": 52}, {\"chapter\": 7, \"text_ar\": \"فَقُلْتُ: يَا سَيِّدِي، كَيْفَ يَكُونُ هَذَا؟\", \"verse\": 53}, {\"chapter\": 7, \"text_ar\": \"فَقَالَ لِي: لَيْسَ هَذَا فَحَسْبِ، بَلِ اسْأَلِ الأَرْضَ فَتُخْبِرُكَ. فِيْجِعْ لَهَا فَتُؤَدِّبُكَ.\", \"verse\": 54}, {\"chapter\": 7, \"text_ar\": \"قُلْ لَهَا: أَنْتِ تُخْرِجِينَ الذَّهَبَ وَالْفِضَّةَ وَالنُّحَاسَ وَالْحَدِيدَ وَالرَّصَاصَ وَالطِّينَ.\", \"verse\": 55}]}",
+    "usage":  {
+                  "input":  293,
+                  "output":  333,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "modelId":  "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+    "provider":  "Groq Paid",
+    "model":  "qwen/qwen3.8-27b",
+    "estimatedCost":  0.0015664000000000001,
+    "estimatedCostCurrency":  "USD",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+                         "provider":  "Groq Paid",
+                         "model":  "qwen/qwen3.8-27b",
+                         "status":  "success",
+                         "inputPrice":  "0.8000000000",
+                         "outputPrice":  "4.0000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.8000000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  293,
+                         "outputTokens":  333,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0015664000000000001,
+                         "latencyMs":  790
+                     }
+                 ]
+}

@@ -1,0 +1,114 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 211,
+  "batch_end": 220,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "f4fb0ef2-1368-4197-bfa1-5976644fab43",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 742,
+      "outputTokens": 669,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1684
+    }
+  ],
+  "usage": {
+    "input": 742,
+    "output": 669,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "text_ar": "وهؤلاء أسماء أبناء نوح: يافث، وحام، وشيم؛ وُلد لهم أولاد بعد الطوفان، لأنهم قد أخذوا نساء قبل الطوفان.",
+      "chapter": 7,
+      "source_ref": "7:1"
+    },
+    {
+      "text_ar": "هؤلاء أبناء يافث: قمر، ماجوج، ماداي، يافان، طوبال، مشح، وتيراس، سبعة أبناء.",
+      "chapter": 7,
+      "source_ref": "7:2"
+    },
+    {
+      "text_ar": "وأبناء قمر هم أسكيناز، ريفاث وتجارما.",
+      "chapter": 7,
+      "source_ref": "7:3"
+    },
+    {
+      "text_ar": "وأبناء ماجوج هم إليكاناف ولوبال.",
+      "chapter": 7,
+      "source_ref": "7:4"
+    },
+    {
+      "text_ar": "وأولاد ماداي هم أكون، زيلو، خازوني ولوط.",
+      "chapter": 7,
+      "source_ref": "7:5"
+    },
+    {
+      "text_ar": "وأبناء يافان هم إليشا، ترشيش، شطيم ودودونيم.",
+      "chapter": 7,
+      "source_ref": "7:6"
+    },
+    {
+      "text_ar": "وأبناء طوبال هم أريفي، كيسد وتاري.",
+      "chapter": 7,
+      "source_ref": "7:7"
+    },
+    {
+      "text_ar": "وأبناء مشح هم ديدون، زارون وشباشني.",
+      "chapter": 7,
+      "source_ref": "7:8"
+    },
+    {
+      "text_ar": "وأبناء تيراس هم بنب، جيرا، لبيريون وجيلك؛ هؤلاء هم أبناء يافث بحسب عائلاتهم، وكان عددهم في ذلك الوقت حوالي أربعمائة وستين رجلاً.",
+      "chapter": 7,
+      "source_ref": "7:9"
+    },
+    {
+      "text_ar": "وهؤلاء أبناء حام: كوش، مصر، فوت وكانعان، أربعة أبناء؛ وأبناء كوش هم سبة، حافيلاه، سبتا، رعام وساتكة، وأبناء رعام هم شبة وديدان.",
+      "chapter": 7,
+      "source_ref": "7:10"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "90dba5f0-2cc3-4107-ace0-f36843e2ad50",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"احرصوا على آنية خدمة الهيكل حتى اجتماع الحبيب.\",\n      \"verse\": 11\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"وتحدث إرميا قائلًا: \\\"أتوسل إليك يا رب، أرني ماذا أفعله لأبيمالك الحبشي، لأنه صنع إحسانات كثيرة لعبدك إرميا.\",\n      \"verse\": 12\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"لأنه انتشلني من الجب الطيني، وأنا لا أريد أن يرى خراب هذه المدينة ودمارها، بل أريد أن ترحمه وتجنبه الحزن\\\".\",\n      \"verse\": 13\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"وقال الرب لإرميا: \\\"أرسله إلى كرم أغريباس، وسأخبئه في ظل الجبل حتى أرد الشعب إلى المدينة.\",\n      \"verse\": 14\n    },\n    {\n      \"chapter\": 3,\n      \"text_ar\": \"وأما أنت يا إرميا، فاذهب مع شعبك إلى بابل وأقم معهم، واكرز لهم، حتى أرددهم إلى المدينة\\\".\",\n      \"verse\": 15\n    }\n  ]\n}",
+  "usage": {
+    "input": 342,
+    "output": 342,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009576000000000001,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 342,
+      "outputTokens": 342,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009576000000000001,
+      "latencyMs": 1468
+    }
+  ]
+}

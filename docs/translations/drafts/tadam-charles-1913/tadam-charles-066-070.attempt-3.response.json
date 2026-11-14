@@ -1,0 +1,51 @@
+{
+  "request_id": "1cc74609-a2b5-4085-a695-e1c9baa71469",
+  "content": "{\n  \"verses\": [\n    {\n      \"text_ar\": \"وقال آدم لشيث: اسمع يا بني شيث، لكي أروي لك ما سمعت و\",\n      \"verse\": 1,\n      \"chapter\": 25\n    },\n    {\n      \"text_ar\": \"رأيت بعد أن طُردتُ أنا وأمك من الفردوس. وعندما كنا نصلي، أتى إلي\",\n      \"verse\": 2,\n      \"chapter\": 25\n    },\n    {\n      \"text_ar\": \"ميخائيل رئيس الملائكة، ملاك الله. ورأيت مركبة كالهواء وعجلاتها نارية، فاختطفت إلى فردوس البر، ورأيت الرب جالساً وكان وجهه ناراً ملتهبة لا يمكن احتمالها. وكانت ألوف كثيرة من الملائكة عن يمين تلك المركبة ويسارها.\",\n      \"verse\": 3,\n      \"chapter\": 25\n    },\n    {\n      \"text_ar\": \"ولما رأيت هذا، اضطربت، واستولى علي الرعب، وسجدت أمام\",\n      \"verse\": 1,\n      \"chapter\": 26\n    },\n    {\n      \"text_ar\": \"الله ووجهي إلى الأرض. وقال لي الله: «ها إنك تموت، لأنك تعديت وصية الله، إذ سمعت لصوت امرأتك التي أسلمتها إلى سلطانك لكي تمسكها بمشيئتك، ومع ذلك استمعت لها وتجاوزت كلامي».\",\n      \"verse\": 2,\n      \"chapter\": 26\n    }\n  ],\n  \"book_code\": \"TADAM\"\n}",
+  "usage": {
+    "input": 440,
+    "output": 391,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0011095,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "99274687-1d7c-4d9e-a6f4-aab3765418ca",
+      "provider": "Mistral",
+      "model": "mistral-small-2603",
+      "status": "error",
+      "inputPrice": "0.1500000000",
+      "outputPrice": "0.6000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0150000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "429",
+      "estimatedCost": null,
+      "latencyMs": 232
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 440,
+      "outputTokens": 391,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0011095,
+      "latencyMs": 1541
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "book_code": "APMO",
+  "source_license_notice": "Wells translation in R. H. Charles, Oxford 1913 edition; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-wells-apocalypse-moses",
+  "source_name": "The Apocalypse of Moses (Wells, Charles 1913)",
+  "source_url": "https://www.ccel.org/c/charles/otpseudepig/apcmose.htm",
+  "source_sha256": "c1dc224cbf89342d3eef948e69d1e2c32e9db99dde856487bd8e32976da7673e",
+  "batch_start": 146,
+  "batch_end": 150,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "routing_method": "service_policy",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "51d39b1a-d29a-474d-aa72-d61b7a50745a",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 583,
+      "outputTokens": 418,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 995
+    }
+  ],
+  "usage": {
+    "input": 583,
+    "output": 418,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "chapter": 42,
+      "source_ref": "42:1",
+      "text_ar": "بعد هذه الكلمات، صنع الله ختمًا وختم القبر، حتى لا يجرؤ أحدٌ على فعل شيء له لمدة ستة أيام حتى تعود ضلوعه إليه. ثم ذهب الرب وملاكه إلى موضعهم."
+    },
+    {
+      "chapter": 42,
+      "source_ref": "42:2",
+      "text_ar": "وكانت حواء أيضًا، حين أتمت الأيام الستة،"
+    },
+    {
+      "chapter": 42,
+      "source_ref": "42:3",
+      "text_ar": "نائمة. ولكنها بينما كانت حية، بكت مرارةً على نوم آدم، لأنها لم تعرف أين وُضع. فإنما عندما جاء الرب إلى الجنة ليدفن آدم كانت نائمة، وأولادها كذلك، إلا شيث، حتى أمر أن يُجهَّز آدم للدفن؛ ولم يعرف أحد على الأرض ذلك إلا ابنها شيث. وصنعت حواء صلاة (في"
+    },
+    {
+      "chapter": 42,
+      "source_ref": "42:4",
+      "text_ar": "ساعة موتها) لتُدفن في المكان الذي دفن فيه زوجها آدم. وبعد أن أنهت صلاتها، قالت: «يا رب،"
+    },
+    {
+      "chapter": 42,
+      "source_ref": "42:5",
+      "text_ar": "يا سيدي، إله كل الحكم، لا تُبعد عني خادمتك جسد آدم، فإنك من أعضاءه صنعتني. ولكن احسبني"
+    }
+  ]
+}

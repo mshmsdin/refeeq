@@ -1,0 +1,37 @@
+{
+  "request_id": "8ced0f3c-a263-4f3b-87ab-2cefd0e93a2e",
+  "content": "{\n  \"book_code\": \"4BAR\",\n  \"verses\": [\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"ولا تحد يمنة أو يسرة، بل امضِ مستقيماً كسههم مسرع في قوة الله، ويكون مجد الرب معك في طوال الطريق.\",\n      \"verse\": 11\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"حينئذ طار النسر وذهب إلى بابل والرسالة مربوطة بعنقه، ولما وصل استراح على عمود خارج المدينة في مكان مقفر.\",\n      \"verse\": 12\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وبقي صامتاً حتى أتى إرميا، لأنه هو وبعض الشعب كانوا خارجين لدفن جثة خارج المدينة.\",\n      \"verse\": 13\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"لأن إرميا كان قد التمس من الملك نبوخذ ناصر قائلاً: أعطني مكاناً أدفن فيه أموات شعبي. فأعطاه إياه الملك.\",\n      \"verse\": 14\n    },\n    {\n      \"chapter\": 7,\n      \"text_ar\": \"وبينما كانوا خارجين بالجسد وهم يبكون، وصلوا إلى حيث كان النسر.\",\n      \"verse\": 15\n    }\n  ]\n}",
+  "usage": {
+    "input": 345,
+    "output": 340,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "estimatedCost": 0.0009535,
+  "estimatedCostCurrency": "USD",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 345,
+      "outputTokens": 340,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0009535,
+      "latencyMs": 1474
+    }
+  ]
+}

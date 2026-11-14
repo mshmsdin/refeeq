@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  4,
+    "range":  "11-20",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "aa60ff4f-0e19-40b7-8728-5ddf35fe2eb6",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  560,
+                         "outputTokens":  641,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0017705,
+                         "latencyMs":  2192
+                     }
+                 ],
+    "usage":  {
+                  "input":  560,
+                  "output":  641,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0017705,
+    "verses":  [
+                   {
+                       "chapter":  4,
+                       "text_ar":  "كيف يستطيع عقلك إذن أن يدرك طريق العلي؟ كيف يمكن لمن سبق أن أنهكه العالم الفاسد أن يفهم غير الفساد؟ ولماذا عندما سمعت هذا سقطت على وجهي",
+                       "verse":  11
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "وقلت له: كان خيراً لنا لو لم نكن هنا قط، بدلاً من أن نأتي إلى هنا ونعيش في وسط الفجور، ونعاني، ولا نعرف لماذا.",
+                       "verse":  12
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فأجابني وقال: خرجت غابة من أشجار الحقل وتشاوروا معاً،",
+                       "verse":  13
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "وقالو: تعالوا! لنذهب ونصنع حرباً ضد البحر، لكي ينصرف عنا، ولكي نصنع لأنفسنا غابات أكثر.",
+                       "verse":  14
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "كما تشاورت أمواج البحر أيضاً بنفس الطريقة، وقالت: تعالوا! لنصعد ونخضع غابة السهل، لكي نكسب هناك أيضاً مساحة أكبر.",
+                       "verse":  15
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "كانت مشورة الخشب باطلة، لأن النار جاءت واستهلكتها.",
+                       "verse":  16
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "وكذلك أيضاً مشورة أمواج البحر، لأن الرمل وقف وأوقفهم.",
+                       "verse":  17
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "لو كنت قاضياً الآن بين هذين الاثنين، فأيهما تبرر، وأيهما تدين؟",
+                       "verse":  18
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فأجبت وقلت: إنها مشورة حمقاء أخذاها كلاهما، لأن الأرض معطاة للخشب، ومكان البحر معطى ليحمل أمواجه.",
+                       "verse":  19
+                   },
+                   {
+                       "chapter":  4,
+                       "text_ar":  "فأجابني حينئذ وقال: لقد أصدرت حكماً صحيحاً. فلماذا لا تحكم في قضيتك الخاصة؟",
+                       "verse":  20
+                   }
+               ]
+}

@@ -1,0 +1,193 @@
+{
+  "book_code": "2ES",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-web",
+  "source_name": "World English Bible Classic",
+  "source_url": "https://www.ebible.org/eng-web/2ES01.htm",
+  "source_sha256": "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+  "chapter": 11,
+  "range": "1-20",
+  "status": "draft_for_review",
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "77c6532b-1bad-4f19-ab8e-934fbe41ddf1",
+  "failovers": 2,
+  "attempts": [
+    {
+      "modelId": "2cafb2e5-acbe-49e9-bd89-c13bcc63ef33",
+      "provider": "Groq Paid",
+      "model": "qwen/qwen3.8-27b",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.8000000000",
+      "outputPrice": "4.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.8000000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "05dfb509-43ee-4357-a629-e560369080e7",
+      "provider": "Gemini",
+      "model": "gemini-3.8-flash",
+      "status": "error",
+      "inputPrice": "0.7500000000",
+      "outputPrice": "3.7500000000",
+      "currency": "USD",
+      "cachedPrice": "0.0750000000",
+      "imagePrice": "0.0000000000",
+      "errorCode": "502",
+      "estimatedCost": null,
+      "latencyMs": 30003
+    },
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 826,
+      "outputTokens": 1379,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0036953000000000003,
+      "latencyMs": 3774
+    }
+  ],
+  "usage": {
+    "input": 826,
+    "output": 1379,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0036953000000000003,
+  "verses": [
+    {
+      "chapter": 11,
+      "verse": 1,
+      "text_ar": "وكان في الليلة الثانية أني رأيت حلماً، وإذا بنسر له اثنا عشر جناحاً ذو ريش وثلاثة رؤوس قد صعد من البحر.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 2,
+      "text_ar": "ورأيت وإذا به بسط جناحيه فوق كل الأرض، وسبحت نحوه كل رياح السماء، وتجمعت السحب ضده.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 3,
+      "text_ar": "ورأيت، ومن جناحيها نبتت أجنحة أخرى بجانبها، وصارت أجنحة صغيرة دقيقة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 4,
+      "text_ar": "وأما رؤوسه فكانت مستريحة. وكان الرأس الذي في الوسط أكبر من الرؤوس الأخرى، غير أنه استراح معها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 5,
+      "text_ar": "وعلاوة على ذلك رأيت، وإذا بالنسر يطير بجناحيه ليملك على الأرض وعلى الساكنين فيها.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 6,
+      "text_ar": "ورأيت كيف أن كل الأشياء تحت السماء خضعت له، ولم يتكلم أحد ضده، ولا حتى مخلوق واحد على الأرض.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 7,
+      "text_ar": "ورأيت وإذا بالنسر نهض على مخالبه، ورفع صوته إلى أجنحته قائلاً:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 8,
+      "text_ar": "«لا تسهروا كلكم في وقت واحد. ليرقد كل واحد في مكانه الخاص ويسهر بالتناوب؛",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 9,
+      "text_ar": "وأما الرؤوس فلتُحفظ للنهاية».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 10,
+      "text_ar": "ورأيت وإذا الصوت لم يخرج من رؤوسه، بل من وسط جسده.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 11,
+      "text_ar": "وأحصيت أجنحته التي كانت بالقرب من الأخرى، وإذا بها ثمانية أجنحة.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 12,
+      "text_ar": "ورأيت وإذا على الجانب الأيمن قام جناح واحد وملَكَ على كل الأرض.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 13,
+      "text_ar": "ولما ملَكَ جاءت نهايته فاختفى، حتى لم يعد يظهر مكانه بعد. وقام الجناح التالي وملَكَ، وحكم زمناً طويلاً.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 14,
+      "text_ar": "وحدث أنه عندما ملَكَ جاءت نهايته أيضاً، فاختفى مثل الأول.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 15,
+      "text_ar": "وهوذا صوت أتاه وقال:",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 16,
+      "text_ar": "«اسمع، أيها الذي حكم على الأرض طوال هذا الوقت! أعلن لك هذا، قبل أن تختفي،",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 17,
+      "text_ar": "لن يحكم أحد بعدك بمثل مدتك، ولا حتى بنصفها».",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 18,
+      "text_ar": "ثم قام الثالث، وحكم مثل سابقيه، وهو أيضاً اختفى.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 19,
+      "text_ar": "وهكذا جرى الأمر مع كل الأجنحة واحداً تلو الآخر، إذ حكم كل واحد ثم اختفى.",
+      "review_notes_ar": []
+    },
+    {
+      "chapter": 11,
+      "verse": 20,
+      "text_ar": "ورأيت وإذا بمرور الوقت أقيمت الأجنحة التي تلتها على الجانب الأيمن لكي تحكم هي أيضاً. وحكم بعضها، ولكنها في غضون وقت قصير اختفت.",
+      "review_notes_ar": []
+    }
+  ]
+}

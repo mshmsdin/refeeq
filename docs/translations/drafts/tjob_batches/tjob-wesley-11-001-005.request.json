@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "fda41a37-14fe-4a4f-88f4-263356037f4d",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":11,\"verses\":[{\"chapter\":11,\"verse\":1,\"text\":\"But I being desirous to take up again my work of benevolence for the poor, asked them saying:\"},{\"chapter\":11,\"verse\":2,\"text\":\"\\\"Give me each a lamb for the clothing of the poor in their state of nakedness, and four drachmas (coins) of silver or gold\\\"\"},{\"chapter\":11,\"verse\":3,\"text\":\"Then the Lord blessed all that was left to me, and after a few days I became rich again in merchandise, in flocks and all things which I had lost, and I received all in double number again.\"},{\"chapter\":11,\"verse\":4,\"text\":\"Then I also took as wife your mother and became the father of you ten in place of the ten children that had died.\"},{\"chapter\":11,\"verse\":5,\"text\":\"And now, my children, let me admonish you: \\\"Behold I die. You will take my place.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5 in this chapter."
+}

@@ -1,0 +1,18 @@
+﻿{
+    "messages":  [
+                     {
+                         "content":  "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+                         "role":  "system"
+                     },
+                     {
+                         "content":  "{\"chapter\":6,\"verses\":[{\"chapter\":6,\"text\":\"He said to me, â€œIn the beginning, when the earth was made, before the portals of the world were fixed and before the gatherings of the winds blew,\",\"verse\":1},{\"chapter\":6,\"text\":\"before the voices of the thunder sounded and before the flashes of the lightning shone, before the foundations of paradise were laid,\",\"verse\":2},{\"chapter\":6,\"text\":\"before the fair flowers were seen, before the powers of the earthquake were established, before the innumerable army of angels were gathered together,\",\"verse\":3},{\"chapter\":6,\"text\":\"before the heights of the air were lifted up, before the measures of the firmament were named, before the footstool of Zion was established,\",\"verse\":4},{\"chapter\":6,\"text\":\"before the present years were reckoned, before the imaginations of those who now sin were estranged, and before they were sealed who have gathered faith for a treasureâ€”\",\"verse\":5},{\"chapter\":6,\"text\":\"then I considered these things, and they all were made through me alone, and not through another; just as by me also they will be ended, and not by another.â€‌\",\"verse\":6},{\"chapter\":6,\"text\":\"Then I answered, â€œWhat will be the dividing of the times? Or when will be the end of the first and the beginning of the age that follows?â€‌\",\"verse\":7},{\"chapter\":6,\"text\":\"He said to me, â€œFrom Abraham to Isaac, because Jacob and Esau were born to him, for Jacobâ€™s hand held Esauâ€™s heel from the beginning.\",\"verse\":8},{\"chapter\":6,\"text\":\"For Esau is the end of this age, and Jacob is the beginning of the one that follows.\",\"verse\":9},{\"chapter\":6,\"text\":\"The beginning of a man is his hand, and the end of a man is his heel. Seek nothing else between the heel and the hand, Esdras!â€‌\",\"verse\":10}],\"book_code\":\"2ES\"}",
+                         "role":  "user"
+                     }
+                 ],
+    "service_key":  "bible-translation",
+    "application_id":  "rafeeq-bible-translation",
+    "request_id":  "9053c03a-93ad-4f22-8cdb-a0c24dbf0c7b",
+    "tenant_id":  "rafeeq-bible-translation",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "response_format":  "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 1,2,3,4,5,6,7,8,9,10 in this chapter."
+}

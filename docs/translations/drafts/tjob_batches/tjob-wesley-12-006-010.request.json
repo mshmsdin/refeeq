@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها.",
+      "role": "system"
+    },
+    {
+      "content": "{\"verses\":[{\"chapter\":12,\"verse\":6,\"text\":\"And to Kassia he gave a censer (with perfume = Kassia, and to Amaltheas horn (= music) he gave a timbrel in order that they might bless the holy angels who came for his soul.\"},{\"chapter\":12,\"verse\":7,\"text\":\"And they took these, and sang, and played on the psaltery and praised and glorified God in the holy dialect.\"},{\"chapter\":12,\"verse\":8,\"text\":\"And after this he came He who sitteth upon the great chariot and kissed Job, while his three daughters looked on, but the others saw it not.\"},{\"chapter\":12,\"verse\":9,\"text\":\"And He took the soul of Job and He soared upward, taking her (the soul) by the arm and carrying her upon the chariot, and He went towards the East.\"},{\"chapter\":12,\"verse\":10,\"text\":\"His body, however, was brought to the grave while the three daughters marched ahead, having put on their girdles and singing hymns in praise of God.\"}],\"chapter\":12,\"book_code\":\"TJOB\"}",
+      "role": "user"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 6,7,8,9,10 in this chapter.",
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "6de89ff7-25c6-4117-86bf-4a2022ba6482"
+}

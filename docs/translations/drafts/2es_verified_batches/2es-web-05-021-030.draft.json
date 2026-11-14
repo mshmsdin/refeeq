@@ -1,0 +1,95 @@
+﻿{
+    "book_code":  "2ES",
+    "translation_name_ar":  "ترجمة محمد بن شمس الدين",
+    "source_translation":  "en-web",
+    "source_name":  "World English Bible Classic",
+    "source_url":  "https://www.ebible.org/eng-web/2ES01.htm",
+    "source_sha256":  "293fc4b72b88b3199fbe5f42f757438b23c6ed36a3fb81c0ed8aa3819a28bad0",
+    "chapter":  5,
+    "range":  "21-30",
+    "status":  "machine_translated_structured",
+    "provider":  "Gemini 3.5 Flash Lite",
+    "model":  "gemini-3.5-flash-lite",
+    "request_id":  "65152252-ebe9-4557-a657-f0b40d049f13",
+    "failovers":  0,
+    "attempts":  [
+                     {
+                         "modelId":  "04666bbb-699d-4341-bf02-a6df0f6c262c",
+                         "provider":  "Gemini 3.5 Flash Lite",
+                         "model":  "gemini-3.5-flash-lite",
+                         "status":  "success",
+                         "inputPrice":  "0.3000000000",
+                         "outputPrice":  "2.5000000000",
+                         "currency":  "USD",
+                         "cachedPrice":  "0.0300000000",
+                         "imagePrice":  "0.0000000000",
+                         "inputTokens":  488,
+                         "outputTokens":  621,
+                         "cachedTokens":  0,
+                         "cacheCreationTokens":  0,
+                         "imageTokens":  0,
+                         "estimatedCost":  0.0016989000000000001,
+                         "latencyMs":  1937
+                     }
+                 ],
+    "usage":  {
+                  "input":  488,
+                  "output":  621,
+                  "cached":  0,
+                  "cacheCreation":  0,
+                  "image":  0
+              },
+    "estimated_cost":  0.0016989000000000001,
+    "verses":  [
+                   {
+                       "chapter":  5,
+                       "text_ar":  "وبعد سبعة أيام، عادت أفكار قلبي لتكون مؤلمة جدا بالنسبة لي،",
+                       "verse":  21
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "واستعادت نفسي روح الفهم، وشرعت في التكلم بكلمات أمام العلي مرة أخرى.",
+                       "verse":  22
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "قلت: أيها الرب السيد على جميع غابات الأرض، وكل أشجارها، لقد اخترت لنفسك كرمة واحدة.",
+                       "verse":  23
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "ومن كل أراضي العالم اخترت لنفسك بلدا واحدا. ومن كل أزهار العالم، اخترت لنفسك زنبقة واحدة.",
+                       "verse":  24
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "ومن كل أعماق البحر، ملأت لنفسك نهرا واحدا. ومن كل المدن المبنية، كرست صهيون لنفسك.",
+                       "verse":  25
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "ومن كل الطيور المخلوقة سميت لنفسك حمامة واحدة. ومن كل المواشي التي صنعت، وفرت لنفسك خروفا واحدا.",
+                       "verse":  26
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "وبين كل جموع الشعوب اقتنيت لنفسك شعبا واحدا. وهذا الشعب، الذي أحببته، أعطيته شريعة يرضى عليها الجميع.",
+                       "verse":  27
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "والآن، أيها الرب، لماذا أسلمت هذا الشعب الواحد إلى كثيرين، وأهنت الأصل الواحد فوق الآخرين، وبعثرت وحيدك بين الكثيرين؟",
+                       "verse":  28
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "إن الذين قاوموا مواعيدك قد داسوا الذين آمنوا بعهودك.",
+                       "verse":  29
+                   },
+                   {
+                       "chapter":  5,
+                       "text_ar":  "فإن كنت حقا تبغض شعبك هكذا، فينبغي أن يعاقبوا بيدك أنت.",
+                       "verse":  30
+                   }
+               ]
+}

@@ -1,0 +1,74 @@
+{
+  "book_code": "TADAM",
+  "source_license_notice": "English translation by R. H. Charles, Oxford 1913; public-domain edition.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "en-charles-1913-latin-recension",
+  "source_name": "The Books of Adam and Eve (Latin recension)",
+  "source_url": "https://wesley.nnu.edu/sermons-essays-books/noncanonical-literature/noncanonical-literature-ot-pseudepigrapha/the-books-of-adam-and-eve/",
+  "source_sha256": "7c633a2410e21f02021eaeeef68b4cba1a5f6256aea49683d6d95b5276ec3b46",
+  "batch_start": 21,
+  "batch_end": 25,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "provider": "Gemini 3.5 Flash Lite",
+  "model": "gemini-3.5-flash-lite",
+  "request_id": "6055e945-261f-4a71-b615-2888dce0e88f",
+  "failovers": 0,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "success",
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 371,
+      "outputTokens": 229,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0.0006837999999999999,
+      "latencyMs": 1418
+    }
+  ],
+  "usage": {
+    "input": 371,
+    "output": 229,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0.0006837999999999999,
+  "units": [
+    {
+      "chapter": 9,
+      "source_ref": "9:4",
+      "text_ar": "وقد أرسلني لأخرجكم من الماء وأعطيكم القوت الذي كان لكم في الفردوس، والذي تبكون لأجله."
+    },
+    {
+      "chapter": 9,
+      "source_ref": "9:5",
+      "text_ar": "الآن اخرجوا من الماء وسأقودكم إلى المكان الذي أُعدَّ فيه طعامكم.'"
+    },
+    {
+      "chapter": 10,
+      "source_ref": "10:1",
+      "text_ar": "فسمعت حواء وصدقت وخرجت من ماء النهر، وكان جسدها يرتجف"
+    },
+    {
+      "chapter": 10,
+      "source_ref": "10:2",
+      "text_ar": "مثل العشب من برودة الماء. ولما خرجت، سقطت على الأرض فأقامها إبليس وأقادها إلى آدم."
+    },
+    {
+      "chapter": 10,
+      "source_ref": "10:3",
+      "text_ar": "ولما راها آدم وإبليس معها، بكى وصرخ بصوت عالٍ وقال: 'يا حواء، يا حواء، أين تعب توبتك'"
+    }
+  ]
+}

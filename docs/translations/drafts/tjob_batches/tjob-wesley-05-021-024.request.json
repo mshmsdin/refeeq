@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "1dd741a0-8c5c-4efe-bc12-eae9e6a1d16d",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":5,\"verses\":[{\"chapter\":5,\"verse\":21,\"text\":\"Then she said to herself: \\\"What is the hair of my head in comparison with my starving husband\\\"\"},{\"chapter\":5,\"verse\":22,\"text\":\"And so after having pondered over the matter, she said to him: \\\"Rise and cut off my hair\\\".\"},{\"chapter\":5,\"verse\":23,\"text\":\"Then he took a pair of scissors and took off the hair of her head in the presence of all, and gave her three loaves of bread.\"},{\"chapter\":5,\"verse\":24,\"text\":\"Then she took them and brought them to me. And Satan went behind her on the road, hiding himself as he walked and troubling her heart greatly.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 21,22,23,24 in this chapter."
+}

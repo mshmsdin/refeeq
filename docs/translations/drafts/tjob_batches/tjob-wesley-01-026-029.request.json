@@ -1,0 +1,18 @@
+{
+  "service_key": "bible-translation",
+  "source_sha256": "d158c33a2c201f5331fb3ac86123f9c274c87f6a03f0efadccf604537305baad",
+  "request_id": "18e397dc-3600-4a68-b517-25e845dacce7",
+  "application_id": "rafeeq-bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "messages": [
+    {
+      "role": "system",
+      "content": "ترجم كل وحدة إنجليزية إلى العربية الفصحى بدقة واكتمال، مع حفظ المعنى والأسماء والإشارات الكتابية. لا تضف أسماء أو معلومات غير موجودة في النص، ولا تكتب ملاحظات أو شروحاً. أخرج JSON مطابقاً للمخطط فقط. يجب أن تكون chapter وverse عددين صحيحين بأرقام 0-9، وأن يكون text_ar ترجمة الوحدة وحدها."
+    },
+    {
+      "role": "user",
+      "content": "{\"chapter\":1,\"verses\":[{\"chapter\":1,\"verse\":26,\"text\":\"And also to thee shall it be given, and thou shalt put on a crown of amarant.\"},{\"chapter\":1,\"verse\":27,\"text\":\"And at the resurrection thou shalt awaken for eternal life. Then shalt thou know that he Lord is just, and true and mighty\\\".\"},{\"chapter\":1,\"verse\":28,\"text\":\"Whereupon, my children, I replied: \\\"I shall from love of God endure until death all that will come upon me, and I shall not shrink back\\\".\"},{\"chapter\":1,\"verse\":29,\"text\":\"Then the angel put his seal upon me and left me.\"}],\"book_code\":\"TJOB\"}"
+    }
+  ],
+  "response_format": "JSON schema with book_code and verses. Each item has integer chapter, integer verse, and Arabic text_ar. Return exactly source verse numbers 26,27,28,29 in this chapter."
+}
