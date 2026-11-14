@@ -40,6 +40,7 @@ import { ensureEthiopianEzraWebImported } from './db/ethiopian_ezra_web_startup_
 import { ensureEthiopicEnochImported } from './db/ethiopic_enoch_startup_import.js';
 import { ensureSamaritanPentateuchImported } from './db/samaritan_pentateuch_startup_import.js';
 import { ensureArmenianHistoryMosesImported } from './db/armenian_history_moses_startup_import.js';
+import { ensureArmenianShortHistoryEliasImported } from './db/armenian_short_history_elias_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -74,6 +75,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Armenian History of Moses import failed:', error.message);
+}
+try {
+  if (await ensureArmenianShortHistoryEliasImported()) {
+    console.log('[Bible startup] Imported and verified the 1901 Armenian Short History of the Prophet Elias translation.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Armenian Short History of the Prophet Elias import failed:', error.message);
 }
 try {
   if (await ensureSamaritanPentateuchImported()) {
