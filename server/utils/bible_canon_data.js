@@ -578,6 +578,16 @@ export function getCanonInfoForBook(code, collectionSlug = null) {
     };
   }
 
+  if (collectionSlug === 'jewish-sources') {
+    return {
+      is_disputed: false,
+      category_name: 'مصادر يهودية أصلية (غير الكتاب المقدس العبري)',
+      accepted_by: [],
+      rejected_by: [],
+      notes: 'أدب حاخامي وكابالي ونصوص تفسيرية يتداولها اليهود؛ ليست من أسفار العهد القديم، وتختلف مكانتها بين الطوائف اليهودية، وتُعرض كما وردت دون حكم على صحة مضمونها.'
+    };
+  }
+
   if (collectionSlug === 'textual-traditions') {
     return {
       is_disputed: false,

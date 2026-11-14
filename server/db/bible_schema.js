@@ -5,6 +5,7 @@ import { getDb } from './schema.js';
 import { normalizeArabicText } from '../utils/arabic_nlp.js';
 import { TORAH_WITNESS_BOOKS } from '../importers/torah_witness_sources.js';
 import { ANCIENT_VERSION_BOOKS } from '../importers/ancient_version_books.js';
+import { JEWISH_SOURCE_BOOKS } from '../importers/jewish_sources_catalog.js';
 
 export function initBibleSchema() {
   const db = getDb();
@@ -226,6 +227,7 @@ export function initBibleSchema() {
     ['textual-traditions',  'التقاليد النصية الموازية', 'Textual Traditions',  'tradition',   6, 'bible'],
     ['church-writings',     'الكتابات الكنسية القديمة', 'Early Church Writings','church',     7, 'bible'],
     ['pseudepigrapha',      'المنحولات والرؤى القديمة', 'Pseudepigrapha',      'pseudepigrapha',8, 'bible'],
+    ['jewish-sources',      'المصادر اليهودية الأصول',   'Jewish Source Texts', 'jewish',      9, 'bible'],
   ];
   for (const c of collections) insertCollection.run(...c);
   db.prepare("UPDATE bible_collections SET site_scope = 'both' WHERE slug IN ('old-testament','new-testament','pseudepigrapha')").run();
@@ -505,6 +507,13 @@ function _seedExpansionCatalog(db) {
     ['IGNPOL', 'رسالة إغناطيوس إلى بوليكاربوس', 'Ignatius to Polycarp', 'IGNPOL', 'church-writings', 36, 0, 'greek', 'اليونانية', 'رسالة إغناطيوس إلى بوليكاربوس أسقف سميرنا؛ تتضمن إرشادات في الرعاية والزواج ومعاملة العبيد والمحتاجين وإرسال المبعوثين. تحفظ ٨ فصول والتحية.'],
     ['POLPHI', 'رسالة بوليكاربوس إلى أهل فيلبي', 'Polycarp to the Philippians', 'POLPHI', 'church-writings', 37, 0, 'greek', 'اليونانية مع ختام محفوظ باللاتينية', 'رسالة بوليكاربوس إلى مسيحيي فيلبي؛ تتناول الإيمان والسلوك والعطاء والتحذير من محبة المال، وتشير إلى إغناطيوس ورسائله. تحفظ ١٤ فصلاً، مع أجزاء أخيرة محفوظة باللاتينية.'],
   ];
+  for (const book of JEWISH_SOURCE_BOOKS) {
+    records.push([
+      book.code, book.nameAr, book.nameEn, book.abbr, 'jewish-sources', book.order, book.chapters,
+      'jewish', 'العبرية والآرامية',
+      'مصدر يهودي أصلي (شريعة شفوية أو مدراش أو كابالا)؛ يُعرض كما هو للاطلاع والمقارنة، ولا يُعدّ من الكتاب المقدس العبري ولا يُحكم بصحة ما فيه.'
+    ]);
+  }
   for (const book of ANCIENT_VERSION_BOOKS) {
     records.push([
       book.code, book.nameAr, book.nameEn, book.abbr, 'textual-traditions', book.order, book.chapters,
@@ -539,6 +548,7 @@ function _seedExpansionCatalog(db) {
   const sourceDefaults = {
     sam: ['Biblia Arabica', 'https://biblia-arabica.com/bibl/IZFNRHBX'],
     targum: ['Sefaria', 'https://www.sefaria.org/texts/Targum'],
+    jewish: ['Sefaria', 'https://www.sefaria.org/'],
     'judeo-arabic': ['Sefaria', 'https://www.sefaria.org/texts/Tanakh/Targum/Tafsir%20Rasag'],
     lxx: ['eBible Brenton Septuagint', 'https://ebible.org/eng-Brenton/'],
     peshitta: ['Peshitta Institute', 'https://www.peshitta.org/'],

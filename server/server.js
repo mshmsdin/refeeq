@@ -21,6 +21,7 @@ import { ensure1EsMohammadImported } from './db/1es_mohammad_startup_import.js';
 import { ensureTorahWitnessesImported } from './db/torah_witnesses_startup_import.js';
 import { ensureArabicTranslationsImported } from './db/arabic_translations_startup_import.js';
 import { ensureAncientVersionsImported } from './db/ancient_versions_startup_import.js';
+import { ensureJewishSourcesImported } from './db/jewish_sources_startup_import.js';
 import { ensureScanBooksImported } from './db/scan_books_startup_import.js';
 import {
   buildSnippet as buildScanSnippet,
@@ -105,6 +106,10 @@ try {
 } catch (error) {
   console.error('[Bible startup] Noah Qumran import failed:', error.message);
 }
+// المصادر اليهودية كبيرة (نحو ٢٧٩ ألف وحدة): تُستورد في الخلفية على دفعات حتى لا يتأخر إقلاع الخادم.
+(process.env.JEWISH_SOURCES_IMPORT === 'off' ? Promise.resolve([]) : ensureJewishSourcesImported())
+  .then((imported) => { if (imported.length) console.log('[Bible startup] Imported Jewish source texts:', imported.length, 'works'); })
+  .catch((error) => console.error('[Bible startup] Jewish sources import failed:', error.message));
 try {
   const importedVersions = ensureAncientVersionsImported();
   if (importedVersions.length) console.log('[Bible startup] Imported ancient versions:', importedVersions.join(', '));
