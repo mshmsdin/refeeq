@@ -1598,10 +1598,31 @@ function parseEarlyChristianGospelMaryHtml(content, source) {
   return chapters;
 }
 
-function parseEarlyChristianFragmentHtml(content, source) {
-  const start = content.toUpperCase().indexOf(source.startMarker.toUpperCase());
+function extractDivById(content, id) {
+  const escapedId = id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const openingTag = new RegExp(`<div\\b(?=[^>]*\\bid\\s*=\\s*["']${escapedId}["'])[^>]*>`, 'i');
+  const opening = openingTag.exec(content);
+  if (!opening) throw new Error(`لم يُعثر على حاوية النص ${id}`);
+
+  const tags = /<\/?div\b[^>]*>/gi;
+  tags.lastIndex = opening.index;
+  let depth = 0;
+  let match;
+  while ((match = tags.exec(content))) {
+    if (/^<\//.test(match[0])) depth -= 1;
+    else if (!/\/\s*>$/.test(match[0])) depth += 1;
+    if (depth === 0) return content.slice(opening.index, tags.lastIndex);
+  }
+  throw new Error(`حاوية النص ${id} غير مكتملة`);
+}
+
+export function parseEarlyChristianFragmentHtml(content, source) {
+  const article = extractDivById(content, 'textboundingbox')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ');
+  const start = article.toUpperCase().indexOf(source.startMarker.toUpperCase());
   if (start < 0) throw new Error(`لم يُعثر على بداية الشاهد في ${source.slug}`);
-  const text = stripHtml(content.slice(start));
+  const text = stripHtml(article.slice(start));
   if (text.length < 500) throw new Error(`لم يُكتشف نص كافٍ في ${source.slug}`);
   return [{ chapter: 1, verse: 1, text, sourceUrl: source.url }];
 }
