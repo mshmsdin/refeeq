@@ -1952,6 +1952,45 @@ const GENESIS_APOCRYPHON_TEXT_FILE = new URL('./data/genesis_apocryphon_1q20_qum
 const GENESIS_APOCRYPHON_EXPECTED_LOCATIONS = JSON.parse(readFileSync(GENESIS_APOCRYPHON_TEXT_FILE, 'utf8'))
   .map(({ chapter, verse }) => [chapter, verse]);
 
+const APOCRYPHON_JEREMIAH_AB_WITNESSES = [
+  {
+    witness: '4Q383', version: '2025-08-25', bookCode: 'AJ383', slug: 'heb-qdr-4q383-apocryphon-jeremiah-a-2026',
+    nameAr: 'شظايا 4Q383 من أبوكريفون إرميا أ', nameEn: 'Qumran Apocryphon of Jeremiah A Witness 4Q383', abbreviation: '4Q383-HE',
+    file: 'apocryphon_jeremiah_4q383_qumran_digital_2025.json', units: 30, words: 291, groups: 9,
+    sha256: '610cee03424f105cb9eaa5baebd4c1b0f62df5b5011fbe7243510002e204d66f',
+    scholarlyNote: 'يسجل مركز أوريون طبعة ديفورا ديمانت للشاهد بعنوان أبوكريفون إرميا أ، لكن الشاهد شذري لا يحفظ عملاً كاملاً.'
+  },
+  {
+    witness: '4Q384', version: '2025-11-11', bookCode: 'AJ384', slug: 'heb-qdr-4q384-apocryphon-jeremiah-b-2026',
+    nameAr: 'شظايا 4Q384، مخطوط إرميا القمراني على البردي', nameEn: 'Qumran Papyrus Apocryphon of Jeremiah B(?) Witness 4Q384', abbreviation: '4Q384-HE',
+    file: 'apocryphon_jeremiah_4q384_qumran_digital_2025.json', units: 81, words: 743, groups: 31,
+    sha256: '247d51a79e87a708ae0ee674b1a81aecf8ae02e4a9ac2860f022a2dec2b5ec90',
+    scholarlyNote: 'تصفه سلطة الآثار الإسرائيلية بأنه مخطوط بردي عبري، وتضعه تسمية المصدر ضمن أبوكريفون إرميا ب مع علامة استفهام؛ لذلك يسجل مادياً مستقلاً ولا يحسم انتماؤه الأدبي.'
+  },
+  {
+    witness: '4Q385c', version: '2025-11-11', bookCode: 'AJ385C', slug: 'heb-qdr-4q385c-apocryphon-jeremiah-2026',
+    nameAr: 'شظايا 4Q385c، شاهد قمراني عبري', nameEn: 'Qumran Hebrew Witness 4Q385c', abbreviation: '4Q385c-HE',
+    file: 'apocryphon_jeremiah_4q385c_qumran_digital_2025.json', units: 20, words: 178, groups: 7,
+    sha256: '23594830797578c11e17c15d0d565648147bb696fa8b443ab6db69530e099271',
+    scholarlyNote: 'تفصل قاعدة قمران الرقمي هذا المخطوط عن 4Q385a؛ لم يُحسم هنا إن كان شاهداً من تقليد إرميا أو نصاً آخر.'
+  }
+].map((witness) => {
+  const url = `https://lexicon.qumran-digital.org/transcriptions/${witness.witness}/${witness.version}/index.html?v=${witness.version}`;
+  const textFile = new URL(`./data/${witness.file}`, import.meta.url);
+  const expectedChapterVerseNumbers = [];
+  for (const unit of JSON.parse(readFileSync(textFile, 'utf8'))) {
+    (expectedChapterVerseNumbers[unit.chapter - 1] ||= []).push(unit.verse);
+  }
+  return {
+    bookCode: witness.bookCode, slug: witness.slug, nameAr: witness.nameAr, nameEn: witness.nameEn,
+    abbreviation: witness.abbreviation, url, kind: 'reviewed-unit-text-file', textFile,
+    expectedSha256: witness.sha256, expectedUnitCount: witness.units, expectedWordCount: witness.words,
+    maxChapter: witness.groups, incomplete: true, expectedChapterVerseNumbers,
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: `تفريغ مرخص للشاهد العبري القمراني ${witness.witness}: ${witness.units} سطراً في ${witness.groups} مجموعات عرض، مع اسم الشظية ورقم السطر الأصلي ورابط المصدر لكل وحدة. هذه المجموعات ليست فصولاً أدبية، والشاهد جزئي؛ يحفظ مستقلاً ولا تملأ فجواته. ${witness.scholarlyNote} يعلن مشروع قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب النص إلى مشروع معجم قمران السابق ومارتن أبيغ. لم تثبت ترجمة إنجليزية مأذونة لإعادة النشر، فأدرج الأصل العبري وحده. [التفريغ والرخصة](${url})؛ [فهرس طبعة مركز أوريون لـ4Q383](https://orion-bibliography.huji.ac.il/node/67734)؛ [سجل 4Q384 في سلطة الآثار الإسرائيلية](https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q384-1).`
+  };
+});
+
 const APOCRYPHON_JEREMIAH_C_WITNESSES = [
   {
     witness: '4Q385a', bookCode: 'AJC385A', slug: 'heb-qdr-4q385a-apocryphon-jeremiah-c-2026',
@@ -2014,6 +2053,8 @@ const APOCRYPHON_JEREMIAH_C_WITNESSES = [
 });
 
 export const ADDITIONAL_SOURCES = [
+  ...APOCRYPHON_JEREMIAH_AB_WITNESSES,
+  ...APOCRYPHON_JEREMIAH_C_WITNESSES,
   {
     bookCode: 'GIANTS', slug: 'en-jewishmythology-4q531-2026',
     nameAr: 'ترجمة إنجليزية تجريبية لشذرات ٤ق٥٣١ من سفر العمالقة',
@@ -2440,7 +2481,6 @@ export const ADDITIONAL_SOURCES = [
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
     notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q391: ٢٠٠ سطر في ٧٨ مجموعة شظايا، مع تسمية كل شظية ورقم السطر ورابط موضع المصدر. دراسة أكاديمية تصفه بأنه على الأرجح نسخة من تقليد «أقوال حزقيال» بسبب أسلوب الكتابة، مع أنه لا يشترك في مقاطع موازية مع الشواهد الأخرى؛ لذلك يسجل كشاهد مستقل، لا بوصفه نسخة مطابقة أو فصلاً من 4Q385 أو 4Q386 أو 4Q388. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأُدرج الأصل العبري وحده؛ الشظايا لا تمثل العمل كاملاً. [تفريغ 4Q391 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q391/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن صلته بأقوال حزقيال](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
   },
-  ...APOCRYPHON_JEREMIAH_C_WITNESSES,
   {
     bookCode: 'Q243', slug: 'arc-qdr-4q243-pseudo-daniel-a-2026',
     nameAr: 'شاهد منحول دانيال أ القمراني (4Q243)',
