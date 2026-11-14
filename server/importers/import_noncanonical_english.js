@@ -2144,7 +2144,40 @@ const APOCRYPHON_JOSHUA_WITNESSES = [
   };
 });
 
+const LIVES_OF_PROPHETS_CHAPTER_COUNTS = [9, 15, 20, 22, 2, 2, 2, 1, 4, 8, 4, 14, 3, 2, 6, 4, 5, 5, 2, 2, 2, 3, 4];
+const LIVES_OF_PROPHETS_LOCATIONS = LIVES_OF_PROPHETS_CHAPTER_COUNTS.flatMap(
+  (count, chapterIndex) => Array.from({ length: count }, (_, verseIndex) => [chapterIndex + 1, verseIndex + 1])
+);
+const LIVES_OF_PROPHETS_URL = 'https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml';
+const LIVES_OF_PROPHETS_SOURCES = [
+  {
+    bookCode: 'LPRO', slug: 'en-ocp-lives-prophets-2026',
+    nameAr: 'الترجمة الإنجليزية لسِيَر الأنبياء (الطبعة الرقمية النقدية)',
+    nameEn: 'OCP English Translation of the Lives of the Prophets', abbreviation: 'LPRO-EN',
+    url: LIVES_OF_PROPHETS_URL, kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/lives_of_prophets_ocp_english_2026.json', import.meta.url),
+    expectedSha256: '2f92d1b11c49d0095cf419025abbe1b8e3d4fa8cb2a6d96170861514a9ae16d8',
+    expectedUnitCount: 141, expectedWordCount: 3480, maxChapter: 23, incomplete: false,
+    expectedUnitLocations: LIVES_OF_PROPHETS_LOCATIONS,
+    language: 'en', originalLanguage: 'اليونانية', sourceType: 'cc-by-4.0', siteScope: 'both',
+    notes: 'ترجمة إنجليزية منشورة ضمن الطبعة النقدية الرقمية لمشروع النصوص النقدية المفتوحة، مقابلة على مستوى الوحدات الـ١٤١ مع النص اليوناني نفسه. تحتوي ٢٣ سيرة؛ استُبعد عنوان العمل العام لأنه ممثل باسم السفر، وأُلحق عنوان كل سيرة ببداية وحدتها الأولى مع حفظ ترقيم النص. الترجمة كاملة بحسب هذه الطبعة، ولا تمثل الصيغ الأخرى أو جميع اختلافات المخطوطات. يعلن المستودع رخصة المشاع الإبداعي النسب ٤٫٠ للنصوص والترجمات، ويُنسب العمل إلى مشروع النصوص النقدية المفتوحة ومحرريه إيان سكوت وكين بنر. [ملف الطبعة المثبت ورخصتها](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml)؛ [بيان رخصة نصوص المستودع](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/LICENSE.CC-BY-4.0).'
+  },
+  {
+    bookCode: 'LPRO', slug: 'grc-ocp-lives-prophets-2026',
+    nameAr: 'النص اليوناني لسِيَر الأنبياء (الطبعة الرقمية النقدية)',
+    nameEn: 'OCP Greek Lives of the Prophets', abbreviation: 'LPRO-GRC',
+    url: LIVES_OF_PROPHETS_URL, kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/lives_of_prophets_ocp_greek_2026.json', import.meta.url),
+    expectedSha256: '5d977e168d49e326e2e031f44ff485e22819ec9b92792c736afac70ca6280227',
+    expectedUnitCount: 141, expectedWordCount: 2700, maxChapter: 23, incomplete: false,
+    expectedUnitLocations: LIVES_OF_PROPHETS_LOCATIONS,
+    language: 'grc', originalLanguage: 'اليونانية', sourceType: 'cc-by-4.0', siteScope: 'both',
+    notes: 'تفريغ النص اليوناني كما يورده مشروع النصوص النقدية المفتوحة، طبعة «سِيَر الأنبياء»، إصدار مثبت من المستودع بتاريخ ١٤ نوفمبر ٢٠٢٦. يحتوي ٢٣ سيرة و١٤١ وحدة. استُبعد عنوان العمل العام لأنه ممثل باسم السفر، وأُلحق عنوان كل سيرة ببداية وحدتها الأولى مع حفظ ترقيم النص. النص كامل بحسب هذه الطبعة اليونانية، ولا يجمع الصيغ أو الروايات الأخرى. يعلن المستودع رخصة المشاع الإبداعي النسب ٤٫٠ للنصوص، مع نسبة الطبعة إلى مشروع النصوص النقدية المفتوحة وإلى طبعة تشارلز توري اليونانية لعام ١٩٤٦. [ملف الطبعة المثبت ورخصتها](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml)؛ [بيان رخصة نصوص المستودع](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/LICENSE.CC-BY-4.0).'
+  }
+];
+
 export const ADDITIONAL_SOURCES = [
+  ...LIVES_OF_PROPHETS_SOURCES,
   ...QUMRAN_ENOCH_WITNESSES,
   ...APOCRYPHON_JOSHUA_WITNESSES,
   ...APOCRYPHON_JEREMIAH_AB_WITNESSES,

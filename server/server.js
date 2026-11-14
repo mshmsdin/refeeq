@@ -25,6 +25,7 @@ import { ensureQumran4Q521Imported } from './db/qumran_4q521_startup_import.js';
 import { ensureQumran4Q242Imported } from './db/qumran_4q242_startup_import.js';
 import { ensureQumran4Q537Imported } from './db/qumran_4q537_startup_import.js';
 import { ensureQumran4Q539Imported } from './db/qumran_4q539_startup_import.js';
+import { ensureLivesOfProphetsImported } from './db/lives_of_prophets_startup_import.js';
 import { ensureQumranWordsEzekielImported } from './db/qumran_words_ezekiel_startup_import.js';
 import { ensureQumranApocryphonJeremiahImported } from './db/qumran_apocryphon_jeremiah_startup_import.js';
 import { ensureQumranJeremiahAbImported } from './db/qumran_jeremiah_ab_startup_import.js';
@@ -182,6 +183,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Qumran 4Q539 witness import failed:', error.message);
+}
+try {
+  if (await ensureLivesOfProphetsImported()) {
+    console.log('[Bible startup] Imported the complete Greek and English OCP Lives of the Prophets edition.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Lives of the Prophets import failed:', error.message);
 }
 try {
   if (await ensureQumranWordsEzekielImported()) {
