@@ -2073,7 +2073,36 @@ const APOCRYPHON_JEREMIAH_C_WITNESSES = [
   };
 });
 
+const APOCRYPHON_JOSHUA_WITNESSES = [
+  {
+    witness: '4Q378', slug: 'heb-qdr-4q378-apocryphon-joshua-a-2026',
+    file: 'apocryphon_joshua_4q378_qumran_digital_2026.json', units: 155, groups: 36, words: 1516,
+    sha256: '72063ab9234f7a63deae9eb313c442190ac3df05ecfd1672f13dc73112c8f6be'
+  },
+  {
+    witness: '4Q379', slug: 'heb-qdr-4q379-apocryphon-joshua-b-2026',
+    file: 'apocryphon_joshua_4q379_qumran_digital_2026.json', units: 186, groups: 44, words: 1852,
+    sha256: 'b29039641f67b9b654cb72b841e8fdc0deb2d3e03ddc3509cfd102d8d733030f'
+  }
+].map((witness) => {
+  const url = `https://lexicon.qumran-digital.org/transcriptions/${witness.witness}/2026-10-06/index.html?v=2026-10-06`;
+  const textFile = new URL(`./data/${witness.file}`, import.meta.url);
+  const expectedUnitLocations = JSON.parse(readFileSync(textFile, 'utf8'))
+    .map(({ chapter, verse }) => [chapter, verse]);
+  return {
+    bookCode: 'APJOSH', slug: witness.slug,
+    nameAr: `الشاهد العبري ${witness.witness} لأبوكريفون يشوع`,
+    nameEn: `Qumran Hebrew Apocryphon of Joshua ${witness.witness}`,
+    abbreviation: `${witness.witness}-HE`, url, kind: 'reviewed-unit-text-file', textFile,
+    expectedSha256: witness.sha256, expectedUnitCount: witness.units, expectedUnitLocations,
+    expectedWordCount: witness.words, maxChapter: witness.groups, incomplete: true,
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: `تفريغ الشاهد العبري القمراني ${witness.witness} من العمل الذي تسميه مراجع حديثة «أبوكريفون يشوع» أو «مزامير يشوع». يحتوي إصدار قمران الرقمي ٢٠٢٦-١٠-٠٦ على ${witness.units} سطراً موزعاً على ${witness.groups} مجموعة شظايا؛ المجموعات ليست فصولاً أصلية، والأسطر تحفظ أرقامها وروابطها كما في المصدر. الشاهد جزئي ولا يمثل العمل كاملاً؛ يبقى مستقلاً عن الشاهد الموازي ${witness.witness === '4Q378' ? '4Q379' : '4Q378'}، ولا تُملأ فجواته. يرخص مشروع قمران الرقمي التفريغ برخصة المشاع الإبداعي النسب بالمثل ٤٫٠ ويعزو مادته إلى مشروع معجم قمران السابق ومارتن أبيغ. لم تثبت ترجمة إنجليزية مأذونة لإعادة النشر، لذلك يحفظ هذا السجل النص العبري وحده. [التفريغ والرخصة](${url})؛ [سجل فهرس المكتبة الوطنية الفرنسية لعناوين الشاهدين](https://catalogue.bnf.fr/ark:/12148/cb16776783j).`
+  };
+});
+
 export const ADDITIONAL_SOURCES = [
+  ...APOCRYPHON_JOSHUA_WITNESSES,
   ...APOCRYPHON_JEREMIAH_AB_WITNESSES,
   ...APOCRYPHON_JEREMIAH_C_WITNESSES,
   {
@@ -2804,6 +2833,7 @@ export const ADDITIONAL_SOURCES = [
     notes: 'ترجمة أ. ووكر الإنجليزية في آباء ما قبل نيقية، المجلد الثامن، طبعة ١٨٨٥، الصفحات ٥٧١–٥٧٤؛ النص الرقمي من نسخة الطبعة المنشورة لدى ترتليان. الترجمة مبنية على نص تيشندورف اليوناني، وتحفظ هنا كشاهد إنجليزي مستقل في فصل واحد لأن الطبعة لا تقسمه إلى فصول أو أعداد. لا تدّعي هذه الترجمة مطابقة سطرية لتقسيم OCP الحديث؛ النص الإنجليزي الكامل المتاح محفوظ من دون حواشي الطبعة.'
   }
 ];
+
 
 export function parseOcpChapters(xml, source) {
   const versionLanguage = source.versionLanguage || (source.language === 'gez' ? 'Ethiopic' : 'Latin');
