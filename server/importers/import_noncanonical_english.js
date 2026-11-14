@@ -2325,6 +2325,39 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ الشاهد القمراني الآرامي 4Q242 في ١٤ سطراً من شظايا ١–٣ والشظية ٤، مع حفظ أرقام السطور الأصلية ورابط مصدر كل سطر. يُعرف النص عادةً باسم «صلاة نابونيد» من استهلاله الذي يذكر صلاة ملك بابل ومرضه؛ لكن النص الباقي شذري ولا يضم العمل كاملاً. حفظت علامات السياق المكسور وإضافات المحرر المرتفعة كما يعرضها التفريغ. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب بياناته إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل الآرامي وحده. [تفريغ 4Q242 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q242/2026-10-06/index.html?v=2026-10-06)؛ [طبعة علمية للشظايا](https://brill.com/previewpdf/book/9789004369887/BP000025.xml).'
   },
   {
+    bookCode: 'Q385', slug: 'heb-qdr-4q385-words-ezekiel-2026',
+    nameAr: 'شاهد 4Q385 من أقوال حزقيال', nameEn: '4Q385 Words of Ezekiel Witness', abbreviation: '4Q385-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q385/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q385_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: 'c24f7b05f5ac88d9a1d7315877f9ba13794bac95eca0b9176c98d39e3d593679',
+    expectedUnitCount: 44, expectedWordCount: 558, maxChapter: 6, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3],[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5,6,7],[1,2,3,4,5,6,7],[1,2],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]],
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q385 في ٤٤ سطراً عبرانياً ضمن ست مجموعات عرض، مع ترقيم السطر الأصلي ورابط مباشر لكل موضع. يضعه بعض الباحثين ضمن مجموعة «أقوال حزقيال» أو «منحول حزقيال»، لكن أسماء هذه المجموعة وحدودها وتفاصيل إعادة البناء محل نقاش؛ لذلك يسجل الشاهد منفرداً ولا يدمج مع 4Q386 أو 4Q388 أو الشظايا المختلف عليها. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل العبري وحده، والنص شذري لا يمثل عملاً كاملاً. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q385/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن المجموعة وحدودها](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+  },
+  {
+    bookCode: 'Q386', slug: 'heb-qdr-4q386-words-ezekiel-2026',
+    nameAr: 'شاهد 4Q386 من أقوال حزقيال', nameEn: '4Q386 Words of Ezekiel Witness', abbreviation: '4Q386-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q386_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: 'f7e15df09a7d9502bfbfeca86c7a8019c334583db8509f44380142be00d4c75b',
+    expectedUnitCount: 35, expectedWordCount: 433, maxChapter: 5, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9,10,11],[1,2,3,4,5,6,7,8],[1,2,3,4],[1,2,3]],
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q386 في ٣٥ سطراً ضمن خمس مجموعات عرض، مع تسمية الشظايا وترقيم السطر الأصلي ورابطه. يقارن الباحثون بعض نصوصه بشاهد 4Q385 ضمن تقليد يسمى أحياناً «أقوال حزقيال» أو «منحول حزقيال»، ولا يبرر التشابه دمج الشاهدين أو جعل التسمية عنواناً أصلياً مؤكداً. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل العبري وحده؛ الشاهد شذري ولا يمثل عملاً كاملاً. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن المجموعة وحدودها](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+  },
+  {
+    bookCode: 'Q388', slug: 'heb-qdr-4q388-words-ezekiel-2026',
+    nameAr: 'شاهد 4Q388 من أقوال حزقيال', nameEn: '4Q388 Words of Ezekiel Witness', abbreviation: '4Q388-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q388/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q388_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: 'accdb91e6cb64a029f83287c0bdccc9222bc6f336e685b695171948d436337c4',
+    expectedUnitCount: 38, expectedWordCount: 367, maxChapter: 8, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2],[1,2,3,4],[1,2,3],[1,2,3],[1,2,3,4,5],[1,2,3,4],[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5,6,7]],
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q388 في ٣٨ سطراً عبرانياً ضمن ثماني مجموعات عرض، مع أرقام الشظايا والأسطر وروابط مواضعها. يعقد الباحثون مقارنات بين بعض شواهده و4Q385 و4Q386 ضمن ما يسمى تقليدياً «أقوال حزقيال»، مع خلاف في إعادة البناء والتصنيف؛ يحفظ هذا المخطوط مستقلاً ولا يدمج بالشواهد الأخرى. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل العبري وحده؛ النص الباقي شذري. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q388/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن المجموعة وحدودها](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+  },
+  {
     bookCode: 'Q243', slug: 'arc-qdr-4q243-pseudo-daniel-a-2026',
     nameAr: 'شاهد منحول دانيال أ القمراني (4Q243)',
     nameEn: 'Qumran Digital Aramaic Pseudo-Daniel A 4Q243', abbreviation: '4Q243-ARC',

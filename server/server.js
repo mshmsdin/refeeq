@@ -20,6 +20,7 @@ import { ensureQumran4Q246Imported } from './db/qumran_4q246_startup_import.js';
 import { ensureQumranPseudoDanielImported } from './db/qumran_pseudo_daniel_startup_import.js';
 import { ensureQumran4Q521Imported } from './db/qumran_4q521_startup_import.js';
 import { ensureQumran4Q242Imported } from './db/qumran_4q242_startup_import.js';
+import { ensureQumranWordsEzekielImported } from './db/qumran_words_ezekiel_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -138,6 +139,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Qumran 4Q242 witness import failed:', error.message);
+}
+try {
+  if (await ensureQumranWordsEzekielImported()) {
+    console.log('[Bible startup] Imported the separate licensed Hebrew 4Q385, 4Q386, and 4Q388 witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Words of Ezekiel witness import failed:', error.message);
 }
 
 const app = express();
