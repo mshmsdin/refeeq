@@ -20,7 +20,7 @@ after(() => {
   for (const suffix of ['', '-wal', '-shm']) rmSync(testDbPath + suffix, { force: true });
 });
 
-test('imports the full licensed Samaritan Pentateuch translation with its source-page links', async () => {
+test('imports both complete Samaritan Pentateuch witnesses with their distinct sources', async () => {
   const db = getDb();
   assert.equal(await ensureSamaritanPentateuchImported(), true);
 
@@ -45,16 +45,41 @@ test('imports the full licensed Samaritan Pentateuch translation with its source
   })).sort((a, b) => a.book_code.localeCompare(b.book_code) || a.chapter - b.chapter || a.verse - b.verse));
   assert.equal(actual.length, 5829);
 
+  const hebrewData = JSON.parse(await readFile(new URL('../importers/data/samaritan_pentateuch_textfabric_v7_4_1_he.json', import.meta.url), 'utf8'));
+  const hebrewTranslation = db.prepare(`
+    SELECT id, language, is_active, site_scope, source_type
+    FROM bible_translations WHERE slug='he-samaritan-caccht-tf-2026'
+  `).get();
+  assert.ok(hebrewTranslation, 'the licensed Hebrew Samaritan witness is imported');
+  assert.deepEqual(hebrewTranslation && {
+    language: hebrewTranslation.language, is_active: hebrewTranslation.is_active,
+    site_scope: hebrewTranslation.site_scope, source_type: hebrewTranslation.source_type
+  }, { language: 'he', is_active: 1, site_scope: 'both', source_type: 'cc-by-nc-4.0' });
+  const actualHebrew = db.prepare(`
+    SELECT book_code, chapter, verse, text, source_url FROM bible_verses
+    WHERE translation_id=? ORDER BY book_code, chapter, verse
+  `).all(hebrewTranslation.id);
+  assert.deepEqual(actualHebrew, hebrewData.map(({ bookCode, chapter, verse, text, sourceUrl }) => ({
+    book_code: bookCode, chapter, verse, text: text.trim(), source_url: sourceUrl
+  })).sort((a, b) => a.book_code.localeCompare(b.book_code) || a.chapter - b.chapter || a.verse - b.verse));
+  assert.equal(actualHebrew.length, 5841);
+  assert.ok(actualHebrew.every(({ text, source_url }) => /[\u05d0-\u05ea]/u.test(text)
+    && source_url.includes('DT-UCPH/sp/blob/e8a120f2e92b6558fd39bbe72f830ded871a0a47/tf/7.4.1/sign.tf#L')));
+
   for (const book of SAMARITAN_PENTATEUCH_SOURCE.books) {
-    const rows = actual.filter((row) => row.book_code === book.code);
-    assert.equal(rows.length, book.unitCount, book.code);
-    assert.equal(new Set(rows.map((row) => row.chapter)).size, book.chapterCount, book.code);
-    assert.ok(rows.every((row) => row.source_url.startsWith(`${SAMARITAN_PENTATEUCH_SOURCE.url}#page=`)), book.code);
-    assert.equal(db.prepare(`SELECT text_status FROM bible_book_metadata WHERE book_code=?`).get(book.code).text_status, 'partial');
+    const englishRows = actual.filter((row) => row.book_code === book.code);
+    const hebrewRows = actualHebrew.filter((row) => row.book_code === book.code);
+    assert.equal(englishRows.length, book.unitCount, book.code);
+    assert.equal(new Set(englishRows.map((row) => row.chapter)).size, book.chapterCount, book.code);
+    assert.ok(englishRows.every((row) => row.source_url.startsWith(`${SAMARITAN_PENTATEUCH_SOURCE.url}#page=`)), book.code);
+    assert.ok(hebrewRows.length > 0, book.code);
+    assert.equal(new Set(hebrewRows.map((row) => row.chapter)).size, book.chapterCount, book.code);
+    assert.equal(db.prepare(`SELECT text_status FROM bible_book_metadata WHERE book_code=?`).get(book.code).text_status, 'complete');
     assert.equal(db.prepare(`SELECT COUNT(*) AS count FROM bible_book_sources
-      WHERE book_code=? AND source_url=? AND source_type='parallel-text' AND availability_status='available'`)
-      .get(book.code, SAMARITAN_PENTATEUCH_SOURCE.url).count, 1);
+      WHERE book_code=? AND availability_status='available' AND source_type='parallel-text'`)
+      .get(book.code).count, 2);
     assert.ok(getBook(book.code).available_translations.includes(SAMARITAN_PENTATEUCH_SOURCE.translationSlug), book.code);
+    assert.ok(getBook(book.code).available_translations.includes('he-samaritan-caccht-tf-2026'), book.code);
   }
 
   const exodus26_35 = actual.find(({ book_code, chapter, verse }) => book_code === 'SAM-EXO' && chapter === 26 && verse === 35);

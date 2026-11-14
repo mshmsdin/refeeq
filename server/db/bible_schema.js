@@ -338,7 +338,7 @@ function _seedExpansionCatalog(db) {
       canonicality_status=excluded.canonicality_status,
       textual_tradition=excluded.textual_tradition,
       original_language=CASE WHEN bible_book_metadata.text_status IN ('complete','partial') THEN bible_book_metadata.original_language ELSE excluded.original_language END,
-      summary_ar=excluded.summary_ar,
+      summary_ar=CASE WHEN bible_book_metadata.text_status IN ('complete','partial') THEN bible_book_metadata.summary_ar ELSE excluded.summary_ar END,
       source_name=CASE WHEN bible_book_metadata.text_status IN ('complete','partial') THEN bible_book_metadata.source_name ELSE excluded.source_name END,
       source_url=CASE WHEN bible_book_metadata.text_status IN ('complete','partial') THEN bible_book_metadata.source_url ELSE excluded.source_url END,
       source_notes=CASE WHEN bible_book_metadata.text_status IN ('complete','partial') THEN bible_book_metadata.source_notes ELSE excluded.source_notes END,

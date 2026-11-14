@@ -68,7 +68,7 @@ initDatabase();
 initBibleSchema();
 try {
   if (await ensureSamaritanPentateuchImported()) {
-    console.log('[Bible startup] Imported and verified the licensed Samaritan Pentateuch English translation.');
+    console.log('[Bible startup] Imported and verified the licensed Samaritan Hebrew and English witnesses.');
   }
 } catch (error) {
   console.error('[Bible startup] Samaritan Pentateuch import failed:', error.message);
