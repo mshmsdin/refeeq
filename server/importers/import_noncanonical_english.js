@@ -2073,6 +2073,37 @@ const APOCRYPHON_JEREMIAH_C_WITNESSES = [
   };
 });
 
+const QUMRAN_ENOCH_WITNESS_MANIFEST = [
+  { witness: '4Q204', slug: 'arc-qdr-4q204-enoch-2026', units: 126, groups: 11, words: 2263, sha256: '0cca7acb765c514e3276fb74502a324f59d4e549b941673781f179a505fbf06c' },
+  { witness: '4Q205', slug: 'arc-qdr-4q205-enoch-2026', units: 31, groups: 5, words: 543, sha256: '955298d49d0b6d6f9078ac9eeefc0aa213a5f2701575e666bc74973f470fa3ea' },
+  { witness: '4Q206', slug: 'arc-qdr-4q206-enoch-2026', units: 86, groups: 12, words: 1173, sha256: '9f3895a821bd3a8ddb155c66197c3cf15a1bca5aeb00474bc2a6ec18ab9b60e9' },
+  { witness: '4Q207', slug: 'arc-qdr-4q207-enoch-2026', units: 6, groups: 1, words: 92, sha256: '924fe2469c68e2813eccccac36aba8f87cb2f81bf3baa59daa83c8b20aad5425' },
+  { witness: '4Q208', slug: 'arc-qdr-4q208-enoch-2026', units: 124, groups: 38, words: 1205, sha256: '6cb73b854841517d1bec73fba8a6d43edc5942a38243506c13458d9ef50567b3' },
+  { witness: '4Q209', slug: 'arc-qdr-4q209-enoch-2026', units: 171, groups: 46, words: 2575, sha256: '8451bc6044a04493892f9aa803248b0582653e003cf307a1ce2aa87c0de9ddef' },
+  { witness: '4Q210', slug: 'arc-qdr-4q210-enoch-2026', units: 25, groups: 2, words: 491, sha256: 'dcff36b345d1327b6a4b51cad78dd979bde2a0dc21a9722cb0614a942f6bfbac' },
+  { witness: '4Q211', slug: 'arc-qdr-4q211-enoch-2026', units: 16, groups: 3, words: 201, sha256: 'f996a7df65a9855f8ade901f0561675fc844b3170290562e5548026134e1dc11' },
+  { witness: '4Q212', slug: 'arc-qdr-4q212-enoch-2026', units: 55, groups: 5, words: 815, sha256: '59cfc5e8a25e69374742628e20c9259dff337e1b30548377c809313d5348260e' }
+];
+
+const QUMRAN_ENOCH_WITNESSES = QUMRAN_ENOCH_WITNESS_MANIFEST.map((witness) => {
+  const textFile = new URL(`./data/enoch_${witness.witness.toLowerCase()}_qumran_digital_2026.json`, import.meta.url);
+  const units = JSON.parse(readFileSync(textFile, 'utf8'));
+  const expectedChapterVerseNumbers = Array.from({ length: witness.groups }, (_, index) =>
+    units.filter(({ chapter }) => chapter === index + 1).map(({ verse }) => verse));
+  const url = `https://lexicon.qumran-digital.org/transcriptions/${witness.witness}/2026-10-06/index.html?v=2026-10-06`;
+  return {
+    bookCode: 'ENO', slug: witness.slug,
+    nameAr: `تفريغ قمران الرقمي لشاهد أخنوخ الآرامي ${witness.witness}`,
+    nameEn: `Qumran Digital Aramaic Enoch Witness ${witness.witness}`,
+    abbreviation: `${witness.witness}-ARC`, url, kind: 'reviewed-unit-text-file', textFile,
+    expectedSha256: witness.sha256, expectedUnitCount: witness.units,
+    expectedWordCount: witness.words, maxChapter: witness.groups, incomplete: true,
+    expectedChapterVerseNumbers, preserveBookMetadata: true,
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: `تفريغ الشاهد الآرامي ${witness.witness} من مخطوطات أخنوخ القمرانية: ${witness.units} سطراً في ${witness.groups} مجموعة عرض. أسماء المجموعات وأرقام الأسطر وروابط مواضعها محفوظة؛ أرقام الإصحاحات هنا للتنظيم ولا تمثل فصولاً أصلية. صفحة قمران الرقمي ترخص التفريغ برخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وتذكر اعتماد بياناتها على مشروع معجم قمران السابق ونص مارتن أبيغ. لا يقدم المصدر ترجمة إنجليزية مرخصة لهذا التفريغ؛ توجد في التطبيق ترجمة تشارلز الإنجليزية لأخنوخ الأول للقراءة الموازية، وهي عن التقليد الإثيوبي وليست ترجمة حرفية لهذه الأسطر الآرامية. الشاهد جزئي ولا يُستكمل من شواهد أخرى أو بملء السقط. [صفحة الشاهد ورخصته](${url})؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html)؛ [دليل مخطوطات قمران الآرامية وتصنيف مخطوطات أخنوخ](https://admin.library.oapen.org/bitstream/handle/20.500.12657/86447/9789004513815.pdf?isAllowed=y&sequence=1).`
+  };
+});
+
 const APOCRYPHON_JOSHUA_WITNESSES = [
   {
     witness: '4Q378', slug: 'heb-qdr-4q378-apocryphon-joshua-a-2026',
@@ -2114,6 +2145,7 @@ const APOCRYPHON_JOSHUA_WITNESSES = [
 });
 
 export const ADDITIONAL_SOURCES = [
+  ...QUMRAN_ENOCH_WITNESSES,
   ...APOCRYPHON_JOSHUA_WITNESSES,
   ...APOCRYPHON_JEREMIAH_AB_WITNESSES,
   ...APOCRYPHON_JEREMIAH_C_WITNESSES,
@@ -3232,13 +3264,15 @@ export async function run(requestedSlugs = null, { initializeDatabase = true } =
     insertMany(rows, source.replaceExistingVerses ? [translationId, source.bookCode] : null);
     db.prepare('UPDATE bible_books SET chapter_count = CASE WHEN chapter_count < ? THEN ? ELSE chapter_count END WHERE code=?')
       .run(source.maxChapter, source.maxChapter, source.bookCode);
-    db.prepare(`
-      UPDATE bible_book_metadata
-      SET text_status=CASE WHEN ?=1 THEN 'partial' ELSE 'complete' END, original_language=COALESCE(NULLIF(?, ''), original_language),
-          english_status=CASE WHEN ?='en' THEN 'available' ELSE english_status END,
-          source_name=?, source_url=?, source_notes=?, updated_at=CURRENT_TIMESTAMP
-      WHERE book_code=?
-    `).run(source.incomplete ? 1 : 0, source.originalLanguage || '', source.language, source.nameEn, source.url, source.notes, source.bookCode);
+    if (!source.preserveBookMetadata) {
+      db.prepare(`
+        UPDATE bible_book_metadata
+        SET text_status=CASE WHEN ?=1 THEN 'partial' ELSE 'complete' END, original_language=COALESCE(NULLIF(?, ''), original_language),
+            english_status=CASE WHEN ?='en' THEN 'available' ELSE english_status END,
+            source_name=?, source_url=?, source_notes=?, updated_at=CURRENT_TIMESTAMP
+        WHERE book_code=?
+      `).run(source.incomplete ? 1 : 0, source.originalLanguage || '', source.language, source.nameEn, source.url, source.notes, source.bookCode);
+    }
     insertBookSource.run(source.bookCode, source.nameAr, source.nameEn, source.language, source.sourceType, source.url, source.notes);
     db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(translationId);
     console.log(`[Bible] ${source.slug}: ${new Set(parsedChapters.map((row) => row.chapter)).size} إصحاحاً، ${rows.length} وحدة`);
