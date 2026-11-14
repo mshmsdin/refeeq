@@ -193,8 +193,8 @@ export function initBibleSchema() {
     ['pseudepigrapha',      'المنحولات والرؤى القديمة', 'Pseudepigrapha',      'pseudepigrapha',8, 'bible'],
   ];
   for (const c of collections) insertCollection.run(...c);
-  db.prepare("UPDATE bible_collections SET site_scope = 'both' WHERE slug IN ('old-testament','new-testament','pseudepigrapha')").run();
-  db.prepare("UPDATE bible_collections SET site_scope = 'bible' WHERE slug NOT IN ('old-testament','new-testament','pseudepigrapha')").run();
+  db.prepare("UPDATE bible_collections SET site_scope = 'both' WHERE slug IN ('old-testament','new-testament','apocrypha','pseudepigrapha')").run();
+  db.prepare("UPDATE bible_collections SET site_scope = 'bible' WHERE slug NOT IN ('old-testament','new-testament','apocrypha','pseudepigrapha')").run();
   db.prepare("UPDATE bible_translations SET site_scope = 'bible' WHERE slug IN ('ar-jesuit-dc','ar-apocrypha')").run();
 
   // Seed books (66 canonical + deuterocanon)

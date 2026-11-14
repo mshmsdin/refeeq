@@ -27,6 +27,15 @@ test('retains specific expansion summaries after repeated initialization', () =>
   assert.doesNotMatch(thomas.summary_ar + ephesians.summary_ar, /مدخل موسع/);
 });
 
+test('makes the apocrypha collection available in both Bible interfaces', () => {
+  initBibleSchema();
+  const collection = getDb().prepare(
+    "SELECT site_scope FROM bible_collections WHERE slug = 'apocrypha'"
+  ).get();
+
+  assert.equal(collection.site_scope, 'both');
+});
+
 test('registers Questions of Ezra separately from the other Ezra works', () => {
   initBibleSchema();
   const db = getDb();
