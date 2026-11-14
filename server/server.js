@@ -37,6 +37,7 @@ import { ensureTegsatGeezImported } from './db/tegsats_geez_startup_import.js';
 import { ensureMeqabyanGeezImported } from './db/meqabyan_geez_startup_import.js';
 import { ensureSirachGeezImported } from './db/sirach_geez_startup_import.js';
 import { ensureEthiopianEzraWebImported } from './db/ethiopian_ezra_web_startup_import.js';
+import { ensureEthiopicEnochImported } from './db/ethiopic_enoch_startup_import.js';
 import { ensureSamaritanPentateuchImported } from './db/samaritan_pentateuch_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
@@ -111,6 +112,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Ethiopian Ezra Sutuel witness import failed:', error.message);
+}
+try {
+  if (await ensureEthiopicEnochImported()) {
+    console.log('[Bible startup] Imported and verified the partial Ge\'ez Rylands 23 witness of 1 Enoch.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Ge\'ez 1 Enoch witness import failed:', error.message);
 }
 try {
   if (await ensureActsJohnImported()) {
