@@ -7,6 +7,8 @@ import { fileURLToPath } from 'url';
 import AdmZip from 'adm-zip';
 import { initDatabase, getDb, closeDb, getDbPath } from './db/schema.js';
 import { initBibleSchema } from './db/bible_schema.js';
+import { ensure1EsMohammadImported } from './db/1es_mohammad_startup_import.js';
+import { ensureArabicTranslationsImported } from './db/arabic_translations_startup_import.js';
 import { ensureActsJohnImported } from './db/acts_john_startup_import.js';
 import { ensureEarlyChristianFragmentPagesImported } from './db/earlychristian_fragment_startup_import.js';
 import { ensureMotaMuseImported } from './db/mota_muse_startup_import.js';
@@ -60,6 +62,17 @@ const __dirname = path.dirname(__filename);
 // Initialize DB schema
 initDatabase();
 initBibleSchema();
+try {
+  if (ensure1EsMohammadImported()) console.log('[Bible startup] Imported complete Arabic translation and Greek witness for 1 Esdras.');
+} catch (error) {
+  console.error('[Bible startup] 1 Esdras import failed:', error.message);
+}
+try {
+  const importedArabic = ensureArabicTranslationsImported();
+  if (importedArabic.length) console.log('[Bible startup] Imported Arabic translations:', importedArabic.join(', '));
+} catch (error) {
+  console.error('[Bible startup] Arabic translations import failed:', error.message);
+}
 try {
   if (await ensureTegsatGeezImported()) {
     console.log('[Bible startup] Imported complete Beta maṣāḥǝft Ge\'ez Tegsat source.');
