@@ -2408,6 +2408,20 @@ export const ADDITIONAL_SOURCES = [
     notes: 'ترجمة جاك إيسافردنس الإنجليزية عن النص الأرمني في طبعة «الكتابات غير القانونية للعهد القديم في المخطوطات الأرمنية بمكتبة القديس لازاروس»، البندقية، ١٩٠١، الصفحات المطبوعة ١٦٥–١٧٥. يعرّف المترجم الشاهد بأنه رواية أرمنية متأخرة؛ وهي مستقلة عن وصية موسى اللاتينية، كما يوضح مايكل ستون. قُسّم المتن المتصل بحسب الصفحات المطبوعة إلى ١١ وحدة عرض، ولا تمثل الوحدات ١١ إصحاحاً أصلياً. تمتد الترجمة في الشاهد من افتتاحها إلى خاتمتها في الصفحة ١٧٥. طبعة ١٩٠١ وترجمة إيسافردنس (١٨٣٥–١٩٠٢) ضمن الملك العام؛ وهذا سجل كامل لهذا الشاهد المنشور وحده، لا لكل الروايات الأرمنية. [النسخة المصورة](https://archive.org/details/cu31924091353445)؛ [الدراسة التي تميّزها من وصية موسى](https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/armenian-canon-lists-iiithe-lists-of-mechitar-of-ayrivank-c-1285-ce/77C3632514DB0AFFEA810AD6B82F24B8).'
   },
   {
+    bookCode: 'ARMELI', slug: 'en-armenian-short-history-elias-1901',
+    nameAr: 'ترجمة إيسافردنس الإنجليزية للتاريخ الأرمني القصير للنبي إيليا (١٩٠١)',
+    nameEn: 'James Issaverdens English Translation of the Armenian Short History of the Prophet Elias (1901)',
+    abbreviation: 'ARMELI-EN',
+    url: 'https://archive.org/download/cu31924091353445/cu31924091353445.pdf',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/armenian_short_history_elias_issaverdens_1901.json', import.meta.url),
+    expectedSha256: 'b887869b27d308fd64055b3ae010d6bbca1e25843b5b973e0e699ca99f8ce703',
+    expectedUnitCount: 16, expectedVerseNumbers: Array.from({ length: 16 }, (_, index) => index + 1),
+    expectedWordCount: 3504, maxChapter: 1, incomplete: false,
+    language: 'en', originalLanguage: 'الأرمنية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'ترجمة جاك إيسافردنس الإنجليزية المنشورة سنة ١٩٠١ عن رواية أرمنية عنوانها «تاريخ قصير للنبي إيليا». يذكر تقديم الطبعة أن الشاهد الوحيد مخطوط أرمني من سنة ١٦٢٧، ويرجح أن تأليف الرواية يعود إلى القرنين الخامس عشر أو السادس عشر؛ وهي قصة أرمنية متأخرة مستقلة عن رؤيا إيليا اللاتينية واليونانية والقبطية وعن كتاب إيليا العبري. قُسم المتن المتصل بحسب صفحات المسح إلى ١٦ وحدة عرض بلا إصحاحات أصلية: الصفحة الافتتاحية مرقمة ١٥ في صورة ملف الصفحات ٢٤٧، تليها الصفحات المطبوعة ٢٢٦–٢٤٠ في الصور ٢٤٩–٢٦٣. تمتد آخر وحدة إلى نهاية الرواية قبل عنوان العمل التالي. قورنت بداية المتن ونهايته وكل صفحة بالمسح الرقمي، وصُححت أخطاء التعرّف الظاهرة دون استكمال أي جزء غائب. طبعة إيسافردنس الإنجليزية ضمن الملك العام؛ توفي المترجم سنة ١٩٠٢ بحسب سجل المكتبة الوطنية الأرمنية. [النسخة المصورة سنة ١٩٠١](https://archive.org/details/cu31924091353445)؛ [بيانات الترجمة وسيرة المترجم](https://haygirk.nla.am/cgi-bin/koha/opac-authoritiesdetail.pl?authid=32697)؛ [دراسة تميز الرواية الأرمنية المتأخرة من رؤيا إيليا القديمة](https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/armenian-canon-lists-iiithe-lists-of-mechitar-of-ayrivank-c-1285-ce/77C3632514DB0AFFEA810AD6B82F24B8).'
+  },
+  {
     bookCode: 'SHEM', slug: 'en-mingana-book-shem-1917',
     nameAr: 'ترجمة منغانا الإنجليزية لكتاب سام بن نوح عن بداية السنة',
     nameEn: 'Alphonse Mingana English Translation of the Book of Shem, Son of Noah',
