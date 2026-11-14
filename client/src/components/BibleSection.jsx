@@ -1886,7 +1886,11 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
   const { translations } = useTranslations();
   const { books } = useBooks();
 
-  const [selectedTranslations, setSelectedTranslations] = useState(['ar-svd']);
+  const [selectedTranslations, setSelectedTranslations] = useState(() => (
+    String(initialBook || '').toUpperCase() === '1ES'
+      ? ['ar-mohammad-1es', 'grc-brenton-1es']
+      : ['ar-svd']
+  ));
   const [searchTranslations, setSearchTranslations] = useState(['default']);
   const [searchCollections, setSearchCollections] = useState(['old-testament', 'new-testament']);
 

@@ -4,6 +4,7 @@
  * إلى أعداد في المصادر المختارة.
  */
 
+import { TORAH_WITNESS_SOURCES } from './torah_witness_sources.js';
 import { getDb, initDatabase } from '../db/schema.js';
 import { initBibleSchema } from '../db/bible_schema.js';
 import { normalizeArabicText } from '../utils/arabic_nlp.js';
@@ -1755,16 +1756,22 @@ function parseWikisourceChapters(content, source) {
     const rows = [];
     let preface = '';
     for (const block of blocks) {
-      const verseMatch = block.match(/^\s*(?:\[(\d+)\]|(\d+)\.?)\s+([\s\S]+)$/);
-      if (!verseMatch) {
-        if (!rows.length) preface = [preface, block].filter(Boolean).join(' ');
-        else rows[rows.length - 1].text = `${rows[rows.length - 1].text} ${block}`;
-        continue;
+      const verseBlocks = source.bookCode === '1MCE'
+        ? block.split(/(?=[\u200b\ufeff]\s*\d+\.?\s+)/)
+        : [block];
+      for (const verseBlock of verseBlocks) {
+        const normalizedBlock = source.bookCode === '1MCE' ? verseBlock.replace(/^[\u200b\ufeff]+/, '').trim() : verseBlock;
+        const verseMatch = normalizedBlock.match(/^\s*(?:\[(\d+)\]|(\d+)\.?)\s+([\s\S]+)$/);
+        if (!verseMatch) {
+          if (!rows.length) preface = [preface, normalizedBlock].filter(Boolean).join(' ');
+          else rows[rows.length - 1].text = `${rows[rows.length - 1].text} ${normalizedBlock}`;
+          continue;
+        }
+        const verse = Number(verseMatch[1] || verseMatch[2]);
+        const text = [preface, verseMatch[3]].filter(Boolean).join(' ');
+        rows.push({ chapter: heading.chapter, verse, text, sourceUrl: source.url });
+        preface = '';
       }
-      const verse = Number(verseMatch[1] || verseMatch[2]);
-      const text = [preface, verseMatch[3]].filter(Boolean).join(' ');
-      rows.push({ chapter: heading.chapter, verse, text, sourceUrl: source.url });
-      preface = '';
     }
     if (!rows.length) throw new Error(`لم تُكتشف وحدات الإصحاح ${heading.chapter} في ${source.slug}`);
     chapters.push(...rows.filter((row) => row.text.length > 10));
@@ -2880,6 +2887,8 @@ function parseRomanHtmlChapters(content, source) {
   }
   return rows.sort((a, b) => a.chapter - b.chapter);
 }
+
+ADDITIONAL_SOURCES.push(...TORAH_WITNESS_SOURCES);
 
 export async function run(requestedSlugs = null, { initializeDatabase = true } = {}) {
   const onlySlugs = requestedSlugs === null

@@ -3,6 +3,7 @@
 
 import { getDb } from './schema.js';
 import { normalizeArabicText } from '../utils/arabic_nlp.js';
+import { TORAH_WITNESS_BOOKS } from '../importers/torah_witness_sources.js';
 
 export function initBibleSchema() {
   const db = getDb();
@@ -470,6 +471,13 @@ function _seedExpansionCatalog(db) {
     ['IGNPOL', 'رسالة إغناطيوس إلى بوليكاربوس', 'Ignatius to Polycarp', 'IGNPOL', 'church-writings', 36, 0, 'greek', 'اليونانية', 'رسالة إغناطيوس إلى بوليكاربوس أسقف سميرنا؛ تتضمن إرشادات في الرعاية والزواج ومعاملة العبيد والمحتاجين وإرسال المبعوثين. تحفظ ٨ فصول والتحية.'],
     ['POLPHI', 'رسالة بوليكاربوس إلى أهل فيلبي', 'Polycarp to the Philippians', 'POLPHI', 'church-writings', 37, 0, 'greek', 'اليونانية مع ختام محفوظ باللاتينية', 'رسالة بوليكاربوس إلى مسيحيي فيلبي؛ تتناول الإيمان والسلوك والعطاء والتحذير من محبة المال، وتشير إلى إغناطيوس ورسائله. تحفظ ١٤ فصلاً، مع أجزاء أخيرة محفوظة باللاتينية.'],
   ];
+  for (const witness of TORAH_WITNESS_BOOKS) {
+    records.push([
+      witness.code, witness.nameAr, witness.nameEn, witness.abbr, 'textual-traditions', witness.order, witness.chapters,
+      witness.tradition, witness.language,
+      'شاهد موازٍ لنص التوراة لا سفر مستقل؛ يُعرض لمقارنة القراءة والترجمة مع الشواهد الأخرى، ولا يُعدّ طبعة نقدية.'
+    ]);
+  }
 
   // Approximate order by the earliest story era represented, not by composition date.
   // Start with Adam, then Enoch and the flood/Noah traditions; long retellings stay near their opening era.
@@ -489,6 +497,8 @@ function _seedExpansionCatalog(db) {
 
   const sourceDefaults = {
     sam: ['Biblia Arabica', 'https://biblia-arabica.com/bibl/IZFNRHBX'],
+    targum: ['Sefaria', 'https://www.sefaria.org/texts/Targum'],
+    'judeo-arabic': ['Sefaria', 'https://www.sefaria.org/texts/Tanakh/Targum/Tafsir%20Rasag'],
     lxx: ['eBible Brenton Septuagint', 'https://ebible.org/eng-Brenton/'],
     peshitta: ['Peshitta Institute', 'https://www.peshitta.org/'],
     vulgate: ['Biblia Sacra Vulgata', 'https://search.biblegateway.com/versions/Biblia-Sacra-Vulgata-VULGATE/'],

@@ -17,6 +17,9 @@ import { ensureBirthOfNoahImported } from './db/birth_of_noah_startup_import.js'
 import { ensureGenesisApocryphonImported } from './db/genesis_apocryphon_startup_import.js';
 import { ensurePseudoJubileesImported } from './db/pseudo_jubilees_startup_import.js';
 import { ensureQumran4Q246Imported } from './db/qumran_4q246_startup_import.js';
+import { ensure1EsMohammadImported } from './db/1es_mohammad_startup_import.js';
+import { ensureTorahWitnessesImported } from './db/torah_witnesses_startup_import.js';
+import { ensureArabicTranslationsImported } from './db/arabic_translations_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -45,6 +48,13 @@ const __dirname = path.dirname(__filename);
 // Initialize DB schema
 initDatabase();
 initBibleSchema();
+try {
+  if (ensure1EsMohammadImported()) {
+    console.log('[Bible startup] Imported the complete Arabic translation and Greek witness for 1 Esdras.');
+  }
+} catch (error) {
+  console.error('[Bible startup] 1 Esdras Arabic and Greek import failed:', error.message);
+}
 try {
   if (await ensureMotaMuseImported()) {
     console.log('[Bible startup] Imported both Mota Muse witnesses from reviewed local files.');
@@ -86,6 +96,19 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Noah Qumran import failed:', error.message);
+}
+try {
+  const importedArabic = ensureArabicTranslationsImported();
+  if (importedArabic.length) console.log('[Bible startup] Imported Arabic translations:', importedArabic.join(', '));
+} catch (error) {
+  console.error('[Bible startup] Arabic translations import failed:', error.message);
+}
+try {
+  if (await ensureTorahWitnessesImported()) {
+    console.log('[Bible startup] Imported public-domain Torah witnesses: Onkelos, Pseudo-Jonathan, Saadia.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Torah witnesses import failed:', error.message);
 }
 try {
   if (await ensureBirthOfNoahImported()) {
