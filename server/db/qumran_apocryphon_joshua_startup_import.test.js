@@ -18,7 +18,7 @@ after(() => {
   for (const suffix of ['', '-wal', '-shm']) rmSync(testDbPath + suffix, { force: true });
 });
 
-test('imports and repairs the two licensed Joshua witnesses independently and idempotently', async () => {
+test('imports and repairs the four licensed Joshua tradition witnesses independently and idempotently', async () => {
   assert.equal(await ensureQumranApocryphonJoshuaImported(), true);
   const db = getDb();
   assert.deepEqual(db.prepare(`
@@ -27,7 +27,9 @@ test('imports and repairs the two licensed Joshua witnesses independently and id
 
   const expected = [
     ['4Q378', 'heb-qdr-4q378-apocryphon-joshua-a-2026', 155, 36],
-    ['4Q379', 'heb-qdr-4q379-apocryphon-joshua-b-2026', 186, 44]
+    ['4Q379', 'heb-qdr-4q379-apocryphon-joshua-b-2026', 186, 44],
+    ['4Q522', 'heb-qdr-4q522-apocryphon-joshua-c-2026', 83, 21],
+    ['5Q9', 'heb-qdr-5q9-apocryphon-joshua-2025', 19, 7]
   ];
   for (const [witness, slug, units, groups] of expected) {
     const translation = db.prepare(`
@@ -52,5 +54,5 @@ test('imports and repairs the two licensed Joshua witnesses independently and id
   assert.equal(await ensureQumranApocryphonJoshuaImported(), true);
   assert.match(db.prepare('SELECT text FROM bible_verses WHERE translation_id=? AND book_code=\'APJOSH\' AND chapter=1 AND verse=1').get(id).text, /^‹4Q378 frg\. 1, line 1›/u);
   assert.equal(await ensureQumranApocryphonJoshuaImported(), false);
-  assert.equal(db.prepare("SELECT COUNT(*) AS count FROM bible_verses WHERE book_code='APJOSH'").get().count, 341);
+  assert.equal(db.prepare("SELECT COUNT(*) AS count FROM bible_verses WHERE book_code='APJOSH'").get().count, 443);
 });

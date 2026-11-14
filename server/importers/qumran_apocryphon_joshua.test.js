@@ -4,10 +4,12 @@ import test from 'node:test';
 import { ADDITIONAL_SOURCES } from './import_noncanonical_english.js';
 import { parseReviewedUnitText } from './reviewed_text_source.js';
 
-test('retains both licensed Hebrew witnesses of the Apocryphon of Joshua as separate partial sources', async () => {
+test('retains all four licensed Hebrew Joshua witnesses as separate partial sources', async () => {
   const expected = [
     { witness: '4Q378', slug: 'heb-qdr-4q378-apocryphon-joshua-a-2026', units: 155, groups: 36 },
-    { witness: '4Q379', slug: 'heb-qdr-4q379-apocryphon-joshua-b-2026', units: 186, groups: 44 }
+    { witness: '4Q379', slug: 'heb-qdr-4q379-apocryphon-joshua-b-2026', units: 186, groups: 44 },
+    { witness: '4Q522', slug: 'heb-qdr-4q522-apocryphon-joshua-c-2026', units: 83, groups: 21 },
+    { witness: '5Q9', slug: 'heb-qdr-5q9-apocryphon-joshua-2025', units: 19, groups: 7 }
   ];
 
   for (const item of expected) {

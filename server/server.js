@@ -174,7 +174,7 @@ try {
 }
 try {
   if (await ensureQumranApocryphonJoshuaImported()) {
-    console.log('[Bible startup] Imported the separate licensed Hebrew 4Q378 and 4Q379 Apocryphon of Joshua witnesses.');
+    console.log('[Bible startup] Imported the separate licensed Hebrew 4Q378, 4Q379, 4Q522, and 5Q9 Joshua tradition witnesses.');
   }
 } catch (error) {
   console.error('[Bible startup] Apocryphon of Joshua import failed:', error.message);

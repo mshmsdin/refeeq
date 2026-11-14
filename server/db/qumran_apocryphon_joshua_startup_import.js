@@ -5,7 +5,9 @@ import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
 const WITNESSES = [
   { slug: 'heb-qdr-4q378-apocryphon-joshua-a-2026', units: 155, groups: 36 },
-  { slug: 'heb-qdr-4q379-apocryphon-joshua-b-2026', units: 186, groups: 44 }
+  { slug: 'heb-qdr-4q379-apocryphon-joshua-b-2026', units: 186, groups: 44 },
+  { slug: 'heb-qdr-4q522-apocryphon-joshua-c-2026', units: 83, groups: 21 },
+  { slug: 'heb-qdr-5q9-apocryphon-joshua-2025', units: 19, groups: 7 }
 ];
 
 function getSourceState(db, definition) {
