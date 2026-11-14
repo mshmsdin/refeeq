@@ -106,7 +106,8 @@ export function parseReviewedUnitText(rawText, source) {
     }
     chapterVerses.set(unit.chapter, chapterUnitCount + 1);
   }
-  const wordCount = units.reduce((count, unit) => count + unit.text.trim().split(/\s+/u).filter(Boolean).length, 0);
+  const wordSeparator = source.countZeroWidthWordSeparators ? /[\s\u200b]+/u : /\s+/u;
+  const wordCount = units.reduce((count, unit) => count + unit.text.trim().split(wordSeparator).filter(Boolean).length, 0);
   if (wordCount !== source.expectedWordCount) {
     throw new Error(`عدد كلمات الوحدات غير مطابق في ${source.slug}: ${wordCount}`);
   }
