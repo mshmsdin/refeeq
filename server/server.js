@@ -24,6 +24,7 @@ import { ensureQumran4Q242Imported } from './db/qumran_4q242_startup_import.js';
 import { ensureQumranWordsEzekielImported } from './db/qumran_words_ezekiel_startup_import.js';
 import { ensureQumranApocryphonJeremiahImported } from './db/qumran_apocryphon_jeremiah_startup_import.js';
 import { ensureQumranJeremiahAbImported } from './db/qumran_jeremiah_ab_startup_import.js';
+import { ensureQumranApocryphonJoshuaImported } from './db/qumran_apocryphon_joshua_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -170,6 +171,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Qumran Jeremiah A/B import failed:', error.message);
+}
+try {
+  if (await ensureQumranApocryphonJoshuaImported()) {
+    console.log('[Bible startup] Imported the separate licensed Hebrew 4Q378 and 4Q379 Apocryphon of Joshua witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Apocryphon of Joshua import failed:', error.message);
 }
 
 const app = express();
