@@ -458,6 +458,8 @@ export const SOURCES = [
     url: 'https://www.ccel.org/c/charles/otpseudepig/apcmose.htm',
     kind: 'apocalypse-moses-html',
     maxChapter: 43,
+    // يحذف أعداد السفر القديمة قبل الإدراج، فلا يبقى 39:4 و39:6 الخاطئان بعد نقل الأعداد 4 و6 إلى الإصحاح 37.
+    replaceExistingVerses: true,
     language: 'en',
     originalLanguage: 'اليونانية',
     sourceType: 'public-domain-text',
@@ -977,8 +979,22 @@ function cleanText(text) {
     .trim();
 }
 
-function decodeHtml(text) {
+// رموز HTML المسماة للحروف اللاتينية المعلّمة التي ترد في أسماء الأعلام (مثل &acirc; و&Ocirc;)؛ تُفك إلى حروفها.
+const LATIN_ACCENT_ENTITIES = (() => {
+  const marks = { acute: '́', grave: '̀', circ: '̂', uml: '̈', tilde: '̃', ring: '̊', cedil: '̧', caron: '̌' };
+  const map = {};
+  for (const letter of 'aeiouyAEIOUYcCnNsSzZ') {
+    for (const [name, mark] of Object.entries(marks)) {
+      const composed = (letter + mark).normalize('NFC');
+      if (composed.length === 1) map[`&${letter}${name};`] = composed;
+    }
+  }
+  return map;
+})();
+
+export function decodeHtml(text) {
   return text
+    .replace(/&[A-Za-z]+;/g, (entity) => LATIN_ACCENT_ENTITIES[entity] ?? entity)
     .replace(/&nbsp;/gi, ' ')
     .replace(/&lt;/gi, '<')
     .replace(/&gt;/gi, '>')
@@ -995,8 +1011,10 @@ function decodeHtml(text) {
     .replace(/&#(\d+);/g, (_, value) => String.fromCodePoint(Number(value)));
 }
 
-function cleanHtmlVerse(html) {
+export function cleanHtmlVerse(html) {
   return cleanText(decodeHtml(html
+    // الحرف الزخرفي الأول جزء من الكلمة الأولى؛ يُحفظ حرفه ويُلصق بباقيها، ولا يُحذف.
+    .replace(/<span[^>]*class="[^"]*dropcap-wrap[^"]*"[^>]*>[\s\S]*?<span[^>]*class="[^"]*dropcap-fallback[^"]*"[^>]*>([\s\S]*?)<\/span>[\s\S]*?<\/span>(?:\s*<span[^>]*class="[^"]*verse-link-icon[^"]*"[^>]*>[\s\S]*?<\/span>)?\s*/gi, '$1')
     .replace(/<img\b[^>]*>/gi, '')
     .replace(/<span[^>]*class="[^"]*dropcap-fallback[^"]*"[^>]*>[\s\S]*?<\/span>/gi, '')
     .replace(/<span[^>]*class="[^"]*verse-link-icon[^"]*"[^>]*>[\s\S]*?<\/span>/gi, '')
@@ -1378,7 +1396,9 @@ function parseNewAdventNumberedSections(content, source) {
   return sections.map((section) => ({ chapter: source.asChapters ? section.number : 1, verse: source.asChapters ? 1 : section.number, text: section.text, sourceUrl: source.url }));
 }
 
-function parseApocalypseMosesHtml(content, source) {
+// المصدر يطبع الأعداد 4 و6 من الإصحاح 37 بعد الإصحاح 39 تحت علامة إصحاح منفردة (xxxvii) في سطر مستقل؛
+// تُنسب أعداد ما بعد هذه العلامة إلى إصحاحها الحقيقي لا إلى الإصحاح الذي سبقها في الصفحة.
+export function parseApocalypseMosesHtml(content, source) {
   const headings = [...content.matchAll(/\b([ivxlcdm]+)\s+1(?:,\d+)?\s+/gi)]
     .map((match) => ({ chapter: romanToNumber(match[1].toUpperCase()), index: match.index, start: match.index + match[0].length }));
   const chapterNumbers = new Set(headings.map((heading) => heading.chapter));
@@ -1403,12 +1423,19 @@ function parseApocalypseMosesHtml(content, source) {
     let verse = 1;
     const firstText = section.shift()?.replace(/^1\s+/, '').trim();
     if (firstText) rows.push({ chapter: heading.chapter, verse: verse++, text: firstText, sourceUrl: source.url });
-    for (const line of section) {
+    let activeChapter = heading.chapter;
+    for (const [lineIndex, line] of section.entries()) {
+      const markerRoman = /^[ivxlcdm]+$/i.test(line) && /^\d{1,2}\s/.test(section[lineIndex + 1] || '') ? line.toUpperCase() : null;
+      const markedChapter = markerRoman ? romanToNumber(markerRoman) : 0;
+      if (markedChapter >= 1 && markedChapter <= source.maxChapter && numberToRoman(markedChapter) === markerRoman) {
+        activeChapter = markedChapter;
+        continue;
+      }
       const numbered = line.match(/^(\d{1,2})\s+(.+)$/);
       if (numbered) {
         verse = Number(numbered[1]);
-        rows.push({ chapter: heading.chapter, verse, text: numbered[2], sourceUrl: source.url });
-      } else if (rows.at(-1)?.chapter === heading.chapter) {
+        rows.push({ chapter: activeChapter, verse, text: numbered[2], sourceUrl: source.url });
+      } else if (rows.at(-1)?.chapter === activeChapter) {
         rows.at(-1).text += ` ${line}`;
       }
     }
