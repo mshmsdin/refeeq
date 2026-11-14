@@ -22,6 +22,7 @@ import { ensureQumran4Q246Imported } from './db/qumran_4q246_startup_import.js';
 import { ensureQumranPseudoDanielImported } from './db/qumran_pseudo_daniel_startup_import.js';
 import { ensureQumran4Q521Imported } from './db/qumran_4q521_startup_import.js';
 import { ensureQumran4Q242Imported } from './db/qumran_4q242_startup_import.js';
+import { ensureQumran4Q537Imported } from './db/qumran_4q537_startup_import.js';
 import { ensureQumranWordsEzekielImported } from './db/qumran_words_ezekiel_startup_import.js';
 import { ensureQumranApocryphonJeremiahImported } from './db/qumran_apocryphon_jeremiah_startup_import.js';
 import { ensureQumranJeremiahAbImported } from './db/qumran_jeremiah_ab_startup_import.js';
@@ -158,6 +159,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Qumran 4Q242 witness import failed:', error.message);
+}
+try {
+  if (await ensureQumran4Q537Imported()) {
+    console.log('[Bible startup] Imported the licensed Aramaic 4Q537 witness.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran 4Q537 witness import failed:', error.message);
 }
 try {
   if (await ensureQumranWordsEzekielImported()) {
