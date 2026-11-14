@@ -20,8 +20,8 @@ after(() => {
 
 test('imports the Arabic translations with exact unit counts and honest labels', () => {
   const imported = ensureArabicTranslationsImported();
-  assert.equal(imported.length, 18);
-  for (const code of ['1MCE', '2MCE', '3MCE', 'ONK-GEN', 'TJ-GEN', 'SAAD-GEN', 'ONK-DEU', 'TJ-DEU', 'SAAD-DEU']) {
+  assert.equal(imported.length, 81);
+  for (const code of ['1MCE', '2MCE', '3MCE', 'ONK-GEN', 'TJ-GEN', 'SAAD-GEN', 'ONK-DEU', 'TJ-DEU', 'SAAD-DEU', 'MSH-MISHNAH-BERAKHOT', 'MSH-MISHNAH-OKTZIN']) {
     assert.ok(imported.includes(code), code);
   }
   const db = getDb();
@@ -32,6 +32,7 @@ test('imports the Arabic translations with exact unit counts and honest labels',
     GROUP BY bt.slug ORDER BY bt.slug
   `).all();
   assert.deepEqual(totals, [
+    { slug: 'ar-machine-mishnah', name_ar: 'ترجمة آلية', source_type: 'machine-translation', units: 4187 },
     { slug: 'ar-machine-saadia-script', name_ar: 'ترجمة آلية', source_type: 'machine-transliteration', units: 5846 },
     { slug: 'ar-machine-targum-onkelos', name_ar: 'ترجمة آلية', source_type: 'machine-translation', units: 5846 },
     { slug: 'ar-mohammad-1mce', name_ar: 'ترجمة محمد بن شمس الدين', source_type: 'machine-assisted-translation', units: 240 },
