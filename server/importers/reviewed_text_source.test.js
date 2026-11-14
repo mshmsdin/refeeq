@@ -48,6 +48,25 @@ test('preserves a reviewed witness range that begins at a source verse other tha
   assert.deepEqual(rows.map(({ chapter, verse }) => [chapter, verse]), [[1, 20], [1, 21]]);
 });
 
+test('accepts short but nonempty source units when a digitized edition contains them', () => {
+  const unitsText = JSON.stringify([
+    { chapter: 1, verse: 1, text: 'አሜን።' },
+  ]);
+  const unitSource = {
+    slug: 'reviewed-short-unit-test',
+    expectedSha256: createHash('sha256').update(unitsText).digest('hex'),
+    expectedWordCount: 1,
+    expectedUnitCount: 1,
+    maxChapter: 1,
+    minUnitTextLength: 1,
+    url: 'https://example.invalid/source',
+  };
+
+  const rows = parseReviewedUnitText(unitsText, unitSource);
+
+  assert.equal(rows[0].text, 'አሜን።');
+});
+
 test('preserves explicitly recorded gaps in a reviewed single-chapter witness', () => {
   const unitsText = JSON.stringify([
     { chapter: 1, verse: 1, text: 'The first source unit has a complete readable sentence.' },

@@ -84,10 +84,11 @@ export function parseReviewedUnitText(rawText, source) {
   const expectedChapterVerseLocations = source.expectedChapterVerseNumbers?.flatMap(
     (verses, chapterIndex) => verses.map((verse) => [chapterIndex + 1, verse])
   );
+  const minUnitTextLength = Number.isInteger(source.minUnitTextLength) ? source.minUnitTextLength : 10;
   for (const [index, unit] of units.entries()) {
     if (!Number.isInteger(unit.chapter) || unit.chapter < 1 || unit.chapter > source.maxChapter
       || !Number.isInteger(unit.verse) || unit.verse < 1
-      || typeof unit.text !== 'string' || unit.text.trim().length < 10) {
+      || typeof unit.text !== 'string' || unit.text.trim().length < minUnitTextLength) {
       throw new Error(`بيانات إحدى الوحدات غير صالحة في ${source.slug}`);
     }
     const chapterUnitCount = chapterVerses.get(unit.chapter) || 0;

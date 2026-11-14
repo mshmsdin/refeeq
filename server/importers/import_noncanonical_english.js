@@ -2191,6 +2191,51 @@ export const ADDITIONAL_SOURCES = [
     language: 'gez', originalLanguage: 'الجعزية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
     notes: 'نص جعزي كامل لتغسات (أمثال ٢٥–٣١) بحسب ملف بيتا مصاحفت «Tagśāṣa Salomon»، المرقم LIT2396Tagsas، والمثبت عند نسخة مستودع الأعمال بتاريخ ٢٠٢٦-٠٨-١٤. يصرح سجل تي إي آي بأن مادته نص الكتاب المقدس الإثيوبي المطبوع الصادر عن كنيسة التوحيد الإثيوبية، وأنه رُقمن عن طبعات فولغاتا حديثة بواسطة فريق بيتا مصاحفت. يتبع الشاهد تقسيمه الإثيوبي الخاص إلى ٦ فصول و١٦١ وحدة، ولا يطابق تقسيم فان دايك العربي ذي الفصول السبعة؛ حُفظ الترقيمان كما في الشاهد. الملف وبياناته مرخصة برخصة المشاع الإبداعي النسب بالمثل ٤٫٠. الشواهد المذكورة في السجل: مخطوطا المكتبة البريطانية أددشنل ١٦١٨٦ و١٦١٨٩. [ملف المصدر المثبت ورخصته](https://github.com/BetaMasaheft/Works/blob/2574a6c84ed477af76122a6b112df3bbf45a96f5/2001-3000/LIT2396Tagsas.xml)؛ [سجل بيتا مصاحفت](https://betamasaheft.awhamburg.de/works/LIT2396Tagsas/main).'
   },
+  ...[
+    {
+      bookCode: '1MCE', slug: 'gez-betamasaheft-meqabyan-1',
+      nameAr: 'النص الجعزي للمكابيون الإثيوبي الأول', nameEn: 'Beta maṣāḥǝft Geʿez Ethiopian Maccabees I', abbreviation: 'مك-إ1-جع',
+      workId: 'LIT1819Maccab', sourceFile: '1001-2000/LIT1819Maccab.xml',
+      textFile: new URL('./data/meqabyan_1_betamasaheft_geez_2026.json', import.meta.url),
+      expectedSha256: '03fe88760fd9cad3a6c55e02261a203d29e8ec22f995b403215e664f0a99924a',
+      expectedUnitCount: 762, expectedWordCount: 12118, chapterCounts: [29,28,38,38,41,37,33,37,10,9,8,44,26,24,18,9,8,12,17,4,31,11,7,22,18,5,20,51,17,16,7,4,11,18,8,46],
+      irregularNumberingChapters: [1,4,5,8,10,14,28],
+    },
+    {
+      bookCode: '2MCE', slug: 'gez-betamasaheft-meqabyan-2',
+      nameAr: 'النص الجعزي للمكابيون الإثيوبي الثاني', nameEn: 'Beta maṣāḥǝft Geʿez Ethiopian Maccabees II', abbreviation: 'مك-إ2-جع',
+      workId: 'LIT5840SecondEthioMaccabees', sourceFile: '5001-6000/LIT5840SecondEthioMaccabees.xml',
+      textFile: new URL('./data/meqabyan_2_betamasaheft_geez_2026.json', import.meta.url),
+      expectedSha256: '1aa557421b9385facb836f811d591d150fe32f54fbbaffbf1d4ee262bf6732e0',
+      expectedUnitCount: 433, expectedWordCount: 6653, chapterCounts: [13,11,29,32,19,24,9,26,28,29,26,15,16,36,21,16,12,14,15,14,28],
+      irregularNumberingChapters: [5,8,9,10,11,13,16],
+    },
+    {
+      bookCode: '3MCE', slug: 'gez-betamasaheft-meqabyan-3',
+      nameAr: 'النص الجعزي للمكابيون الإثيوبي الثالث', nameEn: 'Beta maṣāḥǝft Geʿez Ethiopian Maccabees III', abbreviation: 'مك-إ3-جع',
+      workId: 'LIT5839ThirdEthioMaccabees', sourceFile: '5001-6000/LIT5839ThirdEthioMaccabees.xml',
+      textFile: new URL('./data/meqabyan_3_betamasaheft_geez_2026.json', import.meta.url),
+      expectedSha256: '96b08675ff0721f676862ee1a8346c3dd7d5d83889ea8ff3b0ccf3ff35e18568',
+      expectedUnitCount: 209, expectedWordCount: 3530, chapterCounts: [24,24,11,36,16,16,5,12,36,29],
+      irregularNumberingChapters: [2],
+    },
+  ].map((item) => {
+    const repositoryUrl = `https://github.com/BetaMasaheft/Works/blob/aebe046e35d7f201e4e1993a37630b631bc5d324/${item.sourceFile}`;
+    const numberingNote = item.irregularNumberingChapters.map((chapter) => String(chapter)).join('، ');
+    const workLabel = item.bookCode === '1MCE' ? 'المكابيين الإثيوبي الأول'
+      : item.bookCode === '2MCE' ? 'المكابيين الإثيوبي الثاني' : 'المكابيين الإثيوبي الثالث';
+    return {
+      ...item,
+      url: repositoryUrl,
+      kind: 'reviewed-unit-text-file',
+      maxChapter: item.chapterCounts.length,
+      expectedChapterVerseNumbers: item.chapterCounts.map((count) => Array.from({ length: count }, (_, index) => index + 1)),
+      minUnitTextLength: 1,
+      preserveBookMetadata: true,
+      language: 'gez', originalLanguage: 'الجعزية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+      notes: `النص الجعزي لسفر ${workLabel} من سجل بيتا مصاحفت ${item.workId}، مثبت عند مراجعة مستودع الأعمال aebe046e35d7f201e4e1993a37630b631bc5d324. يسجل المصدر أنه رُقمن عن طبعة حديثة من الكتاب المقدس الإثيوبي الورقي وحُوّل إلى صيغة تي إي آي بواسطة فريق بيتا مصاحفت. رخصة الملف المعلنة هي المشاع الإبداعي النسب بالمثل ٤٫٠. يحتوي التفريغ ${item.chapterCounts.length} فصلاً و${item.expectedUnitCount} وحدة؛ رتّبت أرقام العرض تسلسلياً داخل كل فصل، وحُفظ رقم كل سطر الأصلي في ملف البيانات. أرقام المصدر فيها تكرار أو فجوات في الفصول: ${numberingNote}. إعادة الترقيم للعرض فقط ولا تضيف أو تحذف نصاً. هذا شاهد إثيوبي مستقل ولا يساوي تلقائياً المكابيين اليونانية. [ملف المصدر ورخصته](https://github.com/BetaMasaheft/Works/blob/aebe046e35d7f201e4e1993a37630b631bc5d324/${item.sourceFile})؛ [سجل بيتا مصاحفت](https://betamasaheft.awhamburg.de/works/${item.workId}/main).`,
+    };
+  }),
   ...LIVES_OF_PROPHETS_SOURCES,
   ...QUMRAN_ENOCH_WITNESSES,
   ...APOCRYPHON_JOSHUA_WITNESSES,
