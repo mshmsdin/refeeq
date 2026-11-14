@@ -10,7 +10,8 @@ const witnesses = [
   { slug: 'heb-qdr-4q385-words-ezekiel-2026', code: 'Q385', witness: '4Q385', units: 44, words: 558, groups: [3,10,7,7,2,15], hash: 'c24f7b05f5ac88d9a1d7315877f9ba13794bac95eca0b9176c98d39e3d593679' },
   { slug: 'heb-qdr-4q385b-words-ezekiel-2026', code: 'Q385B', witness: '4Q385b', units: 7, words: 91, groups: [7], hash: '8daa4e4bfa5b9d651301ce99957be424813de8d8de4e22a9787d74e503e17ac7' },
   { slug: 'heb-qdr-4q386-words-ezekiel-2026', code: 'Q386', witness: '4Q386', units: 35, words: 433, groups: [9,11,8,4,3], hash: 'f7e15df09a7d9502bfbfeca86c7a8019c334583db8509f44380142be00d4c75b' },
-  { slug: 'heb-qdr-4q388-words-ezekiel-2026', code: 'Q388', witness: '4Q388', units: 38, words: 367, groups: [2,4,3,3,5,4,10,7], hash: 'accdb91e6cb64a029f83287c0bdccc9222bc6f336e685b695171948d436337c4' }
+  { slug: 'heb-qdr-4q388-words-ezekiel-2026', code: 'Q388', witness: '4Q388', units: 38, words: 367, groups: [2,4,3,3,5,4,10,7], hash: 'accdb91e6cb64a029f83287c0bdccc9222bc6f336e685b695171948d436337c4' },
+  { slug: 'heb-qdr-4q391-words-ezekiel-2026', code: 'Q391', witness: '4Q391', units: 200, words: 1836, groups: 78, maxGroupUnits: 11, firstVerse: [61,2], hash: '73735c1d7d0a60d14a1ddb712ad746f8aaec190beb04b653aa94a0f95c9fbc98' }
 ];
 const testDbPath = join(tmpdir(), `qumran-words-ezekiel-${randomUUID()}.sqlite`);
 process.env.DB_PATH = testDbPath;
@@ -35,13 +36,18 @@ test('imports all separately identified licensed Hebrew Words of Ezekiel witness
     assert.equal(source.incomplete, true);
     assert.equal(source.expectedUnitCount, expected.units);
     assert.equal(source.expectedWordCount, expected.words);
-    assert.equal(source.maxChapter, expected.groups.length);
+    assert.equal(source.maxChapter, Array.isArray(expected.groups) ? expected.groups.length : expected.groups);
     const raw = readFileSync(source.textFile, 'utf8');
     assert.equal(createHash('sha256').update(raw.replace(/\r\n/gu, '\n')).digest('hex'), expected.hash);
     const units = parseReviewedUnitText(raw, source);
     assert.equal(units.length, expected.units);
     assert.equal(new Set(units.map(({ sourceUrl }) => sourceUrl)).size, expected.units);
-    assert.deepEqual(expected.groups.map((_, index) => units.filter(({ chapter }) => chapter === index + 1).length), expected.groups);
+    const groupCounts = [...Array(source.maxChapter)].map((_, index) => units.filter(({ chapter }) => chapter === index + 1).length);
+    assert.equal(groupCounts.length, Array.isArray(expected.groups) ? expected.groups.length : expected.groups);
+    if (Array.isArray(expected.groups)) assert.deepEqual(groupCounts, expected.groups);
+    else assert.equal(Math.max(...groupCounts), expected.maxGroupUnits);
+    if (expected.firstVerse) assert.deepEqual([units.find(({ chapter }) => chapter === expected.firstVerse[0]).chapter,
+      units.find(({ chapter }) => chapter === expected.firstVerse[0]).verse], expected.firstVerse);
     assert.ok(units.every(({ sourceUrl, text }) => sourceUrl.startsWith(`https://lexicon.qumran-digital.org/transcriptions/${expected.witness}/2026-10-06/index.html`)
       && sourceUrl.includes('#c') && text.startsWith(`‹${expected.witness} frg. `)));
     if (expected.code === 'Q385B') {

@@ -7,7 +7,8 @@ const WITNESSES = [
   { slug: 'heb-qdr-4q385-words-ezekiel-2026', bookCode: 'Q385', units: 44, groups: 6 },
   { slug: 'heb-qdr-4q385b-words-ezekiel-2026', bookCode: 'Q385B', units: 7, groups: 1 },
   { slug: 'heb-qdr-4q386-words-ezekiel-2026', bookCode: 'Q386', units: 35, groups: 5 },
-  { slug: 'heb-qdr-4q388-words-ezekiel-2026', bookCode: 'Q388', units: 38, groups: 8 }
+  { slug: 'heb-qdr-4q388-words-ezekiel-2026', bookCode: 'Q388', units: 38, groups: 8 },
+  { slug: 'heb-qdr-4q391-words-ezekiel-2026', bookCode: 'Q391', units: 200, groups: 78 }
 ];
 
 function getSourceState(db, witness, definition) {
