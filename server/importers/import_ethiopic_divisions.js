@@ -1,13 +1,16 @@
 import { getDb, initDatabase } from '../db/schema.js';
 import { initBibleSchema } from '../db/bible_schema.js';
+import { pathToFileURL } from 'url';
 import { mapBookDivisionRows } from './book_division.js';
 
 const SOURCE_URL = 'https://ebible.org/Scriptures/arb-vd_readaloud.zip';
 const NOTES = 'تقسيم لتغسات من الأمثال 25–31 بحسب ترتيبها في القانون الإثيوبي؛ النص هنا من ترجمة فان دايك العربية، وليس شاهداً جعزياً مستقلاً.';
 
-function run() {
-  initDatabase();
-  initBibleSchema();
+export function run({ initializeDatabase = true } = {}) {
+  if (initializeDatabase) {
+    initDatabase();
+    initBibleSchema();
+  }
   const db = getDb();
   const translation = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get('ar-svd');
   if (!translation) throw new Error('لم تُوجد ترجمة فان دايك في قاعدة البيانات.');
@@ -34,6 +37,9 @@ function run() {
       source_url=excluded.source_url, imported_at=CURRENT_TIMESTAMP
   `);
   const insertAll = db.transaction((items) => {
+    // تُحذف أعداد «تغسات» القديمة أولاً: هي نسخة من أمثال فان دايك، وإذا تغيّر ترقيم المصدر
+    // فإعادة الكتابة وحدها كانت ستترك الأعداد القديمة الخاطئة بجانب الجديدة.
+    db.prepare('DELETE FROM bible_verses WHERE translation_id=? AND book_code=?').run(translation.id, 'TAGS');
     for (const row of items) insertVerse.run(
       translation.id, row.book_code, row.chapter, row.verse, row.text, row.search_text, row.source_url || SOURCE_URL
     );
@@ -53,9 +59,12 @@ function run() {
   console.log(`[Bible divisions] TAGS: ${chapterCount} فصول، ${rows.length} عددًا؛ المصدر فان دايك من أمثال 25–31.`);
 }
 
-try {
-  run();
-} catch (error) {
-  console.error('[Bible divisions import]', error.message);
-  process.exitCode = 1;
+// يُشغَّل مباشرة عند استدعاء الملف من سطر الأوامر فقط، لا عند استيراده من الخادم.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  try {
+    run();
+  } catch (error) {
+    console.error('[Bible divisions import]', error.message);
+    process.exitCode = 1;
+  }
 }

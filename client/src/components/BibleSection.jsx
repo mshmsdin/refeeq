@@ -809,6 +809,34 @@ function SearchResults({
 }
 
 // ─────────────────────────────────────────────────────────
+//  رسالة النسخ: تظهر نصف ثانية ثم تختفي دون نافذة تطلب «موافق»
+// ─────────────────────────────────────────────────────────
+const COPY_TOAST_MS = 500;
+
+function useCopyToast() {
+  const [message, setMessage] = useState('');
+  const timer = useRef(null);
+  const show = useCallback((text) => {
+    clearTimeout(timer.current);
+    setMessage(text);
+    timer.current = setTimeout(() => setMessage(''), COPY_TOAST_MS);
+  }, []);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  return [message, show];
+}
+
+function CopyToast({ message }) {
+  if (!message) return null;
+  return (
+    <div className="pointer-events-none fixed inset-x-0 bottom-6 z-[60] flex justify-center px-4" role="status" aria-live="polite" dir="rtl">
+      <div className="animate-slideUp rounded-full border border-[#b58a43] bg-white px-4 py-1.5 text-xs font-bold text-[#322010] shadow-lg dark:bg-[#152238] dark:text-slate-100">
+        {message}
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────
 //  Chapter Reader (Manuscript Luxury Layout)
 // ─────────────────────────────────────────────────────────
 function ChapterReader({
@@ -830,6 +858,7 @@ function ChapterReader({
   const [searchInChapter, setSearchInChapter] = useState('');
   const [fontSize, setFontSize] = useState(21); // Scheherazade New comfortable 18-24px
   const [isCanonExpanded, setIsCanonExpanded] = useState(false);
+  const [copyToast, showCopyToast] = useCopyToast();
 
   const bookInfo = data?.book;
   const nav = data?.navigation;
@@ -890,7 +919,7 @@ function ChapterReader({
       fullText += `[${v.verse}] ${text || ''}\n`;
     });
     copyToClipboard(fullText);
-    alert('تم نسخ الإصحاح كاملاً مع توثيق الأعداد.');
+    showCopyToast('تم نسخ الإصحاح كاملاً مع توثيق الأعداد.');
   };
 
   const handlePillClick = (verseNum) => {
@@ -904,6 +933,7 @@ function ChapterReader({
 
   return (
     <div dir="rtl" className="animate-fadeIn font-scheherazade">
+      <CopyToast message={copyToast} />
       
       {/* DOCUMENT NAVIGATION & TOOLBAR */}
       <div className="luxury-border bg-[#fdfbf7]/95 dark:bg-[#152238]/95 backdrop-blur-md rounded-2xl p-3.5 mb-5 transition-all">
@@ -1169,7 +1199,7 @@ function ChapterReader({
                     <button
                       onClick={() => {
                         copyToClipboard(`${bookInfo?.name_ar} ${chapter}:${group.verse}\n[${t1?.name_ar}]: ${v1?.text || ''}\n[${t2?.name_ar}]: ${v2?.text || ''}`);
-                        alert('تم نسخ العدد بالترجمتين.');
+                        showCopyToast('تم نسخ العدد بالترجمتين.');
                       }}
                       className="p-1 hover:bg-[#f0e6d2] dark:hover:bg-slate-800 rounded-lg text-[#735535] dark:text-slate-400 transition-colors cursor-pointer"
                       title="نسخ العدد بكلا الترجمتين"
@@ -1247,7 +1277,7 @@ function ChapterReader({
                     onClick={(e) => {
                       e.stopPropagation();
                       copyToClipboard(`"${verseText}" — (${bookInfo?.name_ar} ${chapter}:${v.verse})`);
-                      alert('تم نسخ العدد.');
+                      showCopyToast('تم نسخ العدد.');
                     }}
                     title="نسخ العدد"
                     className="p-1 hover:bg-[#efe8dc] dark:hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
@@ -1339,7 +1369,7 @@ function VerseFocusModal({
 
   const showToast = (msg) => {
     setToastMessage(msg);
-    setTimeout(() => setToastMessage(''), 2500);
+    setTimeout(() => setToastMessage(''), COPY_TOAST_MS);
   };
 
   // Keyboard navigation

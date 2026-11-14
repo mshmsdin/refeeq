@@ -11,7 +11,7 @@ import http from 'http';
 import fs from 'fs';
 import path from 'path';
 import { createWriteStream } from 'fs';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import AdmZip from 'adm-zip';
 import { initDatabase, getDb } from '../db/schema.js';
 import { initBibleSchema } from '../db/bible_schema.js';
@@ -48,9 +48,11 @@ function download(url, dest) {
 
 // قراءة الملف في svd_chapter_parser.js: سطر "N." هو رقم الفصل لا رقم العدد.
 
-async function run() {
+export async function run({ initializeDatabase = true } = {}) {
+  if (initializeDatabase) {
   initDatabase();
   initBibleSchema();
+  }
   const db = getDb();
 
   // Ensure translation record
@@ -156,4 +158,7 @@ async function run() {
   else console.log('Errors: 0');
 }
 
-run().catch(err => { console.error('[SVD Import Error]', err.message); process.exit(1); });
+// يُشغَّل مباشرة عند استدعاء الملف من سطر الأوامر فقط، لا عند استيراده من الخادم.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  run().catch(err => { console.error('[SVD Import Error]', err.message); process.exit(1); });
+}

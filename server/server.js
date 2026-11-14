@@ -24,6 +24,7 @@ import { ensureArabicTranslationsImported } from './db/arabic_translations_start
 import { ensureAncientVersionsImported } from './db/ancient_versions_startup_import.js';
 import { ensureJewishSourcesImported } from './db/jewish_sources_startup_import.js';
 import { ensureScanBooksImported } from './db/scan_books_startup_import.js';
+import { ensureSvdNumberingRepaired } from './db/svd_numbering_startup_repair.js';
 import { buildCanonMatrix } from './utils/bible_canon_matrix.js';
 import {
   buildSnippet as buildScanSnippet,
@@ -164,6 +165,12 @@ try {
   if (importedScans.length) console.log('[Bible startup] Imported scanned-book text (images stay on archive.org):', importedScans.join(', '));
 } catch (error) {
   console.error('[Bible startup] Scanned book import failed:', error.message);
+}
+try {
+  const svdRepair = await ensureSvdNumberingRepaired();
+  if (svdRepair.repaired) console.log(`[Bible startup] Re-imported Van Dyck: fixed verse numbering in ${svdRepair.chapters} chapters.`);
+} catch (error) {
+  console.error('[Bible startup] Van Dyck numbering repair failed:', error.message);
 }
 
 const app = express();
