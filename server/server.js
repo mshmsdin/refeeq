@@ -142,7 +142,7 @@ try {
 }
 try {
   if (await ensureQumranWordsEzekielImported()) {
-    console.log('[Bible startup] Imported the separate licensed Hebrew 4Q385, 4Q386, and 4Q388 witnesses.');
+    console.log('[Bible startup] Imported the licensed Hebrew 4Q385, 4Q385b, 4Q386, and 4Q388 witnesses separately.');
   }
 } catch (error) {
   console.error('[Bible startup] Words of Ezekiel witness import failed:', error.message);

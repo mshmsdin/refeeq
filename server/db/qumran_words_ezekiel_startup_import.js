@@ -5,6 +5,7 @@ import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
 const WITNESSES = [
   { slug: 'heb-qdr-4q385-words-ezekiel-2026', bookCode: 'Q385', units: 44, groups: 6 },
+  { slug: 'heb-qdr-4q385b-words-ezekiel-2026', bookCode: 'Q385B', units: 7, groups: 1 },
   { slug: 'heb-qdr-4q386-words-ezekiel-2026', bookCode: 'Q386', units: 35, groups: 5 },
   { slug: 'heb-qdr-4q388-words-ezekiel-2026', bookCode: 'Q388', units: 38, groups: 8 }
 ];

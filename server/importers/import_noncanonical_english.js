@@ -2336,6 +2336,17 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q385 في ٤٤ سطراً عبرانياً ضمن ست مجموعات عرض، مع ترقيم السطر الأصلي ورابط مباشر لكل موضع. يضعه بعض الباحثين ضمن مجموعة «أقوال حزقيال» أو «منحول حزقيال»، لكن أسماء هذه المجموعة وحدودها وتفاصيل إعادة البناء محل نقاش؛ لذلك يسجل الشاهد منفرداً ولا يدمج مع 4Q386 أو 4Q388 أو الشظايا المختلف عليها. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل العبري وحده، والنص شذري لا يمثل عملاً كاملاً. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q385/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن المجموعة وحدودها](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
   },
   {
+    bookCode: 'Q385B', slug: 'heb-qdr-4q385b-words-ezekiel-2026',
+    nameAr: 'شظايا 4Q385b من أقوال حزقيال', nameEn: '4Q385b Words of Ezekiel Fragment', abbreviation: '4Q385b-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q385b/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q385b_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: '8daa4e4bfa5b9d651301ce99957be424813de8d8de4e22a9787d74e503e17ac7',
+    expectedUnitCount: 7, expectedWordCount: 91, maxChapter: 1, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7]],
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري لشظية 4Q385b في سبعة أسطر، مع رابط مستقل لكل سطر وحفظ القراءات البديلة المطبوعة. تختلف الدراسات في هل تمثل نسخة أخرى أم ورقة بديلة من 4Q385؛ تقترح دراسة حديثة أنها قد تكون ورقة استبدال، لذا يسجلها المشروع كشاهد مادي منفصل ولا يدعي أنها تأليف مستقل أو نص كامل. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب البيانات إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأُدرج الأصل العبري وحده. [تفريغ الشظية ورخصتها](https://lexicon.qumran-digital.org/transcriptions/4Q385b/2026-10-06/index.html?v=2026-10-06)؛ [دراسة إعادة البناء وعلاقة 4Q385b](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+  },
+  {
     bookCode: 'Q386', slug: 'heb-qdr-4q386-words-ezekiel-2026',
     nameAr: 'شاهد 4Q386 من أقوال حزقيال', nameEn: '4Q386 Words of Ezekiel Witness', abbreviation: '4Q386-HE',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06',
