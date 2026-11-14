@@ -2083,6 +2083,18 @@ const APOCRYPHON_JOSHUA_WITNESSES = [
     witness: '4Q379', slug: 'heb-qdr-4q379-apocryphon-joshua-b-2026',
     file: 'apocryphon_joshua_4q379_qumran_digital_2026.json', units: 186, groups: 44, words: 1852,
     sha256: 'b29039641f67b9b654cb72b841e8fdc0deb2d3e03ddc3509cfd102d8d733030f'
+  },
+  {
+    witness: '4Q522', slug: 'heb-qdr-4q522-apocryphon-joshua-c-2026',
+    file: 'apocryphon_joshua_4q522_qumran_digital_2026.json', units: 83, groups: 21, words: 950,
+    sha256: '3ca70e012bc01ad094c38b1ea0e15d0281418cb947a2a5b902b6f9e96eae1e5d',
+    scholarlyNote: 'يصفه بعض الباحثين بأنه «نبوءة يشوع» ويربطونه بتقليد 4Q378 و4Q379، لكن عدّ هذه المخطوطات نسخاً من تأليف واحد موضع مراجعة علمية. [دراسة إعادة تقييم أسفار يشوع المعاد صياغتها](https://orion-bibliography.huji.ac.il/node/64219).'
+  },
+  {
+    witness: '5Q9', slug: 'heb-qdr-5q9-apocryphon-joshua-2025',
+    file: 'apocryphon_joshua_5q9_qumran_digital_2025.json', units: 19, groups: 7, words: 177,
+    sha256: 'd764623343b22dd498f0ff868db1bcadab51795933b4c09b27ecc2f18b853edc',
+    scholarlyNote: 'يفهرس أحياناً باسم «تأليف بأسماء مواضع» ويربطه بعض الباحثين بتقليد يشوع؛ ونسبة الشواهد إلى تأليف واحد محل نقاش. [دراسة شواهد يشوع القمرانية](https://orion-bibliography.huji.ac.il/node/64219).'
   }
 ].map((witness) => {
   const url = `https://lexicon.qumran-digital.org/transcriptions/${witness.witness}/2026-10-06/index.html?v=2026-10-06`;
@@ -2097,7 +2109,7 @@ const APOCRYPHON_JOSHUA_WITNESSES = [
     expectedSha256: witness.sha256, expectedUnitCount: witness.units, expectedUnitLocations,
     expectedWordCount: witness.words, maxChapter: witness.groups, incomplete: true,
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: `تفريغ الشاهد العبري القمراني ${witness.witness} من العمل الذي تسميه مراجع حديثة «أبوكريفون يشوع» أو «مزامير يشوع». يحتوي إصدار قمران الرقمي ٢٠٢٦-١٠-٠٦ على ${witness.units} سطراً موزعاً على ${witness.groups} مجموعة شظايا؛ المجموعات ليست فصولاً أصلية، والأسطر تحفظ أرقامها وروابطها كما في المصدر. الشاهد جزئي ولا يمثل العمل كاملاً؛ يبقى مستقلاً عن الشاهد الموازي ${witness.witness === '4Q378' ? '4Q379' : '4Q378'}، ولا تُملأ فجواته. يرخص مشروع قمران الرقمي التفريغ برخصة المشاع الإبداعي النسب بالمثل ٤٫٠ ويعزو مادته إلى مشروع معجم قمران السابق ومارتن أبيغ. لم تثبت ترجمة إنجليزية مأذونة لإعادة النشر، لذلك يحفظ هذا السجل النص العبري وحده. [التفريغ والرخصة](${url})؛ [سجل فهرس المكتبة الوطنية الفرنسية لعناوين الشاهدين](https://catalogue.bnf.fr/ark:/12148/cb16776783j).`
+    notes: `تفريغ الشاهد العبري القمراني ${witness.witness} من تقليد يشوع الذي تسميه مراجع «أبوكريفون يشوع» أو «مزامير يشوع». يحتوي إصدار قمران الرقمي ٢٠٢٦-١٠-٠٦ على ${witness.units} سطراً موزعاً على ${witness.groups} مجموعة شظايا؛ المجموعات ليست فصولاً أصلية، والأسطر تحفظ أرقامها وروابطها كما في المصدر. الشاهد جزئي ولا يمثل العمل كاملاً، ويظل مستقلاً ولا تُملأ فجواته. ${witness.scholarlyNote || 'علاقة المخطوطات الأخرى التي تحمل عناوين قريبة بهوية تأليف واحدة غير محسومة.'} يرخص مشروع قمران الرقمي التفريغ برخصة المشاع الإبداعي النسب بالمثل ٤٫٠ ويعزو مادته إلى مشروع معجم قمران السابق ومارتن أبيغ. لم تثبت ترجمة إنجليزية مأذونة لإعادة النشر، لذلك يحفظ هذا السجل النص العبري وحده. [التفريغ والرخصة](${url})؛ [سجل فهرس المكتبة الوطنية الفرنسية لعناوين الشواهد](https://catalogue.bnf.fr/ark:/12148/cb16776783j).`
   };
 });
 
