@@ -39,6 +39,7 @@ import { ensureSirachGeezImported } from './db/sirach_geez_startup_import.js';
 import { ensureEthiopianEzraWebImported } from './db/ethiopian_ezra_web_startup_import.js';
 import { ensureEthiopicEnochImported } from './db/ethiopic_enoch_startup_import.js';
 import { ensureSamaritanPentateuchImported } from './db/samaritan_pentateuch_startup_import.js';
+import { ensureArmenianHistoryMosesImported } from './db/armenian_history_moses_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -67,6 +68,13 @@ const __dirname = path.dirname(__filename);
 // Initialize DB schema
 initDatabase();
 initBibleSchema();
+try {
+  if (await ensureArmenianHistoryMosesImported()) {
+    console.log('[Bible startup] Imported and verified the 1901 Armenian History of Moses translation.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Armenian History of Moses import failed:', error.message);
+}
 try {
   if (await ensureSamaritanPentateuchImported()) {
     console.log('[Bible startup] Imported and verified the licensed Samaritan Hebrew and English witnesses.');

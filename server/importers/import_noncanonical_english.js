@@ -2395,6 +2395,19 @@ export const ADDITIONAL_SOURCES = [
     notes: 'ترجمة إسحاق غانتويرك ماير (Isaac Gantwerk Mayer) الإنجليزية المنشورة في مشروع السِّدور المفتوح سنة ٢٠١٩؛ يذكر المشروع صراحة أنها مترجمة عن العبرية التي ترجمها جاك فايطلوفيتش (Jacques Faïtlovitch) عن الجعزية، وليست ترجمة إنجليزية مباشرة عن الجعزية. رُتبت فقرات الصفحة في ١٥ وحدة عرض، وأزيل شرح الحواشي من المتن مع إبقاء أرقام الإحالة؛ النص متاح برخصة CC BY-SA 4.0 (المشاع الإبداعي النسب بالمثل ٤٫٠)، ويجب حفظ النسبة والرابط والرخصة وبيان التقسيم. مقدمة طبعة فايطلوفيتش ١٩٠٦ تصف مخطوط الشاهد بأنه غير صحيح وغير كامل؛ لذا حالة هذا الشاهد جزئية ولا تُختلق خاتمة أو مادة مفقودة. [النص والرخصة وبيان سلسلة الترجمة](https://opensiddur.org/readings-and-sourcetexts/readings/jewish-readings/shivah-badar-readings/mota-muse-the-book-of-the-passing-of-mosheh/)؛ [الطبعة الإثيوبية المصورة ١٩٠٦](https://archive.org/details/motamuselamortdemoisejacquesfaitlovitch1906).'
   },
   {
+    bookCode: 'ARMHMO', slug: 'en-armenian-history-moses-1901',
+    nameAr: 'ترجمة إيسافردنس الإنجليزية لتاريخ موسى الأرمني (١٩٠١)',
+    nameEn: 'James Issaverdens English Translation of the Armenian History of Moses (1901)',
+    abbreviation: 'ARMHMO-EN',
+    url: 'https://archive.org/download/cu31924091353445/cu31924091353445.pdf',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/armenian_history_moses_issaverdens_1901.json', import.meta.url),
+    expectedSha256: '59a018ce66f122a0f01604b9899041e0060472d41ce8f08ea3362172dc07a4a0',
+    expectedUnitCount: 11, expectedWordCount: 2187, maxChapter: 1, incomplete: false,
+    language: 'en', originalLanguage: 'الأرمنية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'ترجمة جاك إيسافردنس الإنجليزية عن النص الأرمني في طبعة «الكتابات غير القانونية للعهد القديم في المخطوطات الأرمنية بمكتبة القديس لازاروس»، البندقية، ١٩٠١، الصفحات المطبوعة ١٦٥–١٧٥. يعرّف المترجم الشاهد بأنه رواية أرمنية متأخرة؛ وهي مستقلة عن وصية موسى اللاتينية، كما يوضح مايكل ستون. قُسّم المتن المتصل بحسب الصفحات المطبوعة إلى ١١ وحدة عرض، ولا تمثل الوحدات ١١ إصحاحاً أصلياً. تمتد الترجمة في الشاهد من افتتاحها إلى خاتمتها في الصفحة ١٧٥. طبعة ١٩٠١ وترجمة إيسافردنس (١٨٣٥–١٩٠٢) ضمن الملك العام؛ وهذا سجل كامل لهذا الشاهد المنشور وحده، لا لكل الروايات الأرمنية. [النسخة المصورة](https://archive.org/details/cu31924091353445)؛ [الدراسة التي تميّزها من وصية موسى](https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/armenian-canon-lists-iiithe-lists-of-mechitar-of-ayrivank-c-1285-ce/77C3632514DB0AFFEA810AD6B82F24B8).'
+  },
+  {
     bookCode: 'SHEM', slug: 'en-mingana-book-shem-1917',
     nameAr: 'ترجمة منغانا الإنجليزية لكتاب سام بن نوح عن بداية السنة',
     nameEn: 'Alphonse Mingana English Translation of the Book of Shem, Son of Noah',
