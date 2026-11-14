@@ -1952,6 +1952,67 @@ const GENESIS_APOCRYPHON_TEXT_FILE = new URL('./data/genesis_apocryphon_1q20_qum
 const GENESIS_APOCRYPHON_EXPECTED_LOCATIONS = JSON.parse(readFileSync(GENESIS_APOCRYPHON_TEXT_FILE, 'utf8'))
   .map(({ chapter, verse }) => [chapter, verse]);
 
+const APOCRYPHON_JEREMIAH_C_WITNESSES = [
+  {
+    witness: '4Q385a', bookCode: 'AJC385A', slug: 'heb-qdr-4q385a-apocryphon-jeremiah-c-2026',
+    nameAr: 'شظايا 4Q385a من أبوكريفون إرميا ج', nameEn: 'Qumran Apocryphon of Jeremiah C Witness 4Q385a', abbreviation: '4Q385a-HE',
+    file: 'apocryphon_jeremiah_4q385a_qumran_digital_2026.json', units: 172, words: 1829, groups: 39,
+    sha256: 'efd956efc23975c49325ff739faa12ec51b25c4ac13a4e4e5f9e82e95d112de9'
+  },
+  {
+    witness: '4Q387', bookCode: 'AJC387', slug: 'heb-qdr-4q387-apocryphon-jeremiah-c-2026',
+    nameAr: 'شظايا 4Q387 من أبوكريفون إرميا ج', nameEn: 'Qumran Apocryphon of Jeremiah C Witness 4Q387', abbreviation: '4Q387-HE',
+    file: 'apocryphon_jeremiah_4q387_qumran_digital_2026.json', units: 54, words: 673, groups: 8,
+    sha256: 'bd986bc69b99913eaa553ec9c1ed07809883606f8d9df71bbae2a27169985af7'
+  },
+  {
+    witness: '4Q387a', bookCode: 'AJC387A', slug: 'heb-qdr-4q387a-apocryphon-jeremiah-c-2026',
+    nameAr: 'شظايا 4Q387a من أبوكريفون إرميا ج', nameEn: 'Qumran Apocryphon of Jeremiah C Witness 4Q387a', abbreviation: '4Q387a-HE',
+    file: 'apocryphon_jeremiah_4q387a_qumran_digital_2026.json', units: 32, words: 284, groups: 9,
+    sha256: '8968ecb2f679b96781b8e5da3a066c576ee4345b38f54b268673e3c272bd8232'
+  },
+  {
+    witness: '4Q388a', bookCode: 'AJC388A', slug: 'heb-qdr-4q388a-apocryphon-jeremiah-c-2026',
+    nameAr: 'شظايا 4Q388a من أبوكريفون إرميا ج', nameEn: 'Qumran Apocryphon of Jeremiah C Witness 4Q388a', abbreviation: '4Q388a-HE',
+    file: 'apocryphon_jeremiah_4q388a_qumran_digital_2026.json', units: 67, words: 640, groups: 17,
+    sha256: 'd15885a50452eeacd321b623a3d8acbe892181ac1b55fd457f9f23767c5ea44c'
+  },
+  {
+    witness: '4Q389', bookCode: 'AJC389', slug: 'heb-qdr-4q389-apocryphon-jeremiah-c-2026',
+    nameAr: 'شظايا 4Q389 من أبوكريفون إرميا ج', nameEn: 'Qumran Apocryphon of Jeremiah C Witness 4Q389', abbreviation: '4Q389-HE',
+    file: 'apocryphon_jeremiah_4q389_qumran_digital_2026.json', units: 56, words: 634, groups: 15,
+    sha256: '3151949c5941de05c3adc8f813af26a244c61f029d5076bf79f32d334133d728'
+  },
+  {
+    witness: '4Q390', bookCode: 'AJC390', slug: 'heb-qdr-4q390-apocryphon-jeremiah-c-2026',
+    nameAr: 'الشاهد القمراني 4Q390 المنسوب إلى تقليد إرميا المختلف عليه', nameEn: 'Qumran Jeremiah Tradition Witness 4Q390', abbreviation: '4Q390-HE',
+    file: 'apocryphon_jeremiah_4q390_qumran_digital_2026.json', units: 51, words: 598, groups: 9,
+    sha256: '405ff30f1b09ca9e34d780eb4302daf7897d86a7ced5e6a47db6067511a0d717'
+  }
+].map((witness) => {
+  const url = `https://lexicon.qumran-digital.org/transcriptions/${witness.witness}/2026-10-06/index.html?v=2026-10-06`;
+  const textFile = new URL(`./data/${witness.file}`, import.meta.url);
+  const expectedChapterVerseNumbers = [];
+  for (const unit of JSON.parse(readFileSync(textFile, 'utf8'))) {
+    (expectedChapterVerseNumbers[unit.chapter - 1] ||= []).push(unit.verse);
+  }
+  const scholarlyNote = witness.witness === '4Q390'
+    ? 'تصنيف هذا المخطوط ضمن أبوكريفون إرميا ج مختلف عليه؛ دراسات تضمه إلى المجموعة وأخرى تفصله كنص قريب منها. لذلك لا يدمج هنا مع الشواهد الأخرى ولا يُعرض كعمل مستقل محسوم.'
+    : 'تربط دراسة ديفورا ديمانت هذا المخطوط بأبوكريفون إرميا ج، وتضعه ضمن ستة شواهد قمرانية؛ تبقى الشظايا سجلات مادية منفصلة ولا تثبت وحدها نصاً كاملاً.';
+  return {
+    bookCode: witness.bookCode, slug: witness.slug,
+    nameAr: witness.nameAr,
+    nameEn: witness.nameEn, abbreviation: witness.abbreviation,
+    url, kind: 'reviewed-unit-text-file',
+    textFile,
+    expectedSha256: witness.sha256,
+    expectedUnitCount: witness.units, expectedWordCount: witness.words, maxChapter: witness.groups, incomplete: true,
+    expectedChapterVerseNumbers,
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: `تفريغ عبري مرخص للشاهد القمراني ${witness.witness}: ${witness.units} سطراً عبرانياً في ${witness.groups} مجموعة عرض، مع رقم السطر الأصلي ورابط موضع فريد لكل سطر. هذه المجموعات ليست فصولاً أدبية، والمخطوط شذري؛ حُفظ مستقلاً ولم تُملأ فجواته. ${scholarlyNote} تعلن صفحة قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وتنسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأُدرج الأصل العبري وحده. [التفريغ والرخصة](${url})؛ [دراسة ديمانت عن الشواهد الستة](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [دراسة تناقش موقع 4Q390](https://cris.haifa.ac.il/en/publications/pseudo-ezekiel-and-the-apocryphon-of-jeremiah-c-in-perspective/).`
+  };
+});
+
 export const ADDITIONAL_SOURCES = [
   {
     bookCode: 'GIANTS', slug: 'en-jewishmythology-4q531-2026',
@@ -2379,6 +2440,7 @@ export const ADDITIONAL_SOURCES = [
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
     notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q391: ٢٠٠ سطر في ٧٨ مجموعة شظايا، مع تسمية كل شظية ورقم السطر ورابط موضع المصدر. دراسة أكاديمية تصفه بأنه على الأرجح نسخة من تقليد «أقوال حزقيال» بسبب أسلوب الكتابة، مع أنه لا يشترك في مقاطع موازية مع الشواهد الأخرى؛ لذلك يسجل كشاهد مستقل، لا بوصفه نسخة مطابقة أو فصلاً من 4Q385 أو 4Q386 أو 4Q388. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأُدرج الأصل العبري وحده؛ الشظايا لا تمثل العمل كاملاً. [تفريغ 4Q391 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q391/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن صلته بأقوال حزقيال](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
   },
+  ...APOCRYPHON_JEREMIAH_C_WITNESSES,
   {
     bookCode: 'Q243', slug: 'arc-qdr-4q243-pseudo-daniel-a-2026',
     nameAr: 'شاهد منحول دانيال أ القمراني (4Q243)',

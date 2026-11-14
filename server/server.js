@@ -21,6 +21,7 @@ import { ensureQumranPseudoDanielImported } from './db/qumran_pseudo_daniel_star
 import { ensureQumran4Q521Imported } from './db/qumran_4q521_startup_import.js';
 import { ensureQumran4Q242Imported } from './db/qumran_4q242_startup_import.js';
 import { ensureQumranWordsEzekielImported } from './db/qumran_words_ezekiel_startup_import.js';
+import { ensureQumranApocryphonJeremiahImported } from './db/qumran_apocryphon_jeremiah_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -146,6 +147,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Words of Ezekiel witness import failed:', error.message);
+}
+try {
+  if (await ensureQumranApocryphonJeremiahImported()) {
+    console.log('[Bible startup] Imported six licensed Hebrew Qumran Apocryphon of Jeremiah witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran Apocryphon of Jeremiah import failed:', error.message);
 }
 
 const app = express();
