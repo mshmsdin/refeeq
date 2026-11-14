@@ -59,6 +59,12 @@ test('imports the complete six-chapter Ge\'ez Tegsat witness under its share-ali
     SELECT COUNT(*) AS count FROM bible_book_sources
     WHERE book_code='TAGS' AND language='gez' AND source_type='cc-by-sa-4.0' AND source_url=?
   `).get(TEGSAT_SOURCE.url).count, 1);
+  const bookMetadata = db.prepare(`
+    SELECT source_name, source_url, summary_ar FROM bible_book_metadata WHERE book_code='TAGS'
+  `).get();
+  assert.equal(bookMetadata.source_name, 'بيتا مصاحفت؛ الكتاب المقدس الإثيوبي المطبوع');
+  assert.equal(bookMetadata.source_url, TEGSAT_SOURCE.url);
+  assert.match(bookMetadata.summary_ar, /٦ فصول و١٦١ وحدة/u);
   assert.equal(await ensureTegsatGeezImported(), false);
   assert.equal(db.prepare(`
     SELECT COUNT(*) AS count FROM bible_verses WHERE translation_id=? AND book_code='TAGS'

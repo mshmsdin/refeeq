@@ -5,6 +5,7 @@ import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
 export const TEGSAT_SOURCE = ADDITIONAL_SOURCES.find(({ slug }) => slug === 'gez-betamasaheft-tegsats-2026');
 const SUMMARY = 'تغسات هو القسم الإثيوبي من أمثال ٢٥–٣١. يتاح نص جعزي كامل من طبعة الكتاب المقدس الإثيوبي المطبوع، في ٦ فصول و١٦١ وحدة وفق تقسيم الشاهد؛ كما يتاح تقسيم عربي من فان دايك في ٧ فصول و٢٠٢ عدد. ترقيم النسختين مختلف ومحفوظ كما في كل مصدر.';
+const BOOK_SOURCE_NOTES = 'النص الجعزي من سجل بيتا مصاحفت LIT2396Tagsas، رقمنة نص الكتاب المقدس الإثيوبي المطبوع، مرخص برخصة المشاع الإبداعي النسب بالمثل ٤٫٠. له ٦ فصول و١٦١ وحدة. النص العربي المقابل من تقسيم فان دايك لأمثال ٢٥–٣١ وله ٧ فصول و٢٠٢ عدد؛ لا يُدمج الترقيمان.';
 
 function getState(db) {
   return db.prepare(`
@@ -15,7 +16,10 @@ function getState(db) {
         WHERE bbs.book_code='TAGS' AND bbs.label_ar=? AND bbs.language='gez'
           AND bbs.source_url=? AND bbs.source_type='cc-by-sa-4.0'
       ) AS source_record_ready,
-      (SELECT summary_ar FROM bible_book_metadata WHERE book_code='TAGS') AS summary_ar
+      (SELECT summary_ar FROM bible_book_metadata WHERE book_code='TAGS') AS summary_ar,
+      (SELECT source_name FROM bible_book_metadata WHERE book_code='TAGS') AS book_source_name,
+      (SELECT source_url FROM bible_book_metadata WHERE book_code='TAGS') AS book_source_url,
+      (SELECT source_notes FROM bible_book_metadata WHERE book_code='TAGS') AS book_source_notes
     FROM bible_translations bt
     LEFT JOIN bible_verses bv ON bv.translation_id=bt.id AND bv.book_code='TAGS'
     WHERE bt.slug=? GROUP BY bt.id
@@ -25,7 +29,9 @@ function getState(db) {
 function isReady(state) {
   return state && state.language === 'gez' && state.is_active === 1 && state.site_scope === 'both'
     && state.source_type === 'cc-by-sa-4.0' && state.unit_count === 161 && state.chapter_count === 6
-    && state.source_record_ready === 1 && state.summary_ar === SUMMARY;
+    && state.source_record_ready === 1 && state.summary_ar === SUMMARY
+    && state.book_source_name === 'بيتا مصاحفت؛ الكتاب المقدس الإثيوبي المطبوع'
+    && state.book_source_url === TEGSAT_SOURCE.url && state.book_source_notes === BOOK_SOURCE_NOTES;
 }
 
 async function unitsMatch(db, translationId) {
@@ -46,8 +52,10 @@ export async function ensureTegsatGeezImported() {
 
   await importNoncanonicalSources([TEGSAT_SOURCE.slug], { initializeDatabase: false });
   db.prepare(`
-    UPDATE bible_book_metadata SET summary_ar=?, updated_at=CURRENT_TIMESTAMP WHERE book_code='TAGS'
-  `).run(SUMMARY);
+    UPDATE bible_book_metadata
+    SET summary_ar=?, source_name=?, source_url=?, source_notes=?, updated_at=CURRENT_TIMESTAMP
+    WHERE book_code='TAGS'
+  `).run(SUMMARY, 'بيتا مصاحفت؛ الكتاب المقدس الإثيوبي المطبوع', TEGSAT_SOURCE.url, BOOK_SOURCE_NOTES);
   state = getState(db);
   if (!isReady(state) || !await unitsMatch(db, state.id)) {
     throw new Error('لم يطابق نص تغسات الجعزي كل الوحدات الـ١٦١ وتوثيق مصدره بعد الاستيراد');
