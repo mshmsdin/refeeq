@@ -2150,6 +2150,22 @@ export const ADDITIONAL_SOURCES = [
   ...APOCRYPHON_JEREMIAH_AB_WITNESSES,
   ...APOCRYPHON_JEREMIAH_C_WITNESSES,
   {
+    bookCode: 'ACTJOHN', slug: 'en-james-acts-john-1924',
+    nameAr: 'ترجمة جيمس الإنجليزية لأعمال يوحنا (الأقسام الباقية)',
+    nameEn: 'M. R. James English Acts of John (surviving sections)', abbreviation: 'ACTJOHN-EN',
+    url: 'https://www.earlychristianwritings.com/text/actsjohn.html',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/acts_john_mr_james_1924.json', import.meta.url),
+    expectedSha256: '35c04a0b59ca22e1d6ce41019440bb48d2a5a026d6c5f4541fc2eec2adcaadf8',
+    expectedUnitCount: 96, expectedWordCount: 20781, maxChapter: 1, incomplete: true,
+    expectedVerseNumbers: [
+      ...Array.from({ length: 38 }, (_, index) => index + 18),
+      ...Array.from({ length: 58 }, (_, index) => index + 58)
+    ],
+    language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'ترجمة مونتاغيو رودس جيمس الإنجليزية في The Apocryphal New Testament، أكسفورد، ١٩٢٤، الصفحات ٢٢٨–٢٧٠؛ النسخة الرقمية تتيح الأقسام ١٨–٥٥ و٥٨–١١٥، وعددها ٩٦ وحدة. الأقسام ٥٦ و٥٧ غائبة من النص المنشور هنا، ولا يضم هذا الاستيراد الرواية اليونانية المتأخرة ١–١٧ أو مقدمات الموقع وحواشيه التحريرية. الشواهد اليونانية مجزأة ومتعددة الروايات؛ أُبقي ترقيم الطبعة كما هو، وتبقى حالة العمل جزئية. الترجمة من طبعة ١٩٢٤ للباحث المتوفى سنة ١٩٣٦، ضمن الملك العام ولا تعكس بمفردها اكتمال العمل الأصلي. [النص الرقمي المنسوب إلى طبعة ١٩٢٤](https://www.earlychristianwritings.com/text/actsjohn.html)؛ [فهرس الشواهد والروايات والمراجع](https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/).'
+  },
+  {
     bookCode: 'GIANTS', slug: 'en-jewishmythology-4q531-2026',
     nameAr: 'ترجمة إنجليزية تجريبية لشذرات ٤ق٥٣١ من سفر العمالقة',
     nameEn: 'JewishMythology Beta English Translation of Book of Giants 4Q531 Excerpts',
