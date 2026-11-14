@@ -21,6 +21,13 @@ import { ensure1EsMohammadImported } from './db/1es_mohammad_startup_import.js';
 import { ensureTorahWitnessesImported } from './db/torah_witnesses_startup_import.js';
 import { ensureArabicTranslationsImported } from './db/arabic_translations_startup_import.js';
 import { ensureAncientVersionsImported } from './db/ancient_versions_startup_import.js';
+import { ensureScanBooksImported } from './db/scan_books_startup_import.js';
+import {
+  buildSnippet as buildScanSnippet,
+  decodeWords as decodeScanWords,
+  findHitIndexes as findScanHitIndexes,
+  tokenizeScanQuery
+} from './utils/scan_books.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -144,6 +151,12 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Qumran 4Q246 witness import failed:', error.message);
+}
+try {
+  const importedScans = await ensureScanBooksImported();
+  if (importedScans.length) console.log('[Bible startup] Imported scanned-book text (images stay on archive.org):', importedScans.join(', '));
+} catch (error) {
+  console.error('[Bible startup] Scanned book import failed:', error.message);
 }
 
 const app = express();
@@ -1924,6 +1937,102 @@ app.get('/api/bible/chapters', (req, res) => {
     }
 
     res.json({ success: true, chapters });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// الكتب الممسوحة: النص وإحداثيات الكلمات عندنا، وصور الصفحات من أرشيف الإنترنت.
+// ---------------------------------------------------------------------------
+function getScanBook(slug) {
+  return getDb().prepare(`
+    SELECT id, slug, title_ar, title_en, editor_ar, textual_tradition, archive_identifier, archive_url,
+           image_url_template, page_count, sections_json, notes
+    FROM bible_scan_books
+    WHERE slug=? AND is_active=1 AND (site_scope='both' OR site_scope=?)
+  `).get(String(slug || ''), BIBLE_ONLY ? 'bible' : 'rafeeq');
+}
+
+function publicScanBook(book) {
+  const { id, sections_json, ...rest } = book;
+  return { ...rest, sections: JSON.parse(sections_json || '[]') };
+}
+
+// GET /api/bible/scans
+app.get('/api/bible/scans', (req, res) => {
+  try {
+    const rows = getDb().prepare(`
+      SELECT slug FROM bible_scan_books WHERE is_active=1 AND (site_scope='both' OR site_scope=?) ORDER BY id
+    `).all(BIBLE_ONLY ? 'bible' : 'rafeeq');
+    res.json({ success: true, scans: rows.map(({ slug }) => publicScanBook(getScanBook(slug))) });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// GET /api/bible/scans/:slug
+app.get('/api/bible/scans/:slug', (req, res) => {
+  try {
+    const book = getScanBook(req.params.slug);
+    if (!book) return res.status(404).json({ success: false, error: 'هذا الكتاب الممسوح غير متاح.' });
+    res.json({ success: true, scan: publicScanBook(book) });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// GET /api/bible/scans/:slug/pages/:leaf?q=كلمة  (يرجع كلمات الورقة بإحداثياتها وفهارس المطابقات)
+app.get('/api/bible/scans/:slug/pages/:leaf', (req, res) => {
+  try {
+    const book = getScanBook(req.params.slug);
+    if (!book) return res.status(404).json({ success: false, error: 'هذا الكتاب الممسوح غير متاح.' });
+    const leaf = Number.parseInt(req.params.leaf, 10);
+    if (!Number.isInteger(leaf) || leaf < 0 || leaf >= book.page_count) {
+      return res.status(404).json({ success: false, error: 'رقم الورقة خارج الكتاب.' });
+    }
+    const row = getDb().prepare('SELECT width, height, words_gz FROM bible_scan_pages WHERE book_id=? AND leaf=?').get(book.id, leaf);
+    if (!row) return res.status(404).json({ success: false, error: 'لم يُستورد نص هذه الورقة.' });
+    const words = decodeScanWords(row.words_gz);
+    const q = String(req.query.q || '').slice(0, 200);
+    res.set('Cache-Control', 'public, max-age=86400');
+    res.json({
+      success: true,
+      leaf,
+      width: row.width,
+      height: row.height,
+      pageCount: book.page_count,
+      words,
+      hits: q ? findScanHitIndexes(words, q) : []
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// GET /api/bible/scans/:slug/search?q=عبارة  (بحث داخل نص الكتاب كله)
+app.get('/api/bible/scans/:slug/search', (req, res) => {
+  try {
+    const book = getScanBook(req.params.slug);
+    if (!book) return res.status(404).json({ success: false, error: 'هذا الكتاب الممسوح غير متاح.' });
+    const q = String(req.query.q || '').trim().slice(0, 200);
+    const tokens = tokenizeScanQuery(q);
+    if (!tokens.length) return res.json({ success: true, q, total: 0, results: [] });
+    const rows = getDb().prepare('SELECT leaf, search_text FROM bible_scan_pages WHERE book_id=? ORDER BY leaf').all(book.id);
+    const needle = tokens.join(' ');
+    const matches = [];
+    for (const row of rows) {
+      if (!row.search_text.includes(needle)) continue;
+      matches.push(row.leaf);
+    }
+    const limit = 100;
+    const results = matches.slice(0, limit).map((leaf) => {
+      const page = getDb().prepare('SELECT words_gz FROM bible_scan_pages WHERE book_id=? AND leaf=?').get(book.id, leaf);
+      const words = decodeScanWords(page.words_gz);
+      const hits = findScanHitIndexes(words, q);
+      return { leaf, count: hits.length ? Math.ceil(hits.length / tokens.length) : 0, snippet: buildScanSnippet(words, hits) };
+    }).filter((item) => item.count > 0);
+    res.json({ success: true, q, total: matches.length, results });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }

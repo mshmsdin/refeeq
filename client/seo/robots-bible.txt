@@ -3,6 +3,7 @@ Allow: /bible/
 Allow: /bible/llms.txt
 Allow: /bible/sitemap.xml
 
+Disallow: /bible/scans/*?q=
 Disallow: /bible/api/
 Disallow: /bible/health
 Disallow: /bible/ready

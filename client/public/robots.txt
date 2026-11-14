@@ -9,6 +9,7 @@ Allow: /rafeeq/atheism
 Allow: /rafeeq/llms.txt
 Allow: /rafeeq/sitemap.xml
 
+Disallow: /rafeeq/bible/scans/*?q=
 Disallow: /rafeeq/api/
 Disallow: /rafeeq/health
 Disallow: /rafeeq/ready

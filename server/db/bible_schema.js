@@ -175,6 +175,39 @@ export function initBibleSchema() {
     );
   `);
 
+  // كتب ممسوحة من أرشيف الإنترنت: النص وإحداثيات الكلمات عندنا، وصور الصفحات تبقى على أرشيف الإنترنت.
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS bible_scan_books (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      slug TEXT UNIQUE NOT NULL,
+      title_ar TEXT NOT NULL,
+      title_en TEXT,
+      editor_ar TEXT,
+      textual_tradition TEXT,
+      archive_identifier TEXT NOT NULL,
+      archive_url TEXT NOT NULL,
+      image_url_template TEXT NOT NULL,
+      page_count INTEGER NOT NULL,
+      sections_json TEXT NOT NULL DEFAULT '[]',
+      notes TEXT,
+      site_scope TEXT DEFAULT 'both',
+      is_active INTEGER DEFAULT 1,
+      imported_at DATETIME,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE IF NOT EXISTS bible_scan_pages (
+      book_id INTEGER NOT NULL,
+      leaf INTEGER NOT NULL,
+      width INTEGER NOT NULL,
+      height INTEGER NOT NULL,
+      search_text TEXT NOT NULL,
+      words_gz BLOB NOT NULL,
+      PRIMARY KEY (book_id, leaf),
+      FOREIGN KEY (book_id) REFERENCES bible_scan_books(id) ON DELETE CASCADE
+    );
+  `);
+
   // Migrate databases created before the scholarly catalog was added.
   _ensureColumn(db, 'bible_translations', 'site_scope', "TEXT DEFAULT 'both'");
   _ensureColumn(db, 'bible_collections', 'site_scope', "TEXT DEFAULT 'both'");

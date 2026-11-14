@@ -20,6 +20,21 @@ export const SLUG_TO_SECT = {
 const APP_BASE = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
 const BIBLE_ONLY = import.meta.env.VITE_BIBLE_ONLY === 'true';
 
+// مسار الكتب الممسوحة: /scans/:slug/:page?q=عبارة (الصفحة تبدأ من ١).
+const SCAN_ROUTE = 'scans';
+
+function parseScanParts(parts) {
+  if (!parts[0]) return null;
+  const page = Number.parseInt(parts[1], 10);
+  let slug = parts[0];
+  try { slug = decodeURIComponent(slug); } catch { /* يبقى كما هو */ }
+  return {
+    slug,
+    page: Number.isInteger(page) && page > 0 ? page : null,
+    query: new URLSearchParams(window.location.search).get('q') || ''
+  };
+}
+
 function withAppBase(path) {
   const normalized = path.startsWith('/') ? path : `/${path}`;
   return `${APP_BASE}${normalized}` || '/';
@@ -56,6 +71,9 @@ export function parseCurrentRoute() {
 
   if (BIBLE_ONLY) {
     const bibleParts = fullPath === 'bible' ? [] : fullPath.split('/').filter(Boolean);
+    if (bibleParts[0] === SCAN_ROUTE) {
+      return { page: 'bible', bibleScan: parseScanParts(bibleParts.slice(1)), sect: 'all', folderId: null, docId: null, articleId: null, videoId: null };
+    }
     return {
       page: 'bible',
       bibleBook: bibleParts[0] || null,
@@ -79,6 +97,9 @@ export function parseCurrentRoute() {
   }
 
   // Bible routes
+  if (parts[0] === 'bible' && parts[1] === SCAN_ROUTE) {
+    return { page: 'bible', bibleScan: parseScanParts(parts.slice(2)), sect: 'all', folderId: null, docId: null, articleId: null, videoId: null };
+  }
   if (parts[0] === 'bible') {
     return {
       page: 'bible',
@@ -124,6 +145,20 @@ export function buildBibleUrl({ book, chapter, verse } = {}) {
   if (!chapter) return withAppBase(`${routePrefix}/${book}`);
   if (!verse) return withAppBase(`${routePrefix}/${book}/${chapter}`);
   return withAppBase(`${routePrefix}/${book}/${chapter}/${verse}`);
+}
+
+export function buildScanUrl({ slug, page, query } = {}) {
+  const routePrefix = BIBLE_ONLY ? '' : '/bible';
+  const base = `${routePrefix}/${SCAN_ROUTE}/${encodeURIComponent(slug)}${page ? `/${page}` : ''}`;
+  const url = withAppBase(base);
+  return query ? `${url}?q=${encodeURIComponent(query)}` : url;
+}
+
+export function pushScanUrl(params) {
+  const newUrl = buildScanUrl(params);
+  if (`${window.location.pathname}${window.location.search}` !== newUrl) {
+    window.history.pushState(null, '', newUrl);
+  }
 }
 
 /**

@@ -10,7 +10,8 @@ import {
   BookMarked, CheckSquare, Square, Info, Award, Scroll, Bookmark,
   CheckCircle2, XCircle, Landmark, FileText
 } from 'lucide-react';
-import { parseCurrentRoute, pushBibleUrl } from '../utils/urlRoutes';
+import { parseCurrentRoute, pushBibleUrl, pushScanUrl } from '../utils/urlRoutes';
+import ScanBookViewer from './ScanBookViewer';
 import {
   useTranslations, useCollections, useBooks, useChapter, useVerse, useBibleSearch
 } from '../utils/useBible';
@@ -801,6 +802,7 @@ function ChapterReader({
   onOpenVerseModal,
   onOpenCollection,
   onNavigateChapter,
+  onOpenScan,
   translations
 }) {
   const isCompareMode = selectedTranslations.length >= 2;
@@ -1039,6 +1041,8 @@ function ChapterReader({
             )}
           </div>
         )}
+
+        {/^SAM-/.test(book) && <ScanBookLinks bookCode={book} textualTradition="sam" onOpenScan={onOpenScan} />}
 
         {/* Translation Selector Chips */}
         <div className="mt-3 pt-2.5 border-t border-[#ddcfb8]/60 dark:border-slate-800">
@@ -1822,7 +1826,60 @@ function BibleLanding({
 // ─────────────────────────────────────────────────────────
 //  Collection View
 // ─────────────────────────────────────────────────────────
-function CollectionView({ collectionSlug, onOpenChapter, onBack }) {
+// ─────────────────────────────────────────────────────────
+//  الكتب الممسوحة (صور من أرشيف الإنترنت + نص عندنا)
+// ─────────────────────────────────────────────────────────
+let scanBooksPromise = null;
+function useScanBooks() {
+  const [scans, setScans] = useState([]);
+  useEffect(() => {
+    let cancelled = false;
+    if (!scanBooksPromise) {
+      scanBooksPromise = fetch('/api/bible/scans').then(r => r.json()).catch(() => ({ success: false }));
+    }
+    scanBooksPromise.then(d => { if (!cancelled && d.success) setScans(d.scans); });
+    return () => { cancelled = true; };
+  }, []);
+  return scans;
+}
+
+// بطاقة تفتح الكتاب الممسوح: عند تمرير bookCode (مثل SAM-GEN) تفتح عند السفر المقابل، وبدونه تعرض كل الكتب.
+function ScanBookLinks({ bookCode = null, textualTradition = null, onOpenScan }) {
+  const scans = useScanBooks();
+  const sectionCode = bookCode ? bookCode.replace(/^[A-Z]+-/, '') : null;
+  const items = scans
+    .filter(scan => !textualTradition || scan.textual_tradition === textualTradition)
+    .map(scan => {
+      const section = sectionCode ? scan.sections.find(item => item.code === sectionCode) : null;
+      return { scan, section, page: section ? section.firstLeaf + 1 : 1 };
+    })
+    .filter(item => !sectionCode || item.section);
+  if (!items.length) return null;
+  return (
+    <div className="mt-3 space-y-2" dir="rtl">
+      {items.map(({ scan, section, page }) => (
+        <button
+          key={scan.slug}
+          type="button"
+          onClick={() => onOpenScan(scan.slug, page, '')}
+          className="flex w-full items-center justify-between gap-3 rounded-xl border border-[#b58a43]/40 bg-[#fff8e8] px-3 py-3 text-right transition-colors hover:bg-[#f8ecd0] dark:border-[#c2a578]/30 dark:bg-[#1a2740] dark:hover:bg-[#223253]"
+        >
+          <span>
+            <span className="block text-sm font-black text-[#322010] dark:text-slate-100">
+              {section ? `${section.nameAr} في ` : ''}{scan.title_ar}
+            </span>
+            <span className="block text-xs leading-6 text-[#735535] dark:text-slate-400">
+              {scan.editor_ar ? `تحقيق ${scan.editor_ar} · ` : ''}عرض صفحات الطبعة نفسها مع البحث داخل الكتاب، والنص عربي سامري
+            </span>
+          </span>
+          <ArrowLeft className="h-4 w-4 shrink-0 text-[#8d6e47]" />
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function CollectionView({ collectionSlug, onOpenChapter, onOpenScan, onBack }) {
   const cols = useCollections();
   const col = cols.find(c => c.slug === collectionSlug);
 
@@ -1837,6 +1894,7 @@ function CollectionView({ collectionSlug, onOpenChapter, onBack }) {
         </button>
         <h2 className="text-xl font-black text-[#322010] dark:text-slate-100">{col?.name_ar || 'الأقسام'}</h2>
       </div>
+      {collectionSlug === 'textual-traditions' && <ScanBookLinks textualTradition="sam" onOpenScan={onOpenScan} />}
       <BooksGrid collectionSlug={collectionSlug} onOpenChapter={onOpenChapter} />
     </div>
   );
@@ -1845,7 +1903,7 @@ function CollectionView({ collectionSlug, onOpenChapter, onBack }) {
 // ─────────────────────────────────────────────────────────
 //  Book View (Chapter Picker)
 // ─────────────────────────────────────────────────────────
-function BookView({ translation, book, onOpenChapter, onBack }) {
+function BookView({ translation, book, onOpenChapter, onOpenScan, onBack }) {
   const [bookInfo, setBookInfo] = useState(null);
   useEffect(() => {
     fetch(`/api/bible/books/${book}`)
@@ -1874,6 +1932,8 @@ function BookView({ translation, book, onOpenChapter, onBack }) {
       {/* Church Recognition Canon Info Box */}
       <BookCanonInfoBox bookInfo={bookInfo} />
 
+      {/^SAM-/.test(book) && <ScanBookLinks bookCode={book} textualTradition="sam" onOpenScan={onOpenScan} />}
+
       <ChapterPicker translation={translation} book={book} onSelect={ch => onOpenChapter(book, ch)} />
     </div>
   );
@@ -1882,7 +1942,7 @@ function BookView({ translation, book, onOpenChapter, onBack }) {
 // ─────────────────────────────────────────────────────────
 //  Main Bible Section Router
 // ─────────────────────────────────────────────────────────
-export default function BibleSection({ initialBook, initialChapter, initialVerse }) {
+export default function BibleSection({ initialBook, initialChapter, initialVerse, initialScan }) {
   const { translations } = useTranslations();
   const { books } = useBooks();
 
@@ -1911,6 +1971,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
 
   // View state: 'landing' | 'collection' | 'book' | 'chapter' | 'search'
   const [view, setView] = useState(() => {
+    if (initialScan) return 'scan';
     if (initialBook && initialChapter) return 'chapter';
     if (initialBook) return 'book';
     return 'landing';
@@ -1919,6 +1980,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
   const [currentBook, setCurrentBook] = useState(initialBook || null);
   const [currentChapter, setCurrentChapter] = useState(initialChapter || null);
   const [currentCollection, setCurrentCollection] = useState(null);
+  const [currentScan, setCurrentScan] = useState(initialScan || null);
   const [searchQuery, setSearchQuery] = useState('');
 
   // Keep the reader state synchronized with the browser Back/Forward buttons.
@@ -1928,6 +1990,12 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
       const nextBook = route.bibleBook || null;
       const nextChapter = route.bibleChapter || null;
       const nextVerse = route.bibleVerse || null;
+      if (route.bibleScan) {
+        setCurrentScan(route.bibleScan);
+        setIsModalOpen(false);
+        setView('scan');
+        return;
+      }
       setCurrentBook(nextBook);
       setCurrentChapter(nextChapter);
       setCurrentCollection(null);
@@ -2014,7 +2082,9 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
 
   // Update browser URL & Title
   useEffect(() => {
-    if (view === 'landing' || view === 'search' || view === 'collection' || view === 'book') {
+    if (view === 'scan' && currentScan) {
+      pushScanUrl({ slug: currentScan.slug, page: currentScan.page, query: currentScan.query });
+    } else if (view === 'landing' || view === 'search' || view === 'collection' || view === 'book') {
       pushBibleUrl({});
     } else if (view === 'chapter') {
       if (isModalOpen && modalVerse) {
@@ -2033,6 +2103,8 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
         ? `${bookTitle} ${currentChapter}:${modalVerse} - ${titleSuffix}`
         : view === 'chapter'
         ? `${bookTitle} ${currentChapter} - ${titleSuffix}`
+        : view === 'scan' && currentScan
+        ? `صفحات الترجمة العربية للتوراة السامريين${currentScan.page ? ` — صفحة ${currentScan.page}` : ''} - ${titleSuffix}`
         : titleSuffix;
     const summary = currentBookObj?.metadata?.summary_ar || 'موسوعة نصية لتصفح البيبل، قراءة الشواهد، البحث، والمقارنة بين الترجمات والتقاليد النصية.';
     const description = view === 'landing'
@@ -2047,7 +2119,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
       chapter: currentChapter,
       verse: isModalOpen ? modalVerse : null
     });
-  }, [view, currentBook, currentChapter, isModalOpen, modalVerse, books]);
+  }, [view, currentBook, currentChapter, isModalOpen, modalVerse, books, currentScan]);
 
   // Auto-switch selected translations when navigating to a book if current selection is not available for that book
   useEffect(() => {
@@ -2107,6 +2179,13 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
       openChapter(bookCode, ch);
     }
   }, [openChapter]);
+
+  const openScan = useCallback((slug, page, query = '') => {
+    setIsModalOpen(false);
+    setCurrentScan({ slug, page: page || 1, query: query || '' });
+    setView('scan');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   const openCollection = useCallback((slug) => {
     setIsModalOpen(false);
@@ -2268,6 +2347,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
           <CollectionView
             collectionSlug={currentCollection}
             onOpenChapter={openChapter}
+            onOpenScan={openScan}
             onBack={() => setView('landing')}
           />
         )}
@@ -2277,6 +2357,17 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
             translation={primarySlug}
             book={currentBook}
             onOpenChapter={openChapter}
+            onOpenScan={openScan}
+            onBack={() => setView('landing')}
+          />
+        )}
+
+        {view === 'scan' && currentScan && (
+          <ScanBookViewer
+            slug={currentScan.slug}
+            page={currentScan.page}
+            query={currentScan.query}
+            onNavigate={(page, query) => openScan(currentScan.slug, page, query)}
             onBack={() => setView('landing')}
           />
         )}
@@ -2291,6 +2382,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
             onOpenVerseModal={openVerseModal}
             onOpenCollection={openCollection}
             onNavigateChapter={(b, ch) => openChapter(b, ch)}
+            onOpenScan={openScan}
             translations={translations}
           />
         )}

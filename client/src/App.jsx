@@ -573,6 +573,7 @@ export default function App() {
             initialBook={initialRoute.bibleBook}
             initialChapter={initialRoute.bibleChapter}
             initialVerse={initialRoute.bibleVerse}
+            initialScan={initialRoute.bibleScan}
           />
         </main>
       </div>
@@ -632,6 +633,7 @@ export default function App() {
             initialBook={initialRoute.bibleBook}
             initialChapter={initialRoute.bibleChapter}
             initialVerse={initialRoute.bibleVerse}
+            initialScan={initialRoute.bibleScan}
           />
         </>
       ) : (
