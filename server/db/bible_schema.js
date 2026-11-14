@@ -188,13 +188,13 @@ export function initBibleSchema() {
     ['deuterocanon',        'الأسفار القانونية الثانية', 'Deuterocanonical',    'deutero',     3, 'bible'],
     ['apocrypha',           'نصوص أبوكريفية',            'Apocrypha',           'apocrypha',   4, 'bible'],
     ['ethiopian-canon',     'القانون والتقليد الإثيوبي', 'Ethiopian Tradition', 'ethiopian',   5, 'bible'],
-    ['textual-traditions',  'التقاليد النصية الموازية', 'Textual Traditions',  'tradition',   6, 'bible'],
+    ['textual-traditions',  'التقاليد النصية الموازية', 'Textual Traditions',  'tradition',   6, 'both'],
     ['church-writings',     'الكتابات الكنسية القديمة', 'Early Church Writings','church',     7, 'bible'],
     ['pseudepigrapha',      'المنحولات والرؤى القديمة', 'Pseudepigrapha',      'pseudepigrapha',8, 'bible'],
   ];
   for (const c of collections) insertCollection.run(...c);
-  db.prepare("UPDATE bible_collections SET site_scope = 'both' WHERE slug IN ('old-testament','new-testament','apocrypha','pseudepigrapha','ethiopian-canon')").run();
-  db.prepare("UPDATE bible_collections SET site_scope = 'bible' WHERE slug NOT IN ('old-testament','new-testament','apocrypha','pseudepigrapha','ethiopian-canon')").run();
+  db.prepare("UPDATE bible_collections SET site_scope = 'both' WHERE slug IN ('old-testament','new-testament','apocrypha','pseudepigrapha','ethiopian-canon','textual-traditions')").run();
+  db.prepare("UPDATE bible_collections SET site_scope = 'bible' WHERE slug NOT IN ('old-testament','new-testament','apocrypha','pseudepigrapha','ethiopian-canon','textual-traditions')").run();
   db.prepare("UPDATE bible_translations SET site_scope = 'bible' WHERE slug IN ('ar-jesuit-dc','ar-apocrypha')").run();
 
   // Seed books (66 canonical + deuterocanon)
@@ -726,7 +726,10 @@ function _seedExpansionCatalog(db) {
             AND (bt.site_scope = 'both' OR bt.site_scope = 'bible')
         ) THEN 'available' ELSE english_status END,
         updated_at = CURRENT_TIMESTAMP
-    WHERE book_code IN (SELECT bb.code FROM bible_books bb JOIN bible_collections bc ON bc.id = bb.collection_id WHERE bc.site_scope = 'bible')
+    WHERE book_code IN (
+      SELECT bb.code FROM bible_books bb JOIN bible_collections bc ON bc.id = bb.collection_id
+      WHERE bc.site_scope = 'bible' OR bc.slug='textual-traditions'
+    )
   `).run();
 }
 

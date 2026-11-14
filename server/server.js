@@ -37,6 +37,7 @@ import { ensureTegsatGeezImported } from './db/tegsats_geez_startup_import.js';
 import { ensureMeqabyanGeezImported } from './db/meqabyan_geez_startup_import.js';
 import { ensureSirachGeezImported } from './db/sirach_geez_startup_import.js';
 import { ensureEthiopianEzraWebImported } from './db/ethiopian_ezra_web_startup_import.js';
+import { ensureSamaritanPentateuchImported } from './db/samaritan_pentateuch_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -65,6 +66,13 @@ const __dirname = path.dirname(__filename);
 // Initialize DB schema
 initDatabase();
 initBibleSchema();
+try {
+  if (await ensureSamaritanPentateuchImported()) {
+    console.log('[Bible startup] Imported and verified the licensed Samaritan Pentateuch English translation.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Samaritan Pentateuch import failed:', error.message);
+}
 try {
   if (ensure1EsMohammadImported()) console.log('[Bible startup] Imported complete Arabic translation and Greek witness for 1 Esdras.');
 } catch (error) {
