@@ -23,6 +23,7 @@ import { ensureArabicTranslationsImported } from './db/arabic_translations_start
 import { ensureAncientVersionsImported } from './db/ancient_versions_startup_import.js';
 import { ensureJewishSourcesImported } from './db/jewish_sources_startup_import.js';
 import { ensureScanBooksImported } from './db/scan_books_startup_import.js';
+import { buildCanonMatrix } from './utils/bible_canon_matrix.js';
 import {
   buildSnippet as buildScanSnippet,
   decodeWords as decodeScanWords,
@@ -1963,6 +1964,17 @@ function publicScanBook(book) {
   const { id, sections_json, ...rest } = book;
   return { ...rest, sections: JSON.parse(sections_json || '[]') };
 }
+
+// GET /api/bible/canon  (جدول اعتماد الأسفار المنشورة عند التقاليد اليهودية والمسيحية، مع الإحصاء)
+app.get('/api/bible/canon', (req, res) => {
+  try {
+    const matrix = buildCanonMatrix(getBooks(null));
+    res.set('Cache-Control', 'public, max-age=3600');
+    res.json({ success: true, ...matrix });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
 
 // GET /api/bible/scans
 app.get('/api/bible/scans', (req, res) => {

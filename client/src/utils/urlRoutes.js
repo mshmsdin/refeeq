@@ -22,6 +22,8 @@ const BIBLE_ONLY = import.meta.env.VITE_BIBLE_ONLY === 'true';
 
 // مسار الكتب الممسوحة: /scans/:slug/:page?q=عبارة (الصفحة تبدأ من ١).
 const SCAN_ROUTE = 'scans';
+// صفحة جدول اعتماد الأسفار: /canon (النسخة المستقلة) أو /bible/canon.
+const CANON_ROUTE = 'canon';
 
 function parseScanParts(parts) {
   if (!parts[0]) return null;
@@ -71,6 +73,9 @@ export function parseCurrentRoute() {
 
   if (BIBLE_ONLY) {
     const bibleParts = fullPath === 'bible' ? [] : fullPath.split('/').filter(Boolean);
+    if (bibleParts[0] === CANON_ROUTE) {
+      return { page: 'bible', bibleCanon: true, sect: 'all', folderId: null, docId: null, articleId: null, videoId: null };
+    }
     if (bibleParts[0] === SCAN_ROUTE) {
       return { page: 'bible', bibleScan: parseScanParts(bibleParts.slice(1)), sect: 'all', folderId: null, docId: null, articleId: null, videoId: null };
     }
@@ -97,6 +102,9 @@ export function parseCurrentRoute() {
   }
 
   // Bible routes
+  if (parts[0] === 'bible' && parts[1] === CANON_ROUTE) {
+    return { page: 'bible', bibleCanon: true, sect: 'all', folderId: null, docId: null, articleId: null, videoId: null };
+  }
   if (parts[0] === 'bible' && parts[1] === SCAN_ROUTE) {
     return { page: 'bible', bibleScan: parseScanParts(parts.slice(2)), sect: 'all', folderId: null, docId: null, articleId: null, videoId: null };
   }
@@ -152,6 +160,17 @@ export function buildScanUrl({ slug, page, query } = {}) {
   const base = `${routePrefix}/${SCAN_ROUTE}/${encodeURIComponent(slug)}${page ? `/${page}` : ''}`;
   const url = withAppBase(base);
   return query ? `${url}?q=${encodeURIComponent(query)}` : url;
+}
+
+export function buildCanonUrl() {
+  return withAppBase(`${BIBLE_ONLY ? '' : '/bible'}/${CANON_ROUTE}`);
+}
+
+export function pushCanonUrl() {
+  const newUrl = buildCanonUrl();
+  if (window.location.pathname !== newUrl) {
+    window.history.pushState(null, '', newUrl);
+  }
 }
 
 export function pushScanUrl(params) {

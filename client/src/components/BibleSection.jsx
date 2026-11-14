@@ -10,8 +10,9 @@ import {
   BookMarked, CheckSquare, Square, Info, Award, Scroll, Bookmark,
   CheckCircle2, XCircle, Landmark, FileText
 } from 'lucide-react';
-import { parseCurrentRoute, pushBibleUrl, pushScanUrl } from '../utils/urlRoutes';
+import { parseCurrentRoute, pushBibleUrl, pushCanonUrl, pushScanUrl } from '../utils/urlRoutes';
 import ScanBookViewer from './ScanBookViewer';
+import CanonTable from './CanonTable';
 import {
   useTranslations, useCollections, useBooks, useChapter, useVerse, useBibleSearch
 } from '../utils/useBible';
@@ -1713,7 +1714,8 @@ function BibleLanding({
   onSearch,
   onQuickNavigate,
   onOpenChapter,
-  onOpenCollection
+  onOpenCollection,
+  onOpenCanon
 }) {
   const collections = useCollections();
 
@@ -1757,6 +1759,19 @@ function BibleLanding({
 
       {/* Fast Selector / Quick Jumper */}
       <QuickNavigator books={books} onNavigate={onQuickNavigate} />
+
+      {/* جدول اعتماد الأسفار */}
+      <button
+        type="button"
+        onClick={onOpenCanon}
+        className="flex w-full items-center justify-between gap-3 rounded-2xl border border-[#b58a43]/40 bg-[#fff8e8] px-4 py-3 text-right transition-colors hover:bg-[#f8ecd0] dark:border-[#c2a578]/30 dark:bg-[#1a2740] dark:hover:bg-[#223253]"
+      >
+        <span>
+          <span className="block text-sm font-black text-[#322010] dark:text-slate-100">جدول اعتماد الأسفار</span>
+          <span className="block text-xs leading-6 text-[#735535] dark:text-slate-400">من يعتمد كل سفر منشور عندنا: الطوائف اليهودية والكنائس المسيحية، مع الإحصاء والمصادر ودرجة الثقة.</span>
+        </span>
+        <ArrowLeft className="h-4 w-4 shrink-0 text-[#8d6e47]" />
+      </button>
 
       {/* Sections / Canons Grid */}
       {collections.length > 0 && (
@@ -1942,7 +1957,7 @@ function BookView({ translation, book, onOpenChapter, onOpenScan, onBack }) {
 // ─────────────────────────────────────────────────────────
 //  Main Bible Section Router
 // ─────────────────────────────────────────────────────────
-export default function BibleSection({ initialBook, initialChapter, initialVerse, initialScan }) {
+export default function BibleSection({ initialBook, initialChapter, initialVerse, initialScan, initialCanon }) {
   const { translations } = useTranslations();
   const { books } = useBooks();
 
@@ -1971,6 +1986,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
 
   // View state: 'landing' | 'collection' | 'book' | 'chapter' | 'search'
   const [view, setView] = useState(() => {
+    if (initialCanon) return 'canon';
     if (initialScan) return 'scan';
     if (initialBook && initialChapter) return 'chapter';
     if (initialBook) return 'book';
@@ -1990,6 +2006,11 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
       const nextBook = route.bibleBook || null;
       const nextChapter = route.bibleChapter || null;
       const nextVerse = route.bibleVerse || null;
+      if (route.bibleCanon) {
+        setIsModalOpen(false);
+        setView('canon');
+        return;
+      }
       if (route.bibleScan) {
         setCurrentScan(route.bibleScan);
         setIsModalOpen(false);
@@ -2082,7 +2103,9 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
 
   // Update browser URL & Title
   useEffect(() => {
-    if (view === 'scan' && currentScan) {
+    if (view === 'canon') {
+      pushCanonUrl();
+    } else if (view === 'scan' && currentScan) {
       pushScanUrl({ slug: currentScan.slug, page: currentScan.page, query: currentScan.query });
     } else if (view === 'landing' || view === 'search' || view === 'collection' || view === 'book') {
       pushBibleUrl({});
@@ -2103,12 +2126,16 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
         ? `${bookTitle} ${currentChapter}:${modalVerse} - ${titleSuffix}`
         : view === 'chapter'
         ? `${bookTitle} ${currentChapter} - ${titleSuffix}`
+        : view === 'canon'
+        ? `جدول اعتماد الأسفار عند اليهود والنصارى - ${titleSuffix}`
         : view === 'scan' && currentScan
         ? `صفحات الترجمة العربية للتوراة السامريين${currentScan.page ? ` — صفحة ${currentScan.page}` : ''} - ${titleSuffix}`
         : titleSuffix;
     const summary = currentBookObj?.metadata?.summary_ar || 'موسوعة نصية لتصفح البيبل، قراءة الشواهد، البحث، والمقارنة بين الترجمات والتقاليد النصية.';
     const description = view === 'landing'
       ? 'البيبل باللغة العربية: تصفح الأسفار والأصحاحات والأعداد، وابحث وقارن الترجمات مع توثيق المرجع.'
+      : view === 'canon'
+      ? 'جدول اعتماد كل الأسفار المنشورة: من يعتمد كل سفر من الطوائف اليهودية والكنائس المسيحية، مع الإحصاء والمصادر ودرجة الثقة.'
       : `${bookTitle || 'البيبل'}${currentChapter ? ` — الإصحاح ${currentChapter}` : ''}: ${summary}`;
     updateBibleSeo({
       title: pageTitle,
@@ -2179,6 +2206,20 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
       openChapter(bookCode, ch);
     }
   }, [openChapter]);
+
+  const openCanon = useCallback(() => {
+    setIsModalOpen(false);
+    setView('canon');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  const openBook = useCallback((code) => {
+    setIsModalOpen(false);
+    setCurrentBook(code);
+    setCurrentChapter(null);
+    setView('book');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   const openScan = useCallback((slug, page, query = '') => {
     setIsModalOpen(false);
@@ -2309,6 +2350,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
             onQuickNavigate={handleQuickNavigate}
             onOpenChapter={openChapter}
             onOpenCollection={openCollection}
+            onOpenCanon={openCanon}
           />
         )}
 
@@ -2360,6 +2402,10 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
             onOpenScan={openScan}
             onBack={() => setView('landing')}
           />
+        )}
+
+        {view === 'canon' && (
+          <CanonTable onBack={() => setView('landing')} onOpenBook={openBook} />
         )}
 
         {view === 'scan' && currentScan && (
