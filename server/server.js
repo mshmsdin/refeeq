@@ -36,6 +36,7 @@ import { ensureApocryphonMosesImported } from './db/qumran_apocryphon_moses_star
 import { ensureTegsatGeezImported } from './db/tegsats_geez_startup_import.js';
 import { ensureMeqabyanGeezImported } from './db/meqabyan_geez_startup_import.js';
 import { ensureSirachGeezImported } from './db/sirach_geez_startup_import.js';
+import { ensureEthiopianEzraWebImported } from './db/ethiopian_ezra_web_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -95,6 +96,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Ge\'ez Sirach import failed:', error.message);
+}
+try {
+  if (await ensureEthiopianEzraWebImported()) {
+    console.log('[Bible startup] Repaired the complete public-domain English witness for Ethiopian Ezra Sutuel.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Ethiopian Ezra Sutuel witness import failed:', error.message);
 }
 try {
   if (await ensureActsJohnImported()) {
