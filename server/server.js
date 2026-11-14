@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 import AdmZip from 'adm-zip';
 import { initDatabase, getDb, closeDb, getDbPath } from './db/schema.js';
 import { initBibleSchema } from './db/bible_schema.js';
+import { ensureEarlyChristianFragmentPagesImported } from './db/earlychristian_fragment_startup_import.js';
 import { ensureMotaMuseImported } from './db/mota_muse_startup_import.js';
 import { ensureGiantsImported } from './db/giants_startup_import.js';
 import { ensureAramaicLeviQumranImported } from './db/aramaic_levi_startup_import.js';
@@ -51,6 +52,13 @@ const __dirname = path.dirname(__filename);
 // Initialize DB schema
 initDatabase();
 initBibleSchema();
+try {
+  if (await ensureEarlyChristianFragmentPagesImported()) {
+    console.log('[Bible startup] Reimported five early Christian pages without site styles or ads.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Early Christian page cleanup import failed:', error.message);
+}
 try {
   if (await ensureMotaMuseImported()) {
     console.log('[Bible startup] Imported both Mota Muse witnesses from reviewed local files.');
