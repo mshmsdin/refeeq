@@ -18,17 +18,26 @@ after(() => {
   for (const suffix of ['', '-wal', '-shm']) rmSync(testDbPath + suffix, { force: true });
 });
 
-test('imports the three Ethiopic Maccabees Arabic translations with exact unit counts', () => {
-  assert.deepEqual(ensureArabicTranslationsImported(), ['1MCE', '2MCE', '3MCE']);
-  const rows = getDb().prepare(`
-    SELECT bv.book_code, COUNT(*) AS units FROM bible_verses bv
+test('imports the Arabic translations with exact unit counts and honest labels', () => {
+  const imported = ensureArabicTranslationsImported();
+  assert.equal(imported.length, 18);
+  for (const code of ['1MCE', '2MCE', '3MCE', 'ONK-GEN', 'TJ-GEN', 'SAAD-GEN', 'ONK-DEU', 'TJ-DEU', 'SAAD-DEU']) {
+    assert.ok(imported.includes(code), code);
+  }
+  const db = getDb();
+  const totals = db.prepare(`
+    SELECT bt.slug, bt.name_ar, bt.source_type, COUNT(*) AS units FROM bible_verses bv
     JOIN bible_translations bt ON bt.id=bv.translation_id
-    WHERE bt.slug LIKE 'ar-mohammad-%mce' GROUP BY bv.book_code ORDER BY bv.book_code
+    WHERE bt.language='ar' AND (bt.slug LIKE 'ar-mohammad-%' OR bt.slug LIKE 'ar-machine-%')
+    GROUP BY bt.slug ORDER BY bt.slug
   `).all();
-  assert.deepEqual(rows, [
-    { book_code: '1MCE', units: 240 }, { book_code: '2MCE', units: 421 }, { book_code: '3MCE', units: 208 }
+  assert.deepEqual(totals, [
+    { slug: 'ar-machine-saadia-script', name_ar: 'ترجمة آلية', source_type: 'machine-transliteration', units: 5846 },
+    { slug: 'ar-machine-targum-onkelos', name_ar: 'ترجمة آلية', source_type: 'machine-translation', units: 5846 },
+    { slug: 'ar-mohammad-1mce', name_ar: 'ترجمة محمد بن شمس الدين', source_type: 'machine-assisted-translation', units: 240 },
+    { slug: 'ar-mohammad-2mce', name_ar: 'ترجمة محمد بن شمس الدين', source_type: 'machine-assisted-translation', units: 421 },
+    { slug: 'ar-mohammad-3mce', name_ar: 'ترجمة محمد بن شمس الدين', source_type: 'machine-assisted-translation', units: 208 },
+    { slug: 'ar-mohammad-targum-pseudo-jonathan', name_ar: 'ترجمة محمد بن شمس الدين', source_type: 'machine-assisted-translation', units: 5761 }
   ]);
-  const names = getDb().prepare("SELECT DISTINCT name_ar, source_type FROM bible_translations WHERE slug LIKE 'ar-mohammad-%mce'").all();
-  assert.deepEqual(names, [{ name_ar: 'ترجمة محمد بن شمس الدين', source_type: 'machine-assisted-translation' }]);
   assert.deepEqual(ensureArabicTranslationsImported(), []);
 });

@@ -20,6 +20,7 @@ import { ensureQumran4Q246Imported } from './db/qumran_4q246_startup_import.js';
 import { ensure1EsMohammadImported } from './db/1es_mohammad_startup_import.js';
 import { ensureTorahWitnessesImported } from './db/torah_witnesses_startup_import.js';
 import { ensureArabicTranslationsImported } from './db/arabic_translations_startup_import.js';
+import { ensureAncientVersionsImported } from './db/ancient_versions_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -96,6 +97,12 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Noah Qumran import failed:', error.message);
+}
+try {
+  const importedVersions = ensureAncientVersionsImported();
+  if (importedVersions.length) console.log('[Bible startup] Imported ancient versions:', importedVersions.join(', '));
+} catch (error) {
+  console.error('[Bible startup] Ancient versions import failed:', error.message);
 }
 try {
   const importedArabic = ensureArabicTranslationsImported();
