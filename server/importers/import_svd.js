@@ -16,6 +16,7 @@ import AdmZip from 'adm-zip';
 import { initDatabase, getDb } from '../db/schema.js';
 import { initBibleSchema } from '../db/bible_schema.js';
 import { normalizeArabicText } from '../utils/arabic_nlp.js';
+import { parseChapterFile } from './svd_chapter_parser.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CACHE_DIR = path.join(__dirname, '..', 'cache');
@@ -45,47 +46,7 @@ function download(url, dest) {
   });
 }
 
-/**
- * Parse a ReadAloud chapter file.
- * Format:
- *   Line 0: Chapter title (e.g. "اَلتَّكْوِينُ.")
- *   Line 1: "1." (marks start of verse 1)
- *   Lines 2+: One Arabic verse text per line, sequentially
- *   Occasionally a line like "3." resets verse counter (rare multi-start)
- */
-function parseChapterFile(content) {
-  content = content.replace(/^\uFEFF/, '');
-  const lines = content.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
-
-  const verses = [];
-  let verseNum = 0;
-  let started = false;
-
-  for (const line of lines) {
-    // Pure verse number marker: "N."
-    const numMarker = line.match(/^(\d+)\.$/)
-    if (numMarker) {
-      verseNum = parseInt(numMarker[1]);
-      started = true;
-      continue;
-    }
-
-    // Skip chapter title (first non-empty line before "1.")
-    if (!started) continue;
-
-    // Skip lines that are just punctuation or too short
-    if (line.length < 3) continue;
-
-    // Must contain Arabic
-    if (!/[\u0600-\u06FF]/.test(line)) continue;
-
-    verses.push({ verse: verseNum, text: line });
-    verseNum++;
-  }
-
-  return verses;
-}
-
+// قراءة الملف في svd_chapter_parser.js: سطر "N." هو رقم الفصل لا رقم العدد.
 
 async function run() {
   initDatabase();
@@ -122,7 +83,13 @@ async function run() {
     ON CONFLICT(translation_id, book_code, chapter, verse)
     DO UPDATE SET text=excluded.text, search_text=excluded.search_text, imported_at=CURRENT_TIMESTAMP
   `);
-  const insertMany = db.transaction((rows) => { for (const r of rows) insertVerse.run(...r); });
+  // يُحذف الفصل القديم كله قبل إدخاله: الاستيراد القديم كان يرقّم أعداده خطأً،
+  // وإعادة الكتابة فوق الأرقام الجديدة وحدها كانت ستترك أعداداً قديمة زائدة.
+  const deleteChapter = db.prepare('DELETE FROM bible_verses WHERE translation_id = ? AND book_code = ? AND chapter = ?');
+  const insertMany = db.transaction((rows) => {
+    if (rows.length) deleteChapter.run(rows[0][0], rows[0][1], rows[0][2]);
+    for (const r of rows) insertVerse.run(...r);
+  });
 
   // Get valid book codes from DB
   const validBooks = new Set(db.prepare('SELECT code FROM bible_books').all().map(r => r.code));
