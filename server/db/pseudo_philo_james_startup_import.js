@@ -5,12 +5,13 @@ import { parseReviewedChapterText } from '../importers/reviewed_text_source.js';
 
 const BOOK_CODE = 'PSLAB';
 const SLUG = 'en-james-biblical-antiquities';
+const SUMMARY_AR = 'ترجمة جيمس الإنجليزية عن اللاتينية (١٩١٧): الفصول المرقمة ١–٦٥ متاحة، ومنها ٤٣ و٤٧؛ وتبقى حالة النص جزئية بسبب فجوات موثقة وخاتمة مفقودة.';
 
 function getSourceState(db, definition) {
   return db.prepare(`
     SELECT bt.id, bt.language, bt.is_active, bt.site_scope, bt.source_type,
       COUNT(bv.id) AS unit_count, COUNT(DISTINCT bv.chapter) AS chapter_count,
-      bbm.text_status, bbm.source_notes,
+      bbm.text_status, bbm.summary_ar, bbm.source_notes,
       EXISTS (
         SELECT 1 FROM bible_book_sources bbs
         WHERE bbs.book_code=? AND bbs.label_ar=? AND bbs.language=? AND bbs.source_url=?
@@ -29,6 +30,7 @@ function sourceIsReady(state, definition) {
   return state && state.language === 'en' && state.is_active === 1 && state.site_scope === 'both'
     && state.source_type === 'public-domain-text' && state.unit_count === 65
     && state.chapter_count === 65 && state.text_status === 'partial'
+    && state.summary_ar === SUMMARY_AR
     && state.source_notes === definition.notes && state.source_record_ready === 1;
 }
 
@@ -50,6 +52,8 @@ export async function ensurePseudoPhiloJamesImported() {
   if (sourceIsReady(current, definition) && await sourceUnitsMatch(db, current.id, definition)) return false;
 
   await importNoncanonicalSources([SLUG], { initializeDatabase: false });
+  db.prepare('UPDATE bible_book_metadata SET summary_ar=?, updated_at=CURRENT_TIMESTAMP WHERE book_code=?')
+    .run(SUMMARY_AR, BOOK_CODE);
   const imported = getSourceState(db, definition);
   if (!sourceIsReady(imported, definition) || !await sourceUnitsMatch(db, imported.id, definition)) {
     throw new Error('تعذر تثبيت فصول الآثار الكتابية لفيلو ومطابقتها مع المصدر المراجع');
