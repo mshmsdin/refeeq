@@ -1,0 +1,17 @@
+{
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "request_id": "ae911dc3-2ad8-4f89-b8d9-4370d1d452ef",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"text\":\"And he said to them, Do not fear, neither be alarmed, for all our enemies will be delivered into our hands, and you may do with them as you please.\",\"source_ref\":\"7:36\",\"verse\":36,\"chapter\":7},{\"text\":\"And all the men that went were about five hundred, and they fought against their enemies, and they destroyed them, and subdued them, and Nimrod placed standing officers over them in their respective places.\",\"source_ref\":\"7:37\",\"verse\":37,\"chapter\":7},{\"text\":\"And he took some of their children as security, and they were all servants to Nimrod and to his brethren, and Nimrod and all the people that were with him turned homeward.\",\"source_ref\":\"7:38\",\"verse\":38,\"chapter\":7},{\"text\":\"And when Nimrod had joyfully returned from battle, after having conquered his enemies, all his brethren, together with those who knew him before, assembled to make him king over them, and they placed the regal crown upon his head.\",\"source_ref\":\"7:39\",\"verse\":39,\"chapter\":7},{\"text\":\"And he set over his subjects and people, princes, judges, and rulers, as is the custom amongst kings.\",\"source_ref\":\"7:40\",\"verse\":40,\"chapter\":7}]}"
+    }
+  ]
+}

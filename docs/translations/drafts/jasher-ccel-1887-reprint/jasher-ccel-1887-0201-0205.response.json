@@ -1,0 +1,51 @@
+{
+  "request_id": "4d940e1f-2c43-442f-901a-36b2a834c49f",
+  "content": "{\n  \"book_code\": \"JASHER\",\n  \"verses\": [\n    {\n      \"chapter\": 6,\n      \"verse\": 33,\n      \"source_ref\": \"6:33\",\n      \"text_ar\": \"مرَّ ريحٌ فوق الأرض، فهدأت المياه واستراح الفلك.\"\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 34,\n      \"source_ref\": \"6:34\",\n      \"text_ar\": \"توقفت نوافير العمق ونوافذ السماء، وتكُدت الأمطار من السماء.\"\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 35,\n      \"source_ref\": \"6:35\",\n      \"text_ar\": \"نقصت المياه في تلك الأيام، واستراح الفلك على جبال أُرارط.\"\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 36,\n      \"source_ref\": \"6:36\",\n      \"text_ar\": \"فتح نوح حينئذٍ نوافذ الفلك، وما زال نوح يرفع صوته إلى الرب في ذلك الوقت وقال: يا رب، الذي خلق الأرض والسموات وكل ما فيها، أخرج أرواحنا من هذا السجن، ومن الحبس الذي وضعتنا فيه، فإنني أتعبتُ كثيرًا من التنهد.\"\n    },\n    {\n      \"chapter\": 6,\n      \"verse\": 37,\n      \"source_ref\": \"6:37\",\n      \"text_ar\": \"فاستمع الرب لصوت نوح، فقال له: عندما تُكمل سنةً كاملةً فحينئذٍ اخرج.\"\n    }\n  ]\n}",
+  "usage": {
+    "input": 522,
+    "output": 676,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "estimatedCost": 0,
+  "estimatedCostCurrency": "USD",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 522,
+      "outputTokens": 676,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1793
+    }
+  ]
+}

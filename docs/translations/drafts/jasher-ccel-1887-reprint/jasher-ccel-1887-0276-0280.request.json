@@ -1,0 +1,17 @@
+{
+  "service_key": "bible-translation",
+  "messages": [
+    {
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"source_ref\":\"8:15\",\"chapter\":8,\"text\":\"And the king said to Terah, I have been told that a son was yesternight born to thee, and after this manner was observed in the heavens at his birth.\",\"verse\":15},{\"source_ref\":\"8:16\",\"chapter\":8,\"text\":\"And now therefore give me the child, that we may slay him before his evil springs up against us, and I will give thee for his value, thy house full of silver and gold.\",\"verse\":16},{\"source_ref\":\"8:17\",\"chapter\":8,\"text\":\"And Terah answered the king and said to him: My Lord and king, I have heard thy words, and thy servant shall do all that his king desireth.\",\"verse\":17},{\"source_ref\":\"8:18\",\"chapter\":8,\"text\":\"But my lord and king, I will tell thee what happened to me yesternight, that I may see what advice the king will give his servant, and then I will answer the king upon what he has just spoken; and the king said, Speak.\",\"verse\":18},{\"source_ref\":\"8:19\",\"chapter\":8,\"text\":\"And Terah said to the king, Ayon, son of Mored, came to me yesternight, saying,\",\"verse\":19}]}",
+      "role": "user"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "3309330a-9c20-451d-abff-e67a01bc6c0a",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "tenant_id": "rafeeq-bible-translation"
+}

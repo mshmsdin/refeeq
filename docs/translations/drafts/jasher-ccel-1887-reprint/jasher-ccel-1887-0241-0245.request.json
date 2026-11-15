@@ -1,0 +1,17 @@
+{
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "request_id": "bbe4b4d4-2779-4f1e-9a29-af322246b6b4",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"text\":\"And Nimrod strengthened himself, and he rose up from amongst his brethren, and he fought the battles of his brethren against all their enemies round about.\",\"source_ref\":\"7:31\",\"verse\":31,\"chapter\":7},{\"text\":\"And the Lord delivered all the enemies of his brethren in his hands, and God prospered him from time to time in his battles, and he reigned upon earth.\",\"source_ref\":\"7:32\",\"verse\":32,\"chapter\":7},{\"text\":\"Therefore it became current in those days, when a man ushered forth those that he had trained up for battle, he would say to them, Like God did to Nimrod, who was a mighty hunter in the earth, and who succeeded in the battles that prevailed against his brethren, that he delivered them from the hands of their enemies, so may God strengthen us and deliver us this day.\",\"source_ref\":\"7:33\",\"verse\":33,\"chapter\":7},{\"text\":\"And when Nimrod was forty years old, at that time there was a war between his brethren and the children of Japheth, so that they were in the power of their enemies.\",\"source_ref\":\"7:34\",\"verse\":34,\"chapter\":7},{\"text\":\"And Nimrod went forth at that time, and he assembled all the sons of Cush and their families, about four hundred and sixty men, and he hired also from some of his friends and acquaintances about eighty men, and be gave them their hire, and he went with them to battle, and when he was on the road, Nimrod strengthened the hearts of the people that went with him.\",\"source_ref\":\"7:35\",\"verse\":35,\"chapter\":7}]}"
+    }
+  ]
+}

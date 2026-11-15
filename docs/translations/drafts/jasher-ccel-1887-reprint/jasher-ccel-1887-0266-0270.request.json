@@ -1,0 +1,17 @@
+{
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "request_id": "ecd171ac-c1d2-4ef4-b86b-982453bb9404",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"text\":\"And the wise men and conjurors went home that night, and in the morning all these wise men and conjurors rose up early, and assembled in an appointed house.\",\"source_ref\":\"8:5\",\"verse\":5,\"chapter\":8},{\"text\":\"And they spoke and said to each other, Behold the sight that we saw last night is hidden from the king, it has not been made known to him.\",\"source_ref\":\"8:6\",\"verse\":6,\"chapter\":8},{\"text\":\"And should this thing get known to the king in the latter days, he will say to us, Why have you concealed this matter from me, and then we shall all suffer death; therefore, now let us go and tell the king the sight which we saw, and the interpretation thereof, and we shall then remain clear.\",\"source_ref\":\"8:7\",\"verse\":7,\"chapter\":8},{\"text\":\"And they did so, and they all went to the king and bowed down to him to the ground, and they said, May the king live, may the king live.\",\"source_ref\":\"8:8\",\"verse\":8,\"chapter\":8},{\"text\":\"We heard that a son was born to Terah the son of Nahor, the prince of thy host, and we yesternight came to his house, and we ate and drank and rejoiced with him that night.\",\"source_ref\":\"8:9\",\"verse\":9,\"chapter\":8}]}"
+    }
+  ]
+}

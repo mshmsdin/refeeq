@@ -1,0 +1,17 @@
+{
+  "service_key": "bible-translation",
+  "messages": [
+    {
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"source_ref\":\"8:10\",\"chapter\":8,\"text\":\"And when thy servants went out from the house of Terah, to go to our respective homes to abide there for the night, we lifted up our eyes to heaven, and we saw a great star coming from the east, and the same star ran with great speed, and swallowed up four great stars, from the four sides of the heavens.\",\"verse\":10},{\"source_ref\":\"8:11\",\"chapter\":8,\"text\":\"And thy servants were astonished at the sight which we saw, and were greatly terrified, and we made our judgment upon the sight, and knew by our wisdom the proper interpretation thereof, that this thing applies to the child that is born to Terah, who will grow up and multiply greatly, and become powerful, and kill all the kings of the earth, and inherit all their lands, he and his seed forever.\",\"verse\":11},{\"source_ref\":\"8:12\",\"chapter\":8,\"text\":\"And now our lord and king, behold we have truly acquainted thee with what we have seen concerning this child.\",\"verse\":12},{\"source_ref\":\"8:13\",\"chapter\":8,\"text\":\"If it seemeth good to the king to give his father value for this child, we will slay him before he shall grow up and increase in the land, and his evil increase against us, that we and our children perish through his evil.\",\"verse\":13},{\"source_ref\":\"8:14\",\"chapter\":8,\"text\":\"And the king heard their words and they seemed good in his sight, and he sent and called for Terah, and Terah came before the king.\",\"verse\":14}]}",
+      "role": "user"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "162f609a-b3eb-42e0-85b8-d7a35b59934d",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "tenant_id": "rafeeq-bible-translation"
+}

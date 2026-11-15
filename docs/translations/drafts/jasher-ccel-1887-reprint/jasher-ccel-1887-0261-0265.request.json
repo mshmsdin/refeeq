@@ -1,0 +1,17 @@
+{
+  "service_key": "bible-translation",
+  "messages": [
+    {
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
+      "role": "system"
+    },
+    {
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"source_ref\":\"7:51\",\"chapter\":7,\"text\":\"Terah was seventy years old when he begat him, and Terah called the name of his son that was born to him Abram, because the king had raised him in those days, and dignified him above all his princes that were with him.\",\"verse\":51},{\"source_ref\":\"8:1\",\"chapter\":8,\"text\":\"And it was in the night that Abram was born, that all the servants of Terah, and all the wise men of Nimrod, and his conjurors came and ate and drank in the house of Terah, and they rejoiced with him on that night.\",\"verse\":1},{\"source_ref\":\"8:2\",\"chapter\":8,\"text\":\"And when all the wise men and conjurors went out from the house of Terah, they lifted up their eyes toward heaven that night to look at the stars, and they saw, and behold one very large star came from the east and ran in the heavens, and he swallowed up the four stars from the four sides of the heavens.\",\"verse\":2},{\"source_ref\":\"8:3\",\"chapter\":8,\"text\":\"And all the wise men of the king and his conjurors were astonished at the sight, and the sages understood this matter, and they knew its import.\",\"verse\":3},{\"source_ref\":\"8:4\",\"chapter\":8,\"text\":\"And they said to each other, This only betokens the child that has been born to Terah this night, who will grow up and be fruitful, and multiply, and possess all the earth, he and his children for ever, and he and his seed will slay great kings, and inherit their lands.\",\"verse\":4}]}",
+      "role": "user"
+    }
+  ],
+  "application_id": "rafeeq-bible-translation",
+  "request_id": "64042a6d-b31c-41a9-8014-066f414fcbee",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "tenant_id": "rafeeq-bible-translation"
+}

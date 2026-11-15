@@ -1,17 +1,17 @@
 {
+  "tenant_id": "rafeeq-bible-translation",
+  "request_id": "80b942c4-cd3f-43b9-8519-7e30112379c6",
   "messages": [
     {
       "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref.",
       "role": "system"
     },
     {
-      "content": "{\"units\":[{\"source_ref\":\"4:5\",\"chapter\":4,\"text\":\"And the Lord was exceedingly wroth against them, and the Lord continued to destroy the seed in those days, so that there was neither sowing nor reaping in the earth.\",\"verse\":5},{\"source_ref\":\"4:6\",\"chapter\":4,\"text\":\"For when they sowed the ground in order that they might obtain food for their support, behold, thorns and thistles were produced which they did not sow.\",\"verse\":6},{\"source_ref\":\"4:7\",\"chapter\":4,\"text\":\"And still the sons of men did not turn from their evil ways, and their hands were still extended to do evil in the sight of God, and they provoked the Lord with their evil ways, and the Lord was very wroth, and repented that he had made man.\",\"verse\":7},{\"source_ref\":\"4:8\",\"chapter\":4,\"text\":\"And he thought to destroy and annihilate them and he did so.\",\"verse\":8},{\"source_ref\":\"4:9\",\"chapter\":4,\"text\":\"In those days when Lamech the son of Methuselah was one hundred and sixty years old, Seth the son of Adam died.\",\"verse\":9}],\"book_code\":\"JASHER\"}",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"verse\":5,\"source_ref\":\"4:5\",\"chapter\":4,\"text\":\"And the Lord was exceedingly wroth against them, and the Lord continued to destroy the seed in those days, so that there was neither sowing nor reaping in the earth.\"},{\"verse\":6,\"source_ref\":\"4:6\",\"chapter\":4,\"text\":\"For when they sowed the ground in order that they might obtain food for their support, behold, thorns and thistles were produced which they did not sow.\"},{\"verse\":7,\"source_ref\":\"4:7\",\"chapter\":4,\"text\":\"And still the sons of men did not turn from their evil ways, and their hands were still extended to do evil in the sight of God, and they provoked the Lord with their evil ways, and the Lord was very wroth, and repented that he had made man.\"},{\"verse\":8,\"source_ref\":\"4:8\",\"chapter\":4,\"text\":\"And he thought to destroy and annihilate them and he did so.\"},{\"verse\":9,\"source_ref\":\"4:9\",\"chapter\":4,\"text\":\"In those days when Lamech the son of Methuselah was one hundred and sixty years old, Seth the son of Adam died.\"}]}",
       "role": "user"
     }
   ],
   "application_id": "rafeeq-bible-translation",
-  "request_id": "d119f72b-476a-4c23-8991-ac48f7ed5fb9",
-  "service_key": "bible-translation",
   "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
-  "tenant_id": "rafeeq-bible-translation"
+  "service_key": "bible-translation"
 }

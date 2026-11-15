@@ -1,0 +1,17 @@
+{
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "request_id": "dba8ca33-26f0-4327-8277-399b6db42be4",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"text\":\"And at the revolution of the year, when a full year was completed to Noah's dwelling in the ark, the waters were dried from off the earth, and Noah put off the covering of the ark.\",\"source_ref\":\"6:38\",\"verse\":38,\"chapter\":6},{\"text\":\"At that time, on the twenty-seventh day of the second month, the earth was dry, but Noah and his sons, and those that were with him, did not go out from the ark until the Lord told them.\",\"source_ref\":\"6:39\",\"verse\":39,\"chapter\":6},{\"text\":\"And the day came that the Lord told them to go out, and they all went out from the ark.\",\"source_ref\":\"6:40\",\"verse\":40,\"chapter\":6},{\"text\":\"And they went and returned every one to his way and to his place, and Noah and his sons dwelt in the land that God had told them, and they served the Lord all their days, and the Lord blessed Noah and his sons on their going out from the ark.\",\"source_ref\":\"6:41\",\"verse\":41,\"chapter\":6},{\"text\":\"And he said to them, Be fruitful and fill all the earth; become strong and increase abundantly in the earth and multiply therein.\",\"source_ref\":\"6:42\",\"verse\":42,\"chapter\":6}]}"
+    }
+  ]
+}

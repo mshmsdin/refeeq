@@ -1,0 +1,92 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 151,
+  "batch_end": 155,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "service_api_path": "/v1/responses",
+  "operation": "responses",
+  "service_policy_version": 51,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "502dde26-48b4-4a4d-92c1-a7477cc83824",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 574,
+      "outputTokens": 1330,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 2911
+    }
+  ],
+  "usage": {
+    "input": 574,
+    "output": 1330,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "text_ar": "ومَاتَ لامِخُ أَبُ نَوحٍ في تلك الأيام؛ ومع ذلك لم يَسْلُكْ بكلِ قلبِه سُبُلَ أَبِهِ، ومَاتَ في السنةِ مِئَةٍ وخَمسةٍ وتسعين من عُمْرِ نوح.",
+      "source_ref": "5:19",
+      "chapter": 5
+    },
+    {
+      "text_ar": "وكانَ عُمُرُ لامِخِ سَبْعَ مِئَةٍ وَسَبْعِينَ سَنَةً، فَمَاتَ.",
+      "source_ref": "5:20",
+      "chapter": 5
+    },
+    {
+      "text_ar": "وَماتَ جَمِيعُ بَنِي الإِنْسَانِ الّذين عَرَفُوا الرَّبَّ في تلك السَّنة قبل أن يُلْهِبَ الرَّبُّ عليهم شَرًّا؛ فَإِنَّ الرَّبَّ أَرَادَ أن يَمُوتُوا لِئلا يَرَوْا الشَّرَّ الّذي سَيَجْلِبهُ اللهُ على إِخْوَانِهِم وَأَقْرَابِهِم، كما صَرَّحَ بِذَلِكَ.",
+      "source_ref": "5:21",
+      "chapter": 5
+    },
+    {
+      "text_ar": "في ذلك الوقت، قال الرَّبُّ إلى نوح ومَثُوشَلَح: قُومَا وأعلَنَا لِبَنِي الإِنْسَانِ كُلَّ ما قُلْتُ لكُم في تلك الأيام، لَعَلَّهُمْ يَتَوَلَّوْنَ عَن سُبُلِهِم الشَّرِيرَةِ، فَأَتَابُ عَنْ الشَّرِّ ولا أُجْرِيهِ.",
+      "source_ref": "5:22",
+      "chapter": 5
+    },
+    {
+      "text_ar": "وَقَامَ نوح ومَثُوشَلَح، فَقَالا في آذان بَنِي الإِنْسَانِ كلَّ ما تَكَلَّمَ اللهُ عَنْهُمْ.",
+      "source_ref": "5:23",
+      "chapter": 5
+    }
+  ]
+}

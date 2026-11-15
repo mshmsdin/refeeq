@@ -1,0 +1,92 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 206,
+  "batch_end": 210,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "service_api_path": "/v1/responses",
+  "operation": "responses",
+  "service_policy_version": 51,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "d3dd344e-f3d4-493d-9c81-d35f4e4d4578",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 553,
+      "outputTokens": 407,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1163
+    }
+  ],
+  "usage": {
+    "input": 553,
+    "output": 407,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "text_ar": "وعند انتهاء السنة، عندما اكتمل عام كامل على سكن نوح في الفُلك، جفت المياه عن الأرض، فأزال نوح غطاء الفُلك.",
+      "source_ref": "6:38",
+      "chapter": 6
+    },
+    {
+      "text_ar": "في ذلك الوقت، في اليوم السابع والعشرين من الشهر الثاني، جفت الأرض، لكن نوح وأبناؤه والذين كانوا معه لم يخرجوا من الفُلك حتى أمرهم الرب.",
+      "source_ref": "6:39",
+      "chapter": 6
+    },
+    {
+      "text_ar": "فجاء اليوم الذي أمرهم فيه الرب بالخروج، فخرجوا جميعًا من الفُلك.",
+      "source_ref": "6:40",
+      "chapter": 6
+    },
+    {
+      "text_ar": "فذهب كلٌّ إلى طريقه ومكانه، وسكن نوح وأبناؤه في الأرض التي أخبرهم الله بها، وعبدوا الرب طوال أيامهم، فبارك الرب نوحًا وأبناؤه عند خروجهم من الفُلك.",
+      "source_ref": "6:41",
+      "chapter": 6
+    },
+    {
+      "text_ar": "وقال لهم: \"أثمروا وامتلئوا الأرض؛ كونوا أقوياء وزددوا في الأرض كثيرًا وتكاثروا فيها\".",
+      "source_ref": "6:42",
+      "chapter": 6
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "request_id": "506bde34-3c7b-471c-b2b2-81c8a8e73511",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"text\":\"And he placed Terah the son of Nahor the prince of his host, and he dignified him and elevated him above all his princes.\",\"source_ref\":\"7:41\",\"verse\":41,\"chapter\":7},{\"text\":\"And whilst he was reigning according to his heart's desire, after having conquered all his enemies around, he advised with his counselors to build a city for his palace, and they did so.\",\"source_ref\":\"7:42\",\"verse\":42,\"chapter\":7},{\"text\":\"And they found a large valley opposite to the east, and they built him a large and extensive city, and Nimrod called the name of the city that he built Shinar, for the Lord had vehemently shaken his enemies and destroyed them.\",\"source_ref\":\"7:43\",\"verse\":43,\"chapter\":7},{\"text\":\"And Nimrod dwelt in Shinar, and he reigned securely, and he fought with his enemies and he subdued them, and he prospered in all his battles, and his kingdom became very great.\",\"source_ref\":\"7:44\",\"verse\":44,\"chapter\":7},{\"text\":\"And all nations and tongues heard of his fame, and they gathered themselves to him, and they bowed down to the earth, and they brought him offerings, and he became their lord and king, and they all dwelt with him in the city at Shinar, and Nimrod reigned in the earth over all the sons of Noah, and they were all under his power and counsel.\",\"source_ref\":\"7:45\",\"verse\":45,\"chapter\":7}]}"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 266,
+  "batch_end": 270,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "service_api_path": "/v1/responses",
+  "operation": "responses",
+  "service_policy_version": 51,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "e269617f-3d53-4c6a-9071-9c09c78caf3f",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 576,
+      "outputTokens": 428,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1299
+    }
+  ],
+  "usage": {
+    "input": 576,
+    "output": 428,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "text_ar": "وذهب الحكماء والسحرة إلى بيوتهم تلك الليلة، وفي الصباح نهض جميع هؤلاء الحكماء والسحرة مبكرًا، وتجمعوا في بيت معين.",
+      "source_ref": "8:5",
+      "chapter": 8
+    },
+    {
+      "text_ar": "فتحدثوا وقالوا لبعضهم: انظروا إلى المشهد الذي رأيناه الليلة الماضية، فهو مخفي عن الملك، لم يُعلِم به.",
+      "source_ref": "8:6",
+      "chapter": 8
+    },
+    {
+      "text_ar": "وإن علم الملك بهذا الأمر في الأيام الأخيرة، فسيقول لنا: لماذا أخفيتم هذا عني؟ ثم سنموت جميعًا؛ لذا فلنذهب الآن ونخبر الملك بالمشهد الذي رأيناه وتفسيره، فسنكون بذلك بأمان.",
+      "source_ref": "8:7",
+      "chapter": 8
+    },
+    {
+      "text_ar": "فعلوا ذلك، فذهبوا جميعًا إلى الملك وسجدوا له على الأرض، وقالوا: عِش الملك، عِش الملك.",
+      "source_ref": "8:8",
+      "chapter": 8
+    },
+    {
+      "text_ar": "سمعنا أن لِتُرَّة، ابن نَاحُور، أمير جيشك، وُلِدَ ابنٌ، فذهبنا البارحة إلى بيته، وأكلنا وشربنا وفرحنا معه تلك الليلة.",
+      "source_ref": "8:9",
+      "chapter": 8
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 256,
+  "batch_end": 260,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "service_api_path": "/v1/responses",
+  "operation": "responses",
+  "service_policy_version": 51,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "4b11d1e5-e360-4974-a424-0f51bec9ac51",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 612,
+      "outputTokens": 448,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 1134
+    }
+  ],
+  "usage": {
+    "input": 612,
+    "output": 448,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "text_ar": "وكانت كل الأرض تتكلم لغة واحدة وكلمات موحدة، ولكن نمرود لم يسلك طرق الرب، وكان أشرّ من جميع الرجال الذين سبقوه، من أيام الطوفان حتى تلك الأيام.",
+      "source_ref": "7:46",
+      "chapter": 7
+    },
+    {
+      "text_ar": "صنع آلهة من الخشب والحجر، وسجد لها، وتمرد على الرب، وعلم جميع رعاياه وشعوب الأرض طرقه الشريرة؛ وكان مردون ابنه أشد شرًا من أبيه.",
+      "source_ref": "7:47",
+      "chapter": 7
+    },
+    {
+      "text_ar": "وكان كل من سمع بأفعال مردون بن نمرود يقول عنه: من الشرّ يخرج الشرّ؛ فأصبح ذلك مثلًا في جميع الأرض، قائلًا: من الشرّ يخرج الشرّ، وظل هذا القول متداولًا بين الناس من ذاك الوقت وحتى الآن.",
+      "source_ref": "7:48",
+      "chapter": 7
+    },
+    {
+      "text_ar": "وكان طرة بن ناهور، أمير جيش نمرود، في ذلك الزمان عظيمًا في نظر الملك ورعاياه، فأحبه الملك والأمراء ورفعوه عاليًا جدًا.",
+      "source_ref": "7:49",
+      "chapter": 7
+    },
+    {
+      "text_ar": "وأخذ طرة زوجةً اسمها أمثيلو بنت كورنبو؛ وحملت زوجة طرة وأنجبت له ابنًا في ذلك الزمان.",
+      "source_ref": "7:50",
+      "chapter": 7
+    }
+  ]
+}

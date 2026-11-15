@@ -1,0 +1,92 @@
+{
+  "book_code": "JASHER",
+  "source_license_notice": "Public-domain English translation identified as 1840, in an 1887 exact-edition reprint; human review required.",
+  "translation_name_ar": "ترجمة محمد بن شمس الدين",
+  "source_translation": "jasher-ccel-1887-reprint",
+  "source_name": "The Book of Jasher; 1840 English translation, 1887 exact-edition reprint",
+  "source_url": "https://www.ccel.org/ccel/anonymous/jasher/home.html",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "batch_start": 241,
+  "batch_end": 245,
+  "status": "machine_translated_structured",
+  "review_status": "pending_human",
+  "imported": false,
+  "published": false,
+  "service_api_path": "/v1/responses",
+  "operation": "responses",
+  "service_policy_version": 51,
+  "routing_method": "service_policy_with_provider_failover",
+  "provider": "Groq free tier",
+  "model": "openai/gpt-oss-120b",
+  "request_id": "2b2364ce-b9bb-4694-b1ef-8f1258e05432",
+  "failovers": 1,
+  "attempts": [
+    {
+      "modelId": "04666bbb-699d-4341-bf02-a6df0f6c262c",
+      "provider": "Gemini 3.5 Flash Lite",
+      "model": "gemini-3.5-flash-lite",
+      "status": "skipped",
+      "errorCode": "quota",
+      "estimatedCost": null,
+      "latencyMs": 0,
+      "inputPrice": "0.3000000000",
+      "outputPrice": "2.5000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0300000000",
+      "imagePrice": "0.0000000000"
+    },
+    {
+      "modelId": "b7d137ee-068f-4f05-858e-b7f2208f20bc",
+      "provider": "Groq free tier",
+      "model": "openai/gpt-oss-120b",
+      "status": "success",
+      "inputPrice": "0.0000000000",
+      "outputPrice": "0.0000000000",
+      "currency": "USD",
+      "cachedPrice": "0.0000000000",
+      "imagePrice": "0.0000000000",
+      "inputTokens": 620,
+      "outputTokens": 1045,
+      "cachedTokens": 0,
+      "cacheCreationTokens": 0,
+      "imageTokens": 0,
+      "estimatedCost": 0,
+      "latencyMs": 2497
+    }
+  ],
+  "usage": {
+    "input": 620,
+    "output": 1045,
+    "cached": 0,
+    "cacheCreation": 0,
+    "image": 0
+  },
+  "estimated_cost": 0,
+  "units": [
+    {
+      "text_ar": "وقوّى نمرود نفسه، فنهض من بين إخوته، وقاتل معارك إخوته ضد جميع أعدائهم في كل مكان.",
+      "source_ref": "7:31",
+      "chapter": 7
+    },
+    {
+      "text_ar": "فَسَلَّمَ الرَّبُّ جميع أعداءِ إخوته بين يده، وَأَنْعَمَ اللهُ عليه من وقتٍ لآخر في معاركه، فَحكمَ على الأرض.",
+      "source_ref": "7:32",
+      "chapter": 7
+    },
+    {
+      "text_ar": "لِذَلِكَ صَارَ شائعًا في تلك الأيام، إِذَا قَدَّمَ رَجُلٌ الَّذينَ دَرَّبَهُم للمعركة، يَقُولُ لَهُم: كَمَا فَعَلَ اللهُ مع نمرود، الَّذي كان صَيَّادًا عظيمًا على الأرض، وَالَّذي نَجَحَ في المعارك التي سادت على إخوته، فَأَنْقَذَهُم من أيدي أعدائهم، فَلْيَقْوِي اللهُنا ويُنقذنا اليوم.",
+      "source_ref": "7:33",
+      "chapter": 7
+    },
+    {
+      "text_ar": "وعندما كان نمرود في الأربعين من عمره، كان هناك حَرْبٌ بين إخوته وأولاد يافث، فكانوا في قبضة أعدائهم.",
+      "source_ref": "7:34",
+      "chapter": 7
+    },
+    {
+      "text_ar": "فخرج نمرود في ذلك الوقت، وجمع جميع أبناء كوش وعائلاتهم، نحو أربعة مئة وستين رجلًا، واستأجر أيضًا من بعض أصدقائه ومعارفه نحو ثمانين رجلًا، ومنحهم أجورهم، فذهب معهم إلى المعركة، وعندما كان في الطريق، قوّى نمرود قلوب الناس الذين كانوا معه.",
+      "source_ref": "7:35",
+      "chapter": 7
+    }
+  ]
+}

@@ -51,6 +51,14 @@ try {
   $policies = @(ConvertFrom-Json -InputObject $policyResponse.Content)
   $policy = $policies | Where-Object { $_.applicationId -eq 'rafeeq-bible-translation' -and $_.serviceKey -eq 'bible-translation' } | Select-Object -First 1
   if (!$policy -or $policy.mode -ne 'budgeted' -or $policy.operation -ne 'responses') { throw 'Translation service policy is not active and budgeted' }
+  $modelResponse = Invoke-WebRequest -Uri "$router/v1/models" -Headers $adminHeaders -TimeoutSec 30 -UseBasicParsing
+  $allModels = @(ConvertFrom-Json -InputObject $modelResponse.Content)
+  $allowedIds = @($policy.allowedModelIds | ForEach-Object { [string]$_ })
+  $allowedModels = @($allModels | Where-Object { $_.id -in $allowedIds })
+  if ($allowedModels.Count -ne $allowedIds.Count -or @($allowedModels | Where-Object { !$_.enabled -or !$_.supports_responses }).Count -gt 0) {
+    throw 'The translation policy contains a missing, disabled, or non-responses model'
+  }
+  Write-Output ('مسار سند: /v1/responses؛ النماذج النصية المسموحة: {0}.' -f (($allowedModels | ForEach-Object { "$($_.provider):$($_.model_name)" }) -join ', '))
   $budgetResponse = Invoke-WebRequest -Uri "$router/v1/service-budgets" -Headers $adminHeaders -TimeoutSec 30 -UseBasicParsing
   $budgets = @(ConvertFrom-Json -InputObject $budgetResponse.Content)
   $budget = $budgets | Where-Object { $_.applicationId -eq 'rafeeq-bible-translation' -and $_.serviceKey -eq 'bible-translation' } | Select-Object -First 1
@@ -165,6 +173,7 @@ try {
         source_name = 'The Book of Jasher; 1840 English translation, 1887 exact-edition reprint'; source_url = $source.source_url
         source_sha256 = [string]$source.source_sha256; batch_start = $first; batch_end = $last
         status = 'machine_translated_structured'; review_status = 'pending_human'; imported = $false; published = $false
+        service_api_path = '/v1/responses'; operation = 'responses'; service_policy_version = [int]$policy.version
         routing_method = 'service_policy_with_provider_failover'; provider = $response.provider; model = $response.model
         request_id = $response.request_id; failovers = $response.failovers; attempts = $response.attempts
         usage = $response.usage; estimated_cost = $response.estimatedCost; units = $mapped
@@ -184,7 +193,7 @@ try {
 
   $failureFiles = @(Get-ChildItem -LiteralPath $outDir -Filter '*.failure.txt')
   foreach ($failureFile in $failureFiles) {
-    if ($failureFile.BaseName -notmatch '^jasher-ccel-1887-(\d+)-(\d+)$') { continue }
+    if ($failureFile.BaseName -notmatch '^jasher-ccel-1887-(\d+)-(\d+)\.failure$') { continue }
     $failureStart = [int]$Matches[1]
     $failureEnd = [int]$Matches[2]
     if ($failureStart -lt 1 -or $failureEnd -gt $allUnits.Count -or $failureEnd -lt $failureStart) { continue }
@@ -194,7 +203,7 @@ try {
       if ($coveredRefs.ContainsKey($ref)) { continue }
       $coveredByNarrowFailure = $false
       foreach ($otherFailure in $failureFiles) {
-        if ($otherFailure.FullName -eq $failureFile.FullName -or $otherFailure.BaseName -notmatch '^jasher-ccel-1887-(\d+)-(\d+)$') { continue }
+        if ($otherFailure.FullName -eq $failureFile.FullName -or $otherFailure.BaseName -notmatch '^jasher-ccel-1887-(\d+)-(\d+)\.failure$') { continue }
         $otherStart = [int]$Matches[1]
         $otherEnd = [int]$Matches[2]
         if ($otherStart -le $position -and $otherEnd -ge $position -and ($otherEnd - $otherStart) -lt ($failureEnd - $failureStart)) {

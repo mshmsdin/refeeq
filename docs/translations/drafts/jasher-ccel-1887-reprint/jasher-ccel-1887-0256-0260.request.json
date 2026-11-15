@@ -1,0 +1,17 @@
+{
+  "service_key": "bible-translation",
+  "tenant_id": "rafeeq-bible-translation",
+  "application_id": "rafeeq-bible-translation",
+  "source_sha256": "386a05ea58a78dc50b55d921a977ebf089590193eef7d528093e4eac47f0c75e",
+  "request_id": "ad4aa395-2370-4f4b-9759-50d8e671359c",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Translate each English source unit into accurate, complete Modern Standard Arabic. Preserve meaning, names, scripture references, and unit order. Do not add explanations or content. Output JSON only: {\"book_code\":\"JASHER\",\"verses\":[{\"chapter\":1,\"verse\":1,\"source_ref\":\"1:1\",\"text_ar\":\"...\"}]}. Return exactly one row for each input source_ref."
+    },
+    {
+      "role": "user",
+      "content": "{\"book_code\":\"JASHER\",\"units\":[{\"text\":\"And all the earth was of one tongue and words of union, but Nimrod did not go in the ways of the Lord, and he was more wicked than all the men that were before him, from the days of the flood until those days.\",\"source_ref\":\"7:46\",\"verse\":46,\"chapter\":7},{\"text\":\"And he made gods of wood and stone, and he bowed down to them, and he rebelled against the Lord, and taught all his subjects and the people of the earth his wicked ways; and Mardon his son was more wicked than his father.\",\"source_ref\":\"7:47\",\"verse\":47,\"chapter\":7},{\"text\":\"And every one that heard of the acts of Mardon the son of Nimrod would say, concerning him, From the wicked goeth forth wickedness; therefore it became a proverb in the whole earth, saying, From the wicked goeth forth wickedness, and it was current in the words of men from that time to this.\",\"source_ref\":\"7:48\",\"verse\":48,\"chapter\":7},{\"text\":\"And Terah the son of Nahor, prince of Nimrod's host, was in those days very great in the sight of the king and his subjects, and the king and princes loved him, and they elevated him very high.\",\"source_ref\":\"7:49\",\"verse\":49,\"chapter\":7},{\"text\":\"And Terah took a wife and her name was Amthelo the daughter of Cornebo; and the wife of Terah conceived and bare him a son in those days.\",\"source_ref\":\"7:50\",\"verse\":50,\"chapter\":7}]}"
+    }
+  ]
+}
