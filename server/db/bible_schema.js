@@ -6,6 +6,7 @@ import { normalizeArabicText } from '../utils/arabic_nlp.js';
 import { TORAH_WITNESS_BOOKS } from '../importers/torah_witness_sources.js';
 import { ANCIENT_VERSION_BOOKS } from '../importers/ancient_version_books.js';
 import { JEWISH_SOURCE_BOOKS } from '../importers/jewish_sources_catalog.js';
+import { applyBookNameOverrides } from '../utils/bible_book_names.js';
 
 export function initBibleSchema() {
   const db = getDb();
@@ -340,6 +341,9 @@ export function initBibleSchema() {
       AND book_code='2BAR' AND chapter=37 AND verse=2
       AND text='And I indeed awoke and arose. 38-40. Interpretation of the Vision'
   `).run();
+
+  // الأسماء العربية المتعارفة للأسفار وأسماؤها البديلة (بعد أن تكون كل الأسفار مسجلة).
+  applyBookNameOverrides(db);
 
   console.log('[Bible] Schema initialized.');
 }

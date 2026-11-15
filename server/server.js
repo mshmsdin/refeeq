@@ -28,6 +28,7 @@ import { ensureAncientVersionsImported } from './db/ancient_versions_startup_imp
 import { ensureJewishSourcesImported } from './db/jewish_sources_startup_import.js';
 import { ensureScanBooksImported } from './db/scan_books_startup_import.js';
 import { ensureSvdNumberingRepaired } from './db/svd_numbering_startup_repair.js';
+import { applyBookNameOverrides } from './utils/bible_book_names.js';
 import { buildCanonMatrix } from './utils/bible_canon_matrix.js';
 import {
   buildSnippet as buildScanSnippet,
@@ -367,6 +368,13 @@ try {
   if (svdRepair.repaired) console.log(`[Bible startup] Re-imported Van Dyck: fixed verse numbering in ${svdRepair.chapters} chapters.`);
 } catch (error) {
   console.error('[Bible startup] Van Dyck numbering repair failed:', error.message);
+}
+try {
+  // الأسفار التي أضافتها الاستيرادات أعلاه تُسمّى هنا بأسمائها المتعارفة وأسمائها البديلة.
+  const names = applyBookNameOverrides(getDb());
+  if (names.renamed || names.aliasesAdded) console.log(`[Bible startup] Book names applied: ${names.renamed} renamed, ${names.aliasesAdded} aliases added.`);
+} catch (error) {
+  console.error('[Bible startup] Book names failed:', error.message);
 }
 
 const app = express();

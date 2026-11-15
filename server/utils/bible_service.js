@@ -89,7 +89,7 @@ export function getBooks(collectionSlug) {
       FROM bible_verses bv
       JOIN bible_translations bt ON bv.translation_id = bt.id
       WHERE bt.is_active = 1 AND ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope')}
-      ORDER BY bt.display_order, bt.id
+      ORDER BY (bt.language = 'ar') DESC, bt.display_order, bt.id
     `).all();
     for (const r of transRows) {
       if (!transMap.has(r.book_code)) transMap.set(r.book_code, []);
@@ -108,10 +108,21 @@ export function getBooks(collectionSlug) {
     console.error('Error fetching Bible metadata map:', e.message);
   }
 
+  const aliasMap = new Map();
+  try {
+    for (const r of db.prepare('SELECT book_code, alias FROM bible_book_aliases ORDER BY id').all()) {
+      if (!aliasMap.has(r.book_code)) aliasMap.set(r.book_code, []);
+      aliasMap.get(r.book_code).push(r.alias);
+    }
+  } catch (e) {
+    console.error('Error fetching book aliases:', e.message);
+  }
+
   // Attach is_disputed and available_translations
   return rows.map(b => ({
     ...b,
     is_disputed: !!BOOK_CANON_DATA[b.code]?.is_disputed,
+    aliases: (aliasMap.get(b.code) || []).filter(alias => alias !== b.name_ar),
     available_translations: transMap.get(b.code) || [],
     metadata: metadataMap.get(b.code) || null
   }));
@@ -144,7 +155,7 @@ export function getBook(code) {
     FROM bible_verses bv
     JOIN bible_translations bt ON bv.translation_id = bt.id
     WHERE bv.book_code = ? AND bt.is_active = 1 AND ${SITE_SCOPE_SQL.replaceAll('site_scope', 'bt.site_scope')}
-    ORDER BY bt.display_order, bt.id
+    ORDER BY (bt.language = 'ar') DESC, bt.display_order, bt.id
   `).all(code);
 
   const canonInfo = getCanonInfoForBook(code, book.collection_slug);
@@ -156,6 +167,7 @@ export function getBook(code) {
     ...book,
     is_disputed: canonInfo.is_disputed,
     canon_info: canonInfo,
+    aliases: db.prepare('SELECT alias FROM bible_book_aliases WHERE book_code = ? ORDER BY id').all(code).map(r => r.alias).filter(alias => alias !== book.name_ar),
     available_translations: transRows.map(r => r.slug),
     metadata,
     sources

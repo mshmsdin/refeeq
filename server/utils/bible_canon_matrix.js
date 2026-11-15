@@ -86,7 +86,7 @@ export const CANON_TRADITIONS = [
     slug: 'eastern-orthodox', group: 'christian', name_ar: 'الكنائس الأرثوذكسية الخلقيدونية', short_ar: 'الأرثوذكسية الشرقية',
     includes_ar: 'اليونانية والروسية والسلافية والأنطاكية والجورجية',
     canon_size_ar: 'العهد القديم نحو ٤٩ سفراً بحسب بعض العدّ، والعهد الجديد ٢٧',
-    summary_ar: 'تعتمد العهد القديم السبعيني بأسفاره القانونية الثانية، وتزيد عن الكاثوليكية بعزرا الأول والمكابيين الثالث ومزمور ١٥١ وصلاة منسى؛ وتختلف الكنائس الأرثوذكسية في تفاصيل القوائم.',
+    summary_ar: 'تعتمد العهد القديم السبعيني بأسفاره القانونية الثانية، وتزيد عن الكاثوليكية بإسدراس الأول (عزرا الثالث) والمكابيين الثالث ومزمور ١٥١ وصلاة منسى؛ وتختلف الكنائس الأرثوذكسية في تفاصيل القوائم.',
     sources: [
       { label: 'Deuterocanon — OrthodoxWiki', url: 'https://orthodoxwiki.org/Deuterocanon' },
       { label: 'The Old Testament Canon and Apocrypha — Bible Researcher', url: 'https://bible-researcher.com/canon2.html' }
@@ -210,7 +210,7 @@ const RULES = {
   'eastern-orthodox'(b) {
     if (has(OT39, b.code) || has(NT27, b.code)) return C('canon');
     if (has(DEUT_CORE, b.code) || has(ADDITIONS, b.code)) return C('canon2', 'high', 'أُقرّ في مجمع أورشليم ١٦٧٢ (دوسيثيوس) وفي الاستعمال الليتورجي.');
-    if (b.code === '1ES') return C('canon2', 'medium', 'في الطبعات السبعينية اليونانية والسلافية؛ ويسمى عندهم «عزرا الأول».');
+    if (b.code === '1ES') return C('canon2', 'medium', 'في الطبعات السبعينية اليونانية والسلافية؛ ويسمى عندهم «إسدراس الأول».');
     if (b.code === '3MA') return C('canon2', 'medium', 'في الطبعات السبعينية اليونانية والسلافية، وتتفاوت قوائم الكنائس فيه.');
     if (b.code === 'MAN') return C('canon2', 'medium', 'ضمن «الأوديات» في الطبعات السبعينية.');
     if (b.code === 'PS2') return C('canon2', 'medium', 'في المزامير السبعينية، ويُعدّ مزموراً إضافياً خارج المئة والخمسين.');

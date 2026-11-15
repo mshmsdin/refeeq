@@ -16,6 +16,7 @@ import BibleWallet, { BibleWalletControls } from './BibleWallet';
 import { orderVerseResults } from '../utils/bible_comparison';
 import ScanBookViewer from './ScanBookViewer';
 import CanonTable from './CanonTable';
+import { filterBooksByQuery, pickTranslationsForBook } from '../utils/bible_book_search';
 import {
   useTranslations, useCollections, useBooks, useChapter, useVerse, useBibleSearch
 } from '../utils/useBible';
@@ -224,6 +225,11 @@ function BookCanonInfoBox({ bookInfo }) {
 // ─────────────────────────────────────────────────────────
 //  Translation Selection Chips (Checkboxes & Direct Switching)
 // ─────────────────────────────────────────────────────────
+// الترجمة العربية أولاً في الأزرار، وتبقى بقية الترجمات بترتيبها.
+function arabicFirstTranslations(list) {
+  return [...list.filter(t => t.language === 'ar'), ...list.filter(t => t.language !== 'ar')];
+}
+
 function TranslationSelectorChips({
   translations,
   selectedSlugs,
@@ -249,7 +255,7 @@ function TranslationSelectorChips({
       </div>
 
       <div className="flex flex-wrap items-center gap-1.5">
-        {translations.filter(t => availableSlugs.includes(t.slug)).map(t => {
+        {arabicFirstTranslations(translations.filter(t => availableSlugs.includes(t.slug))).map(t => {
           const isSelected = selectedSlugs.includes(t.slug);
           const isPrimary = primarySlug === t.slug;
 
@@ -308,15 +314,10 @@ function QuickNavigator({ books, onNavigate }) {
   const containerRef = useRef(null);
 
   const navigableBooks = books.filter(b => (b.available_translations || []).length > 0);
-  const filteredBooks = navigableBooks.filter(b => {
-    if (!bookQuery.trim()) return true;
-    const q = bookQuery.trim();
-    return (
-      b.name_ar.includes(q) ||
-      (b.code && b.code.toLowerCase().includes(q.toLowerCase())) ||
-      (b.book_number && b.book_number.toString() === q)
-    );
-  });
+  // يطابق الاسم المعتمد والأسماء البديلة (مثل «إسدراس الثاني» لسفر «عزرا الرابع») مع توحيد الهمزات والتشكيل.
+  const filteredResults = filterBooksByQuery(navigableBooks, bookQuery);
+  const filteredBooks = filteredResults.map(r => r.book);
+  const matchedAliasByCode = new Map(filteredResults.map(r => [r.book.code, r.matchedAlias]));
 
   const selectedBook = navigableBooks.find(b => b.code === selectedBookCode);
 
@@ -406,6 +407,11 @@ function QuickNavigator({ books, onNavigate }) {
                           <span className="font-bold text-[#322010] dark:text-slate-100 truncate">
                             {b.name_ar}
                           </span>
+                          {matchedAliasByCode.get(b.code) && (
+                            <span className="text-[11px] text-[#8d6e47] dark:text-slate-400 shrink-0 truncate max-w-[40%]">
+                              ({matchedAliasByCode.get(b.code)})
+                            </span>
+                          )}
                           {isDeutero && (
                             <span className="text-[10px] text-[#735535] dark:text-[#d5be98] bg-[#f0e6d2] dark:bg-slate-800 px-1.5 py-0.2 rounded font-bold shrink-0">
                               قانوني ثانٍ
@@ -1532,7 +1538,7 @@ function VerseFocusModal({
             {/* Right: Four Translations with Direct Switch and Comparison Checkboxes */}
             <div className="flex flex-wrap items-center gap-1.5">
               <span className="text-xs font-bold text-[#735535] dark:text-slate-300 ml-1">الترجمات:</span>
-              {translations.filter(t => (bookInfo?.available_translations || []).includes(t.slug)).map(t => {
+              {arabicFirstTranslations(translations.filter(t => (bookInfo?.available_translations || []).includes(t.slug))).map(t => {
                 const isSelected = selectedTranslations.includes(t.slug);
                 const isPrimary = primarySlug === t.slug;
 
@@ -2243,13 +2249,10 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
     const bObj = books.find(b => b.code === currentBook);
     if (bObj && bObj.available_translations && bObj.available_translations.length > 0) {
       const avail = bObj.available_translations;
-      setSelectedTranslations(prev => {
-        const valid = prev.filter(slug => avail.includes(slug));
-        if (valid.length > 0) return valid;
-        return [avail[0]];
-      });
+      // الترجمة العربية هي الأصل إن وُجدت للسفر، فتظهر أولاً؛ وتبقى اختيارات المستخدم الأخرى بعدها.
+      setSelectedTranslations(prev => pickTranslationsForBook(prev, avail, translations));
     }
-  }, [currentBook, books]);
+  }, [currentBook, books, translations]);
 
   const openChapter = useCallback((book, chapter) => {
     const bObj = books.find(b => b.code === book);
