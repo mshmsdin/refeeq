@@ -40,6 +40,18 @@ test('temporary read failure never creates a replacement or loses the saved edit
   assert.equal(h.storage.get(storedKey),EDIT);
 });
 
+test('adding an item sends its user-entered label with the saved snapshot', async t => {
+  let request;
+  const h = await mount(t, async (url, options) => {
+    if (options?.method === 'POST') request = { url, body: JSON.parse(options.body) };
+    return response(result());
+  });
+  await Renderer.act(async () => { await h.value.add(snapshot, 'مقارنة الإصحاح الأول'); });
+  assert.equal(request.url, '/bible/api/bible/wallets/Aa12Bb34Cc56Dd/items');
+  assert.equal(request.body.label, 'مقارنة الإصحاح الأول');
+  assert.deepEqual(request.body.snapshot, snapshot);
+});
+
 test('late editor mutation cannot replace viewer state after navigating to its link', async t => {
   let finish; let pending;
   const h=await mount(t,async (url,options)=>{

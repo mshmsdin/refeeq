@@ -77,11 +77,11 @@ export function useBibleWallet(initialToken) {
     } catch (err) { if (version === requestVersion.current) setError(err.message || 'تعذر الاتصال بالخادم. حاول مرة أخرى.'); return null; }
     finally { locked.current = false; if (version === requestVersion.current) setBusy(false); }
   }, [accept]);
-  const add = async snapshot => {
+  const add = async (snapshot, label) => {
     if (!data && token && !unavailable) { setError('تعذر التحقق من المحفظة الحالية. افتح المحفظة وانقر إعادة المحاولة.'); return null; }
     if (data && !expired && !data.isEditor) { setError('رابط المشاهدة لا يسمح بإضافة عناصر. افتح رابط التحرير.'); return null; }
     const creating = !data || expired;
-    const result = await perform(creating ? '' : `/${token}/items`, 'POST', { snapshot });
+    const result = await perform(creating ? '' : `/${token}/items`, 'POST', { snapshot, label });
     if (result) { if (creating) setToken(result.editToken); setMessage('أُضيف النص إلى المحفظة مع الترجمات المختارة.'); }
     return result;
   };

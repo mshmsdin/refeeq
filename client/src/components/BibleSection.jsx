@@ -739,7 +739,7 @@ function SearchResults({
       {results.length === 0 ? (
         <div className="text-center py-16 text-[#8d6e47]">
           <BookOpen className="w-12 h-12 mx-auto mb-3 opacity-30" />
-          <p className="text-base font-bold">لم يتم العثور على أي آيات تطابق هذا البحث.</p>
+          <p className="text-base font-bold">لم يتم العثور على أي نصوص تطابق هذا البحث.</p>
         </div>
       ) : (
         <>
@@ -1171,7 +1171,7 @@ function ChapterReader({
               <div className="bg-[#f0e6d2] dark:bg-slate-800 px-3 py-1.5 rounded-xl text-[#46301b] dark:text-[#f8f3ea] font-extrabold border border-[#ddcfb8]">
                 {t1?.name_ar || 'الترجمة الأولى'}
               </div>
-              <div className="bg-blue-50 dark:bg-blue-950/40 px-3 py-1.5 rounded-xl text-blue-900 dark:text-blue-200 font-extrabold border border-blue-200 dark:border-blue-900">
+              <div className="bg-[#f0e6d2] dark:bg-slate-800 px-3 py-1.5 rounded-xl text-[#46301b] dark:text-[#f8f3ea] font-extrabold border border-[#ddcfb8] dark:border-slate-700">
                 {t2?.name_ar || 'الترجمة الثانية'}
               </div>
             </div>
@@ -1225,7 +1225,7 @@ function ChapterReader({
                       onClick={() => onOpenVerseModal(book, chapter, group.verse)}
                       className="p-2.5 rounded-xl bg-[#fdfbf7]/60 dark:bg-[#152238]/60 cursor-pointer hover:bg-[#b58a43]/5 transition-colors"
                     >
-                      <span className="block text-[11px] font-bold text-blue-700 dark:text-blue-400 md:hidden mb-1">
+                      <span className="block text-[11px] font-bold text-[#8d6e47] dark:text-[#c2a578] md:hidden mb-1">
                         {t2?.name_ar}:
                       </span>
                       <p className="scheherazade-font text-[#322010] dark:text-slate-100 select-text" style={{ fontSize: `${fontSize}px`, lineHeight: 2.2 }}>
@@ -1839,7 +1839,7 @@ function BibleLanding({
                 </div>
                 {col.verseCount > 0 ? (
                   <div className="text-[11px] text-[#8d6e47] dark:text-[#d5be98] font-bold">
-                    {col.verseCount.toLocaleString('ar-EG')} آية
+                    {col.verseCount.toLocaleString('ar-EG')} نصاً
                   </div>
                 ) : (
                   <div className="text-[11px] text-[#aa8e67] dark:text-slate-500">متوفر للتصفح</div>
@@ -1860,8 +1860,8 @@ function BibleLanding({
 
       {/* Old Testament Quick Grid */}
       <section className="rounded-3xl border border-amber-200/70 bg-amber-50/50 p-4 sm:p-5 dark:border-amber-900/60 dark:bg-amber-950/15">
-        <h2 className="text-base font-extrabold text-[#322010] dark:text-slate-100 mb-3">
-          أسفار العهد القديم:
+        <h2 className="mb-3">
+          <button type="button" onClick={() => onOpenCollection('old-testament')} className="text-base font-extrabold text-[#322010] transition-colors hover:text-[#8d6e47] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d6e47] dark:text-slate-100 dark:hover:text-[#c2a578]">أسفار العهد القديم</button>
         </h2>
         <BooksGrid collectionSlug="old-testament" onOpenChapter={onOpenChapter} translations={translations} />
       </section>
@@ -2350,7 +2350,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   const walletControls = <BibleWalletControls wallet={wallet} onOpen={openWallet}
-    onAdd={() => wallet.add(currentSnapshot())}
+    onAdd={label => wallet.add(currentSnapshot(), label)}
     canAdd={Boolean(currentBook && (view === 'book' || view === 'chapter') && (!wallet.data || wallet.data.isEditor || wallet.expired))} />;
 
   return (

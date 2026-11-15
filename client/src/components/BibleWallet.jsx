@@ -6,8 +6,18 @@ const buttonClass = 'inline-flex min-h-[44px] items-center justify-center gap-2 
 const inputClass = 'min-h-[44px] w-full rounded-xl border border-[#ddcfb8] bg-white px-3 py-2 text-sm text-[#322010] focus:outline-none focus:ring-2 focus:ring-amber-600 dark:border-slate-600 dark:bg-[#111a2e] dark:text-slate-100';
 
 export function BibleWalletControls({ wallet, onOpen, onAdd, canAdd }) {
-  return <div className="flex shrink-0 items-center gap-1.5" dir="rtl">
-    <button type="button" onClick={onAdd} disabled={!canAdd || wallet.busy}
+  const [showAdd, setShowAdd] = useState(false);
+  const [label, setLabel] = useState('');
+  const [addError, setAddError] = useState('');
+  const submit = async event => {
+    event.preventDefault(); setAddError('');
+    const result = await onAdd(label.trim());
+    if (result) { setShowAdd(false); setLabel(''); }
+    else setAddError('تعذر الإضافة؛ راجع رسالة الخطأ وحاول مرة أخرى.');
+  };
+  return <>
+    <div className="flex shrink-0 items-center gap-1.5" dir="rtl">
+    <button type="button" onClick={() => { setLabel(''); setAddError(''); setShowAdd(true); }} disabled={!canAdd || wallet.busy}
       className="group inline-flex h-11 w-10 items-center justify-center rounded-xl text-[#8d6e47] transition-colors hover:bg-[#efe8dc] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600 disabled:opacity-40 dark:text-[#d5be98] dark:hover:bg-slate-800"
       title="إضافة النص المفتوح مع الترجمات إلى المحفظة" aria-label="إضافة النص المفتوح إلى المحفظة">
       <svg aria-hidden="true" viewBox="0 0 64 64" className="h-8 w-8 overflow-visible transition-transform duration-200 ease-out motion-safe:group-hover:-translate-x-1 motion-safe:group-hover:-translate-y-1 motion-safe:group-focus-visible:-translate-x-1 motion-safe:group-focus-visible:-translate-y-1 group-disabled:transform-none">
@@ -21,7 +31,18 @@ export function BibleWalletControls({ wallet, onOpen, onAdd, canAdd }) {
       <Wallet className="h-5 w-5" />
       <span aria-hidden="true" className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-[#8d6e47] px-1 text-[10px] font-bold leading-none text-white ring-2 ring-[#fdfbf7] dark:ring-[#111a2e]">{wallet.count.toLocaleString('ar')}</span>
     </button>
-  </div>;
+    </div>
+    {showAdd && <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/50 p-4" role="presentation" onMouseDown={event => { if (event.target === event.currentTarget) setShowAdd(false); }}>
+      <form role="dialog" aria-modal="true" aria-labelledby="wallet-add-title" onSubmit={submit} className="w-full max-w-md space-y-4 rounded-2xl border border-[#ddcfb8] bg-[#fdfbf7] p-5 shadow-2xl dark:border-slate-700 dark:bg-[#111a2e]" dir="rtl">
+        <div><h2 id="wallet-add-title" className="text-xl font-black">تسمية العنصر</h2><p className="mt-1 text-sm text-[#735535] dark:text-slate-300">اكتب تسمية تظهر بجانب النص في المحفظة.</p></div>
+        <label className="block text-sm font-bold">التسمية
+          <input autoFocus required maxLength={200} value={label} onChange={event => setLabel(event.target.value)} className={inputClass} placeholder="مثال: مقارنة الإصحاح الأول" />
+        </label>
+        {addError && <p role="alert" className="text-sm text-red-700 dark:text-red-300">{addError}</p>}
+        <div className="flex flex-wrap gap-2"><button type="submit" className={buttonClass} disabled={wallet.busy || !label.trim()}>إضافة إلى المحفظة</button><button type="button" className={buttonClass} disabled={wallet.busy} onClick={() => setShowAdd(false)}>إلغاء</button></div>
+      </form>
+    </div>}
+  </>;
 }
 
 function WalletRow({ item, index, count, editable, busy, onOpen, onUpdate, onDelete }) {
@@ -95,13 +116,12 @@ export default function BibleWallet({ wallet, onOpenItem, onBack, onDeleted }) {
     {busy && !data && <p role="status" className="p-5 text-center">جارٍ فتح المحفظة…</p>}
     {expired && <p role="alert" className="rounded-xl bg-amber-100 p-4 text-amber-900 dark:bg-amber-950 dark:text-amber-200">انتهت مدة المحفظة. ارجع إلى القراءة وأضف نصاً لإنشاء محفظة جديدة.</p>}
     {data && !expired && <>
-      <div className="flex flex-nowrap items-center gap-2 overflow-x-auto rounded-2xl border border-[#ddcfb8] bg-[#fdfbf7] p-4 dark:border-slate-700 dark:bg-[#111a2e]">
-        <p className="me-auto flex shrink-0 items-center gap-2 whitespace-nowrap text-sm"><Clock className="h-4 w-4" />المتبقي: {hours.toLocaleString('ar')} ساعة و{minutes.toLocaleString('ar')} دقيقة</p>
+      <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-[#ddcfb8] bg-[#fdfbf7] p-3 sm:p-4 dark:border-slate-700 dark:bg-[#111a2e]">
+        <p className="me-auto flex items-center gap-2 whitespace-nowrap text-sm"><Clock className="h-4 w-4" />المتبقي: {hours.toLocaleString('ar')} ساعة و{minutes.toLocaleString('ar')} دقيقة</p>
         {editable && <>
-          <button type="button" className={`${buttonClass} shrink-0 whitespace-nowrap`} disabled={busy} onClick={wallet.extend}>تمديد ٢٤ ساعة</button>
-          <button type="button" className={`${buttonClass} shrink-0 whitespace-nowrap`} disabled={busy} onClick={() => { if (window.confirm('هل تريد تغيير رابطَي التحرير والمشاهدة؟ سيتوقف الرابطان القديمان فوراً.')) wallet.rotate(); }}><RefreshCw className="h-4 w-4" />تغيير الروابط</button>
-          <button type="button" className={`${buttonClass} shrink-0 whitespace-nowrap !text-red-700 dark:!text-red-300`} disabled={busy} onClick={async () => { if (window.confirm('هل تريد حذف المحفظة وكل عناصرها نهائياً؟')) { const result = await wallet.remove(); if (result) onDeleted(); } }}><Trash2 className="h-4 w-4" />حذف المحفظة</button>
-          <button type="button" className={`${buttonClass} h-11 w-11 shrink-0 !p-0`} onClick={() => setShowLinks(true)} aria-label="مشاركة روابط المحفظة" title="إظهار رابطَي المحفظة"><Share2 className="h-5 w-5" /></button>
+          <button type="button" className={`${buttonClass} whitespace-nowrap`} disabled={busy} onClick={wallet.extend}>تمديد ٢٤ ساعة</button>
+          <button type="button" className={`${buttonClass} h-11 w-11 !p-0 text-red-700 dark:text-red-300`} disabled={busy} onClick={async () => { if (window.confirm('هل تريد حذف المحفظة؟')) { const result = await wallet.remove(); if (result) onDeleted(); } }} aria-label="حذف المحفظة" title="حذف المحفظة"><Trash2 className="h-4 w-4" /></button>
+          <button type="button" className={`${buttonClass} h-11 w-11 !p-0`} onClick={() => setShowLinks(true)} aria-label="مشاركة روابط المحفظة" title="إظهار رابطَي المحفظة"><Share2 className="h-5 w-5" /></button>
         </>}
       </div>
       {data.items.length ? <ol className="overflow-hidden rounded-2xl border border-[#ddcfb8] bg-white dark:border-slate-700 dark:bg-[#111a2e]">
@@ -116,6 +136,7 @@ export default function BibleWallet({ wallet, onOpenItem, onBack, onDeleted }) {
           <label className="min-w-0 flex-1 text-sm font-bold">{title}<input readOnly dir="ltr" className={inputClass} value={new URL(buildBibleWalletUrl(token), window.location.origin).href} onFocus={e => e.target.select()} /></label>
           <button type="button" className={`${buttonClass} h-11 w-11 !p-0`} onClick={() => copy(token)} aria-label={`نسخ ${title}`}><Copy className="h-4 w-4" /></button>
         </div>)}
+        <button type="button" className={`${buttonClass} whitespace-nowrap`} disabled={busy} onClick={() => { if (window.confirm('هل تريد تغيير رابطَي التحرير والمشاهدة؟ سيتوقف الرابطان القديمان فوراً.')) wallet.rotate(); }}><RefreshCw className="h-4 w-4" />تغيير الروابط</button>
       </section>
     </div>}
     {!data && !busy && !error && <p className="rounded-2xl border border-dashed border-[#ddcfb8] p-8 text-center leading-loose">افتح سفراً أو إصحاحاً أو عدداً، ثم انقر السهم بجانب «المحفظة».<br />تبدأ المحفظة بمدة ٤٨ ساعة عند أول إضافة، وتحفظ النص مع الترجمات المختارة.</p>}
