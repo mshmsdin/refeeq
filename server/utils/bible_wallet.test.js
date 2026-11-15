@@ -49,6 +49,8 @@ test('creates two independent 14-character capabilities, saves actual excerpt an
   assert.equal(viewer.body.isEditor, false);
   assert.equal(viewer.body.editToken, undefined);
   assert.equal(viewer.body.viewToken, undefined);
+  assert.equal(viewer.body.items[0].label, 'متى 5:3');
+  assert.equal(JSON.stringify(viewer.body).includes('شاهد'), false);
   assert.equal(viewer.headers.get('cache-control'), 'no-store');
   assert.ok(!JSON.stringify(viewer.body).includes(w.editToken));
 });

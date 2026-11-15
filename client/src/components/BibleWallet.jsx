@@ -34,8 +34,8 @@ export function BibleWalletControls({ wallet, onOpen, onAdd, canAdd }) {
     </div>
     {showAdd && <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/50 p-4" role="presentation" onMouseDown={event => { if (event.target === event.currentTarget) setShowAdd(false); }}>
       <form role="dialog" aria-modal="true" aria-labelledby="wallet-add-title" onSubmit={submit} className="w-full max-w-md space-y-4 rounded-2xl border border-[#ddcfb8] bg-[#fdfbf7] p-5 shadow-2xl dark:border-slate-700 dark:bg-[#111a2e]" dir="rtl">
-        <div><h2 id="wallet-add-title" className="text-xl font-black">تسمية العنصر</h2><p className="mt-1 text-sm text-[#735535] dark:text-slate-300">اكتب تسمية تظهر بجانب النص في المحفظة.</p></div>
-        <label className="block text-sm font-bold">التسمية
+        <div><h2 id="wallet-add-title" className="text-xl font-black">تسمية وتعليق خاص</h2><p className="mt-1 text-sm text-[#735535] dark:text-slate-300">اكتب تسمية تتذكر بها النص؛ لا تظهر إلا في رابط التحرير.</p></div>
+        <label className="block text-sm font-bold">التسمية الخاصة
           <input autoFocus required maxLength={200} value={label} onChange={event => setLabel(event.target.value)} className={inputClass} placeholder="مثال: مقارنة الإصحاح الأول" />
         </label>
         {addError && <p role="alert" className="text-sm text-red-700 dark:text-red-300">{addError}</p>}
