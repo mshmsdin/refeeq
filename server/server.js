@@ -327,7 +327,7 @@ try {
 }
 try {
   if (await ensureQumran4Q537Imported()) {
-    console.log('[Bible startup] Imported the licensed Aramaic 4Q537 witness.');
+    console.log('[Bible startup] Imported the partial 4Q537 Aramaic witness and its English draft.');
   }
 } catch (error) {
   console.error('[Bible startup] Qumran 4Q537 witness import failed:', error.message);

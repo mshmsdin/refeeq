@@ -3,12 +3,11 @@ import { getDb } from './schema.js';
 import { ADDITIONAL_SOURCES, run as importNoncanonicalSources } from '../importers/import_noncanonical_english.js';
 import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
-const WITNESS = {
-  slug: 'arc-qdr-4q537-testament-jacob-2026',
-  bookCode: 'QJACOB',
-  units: 62,
-  groups: 23
-};
+const WITNESSES = [
+  { slug: 'arc-qdr-4q537-testament-jacob-2026', language: 'arc', sourceType: 'cc-by-sa-4.0', units: 62, groups: 23 },
+  { slug: 'en-project-4q537-testament-jacob-fragments-2026', language: 'en', sourceType: 'cc-by-sa-4.0', units: 18, groups: 3 }
+];
+const BOOK_CODE = 'QJACOB';
 
 function getSourceState(db, definition) {
   return db.prepare(`
@@ -25,14 +24,14 @@ function getSourceState(db, definition) {
     LEFT JOIN bible_book_metadata bbm ON bbm.book_code=?
     WHERE bt.slug=?
     GROUP BY bt.id
-  `).get(WITNESS.bookCode, definition.nameAr, definition.language, definition.url,
-    definition.sourceType, definition.notes, WITNESS.bookCode, WITNESS.bookCode, WITNESS.slug);
+  `).get(BOOK_CODE, definition.nameAr, definition.language, definition.url,
+    definition.sourceType, definition.notes, BOOK_CODE, BOOK_CODE, definition.slug);
 }
 
-function sourceIsReady(state) {
-  return state && state.language === 'arc' && state.is_active === 1 && state.site_scope === 'both'
-    && state.source_type === 'cc-by-sa-4.0' && state.unit_count === WITNESS.units
-    && state.group_count === WITNESS.groups && state.text_status === 'partial'
+function sourceIsReady(state, witness) {
+  return state && state.language === witness.language && state.is_active === 1 && state.site_scope === 'both'
+    && state.source_type === witness.sourceType && state.unit_count === witness.units
+    && state.group_count === witness.groups && state.text_status === 'partial'
     && state.source_record_ready === 1;
 }
 
@@ -42,7 +41,7 @@ async function sourceUnitsMatch(db, translationId, definition) {
   const actual = db.prepare(`
     SELECT chapter, verse, text, source_url FROM bible_verses
     WHERE translation_id=? AND book_code=? ORDER BY chapter, verse
-  `).all(translationId, WITNESS.bookCode);
+  `).all(translationId, BOOK_CODE);
   return JSON.stringify(actual) === JSON.stringify(expected);
 }
 
@@ -57,15 +56,23 @@ export async function ensureQumran4Q537Imported() {
     throw new Error('يجب أن يبقى شاهد 4Q537 بعد وصية يعقوب القبطية وقبل وثيقة لاوي في الترتيب القصصي');
   }
 
-  const definition = ADDITIONAL_SOURCES.find(({ slug }) => slug === WITNESS.slug);
-  if (!definition) throw new Error(`تعذر العثور على تعريف المصدر ${WITNESS.slug}`);
-  const current = getSourceState(db, definition);
-  if (sourceIsReady(current) && await sourceUnitsMatch(db, current.id, definition)) return false;
+  const imports = [];
+  for (const witness of WITNESSES) {
+    const definition = ADDITIONAL_SOURCES.find(({ slug }) => slug === witness.slug);
+    if (!definition) throw new Error(`تعذر العثور على تعريف المصدر ${witness.slug}`);
+    const current = getSourceState(db, definition);
+    if (!sourceIsReady(current, witness) || !await sourceUnitsMatch(db, current.id, definition)) {
+      imports.push({ witness, definition });
+    }
+  }
+  if (!imports.length) return false;
 
-  await importNoncanonicalSources([WITNESS.slug], { initializeDatabase: false });
-  const imported = getSourceState(db, definition);
-  if (!sourceIsReady(imported) || !await sourceUnitsMatch(db, imported.id, definition)) {
-    throw new Error('تعذر تثبيت أسطر الشاهد الآرامي المرخص 4Q537');
+  await importNoncanonicalSources(imports.map(({ witness }) => witness.slug), { initializeDatabase: false });
+  for (const { witness, definition } of imports) {
+    const imported = getSourceState(db, definition);
+    if (!sourceIsReady(imported, witness) || !await sourceUnitsMatch(db, imported.id, definition)) {
+      throw new Error(`تعذر تثبيت المصدر ${witness.slug}`);
+    }
   }
   return true;
 }
