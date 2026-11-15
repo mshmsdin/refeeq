@@ -9,7 +9,8 @@ const WITNESSES = [
   { bookCode: 'APM4Q376', slug: 'heb-qdr-4q376-apocryphon-moses-2026', language: 'hbo', units: 12, groups: 4, order: 23.3 },
   { bookCode: 'APM4Q408', slug: 'heb-qdr-4q408-apocryphon-moses-2026', language: 'hbo', units: 57, groups: 17, order: 23.4 },
   { bookCode: 'APM4Q375', slug: 'en-project-4q375-apocryphon-moses-2026', language: 'en', units: 16, groups: 2 },
-  { bookCode: 'APM4Q376', slug: 'en-project-4q376-apocryphon-moses-2026', language: 'en', units: 12, groups: 4 }
+  { bookCode: 'APM4Q376', slug: 'en-project-4q376-apocryphon-moses-2026', language: 'en', units: 12, groups: 4 },
+  { bookCode: 'APM4Q408', slug: 'en-project-4q408-apocryphon-moses-2026', language: 'en', units: 57, groups: 17 }
 ];
 
 function getSourceState(db, definition, witness) {
