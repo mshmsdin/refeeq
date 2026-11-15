@@ -241,6 +241,16 @@ html.dark .luxury-border {
   border-color: #8d6e47 !important;
 }
 
+/* العدد الذي يفتحه رابط مثل #21 */
+.verse-card.verse-anchor {
+  box-shadow: 0 0 0 3px rgba(181, 138, 67, 0.6);
+  transition: box-shadow 0.6s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .verse-card.verse-anchor { transition: none; }
+}
+
 html.dark .verse-card.highlighted {
   background-color: rgba(141, 110, 71, 0.25) !important;
   border-color: #c2a578 !important;

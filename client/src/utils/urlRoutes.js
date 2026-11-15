@@ -251,9 +251,18 @@ export function pushRouteUrl(params) {
   }
 }
 
+// يُبقي الجزء بعد # (مثل #21) حين يبقى المسار نفسه (تغيّر المتغيرات فقط مثل ?translations=)، ويُسقطه عند الانتقال إلى مسار آخر.
+// newUrl: مسار ومتغيرات نسبيان يبدآن بـ/؛ loc: ما يقابل window.location (pathname وhash).
+export function resolveBibleUrlWithHash(newUrl, loc) {
+  const target = new URL(newUrl, 'http://placeholder.invalid');
+  const samePath = target.pathname === loc.pathname;
+  return samePath && loc.hash ? `${newUrl}${loc.hash}` : newUrl;
+}
+
 export function pushBibleUrl(params) {
-  const newUrl = buildBibleUrl(params);
-  if (`${window.location.pathname}${window.location.search}` !== newUrl) {
+  // يبقى الجزء بعد # (مثل #21) ما دام المسار نفسه، ويسقط عند الانتقال إلى إصحاح آخر.
+  const newUrl = resolveBibleUrlWithHash(buildBibleUrl(params), window.location);
+  if (`${window.location.pathname}${window.location.search}${window.location.hash}` !== newUrl) {
     window.history.pushState(null, '', newUrl);
   }
 }

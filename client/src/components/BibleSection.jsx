@@ -16,6 +16,7 @@ import BibleWallet, { BibleWalletControls } from './BibleWallet';
 import { orderVerseResults } from '../utils/bible_comparison';
 import ScanBookViewer from './ScanBookViewer';
 import CanonTable from './CanonTable';
+import { parseVerseHash } from '../utils/verse_anchor';
 import { filterBooksByQuery, pickTranslationsForBook } from '../utils/bible_book_search';
 import {
   useTranslations, useCollections, useBooks, useChapter, useVerse, useBibleSearch
@@ -866,6 +867,50 @@ function ChapterReader({
   const [isCanonExpanded, setIsCanonExpanded] = useState(false);
   const [copyToast, showCopyToast] = useCopyToast();
 
+  // رابط الإصحاح مع #رقم (مثل /bible/2ES/14#21): بعد تحميل النص يمرّر إلى العدد ويُبرزه ثلاث ثوانٍ.
+  // الإبراز حالة تُرسم مع البطاقة (لا صنفاً يُضاف إلى عنصر)، لأن النص يُعاد بناؤه عند اختيار الترجمة العربية تلقائياً.
+  const anchorRef = useRef({ key: '', at: 0 });
+  const anchorTimer = useRef(null);
+  const [anchorVerse, setAnchorVerse] = useState(null);
+  useEffect(() => () => clearTimeout(anchorTimer.current), []);
+  useEffect(() => {
+    if (!data?.verses?.length) return undefined;
+    const scrollToAnchor = (force = false) => {
+      const verse = parseVerseHash(window.location.hash);
+      if (!verse) return false;
+      const key = `${book}/${chapter}#${verse}`;
+      const now = Date.now();
+      const sameKey = anchorRef.current.key === key;
+      // يُعاد التمرير إن أُعيد بناء النص خلال أول ثانيتين ونصف من الوصول، ولا يُعاد بعد ذلك.
+      if (!force && sameKey && now - anchorRef.current.at >= 2500) return false;
+      const el = document.getElementById(`verse-${verse}`);
+      if (!el) return false;
+      if (force || !sameKey) {
+        anchorRef.current = { key, at: now };
+        setAnchorVerse(verse);
+        clearTimeout(anchorTimer.current);
+        anchorTimer.current = setTimeout(() => setAnchorVerse(null), 3000);
+      }
+      el.scrollIntoView({ block: 'center' });
+      return true;
+    };
+    const first = scrollToAnchor();
+    // الخطوط قد تغيّر ارتفاع الصفحة بعد أول تمرير، فيُعاد مرة واحدة بعد لحظة.
+    const settle = first
+      ? setTimeout(() => {
+          const verse = parseVerseHash(window.location.hash);
+          const el = verse && document.getElementById(`verse-${verse}`);
+          if (el) el.scrollIntoView({ block: 'center' });
+        }, 350)
+      : null;
+    const onHashChange = () => scrollToAnchor(true);
+    window.addEventListener('hashchange', onHashChange);
+    return () => {
+      clearTimeout(settle);
+      window.removeEventListener('hashchange', onHashChange);
+    };
+  }, [data, book, chapter]);
+
   const bookInfo = data?.book;
   const nav = data?.navigation;
   const canon = bookInfo?.canon_info;
@@ -934,6 +979,9 @@ function ChapterReader({
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       el.classList.add('highlighted');
       setTimeout(() => el.classList.remove('highlighted'), 2000);
+      // يُحدَّث الرابط برقم العدد ليمكن مشاركته (يفتح العدد مباشرة).
+      anchorRef.current = { key: `${book}/${chapter}#${verseNum}`, at: 0 };
+      window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${verseNum}`);
     }
   };
 
@@ -1190,7 +1238,7 @@ function ChapterReader({
                 <div
                   key={group.verse}
                   id={`verse-${group.verse}`}
-                  className="verse-card p-3 sm:p-4 rounded-2xl border border-[#ddcfb8] dark:border-slate-800 bg-white/70 dark:bg-[#111a2e]/80 my-1.5 transition-all relative"
+                  className={`verse-card p-3 sm:p-4 rounded-2xl border border-[#ddcfb8] dark:border-slate-800 bg-white/70 dark:bg-[#111a2e]/80 my-1.5 transition-all relative${anchorVerse === group.verse ? ' highlighted verse-anchor' : ''}`}
                 >
                   <div className="flex items-center justify-between mb-2 pb-1.5 border-b border-[#f8f3ea] dark:border-slate-800">
                     <button
@@ -1253,7 +1301,7 @@ function ChapterReader({
                 key={v.verse}
                 id={`verse-${v.verse}`}
                 onClick={() => onOpenVerseModal(book, chapter, v.verse)}
-                className="verse-card p-2.5 sm:p-3.5 rounded-2xl border border-[#ddcfb8]/80 dark:border-slate-800 bg-white/70 dark:bg-[#111a2e]/80 flex gap-3 items-start cursor-pointer group transition-all my-1.5 relative"
+                className={`verse-card p-2.5 sm:p-3.5 rounded-2xl border border-[#ddcfb8]/80 dark:border-slate-800 bg-white/70 dark:bg-[#111a2e]/80 flex gap-3 items-start cursor-pointer group transition-all my-1.5 relative${anchorVerse === v.verse ? ' highlighted verse-anchor' : ''}`}
               >
                 {/* Verse Number Badge */}
                 <button
@@ -2235,7 +2283,7 @@ export default function BibleSection({ initialBook, initialChapter, initialVerse
     updateBibleSeo({
       title: pageTitle,
       description: description.slice(0, 165),
-      url: window.location.href,
+      url: window.location.href.split('#')[0],
       summary,
       bookTitle,
       chapter: currentChapter,
