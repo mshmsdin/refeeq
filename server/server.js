@@ -50,6 +50,7 @@ import { ensureApocryphonMosesImported } from './db/qumran_apocryphon_moses_star
 import { ensureTegsatGeezImported } from './db/tegsats_geez_startup_import.js';
 import { ensureMeqabyanGeezImported } from './db/meqabyan_geez_startup_import.js';
 import { ensureSirachGeezImported } from './db/sirach_geez_startup_import.js';
+import { ensureBetamasaheftEthiopicWorksImported } from './db/betamasaheft_ethiopic_startup_import.js';
 import { ensureTestamentAbrahamGreekImported } from './db/testament_abraham_greek_startup_import.js';
 import { ensureEthiopianEzraWebImported } from './db/ethiopian_ezra_web_startup_import.js';
 import { ensureEthiopicEnochImported } from './db/ethiopic_enoch_startup_import.js';
@@ -168,6 +169,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Ge\'ez Sirach import failed:', error.message);
+}
+try {
+  if (await ensureBetamasaheftEthiopicWorksImported()) {
+    console.log('[Bible startup] Imported full Beta maṣāḥǝft EOTC Ge\'ez editions of 1 Enoch and Jubilees.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Beta maṣāḥǝft Ge\'ez Enoch/Jubilees import failed:', error.message);
 }
 try {
   if (await ensureTestamentAbrahamGreekImported()) {

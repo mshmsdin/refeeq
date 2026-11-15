@@ -81,8 +81,17 @@ export function parseReviewedUnitText(rawText, source) {
     || source.expectedChapterVerseNumbers.reduce((count, verses) => count + verses.length, 0) !== units.length)) {
     throw new Error(`ترقيم وحدات الشواهد المتعددة غير صالح في ${source.slug}`);
   }
+  if (source.expectedChapterCounts && (!Array.isArray(source.expectedChapterCounts)
+    || source.expectedChapterCounts.length !== source.maxChapter
+    || source.expectedChapterCounts.some((count) => !Number.isInteger(count) || count < 1)
+    || source.expectedChapterCounts.reduce((sum, count) => sum + count, 0) !== units.length)) {
+    throw new Error(`عدد وحدات الفصول المتوقع غير صالح في ${source.slug}`);
+  }
   const expectedChapterVerseLocations = source.expectedChapterVerseNumbers?.flatMap(
     (verses, chapterIndex) => verses.map((verse) => [chapterIndex + 1, verse])
+  );
+  const expectedChapterCountLocations = source.expectedChapterCounts?.flatMap(
+    (count, chapterIndex) => Array.from({ length: count }, (_, verseIndex) => [chapterIndex + 1, verseIndex + 1])
   );
   const minUnitTextLength = Number.isInteger(source.minUnitTextLength) ? source.minUnitTextLength : 10;
   for (const [index, unit] of units.entries()) {
@@ -93,7 +102,7 @@ export function parseReviewedUnitText(rawText, source) {
     }
     const chapterUnitCount = chapterVerses.get(unit.chapter) || 0;
     const expectedLocation = source.expectedUnitLocations?.[index];
-    const expectedChapterVerseLocation = expectedChapterVerseLocations?.[index];
+    const expectedChapterVerseLocation = expectedChapterVerseLocations?.[index] ?? expectedChapterCountLocations?.[index];
     const expectedChapter = expectedLocation?.[0] ?? expectedChapterVerseLocation?.[0] ?? 1;
     const expectedVerse = expectedLocation?.[1] ?? expectedChapterVerseLocation?.[1] ?? (source.expectedVerseNumbers
       ? source.expectedVerseNumbers[index]
@@ -105,6 +114,10 @@ export function parseReviewedUnitText(rawText, source) {
       throw new Error(`تسلسل الوحدات غير مكتمل في الفصل ${unit.chapter} من ${source.slug}`);
     }
     chapterVerses.set(unit.chapter, chapterUnitCount + 1);
+  }
+  if (source.expectedChapterCounts && source.expectedChapterCounts.some((count, chapterIndex) =>
+    chapterVerses.get(chapterIndex + 1) !== count)) {
+    throw new Error(`عدد وحدات الفصول غير مطابق في ${source.slug}`);
   }
   const wordSeparator = source.countZeroWidthWordSeparators ? /[\s\u200b]+/u : /\s+/u;
   const wordCount = units.reduce((count, unit) => count + unit.text.trim().split(wordSeparator).filter(Boolean).length, 0);

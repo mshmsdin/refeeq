@@ -108,3 +108,33 @@ test('preserves source chapter and line numbers when a multi-chapter witness has
 
   assert.deepEqual(rows.map(({ chapter, verse }) => [chapter, verse]), [[1, 1], [1, 2], [2, 2]]);
 });
+
+test('checks each chapter count for a complete numbered source edition', () => {
+  const unitsText = JSON.stringify([
+    { chapter: 1, verse: 1, text: 'The first source unit has a complete readable sentence.' },
+    { chapter: 1, verse: 2, text: 'The second source unit follows the first sentence.' },
+    { chapter: 2, verse: 1, text: 'The third source unit begins the second chapter.' },
+  ]);
+  const unitSource = {
+    slug: 'reviewed-expected-chapter-counts-test',
+    expectedSha256: createHash('sha256').update(unitsText).digest('hex'),
+    expectedWordCount: 25,
+    expectedUnitCount: 3,
+    expectedChapterCounts: [2, 1],
+    maxChapter: 2,
+    url: 'https://example.invalid/source',
+  };
+
+  assert.equal(parseReviewedUnitText(unitsText, unitSource).length, 3);
+  assert.throws(() => parseReviewedUnitText(unitsText.replace('second source unit', 'removed source unit'), unitSource), /بصمة ملف الوحدات/);
+  const missingSecondUnit = JSON.stringify([
+    { chapter: 1, verse: 1, text: 'The first source unit has a complete readable sentence.' },
+    { chapter: 2, verse: 1, text: 'The third source unit begins the second chapter.' },
+  ]);
+  const missingSource = {
+    ...unitSource,
+    expectedSha256: createHash('sha256').update(missingSecondUnit).digest('hex'),
+    expectedWordCount: 17,
+  };
+  assert.throws(() => parseReviewedUnitText(missingSecondUnit, missingSource), /عدد الوحدات لا يطابق/);
+});
