@@ -19,7 +19,7 @@ after(() => {
   for (const suffix of ['', '-wal', '-shm']) rmSync(testDbPath + suffix, { force: true });
 });
 
-test('imports all licensed 4Q539 lines as a separate, partial Aramaic witness', async () => {
+test('imports the licensed 4Q539 witness and only its partial, attributed English draft', async () => {
   const db = getDb();
   const josephMetadata = db.prepare("SELECT * FROM bible_book_metadata WHERE book_code='JOSEPH'").get();
   assert.ok(josephMetadata);
@@ -61,13 +61,38 @@ test('imports all licensed 4Q539 lines as a separate, partial Aramaic witness', 
     && source_url.startsWith('https://qumran.alexschapiro.com/transcriptions/4Q539/2025-08-25/index.html?v=2025-08-25#')));
   assert.match(rows[0].text, /ברגג/);
   assert.match(rows[3].text, /יעקוב/);
+  const english = db.prepare(`
+    SELECT id, language, is_active, site_scope, source_type FROM bible_translations
+    WHERE slug='en-project-4q539-fragments-2026'
+  `).get();
+  assert.deepEqual(english && {
+    language: english.language, is_active: english.is_active,
+    site_scope: english.site_scope, source_type: english.source_type
+  }, { language: 'en', is_active: 1, site_scope: 'both', source_type: 'cc-by-sa-4.0' });
+  const translatedRows = db.prepare(`
+    SELECT chapter, verse, text, source_url FROM bible_verses
+    WHERE translation_id=? AND book_code='Q539' ORDER BY chapter, verse
+  `).all(english.id);
+  assert.equal(translatedRows.length, 7);
+  assert.ok(translatedRows.every(({ chapter, source_url }) => chapter === 2
+    && source_url.startsWith('https://lexicon.qumran-digital.org/transcriptions/4Q539/2026-02-11/index.html?v=2026-02-11#')));
+  assert.match(translatedRows[0].text, /Jacob/);
+  assert.match(translatedRows[1].text, /my sons/);
+  assert.match(translatedRows[4].text, /uncertain|unclear|illegible|securely/i);
   assert.equal(db.prepare("SELECT text_status FROM bible_book_metadata WHERE book_code='Q539'").get().text_status, 'partial');
   const first = rows[0];
   db.prepare(`UPDATE bible_verses SET text='stale' WHERE translation_id=? AND book_code='Q539' AND chapter=? AND verse=?`)
     .run(translation.id, first.chapter, first.verse);
+  const firstEnglish = translatedRows[0];
+  db.prepare(`UPDATE bible_verses SET text='stale' WHERE translation_id=? AND book_code='Q539' AND chapter=? AND verse=?`)
+    .run(english.id, firstEnglish.chapter, firstEnglish.verse);
   assert.equal(await ensureQumran4Q539Imported(), true);
   assert.deepEqual(db.prepare(`SELECT chapter, verse, text, source_url FROM bible_verses
     WHERE translation_id=? AND book_code='Q539' ORDER BY chapter, verse`).all(translation.id), rows);
+  assert.deepEqual(db.prepare(`SELECT chapter, verse, text, source_url FROM bible_verses
+    WHERE translation_id=? AND book_code='Q539' ORDER BY chapter, verse`).all(english.id), translatedRows);
   assert.equal(await ensureQumran4Q539Imported(), false);
-  assert.equal(ADDITIONAL_SOURCES.filter(({ slug }) => slug === 'arc-qdr-4q539-qumran-digital-2025').length, 1);
+  assert.equal(ADDITIONAL_SOURCES.filter(({ slug }) => [
+    'arc-qdr-4q539-qumran-digital-2025', 'en-project-4q539-fragments-2026'
+  ].includes(slug)).length, 2);
 });
