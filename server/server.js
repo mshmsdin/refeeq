@@ -57,6 +57,7 @@ import { ensureSamaritanPentateuchImported } from './db/samaritan_pentateuch_sta
 import { ensureJesuitDeuterocanonImported } from './db/jesuit_deuterocanon_startup_import.js';
 import { ensureSamaritanChronicleImported } from './db/samaritan_chronicle_startup_import.js';
 import { ensureLadderOfJacobImported } from './db/ladder_jacob_startup_import.js';
+import { ensurePseudoPhiloJamesImported } from './db/pseudo_philo_james_startup_import.js';
 import { ensureArmenianHistoryMosesImported } from './db/armenian_history_moses_startup_import.js';
 import { ensureArmenianShortHistoryEliasImported } from './db/armenian_short_history_elias_startup_import.js';
 import {
@@ -128,6 +129,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Ladder of Jacob import failed:', error.message);
+}
+try {
+  if (await ensurePseudoPhiloJamesImported()) {
+    console.log('[Bible startup] Imported and verified all 65 numbered Pseudo-Philo chapters.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Pseudo-Philo import failed:', error.message);
 }
 try {
   if (ensure1EsMohammadImported()) console.log('[Bible startup] Imported complete Arabic translation and Greek witness for 1 Esdras.');

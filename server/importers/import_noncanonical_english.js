@@ -3031,12 +3031,12 @@ export const ADDITIONAL_SOURCES = [
     nameEn: 'M. R. James English Biblical Antiquities of Pseudo-Philo', abbreviation: 'PSLAB-EN',
     url: 'https://ccat.sas.upenn.edu/rak/publics/pseudepig/LAB.html', kind: 'reviewed-chapter-text-file',
     textFile: new URL('./data/pseudo_philo_james_1917.json', import.meta.url),
-    expectedSha256: 'e8f4ce9a731700b7e2213208fb9deadfb175074142c504798e8b41cb849dee6f',
-    expectedChapterCount: 63,
-    expectedChapters: [...Array.from({ length: 42 }, (_, index) => index + 1), 44, 45, 46, ...Array.from({ length: 18 }, (_, index) => index + 48)],
-    maxChapter: 65, incomplete: true,
+    expectedSha256: 'a7fab5c9f340fe135e5729e2ab379bd3cbd83672773ea64040b9a0d6c2f1b9cc',
+    expectedChapterCount: 65,
+    expectedChapters: Array.from({ length: 65 }, (_, index) => index + 1),
+    maxChapter: 65, incomplete: true, replaceExistingVerses: true,
     language: 'en', originalLanguage: 'اللاتينية، بترجمة إنجليزية', sourceType: 'public-domain-text', siteScope: 'both',
-    notes: 'ترجمة م. ر. جيمس عن اللاتينية، طبعة ١٩١٧؛ النص الرقمي من تفريغ جامعة بنسلفانيا لطبعة الكتاب مع حذف التعليقات التحريرية المضافة باللون الأحمر وحواشي المحقق من المتن. تسجل المقدمة فجوة ٣٧:١/٢ وسقطاً عند ٣٧:٥/٣٨:١، وخاتمة ضائعة؛ كما لا تتوفر في الطبعة فصول ٤٣ و٤٧. لذلك تحفظ الفصول الـ٦٣ المتبقية بأرقامها الأصلية ويظل العمل جزئياً. المصدر الرقمي يجيز الاستخدام غير التجاري بشرط إبقاء هذا الإسناد: “Scanned at sacred-texts.com, May 2004. John Bruno Hare, redactor.” طبعة ١٩١٧ معلنة ملكاً عاماً.'
+    notes: 'ترجمة م. ر. جيمس عن اللاتينية، طبعة ١٩١٧؛ أُضيفت الفصول الـ٦٥ المرقمة، بما فيها ٤٣ و٤٧ اللذان سقطا من التفريغ المحلي السابق، بعد مقابلتهما بطبعة ١٩١٧ المصورة. حُذفت التعليقات التحريرية المضافة باللون الأحمر وحواشي المحقق من المتن. تسجل المقدمة فجوة ٣٧:١/٢ وسقطاً عند ٣٧:٥/٣٨:١، كما أن خاتمة العمل ضائعة؛ لذلك تبقى حالة النص جزئية ولا تُستكمل المواضع المفقودة. المصدر الرقمي يجيز الاستخدام غير التجاري بشرط إبقاء هذا الإسناد: “Scanned at sacred-texts.com, May 2004. John Bruno Hare, redactor.” طبعة ١٩١٧ معلنة ملكاً عاماً.'
   },
   {
     bookCode: 'APZEPH', slug: 'en-intertextual-apocalypse-zephaniah',
