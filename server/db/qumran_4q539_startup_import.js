@@ -5,7 +5,7 @@ import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
 const WITNESSES = [
   { slug: 'arc-qdr-4q539-qumran-digital-2025', bookCode: 'Q539', language: 'arc', units: 19, groups: 4 },
-  { slug: 'en-project-4q539-fragments-2026', bookCode: 'Q539', language: 'en', units: 7, groups: 1 }
+  { slug: 'en-project-4q539-fragments-2026', bookCode: 'Q539', language: 'en', units: 19, groups: 4 }
 ];
 
 function getSourceState(db, definition, witness) {
