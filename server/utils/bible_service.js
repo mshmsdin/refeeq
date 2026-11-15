@@ -6,6 +6,7 @@ import { getDb } from '../db/schema.js';
 import { normalizeArabicText } from './arabic_nlp.js';
 import { parseReference } from './bible_reference_parser.js';
 import { BOOK_CANON_DATA, getCanonInfoForBook } from './bible_canon_data.js';
+import { expandBibleSearchCollections } from './bible_search_collections.js';
 
 // رفيق يعرض النصوص الأساسية فقط، أما الموسوعة المستقلة فتُظهر الكتالوج الموسع.
 const SITE_SCOPE = process.env.BIBLE_ONLY === 'true' ? 'bible' : 'rafeeq';
@@ -473,12 +474,13 @@ export function searchBible({ query, translationIds, defaultTranslationPerBook =
     }
   }
 
-  if (collectionSlugs.length > 0) {
-    const placeholders = collectionSlugs.map(() => '?').join(',');
+  const effectiveCollectionSlugs = expandBibleSearchCollections(collectionSlugs);
+  if (effectiveCollectionSlugs.length > 0) {
+    const placeholders = effectiveCollectionSlugs.map(() => '?').join(',');
     const collectionIds = db.prepare(`
       SELECT id FROM bible_collections
       WHERE slug IN (${placeholders}) AND ${SITE_SCOPE_SQL}
-    `).all(...collectionSlugs).map(row => row.id);
+    `).all(...effectiveCollectionSlugs).map(row => row.id);
     if (collectionIds.length > 0) {
       where.push(`bb.collection_id IN (${collectionIds.map(() => '?').join(',')})`);
       params.push(...collectionIds);

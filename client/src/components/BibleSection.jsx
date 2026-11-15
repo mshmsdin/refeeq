@@ -482,8 +482,7 @@ function QuickNavigator({ books, onNavigate }) {
 const SEARCH_COLLECTION_OPTIONS = [
   { slug: 'old-testament', label: 'العهد القديم' },
   { slug: 'new-testament', label: 'العهد الجديد' },
-  { slug: 'deuterocanon', label: 'أبوكريفا العهد القديم' },
-  { slug: 'pseudepigrapha', label: 'المنحولات والرؤى القديمة' }
+  { slug: 'apocrypha', label: 'الأبوكريفا' }
 ];
 
 function SearchCollectionOptions({ selectedCollections, onToggleCollection }) {
