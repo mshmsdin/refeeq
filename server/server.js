@@ -54,6 +54,7 @@ import { ensureTestamentAbrahamGreekImported } from './db/testament_abraham_gree
 import { ensureEthiopianEzraWebImported } from './db/ethiopian_ezra_web_startup_import.js';
 import { ensureEthiopicEnochImported } from './db/ethiopic_enoch_startup_import.js';
 import { ensureSamaritanPentateuchImported } from './db/samaritan_pentateuch_startup_import.js';
+import { ensureJesuitDeuterocanonImported } from './db/jesuit_deuterocanon_startup_import.js';
 import { ensureSamaritanChronicleImported } from './db/samaritan_chronicle_startup_import.js';
 import { ensureLadderOfJacobImported } from './db/ladder_jacob_startup_import.js';
 import { ensureArmenianHistoryMosesImported } from './db/armenian_history_moses_startup_import.js';
@@ -86,6 +87,13 @@ const __dirname = path.dirname(__filename);
 // Initialize DB schema
 initDatabase();
 initBibleSchema();
+try {
+  if (await ensureJesuitDeuterocanonImported()) {
+    console.log('[Bible startup] Imported the ten reviewed Jesuit Deuterocanon texts for both applications.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Jesuit Deuterocanon import failed:', error.message);
+}
 try {
   if (await ensureArmenianHistoryMosesImported()) {
     console.log('[Bible startup] Imported and verified the 1901 Armenian History of Moses translation.');

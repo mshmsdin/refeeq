@@ -20,6 +20,7 @@ import { initBibleSchema } from '../db/bible_schema.js';
 import { normalizeArabicText } from '../utils/arabic_nlp.js';
 import { resolveSourceChapter } from './chapter_mapping.js';
 import { selectBooks } from './source_selection.js';
+import { isCompleteDeuteroBook } from './deutero_completion.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CACHE_DIR = path.join(__dirname, '..', 'cache', 'deutero-html');
@@ -167,16 +168,16 @@ async function run() {
   db.prepare(`
     INSERT OR IGNORE INTO bible_translations
       (slug, name_ar, name_en, abbreviation, language, source_url, source_type, source_notes, site_scope, is_active, display_order)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'bible', 1, 2)
-    ON CONFLICT(slug) DO UPDATE SET site_scope='bible', is_active=1
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'both', 1, 2)
+    ON CONFLICT(slug) DO UPDATE SET site_scope='both', is_active=1
   `).run(
     TRANSLATION_SLUG,
     'الترجمة اليسوعية (القانونيات الثانية)',
-    'Jesuit Arabic Translation — Deuterocanon (1877)',
+    'Jesuit Arabic Translation — Deuterocanon (1876–1880)',
     'DC-JES', 'ar',
     'https://st-takla.org/Bibles/BibleSearch/showChapter.php',
     'html',
-    'مأخوذة من موقع الأنبا تكلا — مستمدة من الترجمة اليسوعية العربية 1877'
+    'نص طبعة الترجمة اليسوعية العربية في بيروت ١٨٧٦–١٨٨٠، التي أعدها أوغسطين روديه وإبراهيم اليازجي. نُقل التفريغ من موقع الأنبا تكلا لمقابلته بترقيم الفصول والأعداد؛ نص الطبعة الأصلية من الملك العام لانتهاء مدة حقوق المؤلفين.'
   );
 
   const trans = db.prepare('SELECT id FROM bible_translations WHERE slug = ?').get(TRANSLATION_SLUG);
@@ -194,6 +195,7 @@ async function run() {
 
   for (const book of selectedBooks) {
     let bookVerses = 0;
+    const importedChapters = [];
     console.log(`\n[DC] ${book.code} — ${book.name} (${book.chapters} chapters)`);
 
     for (let ch = 1; ch <= book.chapters; ch++) {
@@ -218,12 +220,18 @@ async function run() {
         continue;
       }
 
+      if (!isCompleteDeuteroBook(1, [{ chapter: 1, verses }])) {
+        errors.push(`Invalid verse sequence for ${book.code} chapter ${ch}: ${url}`);
+        continue;
+      }
+
       const rows = verses.map(v => [
         translationId, book.code, ch, v.verse,
         v.text, normalizeArabicText(v.text), url
       ]);
 
       insertMany(rows);
+      importedChapters.push({ chapter: ch, verses });
       bookVerses += rows.length;
       process.stdout.write('.');
     }
@@ -232,16 +240,18 @@ async function run() {
     totalVerses += bookVerses;
     if (bookVerses > 0) {
       totalBooks++;
+      const bookComplete = isCompleteDeuteroBook(book.chapters, importedChapters);
       db.prepare(`
         UPDATE bible_book_metadata
-        SET text_status='complete', arabic_status='available', source_name=?, source_url=?, updated_at=CURRENT_TIMESTAMP
+        SET text_status=?, arabic_status='available', source_name=?, source_url=?, updated_at=CURRENT_TIMESTAMP
         WHERE book_code=?
-      `).run('موقع الأنبا تكلا — الترجمة اليسوعية', BASE_URL, book.code);
+      `).run(bookComplete ? 'complete' : 'partial', 'الترجمة اليسوعية، روديه واليازجي، بيروت ١٨٧٦–١٨٨٠؛ التفريغ الرقمي عبر موقع الأنبا تكلا', BASE_URL, book.code);
       db.prepare(`
         INSERT OR IGNORE INTO bible_book_sources
           (book_code, label_ar, label_en, language, availability_status, source_type, source_url, notes)
         VALUES (?, ?, ?, 'العربية', 'available', 'html', ?, ?)
-      `).run(book.code, `النص العربي: ${book.name}`, `Arabic text: ${book.name}`, BASE_URL, 'استُوردت وحدات النص وفُحصت بنيتها قبل إدخالها.');
+      `).run(book.code, `النص العربي: ${book.name}`, `Arabic text: ${book.name}`, BASE_URL,
+        `الترجمة اليسوعية العربية في بيروت ١٨٧٦–١٨٨٠، روديه واليازجي؛ ${bookComplete ? 'اكتملت جميع الفصول والأعداد المتتابعة.' : 'حالة جزئية: تعذر جلب فصل كامل أو تعذر التحقق من تسلسل أعداده.'}`);
     }
   }
 

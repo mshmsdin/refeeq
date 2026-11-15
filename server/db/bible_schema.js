@@ -231,9 +231,9 @@ export function initBibleSchema() {
     ['jewish-sources',      'المصادر اليهودية الأصول',   'Jewish Source Texts', 'jewish',      9, 'bible'],
   ];
   for (const c of collections) insertCollection.run(...c);
-  db.prepare("UPDATE bible_collections SET site_scope = 'both' WHERE slug IN ('old-testament','new-testament','apocrypha','pseudepigrapha','ethiopian-canon','textual-traditions')").run();
-  db.prepare("UPDATE bible_collections SET site_scope = 'bible' WHERE slug NOT IN ('old-testament','new-testament','apocrypha','pseudepigrapha','ethiopian-canon','textual-traditions')").run();
-  db.prepare("UPDATE bible_translations SET site_scope = 'bible' WHERE slug IN ('ar-jesuit-dc','ar-apocrypha')").run();
+  db.prepare("UPDATE bible_collections SET site_scope = 'both' WHERE slug IN ('old-testament','new-testament','deuterocanon','apocrypha','pseudepigrapha','ethiopian-canon','textual-traditions')").run();
+  db.prepare("UPDATE bible_collections SET site_scope = 'bible' WHERE slug NOT IN ('old-testament','new-testament','deuterocanon','apocrypha','pseudepigrapha','ethiopian-canon','textual-traditions')").run();
+  db.prepare("UPDATE bible_translations SET site_scope = 'both' WHERE slug IN ('ar-jesuit-dc','ar-apocrypha')").run();
 
   // Seed books (66 canonical + deuterocanon)
   _seedBooks(db);
@@ -657,7 +657,7 @@ function _seedExpansionCatalog(db) {
   const existing = db.prepare(`
     SELECT bb.code, bb.name_ar, bb.name_en, bc.slug
     FROM bible_books bb JOIN bible_collections bc ON bc.id = bb.collection_id
-    WHERE bc.site_scope = 'bible'
+    WHERE bc.site_scope = 'bible' OR bc.slug = 'deuterocanon'
   `).all();
   for (const book of existing) {
     // Expansion records already have a specific description and tradition above.
