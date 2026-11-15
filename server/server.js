@@ -50,6 +50,7 @@ import { ensureApocryphonMosesImported } from './db/qumran_apocryphon_moses_star
 import { ensureTegsatGeezImported } from './db/tegsats_geez_startup_import.js';
 import { ensureMeqabyanGeezImported } from './db/meqabyan_geez_startup_import.js';
 import { ensureSirachGeezImported } from './db/sirach_geez_startup_import.js';
+import { ensureTestamentAbrahamGreekImported } from './db/testament_abraham_greek_startup_import.js';
 import { ensureEthiopianEzraWebImported } from './db/ethiopian_ezra_web_startup_import.js';
 import { ensureEthiopicEnochImported } from './db/ethiopic_enoch_startup_import.js';
 import { ensureSamaritanPentateuchImported } from './db/samaritan_pentateuch_startup_import.js';
@@ -151,6 +152,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Ge\'ez Sirach import failed:', error.message);
+}
+try {
+  if (await ensureTestamentAbrahamGreekImported()) {
+    console.log('[Bible startup] Imported and verified OCP Greek Testament of Abraham recensions A and B.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Greek Testament of Abraham import failed:', error.message);
 }
 try {
   if (await ensureEthiopianEzraWebImported()) {

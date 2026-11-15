@@ -3504,6 +3504,33 @@ function parseRomanHtmlChapters(content, source) {
   return rows.sort((a, b) => a.chapter - b.chapter);
 }
 
+const OCP_TESTAMENT_ABRAHAM_COMMIT = '853a64b623de296d2b8532a43593607772e7c45a';
+const OCP_TESTAMENT_ABRAHAM_COUNTS = {
+  a: [7, 12, 12, 11, 14, 8, 12, 12, 8, 15, 12, 18, 14, 15, 15, 16, 19, 11, 16, 15],
+  b: [3, 13, 10, 16, 6, 13, 19, 16, 11, 16, 10, 16, 17, 9]
+};
+for (const [recension, counts, unitCount, wordCount, sha256] of [
+  ['a', OCP_TESTAMENT_ABRAHAM_COUNTS.a, 262, 6952, 'cec73b71276e357f2e12ab10c2cca5bc5735e2cc7ce2489b75463bed0b56a433'],
+  ['b', OCP_TESTAMENT_ABRAHAM_COUNTS.b, 175, 3217, '015d1e403359144e32768c9301f8dd574bb34aa132321102f986315e9b91202b']
+]) {
+  const recensionName = recension === 'a' ? 'أ' : 'ب';
+  const title = `النص اليوناني النقدي لوصية إبراهيم، النسخة ${recensionName}`;
+  const sourceUrl = `https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/${OCP_TESTAMENT_ABRAHAM_COMMIT}/static/docs/TAb${recension.toUpperCase()}.xml`;
+  ADDITIONAL_SOURCES.push({
+    bookCode: 'AABR', slug: `grc-ocp-testament-abraham-${recension}-2026`,
+    nameAr: title,
+    nameEn: `OCP Greek Testament of Abraham Recension ${recension.toUpperCase()}`,
+    abbreviation: `AABR-${recension.toUpperCase()}-GRC`,
+    url: sourceUrl, kind: 'reviewed-unit-text-file',
+    textFile: new URL(`./data/testament_abraham_${recension}_ocp_2026.json`, import.meta.url),
+    expectedSha256: sha256, expectedUnitCount: unitCount, expectedWordCount: wordCount,
+    maxChapter: counts.length, incomplete: false, preserveBookMetadata: true,
+    expectedChapterVerseNumbers: counts.map((count) => Array.from({ length: count }, (_, index) => index + 1)),
+    language: 'grc', originalLanguage: 'اليونانية', sourceType: 'cc-by-4.0', siteScope: 'both',
+    notes: `النص اليوناني النقدي الأساسي للنسخة ${recensionName} من وصية إبراهيم، كما يورده ملف مشروع النصوص النقدية المفتوحة المثبت على هذا الإصدار. استُخرجت القراءة الأساسية من الوحدات الـ${unitCount} في ${counts.length} فصلاً؛ لا يدمج هذا الشاهد بالنسخة الأخرى أو بالترجمات الإنجليزية. يعلن المستودع رخصة المشاع الإبداعي النسب ٤٫٠ للنصوص، مع نسبة المشروع والمحرر كريغ إيفانز. [النص المثبت](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/${OCP_TESTAMENT_ABRAHAM_COMMIT}/static/docs/TAb${recension.toUpperCase()}.xml)؛ [بيان رخصة النصوص](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/${OCP_TESTAMENT_ABRAHAM_COMMIT}/LICENSE.CC-BY-4.0).`
+  });
+}
+
 ADDITIONAL_SOURCES.push(...TORAH_WITNESS_SOURCES);
 
 export async function run(requestedSlugs = null, { initializeDatabase = true } = {}) {
