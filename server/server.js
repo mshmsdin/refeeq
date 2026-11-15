@@ -24,6 +24,7 @@ import { ensureGenesisApocryphonImported } from './db/genesis_apocryphon_startup
 import { ensurePseudoJubileesImported } from './db/pseudo_jubilees_startup_import.js';
 import { ensureQumran4Q246Imported } from './db/qumran_4q246_startup_import.js';
 import { ensureTorahWitnessesImported } from './db/torah_witnesses_startup_import.js';
+import { ensureTempleScrollImported } from './db/temple_scroll_startup_import.js';
 import { ensureAncientVersionsImported } from './db/ancient_versions_startup_import.js';
 import { ensureJewishSourcesImported } from './db/jewish_sources_startup_import.js';
 import { ensureScanBooksImported } from './db/scan_books_startup_import.js';
@@ -276,6 +277,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Torah witnesses import failed:', error.message);
+}
+try {
+  if (await ensureTempleScrollImported()) {
+    console.log('[Bible startup] Imported and verified all 1,071 licensed Hebrew Temple Scroll lines.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Temple Scroll import failed:', error.message);
 }
 try {
   if (await ensureBirthOfNoahImported()) {

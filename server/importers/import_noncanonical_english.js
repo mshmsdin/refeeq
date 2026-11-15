@@ -2715,6 +2715,19 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ آرامي لـ٤٩٤ سطراً من الشاهد القمراني 1Q20 كما نشره مشروع قمران الرقمي في ٦ أكتوبر ٢٠٢٦. حُفظ ترقيم الأعمدة ٠–١٧ و١٩–٢٢ والأسطر الظاهرة، مع رابط مباشر لكل سطر؛ العمود ١٨ غير موجود في المصدر ولم يُستكمل. أرقام الفصول في واجهة العرض تنظيمية فقط وليست فصولاً أصلية، والصفحة تعرض النص كشاهد مخطوط لا كترجمة. الشاهد ناقص بطبيعته، لذلك حالة العمل جزئية. تنص صفحة المصدر على رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتذكر أن بيانات التفريغ مبنية على عمل مشروع معجم قمران السابق ونص مارتن أبيغ. لم أعثر في المصدر على ترجمة إنجليزية معلنة الرخصة لإعادة النشر؛ لذلك أُدرج الأصل الآرامي وحده. [تفريغ الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q20/2026-10-06/index.html?v=2026-10-06)؛ [فهرس تفريغات قمران الرقمي](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
   },
   {
+    bookCode: 'TSCROLL', slug: 'heb-qdr-11q19-temple-scroll-2025',
+    nameAr: 'التفريغ العبري للّفافة الهيكلية 11Q19',
+    nameEn: 'Qumran Digital Hebrew Temple Scroll 11Q19', abbreviation: '11Q19-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/11QT%5Ea%5E/2025-08-25/index.html?v=2025-08-25',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/temple_scroll_11q19_qumran_digital_2025.json', import.meta.url),
+    expectedSha256: '37b1080b556cfcc54deb3910e66b17e6b7640ade322feb88059ca55b3ca41ea4',
+    expectedUnitCount: 1071, expectedWordCount: 15007, maxChapter: 1,
+    expectedChapterCounts: [1071], minUnitTextLength: 10, incomplete: true,
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري لـ١٠٧١ سطراً من 11QT^a (11Q19) كما ينشره مشروع قمران الرقمي: الأعمدة المرقمة ٢–٦٦ (٦٥ عموداً)، وثلاثة أسطر في الجدول الملحق «frg. add. 1». يحفظ كل سطر رقم العمود ورقم السطر كما في المصدر ورابطاً مباشراً إليه. أرقام العرض المتسلسلة في فصل واحد تنظيم واجهة فقط، وليست إصحاحات أو أعداداً أصلية. هذا تفريغ كامل لما تعرضه صفحة المصدر من نص الشاهد الباقي، لا نص اللفافة الأصلية كاملاً: العمود الأول غير محفوظ وتوجد مواضع تلف وفجوات؛ لم تُختلق الأجزاء الغائبة. يرخص مشروع قمران الرقمي التفريغ برخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسبه إلى مشروع الأبحاث الألماني رقم ٤٦٥٢٧٧٤٢١ «قمران الرقمي: النص والمعجم»، اعتماداً على مشروع «معجم قمران» السابق ونص مارتن أبيغ. لا يتضمن هذا السجل ترجمة؛ لم أعد نشر ترجمة تينمو المقيدة بغير التجاري. [التفريغ وبيان الرخصة](https://lexicon.qumran-digital.org/transcriptions/11QT%5Ea%5E/2025-08-25/index.html?v=2025-08-25)؛ [سجل الإصدارات](https://lexicon.qumran-digital.org/transcriptions/11QT%5Ea%5E/changelog.html?v=2025-08-25)؛ [رخصة المشاع الإبداعي النسب بالمثل ٤٫٠](https://creativecommons.org/licenses/by-sa/4.0/).'
+  },
+  {
     bookCode: 'PSJUBA', slug: 'he-qdr-4q225-pseudo-jubilees-a-2026',
     nameAr: 'تفريغ الشاهد العبري 4Q225 (منحول اليوبيلات أ تقليدياً)',
     nameEn: 'Qumran Digital Hebrew 4Q225 Pseudo-Jubilees A Witness', abbreviation: '4Q225-HE',
