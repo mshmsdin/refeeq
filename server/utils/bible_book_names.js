@@ -169,6 +169,7 @@ export const BOOK_NAME_OVERRIDES = {
   ENO2: { aliases: ['أخنوخ السلافي', 'أسرار أخنوخ', 'سفر أسرار أخنوخ', '2 Enoch', 'Secrets of Enoch'] },
   ENO3: { aliases: ['أخنوخ العبري', 'سفر الهيكلات', '3 Enoch'] },
   SHEM: { aliases: ['سام بن نوح'] },
+  CAPEL: { aliases: ['رؤيا إيليا القبطية', 'رؤيا إيليا الأخميمية', 'أبوكاليبسو إيليا القبطي'] },
   TSCROLL: { aliases: ['لفافة الهيكل', 'لفافة الهيكل 11Q19', 'درج المعبد', '11Q19', '11QTa'] },
   ABR: { aliases: ['Apocalypse of Abraham'] },
   AABR: { aliases: ['Testament of Abraham'] },

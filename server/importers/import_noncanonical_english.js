@@ -3074,6 +3074,21 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ الأسطر السبعة على ظهر البردية PSI I 7، كما طبعه إرمينيغيلدو بستللي في Papiri greci e latini، المجلد الأول، فلورنسا ١٩١٢، ص ١٦؛ قوبلت الكلمات بصورة الصفحة وحُفظت مواضع الفقد، مع توحيد علامة الفجوة إلى […]. الأقواس تحفظ الاستدراك والسقط في الطبعة، والفهرس البحثي الحديث يصف هذا الوجه بأنه نهاية رؤيا إيليا. لم أستورد الأسطر الخمسة على الوجه الآخر لأن المحرر نفسه لم يستطع تحديد موضعها ولا إثبات أنها من النص نفسه. المتن هنا شذرة من نهاية عمل أكبر، وليس سفراً كاملاً ولا فصولاً أصلية؛ أرقام الوحدات تسلسلية للعرض فقط. طبعة بستللي عامة الحقوق: توفي سنة ١٩٢٧، ويؤكد سجل الأرشيف الحكومي الإيطالي ذلك. [الطبعة المصورة، ص ١٦](https://archive.org/details/papirigrecielati01sociuoft/page/16/mode/1up)؛ [وصف البردية وسبعة أسطر الوجه الخلفي](https://4care-skos.mf.no/4care-artefacts/493/)؛ [سجل وفاة بستللي](https://siusa-archivi.cultura.gov.it/cgi-bin/pagina.pl?Chiave=50473&TipoPag=prodpersona).'
   },
   {
+    bookCode: 'CAPEL', slug: 'de-riessler-coptic-apocalypse-elijah-1928',
+    nameAr: 'ترجمة باول ريِسلر الألمانية لرؤيا إيليا القبطية (١٩٢٨)',
+    nameEn: 'Paul Riessler 1928 German Translation of the Coptic Apocalypse of Elijah',
+    abbreviation: 'APOCE-DE',
+    url: 'https://de.wikisource.org/wiki/Apokalypse_des_Elias?oldid=2834974',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/coptic_elijah_riessler_1928.json', import.meta.url),
+    expectedSha256: 'e7606cbae2d227515646d1921cd8fc9cd83a603c198f4dd19aaf554e0b8c8db8',
+    expectedUnitCount: 166, expectedWordCount: 4296, maxChapter: 26,
+    expectedChapterCounts: [5, 4, 4, 5, 6, 6, 6, 7, 5, 4, 5, 5, 6, 5, 6, 5, 21, 7, 5, 5, 6, 21, 5, 5, 6, 1],
+    incomplete: true, language: 'de', originalLanguage: 'القبطية الأخميمية',
+    sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'ترجمة رايسل الألمانية المنشورة سنة ١٩٢٨ عن رؤيا إيليا الأخميمية في طبعة شتايندورف ١٨٩٩، الصفحات ١٩–٤٤. نص ويكي مصدر راجع صفحاته محرران بحسب حالة النص؛ وترقيم الفقرات من وضع رايسل. حُفظت ١٦٦ فقرة في ٢٦ مجموعة عرض تقابل صفحات الشاهد ١٩–٤٤ في الطبعة، لا إصحاحات أصلية. توفي المترجم سنة ١٩٣٥، فالترجمة التاريخية ضمن الملك العام؛ ويرخص ويكي مصدر تفريغها بالمشاع الإبداعي النسب بالمثل ٤٫٠، فتُنسب إليه وإلى رايسل وطبعة ١٩٢٨ وتبقى مشتقاتها على الرخصة نفسها. تمثل الترجمة الشاهد الأخميمي وحده، وتظل فجوات المخطوط ظاهرة؛ لا تدمج معها رؤيا صفنيا أو الشاهد السعيدي أو نص تشستر بيتي. لا يتضمن هذا الاستيراد تفريغ الأصل القبطي. [النص الألماني المثبت](https://de.wikisource.org/wiki/Apokalypse_des_Elias?oldid=2834974)؛ [طبعة شتايندورف المصورة](https://isac-idb-static.uchicago.edu/multimedia/2388/steindorff_apokalypse_des_elias.pdf)؛ [وفاة المترجم](https://www.deutsche-biographie.de/sfz127273.html)؛ [ترخيص نصوص ويكي مصدر](https://de.wikisource.org/wiki/Wikisource:Urheberrecht).'
+  },
+  {
     bookCode: 'APOCEL', slug: 'ar-psi-i-7-apocalypse-elijah-editorial-parallel-1912',
     nameAr: 'صياغة عربية تفسيرية لشرح بستللي عن النص القبطي الموازي',
     nameEn: 'Arabic Rendering of Pistelli’s German Explanation of the Coptic Parallel', abbreviation: 'APOCEL-AR',

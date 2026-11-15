@@ -62,6 +62,7 @@ import { ensureLadderOfJacobImported } from './db/ladder_jacob_startup_import.js
 import { ensurePseudoPhiloJamesImported } from './db/pseudo_philo_james_startup_import.js';
 import { ensureArmenianHistoryMosesImported } from './db/armenian_history_moses_startup_import.js';
 import { ensureArmenianShortHistoryEliasImported } from './db/armenian_short_history_elias_startup_import.js';
+import { ensureRiesslerTranslation } from './db/coptic_elijah_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -110,6 +111,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Armenian Short History of the Prophet Elias import failed:', error.message);
+}
+try {
+  if (await ensureRiesslerTranslation()) {
+    console.log('[Bible startup] Imported and verified the partial 1928 German translation of the Akhmimic Apocalypse of Elijah witness.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Coptic Apocalypse of Elijah translation import failed:', error.message);
 }
 try {
   if (await ensureSamaritanPentateuchImported()) {

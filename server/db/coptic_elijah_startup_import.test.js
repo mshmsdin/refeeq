@@ -1,0 +1,44 @@
+import test, { after } from 'node:test';
+import assert from 'node:assert/strict';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
+import { randomUUID } from 'node:crypto';
+import { rmSync } from 'node:fs';
+
+const testDbPath = join(tmpdir(), `coptic-elijah-${randomUUID()}.sqlite`);
+process.env.DB_PATH = testDbPath;
+const { getDb, initDatabase } = await import('./schema.js');
+const { initBibleSchema } = await import('./bible_schema.js');
+let ensureRiesslerTranslation;
+try {
+  ({ ensureRiesslerTranslation } = await import('./coptic_elijah_startup_import.js'));
+} catch {}
+
+initDatabase();
+initBibleSchema();
+after(() => {
+  getDb().close();
+  for (const suffix of ['', '-wal', '-shm']) rmSync(testDbPath + suffix, { force: true });
+});
+
+test('startup installs and verifies the 166 German units on both applications', async () => {
+  assert.equal(typeof ensureRiesslerTranslation, 'function');
+  assert.equal(await ensureRiesslerTranslation(), true);
+  const db = getDb();
+  const state = db.prepare(`
+    SELECT bt.language, bt.source_type, bt.site_scope, bt.is_active,
+      COUNT(bv.id) AS units, COUNT(DISTINCT bv.source_url) AS source_sections,
+      bb.chapter_count AS chapters, bm.text_status
+    FROM bible_translations bt
+    LEFT JOIN bible_verses bv ON bv.translation_id=bt.id AND bv.book_code='CAPEL'
+    LEFT JOIN bible_books bb ON bb.code='CAPEL'
+    LEFT JOIN bible_book_metadata bm ON bm.book_code='CAPEL'
+    WHERE bt.slug='de-riessler-coptic-apocalypse-elijah-1928'
+    GROUP BY bt.id
+  `).get();
+  assert.deepEqual(state, {
+    language: 'de', source_type: 'cc-by-sa-4.0', site_scope: 'both', is_active: 1,
+    units: 166, source_sections: 26, chapters: 26, text_status: 'partial'
+  });
+  assert.equal(await ensureRiesslerTranslation(), false);
+});
