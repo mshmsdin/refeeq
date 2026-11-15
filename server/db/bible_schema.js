@@ -372,7 +372,8 @@ function _seedExpansionCatalog(db) {
        arabic_status, english_status, future_translation_status, summary_ar, source_name, source_url, source_notes)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(book_code) DO UPDATE SET
-      canonicality_status=excluded.canonicality_status,
+      canonicality_status=CASE WHEN bible_book_metadata.text_status IN ('complete','partial')
+        THEN bible_book_metadata.canonicality_status ELSE excluded.canonicality_status END,
       textual_tradition=excluded.textual_tradition,
       original_language=CASE WHEN bible_book_metadata.text_status IN ('complete','partial') THEN bible_book_metadata.original_language ELSE excluded.original_language END,
       summary_ar=CASE WHEN bible_book_metadata.text_status IN ('complete','partial') THEN bible_book_metadata.summary_ar ELSE excluded.summary_ar END,
@@ -458,6 +459,7 @@ function _seedExpansionCatalog(db) {
     ['AABR', 'وصية إبراهيم', 'Testament of Abraham', 'وص-إ', 'pseudepigrapha', 8, 0, 'greek', 'اليونانية', 'عمل أدبي مستقل.'],
     ['TAISAAC', 'وصية إسحاق', 'Testament of Isaac', 'وص-إس', 'pseudepigrapha', 8.5, 0, 'coptic', 'القبطية البحيرية', 'ترجمة غاسيل الإنجليزية لشاهد قبطي بحيري منشورة سنة ١٩٢٧؛ النص المتاح كامل التفريغ من الشاهد المنشور، مع فجوات واضطرابات نصية صرّح بها المحقق.'],
     ['TAJACOB', 'وصية يعقوب', 'Testament of Jacob', 'وص-يع', 'pseudepigrapha', 8.6, 0, 'coptic', 'القبطية البحيرية', 'ترجمة غاسيل الإنجليزية لمراجعة قبطية بحيرية واحدة منشورة سنة ١٩٢٧؛ النص المتاح كامل التفريغ من الشاهد المنشور، لكنه لا يمثل الروايات الأخرى وفيه فجوات نصية صرّح بها المحقق.'],
+    ['LADJAC', 'سُلّم يعقوب', 'The Ladder of Jacob', 'سل-يع', 'pseudepigrapha', 8.65, 0, 'slavonic', 'السلافونية الكنسية', 'ترجمة جيمس الإنجليزية المنشورة سنة ١٩٢٠ عن روايتين سلافيتين؛ أقدم مخطوط متضرر وينتهي نصه عند القسم ٦، والقسمان ٧ و٨ من الرواية الثانية وحدها. النص المعروض جزئي ولا يملأ الأسطر المفقودة.'],
     ['QJACOB', 'الشاهد القمراني 4Q537 (وصية يعقوب؟)', 'Qumran Aramaic Witness 4Q537 (Testament of Jacob?)', '4Q537', 'pseudepigrapha', 8.61, 0, 'aramaic', 'الآرامية', 'شاهد آرامي شذري مستقل. اسم يعقوب غير محفوظ؛ العنوان احتمالي، وإلحاق الشظايا ٢٣–٢٥ باللفافة غير مؤكد. لا يدمج مع وصية يعقوب القبطية.'],
     ['QSB', 'أسئلة ملكة سبأ وأجوبة سليمان', 'Questions of the Queen of Sheba and Answers of Solomon', 'سبأ-سل', 'pseudepigrapha', 8.7, 0, 'armenian', 'الأرمنية', 'ترجمة إيسافردنس الإنجليزية المنشورة سنة ١٩٠١ عن شاهد أرمني؛ النص الرقمي يحفظ أسئلة وأجوبة الصفحات ٢١١–٢١٥، وفيه مواضع حذف مطبوعة، لذلك حالته جزئية ولا يمثل الروايات الأخرى.'],
     ['QEZRA', 'أسئلة عزرا', 'Questions of Ezra', 'أس-عز', 'pseudepigrapha', 8.8, 1, 'armenian', 'الأرمنية مع ترجمة إنجليزية جديدة', 'الرواية الأرمنية الأقصر B من «هايْسمَفورك» سنة ١٧٣٠؛ تحفظ ١٤ وحدة في ترجمة إنجليزية جديدة. وهي رواية مستقلة عن الرواية الأطول A وعن رؤيا عزرا وكتاب عزرا الرابع.'],
@@ -566,7 +568,7 @@ function _seedExpansionCatalog(db) {
   const pseudepigraphaStoryOrder = new Map([
     ['TADAM', 1], ['APMO', 2], ['TSTADAM', 3], ['APADAM', 4], ['ADAMCON', 5],
     ['PSLAB', 6], ['JASHER', 7], ['ENO2', 8], ['NOAH', 8.5], ['BNOAH', 8.6], ['GENAP', 8.7], ['GIANTS', 9], ['ENO3', 10], ['SHEM', 11],
-    ['ABR', 12], ['PSJUBA', 12.5], ['PSJUBB', 12.6], ['PSJUBC', 12.7], ['AABR', 13], ['TAISAAC', 14], ['TAJACOB', 15], ['QJACOB', 15.5], ['ARL', 16],
+    ['ABR', 12], ['PSJUBA', 12.5], ['PSJUBB', 12.6], ['PSJUBC', 12.7], ['AABR', 13], ['TAISAAC', 14], ['TAJACOB', 15], ['LADJAC', 15.2], ['QJACOB', 15.5], ['ARL', 16],
     ['APLEV540', 17], ['APLEV541', 18], ['QAHAT', 19], ['T12', 20], ['JOSEPH', 21], ['Q539', 21.5], ['TJOB', 22], ['AMRAM', 23], ['APM1Q29', 23.1], ['APM4Q375', 23.2], ['APM4Q376', 23.3], ['APM4Q408', 23.4], ['MOS', 24], ['ARMHMO', 24.1],
     ['MOTA-MUSE', 25], ['NARMOS', 26], ['BALAAM', 27], ['APJOSH', 27.5], ['TSOL', 28], ['QSB', 29],
     ['SEELI', 30], ['ARMELI', 30.5], ['VISEL', 31], ['APOCEL', 32], ['AHIKAR', 33], ['ASC', 34],
@@ -628,6 +630,7 @@ function _seedExpansionCatalog(db) {
     ['APM4Q408', '4Q408'], ['APM4Q408', 'أبوكريفون موسى'],
     ['SAM', 'الأسفار الخمسة السامرية'], ['SAM', 'Samaritan Pentateuch'],
     ['SAMJOS', 'التاريخ السامري'], ['SAMJOS', 'كتاب يشوع السامري'], ['SAMJOS', 'Samaritan Chronicle'],
+    ['LADJAC', 'سُلّم يعقوب'], ['LADJAC', 'Ladder of Jacob'], ['LADJAC', 'Ladder of Jacob (Slavonic)'],
     ['DIDAS', 'الدسقولية'], ['DIDAS', 'الدسقولية الرسولية'], ['DIDAS', 'Didascalia Apostolorum'],
     ['DID-ETH', 'الدسقولية الإثيوبية'], ['DID-ETH', 'Ethiopic Didascalia'],
     ['EZRS', 'عزرا سوتوئيل'], ['EZRS', 'Ezra Sutuel'],

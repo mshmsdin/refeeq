@@ -53,6 +53,7 @@ import { ensureEthiopianEzraWebImported } from './db/ethiopian_ezra_web_startup_
 import { ensureEthiopicEnochImported } from './db/ethiopic_enoch_startup_import.js';
 import { ensureSamaritanPentateuchImported } from './db/samaritan_pentateuch_startup_import.js';
 import { ensureSamaritanChronicleImported } from './db/samaritan_chronicle_startup_import.js';
+import { ensureLadderOfJacobImported } from './db/ladder_jacob_startup_import.js';
 import { ensureArmenianHistoryMosesImported } from './db/armenian_history_moses_startup_import.js';
 import { ensureArmenianShortHistoryEliasImported } from './db/armenian_short_history_elias_startup_import.js';
 import {
@@ -110,6 +111,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Samaritan Chronicle import failed:', error.message);
+}
+try {
+  if (await ensureLadderOfJacobImported()) {
+    console.log('[Bible startup] Imported and verified the 1920 Ladder of Jacob translation.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Ladder of Jacob import failed:', error.message);
 }
 try {
   if (ensure1EsMohammadImported()) console.log('[Bible startup] Imported complete Arabic translation and Greek witness for 1 Esdras.');
