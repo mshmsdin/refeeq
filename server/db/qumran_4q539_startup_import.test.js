@@ -19,7 +19,7 @@ after(() => {
   for (const suffix of ['', '-wal', '-shm']) rmSync(testDbPath + suffix, { force: true });
 });
 
-test('imports the licensed 4Q539 witness and only its partial, attributed English draft', async () => {
+test('imports every preserved 4Q539 line and its partial, attributed English draft without claiming completeness', async () => {
   const db = getDb();
   const josephMetadata = db.prepare("SELECT * FROM bible_book_metadata WHERE book_code='JOSEPH'").get();
   assert.ok(josephMetadata);
@@ -73,12 +73,22 @@ test('imports the licensed 4Q539 witness and only its partial, attributed Englis
     SELECT chapter, verse, text, source_url FROM bible_verses
     WHERE translation_id=? AND book_code='Q539' ORDER BY chapter, verse
   `).all(english.id);
-  assert.equal(translatedRows.length, 7);
-  assert.ok(translatedRows.every(({ chapter, source_url }) => chapter === 2
-    && source_url.startsWith('https://lexicon.qumran-digital.org/transcriptions/4Q539/2026-02-11/index.html?v=2026-02-11#')));
-  assert.match(translatedRows[0].text, /Jacob/);
-  assert.match(translatedRows[1].text, /my sons/);
-  assert.match(translatedRows[4].text, /uncertain|unclear|illegible|securely/i);
+  assert.equal(translatedRows.length, 19);
+  assert.deepEqual(translatedRows.map(({ chapter, verse }) => [chapter, verse]),
+    rows.map(({ chapter, verse }) => [chapter, verse]));
+  assert.deepEqual(translatedRows.map(({ source_url }) => source_url.slice(source_url.indexOf('#'))),
+    rows.map(({ source_url }) => source_url.slice(source_url.indexOf('#'))));
+  assert.deepEqual(translatedRows.reduce((counts, { chapter }) => {
+    counts[chapter - 1] += 1;
+    return counts;
+  }, [0, 0, 0, 0]), [3, 7, 6, 3]);
+  assert.ok(translatedRows.every(({ source_url }) =>
+    source_url.startsWith('https://lexicon.qumran-digital.org/transcriptions/4Q539/2026-02-11/index.html?v=2026-02-11#')));
+  assert.match(translatedRows[3].text, /Jacob/);
+  assert.match(translatedRows[4].text, /my sons/);
+  assert.match(translatedRows[7].text, /uncertain|unclear|illegible|securely/i);
+  assert.match(translatedRows[12].text, /eighteen/i);
+  assert.match(translatedRows[17].text, /spirit|man|mouth/i);
   assert.equal(db.prepare("SELECT text_status FROM bible_book_metadata WHERE book_code='Q539'").get().text_status, 'partial');
   const first = rows[0];
   db.prepare(`UPDATE bible_verses SET text='stale' WHERE translation_id=? AND book_code='Q539' AND chapter=? AND verse=?`)
