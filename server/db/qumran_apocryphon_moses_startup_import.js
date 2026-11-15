@@ -5,6 +5,7 @@ import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
 const WITNESSES = [
   { bookCode: 'APM1Q29', slug: 'heb-qdr-1q29-apocryphon-moses-2026', language: 'hbo', units: 30, groups: 8, order: 23.1 },
+  { bookCode: 'APM1Q29', slug: 'en-project-1q29-apocryphon-moses-2026', language: 'en', units: 30, groups: 8 },
   { bookCode: 'APM4Q375', slug: 'heb-qdr-4q375-apocryphon-moses-2026', language: 'hbo', units: 16, groups: 2, order: 23.2 },
   { bookCode: 'APM4Q376', slug: 'heb-qdr-4q376-apocryphon-moses-2026', language: 'hbo', units: 12, groups: 4, order: 23.3 },
   { bookCode: 'APM4Q408', slug: 'heb-qdr-4q408-apocryphon-moses-2026', language: 'hbo', units: 57, groups: 17, order: 23.4 },
