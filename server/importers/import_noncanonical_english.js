@@ -2942,7 +2942,18 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 30, expectedWordCount: 232, maxChapter: 8, incomplete: true,
     expectedChapterVerseNumbers: [[1,2,3,4,5,6,7],[1,2,3,4,5],[1,2,3,4,5,6],[1,2,3,4,5,6,7],[1,2],[1],[1],[1]],
     language: 'hbo', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: 'تفريغ عبري مرخص لـ٣٠ سطراً في ثماني مجموعات عرض. تشير تقاطعات الشواهد والدراسات إلى تقليد يُسمى «أبوكريفون موسى»، لكن نسبة جميع المخطوطات إلى تأليف واحد ليست يقينية؛ لذلك يحفظ 1Q29 مستقلاً، وتبقى حالته جزئية. المجموعات ليست فصولاً أصلية، وحُفظت الأقواس وعلامات التلف كما في التفريغ من دون استكمال. تنسب صفحة قمران الرقمي بياناتها إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ، وتعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠. لم أجد ترجمة مفتوحة الحقوق ضمن المصادر التي فُحصت، فأُدرج الأصل العبري فقط. [التفريغ والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q29/2026-10-06/index.html?v=2026-10-06)؛ [فهرس الشواهد القمرانية](https://lexicon.qumran-digital.org/transcription-index/latest/index.html)؛ [دراسة تصنيف الشواهد](https://orion-bibliography.huji.ac.il/node/65422).'
+    notes: 'تفريغ عبري مرخص لـ٣٠ سطراً في ثماني مجموعات عرض. تشير تقاطعات الشواهد والدراسات إلى تقليد يُسمى «أبوكريفون موسى»، لكن نسبة جميع المخطوطات إلى تأليف واحد ليست يقينية؛ لذلك يحفظ 1Q29 مستقلاً، وتبقى حالته جزئية. المجموعات ليست فصولاً أصلية، وحُفظت الأقواس وعلامات التلف كما في التفريغ من دون استكمال. تنسب صفحة قمران الرقمي بياناتها إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ، وتعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠. أُضيفت مسودة إنجليزية مستقلة تقابل الوحدات الـ٣٠ وتحافظ على السقط والقراءات غير المحسومة، وفق الرخصة نفسها، ولم تخضع لمراجعة أكاديمية. [التفريغ والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q29/2026-10-06/index.html?v=2026-10-06)؛ [فهرس الشواهد القمرانية](https://lexicon.qumran-digital.org/transcription-index/latest/index.html)؛ [دراسة تصنيف الشواهد](https://enochseminar.org/scripture-and-interpretation/).'
+  },
+  {
+    bookCode: 'APM1Q29', slug: 'en-project-1q29-apocryphon-moses-2026',
+    nameAr: 'مسودة إنجليزية لشاهد 1Q29 من تقليد أبوكريفون موسى', nameEn: 'Project English Draft Translation of Qumran 1Q29', abbreviation: '1Q29-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/1Q29/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/qumran_1q29_project_en_2026.json', import.meta.url),
+    expectedSha256: '72b6488c28d59da44e4776034caf96825ddcc37822a54efec057bd8ab683850f',
+    expectedUnitCount: 30, expectedWordCount: 298, maxChapter: 8, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7],[1,2,3,4,5],[1,2,3,4,5,6],[1,2,3,4,5,6,7],[1,2],[1],[1],[1]],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'مسودة إنجليزية تفسيرية أعدها المشروع مباشرة عن التفريغ العبري المرخص، وليست ترجمة منشورة أو مراجعة أكاديمية. تقابل السطور الثلاثين في مجموعات العرض الثماني، وتُبقي الفجوات والقراءات المترددة ظاهرة. تتقاطع بعض الأسطر مع 4Q376 و4Q408؛ وتحفظ المسودة 1Q29 شاهداً مستقلاً ولا تدمج النصوص أو تعيد بناء ما فُقد. الشاهد جزئي ولا يمثل عملاً كاملاً. تتبع المسودة رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ مع نسبة التفريغ إلى مشروع قمران الرقمي ونص مارتن أبيغ السابق. [النص العبري ورخصته](https://lexicon.qumran-digital.org/transcriptions/1Q29/2026-10-06/index.html?v=2026-10-06)؛ [الدراسة الأكاديمية](https://enochseminar.org/scripture-and-interpretation/).'
   },
   {
     bookCode: 'APM4Q375', slug: 'heb-qdr-4q375-apocryphon-moses-2026',
