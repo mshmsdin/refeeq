@@ -376,7 +376,7 @@ try {
 }
 try {
   if (await ensureApocryphonMosesImported()) {
-    console.log('[Bible startup] Imported four licensed partial Hebrew Qumran Apocryphon of Moses witnesses.');
+    console.log('[Bible startup] Imported four licensed partial Hebrew Qumran Apocryphon of Moses witnesses and the 4Q375 English draft.');
   }
 } catch (error) {
   console.error('[Bible startup] Apocryphon of Moses witness import failed:', error.message);

@@ -53,10 +53,45 @@ test('startup import installs each partial Apocryphon of Moses witness once and 
       'partial');
   }
 
+  const english = db.prepare(`
+    SELECT id, language, is_active, site_scope, source_type FROM bible_translations
+    WHERE slug='en-project-4q375-apocryphon-moses-2026'
+  `).get();
+  assert.deepEqual(english && {
+    language: english.language, is_active: english.is_active,
+    site_scope: english.site_scope, source_type: english.source_type
+  }, { language: 'en', is_active: 1, site_scope: 'both', source_type: 'cc-by-sa-4.0' });
+  const englishRows = db.prepare(`SELECT chapter, verse, text, source_url FROM bible_verses
+    WHERE translation_id=? AND book_code='APM4Q375' ORDER BY chapter, verse`).all(english.id);
+  assert.equal(englishRows.length, 16);
+  assert.deepEqual(englishRows.reduce((counts, { chapter }) => {
+    counts[chapter - 1] += 1;
+    return counts;
+  }, [0, 0]), [9, 7]);
+  assert.ok(englishRows.every(({ source_url }) => source_url.startsWith(
+    'https://lexicon.qumran-digital.org/transcriptions/4Q375/2026-05-21/index.html?v=2026-05-21#')));
+  const hebrewId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(expected[1][1]).id;
+  const hebrewRows = db.prepare(`SELECT chapter, verse, source_url FROM bible_verses
+    WHERE translation_id=? AND book_code='APM4Q375' ORDER BY chapter, verse`).all(hebrewId);
+  assert.deepEqual(englishRows.map(({ chapter, verse, source_url }) => ({ chapter, verse, source_url })), hebrewRows);
+  assert.match(englishRows[0].text, /prophet/);
+  assert.match(englishRows[14].text, /hidden|concealed/i);
+  assert.equal(db.prepare("SELECT text_status FROM bible_book_metadata WHERE book_code='APM4Q375'").get().text_status,
+    'partial');
+
   const first = db.prepare(`SELECT id FROM bible_translations WHERE slug=?`).get(expected[0][1]);
   db.prepare(`UPDATE bible_verses SET text='stale' WHERE translation_id=? AND book_code=? AND chapter=1 AND verse=1`)
     .run(first.id, expected[0][0]);
+  db.prepare(`UPDATE bible_verses SET text='stale' WHERE translation_id=? AND book_code='APM4Q375' AND chapter=1 AND verse=1`)
+    .run(english.id);
   assert.equal(await ensureApocryphonMosesImported(), true);
+  assert.deepEqual(db.prepare(`SELECT chapter, verse, text, source_url FROM bible_verses
+    WHERE translation_id=? AND book_code='APM4Q375' ORDER BY chapter, verse`).all(english.id), englishRows);
   assert.equal(await ensureApocryphonMosesImported(), false);
-  assert.equal(db.prepare("SELECT COUNT(*) AS count FROM bible_verses WHERE book_code LIKE 'APM%'").get().count, 115);
+  assert.deepEqual(db.prepare(`SELECT bt.language, COUNT(bv.id) AS count
+    FROM bible_translations bt JOIN bible_verses bv ON bv.translation_id=bt.id
+    WHERE bv.book_code LIKE 'APM%' GROUP BY bt.language ORDER BY bt.language`).all(), [
+    { language: 'en', count: 16 },
+    { language: 'hbo', count: 115 }
+  ]);
 });

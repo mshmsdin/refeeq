@@ -2953,7 +2953,18 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 16, expectedWordCount: 201, maxChapter: 2, incomplete: true,
     expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7]],
     language: 'hbo', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: 'تفريغ عبري مرخص لـ١٦ سطراً من شظايا 4Q375 ضمن مجموعتي عرض، لا فصول أصلية. يقارن هذا المخطوط عادةً بـ4Q376 و1Q29 و4Q408 ضمن تقليد «أبوكريفون موسى»، مع بقاء تعيين التأليف وحدوده موضع بحث؛ لذا يُسجل الشاهد مستقلاً وجزئياً ولا يعاد بناء النص. حُفظت قراءات المصدر وفجواته، وتعلن صفحة قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب التفريغ إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ. لم أجد ترجمة مفتوحة الحقوق ضمن المصادر التي فُحصت، فأُدرج الأصل العبري فقط. [التفريغ والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q375/2026-05-21/index.html?v=2026-05-21)؛ [دراسة الشواهد](https://orion-bibliography.huji.ac.il/node/65422).'
+    notes: 'تفريغ عبري مرخص لـ١٦ سطراً من شظايا 4Q375 ضمن مجموعتي عرض، لا فصول أصلية. يقارن هذا المخطوط عادةً بـ4Q376 و1Q29 و4Q408 ضمن تقليد «أبوكريفون موسى»، مع بقاء تعيين التأليف وحدوده موضع بحث؛ لذا يُسجل الشاهد مستقلاً وجزئياً ولا يعاد بناء النص. حُفظت قراءات المصدر وفجواته، وتعلن صفحة قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب التفريغ إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ. أُضيفت مسودة إنجليزية مستقلة عن الأصل، بالوحدات الـ١٦ كلها، مع إبقاء السقط والمواضع غير المحسومة، وفق الرخصة نفسها؛ ولم تخضع لمراجعة أكاديمية. [التفريغ والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q375/2026-05-21/index.html?v=2026-05-21)؛ [دراسة الشواهد](https://orion-bibliography.huji.ac.il/node/65422).'
+  },
+  {
+    bookCode: 'APM4Q375', slug: 'en-project-4q375-apocryphon-moses-2026',
+    nameAr: 'مسودة إنجليزية لشاهد 4Q375 من تقليد أبوكريفون موسى', nameEn: 'Project English Draft Translation of Qumran 4Q375', abbreviation: '4Q375-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q375/2026-05-21/index.html?v=2026-05-21', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/qumran_4q375_project_en_2026.json', import.meta.url),
+    expectedSha256: '0fff99238a3280e2fa391f736984c14c345be440310141a8f1491ad3e5e7c297',
+    expectedUnitCount: 16, expectedWordCount: 323, maxChapter: 2, incomplete: true,
+    expectedUnitLocations: [[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7],[1,8],[1,9],[2,1],[2,2],[2,3],[2,4],[2,5],[2,6],[2,7]],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'مسودة إنجليزية تفسيرية أعدها المشروع مباشرة من التفريغ العبري المرخص، وليست نقلاً عن ترجمة منشورة ولا ترجمة نقدية راجعها مختص. تغطي أسطر الشاهد الـ١٦ في مجموعتي العرض كلتيهما؛ أبقت الأقواس والفجوات، ووضعت علامات صريحة للقراءات أو الروابط غير المحسومة. مسودة الشاهد لا تعني أن 4Q375 نسخة كاملة من «أبوكريفون موسى» أو توراة بديلة. تتبع المسودة رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، مع نسبة التفريغ إلى مشروع قمران الرقمي ونص مارتن أبيغ السابق. [النص العبري ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q375/2026-05-21/index.html?v=2026-05-21)؛ [دراسة الشواهد وتصنيفها](https://orion-bibliography.huji.ac.il/node/65422).'
   },
   {
     bookCode: 'APM4Q376', slug: 'heb-qdr-4q376-apocryphon-moses-2026',
