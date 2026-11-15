@@ -57,5 +57,18 @@ test('imports all ten complete Jesuit Deuterocanon texts into both site scopes o
     `).get(book.code).site_scope, 'both');
   }
 
+  db.prepare(`
+    INSERT INTO bible_verses (translation_id, book_code, chapter, verse, text, search_text, source_url)
+    VALUES (?, 'TOB', 1, 999, 'بيانات قديمة زائدة', 'بيانات قديمة زائدة', 'https://example.invalid/old')
+  `).run(translation.id);
+
+  assert.equal(await ensureJesuitDeuterocanonImported(), true);
+  const correctedTobit = db.prepare(`
+    SELECT chapter, verse, text, source_url FROM bible_verses
+    WHERE translation_id=? AND book_code='TOB' ORDER BY chapter, verse
+  `).all(translation.id);
+  assert.deepEqual(correctedTobit, source.books.find(({ code }) => code === 'TOB').chapters.flatMap((chapter) => chapter.verses.map((verse) => ({
+    chapter: chapter.chapter, verse: verse.verse, text: verse.text, source_url: verse.sourceUrl
+  }))));
   assert.equal(await ensureJesuitDeuterocanonImported(), false);
 });

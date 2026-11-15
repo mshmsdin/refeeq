@@ -96,6 +96,7 @@ function importSource(db, source) {
     ON CONFLICT(translation_id, book_code, chapter, verse) DO UPDATE SET
       text=excluded.text, search_text=excluded.search_text, source_url=excluded.source_url, imported_at=CURRENT_TIMESTAMP
   `);
+  const deleteBookVerses = db.prepare('DELETE FROM bible_verses WHERE translation_id=? AND book_code=?');
   const updateMetadata = db.prepare(`
     UPDATE bible_book_metadata SET text_status='complete', arabic_status='available',
       source_name=?, source_url=?, source_notes=?, updated_at=CURRENT_TIMESTAMP WHERE book_code=?
@@ -110,6 +111,7 @@ function importSource(db, source) {
   `);
 
   for (const book of source.books) {
+    deleteBookVerses.run(translationId, book.code);
     for (const chapter of book.chapters) {
       for (const verse of chapter.verses) {
         insertVerse.run(translationId, book.code, chapter.chapter, verse.verse,
