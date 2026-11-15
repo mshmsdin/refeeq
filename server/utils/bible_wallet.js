@@ -42,7 +42,12 @@ export function createBibleWalletStore(db, { now = Date.now, scope = 'bible' } =
       success: true, isEditor: row.isEditor, expiresAt: row.expires_at, serverNow: now(),
       ...(row.isEditor ? { editToken: token, viewToken: row.view_token } : {}),
       items: db.prepare('SELECT * FROM bible_wallet_items WHERE wallet_id = ? ORDER BY position, id').all(row.id)
-        .map(item => ({ id: item.id, position: item.position, label: item.label, excerpt: item.excerpt, bookName: item.book_name, snapshot: JSON.parse(item.snapshot) }))
+        .map(item => {
+          const snapshot = JSON.parse(item.snapshot);
+          const publicLabel = `${item.book_name}${snapshot.chapter === null ? '' : ` ${snapshot.chapter}`}${snapshot.verse === null ? '' : `:${snapshot.verse}`}`;
+          return { id: item.id, position: item.position, label: row.isEditor ? item.label : publicLabel,
+            excerpt: item.excerpt, bookName: item.book_name, snapshot };
+        })
     };
   }
   function label(value, fallback) {
