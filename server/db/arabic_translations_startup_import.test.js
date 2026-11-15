@@ -22,7 +22,7 @@ after(() => {
 
 test('imports the Arabic translations with exact unit counts and honest labels', () => {
   const imported = ensureArabicTranslationsImported();
-  assert.equal(imported.length, 90);
+  assert.equal(imported.length, 108);
   for (const code of ['1MCE', '2ES', '2MCE', '3BAR', '3MCE', 'ONK-GEN', 'TJ-GEN', 'SAAD-GEN', 'ONK-DEU', 'TJ-DEU', 'SAAD-DEU', 'MSH-MISHNAH-BERAKHOT', 'MSH-MISHNAH-OKTZIN']) {
     assert.ok(imported.includes(code), code);
   }
@@ -34,7 +34,7 @@ test('imports the Arabic translations with exact unit counts and honest labels',
     GROUP BY bt.slug ORDER BY bt.slug
   `).all();
   assert.deepEqual(totals, [
-    { slug: 'ar-machine-jewish-he', name_ar: 'ترجمة آلية', source_type: 'machine-translation', units: 999 },
+    { slug: 'ar-machine-jewish-he', name_ar: 'ترجمة آلية', source_type: 'machine-translation', units: 40826 },
     { slug: 'ar-machine-mishnah', name_ar: 'ترجمة آلية', source_type: 'machine-translation', units: 4187 },
     { slug: 'ar-machine-saadia-script', name_ar: 'ترجمة آلية', source_type: 'machine-transliteration', units: 5846 },
     { slug: 'ar-machine-targum-onkelos', name_ar: 'ترجمة آلية', source_type: 'machine-translation', units: 5846 },
