@@ -4,10 +4,11 @@ import { ADDITIONAL_SOURCES, run as importNoncanonicalSources } from '../importe
 import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
 const WITNESSES = [
-  { bookCode: 'APM1Q29', slug: 'heb-qdr-1q29-apocryphon-moses-2026', units: 30, groups: 8, order: 23.1 },
-  { bookCode: 'APM4Q375', slug: 'heb-qdr-4q375-apocryphon-moses-2026', units: 16, groups: 2, order: 23.2 },
-  { bookCode: 'APM4Q376', slug: 'heb-qdr-4q376-apocryphon-moses-2026', units: 12, groups: 4, order: 23.3 },
-  { bookCode: 'APM4Q408', slug: 'heb-qdr-4q408-apocryphon-moses-2026', units: 57, groups: 17, order: 23.4 }
+  { bookCode: 'APM1Q29', slug: 'heb-qdr-1q29-apocryphon-moses-2026', language: 'hbo', units: 30, groups: 8, order: 23.1 },
+  { bookCode: 'APM4Q375', slug: 'heb-qdr-4q375-apocryphon-moses-2026', language: 'hbo', units: 16, groups: 2, order: 23.2 },
+  { bookCode: 'APM4Q376', slug: 'heb-qdr-4q376-apocryphon-moses-2026', language: 'hbo', units: 12, groups: 4, order: 23.3 },
+  { bookCode: 'APM4Q408', slug: 'heb-qdr-4q408-apocryphon-moses-2026', language: 'hbo', units: 57, groups: 17, order: 23.4 },
+  { bookCode: 'APM4Q375', slug: 'en-project-4q375-apocryphon-moses-2026', language: 'en', units: 16, groups: 2 }
 ];
 
 function getSourceState(db, definition, witness) {
@@ -30,7 +31,7 @@ function getSourceState(db, definition, witness) {
 }
 
 function sourceIsReady(state, witness) {
-  return state && state.language === 'hbo' && state.is_active === 1 && state.site_scope === 'both'
+  return state && state.language === witness.language && state.is_active === 1 && state.site_scope === 'both'
     && state.source_type === 'cc-by-sa-4.0' && state.unit_count === witness.units
     && state.group_count === witness.groups && state.text_status === 'partial'
     && state.source_record_ready === 1;
