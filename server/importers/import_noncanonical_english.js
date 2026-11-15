@@ -2212,6 +2212,32 @@ const LIVES_OF_PROPHETS_SOURCES = [
 
 export const ADDITIONAL_SOURCES = [
   {
+    bookCode: 'ENO', slug: 'gez-betamasaheft-enoch-eotc-2026',
+    nameAr: 'النص الجعزي الكامل لأخنوخ الأول من طبعة الكنيسة الإثيوبية',
+    nameEn: 'Beta maṣāḥǝft EOTC Ge\'ez 1 Enoch', abbreviation: 'أخ-جع',
+    url: 'https://github.com/BetaMasaheft/Works/blob/ff9d4981eba2084c4914ca840ff323d85cbd2a1d/1001-2000/LIT1340EnochE.xml',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/enoch_betamasaheft_geez_eotc_2026.json', import.meta.url),
+    expectedSha256: '8d895bc35d0302725a8bf11f404313ba28ddb5ec017f7508ca29f72ee2d6ad91',
+    expectedUnitCount: 1058, expectedWordCount: 18490, maxChapter: 108, incomplete: false,
+    expectedChapterCounts: [9,3,1,1,9,8,6,4,11,22,2,6,10,25,12,4,8,16,3,7,9,14,4,6,7,6,5,2,2,3,3,6,4,3,1,4,5,6,14,10,9,3,4,1,6,8,4,10,4,5,5,9,7,10,4,8,3,6,3,25,13,16,12,2,12,3,13,5,29,4,17,37,8,17,9,14,8,17,6,8,10,20,11,6,10,6,4,3,77,42,19,5,14,11,7,8,10,15,16,12,9,11,15,13,2,19,3,15],
+    language: 'gez', originalLanguage: 'الجعزية', sourceType: 'cc-by-sa-4.0', siteScope: 'both', preserveBookMetadata: true,
+    notes: 'الشاهد الجعزي الكامل لأخنوخ الأول من نص الكتاب المقدس الإثيوبي المطبوع، كما حفظه سجل بيتا مصاحفت LIT1340EnochE في الطبعة EOTCed. يتكون من ١٠٨ فصول و١٠٥٨ وحدة؛ رُقّمت الوحدات تسلسلياً داخل الفصل، مع حفظ رقم السطر المطبوع الأصلي ورابطه المباشر في كل سجل. يبدأ الفصل ٢١ في الطبعة من الرقم ٢، وقد حُفظ هذا الفرق ولم يُملأ رقم مفقود. هذا شاهد جعزي مستقل عن الترجمة الإنجليزية والشاهد الجزئي من مخطوط رايلاندز ٢٣. ملف بيتا مصاحفت يعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠؛ استُخدمت الطبعة الإثيوبية المطبوعة وحدها، دون التفريغ النقدي المقيد بغير التجاري. [ملف المصدر المثبت ورخصته](https://github.com/BetaMasaheft/Works/blob/ff9d4981eba2084c4914ca840ff323d85cbd2a1d/1001-2000/LIT1340EnochE.xml)؛ [سجل أخنوخ في بيتا مصاحفت](https://betamasaheft.awhamburg.de/works/LIT1340EnochE/main)؛ [شرح مصدر الطبعة وحدود الترخيص](https://biblesrc.org/sources).'
+  },
+  {
+    bookCode: 'JUB', slug: 'gez-betamasaheft-jubilees-eotc-2026',
+    nameAr: 'النص الجعزي لليوبيلات من طبعة الكنيسة الإثيوبية',
+    nameEn: 'Beta maṣāḥǝft EOTC Ge\'ez Jubilees', abbreviation: 'يوب-جع',
+    url: 'https://github.com/BetaMasaheft/Works/blob/ff9d4981eba2084c4914ca840ff323d85cbd2a1d/1001-2000/LIT1697Jubilees.xml',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/jubilees_betamasaheft_geez_eotc_2026.json', import.meta.url),
+    expectedSha256: '020187fa5098341d22091150e24876abf2c950ba10bde96f77660f7d43589fdb',
+    expectedUnitCount: 1292, expectedWordCount: 19593, maxChapter: 50, incomplete: false, minUnitTextLength: 1,
+    expectedChapterCounts: [27,33,35,21,32,38,39,30,15,36,24,31,29,24,34,31,18,19,31,13,26,30,32,33,23,34,27,30,20,26,32,34,23,21,27,24,25,24,18,13,28,25,24,34,16,16,12,19,23,13],
+    language: 'gez', originalLanguage: 'الجعزية', sourceType: 'cc-by-sa-4.0', siteScope: 'both', preserveBookMetadata: true,
+    notes: 'الشاهد الجعزي الكامل لسفر اليوبيلات من نص الكتاب المقدس الإثيوبي المطبوع، كما حفظه سجل بيتا مصاحفت LIT1697Jubilees في الطبعة EOTCed: ٥٠ فصلاً و١٢٩٢ وحدة. أرقام العرض متسلسلة داخل كل فصل، ويُحفظ رقم السطر المطبوع الأصلي ورابطه المباشر لكل وحدة، بما في ذلك اختلافات ترقيم المصدر. يسبق الفصول في ملف الطبعة تمهيد غير مرقم من سطرين بعنوان «مقدمة»؛ وهو خارج متن الفصول الخمسين ولا يدخل في عداد وحدات السفر. هذا شاهد جعزي مستقل عن ترجمة تشارلز الإنجليزية وعن شظايا اليوبيلات القمرانية العبرية. ملف بيتا مصاحفت يعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠؛ استُخدمت الطبعة الإثيوبية المطبوعة وحدها دون الطبعة النقدية المقيدة بغير التجاري. [ملف المصدر المثبت ورخصته](https://github.com/BetaMasaheft/Works/blob/ff9d4981eba2084c4914ca840ff323d85cbd2a1d/1001-2000/LIT1697Jubilees.xml)؛ [سجل اليوبيلات في بيتا مصاحفت](https://betamasaheft.awhamburg.de/works/LIT1697Jubilees/main)؛ [شرح مصدر الطبعة وحدود الترخيص](https://biblesrc.org/sources).'
+  },
+  {
     bookCode: 'ENO', slug: 'gez-ocp-1en-rylands23-p-2026',
     nameAr: 'الشاهد الجعزي لأخنوخ الأول من مخطوط ريلاندز ٢٣',
     nameEn: 'OCP Ge’ez 1 Enoch — Rylands Manuscript 23 (p)', abbreviation: 'ENO-GEZ-P',
