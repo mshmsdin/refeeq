@@ -90,6 +90,24 @@ test('imports every preserved 4Q539 line and its partial, attributed English dra
   assert.match(translatedRows[12].text, /eighteen/i);
   assert.match(translatedRows[17].text, /spirit|man|mouth/i);
   assert.equal(db.prepare("SELECT text_status FROM bible_book_metadata WHERE book_code='Q539'").get().text_status, 'partial');
+  const englishDefinition = ADDITIONAL_SOURCES.find(({ slug }) => slug === 'en-project-4q539-fragments-2026');
+  db.prepare(`INSERT INTO bible_book_sources
+    (book_code, label_ar, label_en, language, availability_status, source_type, source_url, notes)
+    VALUES ('Q539', 'old English draft record', 'Old English draft record', 'en', 'available', ?, ?, 'stale notes')`)
+    .run(englishDefinition.sourceType, englishDefinition.url);
+  assert.equal(await ensureQumran4Q539Imported(), false);
+  const englishSourceRows = db.prepare(`SELECT label_ar, label_en, language, availability_status, source_type, source_url, notes
+    FROM bible_book_sources WHERE book_code='Q539' AND language='en' AND source_url=?`)
+    .all(englishDefinition.url);
+  assert.deepEqual(englishSourceRows, [{
+    label_ar: englishDefinition.nameAr,
+    label_en: englishDefinition.nameEn,
+    language: englishDefinition.language,
+    availability_status: 'available',
+    source_type: englishDefinition.sourceType,
+    source_url: englishDefinition.url,
+    notes: englishDefinition.notes
+  }]);
   const first = rows[0];
   db.prepare(`UPDATE bible_verses SET text='stale' WHERE translation_id=? AND book_code='Q539' AND chapter=? AND verse=?`)
     .run(translation.id, first.chapter, first.verse);

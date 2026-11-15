@@ -27,6 +27,34 @@ function getSourceState(db, definition, witness) {
     definition.sourceType, definition.notes, witness.bookCode, witness.bookCode, witness.slug);
 }
 
+function reconcileSourceRecords(db, definition, bookCode) {
+  const records = db.prepare(`
+    SELECT id, label_ar, label_en, availability_status, source_type, notes
+    FROM bible_book_sources
+    WHERE book_code=? AND language=? AND source_url=? ORDER BY id
+  `).all(bookCode, definition.language, definition.url);
+  if (!records.length) return;
+
+  const canonical = records.find(({ label_ar, source_type, notes }) =>
+    label_ar === definition.nameAr && source_type === definition.sourceType && notes === definition.notes) || records[0];
+  const update = db.prepare(`
+    UPDATE bible_book_sources SET label_ar=?, label_en=?, availability_status='available', source_type=?, notes=?
+    WHERE id=?
+  `);
+  const removeDuplicates = db.prepare(`
+    DELETE FROM bible_book_sources WHERE book_code=? AND language=? AND source_url=? AND id<>?
+  `);
+
+  db.transaction(() => {
+    if (canonical.label_ar !== definition.nameAr || canonical.label_en !== definition.nameEn
+      || canonical.availability_status !== 'available' || canonical.source_type !== definition.sourceType
+      || canonical.notes !== definition.notes) {
+      update.run(definition.nameAr, definition.nameEn, definition.sourceType, definition.notes, canonical.id);
+    }
+    removeDuplicates.run(bookCode, definition.language, definition.url, canonical.id);
+  })();
+}
+
 function sourceIsReady(state, witness) {
   return state && state.language === witness.language && state.is_active === 1 && state.site_scope === 'both'
     && state.source_type === 'cc-by-sa-4.0' && state.unit_count === witness.units
@@ -59,6 +87,7 @@ export async function ensureQumran4Q539Imported() {
   for (const witness of WITNESSES) {
     const definition = ADDITIONAL_SOURCES.find(({ slug }) => slug === witness.slug);
     if (!definition) throw new Error(`تعذر العثور على تعريف المصدر ${witness.slug}`);
+    reconcileSourceRecords(db, definition, witness.bookCode);
     const current = getSourceState(db, definition, witness);
     if (!sourceIsReady(current, witness) || !await sourceUnitsMatch(db, current.id, definition, witness)) {
       imports.push({ witness, definition });
