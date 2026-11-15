@@ -2905,8 +2905,8 @@ export const ADDITIONAL_SOURCES = [
     nameAr: 'مسودة إنجليزية لشذرات 4Q537 المترجمة عن الآرامية', nameEn: 'Project English Draft Translation of 4Q537 Fragments', abbreviation: '4Q537-EN',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q537/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
     textFile: new URL('./data/testament_jacob_4q537_project_en_2026.json', import.meta.url),
-    expectedSha256: '66aa22db0299d37635c45791367a88c44911eb1482bb38befa6470d26cf1ae22',
-    expectedUnitCount: 18, expectedWordCount: 259, maxChapter: 10, incomplete: true,
+    expectedSha256: '912be1cadac4d2a658843ff2008bac2c816e13cb384f6b3fd73e2133a8d8439a',
+    expectedUnitCount: 18, expectedWordCount: 275, maxChapter: 10, incomplete: true,
     expectedUnitLocations: [[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7],[1,8],[3,1],[3,2],[3,3],[3,4],[10,1],[10,2],[10,3],[10,4],[10,5],[10,6]],
     language: 'en', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
     notes: 'مسودة ترجمة إنجليزية تفسيرية أُعدّت للمشروع بمساعدة آلية انطلاقاً من تفريغ قمران الرقمي الآرامي؛ تتبع رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ للنص المصدر، مع نسبة التفريغ إلى مشروع قمران الرقمي ومارتن أبيغ. لا تمثل هذه المسودة ترجمة نقدية مراجعة بشرياً. تغطي ١٨ وحدة في ثلاث مجموعات فقط من أصل ٦٢ سطراً ظاهراً موزعة على ٢٣ مجموعة؛ وتبقي السقط والقراءات غير الموثوقة معلّمة، ولا تملأ بقية الشظايا. [النص الآرامي ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q537/2026-10-06/index.html?v=2026-10-06)؛ [الدليل البحثي عن هوية الشاهد](https://brill.com/display/book/9789004513815/9789004513815_webready_content_text.pdf).'
