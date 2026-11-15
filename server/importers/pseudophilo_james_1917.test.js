@@ -66,7 +66,12 @@ test('repairs missing chapters 43 and 47 on startup and verifies every stored un
   assert.equal(db.prepare("SELECT text_status FROM bible_book_metadata WHERE book_code='PSLAB'").get().text_status, 'partial');
 
   db.prepare("DELETE FROM bible_verses WHERE translation_id=? AND chapter IN (43, 47)").run(translationId);
+  db.prepare("UPDATE bible_book_metadata SET summary_ar='٦٣ من ٦٥ فصلاً؛ الفصلان ٤٣ و٤٧ غير موجودين' WHERE book_code='PSLAB'").run();
   assert.equal(await ensurePseudoPhiloJamesImported(), true);
   assert.deepEqual(loadRows(), expected);
+  const metadata = db.prepare("SELECT text_status, summary_ar FROM bible_book_metadata WHERE book_code='PSLAB'").get();
+  assert.equal(metadata.text_status, 'partial');
+  assert.match(metadata.summary_ar, /الفصول المرقمة ١–٦٥ متاحة/);
+  assert.doesNotMatch(metadata.summary_ar, /٦٣ من ٦٥/);
   assert.equal(await ensurePseudoPhiloJamesImported(), false);
 });
