@@ -1626,10 +1626,31 @@ function parseEarlyChristianGospelMaryHtml(content, source) {
   return chapters;
 }
 
-function parseEarlyChristianFragmentHtml(content, source) {
-  const start = content.toUpperCase().indexOf(source.startMarker.toUpperCase());
+function extractDivById(content, id) {
+  const escapedId = id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const openingTag = new RegExp(`<div\\b(?=[^>]*\\bid\\s*=\\s*["']${escapedId}["'])[^>]*>`, 'i');
+  const opening = openingTag.exec(content);
+  if (!opening) throw new Error(`لم يُعثر على حاوية النص ${id}`);
+
+  const tags = /<\/?div\b[^>]*>/gi;
+  tags.lastIndex = opening.index;
+  let depth = 0;
+  let match;
+  while ((match = tags.exec(content))) {
+    if (/^<\//.test(match[0])) depth -= 1;
+    else if (!/\/\s*>$/.test(match[0])) depth += 1;
+    if (depth === 0) return content.slice(opening.index, tags.lastIndex);
+  }
+  throw new Error(`حاوية النص ${id} غير مكتملة`);
+}
+
+export function parseEarlyChristianFragmentHtml(content, source) {
+  const article = extractDivById(content, 'textboundingbox')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ');
+  const start = article.toUpperCase().indexOf(source.startMarker.toUpperCase());
   if (start < 0) throw new Error(`لم يُعثر على بداية الشاهد في ${source.slug}`);
-  const text = stripHtml(content.slice(start));
+  const text = stripHtml(article.slice(start));
   if (text.length < 500) throw new Error(`لم يُكتشف نص كافٍ في ${source.slug}`);
   return [{ chapter: 1, verse: 1, text, sourceUrl: source.url }];
 }
@@ -1986,7 +2007,341 @@ const GENESIS_APOCRYPHON_TEXT_FILE = new URL('./data/genesis_apocryphon_1q20_qum
 const GENESIS_APOCRYPHON_EXPECTED_LOCATIONS = JSON.parse(readFileSync(GENESIS_APOCRYPHON_TEXT_FILE, 'utf8'))
   .map(({ chapter, verse }) => [chapter, verse]);
 
+const APOCRYPHON_JEREMIAH_AB_WITNESSES = [
+  {
+    witness: '4Q383', version: '2025-08-25', bookCode: 'AJ383', slug: 'heb-qdr-4q383-apocryphon-jeremiah-a-2026',
+    nameAr: 'شظايا 4Q383 من أبوكريفون إرميا أ', nameEn: 'Qumran Apocryphon of Jeremiah A Witness 4Q383', abbreviation: '4Q383-HE',
+    file: 'apocryphon_jeremiah_4q383_qumran_digital_2025.json', units: 30, words: 291, groups: 9,
+    sha256: '610cee03424f105cb9eaa5baebd4c1b0f62df5b5011fbe7243510002e204d66f',
+    scholarlyNote: 'يسجل مركز أوريون طبعة ديفورا ديمانت للشاهد بعنوان أبوكريفون إرميا أ، لكن الشاهد شذري لا يحفظ عملاً كاملاً.'
+  },
+  {
+    witness: '4Q384', version: '2025-11-11', bookCode: 'AJ384', slug: 'heb-qdr-4q384-apocryphon-jeremiah-b-2026',
+    nameAr: 'شظايا 4Q384، مخطوط إرميا القمراني على البردي', nameEn: 'Qumran Papyrus Apocryphon of Jeremiah B(?) Witness 4Q384', abbreviation: '4Q384-HE',
+    file: 'apocryphon_jeremiah_4q384_qumran_digital_2025.json', units: 81, words: 743, groups: 31,
+    sha256: '247d51a79e87a708ae0ee674b1a81aecf8ae02e4a9ac2860f022a2dec2b5ec90',
+    scholarlyNote: 'تصفه سلطة الآثار الإسرائيلية بأنه مخطوط بردي عبري، وتضعه تسمية المصدر ضمن أبوكريفون إرميا ب مع علامة استفهام؛ لذلك يسجل مادياً مستقلاً ولا يحسم انتماؤه الأدبي.'
+  },
+  {
+    witness: '4Q385c', version: '2025-11-11', bookCode: 'AJ385C', slug: 'heb-qdr-4q385c-apocryphon-jeremiah-2026',
+    nameAr: 'شظايا 4Q385c، شاهد قمراني عبري', nameEn: 'Qumran Hebrew Witness 4Q385c', abbreviation: '4Q385c-HE',
+    file: 'apocryphon_jeremiah_4q385c_qumran_digital_2025.json', units: 20, words: 178, groups: 7,
+    sha256: '23594830797578c11e17c15d0d565648147bb696fa8b443ab6db69530e099271',
+    scholarlyNote: 'تفصل قاعدة قمران الرقمي هذا المخطوط عن 4Q385a؛ لم يُحسم هنا إن كان شاهداً من تقليد إرميا أو نصاً آخر.'
+  }
+].map((witness) => {
+  const url = `https://lexicon.qumran-digital.org/transcriptions/${witness.witness}/${witness.version}/index.html?v=${witness.version}`;
+  const textFile = new URL(`./data/${witness.file}`, import.meta.url);
+  const expectedChapterVerseNumbers = [];
+  for (const unit of JSON.parse(readFileSync(textFile, 'utf8'))) {
+    (expectedChapterVerseNumbers[unit.chapter - 1] ||= []).push(unit.verse);
+  }
+  return {
+    bookCode: witness.bookCode, slug: witness.slug, nameAr: witness.nameAr, nameEn: witness.nameEn,
+    abbreviation: witness.abbreviation, url, kind: 'reviewed-unit-text-file', textFile,
+    expectedSha256: witness.sha256, expectedUnitCount: witness.units, expectedWordCount: witness.words,
+    maxChapter: witness.groups, incomplete: true, expectedChapterVerseNumbers,
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: `تفريغ مرخص للشاهد العبري القمراني ${witness.witness}: ${witness.units} سطراً في ${witness.groups} مجموعات عرض، مع اسم الشظية ورقم السطر الأصلي ورابط المصدر لكل وحدة. هذه المجموعات ليست فصولاً أدبية، والشاهد جزئي؛ يحفظ مستقلاً ولا تملأ فجواته. ${witness.scholarlyNote} يعلن مشروع قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب النص إلى مشروع معجم قمران السابق ومارتن أبيغ. لم تثبت ترجمة إنجليزية مأذونة لإعادة النشر، فأدرج الأصل العبري وحده. [التفريغ والرخصة](${url})؛ [فهرس طبعة مركز أوريون لـ4Q383](https://orion-bibliography.huji.ac.il/node/67734)؛ [سجل 4Q384 في سلطة الآثار الإسرائيلية](https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q384-1).`
+  };
+});
+
+const APOCRYPHON_JEREMIAH_C_WITNESSES = [
+  {
+    witness: '4Q385a', bookCode: 'AJC385A', slug: 'heb-qdr-4q385a-apocryphon-jeremiah-c-2026',
+    nameAr: 'شظايا 4Q385a من أبوكريفون إرميا ج', nameEn: 'Qumran Apocryphon of Jeremiah C Witness 4Q385a', abbreviation: '4Q385a-HE',
+    file: 'apocryphon_jeremiah_4q385a_qumran_digital_2026.json', units: 172, words: 1829, groups: 39,
+    sha256: 'efd956efc23975c49325ff739faa12ec51b25c4ac13a4e4e5f9e82e95d112de9'
+  },
+  {
+    witness: '4Q387', bookCode: 'AJC387', slug: 'heb-qdr-4q387-apocryphon-jeremiah-c-2026',
+    nameAr: 'شظايا 4Q387 من أبوكريفون إرميا ج', nameEn: 'Qumran Apocryphon of Jeremiah C Witness 4Q387', abbreviation: '4Q387-HE',
+    file: 'apocryphon_jeremiah_4q387_qumran_digital_2026.json', units: 54, words: 673, groups: 8,
+    sha256: 'bd986bc69b99913eaa553ec9c1ed07809883606f8d9df71bbae2a27169985af7'
+  },
+  {
+    witness: '4Q387a', bookCode: 'AJC387A', slug: 'heb-qdr-4q387a-apocryphon-jeremiah-c-2026',
+    nameAr: 'شظايا 4Q387a من أبوكريفون إرميا ج', nameEn: 'Qumran Apocryphon of Jeremiah C Witness 4Q387a', abbreviation: '4Q387a-HE',
+    file: 'apocryphon_jeremiah_4q387a_qumran_digital_2026.json', units: 32, words: 284, groups: 9,
+    sha256: '8968ecb2f679b96781b8e5da3a066c576ee4345b38f54b268673e3c272bd8232'
+  },
+  {
+    witness: '4Q388a', bookCode: 'AJC388A', slug: 'heb-qdr-4q388a-apocryphon-jeremiah-c-2026',
+    nameAr: 'شظايا 4Q388a من أبوكريفون إرميا ج', nameEn: 'Qumran Apocryphon of Jeremiah C Witness 4Q388a', abbreviation: '4Q388a-HE',
+    file: 'apocryphon_jeremiah_4q388a_qumran_digital_2026.json', units: 67, words: 640, groups: 17,
+    sha256: 'd15885a50452eeacd321b623a3d8acbe892181ac1b55fd457f9f23767c5ea44c'
+  },
+  {
+    witness: '4Q389', bookCode: 'AJC389', slug: 'heb-qdr-4q389-apocryphon-jeremiah-c-2026',
+    nameAr: 'شظايا 4Q389 من أبوكريفون إرميا ج', nameEn: 'Qumran Apocryphon of Jeremiah C Witness 4Q389', abbreviation: '4Q389-HE',
+    file: 'apocryphon_jeremiah_4q389_qumran_digital_2026.json', units: 56, words: 634, groups: 15,
+    sha256: '3151949c5941de05c3adc8f813af26a244c61f029d5076bf79f32d334133d728'
+  },
+  {
+    witness: '4Q390', bookCode: 'AJC390', slug: 'heb-qdr-4q390-apocryphon-jeremiah-c-2026',
+    nameAr: 'الشاهد القمراني 4Q390 المنسوب إلى تقليد إرميا المختلف عليه', nameEn: 'Qumran Jeremiah Tradition Witness 4Q390', abbreviation: '4Q390-HE',
+    file: 'apocryphon_jeremiah_4q390_qumran_digital_2026.json', units: 51, words: 598, groups: 9,
+    sha256: '405ff30f1b09ca9e34d780eb4302daf7897d86a7ced5e6a47db6067511a0d717'
+  }
+].map((witness) => {
+  const url = `https://lexicon.qumran-digital.org/transcriptions/${witness.witness}/2026-10-06/index.html?v=2026-10-06`;
+  const textFile = new URL(`./data/${witness.file}`, import.meta.url);
+  const expectedChapterVerseNumbers = [];
+  for (const unit of JSON.parse(readFileSync(textFile, 'utf8'))) {
+    (expectedChapterVerseNumbers[unit.chapter - 1] ||= []).push(unit.verse);
+  }
+  const scholarlyNote = witness.witness === '4Q390'
+    ? 'تصنيف هذا المخطوط ضمن أبوكريفون إرميا ج مختلف عليه؛ دراسات تضمه إلى المجموعة وأخرى تفصله كنص قريب منها. لذلك لا يدمج هنا مع الشواهد الأخرى ولا يُعرض كعمل مستقل محسوم.'
+    : 'تربط دراسة ديفورا ديمانت هذا المخطوط بأبوكريفون إرميا ج، وتضعه ضمن ستة شواهد قمرانية؛ تبقى الشظايا سجلات مادية منفصلة ولا تثبت وحدها نصاً كاملاً.';
+  return {
+    bookCode: witness.bookCode, slug: witness.slug,
+    nameAr: witness.nameAr,
+    nameEn: witness.nameEn, abbreviation: witness.abbreviation,
+    url, kind: 'reviewed-unit-text-file',
+    textFile,
+    expectedSha256: witness.sha256,
+    expectedUnitCount: witness.units, expectedWordCount: witness.words, maxChapter: witness.groups, incomplete: true,
+    expectedChapterVerseNumbers,
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: `تفريغ عبري مرخص للشاهد القمراني ${witness.witness}: ${witness.units} سطراً عبرانياً في ${witness.groups} مجموعة عرض، مع رقم السطر الأصلي ورابط موضع فريد لكل سطر. هذه المجموعات ليست فصولاً أدبية، والمخطوط شذري؛ حُفظ مستقلاً ولم تُملأ فجواته. ${scholarlyNote} تعلن صفحة قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وتنسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأُدرج الأصل العبري وحده. [التفريغ والرخصة](${url})؛ [دراسة ديمانت عن الشواهد الستة](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [دراسة تناقش موقع 4Q390](https://cris.haifa.ac.il/en/publications/pseudo-ezekiel-and-the-apocryphon-of-jeremiah-c-in-perspective/).`
+  };
+});
+
+const QUMRAN_ENOCH_WITNESS_MANIFEST = [
+  { witness: '4Q204', slug: 'arc-qdr-4q204-enoch-2026', units: 126, groups: 11, words: 2263, sha256: '0cca7acb765c514e3276fb74502a324f59d4e549b941673781f179a505fbf06c' },
+  { witness: '4Q205', slug: 'arc-qdr-4q205-enoch-2026', units: 31, groups: 5, words: 543, sha256: '955298d49d0b6d6f9078ac9eeefc0aa213a5f2701575e666bc74973f470fa3ea' },
+  { witness: '4Q206', slug: 'arc-qdr-4q206-enoch-2026', units: 86, groups: 12, words: 1173, sha256: '9f3895a821bd3a8ddb155c66197c3cf15a1bca5aeb00474bc2a6ec18ab9b60e9' },
+  { witness: '4Q207', slug: 'arc-qdr-4q207-enoch-2026', units: 6, groups: 1, words: 92, sha256: '924fe2469c68e2813eccccac36aba8f87cb2f81bf3baa59daa83c8b20aad5425' },
+  { witness: '4Q208', slug: 'arc-qdr-4q208-enoch-2026', units: 124, groups: 38, words: 1205, sha256: '6cb73b854841517d1bec73fba8a6d43edc5942a38243506c13458d9ef50567b3' },
+  { witness: '4Q209', slug: 'arc-qdr-4q209-enoch-2026', units: 171, groups: 46, words: 2575, sha256: '8451bc6044a04493892f9aa803248b0582653e003cf307a1ce2aa87c0de9ddef' },
+  { witness: '4Q210', slug: 'arc-qdr-4q210-enoch-2026', units: 25, groups: 2, words: 491, sha256: 'dcff36b345d1327b6a4b51cad78dd979bde2a0dc21a9722cb0614a942f6bfbac' },
+  { witness: '4Q211', slug: 'arc-qdr-4q211-enoch-2026', units: 16, groups: 3, words: 201, sha256: 'f996a7df65a9855f8ade901f0561675fc844b3170290562e5548026134e1dc11' },
+  { witness: '4Q212', slug: 'arc-qdr-4q212-enoch-2026', units: 55, groups: 5, words: 815, sha256: '59cfc5e8a25e69374742628e20c9259dff337e1b30548377c809313d5348260e' }
+];
+
+const QUMRAN_ENOCH_WITNESSES = QUMRAN_ENOCH_WITNESS_MANIFEST.map((witness) => {
+  const textFile = new URL(`./data/enoch_${witness.witness.toLowerCase()}_qumran_digital_2026.json`, import.meta.url);
+  const units = JSON.parse(readFileSync(textFile, 'utf8'));
+  const expectedChapterVerseNumbers = Array.from({ length: witness.groups }, (_, index) =>
+    units.filter(({ chapter }) => chapter === index + 1).map(({ verse }) => verse));
+  const url = `https://lexicon.qumran-digital.org/transcriptions/${witness.witness}/2026-10-06/index.html?v=2026-10-06`;
+  return {
+    bookCode: 'ENO', slug: witness.slug,
+    nameAr: `تفريغ قمران الرقمي لشاهد أخنوخ الآرامي ${witness.witness}`,
+    nameEn: `Qumran Digital Aramaic Enoch Witness ${witness.witness}`,
+    abbreviation: `${witness.witness}-ARC`, url, kind: 'reviewed-unit-text-file', textFile,
+    expectedSha256: witness.sha256, expectedUnitCount: witness.units,
+    expectedWordCount: witness.words, maxChapter: witness.groups, incomplete: true,
+    expectedChapterVerseNumbers, preserveBookMetadata: true,
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: `تفريغ الشاهد الآرامي ${witness.witness} من مخطوطات أخنوخ القمرانية: ${witness.units} سطراً في ${witness.groups} مجموعة عرض. أسماء المجموعات وأرقام الأسطر وروابط مواضعها محفوظة؛ أرقام الإصحاحات هنا للتنظيم ولا تمثل فصولاً أصلية. صفحة قمران الرقمي ترخص التفريغ برخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وتذكر اعتماد بياناتها على مشروع معجم قمران السابق ونص مارتن أبيغ. لا يقدم المصدر ترجمة إنجليزية مرخصة لهذا التفريغ؛ توجد في التطبيق ترجمة تشارلز الإنجليزية لأخنوخ الأول للقراءة الموازية، وهي عن التقليد الإثيوبي وليست ترجمة حرفية لهذه الأسطر الآرامية. الشاهد جزئي ولا يُستكمل من شواهد أخرى أو بملء السقط. [صفحة الشاهد ورخصته](${url})؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html)؛ [دليل مخطوطات قمران الآرامية وتصنيف مخطوطات أخنوخ](https://admin.library.oapen.org/bitstream/handle/20.500.12657/86447/9789004513815.pdf?isAllowed=y&sequence=1).`
+  };
+});
+
+const APOCRYPHON_JOSHUA_WITNESSES = [
+  {
+    witness: '4Q378', slug: 'heb-qdr-4q378-apocryphon-joshua-a-2026',
+    file: 'apocryphon_joshua_4q378_qumran_digital_2026.json', units: 155, groups: 36, words: 1516,
+    sha256: '72063ab9234f7a63deae9eb313c442190ac3df05ecfd1672f13dc73112c8f6be'
+  },
+  {
+    witness: '4Q379', slug: 'heb-qdr-4q379-apocryphon-joshua-b-2026',
+    file: 'apocryphon_joshua_4q379_qumran_digital_2026.json', units: 186, groups: 44, words: 1852,
+    sha256: 'b29039641f67b9b654cb72b841e8fdc0deb2d3e03ddc3509cfd102d8d733030f'
+  },
+  {
+    witness: '4Q522', slug: 'heb-qdr-4q522-apocryphon-joshua-c-2026',
+    file: 'apocryphon_joshua_4q522_qumran_digital_2026.json', units: 83, groups: 21, words: 950,
+    sha256: '3ca70e012bc01ad094c38b1ea0e15d0281418cb947a2a5b902b6f9e96eae1e5d',
+    scholarlyNote: 'يصفه بعض الباحثين بأنه «نبوءة يشوع» ويربطونه بتقليد 4Q378 و4Q379، لكن عدّ هذه المخطوطات نسخاً من تأليف واحد موضع مراجعة علمية. [دراسة إعادة تقييم أسفار يشوع المعاد صياغتها](https://orion-bibliography.huji.ac.il/node/64219).'
+  },
+  {
+    witness: '5Q9', slug: 'heb-qdr-5q9-apocryphon-joshua-2025',
+    file: 'apocryphon_joshua_5q9_qumran_digital_2025.json', units: 19, groups: 7, words: 177,
+    sha256: 'd764623343b22dd498f0ff868db1bcadab51795933b4c09b27ecc2f18b853edc',
+    scholarlyNote: 'يفهرس أحياناً باسم «تأليف بأسماء مواضع» ويربطه بعض الباحثين بتقليد يشوع؛ ونسبة الشواهد إلى تأليف واحد محل نقاش. [دراسة شواهد يشوع القمرانية](https://orion-bibliography.huji.ac.il/node/64219).'
+  }
+].map((witness) => {
+  const url = `https://lexicon.qumran-digital.org/transcriptions/${witness.witness}/2026-10-06/index.html?v=2026-10-06`;
+  const textFile = new URL(`./data/${witness.file}`, import.meta.url);
+  const expectedUnitLocations = JSON.parse(readFileSync(textFile, 'utf8'))
+    .map(({ chapter, verse }) => [chapter, verse]);
+  return {
+    bookCode: 'APJOSH', slug: witness.slug,
+    nameAr: `الشاهد العبري ${witness.witness} لأبوكريفون يشوع`,
+    nameEn: `Qumran Hebrew Apocryphon of Joshua ${witness.witness}`,
+    abbreviation: `${witness.witness}-HE`, url, kind: 'reviewed-unit-text-file', textFile,
+    expectedSha256: witness.sha256, expectedUnitCount: witness.units, expectedUnitLocations,
+    expectedWordCount: witness.words, maxChapter: witness.groups, incomplete: true,
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: `تفريغ الشاهد العبري القمراني ${witness.witness} من تقليد يشوع الذي تسميه مراجع «أبوكريفون يشوع» أو «مزامير يشوع». يحتوي إصدار قمران الرقمي ٢٠٢٦-١٠-٠٦ على ${witness.units} سطراً موزعاً على ${witness.groups} مجموعة شظايا؛ المجموعات ليست فصولاً أصلية، والأسطر تحفظ أرقامها وروابطها كما في المصدر. الشاهد جزئي ولا يمثل العمل كاملاً، ويظل مستقلاً ولا تُملأ فجواته. ${witness.scholarlyNote || 'علاقة المخطوطات الأخرى التي تحمل عناوين قريبة بهوية تأليف واحدة غير محسومة.'} يرخص مشروع قمران الرقمي التفريغ برخصة المشاع الإبداعي النسب بالمثل ٤٫٠ ويعزو مادته إلى مشروع معجم قمران السابق ومارتن أبيغ. لم تثبت ترجمة إنجليزية مأذونة لإعادة النشر، لذلك يحفظ هذا السجل النص العبري وحده. [التفريغ والرخصة](${url})؛ [سجل فهرس المكتبة الوطنية الفرنسية لعناوين الشواهد](https://catalogue.bnf.fr/ark:/12148/cb16776783j).`
+  };
+});
+
+const LIVES_OF_PROPHETS_CHAPTER_COUNTS = [9, 15, 20, 22, 2, 2, 2, 1, 4, 8, 4, 14, 3, 2, 6, 4, 5, 5, 2, 2, 2, 3, 4];
+const LIVES_OF_PROPHETS_LOCATIONS = LIVES_OF_PROPHETS_CHAPTER_COUNTS.flatMap(
+  (count, chapterIndex) => Array.from({ length: count }, (_, verseIndex) => [chapterIndex + 1, verseIndex + 1])
+);
+const LIVES_OF_PROPHETS_URL = 'https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml';
+const LIVES_OF_PROPHETS_SOURCES = [
+  {
+    bookCode: 'LPRO', slug: 'en-ocp-lives-prophets-2026',
+    nameAr: 'الترجمة الإنجليزية لسِيَر الأنبياء (الطبعة الرقمية النقدية)',
+    nameEn: 'OCP English Translation of the Lives of the Prophets', abbreviation: 'LPRO-EN',
+    url: LIVES_OF_PROPHETS_URL, kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/lives_of_prophets_ocp_english_2026.json', import.meta.url),
+    expectedSha256: '2f92d1b11c49d0095cf419025abbe1b8e3d4fa8cb2a6d96170861514a9ae16d8',
+    expectedUnitCount: 141, expectedWordCount: 3480, maxChapter: 23, incomplete: false,
+    expectedUnitLocations: LIVES_OF_PROPHETS_LOCATIONS,
+    language: 'en', originalLanguage: 'اليونانية', sourceType: 'cc-by-4.0', siteScope: 'both',
+    notes: 'ترجمة إنجليزية منشورة ضمن الطبعة النقدية الرقمية لمشروع النصوص النقدية المفتوحة، مقابلة على مستوى الوحدات الـ١٤١ مع النص اليوناني نفسه. تحتوي ٢٣ سيرة؛ استُبعد عنوان العمل العام لأنه ممثل باسم السفر، وأُلحق عنوان كل سيرة ببداية وحدتها الأولى مع حفظ ترقيم النص. الترجمة كاملة بحسب هذه الطبعة، ولا تمثل الصيغ الأخرى أو جميع اختلافات المخطوطات. يعلن المستودع رخصة المشاع الإبداعي النسب ٤٫٠ للنصوص والترجمات، ويُنسب العمل إلى مشروع النصوص النقدية المفتوحة ومحرريه إيان سكوت وكين بنر. [ملف الطبعة المثبت ورخصتها](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml)؛ [بيان رخصة نصوص المستودع](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/LICENSE.CC-BY-4.0).'
+  },
+  {
+    bookCode: 'LPRO', slug: 'grc-ocp-lives-prophets-2026',
+    nameAr: 'النص اليوناني لسِيَر الأنبياء (الطبعة الرقمية النقدية)',
+    nameEn: 'OCP Greek Lives of the Prophets', abbreviation: 'LPRO-GRC',
+    url: LIVES_OF_PROPHETS_URL, kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/lives_of_prophets_ocp_greek_2026.json', import.meta.url),
+    expectedSha256: '5d977e168d49e326e2e031f44ff485e22819ec9b92792c736afac70ca6280227',
+    expectedUnitCount: 141, expectedWordCount: 2700, maxChapter: 23, incomplete: false,
+    expectedUnitLocations: LIVES_OF_PROPHETS_LOCATIONS,
+    language: 'grc', originalLanguage: 'اليونانية', sourceType: 'cc-by-4.0', siteScope: 'both',
+    notes: 'تفريغ النص اليوناني كما يورده مشروع النصوص النقدية المفتوحة، طبعة «سِيَر الأنبياء»، إصدار مثبت من المستودع بتاريخ ١٤ نوفمبر ٢٠٢٦. يحتوي ٢٣ سيرة و١٤١ وحدة. استُبعد عنوان العمل العام لأنه ممثل باسم السفر، وأُلحق عنوان كل سيرة ببداية وحدتها الأولى مع حفظ ترقيم النص. النص كامل بحسب هذه الطبعة اليونانية، ولا يجمع الصيغ أو الروايات الأخرى. يعلن المستودع رخصة المشاع الإبداعي النسب ٤٫٠ للنصوص، مع نسبة الطبعة إلى مشروع النصوص النقدية المفتوحة وإلى طبعة تشارلز توري اليونانية لعام ١٩٤٦. [ملف الطبعة المثبت ورخصتها](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml)؛ [بيان رخصة نصوص المستودع](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/LICENSE.CC-BY-4.0).'
+  }
+];
+
 export const ADDITIONAL_SOURCES = [
+  {
+    bookCode: 'ENO', slug: 'gez-ocp-1en-rylands23-p-2026',
+    nameAr: 'الشاهد الجعزي لأخنوخ الأول من مخطوط ريلاندز ٢٣',
+    nameEn: 'OCP Ge’ez 1 Enoch — Rylands Manuscript 23 (p)', abbreviation: 'ENO-GEZ-P',
+    url: 'https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/1En.xml',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/1en_ethiopic_rylands23_ocp_p_2026.json', import.meta.url),
+    expectedSha256: '0a733166d2ff38cd1935c028755d246d895d298375ddb149e22622c562654246',
+    expectedUnitCount: 542, expectedWordCount: 8768, maxChapter: 71, incomplete: true,
+    countZeroWidthWordSeparators: true, readingMss: 'p',
+    expectedChapterVerseNumbers: [
+      [1,2,3,4,5,6,7,8,9], [1,2,3], [1], [1], [1,2,3,4,5,6,7,8,9], [1,2,3,4,5,6,7,8],
+      [1,2,3,4,5,6], [1,2,3,4], [1,2,3,4,6,7,8,9,10,11], [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
+      [1,2], [1,2,3,4,5,6], [1,2,3,4,5,6,7,8,9,10],
+      [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
+      [1,2,3,4,5,6,7,8,9,10,11,12], [1,2,3,4], [1,2,3,4,5,6,7,8],
+      [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], [1,2,3], [1,2,3,4,5,6,7],
+      [1,2,3,4,5,6,7,8,9,10], [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+      [1,2,3,4], [1,2,3,4,5,6], [1,2,3,4,5,6,7], [1,2,3,4,5,6], [1,2,3,4,5],
+      [1,2,3], [1,2], [1,2,3], [1,2,3], [1,2,3,4,5,6], [1,2,3,4], [1,2,3], [1],
+      [1,2,3,4], [1,2,3,4,5], [1,2,3,4,5,6], [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+      [1,2,3,4,5,6,7,8,9,10], [1,2,3,4,5,6,7,8,9], [1,2,3], [1,2,3,4], [1],
+      [1,2,3,4,5,6], [1,2,3,4,5,6,7,8], [1,2,3,4], [1,2,3,4,5,6,7,8,9,10],
+      [1,2,3,4], [1,2,3,4,5], [1,2,3,4,5], [1,2,3,4,5,6,7,8,9], [1,2,3,4,5,6,7],
+      [1,2,3,4,5,6,7,8,9,10], [1,2,3,4], [1,2,3,4,5,6,7,8], [1,2,3], [1,2,3,4,5,6],
+      [1,2,3], [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
+      [1,2,3,4,5,6,7,8,9,10,11,12,13], [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
+      [1,2,3,4,5,6,7,8,9,10,11,12], [1,2], [1,2,3,4,5,6,7,8,9,10,11,12], [1,2,3],
+      [1,2,3,4,5,6,7,8,9,10,11,12,13], [1,2,3,4,5],
+      [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],
+      [1,2,3,4], [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
+    ],
+    language: 'gez', originalLanguage: 'الجعزية', sourceType: 'cc-by-4.0', siteScope: 'both',
+    notes: 'تفريغ الشاهد الجعزي من مخطوط جون رايلاندز ٢٣، المسمى p في طبعة مشروع النصوص النقدية المفتوحة؛ يتبع النص المخطوط نفسه ويستبعد قراءات تصحيح بيرتالوتو المنفصلة. يضم إصدار المصدر الحالي كتاب المراقبين (الأصحاحات ١–٣٦) والأمثال (٣٧–٧١) فقط: ٧١ إصحاحاً و٥٤٢ وحدة. لا يضم هذا الملف الأجزاء ٧٢–١٠٨، فلا يوصف أخنوخ الجعزي كاملاً ولا تُملأ الأجزاء الغائبة. يعلن المستودع رخصة المشاع الإبداعي النسب ٤٫٠ لمواد الطبعة، ويذكر أن نص المخطوط p نفسه ملك عام وأن تصحيحات بيرتالوتو غير متاحة لإعادة الاستخدام. [ملف الطبعة المثبتة](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/1En.xml)؛ [وصف الشاهد وحدود التفريغ وبيانات الحقوق](https://pseudepigrapha.org/reader.html?doc=1En.xml)؛ [بيان رخصة ملفات الطبعات](https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/LICENSE.CC-BY-4.0).'
+  },
+  {
+    bookCode: 'SIRE', slug: 'gez-betamasaheft-sirach-2026',
+    nameAr: 'النص الجعزي ليشوع بن سيراخ من بيتا مصاحفت',
+    nameEn: 'Beta maṣāḥǝft Geʿez Sirach', abbreviation: 'سير-جع',
+    url: 'https://github.com/BetaMasaheft/Works/blob/aebe046e35d7f201e4e1993a37630b631bc5d324/2001-3000/LIT2358Sirach.xml',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/sirach_betamasaheft_geez_2026.json', import.meta.url),
+    expectedSha256: 'd9e757e9b286b6bf3ac060d09162ddd45a036b60119105556ecb411c278b831d',
+    expectedUnitCount: 1366, expectedWordCount: 13224, maxChapter: 51, incomplete: false,
+    chapterCounts: [30,18,29,30,15,37,36,19,18,30,34,18,25,27,20,28,30,31,26,30,28,24,26,32,25,20,29,25,28,40,31,26,13,31,24,31,31,34,34,29,23,24,33,23,26,20,25,25,16,29,30],
+    expectedChapterVerseNumbers: [30,18,29,30,15,37,36,19,18,30,34,18,25,27,20,28,30,31,26,30,28,24,26,32,25,20,29,25,28,40,31,26,13,31,24,31,31,34,34,29,23,24,33,23,26,20,25,25,16,29,30]
+      .map((count) => Array.from({ length: count }, (_, index) => index + 1)),
+    minUnitTextLength: 10, preserveBookMetadata: true,
+    language: 'gez', originalLanguage: 'الجعزية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'النص الجعزي ليشوع بن سيراخ من سجل بيتا مصاحفت LIT2358Sirach، والمصدر يصفه بأنه نص الكتاب المقدس الإثيوبي المطبوع، رقمن من طبعات فولغاتا حديثة وحُوّل إلى تي إي آي بواسطة فريق بيتا مصاحفت. يضم التفريغ ٥١ فصلاً و١٣٦٦ وحدة، وتعلن صفحة المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠. أرقام الوحدات في العرض متسلسلة داخل الفصل؛ أرقام المصدر الأصلية محفوظة في ملف البيانات لأن بعض الفصول فيها فجوات أو تكرار في الترقيم. هذا الشاهد الجعزي مستقل عن ترجمة الملك جيمس الإنجليزية الموجودة للسفر. [ملف المصدر المثبت ورخصته](https://github.com/BetaMasaheft/Works/blob/aebe046e35d7f201e4e1993a37630b631bc5d324/2001-3000/LIT2358Sirach.xml)؛ [سجل بيتا مصاحفت](https://betamasaheft.awhamburg.de/works/LIT2358Sirach/main).'
+  },
+  {
+    bookCode: 'TAGS', slug: 'gez-betamasaheft-tegsats-2026',
+    nameAr: 'النص الجعزي لتغسات من بيتا مصاحفت',
+    nameEn: 'Beta maṣāḥǝft Geʿez Tegsat Salomon', abbreviation: 'TAGS-GEZ',
+    url: 'https://github.com/BetaMasaheft/Works/blob/2574a6c84ed477af76122a6b112df3bbf45a96f5/2001-3000/LIT2396Tagsas.xml',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/tegsat_betamasaheft_geez_2026.json', import.meta.url),
+    expectedSha256: 'a7cbb58fccbaf2aeb47a0d4f3d16206b6662bae8637aa2bd82a68a8729288c74',
+    expectedUnitCount: 161, expectedWordCount: 1590, maxChapter: 6, incomplete: false,
+    expectedChapterVerseNumbers: [27, 29, 28, 29, 28, 20].map((count) => Array.from({ length: count }, (_, index) => index + 1)),
+    preserveBookMetadata: true,
+    language: 'gez', originalLanguage: 'الجعزية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'نص جعزي كامل لتغسات (أمثال ٢٥–٣١) بحسب ملف بيتا مصاحفت «Tagśāṣa Salomon»، المرقم LIT2396Tagsas، والمثبت عند نسخة مستودع الأعمال بتاريخ ٢٠٢٦-٠٨-١٤. يصرح سجل تي إي آي بأن مادته نص الكتاب المقدس الإثيوبي المطبوع الصادر عن كنيسة التوحيد الإثيوبية، وأنه رُقمن عن طبعات فولغاتا حديثة بواسطة فريق بيتا مصاحفت. يتبع الشاهد تقسيمه الإثيوبي الخاص إلى ٦ فصول و١٦١ وحدة، ولا يطابق تقسيم فان دايك العربي ذي الفصول السبعة؛ حُفظ الترقيمان كما في الشاهد. الملف وبياناته مرخصة برخصة المشاع الإبداعي النسب بالمثل ٤٫٠. الشواهد المذكورة في السجل: مخطوطا المكتبة البريطانية أددشنل ١٦١٨٦ و١٦١٨٩. [ملف المصدر المثبت ورخصته](https://github.com/BetaMasaheft/Works/blob/2574a6c84ed477af76122a6b112df3bbf45a96f5/2001-3000/LIT2396Tagsas.xml)؛ [سجل بيتا مصاحفت](https://betamasaheft.awhamburg.de/works/LIT2396Tagsas/main).'
+  },
+  ...[
+    {
+      bookCode: '1MCE', slug: 'gez-betamasaheft-meqabyan-1',
+      nameAr: 'النص الجعزي للمكابيون الإثيوبي الأول', nameEn: 'Beta maṣāḥǝft Geʿez Ethiopian Maccabees I', abbreviation: 'مك-إ1-جع',
+      workId: 'LIT1819Maccab', sourceFile: '1001-2000/LIT1819Maccab.xml',
+      textFile: new URL('./data/meqabyan_1_betamasaheft_geez_2026.json', import.meta.url),
+      expectedSha256: '03fe88760fd9cad3a6c55e02261a203d29e8ec22f995b403215e664f0a99924a',
+      expectedUnitCount: 762, expectedWordCount: 12118, chapterCounts: [29,28,38,38,41,37,33,37,10,9,8,44,26,24,18,9,8,12,17,4,31,11,7,22,18,5,20,51,17,16,7,4,11,18,8,46],
+      irregularNumberingChapters: [1,4,5,8,10,14,28],
+    },
+    {
+      bookCode: '2MCE', slug: 'gez-betamasaheft-meqabyan-2',
+      nameAr: 'النص الجعزي للمكابيون الإثيوبي الثاني', nameEn: 'Beta maṣāḥǝft Geʿez Ethiopian Maccabees II', abbreviation: 'مك-إ2-جع',
+      workId: 'LIT5840SecondEthioMaccabees', sourceFile: '5001-6000/LIT5840SecondEthioMaccabees.xml',
+      textFile: new URL('./data/meqabyan_2_betamasaheft_geez_2026.json', import.meta.url),
+      expectedSha256: '1aa557421b9385facb836f811d591d150fe32f54fbbaffbf1d4ee262bf6732e0',
+      expectedUnitCount: 433, expectedWordCount: 6653, chapterCounts: [13,11,29,32,19,24,9,26,28,29,26,15,16,36,21,16,12,14,15,14,28],
+      irregularNumberingChapters: [5,8,9,10,11,13,16],
+    },
+    {
+      bookCode: '3MCE', slug: 'gez-betamasaheft-meqabyan-3',
+      nameAr: 'النص الجعزي للمكابيون الإثيوبي الثالث', nameEn: 'Beta maṣāḥǝft Geʿez Ethiopian Maccabees III', abbreviation: 'مك-إ3-جع',
+      workId: 'LIT5839ThirdEthioMaccabees', sourceFile: '5001-6000/LIT5839ThirdEthioMaccabees.xml',
+      textFile: new URL('./data/meqabyan_3_betamasaheft_geez_2026.json', import.meta.url),
+      expectedSha256: '96b08675ff0721f676862ee1a8346c3dd7d5d83889ea8ff3b0ccf3ff35e18568',
+      expectedUnitCount: 209, expectedWordCount: 3530, chapterCounts: [24,24,11,36,16,16,5,12,36,29],
+      irregularNumberingChapters: [2],
+    },
+  ].map((item) => {
+    const repositoryUrl = `https://github.com/BetaMasaheft/Works/blob/aebe046e35d7f201e4e1993a37630b631bc5d324/${item.sourceFile}`;
+    const numberingNote = item.irregularNumberingChapters.map((chapter) => String(chapter)).join('، ');
+    const workLabel = item.bookCode === '1MCE' ? 'المكابيين الإثيوبي الأول'
+      : item.bookCode === '2MCE' ? 'المكابيين الإثيوبي الثاني' : 'المكابيين الإثيوبي الثالث';
+    return {
+      ...item,
+      url: repositoryUrl,
+      kind: 'reviewed-unit-text-file',
+      maxChapter: item.chapterCounts.length,
+      expectedChapterVerseNumbers: item.chapterCounts.map((count) => Array.from({ length: count }, (_, index) => index + 1)),
+      minUnitTextLength: 1,
+      preserveBookMetadata: true,
+      language: 'gez', originalLanguage: 'الجعزية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+      notes: `النص الجعزي لسفر ${workLabel} من سجل بيتا مصاحفت ${item.workId}، مثبت عند مراجعة مستودع الأعمال aebe046e35d7f201e4e1993a37630b631bc5d324. يسجل المصدر أنه رُقمن عن طبعة حديثة من الكتاب المقدس الإثيوبي الورقي وحُوّل إلى صيغة تي إي آي بواسطة فريق بيتا مصاحفت. رخصة الملف المعلنة هي المشاع الإبداعي النسب بالمثل ٤٫٠. يحتوي التفريغ ${item.chapterCounts.length} فصلاً و${item.expectedUnitCount} وحدة؛ رتّبت أرقام العرض تسلسلياً داخل كل فصل، وحُفظ رقم كل سطر الأصلي في ملف البيانات. أرقام المصدر فيها تكرار أو فجوات في الفصول: ${numberingNote}. إعادة الترقيم للعرض فقط ولا تضيف أو تحذف نصاً. هذا شاهد إثيوبي مستقل ولا يساوي تلقائياً المكابيين اليونانية. [ملف المصدر ورخصته](https://github.com/BetaMasaheft/Works/blob/aebe046e35d7f201e4e1993a37630b631bc5d324/${item.sourceFile})؛ [سجل بيتا مصاحفت](https://betamasaheft.awhamburg.de/works/${item.workId}/main).`,
+    };
+  }),
+  ...LIVES_OF_PROPHETS_SOURCES,
+  ...QUMRAN_ENOCH_WITNESSES,
+  ...APOCRYPHON_JOSHUA_WITNESSES,
+  ...APOCRYPHON_JEREMIAH_AB_WITNESSES,
+  ...APOCRYPHON_JEREMIAH_C_WITNESSES,
+  {
+    bookCode: 'ACTJOHN', slug: 'en-james-acts-john-1924',
+    nameAr: 'ترجمة جيمس الإنجليزية لأعمال يوحنا (الأقسام الباقية)',
+    nameEn: 'M. R. James English Acts of John (surviving sections)', abbreviation: 'ACTJOHN-EN',
+    url: 'https://www.earlychristianwritings.com/text/actsjohn.html',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/acts_john_mr_james_1924.json', import.meta.url),
+    expectedSha256: '35c04a0b59ca22e1d6ce41019440bb48d2a5a026d6c5f4541fc2eec2adcaadf8',
+    expectedUnitCount: 96, expectedWordCount: 20781, maxChapter: 1, incomplete: true,
+    expectedVerseNumbers: [
+      ...Array.from({ length: 38 }, (_, index) => index + 18),
+      ...Array.from({ length: 58 }, (_, index) => index + 58)
+    ],
+    language: 'en', originalLanguage: 'اليونانية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'ترجمة مونتاغيو رودس جيمس الإنجليزية في The Apocryphal New Testament، أكسفورد، ١٩٢٤، الصفحات ٢٢٨–٢٧٠؛ النسخة الرقمية تتيح الأقسام ١٨–٥٥ و٥٨–١١٥، وعددها ٩٦ وحدة. الأقسام ٥٦ و٥٧ غائبة من النص المنشور هنا، ولا يضم هذا الاستيراد الرواية اليونانية المتأخرة ١–١٧ أو مقدمات الموقع وحواشيه التحريرية. الشواهد اليونانية مجزأة ومتعددة الروايات؛ أُبقي ترقيم الطبعة كما هو، وتبقى حالة العمل جزئية. الترجمة من طبعة ١٩٢٤ للباحث المتوفى سنة ١٩٣٦، ضمن الملك العام ولا تعكس بمفردها اكتمال العمل الأصلي. [النص الرقمي المنسوب إلى طبعة ١٩٢٤](https://www.earlychristianwritings.com/text/actsjohn.html)؛ [فهرس الشواهد والروايات والمراجع](https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/).'
+  },
   {
     bookCode: 'GIANTS', slug: 'en-jewishmythology-4q531-2026',
     nameAr: 'ترجمة إنجليزية تجريبية لشذرات ٤ق٥٣١ من سفر العمالقة',
@@ -2072,6 +2427,33 @@ export const ADDITIONAL_SOURCES = [
     replaceExistingVerses: true,
     language: 'en', originalLanguage: 'الجعزية، بوسيط ترجمة فايطلوفيتش العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
     notes: 'ترجمة إسحاق غانتويرك ماير (Isaac Gantwerk Mayer) الإنجليزية المنشورة في مشروع السِّدور المفتوح سنة ٢٠١٩؛ يذكر المشروع صراحة أنها مترجمة عن العبرية التي ترجمها جاك فايطلوفيتش (Jacques Faïtlovitch) عن الجعزية، وليست ترجمة إنجليزية مباشرة عن الجعزية. رُتبت فقرات الصفحة في ١٥ وحدة عرض، وأزيل شرح الحواشي من المتن مع إبقاء أرقام الإحالة؛ النص متاح برخصة CC BY-SA 4.0 (المشاع الإبداعي النسب بالمثل ٤٫٠)، ويجب حفظ النسبة والرابط والرخصة وبيان التقسيم. مقدمة طبعة فايطلوفيتش ١٩٠٦ تصف مخطوط الشاهد بأنه غير صحيح وغير كامل؛ لذا حالة هذا الشاهد جزئية ولا تُختلق خاتمة أو مادة مفقودة. [النص والرخصة وبيان سلسلة الترجمة](https://opensiddur.org/readings-and-sourcetexts/readings/jewish-readings/shivah-badar-readings/mota-muse-the-book-of-the-passing-of-mosheh/)؛ [الطبعة الإثيوبية المصورة ١٩٠٦](https://archive.org/details/motamuselamortdemoisejacquesfaitlovitch1906).'
+  },
+  {
+    bookCode: 'ARMHMO', slug: 'en-armenian-history-moses-1901',
+    nameAr: 'ترجمة إيسافردنس الإنجليزية لتاريخ موسى الأرمني (١٩٠١)',
+    nameEn: 'James Issaverdens English Translation of the Armenian History of Moses (1901)',
+    abbreviation: 'ARMHMO-EN',
+    url: 'https://archive.org/download/cu31924091353445/cu31924091353445.pdf',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/armenian_history_moses_issaverdens_1901.json', import.meta.url),
+    expectedSha256: '59a018ce66f122a0f01604b9899041e0060472d41ce8f08ea3362172dc07a4a0',
+    expectedUnitCount: 11, expectedWordCount: 2187, maxChapter: 1, incomplete: false,
+    language: 'en', originalLanguage: 'الأرمنية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'ترجمة جاك إيسافردنس الإنجليزية عن النص الأرمني في طبعة «الكتابات غير القانونية للعهد القديم في المخطوطات الأرمنية بمكتبة القديس لازاروس»، البندقية، ١٩٠١، الصفحات المطبوعة ١٦٥–١٧٥. يعرّف المترجم الشاهد بأنه رواية أرمنية متأخرة؛ وهي مستقلة عن وصية موسى اللاتينية، كما يوضح مايكل ستون. قُسّم المتن المتصل بحسب الصفحات المطبوعة إلى ١١ وحدة عرض، ولا تمثل الوحدات ١١ إصحاحاً أصلياً. تمتد الترجمة في الشاهد من افتتاحها إلى خاتمتها في الصفحة ١٧٥. طبعة ١٩٠١ وترجمة إيسافردنس (١٨٣٥–١٩٠٢) ضمن الملك العام؛ وهذا سجل كامل لهذا الشاهد المنشور وحده، لا لكل الروايات الأرمنية. [النسخة المصورة](https://archive.org/details/cu31924091353445)؛ [الدراسة التي تميّزها من وصية موسى](https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/armenian-canon-lists-iiithe-lists-of-mechitar-of-ayrivank-c-1285-ce/77C3632514DB0AFFEA810AD6B82F24B8).'
+  },
+  {
+    bookCode: 'ARMELI', slug: 'en-armenian-short-history-elias-1901',
+    nameAr: 'ترجمة إيسافردنس الإنجليزية للتاريخ الأرمني القصير للنبي إيليا (١٩٠١)',
+    nameEn: 'James Issaverdens English Translation of the Armenian Short History of the Prophet Elias (1901)',
+    abbreviation: 'ARMELI-EN',
+    url: 'https://archive.org/download/cu31924091353445/cu31924091353445.pdf',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/armenian_short_history_elias_issaverdens_1901.json', import.meta.url),
+    expectedSha256: 'b887869b27d308fd64055b3ae010d6bbca1e25843b5b973e0e699ca99f8ce703',
+    expectedUnitCount: 16, expectedVerseNumbers: Array.from({ length: 16 }, (_, index) => index + 1),
+    expectedWordCount: 3504, maxChapter: 1, incomplete: false,
+    language: 'en', originalLanguage: 'الأرمنية', sourceType: 'public-domain-text', siteScope: 'both',
+    notes: 'ترجمة جاك إيسافردنس الإنجليزية المنشورة سنة ١٩٠١ عن رواية أرمنية عنوانها «تاريخ قصير للنبي إيليا». يذكر تقديم الطبعة أن الشاهد الوحيد مخطوط أرمني من سنة ١٦٢٧، ويرجح أن تأليف الرواية يعود إلى القرنين الخامس عشر أو السادس عشر؛ وهي قصة أرمنية متأخرة مستقلة عن رؤيا إيليا اللاتينية واليونانية والقبطية وعن كتاب إيليا العبري. قُسم المتن المتصل بحسب صفحات المسح إلى ١٦ وحدة عرض بلا إصحاحات أصلية: الصفحة الافتتاحية مرقمة ١٥ في صورة ملف الصفحات ٢٤٧، تليها الصفحات المطبوعة ٢٢٦–٢٤٠ في الصور ٢٤٩–٢٦٣. تمتد آخر وحدة إلى نهاية الرواية قبل عنوان العمل التالي. قورنت بداية المتن ونهايته وكل صفحة بالمسح الرقمي، وصُححت أخطاء التعرّف الظاهرة دون استكمال أي جزء غائب. طبعة إيسافردنس الإنجليزية ضمن الملك العام؛ توفي المترجم سنة ١٩٠٢ بحسب سجل المكتبة الوطنية الأرمنية. [النسخة المصورة سنة ١٩٠١](https://archive.org/details/cu31924091353445)؛ [بيانات الترجمة وسيرة المترجم](https://haygirk.nla.am/cgi-bin/koha/opac-authoritiesdetail.pl?authid=32697)؛ [دراسة تميز الرواية الأرمنية المتأخرة من رؤيا إيليا القديمة](https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/armenian-canon-lists-iiithe-lists-of-mechitar-of-ayrivank-c-1285-ce/77C3632514DB0AFFEA810AD6B82F24B8).'
   },
   {
     bookCode: 'SHEM', slug: 'en-mingana-book-shem-1917',
@@ -2219,7 +2601,7 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 42, expectedWordCount: 342, maxChapter: 19, incomplete: true,
     expectedChapterVerseNumbers: [[1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6, 7], [1], [1, 2, 3], [1, 2, 3], [1], [1, 2, 3], [1], [1], [1, 2], [1], [1, 2, 3], [1, 2, 3], [1], [1, 2], [1], [1], [1], [1]],
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: 'تفريغ الشاهد العبري 1Q19 في ٤٢ سطراً موزعة على ١٩ مجموعة شظايا بحسب صفحة مشروع قمران الرقمي؛ أرقام المجموعات والأسطر الأصلية محفوظة في النص، مع رابط مباشر لكل سطر. لا تمثل هذه التقسيمات فصولاً أصلية ولا نصاً متصلاً. تسمية «كتاب نوح» تفسيرية ومختلف عليها، لذلك يسجل هنا شاهداً مرتبطاً بتقاليد نوح من دون الجزم بهوية العمل. تنص صفحة التفريغ على رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب بياناتها إلى مشروع قمران الرقمي، مع بيان اعتمادها على مشروع معجم سابق ونص مارتن أبيغ. لا تتضمن الصفحة ترجمة إنجليزية؛ أُدرج الأصل العبري المرخص وحده، وتبقى الحالة جزئية. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q19/2026-10-06/index.html?v=2026-10-06)؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
+    notes: 'تفريغ الشاهد العبري 1Q19 في ٤٢ سطراً موزعة على ١٩ مجموعة شظايا بحسب صفحة مشروع قمران الرقمي؛ أرقام المجموعات والأسطر الأصلية محفوظة في النص، مع رابط مباشر لكل سطر. لا تمثل هذه التقسيمات فصولاً أصلية ولا نصاً متصلاً. تسمية «كتاب نوح» تفسيرية ومختلف عليها، لذلك يسجل هنا شاهداً مرتبطاً بتقاليد نوح من دون الجزم بهوية العمل. تنص صفحة التفريغ على رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب بياناتها إلى مشروع قمران الرقمي، مع بيان اعتمادها على مشروع معجم سابق ونص مارتن أبيغ. أضيفت ترجمة إنجليزية تحريرية للأسطر المقروءة في سجل مستقل، وتبقى حالة الشاهد جزئية. [صفحة الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/1Q19/2026-10-06/index.html?v=2026-10-06)؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
   },
   {
     bookCode: 'NOAH', slug: 'he-qdr-1q19bis-noah-fragments-2024',
@@ -2231,7 +2613,32 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 6, expectedVerseNumbers: [1, 2, 3, 4, 5, 6],
     expectedWordCount: 48, maxChapter: 1, incomplete: true,
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: 'تفريغ الشذرة العبرية 1Q19bis، المجموعة 2، في ستة أسطر ظاهرة؛ تحفظ أرقام الشاهد والمجموعة والسطر وروابط مواضعها المباشرة. لا تتضمن صفحة مشروع قمران الرقمي ترجمة إنجليزية، كما أن صلة الشذرة بكتاب نوح المستقل ليست محسومة؛ لذلك تعرض منفصلة عن 1Q19 ولا تدمج به. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب النص إلى مشروع قمران الرقمي المبني على بيانات مشروع معجم سابق ونص مارتن أبيغ. أُدرج الأصل العبري المرخص وحده، وحالة الشاهد جزئية. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q19bis/2024-07-30/index.html?v=2024-07-30)؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
+    notes: 'تفريغ الشذرة العبرية 1Q19bis، المجموعة 2، في ستة أسطر ظاهرة؛ تحفظ أرقام الشاهد والمجموعة والسطر وروابط مواضعها المباشرة. أضيفت ترجمة إنجليزية تحريرية للأسطر المقروءة في سجل مستقل. صلة الشذرة بكتاب نوح المستقل ليست محسومة؛ لذلك تعرض منفصلة عن 1Q19 ولا تدمج به. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب النص إلى مشروع قمران الرقمي المبني على بيانات مشروع معجم سابق ونص مارتن أبيغ. يبقى الشاهد جزئياً. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q19bis/2024-07-30/index.html?v=2024-07-30)؛ [فهرس التفريغات](https://lexicon.qumran-digital.org/transcription-index/latest/index.html).'
+  },
+  {
+    bookCode: 'NOAH', slug: 'en-project-1q19-noah-fragments-2026',
+    nameAr: 'ترجمة إنجليزية تحريرية لشذرات الشاهد 1Q19',
+    nameEn: 'Project English Rendering of the 1Q19 Noah-Related Fragments', abbreviation: '1Q19-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/1Q19/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/noah_1q19_english_2026.json', import.meta.url),
+    expectedSha256: 'bb21b6249dca7101b08784a0adb8af3ac40b171e7656c06987540a2077a4ea37',
+    expectedUnitCount: 42, expectedWordCount: 302, maxChapter: 19, incomplete: true,
+    expectedChapterVerseNumbers: [[1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6, 7], [1], [1, 2, 3], [1, 2, 3], [1], [1, 2, 3], [1], [1], [1, 2], [1], [1, 2, 3], [1, 2, 3], [1], [1, 2], [1], [1], [1], [1]],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'ترجمة إنجليزية تحريرية أُعدت مباشرة عن التفريغ العبري المرخص لشذرات 1Q19، مع إبقاء علامات السقط وعدم استكمال الألفاظ المفقودة. تقابل القراءات مع الطبعة الأكاديمية ودراسة بهيرو للتحقق من حدود المقروء؛ لم تُنسخ ترجمة منشورة. لا تمثل هذه الوحدات سوى ٤٢ سطراً من شواهد مجزأة، ولا تثبت وجود كتاب نوح كامل أو صلة كل السطور بعمل واحد. أُجيزت الترجمة بموجب رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، مع نسبة التفريغ إلى مشروع «قمران الرقمي: النص والمعجم» (مشروع مؤسسة الأبحاث الألمانية 465277421) وبيانات مارتن أبيغ/مشروع معجم قمران. [تفريغ الأصل ورخصته](https://lexicon.qumran-digital.org/transcriptions/1Q19/2026-10-06/index.html?v=2026-10-06)؛ [الطبعة الأكاديمية المقارنة](https://www.kinder-noah.de/Dead_Sea_Scrolls.pdf)؛ [دراسة تقويم قراءات الشاهد](https://discovery.ucl.ac.uk/id/eprint/10057768/1/Bhayro_thesis.pdf)؛ [الرخصة](https://creativecommons.org/licenses/by-sa/4.0/).'
+  },
+  {
+    bookCode: 'NOAH', slug: 'en-project-1q19bis-noah-fragments-2026',
+    nameAr: 'ترجمة إنجليزية تحريرية لشذرة الشاهد 1Q19bis',
+    nameEn: 'Project English Rendering of the 1Q19bis Fragment', abbreviation: '1Q19BIS-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/1Q19bis/2024-07-30/index.html?v=2024-07-30',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/noah_1q19bis_english_2026.json', import.meta.url),
+    expectedSha256: 'e92d1e6e6b10f60bc57938fef58f4b3b0a3594235e07818e2b34874a3c963aca',
+    expectedUnitCount: 6, expectedWordCount: 46, expectedVerseNumbers: [1, 2, 3, 4, 5, 6], maxChapter: 1, incomplete: true,
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'ترجمة إنجليزية تحريرية أُعدت مباشرة عن التفريغ العبري المرخص للشذرة 1Q19bis، مع إبقاء السقط ومواضع عدم اليقين. تقابل القراءات مع الطبعة الأكاديمية ودراسة بهيرو؛ لا تُدمج الشذرة مع 1Q19 لأن وحدة العمل بينهما غير محسومة، ولا تثبت وحدها كتاب نوح كاملاً. أُجيزت الترجمة بموجب رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، مع نسبة التفريغ إلى مشروع «قمران الرقمي: النص والمعجم» (مشروع مؤسسة الأبحاث الألمانية 465277421) وبيانات مارتن أبيغ/مشروع معجم قمران. [تفريغ الأصل ورخصته](https://lexicon.qumran-digital.org/transcriptions/1Q19bis/2024-07-30/index.html?v=2024-07-30)؛ [الطبعة الأكاديمية المقارنة](https://www.kinder-noah.de/Dead_Sea_Scrolls.pdf)؛ [دراسة تقويم قراءات الشاهد](https://discovery.ucl.ac.uk/id/eprint/10057768/1/Bhayro_thesis.pdf)؛ [الرخصة](https://creativecommons.org/licenses/by-sa/4.0/).'
   },
   {
     bookCode: 'BNOAH', slug: 'arc-qdr-4q534-birth-noah-2026',
@@ -2335,6 +2742,121 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ ١٨ سطراً آرامياً من عمودي الشاهد القمراني 4Q246، مع حفظ علامات الحذف والترميم والتحرير كما يعرضها مشروع قمران الرقمي ورابط موضع كل سطر. عمودا المخطوط مجموعتا عرض وليسا فصلين أدبيين؛ الشاهد نفسه جزئي، ولا تُستكمل أجزاؤه المفقودة. يسمى أحياناً «أبوكريفون دانيال الآرامي» أو «نص ابن الله»، لكن هذه تسميات وصفية لا تثبت عنوان العمل أو نسبته إلى دانيال. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ ويذكر أن التفريغ مبني على عمل مشروع سابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية مرخصة بإعادة النشر؛ لذا أدرج الأصل الآرامي فقط. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q246/2026-10-06/index.html?v=2026-10-06)؛ [دراسة مفتوحة تعرض ترجمة اجتهادية وتبين اختلاف الآراء](https://oi-idb-static.uchicago.edu/multimedia/1024/saoc66.pdf).'
   },
   {
+    bookCode: 'Q521', slug: 'heb-qdr-4q521-messianic-apocalypse-2026',
+    nameAr: 'الشاهد القمراني «الرؤيا المسيانية» 4Q521',
+    nameEn: 'Qumran Digital Messianic Apocalypse 4Q521', abbreviation: '4Q521-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q521/2026-05-21/index.html?v=2026-05-21',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/messianic_apocalypse_4q521_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: '1a75d8c9c88fa88cc6c23077a7480cb0cc0d18a6dd5ed030fb409baef243e56c',
+    expectedUnitCount: 103, expectedWordCount: 1003, maxChapter: 16, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],[1,2,3,4,5,6,7],[1,2,3,4,5,6,7],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],[1,2,3,4,5,6,7,8,9,10,11,12,13,14],[1,2,3,4],[1,2,3,4],[1,2,3,4,5],[1,2],[1,2],[1,2,3],[1,2,3,4],[1,2,3]],
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري مرخص للشاهد القمراني 4Q521، الذي يسميه الفهرس «الرؤيا المسيانية»: ١٠٣ أسطر محفوظة في ١٦ مجموعة عرض، مع رقم كل سطر الأصلي ورابط موضعه. هذه ليست فصولاً أدبية، والمخطوط شذري؛ لذلك تُحفظ الأسطر كشاهد جزئي مستقل ولا تُستكمل الفجوات. حُفظت علامات السياق المكسور والقراءات البديلة والحروف المشطوبة والمضافة كما يعرضها المصدر. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل العبري وحده. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q521/2026-05-21/index.html?v=2026-05-21).'
+  },
+  {
+    bookCode: 'Q242', slug: 'arc-qdr-4q242-prayer-nabonidus-2026',
+    nameAr: 'الشاهد القمراني «صلاة نابونيد» (4Q242)',
+    nameEn: 'Qumran Digital Aramaic Prayer of Nabonidus 4Q242', abbreviation: '4Q242-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q242/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/prayer_nabonidus_4q242_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: 'a76c0597cbb2321d172a43b6c16741e8548aed389087d19491f604c78bd377f4',
+    expectedUnitCount: 14, expectedWordCount: 194, maxChapter: 2, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الشاهد القمراني الآرامي 4Q242 في ١٤ سطراً من شظايا ١–٣ والشظية ٤، مع حفظ أرقام السطور الأصلية ورابط مصدر كل سطر. يُعرف النص عادةً باسم «صلاة نابونيد» من استهلاله الذي يذكر صلاة ملك بابل ومرضه؛ لكن النص الباقي شذري ولا يضم العمل كاملاً. حفظت علامات السياق المكسور وإضافات المحرر المرتفعة كما يعرضها التفريغ. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب بياناته إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل الآرامي وحده. [تفريغ 4Q242 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q242/2026-10-06/index.html?v=2026-10-06)؛ [طبعة علمية للشظايا](https://brill.com/previewpdf/book/9789004369887/BP000025.xml).'
+  },
+  {
+    bookCode: 'Q385', slug: 'heb-qdr-4q385-words-ezekiel-2026',
+    nameAr: 'شاهد 4Q385 من أقوال حزقيال', nameEn: '4Q385 Words of Ezekiel Witness', abbreviation: '4Q385-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q385/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q385_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: 'c24f7b05f5ac88d9a1d7315877f9ba13794bac95eca0b9176c98d39e3d593679',
+    expectedUnitCount: 44, expectedWordCount: 558, maxChapter: 6, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3],[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5,6,7],[1,2,3,4,5,6,7],[1,2],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]],
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q385 في ٤٤ سطراً عبرانياً ضمن ست مجموعات عرض، مع ترقيم السطر الأصلي ورابط مباشر لكل موضع. يضعه بعض الباحثين ضمن مجموعة «أقوال حزقيال» أو «منحول حزقيال»، لكن أسماء هذه المجموعة وحدودها وتفاصيل إعادة البناء محل نقاش؛ لذلك يسجل الشاهد منفرداً ولا يدمج مع 4Q386 أو 4Q388 أو الشظايا المختلف عليها. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل العبري وحده، والنص شذري لا يمثل عملاً كاملاً. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q385/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن المجموعة وحدودها](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+  },
+  {
+    bookCode: 'Q385B', slug: 'heb-qdr-4q385b-words-ezekiel-2026',
+    nameAr: 'شظايا 4Q385b من أقوال حزقيال', nameEn: '4Q385b Words of Ezekiel Fragment', abbreviation: '4Q385b-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q385b/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q385b_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: '8daa4e4bfa5b9d651301ce99957be424813de8d8de4e22a9787d74e503e17ac7',
+    expectedUnitCount: 7, expectedWordCount: 91, maxChapter: 1, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7]],
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري لشظية 4Q385b في سبعة أسطر، مع رابط مستقل لكل سطر وحفظ القراءات البديلة المطبوعة. تختلف الدراسات في هل تمثل نسخة أخرى أم ورقة بديلة من 4Q385؛ تقترح دراسة حديثة أنها قد تكون ورقة استبدال، لذا يسجلها المشروع كشاهد مادي منفصل ولا يدعي أنها تأليف مستقل أو نص كامل. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب البيانات إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأُدرج الأصل العبري وحده. [تفريغ الشظية ورخصتها](https://lexicon.qumran-digital.org/transcriptions/4Q385b/2026-10-06/index.html?v=2026-10-06)؛ [دراسة إعادة البناء وعلاقة 4Q385b](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+  },
+  {
+    bookCode: 'Q386', slug: 'heb-qdr-4q386-words-ezekiel-2026',
+    nameAr: 'شاهد 4Q386 من أقوال حزقيال', nameEn: '4Q386 Words of Ezekiel Witness', abbreviation: '4Q386-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q386_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: 'f7e15df09a7d9502bfbfeca86c7a8019c334583db8509f44380142be00d4c75b',
+    expectedUnitCount: 35, expectedWordCount: 433, maxChapter: 5, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9,10,11],[1,2,3,4,5,6,7,8],[1,2,3,4],[1,2,3]],
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q386 في ٣٥ سطراً ضمن خمس مجموعات عرض، مع تسمية الشظايا وترقيم السطر الأصلي ورابطه. يقارن الباحثون بعض نصوصه بشاهد 4Q385 ضمن تقليد يسمى أحياناً «أقوال حزقيال» أو «منحول حزقيال»، ولا يبرر التشابه دمج الشاهدين أو جعل التسمية عنواناً أصلياً مؤكداً. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل العبري وحده؛ الشاهد شذري ولا يمثل عملاً كاملاً. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن المجموعة وحدودها](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+  },
+  {
+    bookCode: 'Q388', slug: 'heb-qdr-4q388-words-ezekiel-2026',
+    nameAr: 'شاهد 4Q388 من أقوال حزقيال', nameEn: '4Q388 Words of Ezekiel Witness', abbreviation: '4Q388-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q388/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q388_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: 'accdb91e6cb64a029f83287c0bdccc9222bc6f336e685b695171948d436337c4',
+    expectedUnitCount: 38, expectedWordCount: 367, maxChapter: 8, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2],[1,2,3,4],[1,2,3],[1,2,3],[1,2,3,4,5],[1,2,3,4],[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5,6,7]],
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q388 في ٣٨ سطراً عبرانياً ضمن ثماني مجموعات عرض، مع أرقام الشظايا والأسطر وروابط مواضعها. يعقد الباحثون مقارنات بين بعض شواهده و4Q385 و4Q386 ضمن ما يسمى تقليدياً «أقوال حزقيال»، مع خلاف في إعادة البناء والتصنيف؛ يحفظ هذا المخطوط مستقلاً ولا يدمج بالشواهد الأخرى. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل العبري وحده؛ النص الباقي شذري. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q388/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن المجموعة وحدودها](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+  },
+  {
+    bookCode: 'Q391', slug: 'heb-qdr-4q391-words-ezekiel-2026',
+    nameAr: 'الشاهد القمراني 4Q391 المرتبط بأقوال حزقيال', nameEn: '4Q391 Words of Ezekiel Related Witness', abbreviation: '4Q391-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q391/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q391_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: '73735c1d7d0a60d14a1ddb712ad746f8aaec190beb04b653aa94a0f95c9fbc98',
+    expectedUnitCount: 200, expectedWordCount: 1836, maxChapter: 78, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4],[1,2],[1],[1,2,3,4],[1,2,3,4],[1,2,3],[1,2],[1,2,3,4],[1,2,3,4],[1,2,3],[1,2],[1],[1,2],[1,2],[1,2],[1,2],[1,2],[1,2,3],[1,2],[1],[1,2],[1,2],[1,2,3],[1,2,3,4,5],[1,2],[1],[1,2,3],[1,2,3],[1,2],[1,2,3],[1,2],[1,2,3,4,5],[1,2,3],[1,2,3,4],[1,2,3,4,5],[1,2,3],[1,2,3,4],[1,2,3],[1,2],[1,2],[1,2],[1],[1],[1,2,3],[1],[1],[1,2],[1,2],[1,2,3],[1],[1,2,3,4,5,6],[1],[1],[1,2,3,4,5,6],[1,2,3,4],[1],[1,2,3,4],[1,2,3,4],[1,2,3],[1],[2,3],[1,2,3,4,5,6],[1],[1,2,3],[1,2,3,4,5,6,7,8,9,10,11],[1,2],[1],[1],[1,2],[1,2],[1,2],[1],[1],[1],[1],[1],[1,2,3,4],[1]],
+    language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q391: ٢٠٠ سطر في ٧٨ مجموعة شظايا، مع تسمية كل شظية ورقم السطر ورابط موضع المصدر. دراسة أكاديمية تصفه بأنه على الأرجح نسخة من تقليد «أقوال حزقيال» بسبب أسلوب الكتابة، مع أنه لا يشترك في مقاطع موازية مع الشواهد الأخرى؛ لذلك يسجل كشاهد مستقل، لا بوصفه نسخة مطابقة أو فصلاً من 4Q385 أو 4Q386 أو 4Q388. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأُدرج الأصل العبري وحده؛ الشظايا لا تمثل العمل كاملاً. [تفريغ 4Q391 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q391/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن صلته بأقوال حزقيال](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+  },
+  {
+    bookCode: 'Q243', slug: 'arc-qdr-4q243-pseudo-daniel-a-2026',
+    nameAr: 'شاهد منحول دانيال أ القمراني (4Q243)',
+    nameEn: 'Qumran Digital Aramaic Pseudo-Daniel A 4Q243', abbreviation: '4Q243-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q243/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/pseudo_daniel_4q243_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: '575da8dbe29ff1dc961fe147862e4da00f44091ad9d70cf38fe7b5c733fea4ce',
+    expectedUnitCount: 128, expectedWordCount: 1138, maxChapter: 43, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4],[1,2],[1,2],[1],[1,2],[1,2,3,4],[1,2,3],[1,2,3,4],[1,2],[1,2,3,4],[1,2,3],[1,2,3],[1,2,3,4,5],[1,2,3,4],[1,2,3],[1],[1,2,3,4],[1,2,3,4,5],[1,2,3,4,5],[1,2],[2,3],[1,2,3,4],[1,2,3],[1,2,3],[1,2,3],[1,2,3,4],[1,2,3,4,5],[1,2,3,4,5],[1,2,3],[1,2,3],[1,2,3],[1],[1,2],[1,2],[1,2],[1,2],[1,2],[1,2],[1,2,3],[1,2,3],[1,2],[1,2],[1,2,3,4]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الشاهد الآرامي 4Q243 المعروف تقليدياً بمنحول دانيال أ: ١٢٨ سطراً في ٤٣ مجموعة عرض، مع اسم المجموعة ورقم السطر ورابط موضع المصدر لكل سطر. المجموعات ليست فصولاً أدبية، والنص شذري جزئي. يضم الباحثون عادة 4Q243 و4Q244 إلى تقليد أو تأليف واحد محفوظ في نسختين؛ هنا يسجل كل مخطوط مستقلاً حفظاً لهوية الشاهد. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب بياناته إلى مشروع سابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر؛ أدرج الأصل الآرامي فقط. [تفريغ 4Q243 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q243/2026-10-06/index.html?v=2026-10-06)؛ [دراسة أكاديمية عن 4Q243–244 وكتاب دانيال](https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/04/06/31/2020040631/2020040631.pdf).'
+  },
+  {
+    bookCode: 'Q244', slug: 'arc-qdr-4q244-pseudo-daniel-b-2026',
+    nameAr: 'شاهد منحول دانيال ب القمراني (4Q244)',
+    nameEn: 'Qumran Digital Aramaic Pseudo-Daniel B 4Q244', abbreviation: '4Q244-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q244/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/pseudo_daniel_4q244_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: 'c2ae9ae8fb74114448f4a8689b138118979ee2919afdfd8ef38e1d45a5739219',
+    expectedUnitCount: 35, expectedWordCount: 326, maxChapter: 13, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5],[1,2,3],[3,4],[1,2,3,4,5,6],[1],[1],[1,2,3,4],[1,2,3],[1,2],[1,2],[1,2,3,4],[1],[1]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الشاهد الآرامي 4Q244 المعروف تقليدياً بمنحول دانيال ب: ٣٥ سطراً في ١٣ مجموعة عرض. يحفظ منفصلاً عن مخطوط 4Q243 مع أنهما ينتميان في الغالب إلى تأليف واحد؛ فالمجموعات العرضية ليست فصولاً، والنص شذري جزئي. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب بياناته إلى مشروع سابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر؛ أدرج الأصل الآرامي فقط. [تفريغ 4Q244 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q244/2026-10-06/index.html?v=2026-10-06)؛ [دراسة أكاديمية عن 4Q243–244 وكتاب دانيال](https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/04/06/31/2020040631/2020040631.pdf).'
+  },
+  {
+    bookCode: 'Q245', slug: 'arc-qdr-4q245-pseudo-daniel-c-2026',
+    nameAr: 'شاهد منحول دانيال ج القمراني (4Q245)',
+    nameEn: 'Qumran Digital Aramaic Pseudo-Daniel C 4Q245', abbreviation: '4Q245-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q245/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/pseudo_daniel_4q245_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: '151e1c6ecf861457e8fa20d8342a878226296197da4d4979e5da2432fd1ccc96',
+    expectedUnitCount: 25, expectedWordCount: 215, maxChapter: 5, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9,10,11,12,13],[9,10],[1,2,3,4,5,6],[1,2],[1,2]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الشاهد الآرامي 4Q245 المعروف تقليدياً بمنحول دانيال ج: ٢٥ سطراً في خمس مجموعات عرض، منها قائمتان نسبيتان. الشاهد شذري جزئي. علاقته بـ4Q243 و4Q244 محل نقاش، لذلك يحفظ في سجل مستقل ولا يضم إليهما. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب بياناته إلى مشروع سابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر؛ أدرج الأصل الآرامي فقط. [تفريغ 4Q245 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q245/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن تميز 4Q245 وعلاقته غير المحسومة بالآخرين](https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/71/99/89/2020719989/2020719989.pdf).'
+  },
+  {
     bookCode: 'APLEV540', slug: 'arc-qdr-apocryphon-levi-a-2026',
     nameAr: 'تفريغ الشاهد القمراني 4Q540 (منحول لاوي أ)', nameEn: 'Qumran Digital 4Q540 Aramaic Fragment Witness', abbreviation: '4Q540-ARC',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q540/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
@@ -2366,6 +2888,72 @@ export const ADDITIONAL_SOURCES = [
     expectedChapterVerseNumbers: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], [5, 6, 7, 8, 9, 10, 11, 12, 13], [1], [11, 12, 13]],
     language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
     notes: 'تفريغ ٣٩ سطراً ظاهراً من الشاهد الآرامي 4Q542، في خمسة أقسام عرض بحسب تقسيم صفحة التفريغ، لا خمسة فصول أصلية؛ حُفظت أرقام السطر الأصلية وروابط الموضع. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب العمل إلى مشروع قمران الرقمي، ويذكر اعتماد بياناته على مشروع معجم قمران السابق المبني على عمل مارتن أبيغ. يُعرف النص باسم «وصية قهات»، ويصور انتقال تعاليم وتراث الكهنوت من لاوي إلى قهات ثم ابنه عمرام. وتوجد فرضية علمية بأن 4Q542 و4Q547 قد يكونان جزءين من اللفافة نفسها، أو أن النص المعنون وصية قهات قسم من رؤى عمرام؛ لم يُحسم ذلك، لذلك يظل هذا الشاهد في سجل مستقل. عُثر على ترجمة إنجليزية في صفحة مشروع تينمو، لكنها لا تعرض رخصة لإعادة النشر؛ لذا يُدرج الأصل الآرامي المرخص فقط، مع إبقاء الشاهد جزئياً وعدم ملء السقط. [صفحة 4Q542 ورخصتها](https://lexicon.qumran-digital.org/transcriptions/4Q542/2026-10-06/index.html?v=2026-10-06)؛ [الترجمة الإنجليزية غير المرخصة لإعادة النشر](https://tianmu.org/good-work-library/judean/dead-sea-scrolls/testaments-and-apocrypha/testament-of-qahat)؛ [دراسة علاقة 4Q542 و4Q547](https://brill.com/view/journals/jsj/52/1/article-p27_2.pdf).'
+  },
+  {
+    bookCode: 'QJACOB', slug: 'arc-qdr-4q537-testament-jacob-2026',
+    nameAr: 'تفريغ الشاهد الآرامي 4Q537 (وصية يعقوب؟)', nameEn: 'Qumran Digital 4Q537 Aramaic Witness (Testament of Jacob?)', abbreviation: '4Q537-ARC',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q537/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/testament_jacob_4q537_qumran_digital_2026.json', import.meta.url),
+    expectedSha256: '65317f1124d3a2bdb1a798b24360661e66d661378bdc43f2985e8442f5a51163',
+    expectedUnitCount: 62, expectedWordCount: 567, maxChapter: 23, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8],[1,2,3],[1,2,3,4],[1],[1,2],[1],[1,2,3],[1,2],[1,2],[1,2,3,4,5,6],[1,2],[1,2,3,4],[1],[1],[1],[1],[1,2],[1,2],[1,2],[1,2,3,4,5],[1,2,3],[1,2,3,4,5],[1]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ جميع الأسطر الـ٦٢ التي يعرضها مشروع قمران الرقمي في ٢٣ مجموعة شظايا؛ ترقيم «الفصل» للعرض يطابق مجموعات المصدر ولا يعني فصولاً أصلية. يجمع المصدر الشظايا ١–٣ في مجموعة، ويعرض الشظايا ٤–٢٥ منفردة. يُسمى أحياناً «وصية يعقوب؟»، لكن اسم يعقوب غير محفوظ، ونسبة العمل إليه استدلالية مختلف عليها؛ لذلك يُفهرس كشاهد 4Q537 مستقل ولا يدمج مع وصية يعقوب القبطية. كما أن إلحاق الشظايا ٢٣–٢٥ بالمخطوط غير مؤكد في طبعة بوشيه بحسب الدليل البحثي الحديث. يحفظ التفريغ الآرامي الأقواس وعلامات السقط والقراءات كما في المصدر، ولا يعيد بناء النص ولا يدعي اكتماله. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر؛ أُدرج الأصل الآرامي المرخص وحده. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب بياناته إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ. [صفحة الشاهد والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q537/2026-10-06/index.html?v=2026-10-06)؛ [الدليل البحثي عن هوية النص والشظايا غير المؤكدة](https://brill.com/display/book/9789004513815/9789004513815_webready_content_text.pdf).'
+  },
+  {
+    bookCode: 'Q539', slug: 'arc-qdr-4q539-qumran-digital-2025',
+    nameAr: 'تفريغ الشاهد الآرامي 4Q539', nameEn: 'Qumran Digital Aramaic Witness 4Q539', abbreviation: '4Q539-ARC',
+    url: 'https://qumran.alexschapiro.com/transcriptions/4Q539/2025-08-25/index.html?v=2025-08-25', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/qumran_4q539_2025.json', import.meta.url),
+    expectedSha256: 'a85eee8af301820cc09451a0fe58293abed617629518545dccab17497fe50497',
+    expectedUnitCount: 19, expectedWordCount: 186, maxChapter: 4, incomplete: true,
+    expectedChapterVerseNumbers: [[1, 2, 3], [1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 4, 5, 6], [1, 2, 3]],
+    language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ الأسطر الـ١٩ الظاهرة في صفحة قمران الرقمي، موزعة بحسب المصدر على أربع مجموعات عرض: frg. 1 (٣ أسطر)، frg. 2–3 (٧)، frg. 4 (٦)، وfrg. 5 (٣). مجموعات العرض ليست فصولاً أصلية، والخمس شظايا أجزاء متناثرة لا تمثل العمل كاملاً؛ حُفظت الأقواس والفجوات والقراءات كما يعرضها المصدر مع رابط مباشر لكل سطر. أطلق المحررون تقليدياً على النص «وصية يوسف» أو «أبوكريفون يوسف ب»، وشخصية يوسف مرجحة من ذكر يعقوب وإسماعيل وقصة بيعه، لكن الدراسات تختلف في تحديد المتكلم وفي وصف النوع الأدبي، ولا يذكر الجزء المحفوظ سياق الموت؛ لذلك يبقى سجلاً مستقلاً بعنوان المخطوط 4Q539، لا يدمج مع «يوسف وأسنات» أو وصية يوسف اليونانية ضمن وصايا الآباء الاثني عشر. يعلن المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، ويذكر أن التفريغ مبني على نص مشروع معجم قمران السابق المعتمد على نص مارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأُدرج الأصل الآرامي فقط. [التفريغ والرخصة](https://qumran.alexschapiro.com/transcriptions/4Q539/2025-08-25/index.html?v=2025-08-25)؛ [دراسة تصنيف 4Q539](https://www.asau.ru/files/pdf/2344049.pdf).'
+  },
+  {
+    bookCode: 'APM1Q29', slug: 'heb-qdr-1q29-apocryphon-moses-2026',
+    nameAr: 'شاهد 1Q29 من تقليد أبوكريفون موسى', nameEn: 'Qumran 1Q29 Apocryphon of Moses Witness', abbreviation: '1Q29',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/1Q29/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/qumran_apocryphon_moses_1q29_2026.json', import.meta.url),
+    expectedSha256: 'c138d4137a46b52e8dd31df3f57f7f35dc39fe8247a592030b6f4239f0dd6371',
+    expectedUnitCount: 30, expectedWordCount: 232, maxChapter: 8, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7],[1,2,3,4,5],[1,2,3,4,5,6],[1,2,3,4,5,6,7],[1,2],[1],[1],[1]],
+    language: 'hbo', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري مرخص لـ٣٠ سطراً في ثماني مجموعات عرض. تشير تقاطعات الشواهد والدراسات إلى تقليد يُسمى «أبوكريفون موسى»، لكن نسبة جميع المخطوطات إلى تأليف واحد ليست يقينية؛ لذلك يحفظ 1Q29 مستقلاً، وتبقى حالته جزئية. المجموعات ليست فصولاً أصلية، وحُفظت الأقواس وعلامات التلف كما في التفريغ من دون استكمال. تنسب صفحة قمران الرقمي بياناتها إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ، وتعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠. لم أجد ترجمة مفتوحة الحقوق ضمن المصادر التي فُحصت، فأُدرج الأصل العبري فقط. [التفريغ والرخصة](https://lexicon.qumran-digital.org/transcriptions/1Q29/2026-10-06/index.html?v=2026-10-06)؛ [فهرس الشواهد القمرانية](https://lexicon.qumran-digital.org/transcription-index/latest/index.html)؛ [دراسة تصنيف الشواهد](https://orion-bibliography.huji.ac.il/node/65422).'
+  },
+  {
+    bookCode: 'APM4Q375', slug: 'heb-qdr-4q375-apocryphon-moses-2026',
+    nameAr: 'شاهد 4Q375 من تقليد أبوكريفون موسى', nameEn: 'Qumran 4Q375 Apocryphon of Moses Witness A', abbreviation: '4Q375',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q375/2026-05-21/index.html?v=2026-05-21', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/qumran_apocryphon_moses_4q375_2026.json', import.meta.url),
+    expectedSha256: '87915b925441d6b9de8630a50fc62e17ae3f059c6f9fe8fc5d599c0646871d90',
+    expectedUnitCount: 16, expectedWordCount: 201, maxChapter: 2, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7]],
+    language: 'hbo', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري مرخص لـ١٦ سطراً من شظايا 4Q375 ضمن مجموعتي عرض، لا فصول أصلية. يقارن هذا المخطوط عادةً بـ4Q376 و1Q29 و4Q408 ضمن تقليد «أبوكريفون موسى»، مع بقاء تعيين التأليف وحدوده موضع بحث؛ لذا يُسجل الشاهد مستقلاً وجزئياً ولا يعاد بناء النص. حُفظت قراءات المصدر وفجواته، وتعلن صفحة قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب التفريغ إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ. لم أجد ترجمة مفتوحة الحقوق ضمن المصادر التي فُحصت، فأُدرج الأصل العبري فقط. [التفريغ والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q375/2026-05-21/index.html?v=2026-05-21)؛ [دراسة الشواهد](https://orion-bibliography.huji.ac.il/node/65422).'
+  },
+  {
+    bookCode: 'APM4Q376', slug: 'heb-qdr-4q376-apocryphon-moses-2026',
+    nameAr: 'شاهد 4Q376 من تقليد أبوكريفون موسى', nameEn: 'Qumran 4Q376 Apocryphon of Moses Witness B', abbreviation: '4Q376',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q376/2024-04-29/index.html?v=2024-04-29', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/qumran_apocryphon_moses_4q376_2024.json', import.meta.url),
+    expectedSha256: '262db80bc36eb23d7d252b1e9311c3b68548089ddccd9f1fe10039099f920ba2',
+    expectedUnitCount: 12, expectedWordCount: 144, maxChapter: 4, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3],[1,2,3,4],[1,2,3],[1,2]],
+    language: 'hbo', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري مرخص لـ١٢ سطراً في أربع مجموعات عرض لشاهد 4Q376. تتقاطع بعض أسطره مع 1Q29 و4Q408، ويُدرج في الدراسات ضمن تقليد أبوكريفون موسى؛ لا يحسم ذلك وحده وحدة العمل أو ترتيب شظاياه. يحفظ المشروع المخطوط مستقلاً وبحالة جزئية، مع الأقواس وعلامات السقط من دون ملئها. تعلن صفحة قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب التفريغ إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ. لم أجد ترجمة مفتوحة الحقوق ضمن المصادر التي فُحصت، فأُدرج الأصل العبري فقط. [التفريغ والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q376/2024-04-29/index.html)؛ [دراسة الشواهد](https://orion-bibliography.huji.ac.il/node/65422).'
+  },
+  {
+    bookCode: 'APM4Q408', slug: 'heb-qdr-4q408-apocryphon-moses-2026',
+    nameAr: 'شاهد 4Q408 من تقليد أبوكريفون موسى', nameEn: 'Qumran 4Q408 Apocryphon of Moses Witness C', abbreviation: '4Q408',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q408/2026-10-06/index.html?v=2026-10-06', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/qumran_apocryphon_moses_4q408_2026.json', import.meta.url),
+    expectedSha256: '4a4057ed45d140ab16673f89f85561e4fd2e5851e2515a5fac40602c44e43015',
+    expectedUnitCount: 57, expectedWordCount: 479, maxChapter: 17, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3],[1,2,3,4,5],[1,2,3,4,5,6,7,8,9,10,11],[1,2,3],[1,2],[1,2],[1,2],[1,2,3],[1,2],[1,2,3,4],[1,2,3,4,5,6,7],[1,2,3],[1,2],[1],[1,2],[1,2,3],[1,2]],
+    language: 'hbo', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري مرخص لـ٥٧ سطراً في ١٧ مجموعة عرض من 4Q408. تتقاطع بعض أجزائه مع 1Q29 و4Q376؛ ويجمعها بعض الباحثين ضمن «أبوكريفون موسى» من دون أن يجعل ذلك النص الموجود كاملاً أو نسبة الوحدة الأدبية يقينية. يحفظ المشروع كل مخطوط مستقلاً وجزئياً مع أرقام الأسطر وعلامات التلف، ولا يدمج الشواهد أو يعيد بناء الفجوات. تعلن صفحة قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب التفريغ إلى مشروع معجم قمران السابق المبني على نص مارتن أبيغ. لم أجد ترجمة مفتوحة الحقوق ضمن المصادر التي فُحصت، فأُدرج الأصل العبري فقط. [التفريغ والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q408/2026-10-06/index.html?v=2026-10-06)؛ [دراسة الشواهد](https://orion-bibliography.huji.ac.il/node/65422).'
   },
   {
     bookCode: 'APOCEL', slug: 'grc-psi-i-7-apocalypse-elijah-1912',
@@ -2600,6 +3188,7 @@ export const ADDITIONAL_SOURCES = [
     notes: 'ترجمة أ. ووكر الإنجليزية في آباء ما قبل نيقية، المجلد الثامن، طبعة ١٨٨٥، الصفحات ٥٧١–٥٧٤؛ النص الرقمي من نسخة الطبعة المنشورة لدى ترتليان. الترجمة مبنية على نص تيشندورف اليوناني، وتحفظ هنا كشاهد إنجليزي مستقل في فصل واحد لأن الطبعة لا تقسمه إلى فصول أو أعداد. لا تدّعي هذه الترجمة مطابقة سطرية لتقسيم OCP الحديث؛ النص الإنجليزي الكامل المتاح محفوظ من دون حواشي الطبعة.'
   }
 ];
+
 
 export function parseOcpChapters(xml, source) {
   const versionLanguage = source.versionLanguage || (source.language === 'gez' ? 'Ethiopic' : 'Latin');
@@ -2988,13 +3577,15 @@ export async function run(requestedSlugs = null, { initializeDatabase = true } =
     insertMany(rows, source.replaceExistingVerses ? [translationId, source.bookCode] : null);
     db.prepare('UPDATE bible_books SET chapter_count = CASE WHEN chapter_count < ? THEN ? ELSE chapter_count END WHERE code=?')
       .run(source.maxChapter, source.maxChapter, source.bookCode);
-    db.prepare(`
-      UPDATE bible_book_metadata
-      SET text_status=CASE WHEN ?=1 THEN 'partial' ELSE 'complete' END, original_language=COALESCE(NULLIF(?, ''), original_language),
-          english_status=CASE WHEN ?='en' THEN 'available' ELSE english_status END,
-          source_name=?, source_url=?, source_notes=?, updated_at=CURRENT_TIMESTAMP
-      WHERE book_code=?
-    `).run(source.incomplete ? 1 : 0, source.originalLanguage || '', source.language, source.nameEn, source.url, source.notes, source.bookCode);
+    if (!source.preserveBookMetadata) {
+      db.prepare(`
+        UPDATE bible_book_metadata
+        SET text_status=CASE WHEN ?=1 THEN 'partial' ELSE 'complete' END, original_language=COALESCE(NULLIF(?, ''), original_language),
+            english_status=CASE WHEN ?='en' THEN 'available' ELSE english_status END,
+            source_name=?, source_url=?, source_notes=?, updated_at=CURRENT_TIMESTAMP
+        WHERE book_code=?
+      `).run(source.incomplete ? 1 : 0, source.originalLanguage || '', source.language, source.nameEn, source.url, source.notes, source.bookCode);
+    }
     insertBookSource.run(source.bookCode, source.nameAr, source.nameEn, source.language, source.sourceType, source.url, source.notes);
     db.prepare('UPDATE bible_translations SET imported_at=CURRENT_TIMESTAMP WHERE id=?').run(translationId);
     console.log(`[Bible] ${source.slug}: ${new Set(parsedChapters.map((row) => row.chapter)).size} إصحاحاً، ${rows.length} وحدة`);

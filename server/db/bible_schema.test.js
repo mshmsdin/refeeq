@@ -27,6 +27,15 @@ test('retains specific expansion summaries after repeated initialization', () =>
   assert.doesNotMatch(thomas.summary_ar + ephesians.summary_ar, /مدخل موسع/);
 });
 
+test('makes the apocrypha collection available in both Bible interfaces', () => {
+  initBibleSchema();
+  const collection = getDb().prepare(
+    "SELECT site_scope FROM bible_collections WHERE slug = 'apocrypha'"
+  ).get();
+
+  assert.equal(collection.site_scope, 'both');
+});
+
 test('registers Questions of Ezra separately from the other Ezra works', () => {
   initBibleSchema();
   const db = getDb();
@@ -53,7 +62,7 @@ test('orders Old Testament pseudepigrapha approximately by story era', () => {
   `).all().map(({ canonical_order }) => canonical_order);
   const orders = Object.fromEntries(db.prepare(`
     SELECT code, canonical_order FROM bible_books
-    WHERE code IN ('TADAM', 'APMO', 'ENO2', 'NOAH', 'BNOAH', 'GENAP', 'PSJUBA', 'PSJUBB', 'PSJUBC', 'GIANTS', 'ENO3', 'SHEM', 'ABR', 'MOS', 'MOTA-MUSE', 'TSOL', 'APDAN', 'Q246', '2BAR', 'QEZRA')
+    WHERE code IN ('TADAM', 'APMO', 'ENO2', 'NOAH', 'BNOAH', 'GENAP', 'PSJUBA', 'PSJUBB', 'PSJUBC', 'GIANTS', 'ENO3', 'SHEM', 'ABR', 'MOS', 'MOTA-MUSE', 'TSOL', 'APDAN', 'Q243', 'Q244', 'Q245', 'Q246', 'Q521', 'Q242', 'Q385', 'Q385B', 'Q386', 'Q388', 'Q391', '2BAR', 'QEZRA')
   `).all().map(({ code, canonical_order }) => [code, canonical_order]));
 
   assert.deepEqual(allOrders, [...allOrders].sort((left, right) => left - right));
@@ -76,7 +85,17 @@ test('orders Old Testament pseudepigrapha approximately by story era', () => {
     'MOTA-MUSE': 25,
     TSOL: 28,
     APDAN: 37,
-    Q246: 37.5,
+    Q243: 37.1,
+    Q244: 37.2,
+    Q245: 37.3,
+    Q246: 37.4,
+    Q521: 37.5,
+    Q242: 37.6,
+    Q385: 37.65,
+    Q385B: 37.651,
+    Q386: 37.66,
+    Q388: 37.67,
+    Q391: 37.68,
     '2BAR': 40,
     QEZRA: 44
   });

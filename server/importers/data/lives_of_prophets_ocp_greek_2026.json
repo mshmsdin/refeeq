@@ -1,0 +1,848 @@
+[
+  {
+    "chapter": 1,
+    "verse": 1,
+    "text": "Ἡσαΐας\nἦν ἀπὸ Ἱερουσαλήμ. θνήσκει ὑπὸ Μανασσῆ πρισθεὶς εἰς δύο καὶ ἐτέθη ὑποκάτω δρυὸς Ῥωγὴλ ἐχόμενα τῆς διαβάσεως τῶν ὑδάτων ὧν ἀπώλεσεν Ἐζεκίας χῶσας αὐτά.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 1,
+    "verse": 2,
+    "text": "καὶ ὁ θεὸς τὸ σημεῖον τοῦ Σιλωὰμ διὰ τὸν προφήτην ἐποίησεν· ὅτι πρὸ τοῦ θανεῖν ὀλιγωρήσας ηὔξατο πιεῖν ὕδωρ καὶ εὐθέως ἀπεστάλη αὐτῷ ἐξ αὐτοῦ· διὰ τοῦτο ἐκλήθη Σιλωάμ, ὃ ἑρμηνεύεται ἀπεσταλμένος.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 1,
+    "verse": 3,
+    "text": "Καὶ ἐπὶ τοῦ Ἐζεκία, πρὸ τοῦ ποιῆσαι τοὺς λάκκους καὶ τὰς κολυμβήθρας, ἐπὶ εὐχῇ τοῦ Ἡσαΐου μικρὸν ὕδωρ ἐξελήλυθεν, ὅτι ἦν ὁ λαὸς ἐν συγκλεισμῷ ἀλλοφύλων καὶ ἵνα μὴ διαφθαρῇ ἡ πόλις ὡς μὴ ἔχουσα ὕδωρ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 1,
+    "verse": 4,
+    "text": "ἠρώτων γὰρ οἱ πολέμιοι, πόθεν πίνουσιν, καὶ ἔχοντες τὴν πόλιν παρεκαθέζοντο τῷ Σιλωάμ. ἐὰν οὖν οἱ Ἰουδαῖοι ἤρχοντο, ἐξήρχετο ὕδωρ· ἐὰν δὲ ἀλλόφυλοι, οὔ. διὸ ἕως σήμερον αἰφνιδίως ἐξέρχεται, ἵνα δειχθῇ τὸ μυστήριον.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 1,
+    "verse": 5,
+    "text": "καὶ ἐπειδὴ διὰ τοῦ Ἡσαΐου τοῦτο γέγονεν, μνήμης χάριν καὶ ὁ λαὸς πλησίον αὐτὸν ἐπιμελῶς ἔθαψεν καὶ ἐνδόξως, ἵνα διὰ εὐχῶν αὐτοῦ καὶ μετὰ θάνατον αὐτοῦ ὡσαύτως ἔχωσι τὴν ἀπόλαυσιν τοῦ ὕδατος, ὅτι καὶ χρησμὸς ἐδόθη αὐτοῖς περὶ αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 1,
+    "verse": 6,
+    "text": "Ἔστι δὲ ὁ τάφος ἐχόμενα τοῦ τάφου τῶν βασιλέων ὄπισθεν τοῦ τάφου τῶν ἱερέων ἐπὶ τὸ μέρος τὸ πρὸς νότον.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 1,
+    "verse": 7,
+    "text": "Σαλωμὼν γὰρ ἐποίησε τοὺς τάφους, τοῦ Δαυὶδ διαγράψαντος, κατ᾽ ἀνατολὰς τῆς Σιών, ἥτις ἔχει εἴσοδον ἀπὸ Γαβαὼν μήκοθεν τῆς πόλεως σταδίοις εἴκοσι, καὶ ἐποίησε σκολιὰν σύνθεσιν ἀνυπονόητον· καὶ ἔστιν ἕως τῆς σήμερον τοῖς πολλοῖς τῶν ἱερέων ἀγνοουμένη, ὅλου δὲ τοῦ λαοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 1,
+    "verse": 8,
+    "text": "ἐκεῖ εἶχεν ὁ βασιλεὺς τὸ χρυσίον τὸ ἐξ Αἰθιοπίας καὶ τὰ ἀρώματα.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 1,
+    "verse": 9,
+    "text": "καὶ ἐπειδὴ ὁ Ἐζεκίας ἔδειξεν τοῖς ἔθνεσι τὸ μυστήριον Δαυὶδ καὶ Σαλωμῶνος καὶ ἐμίανεν ὀστᾶ πατέρων αὐτοῦ, διὰ τοῦτο ὁ θεὸς ἐπηράσατο εἰς δουλείαν ἔσεσθαι τὸ σπέρμα αὐτοῦ τοῖς ἐχθροῖς αὐτοῦ, καὶ ἄκαρπον αὐτὸν ἐποίησεν ὁ θεὸς ἀπὸ τῆς ἡμέρας ἐκείνης.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 1,
+    "text": "Ἱερεμίας\nἦν ἐξ Ἀναθὼθ καὶ ἐν Τάφναις Αἰγύπτου λίθοις βληθεὶς ὑπὸ τοῦ λαοῦ ἀποθνήσκει.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 2,
+    "text": "κεῖται δὲ ἐν τῷ τόπῳ τῆς οἰκήσεως Φαραώ, ὅτι οἱ Αἰγύπτιοι ἐδόξασαν αὐτὸν εὐεργετηθέντες δι᾽ αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 3,
+    "text": "ηὔξατο γὰρ καὶ αἱ ἀσπίδες αὐτοὺς ἔασαν, (ἅς) καλοῦσιν οἱ Αἰγύπτιοι ἐφώθ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 4,
+    "text": "καὶ ὅσοι εἰσὶ πιστοὶ θεοῦ ἕως σήμερον εὔχονται ἐν τῷ τόπῳ καὶ λαμβάνοντες τοῦ χοὸς τοῦ τόπου δήγματα ἀσπίδων θεραπεύουσι.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 5,
+    "text": "ἡμεῖς δὲ ἠκούσαμεν ἐκ τῶν παίδων Ἀντιγόνου καὶ Ρτολεμαίου γερόντων ἀνδρῶν, ὅτι Ἀλέξάνδρος ὁ Μακεδὼν ἐπιστὰς τῷ τόπῳ τοῦ προφήτου καὶ ἐπιγνοὺς αὐτοῦ τὰ μυστήρια εἰς Ἀλεξάνδρειαν μετέστησεν αὐτοῦ τὰ λείψανα, περιθεὶς αὐτὰ ἐνδόξως κύκλῳ·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 6,
+    "text": "καὶ ἐκωλύθη ἐκ τῆς γῆς τὸ γένος τῶν ἀσπίδων, καὶ οὕτως ἐνέβαλεν τοὺς ὄφεις τοὺς λεγομένους ἀργόλας, ὅ ἐστίν ὀφιομάχους.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 7,
+    "text": "Οὗτος ὁ Ἱερεμίας σημεῖον δέδωκε τοῖς ἱερεῦσιν Αἰγύπτου, ὅτι δεῖ σεισθῆναι τὰ εἴδωλα αὐτῶν καὶ συμπεσεῖν τὰ χειροποίητα πάντα ὅταν ἐπιβῇ ἐν Αἰγύπτῳ παρθένος λοχεύουσα σὺν βρέφει θεοειδεῖ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 8,
+    "text": "δι᾽ ὃ καὶ ἕως νῦν τιμῶσι παρθένον λοχὸν καὶ βρέφος ἐν φάτνῃ τιθέντες προσκυνοῦσι, καὶ Πτολεμαίῳ τῷ βασιλεῖ τὴν αἰτίαν πυνθανομένῳ ἔλεγον, ὅτι πατροπαράδοτόν ἐστι μυστήριον ὑπὸ ὁσίου προφήτου, τοῖς πατρᾶσιν ἡμῶν παραδοθέν, καὶ ἐκδεχόμεθα τὸ πέρας, φησίν, τοῦ μυστηρίου αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 9,
+    "text": "Οὗτος ὁ προφήτης πρὸ τῆς ἁλώσεως τοῦ ναοῦ ἥρπαξε τὴν κιβωτὸν τοῦ νόμου καὶ τὰ ἐν αὐτῇ καὶ ἐποίησεν αὐτὰ καταποθῆναι ἐν πέτρᾳ, καὶ εἶπε τοῖς παρεστῶσιν·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 10,
+    "text": "Ἀπεδήμησεν κύριος ἐκ Σινᾶ εἰς οὐρανὸν καὶ πάλιν ἐλεύσεται ἐν δυνάμει, καὶ σημεῖον ὑμῖν ἔσται τῆς παρουσίας αὐτοῦ, ὅτε ξύλον πάντα τὰ ἔθνη προσκυνοῦσιν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 11,
+    "text": "εἶπεν δὲ ὅτι τὴν κιβωτὸν ταύτην οὐδεὶς ἐκβάλλει εἰ μὴ Ἀαρών, καὶ τὰς ἐν αὐτῷ πλάκας οὐδεὶς ἀναπτύξει οὐκέτι ἱερέων ἢ προφητῶν εἰ μὴ Μωϋσὴς ὁ ἐκλεκτὸς τοῦ Θεοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 12,
+    "text": "καὶ ἐν τῇ ἀναστάσει πρώτη ἡ κιβωτὸς ἀναστήσεται καὶ ἐξελεύσεται ἐκ τῆς πέτρας καὶ τεθήσεται ἐν ὄρει Σινᾶ, καὶ πάντες οἱ ἅγιοι πρὸς αὐτὴν συναχθήσονται ἐκεῖ ἐκδεχόμενοι κύριον καὶ τὸν ἐχθρὸν φεύγοντες ἀνελεῖν αὐτοὺς θέλοντα.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 13,
+    "text": "Ἐν τῇ πέτρᾳ ἐσφράγισε τῷ δακτύλῳ τὸ ὄνομα τοῦ Θεοῦ καὶ γέγονεν ὁ τύπος ὡς γλυφὴ σιδήρου, καὶ νεφέλη ἐσκέπασε τὸ ὄνομα καὶ οὐδεὶς νοεῖ τὸν τόπον οὔτε ἀναγνῶναι αὐτὸν ἕως σήμερον καὶ ἕως συντελείας.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 14,
+    "text": "καὶ ἔστιν ἡ πέτρα ἐν τῇ ἐρήμῳ, ὅπου πρώτως ἡ κιβωτὸς γέγονε μεταξὺ τῶν δύο ὀρέων, ἐν οἷς κεῖνται Μωϋσὴς καὶ Ἀαρών, καὶ ἐν νυκτὶ νεφέλη ὡς πῦρ γίνεται κατὰ τὸν τύπον τὸν ἀρχαῖον, ὅτι οὐ μὴ παύσηται ἡ δόξα τοῦ θεοῦ ἐκ τοῦ νόμου αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 2,
+    "verse": 15,
+    "text": "καὶ ἔδωκεν ὁ θεὸς τῷ Ἱερεμίᾳ χάριν, ἵνα τὸ τέλος τοῦ μυστηρίου αὐτοῦ αὐτὸς ποιήσειεν, ἵνα γένηται συνκοινωνὸς Μωϋσέως, καὶ ὁμοῦ εἰσὶν ἕως σήμερον.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 1,
+    "text": "Ἰεζεκιήλ\nΟὗτός ἐστίν ἐκ γῆς Σαρίρα, ἐκ τῶν ἱερέων, καὶ ἀπέθανεν ἐν τῇ γῇ τῶν Χαλδαίων ἐπὶ τῆς αἰχμαλωσίας, πολλὰ προφητεύσας τοῖς ἐν τῇ Ἰουδαίᾳ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 2,
+    "text": "ἀπέκτεινε δὲ αὐτὸν ὁ ἡγούμενος τοῦ λαοῦ Ἰσραὴλ ἐκεῖ, ἐλεγχόμενος ὑπ᾽ αὐτοῦ ἐπὶ εἰδώλων σεβάσμασι.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 3,
+    "text": "καὶ ἔθαψαν αὐτὸν ἐν ἀγρῷ Μαοὺρ ἐν τάφῳ Σὴμ καὶ Ἀρφάξαδ πατέρων  Ἀβραάμ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 4,
+    "text": "καὶ ἔστιν ὁ τάφος σπήλαιον διπλοῦν, ὅτι καὶ Ἀβραὰμ ἐν Χεβρῶν πρὸς τὴν ὁμοιότητα αὐτοῦ ἐποίησε τὸν τάφον Σάῤῥας.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 5,
+    "text": "διπλοῦν δὲ λέγεται, ὅτι εἰλικτόν ἐστι, καὶ ἀπόκρυφον ἐξ ἐπιπέδου ὑπερῷόν ἐστι ἐπὶ γῆς ἐν πέτρᾳ κρεμάμενον.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 6,
+    "text": "Οὗτος ὁ προφήτης τέρας ἔδωκε τῷ λαῷ, ὤστε προσέχειν τῷ ποταμῷ Χοβάρ·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 7,
+    "text": "ὅτε ἐκλείποι, ἐπελπίζειν τὸ δρέπανον τῆς ἐρημώσεως εἰς πέρας τῆς γῆς, καὶ ὅτε πλημμυρήσῃ, τὴν εἰς Ἱερουσαλὴμ ἐπάνοδον.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 8,
+    "text": "καὶ γὰρ ἐκεῖ κατῴκει ὁ ὅσιος καὶ πολλοὶ πρὸς αὐτὸν συνεστρέφοντο.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 9,
+    "text": "καὶ ποτὲ πλήθους συνόντος αὐτῷ ἔδεισαν οἱ Χαλδαῖοι, μὴ ἀντάρωσι, καὶ ἐπῆλθον αὐτοῖς εἰς ἀναίρεσιν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 10,
+    "text": "καὶ ἐποίησεν στῆναι τὸ ὕδωρ, ἵνα ἐκφύγωσιν εἰς τὸ πέραν γενόμενοι· καὶ οἱ τολμήσαντες τῶν ἐχθρῶν ἐπιδιῶξαι κατεποντίσθησαν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 11,
+    "text": "Οὗτος διὰ προσευχῆς αὐτομάτως αὐτοῖς δαψιλῆ τροφὴν ἰχθύων παρέσχετο καὶ πολλοῖς ἐκλείπουσι ζωὴν ἐλθεῖν ἐκ θεοῦ παρεκάλεσεν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 12,
+    "text": "Οὗτος ἀπολλυμένου τοῦ λαοῦ ὑπὸ τῶν ἐχθρῶν προσῆλθε τοῖς ἡγουμένοις καὶ διὰ τεραστίων φοβηθέντες ἐπαύσαντο.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 13,
+    "text": "τοῦτό τε ἔλεγεν αὐτοῖς, ὅτι Διαπεφωνήκαμεν; ἀπώλετο ἡ ἐλπὶς ἡμῶν; καὶ ἐν τέρατι τῶν ὀστέων τῶν νεκρῶν αὐτοὺς ἔπεισεν, ὅτι ἔσται ἐλπὶς τῷ Ἰσραὴλ καὶ ὧδε καὶ ἐπὶ τοῦ μέλλοντος.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 14,
+    "text": "Οὗτος ἐκεῖ ὢν ἐδείκνυ τῷ λαῷ Ἰσραὴλ τὰ ἐν Ἱερουσαλὴμ καὶ ἐν τῷ ναῷ γινόμενα.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 15,
+    "text": "οὗτος ἡρπάγη ἐκεῖθεν καὶ ἦλθεν εἰς Ἱερουσαλὴμ εἰς ἔλεγχον τῶν ἀπίστων.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 16,
+    "text": "Οὗτος κατὰ τὸν Μωϋσὴν εἶδεν τὸν τύπον τοῦ ναοῦ, καὶ τὸ τεῖχος καὶ περίτειχος πλατύ, καθὼς εἶπεν καὶ ὁ Δανιήλ, ὅτι κτισθήσεται.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 17,
+    "text": "Οὗτος ἔκρινεν ἐν Βαβυλῶνι τὴν φυλὴν Δὰν καὶ τοῦ Γάδ, ὅτι ἠσέβουν εἰς τὸν κύριον διώκοντες τοὺς τὸν νόμον φυλάσσοντας,",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 18,
+    "text": "καὶ ἐποίησεν αὐτοῖς τέρας μέγα, ὅτι οἱ ὄφεις ἀνήλισκον τὰ βρέφη αὐτῶν καὶ πάντα τὰ κτήνη αὐτῶν,",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 19,
+    "text": "καὶ προείρηκεν, ὅτι δι᾽ αὐτοὺς οὐκ ἐπιστρέψει ὁ λαὸς εἰς τὴν γῆν αὐτοῦ, ἀλλ᾽ ἐν Μηδίᾳ ἔσονται ἕως συντελείας πλάνης αὐτῶν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 3,
+    "verse": 20,
+    "text": "καὶ ἐξ αὐτῶν ἦν ὁ ἀνελὼν αὐτόν· ἀντέκειντο γὰρ αὐτῷ πάσας τὰς ἡμέρας τῆς ζωῆς αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 1,
+    "text": "Δανιήλ\nΟὗτος μὲν ἦν ἐκ φυλῆς Ἰουδά, γένους τῶν ἐξεχόντων τῆς βασιλικῆς ὑπηρεσίας, ἀλλ᾽ ἔτι νήπιος ἤχθη ἐκ τῆς Ἰουδαίας εἰς γῆν Χαλδαίων· ἐγεννήθη δὲ ἐν Βεθωρὼν τῇ ἀνωτέρᾳ·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 2,
+    "text": "καὶ ἦν ἀνὴρ σώφρων, ὥστε δοκεῖν τοὺς Ἰουδαίους εἶναι αὐτὸν σπάδοντα.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 3,
+    "text": "Πολλὰ ἐπένθησεν οὗτος ἐπὶ τὴν πόλιν, καὶ ἐν νηστείαις ἤσκησεν ἀπὸ πάσης τροφῆς ἐπιθυμητῆς, καὶ ἦν ἀνὴρ ξηρὸς τὴν ἰδέαν, ἀλλὰ ὡραῖος ἐν χάριτι ὑψίστου.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 4,
+    "text": "Οὗτος πολλὰ ηὔξατο ὑπὲρ τοῦ Ναβουχοδονόσορ, παρακαλοῦντος αὐτὸν Βαλτάσαρ τοῦ υἱοῦ αὐτοῦ, ὅτε ἐγένετο θηρίον καὶ κτῆνος, ἵνα μὴ ἀπόληται.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 5,
+    "text": "ἦν τὰ ἐμπρόσθια ὡς βοῦς σὺν τῇ κεφαλῇ, καὶ οἱ πόδες σὺν τοῖς ὀπισθίοις ὡς λέων.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 6,
+    "text": "ἀπεκαλύφθη τῷ ὁσίῳ περὶ τοῦ μυστηρίου τούτου, ὅτι κτῆνος γέγονε διὰ τὴν φιληδονίαν καὶ τὸ σκληροτράχηλον.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 7,
+    "text": "καὶ ταῦτα ἔξουσιν οἱ δυνάσται ἐν νεότητι, ὅτι ὡς βοῦς ὑπὸ ζυγὸν γίνονται τοῦ Βελίαρ, ἐπὶ τέλει δὲ θῆρες γίνονται, ἁρπάζοντες, ὀλεθρεύοντες, ἀναιροῦντες καὶ πατάσσοντες.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 8,
+    "text": "Ἔγνω διὰ θεοῦ ὁ ἅγιος, ὅτι ὡς βοῦς ἤσθιε χόρτον καὶ ἐγίνετο αὐτῷ ἀνθρωπίνης φύσεως τροφή.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 9,
+    "text": "διὰ τοῦτο καὶ ὁ Ναβουχοδονόσορ  μετὰ τὴν πέψιν ἐν καρδίᾳ ἀνθρωπίνῃ γενόμενος ἔκλαιεν καὶ ἠξίου κύριον πᾶσαν ἡμέραν καὶ νύκτα τεσσαρακοντάκις δεόμενος.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 10,
+    "text": "καρδία κτηνῶν ἐπεγίνετο αὐτῷ καὶ ἐλάνθανεν αὐτὸν ὅτι γέγονεν ἄνθρωπος·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 11,
+    "text": "ἤρθη ἡ γλῶσσα αὐτοῦ τοῦ μὴ λαλεῖν· καὶ νοῶν εὐθέως ἐδάκρυε, καὶ οἱ ὀφθαλμοὶ αὐτοῦ ἦσαν ὡς κρέας ἐκ τοῦ κλαίειν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 12,
+    "text": "πολλοὶ γὰρ ἐξιόντες ἐκ τῆς πόλεως ἑώρων αὐτόν· ὁ Δανιὴλ μόνος οὐκ ἠθέλησεν αὐτὸν ἰδεῖν, ὅτι πάντα τὸν χρόνον τῆς ἀλλοιώσεως αὐτοῦ ἐν προσευχῇ ἦν περὶ αὐτοῦ·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 13,
+    "text": "ἔλεγεν ὅτι πάλιν ἄνθρωπος γενήσεται· καὶ ἠπίστουν αὐτῷ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 14,
+    "text": "Ὁ Δανιὴλ τὰ ἑπτὰ ἔτη, ἃ εἶπεν ἑπτὰ καιρούς, ἐποίησεν γενέσθαι ἑπτὰ μῆνας.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 15,
+    "text": "τὸ μυστήριον τῶν ἑπτὰ καιρῶν ἐτελέσθη ἐπ᾽ αὐτόν, ὅτι ἀπεκατέστησεν ἐν ἑπτὰ μησί, τὰ ἓξ ἔτη καὶ ἓξ μῆνας ὑπέπιπτε κυρίῳ καὶ ὡμολόγει τὴν ἀσέβειαν αὐτοῦ· καὶ μετὰ ἄφεσιν τῆς ἀνομίας αὐτοῦ ἀπέδωκεν αὐτῷ τὴν βασιλείαν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 16,
+    "text": "οὔτε ἄρτον ἢ κρέα ἔφαγεν οὔτε οἶνον ἔπιεν ἐξομολογούμενος, ὅτι ὁ Δανιὴλ αὐτῷ προσέταξεν ἐν ὀσπρίοις βρεκτοῖς καὶ χλόαις ἐξιλεοῦσθαι κύριον.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 17,
+    "text": "διὰ τοῦτο ἐκάλεσεν αὐτὸν Βαλτάσαρ, ὅτι ἠθέλησεν αὐτὸν συνκληρόνομον καταστῆσαι τῶν τέκνων αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 18,
+    "text": "ἀλλ᾽ ὁ ὅσιος εἶπεν, ἵλεώς μοι ἀφεῖναι κληρονομίαν πατέρων μου καὶ κολληθῆναι κληρονομίαις ἀπεριτμήτων.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 19,
+    "text": "καὶ τοῖς ἄλλοις βασιλεῦσι Περσῶν πολλὰ ἐποίησεν τεράστια, ὅσα οὐκ ἔγραψαν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 20,
+    "text": "ἐκεῖ ἀπέθανε καὶ ἐτάφη ἐν τῷ σπηλαίῳ τῷ βασιλικῷ μόνος ἐνδόξως.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 21,
+    "text": "Καὶ αὐτὸς ἔδωκε τέρας ἐν ὄρεσι τοῖς ὑπεράνω Βαβυλῶνος, ὅτι, ὅτε καπνισθήσεται τὸ ἐκ βορρᾶ, ἥξει τὸ τὲλος Βαβυλῶνος· ὅτε δὲ ὡς ἐν πυρὶ καίεται, τὸ τέλος πάσης τῆς γῆς· ἐὰν δὲ τὸ ἐν τῷ νότῳ ῥεύσῃ ὕδατα, ἐπιστρέψει ὁ λαὸς εἰς γῆν αὐτοῦ, καὶ ἐὰν αἷμα ῥεύσει, φόνος ἔσται τοῦ Βελίαρ ἐν πάσῃ τῇ γῇ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 4,
+    "verse": 22,
+    "text": "καὶ ἐκοιμήθη ἐν εἰρήνῃ ὁ ὅσιος.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 5,
+    "verse": 1,
+    "text": "Ὡσηέ\nΟὗτος ἦν ἐκ Βελεμὼθ τῆς φυλῆς Ἰσσάχαρ, καὶ ἐτάφη ἐν τῇ γῇ αὐτοῦ ἐν εἰρήνῃ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 5,
+    "verse": 2,
+    "text": "καὶ ἔδωκε τέρας, ἥξειν κύριος ἐπὶ τῆς γῆς, ἐὰν ἡ δρῦς ἡ ἐν Σηλὼμ μερισθῇ ἀφ᾽ ἑαυτῆς καὶ γένωνται δρύες δώδεκα.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 6,
+    "verse": 1,
+    "text": "Μιχαίας ὁ Μωραθὶ\nἦν ἐκ φυλῆς Ἐφραίμ. πολλὰ ποιήσας τῷ Ἀχαὰβ ὑπὸ Ἰωρὰμ τοῦ υἱοῦ αὐτοῦ ἀνῃρέθη κρημνωθείς, ὅτι ἤλεγχεν αὐτὸν ἐπὶ ταῖς ἀσεβείαις τῶν πατέρων αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 6,
+    "verse": 2,
+    "text": "καὶ ἐτάφη ἐν τῇ γῇ αὐτοῦ μόνος σύνεγγυς πολυανδρίου Ἐνακείμ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 7,
+    "verse": 1,
+    "text": "Ἀμὼς\nἦν ἐκ Θεκουέ. καὶ Ἀμασίας πυκνῶς αὐτὸν τυμπανίσας, τέλος καὶ ἀνεῖλεν αὐτὸν ὁ υἱὸς αὐτοῦ ἐν ῥοπάλῳ πλήξας αὐτοῦ τὸν κρόταφον·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 7,
+    "verse": 2,
+    "text": "καὶ ἔτι ἐμπνέων ἦλθεν εἰς τὴν γῆν αὐτοῦ καὶ μεθ᾽ ἡμέρας ἀπέθανε καὶ ἐτάφη ἐκεῖ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 8,
+    "verse": 1,
+    "text": "Ἰωὴλ\nἦν ἐκ τῆς γῆς τοῦ Ῥουβὴν ἐν ἀγρῷ Βεθμαών. ἐν εἰρήνῃ ἀπέθανε καὶ ἐτάφη ἐκεῖ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 9,
+    "verse": 1,
+    "text": "Ἀβδιοῦ\nἦν ἐκ γῆς Συχὲμ ἀγροῦ Βηθαχαράμ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 9,
+    "verse": 2,
+    "text": "οὗτος ἦν μαθητὴς Ἠλία καὶ πολλὰ ὑπομείνας δι᾽ αὐτὸν περιεσώζετο.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 9,
+    "verse": 3,
+    "text": "οὗτος ἦν ὁ τρίτος πεντηκόνταρχος, οὗ ἐφείσατο Ἠλίας καὶ κατέβη πρὸς Ὀχοζίαν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 9,
+    "verse": 4,
+    "text": "μετὰ ταῦτα ἀπολιπὼν τὴν λειτουργίαν τοῦ βασιλέως προεφήτευσε καὶ ἀπέθανε ταφεὶς μετὰ τῶν πατέρων αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 10,
+    "verse": 1,
+    "text": "Ἰωνᾶς\nἦν ἐκ γῆς Καριαθμαοῦς πλησίον πόλεως Ἑλλήνων Ἀζώτου κατὰ θάλασσαν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 10,
+    "verse": 2,
+    "text": "καὶ ἐκβρασθεὶς ἐκ τοῦ κήτους καὶ ἀπελθὼν ἐν Νινευῇ ἀνακάμψας οὐκ ἔμεινεν εἰς τὴν γῆν αὐτοῦ, ἀλλὰ παραλαβὼν τὴν μητέρα αὐτοῦ παρῴκησε τὴν Σοὺρ χώραν ἀλλοφύλων·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 10,
+    "verse": 3,
+    "text": "ἔλεγε γὰρ, ὅτι οὕτως ἀφελῶ ὄνειδός μου, ὅτι ἐψευσάμην προφητεύσας κατὰ Νινευὴ τῆς μεγάλης πόλεως.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 10,
+    "verse": 4,
+    "text": "Ἦν τότε Ἠλίας ἐλέγχων τὸν οἶκον Ἀχαάβ, καὶ καλέσας λιμὸν ἐπὶ τὴν γῆν ἔφυγεν καὶ ἐλθὼν εὗρε τὴν χήραν μετὰ τοῦ υἱοῦ αὐτῆς, οὐ γὰρ ἐδύνατο μένειν μετὰ ἀπεριτμήτων.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 10,
+    "verse": 5,
+    "text": "καὶ εὐλόγησεν αὐτήν· καὶ θανόντα τὸν υἱὸν αὐτῆς πάλιν ἤγειρεν ἐκ νεκρῶν ὁ θεὸς διὰ τοῦ Ἠλία, ἠθέλησε γὰρ δεῖξαι αὐτῷ, ὅτι οὐ δύναται ἀποδράσαι θεόν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 10,
+    "verse": 6,
+    "text": "Καὶ ἀναστὰς μετὰ τὸν λιμὸν ἦλθεν ἐν γῇ Ἰούδα. καὶ ἀποθανοῦσαν τὴν μητέρα αὐτοῦ κατὰ τὴν ὁδὸν ἔθαψεν αὐτὴν ἐχόμενα τῆς βαλάνου Δεββώρας.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 10,
+    "verse": 7,
+    "text": "καὶ κατοικήσας ἐν γῇ Σαραὰρ ἀπέθανε καὶ ἐτάφη ἐν σπηλαίῳ τοῦ Κενεζαίου κριτοῦ γενομένου μιᾶς φυλῆς ἐν ἡμέραις τῆς ἀναρχίας.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 10,
+    "verse": 8,
+    "text": "καὶ ἔδωκε τέρας ἐπὶ Ἱερουσαλὴμ καὶ ὅλην τὴν γῆν, ὅτε ἴδωσι λίθον βοῶντα οἰκτρῶς, ἐγγίζειν τὸ τέλος· καὶ ὅτε ἴδωσιν ἐν Ἱερουσαλὴμ πάντα τὰ ἔθνη, ὅτι ἡ πόλις ἕως ἐδάφους ἀφανισθήσεται.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 11,
+    "verse": 1,
+    "text": "Ναοὺμ\nἦν ἀπὸ Ἐλκεσὶ πέραν τοῦ [ὄρους] εἰς Βηθγαβρὶν φυλῆς Συμεών.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 11,
+    "verse": 2,
+    "text": "οὗτος μετὰ τὸν Ἰωνᾶν τῇ Νινευῇ τέρας ἔδωκεν, ὅτι ὑπὸ ὑδάτων γλυκίων καὶ πυρὸς ὑπογείου ἀπολεῖται, ὃ καὶ γέγονεν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 11,
+    "verse": 3,
+    "text": "ἡ γὰρ περιέχουσα αὐτὴν λίμνη κατέκλυσεν αὐτὴν ἐν σεισμῷ, καὶ πῦρ ἐκ τῆς ἐρήμου ἐπελθὸν τὸ  ὑψηλότερον αὐτῆς μέρος ἐνέπρησεν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 11,
+    "verse": 4,
+    "text": "ἀπέθανε δὲ ἐν εἰρήνῃ καὶ ἐτάφη ἐν τῇ γῇ αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 1,
+    "text": "Ἀμβακοὺμ\nἐκ φυλῆς ἦν Συμεὼν ἐξ ἀγροῦ Βηθζουχάρ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 2,
+    "text": "οὗτος εἶδε πρὸ τῆς αἰχμαλωσίας περὶ τῆς ἁλώσεως Ἱερουσαλὴμ καὶ ἐπένθησε σφόδρα.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 3,
+    "text": "καὶ ὅτε ἦλθε Ναβουχοδονόσορ ἐν Ἱερουσαλήμ, ἔφυγεν εἰς Ὀστρακίνην καὶ παροίκησεν ἐν γῇ Ἰσμαήλ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 4,
+    "text": "ὡς δὲ ἐπέστρεψαν οἱ Χαλδαῖοι, καὶ οἱ κατάλοιποι οἱ ὄντες ἐν Ἱερουσαλὴμ κατέβησαν εἰς Αἴγυπτον, ἦν παροικῶν τὴν γῆν αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 5,
+    "text": "Καὶ ἐλειτούργει θερισταῖς τοῦ ἀγροῦ αὐτοῦ·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 6,
+    "text": "ὡς δὲ ἔλαβε τὸ ἔδεσμα, προεφήτευσε τοῖς ἰδίοις εἰπών· πορεύομαι εἰς γῆν μακρὰν καὶ ταχέως ἐλεύσομαι· εἰ δὲ βραδύνω, ἀπενέγκατε τοῖς θερισταῖς.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 7,
+    "text": "καὶ γενόμενος ἐν Βαβυλῶνι καὶ δοὺς τὸ ἄριστον τῷ Δανιὴλ ἐπέστη τοῖς θερισταῖς ἐσθίουσι καὶ οὐδενὶ εἶπεν τὸ γενόμενον.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 8,
+    "text": "Συνῆκεν δὲ ὅτι τάχειον ἐπιστρέψει ὁ λαὸς ἀπὸ Βαβυλῶνος.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 9,
+    "text": "καὶ πρὸ δύο ἐτῶν ἀποθνήσκει τῆς ἐπιστροφῆς. καὶ ἐτάφη ἐν ἀγρῷ ἰδίῳ μόνος.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 10,
+    "text": "Ἔδωκε δὲ τέρας τοῖς ἐν τῇ Ἰουδαίᾳ, ὅτι ὄψονται ἐν τῷ ναῷ φῶς, καὶ οὕτως ἴδωσι τὴν δόξαν τοῦ ναοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 11,
+    "text": "καὶ περὶ συντελείας τοῦ ναοῦ προεῖπεν, ὅτι ὑπὸ ἔθνους δυτικοῦ γενήσεται.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 12,
+    "text": "τότε τὸ ἅπλωμα, φησί, τοῦ δαβεὶρ εἰς μικρὰ ῥαγήσεται, καὶ τὰ ἐπίκρανα τῶν δύο στύλων ἀφαιρεθήσονται καὶ οὐδεὶς  γνώσεται, ποῦ ἔσονται·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 13,
+    "text": "αὐτὰ δὲ ἐν τῇ ἐρήμῳ ἀπενεχθήσονται ὑπὸ ἀγγέλων, ὅπου ἐν ἀρχῇ ἐπάγη ἡ σκηνὴ τοῦ μαρτυρίου.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 12,
+    "verse": 14,
+    "text": "καὶ ἐν αὐτοῖς γνωσθήσεται ἐπὶ τέλει κύριος, ὅτι φωτίσουσι τοὺς διωκομένους ὑπὸ τοῦ ὄφεως ἐν σκότει ὡς ἐξ ἀρχῆς.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 13,
+    "verse": 1,
+    "text": "Σοφονίας\nἐκ φυλῆς ἦν Συμεὼν ἀγροῦ Σαβαραθά·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 13,
+    "verse": 2,
+    "text": "προεφήτευσε περὶ τῆς πόλεως καὶ περὶ τέλους ἐθνῶν καὶ αἰσχύνης ἀσεβῶν·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 13,
+    "verse": 3,
+    "text": "καὶ θανὼν ἐτάφη ἐν ἀγρῷ αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 14,
+    "verse": 1,
+    "text": "Ἀγγαῖος\nτάχα νεός ἦλθεν ἐκ Βαβυλῶνος εἰς Ἱερουσαλὴμ καὶ φανερῶς περὶ τῆς ἐπιστροφῆς τοῦ λαοῦ προεφήτευσε καὶ εἶδεν ἐκ μέρους τὴν οἰκοδομὴν τοῦ ναοῦ·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 14,
+    "verse": 2,
+    "text": "καὶ θανὼν ἐτάφη πλησίον τοῦ τάφου τῶν ἱερέων ἐνδόξως ὡς αὐτοί.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 15,
+    "verse": 1,
+    "text": "Ζαχαρίας\nἦλθεν ἀπὸ Χαλδαίων ἤδη προβεβηκὼς καὶ ἐκεῖ πολλὰ τῷ λαῷ προεφήτευσε· καὶ τέρατα ἔδωκεν εἰς ἀπόδειξιν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 15,
+    "verse": 2,
+    "text": "οὗτος εἶπε τῷ Ἰωσεδέκ, ὅτι γεννήσει υἱὸν καὶ ἐν Ἱερουσαλὴμ ἱερατεύσει·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 15,
+    "verse": 3,
+    "text": "οὗτος καὶ τὸν Σαλαθιὴλ ἐφ᾽ υἱῷ εὐλόγησε καὶ ὄνομα Ζοροβάβελ ἐπέθηκε.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 15,
+    "verse": 4,
+    "text": "καὶ ἐπὶ Κύρου τέρας ἔδωκεν εἰς νῖκος καὶ περὶ τῆς λειτουργίας αὐτοῦ προηγόρευσεν, ἣν ποιήσει ἐπὶ Ἱερουσαλὴμ, καὶ ηὐλόγησεν αὐτὸν σφόδρα.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 15,
+    "verse": 5,
+    "text": "τὰ δὲ τῆς προφητείας ἐν Ἱερουσαλὴμ καὶ περὶ τέλους ἐθνῶν καὶ Ἰσραὴλ καὶ τοῦ ναοῦ καὶ ἀργίας προφητῶν καὶ ἱερέων καὶ περὶ διπλῆς κρίσεως ἐξέθετο.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 15,
+    "verse": 6,
+    "text": "καὶ ἀπέθανεν ἐν γήρει μακρῷ καὶ ἐκλιπὼν ἐτάφη σύνεγγυς Ἀγγαίου.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 16,
+    "verse": 1,
+    "text": "Μαλαχίας\nΟὗτος μετὰ τὴν ἐπιστροφὴν τίκτεται ἐν Σωφᾶ, καὶ πάνυ νέος καλὸν βίον ἔσχηκε.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 16,
+    "verse": 2,
+    "text": "καὶ ἐπειδὴ πᾶς ὁ λαὸς ἐτίμα αὐτὸν ὡς ὅσιον καὶ πρᾳῦν, ἐκάλεσαν αὐτὸν Μαλαχί, ὃ ἑρμηνεύεται ἄγγελος· ἦν γὰρ καὶ τῷ ἰδεῖν εὐπρεπής.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 16,
+    "verse": 3,
+    "text": "ἀλλὰ καὶ ὅσα εἶπεν αὐτὸς ἐν προφητείᾳ, αὐτῇ τῇ ἡμέρᾳ ὀφθεὶς ἄγγελος θεοῦ ἐπεδευτέρωσεν, ὡς ἐγένετο ἐν ἡμέραις ἀναρχίας, ὡς γέγραπται ἐν Σφαρφωτίμ, τουτέστιν ἐν βίβλῳ Κριτῶν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 16,
+    "verse": 4,
+    "text": "καὶ ἔτι νέος προσετὲθη πρός τοὺς πατέρας αὐτοῦ ἐν ἀγρῷ αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 17,
+    "verse": 1,
+    "text": "Ναθὰν\nπροφήτης Δαυὶδ ἦν ἐκ Γαβαών, ἐκ φυλῆς Ἐωή. καὶ αὐτὸς ἦν ὁ διδάξας αὐτὸν νόμον κυρίου.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 17,
+    "verse": 2,
+    "text": "καὶ εἶδεν ὅτι Δαυὶδ ἐν τῇ Βηρσαβεὲ παραβήσεται, καὶ σπεύδοντα ἐλθεῖν ἀγγεῖλαι αὐτῷ ἐνεπόδισεν ὁ Βελίαρ, ὅτι κατὰ τὴν ὁδὸν εὗρεν νεκρὸν κείμενον γυμνὸν ἐσφαγμένον·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 17,
+    "verse": 3,
+    "text": "καὶ ἐπέμεινεν ἐκεῖ καὶ τῇ νυκτὶ ἐκείνῃ ἔγνω, ὅτι ἐποίησε τὴν ἁμαρτίαν· καὶ ὑπέστρεψε πενθῶν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 17,
+    "verse": 4,
+    "text": "καὶ ὡς ἀνεῖλε τὸν ἄνδρα αὐτῆς, ἔπεμψε κύριος ἐλέγξαι αὐτόν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 17,
+    "verse": 5,
+    "text": "καὶ αὐτὸς πάνυ γηράσας ἀπέθανεν καὶ ἐτάφη εἰς τὴν γῆν αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 18,
+    "verse": 1,
+    "text": "Ἀχία\nἀπὸ Σηλώμ, ὅπου ἦν ἡ σκηνὴ τὸ παλαιόν, ἐκ πόλεως Ἡλί.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 18,
+    "verse": 2,
+    "text": "οὗτος εἶπε περὶ Σαλωμών, ὅτι προσκρούσει κυρίῳ·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 18,
+    "verse": 3,
+    "text": "καὶ ἤλεγξε τὸν Ἱεροβοάμ, ὅτι δόλῳ ἐπορεύετο μετὰ κυρίου· εἶδεν ζεῦγος βοῶν πατοῦντα τὸν λαὸν καὶ κατὰ τῶν ἱερέων ἐπιτρέχοντα·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 18,
+    "verse": 4,
+    "text": "προεἶπε καὶ τῷ Σαλωμών, ὅτι αἱ γυναῖκες αὐτὸν ἐκστήσουσι καὶ πᾶν τὸ γένος αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 18,
+    "verse": 5,
+    "text": "καὶ ἀπέθανε καὶ ἐτάφη σύνεγγυς τῆς δρυὸς Σηλώμ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 19,
+    "verse": 1,
+    "text": "Ἰωὴδ\nἦν ἐκ γῆς Σαμαρείμ. οὗτος ἐστίν, ὃν ἐπάταξεν ὁ λέων καὶ ἀπέθανεν, ὅτε ἤλεγξεν τὸν Ἱεροβοὰμ ἐπὶ ταῖς δαμάλεσι·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 19,
+    "verse": 2,
+    "text": "καὶ ἐτάφη ἐν Βεθὴλ σύνεγγυς τοῦ ψευδοπροφήτου τοῦ πλανήσαντος αὐτόν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 20,
+    "verse": 1,
+    "text": "Ἀζαρίας\nἦν ἐκ γῆς Συβαθά, ὃς ἐπέστρεψεν ἐξ Ἰσραὴλ τὴν αἰχμαλωσίαν Ἰούδα.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 20,
+    "verse": 2,
+    "text": "καὶ θανὼν ἐτάφη ἐν ἀγρῷ αὐτοῦ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 21,
+    "verse": 1,
+    "text": "Ζαχαρίας\nἐξ Ἱερουσαλὴμ, υἱὸς Ἰωδαὲ τοῦ ἱερέως, ὃν ἀπέκτεινεν Ἰωὰς ὁ βασιλεὺς Ἰούδα ἐχόμενα τοῦ θυσιαστηρίου, καὶ ἐξέχεεν τὸ αἷμα αὐτοῦ ὁ οἶκος Δαυὶδ ἀνὰ μέσον ἐπὶ τοῦ αἰλάμ· καὶ λαβόντες αὐτὸν οἱ ἱερεῖς ἔθαψαν αὐτὸν μετὰ τοῦ πατρὸς αὐτοῦ·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 21,
+    "verse": 2,
+    "text": "ἔκτοτε ἐγένοντο τέρατα ἐν τῷ ναῷ φαντασίας καὶ οὐκ ἴσχυον οἱ ἱερεῖς ἰδεῖν ὀπτασίαν ἀγγέλων θεοῦ οὔτε δοῦναι χρησμοὺς ἐκ τοῦ δαβεὶρ οὔτε ἐρωτῆσαι ἐν τῷ ἐφοὺδ οὔτε διὰ δήλων ἀποκριθῆναι τῷ λαῷ ὡς τὸ πρίν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 22,
+    "verse": 1,
+    "text": "Ἠλίας\nΘεσβίτης ἦν ἐκ γῆς Ἀράβων, φυλῆς Ἀαρών, οἰκῶν ἐν Γαλαάδ, ὅτι ἡ Θεσβεὶ δόμα ἦν τοῖς ἱεροῦσιν.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 22,
+    "verse": 2,
+    "text": "ὅτε εἶχεν τεχθῆναι, εἶδεν Σοβαχὰ ὁ πατὴρ αὐτοῦ, ὅτι ἄνδρες λευκοφανεῖς αὐτὸν προσηγόρευον, καὶ ὅτι ἐν πυρὶ αὐτὸν ἐσπαργάνουν καὶ φλόγα πυρὸς ἐδίδουν αὐτῷ φαγεῖν·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 22,
+    "verse": 3,
+    "text": "καὶ ἐλθὼν ἀνήγγειλεν ἐν Ἱερουσαλήμ, καὶ εἶπεν αὐτῷ ὁ χρησμός· μὴ δειλιάσῃς· ἔσται γὰρ ἡ οἴκησις αὐτοῦ φῶς καὶ ὁ λόγος αὐτοῦ ἀπόφασις, καὶ κρινεῖ τὸν Ἰσραὴλ ἐν ῥομφαίᾳ καὶ ἐν πυρί.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 23,
+    "verse": 1,
+    "text": "Ἐλισαῖος\nἘλισαῖος ἦν ἐξ Ἀβελμαοὺλ γῆς τοῦ Ῥουβήν·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 23,
+    "verse": 2,
+    "text": "καὶ ἐπὶ τούτου γέγονε τέρας, ὅτι, ἡνίκα ἐτέχθη ἐν Γαλγάλοις ἡ δάμαλις ἡ χρυσῆ ὀξὺν ἐβόησεν, ὥστε ἀκουσθῆναι εἰς Ἱερουσαλήμ·",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 23,
+    "verse": 3,
+    "text": "καὶ εἶπεν ὁ ἱερεὺς διὰ τῶν δήλων, ὅτι προφήτης ἐτέχθη Ἰσραήλ, ὃς καθελεῖ τὰ γλυπτὰ αὐτῶν καὶ τὰ χωνευτὰ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  },
+  {
+    "chapter": 23,
+    "verse": 4,
+    "text": "καὶ θανὼν ἐτάφη ἐν Σαμαρείᾳ.",
+    "sourceUrl": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/853a64b623de296d2b8532a43593607772e7c45a/static/docs/LivPro.xml"
+  }
+]

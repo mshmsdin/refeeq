@@ -11,7 +11,7 @@ process.env.BIBLE_ONLY = 'true';
 const { getDb, initDatabase } = await import('./schema.js');
 const { initBibleSchema } = await import('./bible_schema.js');
 const { ensure1EsMohammadImported } = await import('./1es_mohammad_startup_import.js');
-const { getChapterAcrossTranslations } = await import('../utils/bible_service.js');
+const { getBook, getChapterAcrossTranslations, getTranslations } = await import('../utils/bible_service.js');
 
 initDatabase();
 initBibleSchema();
@@ -49,4 +49,6 @@ test('imports complete Arabic and Greek 1 Esdras witnesses idempotently', () => 
   assert.equal(chapterRows.length, 116);
   assert.equal(new Set(chapterRows.map(({ verse }) => verse)).size, 58);
   assert.equal(ensure1EsMohammadImported(), false);
+  assert.ok(getBook('1ES').available_translations.includes('ar-mohammad-1es'));
+  assert.ok(getTranslations().some((item) => item.slug === 'ar-mohammad-1es'));
 });

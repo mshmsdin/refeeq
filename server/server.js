@@ -8,6 +8,10 @@ import AdmZip from 'adm-zip';
 import { initDatabase, getDb, closeDb, getDbPath } from './db/schema.js';
 import { initBibleSchema } from './db/bible_schema.js';
 import { createBibleWalletRouter } from './routes/bible_wallet.js';
+import { ensure1EsMohammadImported } from './db/1es_mohammad_startup_import.js';
+import { ensureArabicTranslationsImported } from './db/arabic_translations_startup_import.js';
+import { ensureActsJohnImported } from './db/acts_john_startup_import.js';
+import { ensureEarlyChristianFragmentPagesImported } from './db/earlychristian_fragment_startup_import.js';
 import { ensureMotaMuseImported } from './db/mota_muse_startup_import.js';
 import { ensureGiantsImported } from './db/giants_startup_import.js';
 import { ensureAramaicLeviQumranImported } from './db/aramaic_levi_startup_import.js';
@@ -15,12 +19,11 @@ import { ensureQumranLeviTraditionImported } from './db/qumran_levi_tradition_st
 import { ensureQumranAmramImported } from './db/qumran_amram_startup_import.js';
 import { ensureNoahQumranImported } from './db/noah_qumran_startup_import.js';
 import { ensureBirthOfNoahImported } from './db/birth_of_noah_startup_import.js';
+import { ensureQumranEnochImported } from './db/enoch_qumran_startup_import.js';
 import { ensureGenesisApocryphonImported } from './db/genesis_apocryphon_startup_import.js';
 import { ensurePseudoJubileesImported } from './db/pseudo_jubilees_startup_import.js';
 import { ensureQumran4Q246Imported } from './db/qumran_4q246_startup_import.js';
-import { ensure1EsMohammadImported } from './db/1es_mohammad_startup_import.js';
 import { ensureTorahWitnessesImported } from './db/torah_witnesses_startup_import.js';
-import { ensureArabicTranslationsImported } from './db/arabic_translations_startup_import.js';
 import { ensureAncientVersionsImported } from './db/ancient_versions_startup_import.js';
 import { ensureJewishSourcesImported } from './db/jewish_sources_startup_import.js';
 import { ensureScanBooksImported } from './db/scan_books_startup_import.js';
@@ -32,6 +35,26 @@ import {
   findHitIndexes as findScanHitIndexes,
   tokenizeScanQuery
 } from './utils/scan_books.js';
+import { ensureQumranPseudoDanielImported } from './db/qumran_pseudo_daniel_startup_import.js';
+import { ensureQumran4Q521Imported } from './db/qumran_4q521_startup_import.js';
+import { ensureQumran4Q242Imported } from './db/qumran_4q242_startup_import.js';
+import { ensureQumran4Q537Imported } from './db/qumran_4q537_startup_import.js';
+import { ensureQumran4Q539Imported } from './db/qumran_4q539_startup_import.js';
+import { ensureLivesOfProphetsImported } from './db/lives_of_prophets_startup_import.js';
+import { ensureQumranWordsEzekielImported } from './db/qumran_words_ezekiel_startup_import.js';
+import { ensureQumranApocryphonJeremiahImported } from './db/qumran_apocryphon_jeremiah_startup_import.js';
+import { ensureQumranJeremiahAbImported } from './db/qumran_jeremiah_ab_startup_import.js';
+import { ensureQumranApocryphonJoshuaImported } from './db/qumran_apocryphon_joshua_startup_import.js';
+import { ensureApocryphonMosesImported } from './db/qumran_apocryphon_moses_startup_import.js';
+import { ensureTegsatGeezImported } from './db/tegsats_geez_startup_import.js';
+import { ensureMeqabyanGeezImported } from './db/meqabyan_geez_startup_import.js';
+import { ensureSirachGeezImported } from './db/sirach_geez_startup_import.js';
+import { ensureEthiopianEzraWebImported } from './db/ethiopian_ezra_web_startup_import.js';
+import { ensureEthiopicEnochImported } from './db/ethiopic_enoch_startup_import.js';
+import { ensureSamaritanPentateuchImported } from './db/samaritan_pentateuch_startup_import.js';
+import { ensureSamaritanChronicleImported } from './db/samaritan_chronicle_startup_import.js';
+import { ensureArmenianHistoryMosesImported } from './db/armenian_history_moses_startup_import.js';
+import { ensureArmenianShortHistoryEliasImported } from './db/armenian_short_history_elias_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -61,11 +84,92 @@ const __dirname = path.dirname(__filename);
 initDatabase();
 initBibleSchema();
 try {
-  if (ensure1EsMohammadImported()) {
-    console.log('[Bible startup] Imported the complete Arabic translation and Greek witness for 1 Esdras.');
+  if (await ensureArmenianHistoryMosesImported()) {
+    console.log('[Bible startup] Imported and verified the 1901 Armenian History of Moses translation.');
   }
 } catch (error) {
-  console.error('[Bible startup] 1 Esdras Arabic and Greek import failed:', error.message);
+  console.error('[Bible startup] Armenian History of Moses import failed:', error.message);
+}
+try {
+  if (await ensureArmenianShortHistoryEliasImported()) {
+    console.log('[Bible startup] Imported and verified the 1901 Armenian Short History of the Prophet Elias translation.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Armenian Short History of the Prophet Elias import failed:', error.message);
+}
+try {
+  if (await ensureSamaritanPentateuchImported()) {
+    console.log('[Bible startup] Imported and verified the licensed Samaritan Hebrew and English witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Samaritan Pentateuch import failed:', error.message);
+}
+try {
+  if (await ensureSamaritanChronicleImported()) {
+    console.log('[Bible startup] Imported and verified the 1890 Samaritan Chronicle translation.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Samaritan Chronicle import failed:', error.message);
+}
+try {
+  if (ensure1EsMohammadImported()) console.log('[Bible startup] Imported complete Arabic translation and Greek witness for 1 Esdras.');
+} catch (error) {
+  console.error('[Bible startup] 1 Esdras import failed:', error.message);
+}
+try {
+  const importedArabic = ensureArabicTranslationsImported();
+  if (importedArabic.length) console.log('[Bible startup] Imported Arabic translations:', importedArabic.join(', '));
+} catch (error) {
+  console.error('[Bible startup] Arabic translations import failed:', error.message);
+}
+try {
+  if (await ensureTegsatGeezImported()) {
+    console.log('[Bible startup] Imported complete Beta maṣāḥǝft Ge\'ez Tegsat source.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Ge\'ez Tegsat import failed:', error.message);
+}
+try {
+  if (await ensureMeqabyanGeezImported()) {
+    console.log('[Bible startup] Imported three complete Beta maṣāḥǝft Ge\'ez Meqabyan sources.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Ge\'ez Meqabyan import failed:', error.message);
+}
+try {
+  if (await ensureSirachGeezImported()) {
+    console.log('[Bible startup] Imported complete Beta maṣāḥǝft Ge\'ez Sirach source.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Ge\'ez Sirach import failed:', error.message);
+}
+try {
+  if (await ensureEthiopianEzraWebImported()) {
+    console.log('[Bible startup] Repaired the complete public-domain English witness for Ethiopian Ezra Sutuel.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Ethiopian Ezra Sutuel witness import failed:', error.message);
+}
+try {
+  if (await ensureEthiopicEnochImported()) {
+    console.log('[Bible startup] Imported and verified the partial Ge\'ez Rylands 23 witness of 1 Enoch.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Ge\'ez 1 Enoch witness import failed:', error.message);
+}
+try {
+  if (await ensureActsJohnImported()) {
+    console.log('[Bible startup] Imported surviving English Acts of John sections as a partial text.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Acts of John import failed:', error.message);
+}
+try {
+  if (await ensureEarlyChristianFragmentPagesImported()) {
+    console.log('[Bible startup] Reimported five early Christian pages without site styles or ads.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Early Christian page cleanup import failed:', error.message);
 }
 try {
   if (await ensureMotaMuseImported()) {
@@ -140,6 +244,13 @@ try {
   console.error('[Bible startup] Birth of Noah Qumran import failed:', error.message);
 }
 try {
+  if (await ensureQumranEnochImported()) {
+    console.log('[Bible startup] Imported nine licensed Aramaic Qumran Enoch manuscript witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran Enoch import failed:', error.message);
+}
+try {
   if (await ensureGenesisApocryphonImported()) {
     console.log('[Bible startup] Imported the licensed Aramaic 1Q20 Genesis Apocryphon witness.');
   }
@@ -159,6 +270,83 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Qumran 4Q246 witness import failed:', error.message);
+}
+try {
+  if (await ensureQumranPseudoDanielImported()) {
+    console.log('[Bible startup] Imported the separate licensed Aramaic 4Q243–245 witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran Pseudo-Daniel witness import failed:', error.message);
+}
+try {
+  if (await ensureQumran4Q521Imported()) {
+    console.log('[Bible startup] Imported the licensed Hebrew 4Q521 witness.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran 4Q521 witness import failed:', error.message);
+}
+try {
+  if (await ensureQumran4Q242Imported()) {
+    console.log('[Bible startup] Imported the licensed Aramaic 4Q242 witness.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran 4Q242 witness import failed:', error.message);
+}
+try {
+  if (await ensureQumran4Q537Imported()) {
+    console.log('[Bible startup] Imported the licensed Aramaic 4Q537 witness.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran 4Q537 witness import failed:', error.message);
+}
+try {
+  if (await ensureQumran4Q539Imported()) {
+    console.log('[Bible startup] Imported the licensed Aramaic 4Q539 witness.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran 4Q539 witness import failed:', error.message);
+}
+try {
+  if (await ensureLivesOfProphetsImported()) {
+    console.log('[Bible startup] Imported the complete Greek and English OCP Lives of the Prophets edition.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Lives of the Prophets import failed:', error.message);
+}
+try {
+  if (await ensureQumranWordsEzekielImported()) {
+    console.log('[Bible startup] Imported the separate licensed Hebrew 4Q385, 4Q385b, 4Q386, 4Q388, and 4Q391 witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Words of Ezekiel witness import failed:', error.message);
+}
+try {
+  if (await ensureQumranApocryphonJeremiahImported()) {
+    console.log('[Bible startup] Imported six licensed Hebrew Qumran Apocryphon of Jeremiah witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran Apocryphon of Jeremiah import failed:', error.message);
+}
+try {
+  if (await ensureQumranJeremiahAbImported()) {
+    console.log('[Bible startup] Imported three licensed Hebrew Qumran Jeremiah A/B witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran Jeremiah A/B import failed:', error.message);
+}
+try {
+  if (await ensureQumranApocryphonJoshuaImported()) {
+    console.log('[Bible startup] Imported the separate licensed Hebrew 4Q378, 4Q379, 4Q522, and 5Q9 Joshua tradition witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Apocryphon of Joshua import failed:', error.message);
+}
+try {
+  if (await ensureApocryphonMosesImported()) {
+    console.log('[Bible startup] Imported four licensed partial Hebrew Qumran Apocryphon of Moses witnesses.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Apocryphon of Moses witness import failed:', error.message);
 }
 try {
   const importedScans = await ensureScanBooksImported();

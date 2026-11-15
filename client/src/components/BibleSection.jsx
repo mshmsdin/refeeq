@@ -1688,7 +1688,7 @@ function BooksGrid({ collectionSlug, onOpenChapter, translations }) {
                 </span>
                 {isReady && (
                   <span className="basis-full text-[11px] leading-relaxed text-slate-600 dark:text-slate-300">
-                    اللغات: {[...new Set((b.available_translations || []).map(slug => translations.find(t => t.slug === slug)?.language).filter(Boolean))].map(language => ({ en: 'الإنجليزية', ar: 'العربية', la: 'اللاتينية', syr: 'السريانية', gez: 'الجعزية', grc: 'اليونانية', arc: 'الآرامية' }[language] || language)).join('، ') || 'متاحة'}
+                    اللغات: {[...new Set((b.available_translations || []).map(slug => translations.find(t => t.slug === slug)?.language).filter(Boolean))].map(language => ({ en: 'الإنجليزية', ar: 'العربية', he: 'العبرية', la: 'اللاتينية', syr: 'السريانية', gez: 'الجعزية', grc: 'اليونانية', arc: 'الآرامية' }[language] || language)).join('، ') || 'متاحة'}
                   </span>
                 )}
                 {!isReady && <span className="font-bold text-slate-500 dark:text-slate-400">مدخل فهرسي</span>}

@@ -84,10 +84,11 @@ export function parseReviewedUnitText(rawText, source) {
   const expectedChapterVerseLocations = source.expectedChapterVerseNumbers?.flatMap(
     (verses, chapterIndex) => verses.map((verse) => [chapterIndex + 1, verse])
   );
+  const minUnitTextLength = Number.isInteger(source.minUnitTextLength) ? source.minUnitTextLength : 10;
   for (const [index, unit] of units.entries()) {
     if (!Number.isInteger(unit.chapter) || unit.chapter < 1 || unit.chapter > source.maxChapter
       || !Number.isInteger(unit.verse) || unit.verse < 1
-      || typeof unit.text !== 'string' || unit.text.trim().length < 10) {
+      || typeof unit.text !== 'string' || unit.text.trim().length < minUnitTextLength) {
       throw new Error(`بيانات إحدى الوحدات غير صالحة في ${source.slug}`);
     }
     const chapterUnitCount = chapterVerses.get(unit.chapter) || 0;
@@ -105,7 +106,8 @@ export function parseReviewedUnitText(rawText, source) {
     }
     chapterVerses.set(unit.chapter, chapterUnitCount + 1);
   }
-  const wordCount = units.reduce((count, unit) => count + unit.text.trim().split(/\s+/u).filter(Boolean).length, 0);
+  const wordSeparator = source.countZeroWidthWordSeparators ? /[\s\u200b]+/u : /\s+/u;
+  const wordCount = units.reduce((count, unit) => count + unit.text.trim().split(wordSeparator).filter(Boolean).length, 0);
   if (wordCount !== source.expectedWordCount) {
     throw new Error(`عدد كلمات الوحدات غير مطابق في ${source.slug}: ${wordCount}`);
   }
