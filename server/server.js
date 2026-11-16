@@ -46,6 +46,7 @@ import { ensureQumran4Q388TranslationImported } from './db/qumran_4q388_translat
 import { ensureQumran4Q385bTranslationImported } from './db/qumran_4q385b_translation_startup_import.js';
 import { ensureQumran4Q387aTranslationImported } from './db/qumran_4q387a_translation_startup_import.js';
 import { ensureQumran4Q387TranslationImported } from './db/qumran_4q387_translation_startup_import.js';
+import { ensureQumran4Q388aTranslationImported } from './db/qumran_4q388a_translation_startup_import.js';
 import { ensureQumran4Q537Imported } from './db/qumran_4q537_startup_import.js';
 import { ensureQumran4Q539Imported } from './db/qumran_4q539_startup_import.js';
 import { ensureLivesOfProphetsImported } from './db/lives_of_prophets_startup_import.js';
@@ -439,6 +440,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Qumran 4Q387a translation import failed:', error.message);
+}
+try {
+  if (await ensureQumran4Q388aTranslationImported()) {
+    console.log('[Bible startup] Imported the 4Q388a partial English project draft.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Qumran 4Q388a translation import failed:', error.message);
 }
 try {
   if (await ensureQumranJeremiahAbImported()) {
