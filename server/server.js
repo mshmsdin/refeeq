@@ -54,6 +54,7 @@ import { ensureQumran4Q537Imported } from './db/qumran_4q537_startup_import.js';
 import { ensureQumran4Q539Imported } from './db/qumran_4q539_startup_import.js';
 import { ensureLivesOfProphetsImported } from './db/lives_of_prophets_startup_import.js';
 import { ensureQumranWordsEzekielImported } from './db/qumran_words_ezekiel_startup_import.js';
+import { ensureQumran4Q391TranslationImported } from './db/qumran_4q391_translation_startup_import.js';
 import { ensureQumranApocryphonJeremiahImported } from './db/qumran_apocryphon_jeremiah_startup_import.js';
 import { ensureQumranJeremiahAbImported } from './db/qumran_jeremiah_ab_startup_import.js';
 import { ensureQumranApocryphonJoshuaImported } from './db/qumran_apocryphon_joshua_startup_import.js';
@@ -398,6 +399,9 @@ try {
 try {
   if (await ensureQumranWordsEzekielImported()) {
     console.log('[Bible startup] Imported the separate licensed Hebrew 4Q385, 4Q385b, 4Q386, 4Q388, and 4Q391 witnesses.');
+  }
+  if (await ensureQumran4Q391TranslationImported()) {
+    console.log('[Bible startup] Imported and verified the independent English 4Q391 draft alongside its Hebrew witness.');
   }
 } catch (error) {
   console.error('[Bible startup] Words of Ezekiel witness import failed:', error.message);
