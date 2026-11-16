@@ -2848,7 +2848,19 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 7, expectedWordCount: 91, maxChapter: 1, incomplete: true,
     expectedChapterVerseNumbers: [[1,2,3,4,5,6,7]],
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: 'تفريغ عبري لشظية 4Q385b في سبعة أسطر، مع رابط مستقل لكل سطر وحفظ القراءات البديلة المطبوعة. تختلف الدراسات في هل تمثل نسخة أخرى أم ورقة بديلة من 4Q385؛ تقترح دراسة حديثة أنها قد تكون ورقة استبدال، لذا يسجلها المشروع كشاهد مادي منفصل ولا يدعي أنها تأليف مستقل أو نص كامل. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب البيانات إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأُدرج الأصل العبري وحده. [تفريغ الشظية ورخصتها](https://lexicon.qumran-digital.org/transcriptions/4Q385b/2026-10-06/index.html?v=2026-10-06)؛ [دراسة إعادة البناء وعلاقة 4Q385b](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+    notes: 'تفريغ عبري لشظية 4Q385b في سبعة أسطر، مع رابط مستقل لكل سطر وحفظ القراءات البديلة المطبوعة. تختلف الدراسات في هوية الشظية: يضعها مصدر في تقليد منحول إرميا ج، وتقترح دراسة حديثة على نحو مؤقت أنها ورقة بديلة عند بداية «أقوال حزقيال»؛ لذلك يسجلها المشروع كشاهد مادي منفصل ولا يدعي أنها تأليف مستقل أو نص كامل. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب البيانات إلى مشروع معجم قمران السابق ومارتن أبيغ. تتوفر مسودة نقل إنجليزية مستقلة للأسطر السبعة، لا ترجمة لعمل كامل. [تفريغ الشظية ورخصتها](https://lexicon.qumran-digital.org/transcriptions/4Q385b/2026-10-06/index.html?v=2026-10-06)؛ [دراسة إعادة البناء وعلاقة 4Q385b](https://journals.sagepub.com/doi/10.1177/09518207221115942)؛ [نص آخر مصنف في أبوكريفون إرميا ج](https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q385-3).'
+  },
+  {
+    bookCode: 'Q385B', slug: 'en-project-4q385b-words-ezekiel',
+    nameAr: 'مسودة ترجمة إنجليزية للمشروع لشظية 4Q385b',
+    nameEn: 'Project English Draft of the 4Q385b Fragment', abbreviation: '4Q385b-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q385b/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q385b_project_english.json', import.meta.url),
+    expectedSha256: '82253775c05a2d96404ac43e3d5ce47a3c3a98475cd142e1e1cd3f3b8e43a798',
+    expectedUnitCount: 7, expectedWordCount: 109, maxChapter: 1, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7]],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة نقل إنجليزي مستقلة من سبع وحدات تقابل كل أسطر الشظية 4Q385b، أُعدت مباشرة عن تفريغ قمران الرقمي المرخص وتُنشر وفق رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، مع إسناد التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. الترجمة بمساعدة آلية ولم يراجعها متخصص في العبرية؛ حُفظت الفجوات ووسمت القراءات البديلة والمقاطع التي لا تسمح بترجمة مأمونة. لا يثبت هذا النقل تصنيف الشظية: تقترح دراسة أنها قد تكون ورقة استبدال ببداية «أقوال حزقيال»، بينما يدرجها مصدر آخر في أبوكريفون إرميا ج. توجد ترجمة/تفريغ آخر معلن برخصة المشاع الإبداعي النسب غير التجاري؛ لم أعد استخدامه، واكتفيت بالمصدر المرخص تجارياً. الشظية لا تمثل عملاً كاملاً. [التفريغ المرخص](https://lexicon.qumran-digital.org/transcriptions/4Q385b/2026-10-06/index.html?v=2026-10-06)؛ [دراسة علاقة الشظية](https://journals.sagepub.com/doi/10.1177/09518207221115942)؛ [النص الآخر ورخصة النسب غير التجاري](https://theancientbible.org/4q385b/).'
   },
   {
     bookCode: 'Q386', slug: 'heb-qdr-4q386-words-ezekiel-2026',
