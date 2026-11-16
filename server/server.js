@@ -352,7 +352,7 @@ try {
 }
 try {
   if (await ensureQumran4Q242Imported()) {
-    console.log('[Bible startup] Imported the licensed Aramaic 4Q242 witness.');
+    console.log('[Bible startup] Imported the licensed Aramaic 4Q242 witness and partial English project draft.');
   }
 } catch (error) {
   console.error('[Bible startup] Qumran 4Q242 witness import failed:', error.message);
