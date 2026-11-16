@@ -2902,6 +2902,18 @@ export const ADDITIONAL_SOURCES = [
     notes: 'مسودة نقل إنجليزية مستقلة من ٦٧ وحدة تقابل جميع الأسطر المنشورة للشاهد 4Q388a ضمن ١٧ مجموعة شظايا، أُعدت مباشرة عن التفريغ العبري المرخص لقمران الرقمي، وتُنشر وفق رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ مع إسناد التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. الترجمة بمساعدة آلية ولم يراجعها متخصص في العبرية؛ حفظتُ الفجوات والقراءات المترددة، وصرّحتُ عندما لا يسمح السطر بترجمة مأمونة. هذه المجموعات ليست فصولاً أصلية ولا يمثل الشاهد نصاً كاملاً. عُثر على مسودة إنجليزية آلية في مشروع آخر، لكن رخصة بياناته غير تجارية، لذلك لم يُنقل نصه ولم يُستخدم مصدراً للترجمة. [التفريغ العبري ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q388a/2026-10-06/index.html?v=2026-10-06)؛ [دراسة ديمانت عن الشواهد الستة](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [بيان المشروع الآخر ورخصة بياناته غير التجارية](https://opendeadsea.org/about/).'
   },
   {
+    bookCode: 'AJC385A', slug: 'en-project-4q385a-apocryphon-jeremiah-c',
+    nameAr: 'مسودة ترجمة إنجليزية للمشروع لشظايا 4Q385a',
+    nameEn: 'Project English Draft of the 4Q385a Apocryphon of Jeremiah C Fragments', abbreviation: '4Q385a-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q385a/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/apocryphon_jeremiah_4q385a_project_english.json', import.meta.url),
+    expectedSha256: '64b85fc7bd847500bc14131d87c2f1afa1c4242b28fbc5925a46941511116427',
+    expectedUnitCount: 172, expectedWordCount: 1828, maxChapter: 39, incomplete: true,
+    expectedChapterCounts: [2,8,3,11,9,9,4,2,3,3,4,6,4,6,6,7,2,6,3,9,5,9,10,10,2,2,3,1,2,2,2,2,2,3,2,2,3,1,2],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة نقل إنجليزية مستقلة من ١٧٢ وحدة تقابل أسطر الشاهد 4Q385a المنشورة في ٣٩ مجموعة، أُعدت مباشرة من التفريغ العبري المرخص لقمران الرقمي وتُنشر برخصة المشاع الإبداعي النسب بالمثل ٤٫٠ مع إسناد التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. الترجمة بمساعدة آلية ولم يراجعها متخصص في العبرية؛ أبقيت الفجوات والقراءات البديلة والتداخل بين الشظايا ظاهراً، ووسمت المواضع التي لا تسمح بترجمة مأمونة. المجموعات ليست فصولاً أصلية ولا يمثل الشاهد نصاً كاملاً. تصنيف 4Q385a ضمن أبوكريفون إرميا ج يتبع مجموعة ديمانت؛ وتناقش دراسات أخرى تسميته وصلته بتقليد «موسى المنحول»، لذلك يحفظ المشروع هذا الشاهد مستقلاً ولا يجزم بعنوان العمل. عُثر على مسودة إنجليزية آلية منشورة ضمن مجموعة بيانات برخصة غير تجارية، فلم يُنقل نصها؛ كما لم تُعَد ترجمة كتابية محمية. [التفريغ العبري ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q385a/2026-10-06/index.html?v=2026-10-06)؛ [دراسة ديمانت عن شواهد إرميا ج](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [دراسة تناقش تقليد أقوال حزقيال](https://journals.sagepub.com/doi/10.1177/09518207221115942)؛ [بيان رخصة الترجمة والبيانات غير التجارية في المشروع الآخر](https://opendeadsea.org/about/).'
+  },
+  {
     bookCode: 'Q386', slug: 'heb-qdr-4q386-words-ezekiel-2026',
     nameAr: 'شاهد 4Q386 من أقوال حزقيال', nameEn: '4Q386 Words of Ezekiel Witness', abbreviation: '4Q386-HE',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06',
