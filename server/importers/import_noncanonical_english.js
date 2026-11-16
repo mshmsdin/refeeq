@@ -2794,6 +2794,22 @@ export const ADDITIONAL_SOURCES = [
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
     notes: 'تفريغ عبراني لـ١٢ سطراً في شظيتين من الشاهد القمراني 4Q227، مع ترقيم الأسطر الأصلي ورابط مباشر لكل سطر. الشظايا قليلة ومنفصلة، وحالة النص جزئية. يسميه بعض الفهارس تقليدياً «منحول اليوبيلات ج»، لكن هويته وصلته بـ4Q225 و4Q226 وبسفر اليوبيلات غير محسومة؛ الشظية الثانية تذكر أخنوخ والملائكة وستة يوبيلات، أما الأولى فتذكر موسى ولا يظهر فيها توازٍ واضح مع 4Q225 أو 4Q226. لذلك يحفظ مستقلاً ولا يدمج مع الشاهدين. صفحة قمران الرقمي تعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وتنسب التفريغ إلى نص سابق لمشروع معجم قمران ومارتن أبيغ. لا تعرض الصفحة ترجمة إنجليزية مرخصة لإعادة النشر؛ أُدرج الأصل العبري وحده. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q227/2026-10-06/index.html?v=2026-10-06)؛ [دراسة تناقش الشظيتين وعلاقتهما باليوبيلات](https://brill.com/previewpdf/book/edcoll/9789004221352/B9789004221352_006.xml).'
   },
+  ...[
+    { witness: '4Q225', code: 'PSJUBA', label: 'أ', units: 49, groups: 5, url: 'https://lexicon.qumran-digital.org/transcriptions/4Q225/2026-10-06/index.html' },
+    { witness: '4Q226', code: 'PSJUBB', label: 'ب', units: 64, groups: 14, url: 'https://lexicon.qumran-digital.org/transcriptions/4Q226/2026-10-06/index.html?v=2026-10-06' },
+    { witness: '4Q227', code: 'PSJUBC', label: 'ج', units: 12, groups: 2, url: 'https://lexicon.qumran-digital.org/transcriptions/4Q227/2026-10-06/index.html?v=2026-10-06' }
+  ].map(({ witness, code, label, units, groups, url }) => ({
+    bookCode: code, slug: `en-project-${witness.toLowerCase()}-pseudo-jubilees-draft`,
+    nameAr: `مسودة الترجمة الإنجليزية المستقلة لشذرات ${witness} (منحول اليوبيلات ${label} تقليدياً)`,
+    nameEn: `Project English Draft of ${witness} Witness`, abbreviation: `${witness}-EN-DRAFT`,
+    url, kind: 'pseudo-jubilees-project-translation',
+    textFile: new URL('./data/pseudo_jubilees_project_english_lines.json', import.meta.url),
+    sourceTextFile: new URL(`./data/pseudo_jubilees_${witness.toLowerCase()}_qumran_digital_2026.json`, import.meta.url),
+    draftKey: code, expectedUnitCount: units, maxChapter: groups,
+    incomplete: true,
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: `مسودة إنجليزية أعدها المشروع مباشرة من التفريغ العبري المرخص للشاهد القمراني ${witness}، سطراً بسطر، وتحفظ لكل سطر رابط موضعه في المصدر. هذه المجموعات وحدات عرض للشظايا وليست فصولاً أصلية؛ النص الباقي جزئي جداً، والأسطر التالفة أو التي لا تسمح بترجمة آمنة موسومة صراحة ولا تُستكمل بالتخمين. المسودة أولية وغير مراجعة من متخصص في العبرية ونصوص قمران، ولا تمثل عملاً كاملاً. التسمية «منحول اليوبيلات ${label}» تقليدية وغير حاسمة؛ لا يثبت هذا السجل أن الشاهد نسخة من سفر اليوبيلات، كما أن وحدة 4Q227 مع الشاهدين الآخرين موضع خلاف. صياغة الإنجليزية من إعداد المشروع وليست منقولة عن ترجمة منشورة؛ رخصة المصدر العبري هي المشاع الإبداعي النسب بالمثل ٤٫٠، ولا يعني ذلك تلقائياً ترخيص هذه المسودة. [تفريغ الشاهد العبري ورخصته](https://lexicon.qumran-digital.org/transcriptions/${witness}/2026-10-06/index.html)؛ [دراسة أكاديمية عن اختلاف الشواهد وصلاتها](https://ub01.uni-tuebingen.de/xmlui/bitstream/handle/10900/172632/Kratz_108.pdf?isAllowed=y&sequence=1).`
+  })),
   {
     bookCode: 'Q246', slug: 'arc-qdr-4q246-aramaic-apocalypse-2026',
     nameAr: 'تفريغ الشاهد الآرامي 4Q246 (أبوكريفون دانيال)',
@@ -3663,10 +3679,38 @@ export function parseActsThomas(content, source) {
   });
 }
 
+export async function parsePseudoJubileesProjectTranslation(content, source) {
+  let draftSet;
+  let sourceUnits;
+  try {
+    draftSet = JSON.parse(content)?.[source.draftKey];
+    sourceUnits = JSON.parse(await readFile(source.sourceTextFile, 'utf8'));
+  } catch {
+    throw new Error(`ملف المسودة أو الشاهد العبري غير صالح في ${source.slug}`);
+  }
+  if (!Array.isArray(draftSet) || !Array.isArray(sourceUnits)
+    || draftSet.length !== source.expectedUnitCount || sourceUnits.length !== source.expectedUnitCount) {
+    throw new Error(`عدد أسطر المسودة لا يطابق الشاهد العبري في ${source.slug}`);
+  }
+  const seen = new Set();
+  return sourceUnits.map((unit, index) => {
+    const text = draftSet[index];
+    const location = `${unit.chapter}:${unit.verse}`;
+    if (!Number.isInteger(unit.chapter) || unit.chapter < 1 || unit.chapter > source.maxChapter
+      || !Number.isInteger(unit.verse) || !unit.sourceUrl || seen.has(location)
+      || typeof text !== 'string' || text.trim().length < 10 || /[\u0590-\u05ff]/u.test(text)) {
+      throw new Error(`سطر المسودة أو رابط موضعه غير صالح في ${source.slug} عند ${location}`);
+    }
+    seen.add(location);
+    return { chapter: unit.chapter, verse: unit.verse, text: text.trim(), sourceUrl: unit.sourceUrl };
+  });
+}
+
 async function parseChapters(content, source) {
   if (source.kind === 'reviewed-text-file') return parseReviewedText(content, source);
   if (source.kind === 'reviewed-chapter-text-file') return parseReviewedChapterText(content, source);
   if (source.kind === 'reviewed-unit-text-file') return parseReviewedUnitText(content, source);
+  if (source.kind === 'pseudo-jubilees-project-translation') return parsePseudoJubileesProjectTranslation(content, source);
   if (source.kind === 'complete-letter-html') {
     const body = content.split(/<h[1-6]\b[^>]*>\s*About this page\s*<\/h[1-6]>/i)[0];
     const headings = [...body.matchAll(/<h[1-6]\b[^>]*>\s*Chapter\s+(\d+)\.([\s\S]*?)<\/h[1-6]>/gi)];
@@ -3892,7 +3936,7 @@ export async function run(requestedSlugs = null, { initializeDatabase = true } =
       source.language, source.url, source.sourceType, source.notes, source.siteScope || 'both', 40 + index
     );
     const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
-    const content = ['reviewed-text-file', 'reviewed-chapter-text-file', 'reviewed-unit-text-file'].includes(source.kind)
+    const content = ['reviewed-text-file', 'reviewed-chapter-text-file', 'reviewed-unit-text-file', 'pseudo-jubilees-project-translation'].includes(source.kind)
       ? await readFile(source.textFile, 'utf8')
       : ['structured-html', 'sacredthings-html', 'ertale-chapter-html', 'diatessaron-wikisource', 'intertextual-paged-chapters-html'].includes(source.kind)
         ? null

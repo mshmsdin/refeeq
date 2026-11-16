@@ -1,12 +1,15 @@
 import { readFile } from 'node:fs/promises';
 import { getDb } from './schema.js';
-import { ADDITIONAL_SOURCES, run as importNoncanonicalSources } from '../importers/import_noncanonical_english.js';
+import { ADDITIONAL_SOURCES, parsePseudoJubileesProjectTranslation, run as importNoncanonicalSources } from '../importers/import_noncanonical_english.js';
 import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
 const WITNESSES = [
   { slug: 'he-qdr-4q225-pseudo-jubilees-a-2026', bookCode: 'PSJUBA', units: 49, chapters: 5 },
   { slug: 'he-qdr-4q226-pseudo-jubilees-b-2026', bookCode: 'PSJUBB', units: 64, chapters: 14 },
-  { slug: 'he-qdr-4q227-pseudo-jubilees-c-2026', bookCode: 'PSJUBC', units: 12, chapters: 2 }
+  { slug: 'he-qdr-4q227-pseudo-jubilees-c-2026', bookCode: 'PSJUBC', units: 12, chapters: 2 },
+  { slug: 'en-project-4q225-pseudo-jubilees-draft', bookCode: 'PSJUBA', units: 49, chapters: 5 },
+  { slug: 'en-project-4q226-pseudo-jubilees-draft', bookCode: 'PSJUBB', units: 64, chapters: 14 },
+  { slug: 'en-project-4q227-pseudo-jubilees-draft', bookCode: 'PSJUBC', units: 12, chapters: 2 }
 ];
 
 function getSourceState(db, witness, definition) {
@@ -28,15 +31,19 @@ function getSourceState(db, witness, definition) {
     definition.sourceType, definition.notes, witness.bookCode, witness.bookCode, witness.slug);
 }
 
-function sourceIsReady(state, witness) {
-  return state && state.language === 'he' && state.is_active === 1 && state.site_scope === 'both'
-    && state.source_type === 'cc-by-sa-4.0' && state.unit_count === witness.units
+function sourceIsReady(state, witness, definition) {
+  return state && state.language === definition.language && state.is_active === 1 && state.site_scope === 'both'
+    && state.source_type === definition.sourceType && state.unit_count === witness.units
     && state.chapter_count === witness.chapters && state.text_status === 'partial'
     && state.source_record_ready === 1;
 }
 
 async function sourceUnitsMatch(db, witness, translationId, definition) {
-  const expected = parseReviewedUnitText(await readFile(definition.textFile, 'utf8'), definition)
+  const raw = await readFile(definition.textFile, 'utf8');
+  const parsed = definition.kind === 'pseudo-jubilees-project-translation'
+    ? await parsePseudoJubileesProjectTranslation(raw, definition)
+    : parseReviewedUnitText(raw, definition);
+  const expected = parsed
     .map(({ chapter, verse, text, sourceUrl }) => ({ chapter, verse, text, source_url: sourceUrl }));
   const actual = db.prepare(`
     SELECT chapter, verse, text, source_url FROM bible_verses
@@ -65,7 +72,7 @@ export async function ensurePseudoJubileesImported() {
     const definition = ADDITIONAL_SOURCES.find(({ slug }) => slug === witness.slug);
     if (!definition) throw new Error(`تعذر العثور على تعريف المصدر ${witness.slug}`);
     const current = getSourceState(db, witness, definition);
-    if (!sourceIsReady(current, witness) || !await sourceUnitsMatch(db, witness, current.id, definition)) {
+    if (!sourceIsReady(current, witness, definition) || !await sourceUnitsMatch(db, witness, current.id, definition)) {
       sourcesToImport.push(witness);
     }
   }
@@ -75,7 +82,7 @@ export async function ensurePseudoJubileesImported() {
   for (const witness of sourcesToImport) {
     const definition = ADDITIONAL_SOURCES.find(({ slug }) => slug === witness.slug);
     const imported = getSourceState(db, witness, definition);
-    if (!sourceIsReady(imported, witness)
+    if (!sourceIsReady(imported, witness, definition)
       || !await sourceUnitsMatch(db, witness, imported.id, definition)) {
       throw new Error(`تعذر تثبيت الشاهد القمراني الموثق ${witness.slug}`);
     }

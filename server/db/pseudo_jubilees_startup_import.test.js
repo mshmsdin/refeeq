@@ -10,6 +10,7 @@ process.env.DB_PATH = testDbPath;
 const { getDb, initDatabase } = await import('./schema.js');
 const { initBibleSchema } = await import('./bible_schema.js');
 const { ensurePseudoJubileesImported } = await import('./pseudo_jubilees_startup_import.js');
+const { parsePseudoJubileesProjectTranslation } = await import('../importers/import_noncanonical_english.js');
 const { ADDITIONAL_SOURCES } = await import('../importers/import_noncanonical_english.js');
 const { parseReviewedUnitText } = await import('../importers/reviewed_text_source.js');
 const { readFile } = await import('node:fs/promises');
@@ -21,7 +22,7 @@ after(() => {
   for (const suffix of ['', '-wal', '-shm']) rmSync(testDbPath + suffix, { force: true });
 });
 
-test('imports separate partial 4Q225, 4Q226, and 4Q227 witnesses, repairs drift, and avoids duplicates', async () => {
+test('imports separate Hebrew and English partial 4Q225, 4Q226, and 4Q227 witnesses, repairs drift, and avoids duplicates', async () => {
   assert.equal(await ensurePseudoJubileesImported(), true);
   const db = getDb();
   assert.deepEqual(db.prepare(`
@@ -36,9 +37,12 @@ test('imports separate partial 4Q225, 4Q226, and 4Q227 witnesses, repairs drift,
   ]);
 
   const expectedWitnesses = [
-    { witness: '4Q225', slug: 'he-qdr-4q225-pseudo-jubilees-a-2026', bookCode: 'PSJUBA', units: 49, groups: 5 },
-    { witness: '4Q226', slug: 'he-qdr-4q226-pseudo-jubilees-b-2026', bookCode: 'PSJUBB', units: 64, groups: 14 },
-    { witness: '4Q227', slug: 'he-qdr-4q227-pseudo-jubilees-c-2026', bookCode: 'PSJUBC', units: 12, groups: 2 }
+    { witness: '4Q225', slug: 'he-qdr-4q225-pseudo-jubilees-a-2026', bookCode: 'PSJUBA', units: 49, groups: 5, language: 'he', sourceType: 'cc-by-sa-4.0' },
+    { witness: '4Q226', slug: 'he-qdr-4q226-pseudo-jubilees-b-2026', bookCode: 'PSJUBB', units: 64, groups: 14, language: 'he', sourceType: 'cc-by-sa-4.0' },
+    { witness: '4Q227', slug: 'he-qdr-4q227-pseudo-jubilees-c-2026', bookCode: 'PSJUBC', units: 12, groups: 2, language: 'he', sourceType: 'cc-by-sa-4.0' },
+    { witness: '4Q225', slug: 'en-project-4q225-pseudo-jubilees-draft', bookCode: 'PSJUBA', units: 49, groups: 5, language: 'en', sourceType: 'project-translation' },
+    { witness: '4Q226', slug: 'en-project-4q226-pseudo-jubilees-draft', bookCode: 'PSJUBB', units: 64, groups: 14, language: 'en', sourceType: 'project-translation' },
+    { witness: '4Q227', slug: 'en-project-4q227-pseudo-jubilees-draft', bookCode: 'PSJUBC', units: 12, groups: 2, language: 'en', sourceType: 'project-translation' }
   ];
   for (const item of expectedWitnesses) {
     const source = ADDITIONAL_SOURCES.find(({ slug }) => slug === item.slug);
@@ -49,12 +53,15 @@ test('imports separate partial 4Q225, 4Q226, and 4Q227 witnesses, repairs drift,
     assert.deepEqual(translation && {
       language: translation.language, is_active: translation.is_active,
       site_scope: translation.site_scope, source_type: translation.source_type
-    }, { language: 'he', is_active: 1, site_scope: 'both', source_type: 'cc-by-sa-4.0' });
+    }, { language: item.language, is_active: 1, site_scope: 'both', source_type: item.sourceType });
     const readRows = () => db.prepare(`
       SELECT chapter, verse, text, source_url FROM bible_verses
       WHERE translation_id=? AND book_code=? ORDER BY chapter, verse
     `).all(translation.id, item.bookCode);
-    const expected = parseReviewedUnitText(await readFile(source.textFile, 'utf8'), source)
+    const expectedRows = source.kind === 'pseudo-jubilees-project-translation'
+      ? await parsePseudoJubileesProjectTranslation(await readFile(source.textFile, 'utf8'), source)
+      : parseReviewedUnitText(await readFile(source.textFile, 'utf8'), source);
+    const expected = expectedRows
       .map(({ chapter, verse, text, sourceUrl }) => ({ chapter, verse, text, source_url: sourceUrl }));
     assert.deepEqual(readRows(), expected);
     assert.equal(readRows().length, item.units);
@@ -65,8 +72,11 @@ test('imports separate partial 4Q225, 4Q226, and 4Q227 witnesses, repairs drift,
 
   const first = db.prepare("SELECT id FROM bible_translations WHERE slug='he-qdr-4q225-pseudo-jubilees-a-2026'").get();
   db.prepare("UPDATE bible_verses SET text='stale' WHERE translation_id=? AND book_code='PSJUBA' AND chapter=1 AND verse=1").run(first.id);
+  const firstEnglish = db.prepare("SELECT id FROM bible_translations WHERE slug='en-project-4q225-pseudo-jubilees-draft'").get();
+  db.prepare("UPDATE bible_verses SET text='stale' WHERE translation_id=? AND book_code='PSJUBA' AND chapter=1 AND verse=1").run(firstEnglish.id);
   assert.equal(await ensurePseudoJubileesImported(), true);
   assert.match(db.prepare("SELECT text FROM bible_verses WHERE translation_id=? AND book_code='PSJUBA' AND chapter=1 AND verse=1").get(first.id).text, /^‹4Q225 frg\. 1, line 1›/u);
+  assert.match(db.prepare("SELECT text FROM bible_verses WHERE translation_id=? AND book_code='PSJUBA' AND chapter=1 AND verse=1").get(firstEnglish.id).text, /sexual immorality/u);
   assert.equal(await ensurePseudoJubileesImported(), false);
-  assert.equal(db.prepare("SELECT COUNT(*) AS count FROM bible_verses WHERE book_code IN ('PSJUBA','PSJUBB','PSJUBC')").get().count, 125);
+  assert.equal(db.prepare("SELECT COUNT(*) AS count FROM bible_verses WHERE book_code IN ('PSJUBA','PSJUBB','PSJUBC')").get().count, 250);
 });
