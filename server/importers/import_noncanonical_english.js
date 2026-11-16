@@ -3258,6 +3258,17 @@ export const ADDITIONAL_SOURCES = [
     notes: 'التفريغ اليوناني الرقمي من ملف مشروع النصوص النقدية المفتوحة، المنسوب إلى طبعة فاسيلييف ١٨٩٣. يحوي المصدر ١٥٤ خانة؛ لا تحمل الخانتان ١٥ و١٢٤ إلا علامة حاشية «2.» ونقطة منفردة، لذلك يستبعدهما المستورد بوصفهما غير نصيتين، وتبقى ١٥٢ وحدة نصية. بمقابلة الصور ظهرت أخطاء تفريغ أخرى في مواضع كثيرة؛ لذلك لا يوصف النص بأنه مضبوط على الطبعة. نصوص المشروع مرخصة بإسناد المشاع الإبداعي ٤.٠، بما يسمح بالتعديل والترجمة مع النسبة.'
   },
   {
+    bookCode: 'NARMOS', slug: 'en-project-narrative-moses-joshua-vassiliev-1893',
+    nameAr: 'ترجمة إنجليزية لمقطع رواية موسى ويشوع اليوناني', nameEn: 'Project English Translation of the Greek Moses and Joshua Narrative', abbreviation: 'NARMOS-EN',
+    url: 'https://archive.org/details/anecdotagraecob00vasigoog/page/342/mode/2up', kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/narrative_moses_joshua_vassiliev_1893_english.json', import.meta.url),
+    expectedSha256: '57694d638d3eb0954afbd3769ff5f6a652b6e2030479c5a5c8f1d3aa4ac4e465',
+    expectedUnitCount: 8, expectedVerseNumbers: Array.from({ length: 8 }, (_, index) => index + 1),
+    expectedWordCount: 2437, maxChapter: 1, incomplete: true,
+    language: 'en', versionLanguage: 'English', originalLanguage: 'اليونانية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'ترجمة إنجليزية جديدة عن النص اليوناني المطبوع في فاسيلييف ١٨٩٣، الصفحات ٢٥٧–٢٦٤، بمراجعة الصور صفحةً صفحة. رُتّبت الوحدات الثماني بحسب صفحات الطبعة لتيسير المقابلة؛ وليست أعداداً أصلية. تبدأ الصفحة ٢٥٧ في أثناء جملة وتنتهي الصفحة ٢٦٤ في أثناء خبر ابنة يفتاح، لذلك هذا مقطع محفوظ جزئياً وليس رواية كاملة أو نص «الباليا التاريخية» كاملاً. أبقيت الإضافات التحريرية بين معقوفين، ولم أدرج حواشي الطبعة. [صور الطبعة القديمة](https://archive.org/details/anecdotagraecob00vasigoog).'
+  },
+  {
     bookCode: 'AMRAM', slug: 'arc-ocp-visions-amram',
     nameAr: 'الشاهد الآرامي لرؤى عمرام', nameEn: 'OCP Aramaic Visions of Amram', abbreviation: 'AMRAM-ARC',
     url: `${OCP_RAW_BASE}Amram.xml`, kind: 'ocp-xml', maxChapter: 2, incomplete: true, language: 'arc', versionLanguage: 'Aramaic',

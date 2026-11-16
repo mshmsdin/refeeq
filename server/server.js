@@ -63,6 +63,7 @@ import { ensurePseudoPhiloJamesImported } from './db/pseudo_philo_james_startup_
 import { ensureArmenianHistoryMosesImported } from './db/armenian_history_moses_startup_import.js';
 import { ensureArmenianShortHistoryEliasImported } from './db/armenian_short_history_elias_startup_import.js';
 import { ensureRiesslerTranslation } from './db/coptic_elijah_startup_import.js';
+import { ensureNarrativeMosesJoshuaTranslation } from './db/narrative_moses_joshua_startup_import.js';
 import {
   getTranslations, getTranslationBySlug, getCollections,
   getBooks, getBook, getChapterList, getChapter, getVerse,
@@ -118,6 +119,13 @@ try {
   }
 } catch (error) {
   console.error('[Bible startup] Coptic Apocalypse of Elijah translation import failed:', error.message);
+}
+try {
+  if (await ensureNarrativeMosesJoshuaTranslation()) {
+    console.log('[Bible startup] Imported and verified the partial English translation of the Vassiliev 1893 Moses and Joshua narrative excerpt.');
+  }
+} catch (error) {
+  console.error('[Bible startup] Moses and Joshua translation import failed:', error.message);
 }
 try {
   if (await ensureSamaritanPentateuchImported()) {
