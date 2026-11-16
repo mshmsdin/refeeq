@@ -2828,6 +2828,18 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q385 في ٤٤ سطراً عبرانياً ضمن ست مجموعات عرض، مع ترقيم السطر الأصلي ورابط مباشر لكل موضع. يضعه بعض الباحثين ضمن مجموعة «أقوال حزقيال» أو «منحول حزقيال»، لكن أسماء هذه المجموعة وحدودها وتفاصيل إعادة البناء محل نقاش؛ لذلك يسجل الشاهد منفرداً ولا يدمج مع 4Q386 أو 4Q388 أو الشظايا المختلف عليها. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل العبري وحده، والنص شذري لا يمثل عملاً كاملاً. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q385/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن المجموعة وحدودها](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
   },
   {
+    bookCode: 'Q385', slug: 'en-project-4q385-words-ezekiel',
+    nameAr: 'مسودة ترجمة إنجليزية للمشروع لشاهد 4Q385',
+    nameEn: 'Project English Draft of 4Q385 Words of Ezekiel', abbreviation: '4Q385-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q385/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q385_project_english.json', import.meta.url),
+    expectedSha256: 'e5834e0da640c859894d4768bbe821e5a3930d2eceb06b98486e4811ad722cfc',
+    expectedUnitCount: 44, expectedWordCount: 956, maxChapter: 6, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3],[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5,6,7],[1,2,3,4,5,6,7],[1,2],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة نقل إنجليزي مستقلة من ٤٤ وحدة تقابل أسطر الشاهد العبري 4Q385 ضمن مجموعات الشظايا الست، أُعدت مباشرة عن تفريغ قمران الرقمي المرخص وبرخصة المشاع الإبداعي النسب بالمثل ٤٫٠ نفسها، مع إسناد التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. الترجمة بمساعدة آلية ولم يراجعها متخصص في العبرية؛ وضعت الأقواس حول الاستكمال، وعُلّمت بوضوح الأسطر والكلمات غير القابلة للترجمة المأمونة. هذه مجموعات عرض وليست فصولاً أصلية، والنص لا يمثل العمل كله، كما أن انتماء الشاهد إلى تقليد «أقوال حزقيال» وحدوده الأدبية محل نقاش. توجد ترجمة إنجليزية منشورة برخصة تمنع الاستخدام التجاري؛ لم يُعد نشرها هنا. [التفريغ المرخص](https://lexicon.qumran-digital.org/transcriptions/4Q385/2026-10-06/index.html?v=2026-10-06)؛ [دراسة إعادة بناء 4Q385 و4Q386](https://journals.sagepub.com/doi/10.1177/09518207221115942)؛ [ترجمة إنجليزية غير تجارية للمقارنة الببليوغرافية](https://tianmu.org/good-work-library/judean/dead-sea-scrolls/apocalyptic-and-prophetic/pseudo-ezekiel).'
+  },
+  {
     bookCode: 'Q385B', slug: 'heb-qdr-4q385b-words-ezekiel-2026',
     nameAr: 'شظايا 4Q385b من أقوال حزقيال', nameEn: '4Q385b Words of Ezekiel Fragment', abbreviation: '4Q385b-HE',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q385b/2026-10-06/index.html?v=2026-10-06',
