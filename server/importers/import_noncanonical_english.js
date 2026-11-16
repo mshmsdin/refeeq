@@ -2882,7 +2882,19 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 38, expectedWordCount: 367, maxChapter: 8, incomplete: true,
     expectedChapterVerseNumbers: [[1,2],[1,2,3,4],[1,2,3],[1,2,3],[1,2,3,4,5],[1,2,3,4],[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5,6,7]],
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q388 في ٣٨ سطراً عبرانياً ضمن ثماني مجموعات عرض، مع أرقام الشظايا والأسطر وروابط مواضعها. يعقد الباحثون مقارنات بين بعض شواهده و4Q385 و4Q386 ضمن ما يسمى تقليدياً «أقوال حزقيال»، مع خلاف في إعادة البناء والتصنيف؛ يحفظ هذا المخطوط مستقلاً ولا يدمج بالشواهد الأخرى. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل العبري وحده؛ النص الباقي شذري. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q388/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن المجموعة وحدودها](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q388 في ٣٨ سطراً عبرانياً ضمن ثماني مجموعات عرض، مع أرقام الشظايا والأسطر وروابط مواضعها. يعقد الباحثون مقارنات بين بعض شواهده و4Q385 و4Q386 ضمن ما يسمى تقليدياً «أقوال حزقيال»، مع خلاف في إعادة البناء والتصنيف؛ يحفظ هذا المخطوط مستقلاً ولا يدمج بالشواهد الأخرى. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. تتوفر مسودة نقل إنجليزية مستقلة محافظة للشذرات، لا ترجمة للعمل كله. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q388/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن المجموعة وحدودها](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+  },
+  {
+    bookCode: 'Q388', slug: 'en-project-4q388-words-ezekiel',
+    nameAr: 'مسودة ترجمة إنجليزية للمشروع لشاهد 4Q388',
+    nameEn: 'Project English Draft of 4Q388 Words of Ezekiel', abbreviation: '4Q388-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q388/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q388_project_english.json', import.meta.url),
+    expectedSha256: 'eb3bcb2c7299e83ac9390feb1bd5b8e88b4891b6703a16bb6243f10dc1ef62ec',
+    expectedUnitCount: 38, expectedWordCount: 417, maxChapter: 8, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2],[1,2,3,4],[1,2,3],[1,2,3],[1,2,3,4,5],[1,2,3,4],[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5,6,7]],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة نقل إنجليزي مستقلة من ٣٨ وحدة تقابل كل الأسطر المنشورة للشاهد العبري 4Q388، أُعدت مباشرة عن تفريغ قمران الرقمي المرخص وتُنشر وفق رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، مع إسناد التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. الترجمة بمساعدة آلية ولم يراجعها متخصص في العبرية؛ بسبب تلف الشاهد لا تسمح معظم الأسطر بترجمة متصلة، لذا أبقيت الكلمات المقروءة وحدها ووسمت مواضع العجز والقراءات غير المؤكدة. هذه ثماني مجموعات عرض لا فصول أصلية، والنص لا يمثل العمل كله؛ ويحفظ الشاهد مستقلاً عن 4Q385 و4Q386. لا أعيد نشر ترجمة منشورة بلا إذن معلن؛ وتصف دراسة متاحة بعض شظايا هذا الشاهد بأنها شديدة التلف. [التفريغ المرخص](https://lexicon.qumran-digital.org/transcriptions/4Q388/2026-10-06/index.html)؛ [دراسة أكاديمية عن المجموعة](https://journals.sagepub.com/doi/10.1177/09518207221115942)؛ [ترجمة تجميعية للمقارنة فقط](https://tianmu.org/good-work-library/judean/dead-sea-scrolls/apocalyptic-and-prophetic/pseudo-ezekiel)؛ [الرسالة الجامعية التي تصرح بأن جميع الحقوق محفوظة](https://etheses.bham.ac.uk/id/eprint/13448/).'
   },
   {
     bookCode: 'Q391', slug: 'heb-qdr-4q391-words-ezekiel-2026',
