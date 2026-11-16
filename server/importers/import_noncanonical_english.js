@@ -2859,7 +2859,19 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 35, expectedWordCount: 433, maxChapter: 5, incomplete: true,
     expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9,10,11],[1,2,3,4,5,6,7,8],[1,2,3,4],[1,2,3]],
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q386 في ٣٥ سطراً ضمن خمس مجموعات عرض، مع تسمية الشظايا وترقيم السطر الأصلي ورابطه. يقارن الباحثون بعض نصوصه بشاهد 4Q385 ضمن تقليد يسمى أحياناً «أقوال حزقيال» أو «منحول حزقيال»، ولا يبرر التشابه دمج الشاهدين أو جعل التسمية عنواناً أصلياً مؤكداً. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل العبري وحده؛ الشاهد شذري ولا يمثل عملاً كاملاً. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن المجموعة وحدودها](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q386 في ٣٥ سطراً ضمن خمس مجموعات عرض، مع تسمية الشظايا وترقيم السطر الأصلي ورابطه. يقارن الباحثون بعض نصوصه بشاهد 4Q385 ضمن تقليد يسمى أحياناً «أقوال حزقيال» أو «منحول حزقيال»، ولا يبرر التشابه دمج الشاهدين أو جعل التسمية عنواناً أصلياً مؤكداً. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. تتوفر مسودة نقل إنجليزية مستقلة للشذرات، لا ترجمة للعمل كله. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن المجموعة وحدودها](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+  },
+  {
+    bookCode: 'Q386', slug: 'en-project-4q386-words-ezekiel',
+    nameAr: 'مسودة ترجمة إنجليزية للمشروع لشاهد 4Q386',
+    nameEn: 'Project English Draft of 4Q386 Words of Ezekiel', abbreviation: '4Q386-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q386_project_english.json', import.meta.url),
+    expectedSha256: '680fb3d3e5122ddaeaf5e5fce9f05e774abb114731226a99f3a7d4b29a4d9668',
+    expectedUnitCount: 35, expectedWordCount: 495, maxChapter: 5, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9,10,11],[1,2,3,4,5,6,7,8],[1,2,3,4],[1,2,3]],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة نقل إنجليزي مستقلة من ٣٥ وحدة تقابل أسطر الشاهد العبري 4Q386، أُعدت مباشرة عن تفريغ قمران الرقمي المرخص وتُنشر وفق رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، مع إسناد التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. الترجمة بمساعدة آلية ولم يراجعها متخصص في العبرية؛ حُفظت فجوات الشظايا، ووضعت الاستكمالات التحريرية بين معقوفين، ووُسمت الأسطر التي يتعذر نقلها بأمان. هذه خمس مجموعات عرض لا فصول أصلية؛ الشاهد جزئي ولا يمثل العمل كله، ولا يدمج مع 4Q385 أو غيره من الشواهد. [التفريغ المرخص](https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06)؛ [دراسة أكاديمية عن علاقة الشواهد](https://journals.sagepub.com/doi/10.1177/09518207221115942)؛ [ترجمة منشورة متاحة للمقارنة فقط](https://repository.up.ac.za/bitstreams/cf5576ad-4c69-4e7e-94f5-ace5fbc4e456/download).'
   },
   {
     bookCode: 'Q388', slug: 'heb-qdr-4q388-words-ezekiel-2026',
