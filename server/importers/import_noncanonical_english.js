@@ -2914,6 +2914,18 @@ export const ADDITIONAL_SOURCES = [
     notes: 'مسودة نقل إنجليزية مستقلة من ١٧٢ وحدة تقابل أسطر الشاهد 4Q385a المنشورة في ٣٩ مجموعة، أُعدت مباشرة من التفريغ العبري المرخص لقمران الرقمي وتُنشر برخصة المشاع الإبداعي النسب بالمثل ٤٫٠ مع إسناد التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. الترجمة بمساعدة آلية ولم يراجعها متخصص في العبرية؛ أبقيت الفجوات والقراءات البديلة والتداخل بين الشظايا ظاهراً، ووسمت المواضع التي لا تسمح بترجمة مأمونة. المجموعات ليست فصولاً أصلية ولا يمثل الشاهد نصاً كاملاً. تصنيف 4Q385a ضمن أبوكريفون إرميا ج يتبع مجموعة ديمانت؛ وتناقش دراسات أخرى تسميته وصلته بتقليد «موسى المنحول»، لذلك يحفظ المشروع هذا الشاهد مستقلاً ولا يجزم بعنوان العمل. عُثر على مسودة إنجليزية آلية منشورة ضمن مجموعة بيانات برخصة غير تجارية، فلم يُنقل نصها؛ كما لم تُعَد ترجمة كتابية محمية. [التفريغ العبري ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q385a/2026-10-06/index.html?v=2026-10-06)؛ [دراسة ديمانت عن شواهد إرميا ج](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [دراسة تناقش تقليد أقوال حزقيال](https://journals.sagepub.com/doi/10.1177/09518207221115942)؛ [بيان رخصة الترجمة والبيانات غير التجارية في المشروع الآخر](https://opendeadsea.org/about/).'
   },
   {
+    bookCode: 'AJC389', slug: 'en-project-4q389-apocryphon-jeremiah-c',
+    nameAr: 'مسودة ترجمة إنجليزية للمشروع لشظايا 4Q389',
+    nameEn: 'Project English Draft of the 4Q389 Apocryphon of Jeremiah C Fragments', abbreviation: '4Q389-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q389/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/apocryphon_jeremiah_4q389_project_english.json', import.meta.url),
+    expectedSha256: '89f17236a5828ca321a24867b3dbcb5ae09dd74fa08e08fd85a5481361c73587',
+    expectedUnitCount: 56, expectedWordCount: 536, maxChapter: 15, incomplete: true,
+    expectedChapterCounts: [7,9,2,2,3,2,3,2,11,3,4,2,2,2,2],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة ترجمة إنجليزية مستقلة من ٥٦ وحدة تقابل كل أسطر الشاهد 4Q389 في ١٥ مجموعة عرض، أُعدت مباشرة عن التفريغ العبري المرخص لقمران الرقمي. تحفظ فجوات المخطوط والقراءات المحتملة، وتوسم الأسطر التي لا تسمح بترجمة مأمونة؛ وهي بمساعدة آلية ولم يراجعها متخصص في العبرية ولا تمثل الشاهد أو العمل الأدبي كاملاً. ينشر التفريغ المشتق وفق رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ مع الإسناد إلى مشروع معجم قمران السابق ومارتن أبيغ. لم يُستخدم نص أو تفريغ مشروع «الكتاب المقدس القديم» لأن بيانات مخطوطات البحر الميت لديه مرخصة بغير التجاري. [تفريغ قمران الرقمي ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q389/2026-10-06/index.html?v=2026-10-06)؛ [دراسة ديمانت عن الشواهد الستة](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [بيان حقوق المشروع الآخر](https://theancientbible.org/about/).'
+  },
+  {
     bookCode: 'Q386', slug: 'heb-qdr-4q386-words-ezekiel-2026',
     nameAr: 'شاهد 4Q386 من أقوال حزقيال', nameEn: '4Q386 Words of Ezekiel Witness', abbreviation: '4Q386-HE',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06',
