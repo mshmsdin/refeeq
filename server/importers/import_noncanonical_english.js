@@ -2093,7 +2093,7 @@ const APOCRYPHON_JEREMIAH_C_WITNESSES = [
   const scholarlyNote = witness.witness === '4Q390'
     ? 'تصنيف هذا المخطوط ضمن أبوكريفون إرميا ج مختلف عليه؛ دراسات تضمه إلى المجموعة وأخرى تفصله كنص قريب منها. لذلك لا يدمج هنا مع الشواهد الأخرى ولا يُعرض كعمل مستقل محسوم.'
     : 'تربط دراسة ديفورا ديمانت هذا المخطوط بأبوكريفون إرميا ج، وتضعه ضمن ستة شواهد قمرانية؛ تبقى الشظايا سجلات مادية منفصلة ولا تثبت وحدها نصاً كاملاً.';
-  const translationNote = witness.witness === '4Q387a'
+  const translationNote = ['4Q387', '4Q387a'].includes(witness.witness)
     ? 'تتوفر مسودة نقل إنجليزية مستقلة للمشروع عن هذا التفريغ المرخص؛ لا تنقل ترجمة أخرى ولم تخضع لمراجعة متخصص.'
     : 'لم أعثر على ترجمة إنجليزية منشورة معلنة الإذن بإعادة النشر، فأُدرج الأصل العبري وحده.';
   return {
@@ -2876,6 +2876,18 @@ export const ADDITIONAL_SOURCES = [
     expectedChapterVerseNumbers: [[1,2,3],[1,2,3],[1,2,3],[1,2,3,4,5,6,7],[1,2,3,4],[1,2,3],[1,2],[1,2],[1,2,3,4,5]],
     language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
     notes: 'مسودة إنجليزية من ٣٢ وحدة تغطي الأسطر المتاحة كلها في تسع مجموعات عرض، مأخوذة مباشرة عن التفريغ العبري المرخص لقمران الرقمي. أُبقيت الفجوات والقراءات غير المتيقنة صريحة، وسجلت الأسطر التي لا تحفظ نصاً مقروءاً بدلاً من ملئها. هذه ترجمة مشروع بمساعدة آلية لم يراجعها متخصص في العبرية؛ تغطية أرقام الأسطر لا تعني ترجمة كل حرف، ولا يمثل الشاهد نصاً كاملاً. تنشر وفق رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ مع الإسناد. لم أنقل التفريغ الإنجليزي المتاح بمصدر آخر. [التفريغ العبري والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q387a/2026-10-06/index.html?v=2026-10-06)؛ [دراسة ديمانت عن الشواهد الستة](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [النص الإنجليزي الآخر للمقارنة فقط](https://theancientbible.org/4q387a/).'
+  },
+  {
+    bookCode: 'AJC387', slug: 'en-project-4q387-apocryphon-jeremiah-c',
+    nameAr: 'مسودة ترجمة إنجليزية للمشروع لشظايا 4Q387',
+    nameEn: 'Project English Draft of the 4Q387 Apocryphon of Jeremiah C Fragments', abbreviation: '4Q387-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q387/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/apocryphon_jeremiah_4q387_project_english.json', import.meta.url),
+    expectedSha256: '27bc55f038a5f4ea079f29e01cf24c422d142c4bcdb2d9cda95709d049ecf8d3',
+    expectedUnitCount: 54, expectedWordCount: 682, maxChapter: 8, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9,10],[1],[1,2,3,4,5,6,7,8,9,10,11,12],[1,2,3,4,5,6,7],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6],[1,2,3,4],[1,2,3,4,5]],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة نقل إنجليزية مستقلة من ٥٤ وحدة تغطي أسطر الشاهد 4Q387 في ثماني مجموعات عرض، أُعدت مباشرة عن تفريغ قمران الرقمي المرخص بالمشاع الإبداعي النسب بالمثل ٤٫٠، مع إسناد التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. حافظت على السقط والاستكمالات التي يضعها المصدر بين أقواس، ولم أوصل الشذرات بعضها ببعض. الترجمة بمساعدة آلية ولم يراجعها متخصص في العبرية؛ تُعلّم مواضع التردد والأسطر التي لا تسمح بقراءة مأمونة، ولا يمثل الشاهد نصاً كاملاً. لا أعيد استخدام ترجمة منشورة من مصدر آخر. [التفريغ العبري ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q387/2026-10-06/index.html?v=2026-10-06)؛ [دراسة ديمانت عن الشواهد الستة](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [دراسة مفتوحة عن خطاب الشاهد](https://www.degruyterbrill.com/document/doi/10.1515/opth-2022-0220/html).'
   },
   {
     bookCode: 'Q386', slug: 'heb-qdr-4q386-words-ezekiel-2026',
