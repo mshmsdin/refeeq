@@ -2741,6 +2741,19 @@ export const ADDITIONAL_SOURCES = [
     notes: 'تفريغ عبري لـ١٠٧١ سطراً من 11QT^a (11Q19) كما ينشره مشروع قمران الرقمي: الأعمدة المرقمة ٢–٦٦ (٦٥ عموداً)، وثلاثة أسطر في الجدول الملحق «frg. add. 1». يحفظ كل سطر رقم العمود ورقم السطر كما في المصدر ورابطاً مباشراً إليه. أرقام العرض المتسلسلة في فصل واحد تنظيم واجهة فقط، وليست إصحاحات أو أعداداً أصلية. هذا تفريغ كامل لما تعرضه صفحة المصدر من نص الشاهد الباقي، لا نص اللفافة الأصلية كاملاً: العمود الأول غير محفوظ وتوجد مواضع تلف وفجوات؛ لم تُختلق الأجزاء الغائبة. يرخص مشروع قمران الرقمي التفريغ برخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسبه إلى مشروع الأبحاث الألماني رقم ٤٦٥٢٧٧٤٢١ «قمران الرقمي: النص والمعجم»، اعتماداً على مشروع «معجم قمران» السابق ونص مارتن أبيغ. لا يتضمن هذا السجل ترجمة؛ لم أعد نشر ترجمة تينمو المقيدة بغير التجاري. [التفريغ وبيان الرخصة](https://lexicon.qumran-digital.org/transcriptions/11QT%5Ea%5E/2025-08-25/index.html?v=2025-08-25)؛ [سجل الإصدارات](https://lexicon.qumran-digital.org/transcriptions/11QT%5Ea%5E/changelog.html?v=2025-08-25)؛ [رخصة المشاع الإبداعي النسب بالمثل ٤٫٠](https://creativecommons.org/licenses/by-sa/4.0/).'
   },
   {
+    bookCode: 'TSCROLL', slug: 'en-project-11q19-temple-scroll',
+    nameAr: 'مسودة ترجمة إنجليزية مستقلة للّفافة الهيكلية 11Q19',
+    nameEn: 'Project English Draft of the Temple Scroll 11Q19', abbreviation: '11Q19-EN-DRAFT',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/11QT%5Ea%5E/2025-08-25/index.html?v=2025-08-25',
+    kind: 'reviewed-unit-text-file',
+    textFile: new URL('./data/temple_scroll_11q19_project_english.json', import.meta.url),
+    expectedSha256: '26a63db3276e2819b526001c24444b2d6884488723e9f7b8329f11deda955288',
+    expectedUnitCount: 1071, expectedWordCount: 16779, maxChapter: 1,
+    expectedChapterCounts: [1071], incomplete: true,
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة إنجليزية مستقلة أعدها المشروع سطراً سطراً بالرجوع إلى التفريغ العبري المنشور للّفافة الهيكلية 11Q19 لدى مشروع قمران الرقمي، مع إحالة كل وحدة إلى سطرها الأصلي. هذه مسودة أولية غير مراجعة من متخصص في العبرية أو نصوص قمران؛ قد تحتوي على أخطاء في القراءة أو المعنى، وقد وُضعت ملاحظات صريحة عند التلف والقراءة غير المتيقنة، ولم تُستكمل الفراغات بالتخمين. هذا الشاهد لا يمثل النص كاملاً: العمود الأول مفقود والشاهد نفسه متضرر، لذا حالة العمل جزئية. لم يُنسخ نص الترجمة الإنجليزية المنشورة لدى تينمو لأن رخصتها تمنع الاستخدام التجاري. تفريغ المصدر العبري مرخص بالمشاع الإبداعي النسب بالمثل ٤٫٠ وينسب إلى مشروع قمران الرقمي ونص مارتن أبيغ. [التفريغ العبري وبيان الرخصة](https://lexicon.qumran-digital.org/transcriptions/11QT%5Ea%5E/2025-08-25/index.html?v=2025-08-25)؛ [رخصة المصدر](https://creativecommons.org/licenses/by-sa/4.0/)؛ [الترجمة المنشورة المقيدة](https://tianmu.org/good-work-library/judean/dead-sea-scrolls/rewritten-scripture/the-temple-scroll).'
+  },
+  {
     bookCode: 'PSJUBA', slug: 'he-qdr-4q225-pseudo-jubilees-a-2026',
     nameAr: 'تفريغ الشاهد العبري 4Q225 (منحول اليوبيلات أ تقليدياً)',
     nameEn: 'Qumran Digital Hebrew 4Q225 Pseudo-Jubilees A Witness', abbreviation: '4Q225-HE',
