@@ -39,5 +39,11 @@ test('startup installs and verifies all 7 English 4Q385b lines as a partial tran
     { slug: 'en-project-4q385b-words-ezekiel', language: 'en', source_type: 'project-translation', site_scope: 'both', is_active: 1, units: 7, source_links: 7, fragment_groups: 1, text_status: 'partial' },
     { slug: 'heb-qdr-4q385b-words-ezekiel-2026', language: 'he', source_type: 'cc-by-sa-4.0', site_scope: 'both', is_active: 1, units: 7, source_links: 7, fragment_groups: 1, text_status: 'partial' }
   ]);
+  getDb().prepare(`UPDATE bible_book_metadata SET summary_ar=? WHERE book_code='Q385B'`)
+    .run('تفريغ جزئي من سبعة أسطر. لا يُحسم إن كانت نسخة مستقلة أو ورقة بديلة من 4Q385.');
   assert.equal(await ensureQumran4Q385bTranslationImported(), false);
+  const summary = getDb().prepare(`SELECT summary_ar FROM bible_book_metadata WHERE book_code='Q385B'`).get().summary_ar;
+  assert.match(summary, /أبوكريفون إرميا ج/);
+  assert.match(summary, /أقوال حزقيال/);
+  assert.doesNotMatch(summary, /لا يُحسم إن كانت نسخة مستقلة/);
 });
