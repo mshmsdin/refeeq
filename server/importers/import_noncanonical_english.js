@@ -2093,6 +2093,9 @@ const APOCRYPHON_JEREMIAH_C_WITNESSES = [
   const scholarlyNote = witness.witness === '4Q390'
     ? 'تصنيف هذا المخطوط ضمن أبوكريفون إرميا ج مختلف عليه؛ دراسات تضمه إلى المجموعة وأخرى تفصله كنص قريب منها. لذلك لا يدمج هنا مع الشواهد الأخرى ولا يُعرض كعمل مستقل محسوم.'
     : 'تربط دراسة ديفورا ديمانت هذا المخطوط بأبوكريفون إرميا ج، وتضعه ضمن ستة شواهد قمرانية؛ تبقى الشظايا سجلات مادية منفصلة ولا تثبت وحدها نصاً كاملاً.';
+  const translationNote = witness.witness === '4Q387a'
+    ? 'تتوفر مسودة نقل إنجليزية مستقلة للمشروع عن هذا التفريغ المرخص؛ لا تنقل ترجمة أخرى ولم تخضع لمراجعة متخصص.'
+    : 'لم أعثر على ترجمة إنجليزية منشورة معلنة الإذن بإعادة النشر، فأُدرج الأصل العبري وحده.';
   return {
     bookCode: witness.bookCode, slug: witness.slug,
     nameAr: witness.nameAr,
@@ -2103,7 +2106,7 @@ const APOCRYPHON_JEREMIAH_C_WITNESSES = [
     expectedUnitCount: witness.units, expectedWordCount: witness.words, maxChapter: witness.groups, incomplete: true,
     expectedChapterVerseNumbers,
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: `تفريغ عبري مرخص للشاهد القمراني ${witness.witness}: ${witness.units} سطراً عبرانياً في ${witness.groups} مجموعة عرض، مع رقم السطر الأصلي ورابط موضع فريد لكل سطر. هذه المجموعات ليست فصولاً أدبية، والمخطوط شذري؛ حُفظ مستقلاً ولم تُملأ فجواته. ${scholarlyNote} تعلن صفحة قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وتنسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأُدرج الأصل العبري وحده. [التفريغ والرخصة](${url})؛ [دراسة ديمانت عن الشواهد الستة](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [دراسة تناقش موقع 4Q390](https://cris.haifa.ac.il/en/publications/pseudo-ezekiel-and-the-apocryphon-of-jeremiah-c-in-perspective/).`
+    notes: `تفريغ عبري مرخص للشاهد القمراني ${witness.witness}: ${witness.units} سطراً عبرانياً في ${witness.groups} مجموعة عرض، مع رقم السطر الأصلي ورابط موضع فريد لكل سطر. هذه المجموعات ليست فصولاً أدبية، والمخطوط شذري؛ حُفظ مستقلاً ولم تُملأ فجواته. ${scholarlyNote} تعلن صفحة قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وتنسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. ${translationNote} [التفريغ والرخصة](${url})؛ [دراسة ديمانت عن الشواهد الستة](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [دراسة تناقش موقع 4Q390](https://cris.haifa.ac.il/en/publications/pseudo-ezekiel-and-the-apocryphon-of-jeremiah-c-in-perspective/).`
   };
 });
 
@@ -2861,6 +2864,18 @@ export const ADDITIONAL_SOURCES = [
     expectedChapterVerseNumbers: [[1,2,3,4,5,6,7]],
     language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
     notes: 'مسودة نقل إنجليزي مستقلة من سبع وحدات تقابل كل أسطر الشظية 4Q385b، أُعدت مباشرة عن تفريغ قمران الرقمي المرخص وتُنشر وفق رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، مع إسناد التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. الترجمة بمساعدة آلية ولم يراجعها متخصص في العبرية؛ حُفظت الفجوات ووسمت القراءات البديلة والمقاطع التي لا تسمح بترجمة مأمونة. لا يثبت هذا النقل تصنيف الشظية: تقترح دراسة أنها قد تكون ورقة استبدال ببداية «أقوال حزقيال»، بينما يدرجها مصدر آخر في أبوكريفون إرميا ج. توجد ترجمة/تفريغ آخر معلن برخصة المشاع الإبداعي النسب غير التجاري؛ لم أعد استخدامه، واكتفيت بالمصدر المرخص تجارياً. الشظية لا تمثل عملاً كاملاً. [التفريغ المرخص](https://lexicon.qumran-digital.org/transcriptions/4Q385b/2026-10-06/index.html?v=2026-10-06)؛ [دراسة علاقة الشظية](https://journals.sagepub.com/doi/10.1177/09518207221115942)؛ [النص الآخر ورخصة النسب غير التجاري](https://theancientbible.org/4q385b/).'
+  },
+  {
+    bookCode: 'AJC387A', slug: 'en-project-4q387a-apocryphon-jeremiah-c',
+    nameAr: 'مسودة ترجمة إنجليزية للمشروع لشظايا 4Q387a',
+    nameEn: 'Project English Draft of the 4Q387a Apocryphon of Jeremiah C Fragments', abbreviation: '4Q387a-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q387a/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/apocryphon_jeremiah_4q387a_project_english.json', import.meta.url),
+    expectedSha256: '989731a359c7b1f2f1427c91d0782ce504f6f418872575a573d15d4ad657491e',
+    expectedUnitCount: 32, expectedWordCount: 323, maxChapter: 9, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3],[1,2,3],[1,2,3],[1,2,3,4,5,6,7],[1,2,3,4],[1,2,3],[1,2],[1,2],[1,2,3,4,5]],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة إنجليزية من ٣٢ وحدة تغطي الأسطر المتاحة كلها في تسع مجموعات عرض، مأخوذة مباشرة عن التفريغ العبري المرخص لقمران الرقمي. أُبقيت الفجوات والقراءات غير المتيقنة صريحة، وسجلت الأسطر التي لا تحفظ نصاً مقروءاً بدلاً من ملئها. هذه ترجمة مشروع بمساعدة آلية لم يراجعها متخصص في العبرية؛ تغطية أرقام الأسطر لا تعني ترجمة كل حرف، ولا يمثل الشاهد نصاً كاملاً. تنشر وفق رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ مع الإسناد. لم أنقل التفريغ الإنجليزي المتاح بمصدر آخر. [التفريغ العبري والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q387a/2026-10-06/index.html?v=2026-10-06)؛ [دراسة ديمانت عن الشواهد الستة](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [النص الإنجليزي الآخر للمقارنة فقط](https://theancientbible.org/4q387a/).'
   },
   {
     bookCode: 'Q386', slug: 'heb-qdr-4q386-words-ezekiel-2026',
