@@ -2890,6 +2890,18 @@ export const ADDITIONAL_SOURCES = [
     notes: 'مسودة نقل إنجليزية مستقلة من ٥٤ وحدة تغطي أسطر الشاهد 4Q387 في ثماني مجموعات عرض، أُعدت مباشرة عن تفريغ قمران الرقمي المرخص بالمشاع الإبداعي النسب بالمثل ٤٫٠، مع إسناد التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. حافظت على السقط والاستكمالات التي يضعها المصدر بين أقواس، ولم أوصل الشذرات بعضها ببعض. الترجمة بمساعدة آلية ولم يراجعها متخصص في العبرية؛ تُعلّم مواضع التردد والأسطر التي لا تسمح بقراءة مأمونة، ولا يمثل الشاهد نصاً كاملاً. لا أعيد استخدام ترجمة منشورة من مصدر آخر. [التفريغ العبري ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q387/2026-10-06/index.html?v=2026-10-06)؛ [دراسة ديمانت عن الشواهد الستة](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [دراسة مفتوحة عن خطاب الشاهد](https://www.degruyterbrill.com/document/doi/10.1515/opth-2022-0220/html).'
   },
   {
+    bookCode: 'AJC388A', slug: 'en-project-4q388a-apocryphon-jeremiah-c',
+    nameAr: 'مسودة ترجمة إنجليزية للمشروع لشظايا 4Q388a',
+    nameEn: 'Project English Draft of the 4Q388a Apocryphon of Jeremiah C Fragments', abbreviation: '4Q388a-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q388a/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/apocryphon_jeremiah_4q388a_project_english.json', import.meta.url),
+    expectedSha256: '995450005498ecd8cd3e578ec3cc3aac1fda583d6d9dbb0e21f4088d9851cc29',
+    expectedUnitCount: 67, expectedWordCount: 668, maxChapter: 17, incomplete: true,
+    expectedChapterCounts: [4,5,7,3,1,4,5,11,3,2,4,3,2,3,3,4,3],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة نقل إنجليزية مستقلة من ٦٧ وحدة تقابل جميع الأسطر المنشورة للشاهد 4Q388a ضمن ١٧ مجموعة شظايا، أُعدت مباشرة عن التفريغ العبري المرخص لقمران الرقمي، وتُنشر وفق رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ مع إسناد التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. الترجمة بمساعدة آلية ولم يراجعها متخصص في العبرية؛ حفظتُ الفجوات والقراءات المترددة، وصرّحتُ عندما لا يسمح السطر بترجمة مأمونة. هذه المجموعات ليست فصولاً أصلية ولا يمثل الشاهد نصاً كاملاً. عُثر على مسودة إنجليزية آلية في مشروع آخر، لكن رخصة بياناته غير تجارية، لذلك لم يُنقل نصه ولم يُستخدم مصدراً للترجمة. [التفريغ العبري ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q388a/2026-10-06/index.html?v=2026-10-06)؛ [دراسة ديمانت عن الشواهد الستة](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [بيان المشروع الآخر ورخصة بياناته غير التجارية](https://opendeadsea.org/about/).'
+  },
+  {
     bookCode: 'Q386', slug: 'heb-qdr-4q386-words-ezekiel-2026',
     nameAr: 'شاهد 4Q386 من أقوال حزقيال', nameEn: '4Q386 Words of Ezekiel Witness', abbreviation: '4Q386-HE',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06',
