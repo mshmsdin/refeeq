@@ -2802,7 +2802,19 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 14, expectedWordCount: 194, maxChapter: 2, incomplete: true,
     expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5]],
     language: 'arc', originalLanguage: 'الآرامية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: 'تفريغ الشاهد القمراني الآرامي 4Q242 في ١٤ سطراً من شظايا ١–٣ والشظية ٤، مع حفظ أرقام السطور الأصلية ورابط مصدر كل سطر. يُعرف النص عادةً باسم «صلاة نابونيد» من استهلاله الذي يذكر صلاة ملك بابل ومرضه؛ لكن النص الباقي شذري ولا يضم العمل كاملاً. حفظت علامات السياق المكسور وإضافات المحرر المرتفعة كما يعرضها التفريغ. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب بياناته إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأدرج الأصل الآرامي وحده. [تفريغ 4Q242 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q242/2026-10-06/index.html?v=2026-10-06)؛ [طبعة علمية للشظايا](https://brill.com/previewpdf/book/9789004369887/BP000025.xml).'
+    notes: 'تفريغ الشاهد القمراني الآرامي 4Q242 في ١٤ سطراً من شظايا ١–٣ والشظية ٤، مع حفظ أرقام السطور الأصلية ورابط مصدر كل سطر. يُعرف النص عادةً باسم «صلاة نابونيد» من استهلاله الذي يذكر صلاة ملك بابل ومرضه؛ لكن النص الباقي شذري ولا يضم العمل كاملاً. حفظت علامات السياق المكسور وإضافات المحرر المرتفعة كما يعرضها التفريغ. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وينسب بياناته إلى مشروع معجم قمران السابق ومارتن أبيغ. تتوفر ترجمة إنجليزية مستقلة للمشروع، وتفاصيلها في بطاقة الترجمة. [تفريغ 4Q242 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q242/2026-10-06/index.html?v=2026-10-06)؛ [طبعة علمية للشظايا](https://brill.com/previewpdf/book/9789004369887/BP000025.xml).'
+  },
+  {
+    bookCode: 'Q242', slug: 'en-project-prayer-nabonidus-4q242',
+    nameAr: 'ترجمة إنجليزية مستقلة للمشروع: صلاة نابونيد (4Q242)',
+    nameEn: 'Project English Translation of the Prayer of Nabonidus (4Q242)', abbreviation: '4Q242-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q242/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/prayer_nabonidus_4q242_project_english.json', import.meta.url),
+    expectedSha256: '9aa147332a43e8031a0d4b50b04eb60196d8f31f95fa20573a42c1c0eb12770b',
+    expectedUnitCount: 14, expectedWordCount: 333, maxChapter: 2, incomplete: true,
+    expectedChapterVerseNumbers: [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5]],
+    language: 'en', originalLanguage: 'الآرامية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة نقل إنجليزي مستقلة أُعدت للمشروع مباشرة عن التفريغ الآرامي المرخص، وبمساعدة لغوية آلية غير مراجعة من متخصص في الآرامية. لا تُنسب إلى ترجمة أندرو بيرين المقيدة بالاستخدام غير التجاري. أُبقيت الإضافات التحريرية بين معقوفين، وعُلّمت الأسطر التي لا تسمح الشظايا بترجمتها الموثوقة. هذه ترجمة للشذرات الباقية فقط؛ مجموعتا العرض ليستا فصلين أصليين، والعمل كله غير محفوظ. يُنشر النقل وفق رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ التزاماً برخصة التفريغ الآرامي، إصدار قمران الرقمي في ٦ أكتوبر ٢٠٢٦، المنسوب إلى مشروع معجم قمران السابق ومارتن أبيغ. [التفريغ الآرامي والرخصة](https://lexicon.qumran-digital.org/transcriptions/4Q242/2026-10-06/index.html?v=2026-10-06)؛ [ترجمة أندرو بيرين وبيان رخصتها غير التجارية](https://andrewperrin.com/prnab/).'
   },
   {
     bookCode: 'Q385', slug: 'heb-qdr-4q385-words-ezekiel-2026',
