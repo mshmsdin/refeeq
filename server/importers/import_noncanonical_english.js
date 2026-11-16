@@ -2747,8 +2747,8 @@ export const ADDITIONAL_SOURCES = [
     url: 'https://lexicon.qumran-digital.org/transcriptions/11QT%5Ea%5E/2025-08-25/index.html?v=2025-08-25',
     kind: 'reviewed-unit-text-file',
     textFile: new URL('./data/temple_scroll_11q19_project_english.json', import.meta.url),
-    expectedSha256: '3de04f0caedb448232554ed34c19a6a03fa77ddf6a0a4cc6abfc86209b6e3192',
-    expectedUnitCount: 1071, expectedWordCount: 16203, maxChapter: 1,
+    expectedSha256: '26a63db3276e2819b526001c24444b2d6884488723e9f7b8329f11deda955288',
+    expectedUnitCount: 1071, expectedWordCount: 16779, maxChapter: 1,
     expectedChapterCounts: [1071], incomplete: true,
     language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
     notes: 'مسودة إنجليزية مستقلة أعدها المشروع سطراً سطراً بالرجوع إلى التفريغ العبري المنشور للّفافة الهيكلية 11Q19 لدى مشروع قمران الرقمي، مع إحالة كل وحدة إلى سطرها الأصلي. هذه مسودة أولية غير مراجعة من متخصص في العبرية أو نصوص قمران؛ قد تحتوي على أخطاء في القراءة أو المعنى، وقد وُضعت ملاحظات صريحة عند التلف والقراءة غير المتيقنة، ولم تُستكمل الفراغات بالتخمين. هذا الشاهد لا يمثل النص كاملاً: العمود الأول مفقود والشاهد نفسه متضرر، لذا حالة العمل جزئية. لم يُنسخ نص الترجمة الإنجليزية المنشورة لدى تينمو لأن رخصتها تمنع الاستخدام التجاري. تفريغ المصدر العبري مرخص بالمشاع الإبداعي النسب بالمثل ٤٫٠ وينسب إلى مشروع قمران الرقمي ونص مارتن أبيغ. [التفريغ العبري وبيان الرخصة](https://lexicon.qumran-digital.org/transcriptions/11QT%5Ea%5E/2025-08-25/index.html?v=2025-08-25)؛ [رخصة المصدر](https://creativecommons.org/licenses/by-sa/4.0/)؛ [الترجمة المنشورة المقيدة](https://tianmu.org/good-work-library/judean/dead-sea-scrolls/rewritten-scripture/the-temple-scroll).'
