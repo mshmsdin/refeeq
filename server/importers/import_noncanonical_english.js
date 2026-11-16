@@ -2213,6 +2213,16 @@ const LIVES_OF_PROPHETS_SOURCES = [
   }
 ];
 
+const Q391_CHAPTER_VERSE_NUMBERS = (() => {
+  const groups = new Map();
+  const units = JSON.parse(readFileSync(new URL('./data/words_ezekiel_4q391_qumran_digital_2026.json', import.meta.url), 'utf8'));
+  for (const { chapter, verse } of units) {
+    if (!groups.has(chapter)) groups.set(chapter, []);
+    groups.get(chapter).push(verse);
+  }
+  return [...groups.values()];
+})();
+
 export const ADDITIONAL_SOURCES = [
   {
     bookCode: 'ENO', slug: 'gez-betamasaheft-enoch-eotc-2026',
@@ -2992,7 +3002,19 @@ export const ADDITIONAL_SOURCES = [
     expectedUnitCount: 200, expectedWordCount: 1836, maxChapter: 78, incomplete: true,
     expectedChapterVerseNumbers: [[1,2,3,4],[1,2],[1],[1,2,3,4],[1,2,3,4],[1,2,3],[1,2],[1,2,3,4],[1,2,3,4],[1,2,3],[1,2],[1],[1,2],[1,2],[1,2],[1,2],[1,2],[1,2,3],[1,2],[1],[1,2],[1,2],[1,2,3],[1,2,3,4,5],[1,2],[1],[1,2,3],[1,2,3],[1,2],[1,2,3],[1,2],[1,2,3,4,5],[1,2,3],[1,2,3,4],[1,2,3,4,5],[1,2,3],[1,2,3,4],[1,2,3],[1,2],[1,2],[1,2],[1],[1],[1,2,3],[1],[1],[1,2],[1,2],[1,2,3],[1],[1,2,3,4,5,6],[1],[1],[1,2,3,4,5,6],[1,2,3,4],[1],[1,2,3,4],[1,2,3,4],[1,2,3],[1],[2,3],[1,2,3,4,5,6],[1],[1,2,3],[1,2,3,4,5,6,7,8,9,10,11],[1,2],[1],[1],[1,2],[1,2],[1,2],[1],[1],[1],[1],[1],[1,2,3,4],[1]],
     language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
-    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q391: ٢٠٠ سطر في ٧٨ مجموعة شظايا، مع تسمية كل شظية ورقم السطر ورابط موضع المصدر. دراسة أكاديمية تصفه بأنه على الأرجح نسخة من تقليد «أقوال حزقيال» بسبب أسلوب الكتابة، مع أنه لا يشترك في مقاطع موازية مع الشواهد الأخرى؛ لذلك يسجل كشاهد مستقل، لا بوصفه نسخة مطابقة أو فصلاً من 4Q385 أو 4Q386 أو 4Q388. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. لم أعثر على ترجمة إنجليزية معلنة الإذن بإعادة النشر، فأُدرج الأصل العبري وحده؛ الشظايا لا تمثل العمل كاملاً. [تفريغ 4Q391 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q391/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن صلته بأقوال حزقيال](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+    notes: 'تفريغ عبري جزئي للشاهد القمراني 4Q391: ٢٠٠ سطر في ٧٨ مجموعة شظايا، مع تسمية كل شظية ورقم السطر ورابط موضع المصدر. دراسة أكاديمية تصفه بأنه على الأرجح نسخة من تقليد «أقوال حزقيال» بسبب أسلوب الكتابة، مع أنه لا يشترك في مقاطع موازية مع الشواهد الأخرى؛ لذلك يسجل كشاهد مستقل، لا بوصفه نسخة مطابقة أو فصلاً من 4Q385 أو 4Q386 أو 4Q388. يعلن قمران الرقمي رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ وينسب التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. أُضيفت لاحقاً مسودة إنجليزية مستقلة من المصدر المرخص، وتحفظ الشظايا جزئية ولا تمثل العمل كاملاً. [تفريغ 4Q391 ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q391/2026-10-06/index.html?v=2026-10-06)؛ [دراسة عن صلته بأقوال حزقيال](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
+  },
+  {
+    bookCode: 'Q391', slug: 'en-project-4q391-words-ezekiel',
+    nameAr: 'مسودة إنجليزية مستقلة لشاهد 4Q391', nameEn: 'Independent Project English Draft of the 4Q391 Witness', abbreviation: '4Q391-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q391/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/words_ezekiel_4q391_project_english.json', import.meta.url),
+    expectedSha256: '1823b2ac6d688a3dea4ba38b53bce749d0082c9008c426a7cb42d9c9b56ca16e',
+    expectedUnitCount: 200, expectedWordCount: 1152, maxChapter: 78,
+    expectedChapterVerseNumbers: Q391_CHAPTER_VERSE_NUMBERS,
+    incomplete: true,
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة نقل إنجليزي مستقلة تقابل أسطر الشاهد الـ٢٠٠ في ٧٨ مجموعة عرض، أُعدت مباشرة عن تفريغ قمران الرقمي المرخص بالمشاع الإبداعي النسب بالمثل ٤٫٠، مع إسناد التفريغ إلى مشروع معجم قمران السابق ومارتن أبيغ. تقدم ترجمة جزئية لما أمكن قراءته، وتعلّم ٥١ سطراً تعذر نقلها بأمان؛ وتبقي القراءات البديلة وعلامات الشك صريحة. المسودة بمساعدة آلية ولم يراجعها متخصص في العبرية. لا تحسم هوية العمل ولا تدمج الشاهد مع 4Q385 أو 4Q386 أو 4Q388، ولا يمثل النص كاملاً. تنشر المسودة بالرخصة نفسها مع الإسناد. [التفريغ العبري المرخص](https://lexicon.qumran-digital.org/transcriptions/4Q391/2026-10-06/index.html?v=2026-10-06)؛ [الدراسة عن صلته المحتملة بأقوال حزقيال](https://journals.sagepub.com/doi/10.1177/09518207221115942).'
   },
   {
     bookCode: 'Q243', slug: 'arc-qdr-4q243-pseudo-daniel-a-2026',
