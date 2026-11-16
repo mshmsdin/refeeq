@@ -2926,6 +2926,18 @@ export const ADDITIONAL_SOURCES = [
     notes: 'مسودة ترجمة إنجليزية مستقلة من ٥٦ وحدة تقابل كل أسطر الشاهد 4Q389 في ١٥ مجموعة عرض، أُعدت مباشرة عن التفريغ العبري المرخص لقمران الرقمي. تحفظ فجوات المخطوط والقراءات المحتملة، وتوسم الأسطر التي لا تسمح بترجمة مأمونة؛ وهي بمساعدة آلية ولم يراجعها متخصص في العبرية ولا تمثل الشاهد أو العمل الأدبي كاملاً. ينشر التفريغ المشتق وفق رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ مع الإسناد إلى مشروع معجم قمران السابق ومارتن أبيغ. لم يُستخدم نص أو تفريغ مشروع «الكتاب المقدس القديم» لأن بيانات مخطوطات البحر الميت لديه مرخصة بغير التجاري. [تفريغ قمران الرقمي ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q389/2026-10-06/index.html?v=2026-10-06)؛ [دراسة ديمانت عن الشواهد الستة](https://www.persee.fr/doc/rhpr_0035-2403_2005_num_85_4_1156)؛ [بيان حقوق المشروع الآخر](https://theancientbible.org/about/).'
   },
   {
+    bookCode: 'AJC390', slug: 'en-project-4q390-qumran-witness',
+    nameAr: 'مسودة ترجمة إنجليزية لشاهد قمران 4Q390',
+    nameEn: 'Project English Draft of Qumran Witness 4Q390', abbreviation: '4Q390-EN',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q390/2026-10-06/index.html?v=2026-10-06',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/apocryphon_jeremiah_4q390_project_english.json', import.meta.url),
+    expectedSha256: '09ae4615bc988f3c7410c00a1587101e1c35ab0da28c0a97a863a1ba89a54585',
+    expectedUnitCount: 51, expectedWordCount: 603, maxChapter: 9, incomplete: true,
+    expectedChapterCounts: [13,12,11,4,3,2,2,2,2],
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة ترجمة إنجليزية مستقلة من ٥١ وحدة تقابل جميع أسطر التفريغ العبري المرخص للشاهد 4Q390 في تسع مجموعات عرض. حُفظ الشاهد المادي مستقلاً ولم تُملأ فجواته؛ الترجمة بمساعدة آلية ولم يراجعها متخصص في العبرية ولا تمثل الشاهد نصاً كاملاً. ينشر التفريغ المشتق وفق رخصة المشاع الإبداعي النسب بالمثل ٤٫٠ مع الإسناد إلى مشروع معجم قمران السابق ومارتن أبيغ. نسبة 4Q390 إلى أبوكريفون إرميا ج أو إلى تقليد آخر محل خلاف في الدراسات؛ لذلك لا تسمّي المسودة عملاً أدبياً بعينه. [تفريغ قمران الرقمي ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q390/2026-10-06/index.html?v=2026-10-06)؛ [دراسة تدافع عن ضمه إلى أبوكريفون إرميا ج](https://cris.haifa.ac.il/en/publications/pseudo-ezekiel-and-the-apocryphon-of-jeremiah-c-in-perspective/)؛ [مراجعة الدراسات والتصنيفات](https://www.sbl-site.org/wp-content/uploads/2024/12/9781628375336_txt.pdf).'
+  },
+  {
     bookCode: 'Q386', slug: 'heb-qdr-4q386-words-ezekiel-2026',
     nameAr: 'شاهد 4Q386 من أقوال حزقيال', nameEn: '4Q386 Words of Ezekiel Witness', abbreviation: '4Q386-HE',
     url: 'https://lexicon.qumran-digital.org/transcriptions/4Q386/2026-10-06/index.html?v=2026-10-06',
