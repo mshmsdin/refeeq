@@ -4,6 +4,7 @@ import { ADDITIONAL_SOURCES, run as importNoncanonicalSources } from '../importe
 import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
 const BOOK_CODE = 'Q385B';
+const BOOK_SUMMARY = 'تفريغ جزئي من سبعة أسطر. يختلف التصنيف: دراسة تقترح مؤقتاً أنها ورقة استبدال من بداية «أقوال حزقيال»، ومصدر آخر يدرجها في أبوكريفون إرميا ج؛ لذلك تحفظ كشاهد مادي منفصل لا كتأليف مستقل أو نص كامل.';
 const SOURCES = [
   { slug: 'heb-qdr-4q385b-words-ezekiel-2026', language: 'he', sourceType: 'cc-by-sa-4.0', units: 7, groups: 1 },
   { slug: 'en-project-4q385b-words-ezekiel', language: 'en', sourceType: 'project-translation', units: 7, groups: 1 }
@@ -47,6 +48,11 @@ async function unitsMatch(db, translationId, definition) {
 
 export async function ensureQumran4Q385bTranslationImported() {
   const db = getDb();
+  db.prepare(`
+    UPDATE bible_book_metadata
+    SET summary_ar=?, updated_at=CURRENT_TIMESTAMP
+    WHERE book_code=? AND summary_ar<>?
+  `).run(BOOK_SUMMARY, BOOK_CODE, BOOK_SUMMARY);
   const definitions = SOURCES.map((source) => {
     const definition = ADDITIONAL_SOURCES.find(({ slug }) => slug === source.slug);
     if (!definition) throw new Error(`تعذر العثور على تعريف المصدر ${source.slug}`);
