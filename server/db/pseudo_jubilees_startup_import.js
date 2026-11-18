@@ -1,15 +1,17 @@
 import { readFile } from 'node:fs/promises';
 import { getDb } from './schema.js';
-import { ADDITIONAL_SOURCES, parsePseudoJubileesProjectTranslation, run as importNoncanonicalSources } from '../importers/import_noncanonical_english.js';
+import { ADDITIONAL_SOURCES, parseQumranProjectTranslation, run as importNoncanonicalSources } from '../importers/import_noncanonical_english.js';
 import { parseReviewedUnitText } from '../importers/reviewed_text_source.js';
 
 const WITNESSES = [
   { slug: 'he-qdr-4q225-pseudo-jubilees-a-2026', bookCode: 'PSJUBA', units: 49, chapters: 5 },
   { slug: 'he-qdr-4q226-pseudo-jubilees-b-2026', bookCode: 'PSJUBB', units: 64, chapters: 14 },
   { slug: 'he-qdr-4q227-pseudo-jubilees-c-2026', bookCode: 'PSJUBC', units: 12, chapters: 2 },
+  { slug: 'he-qdr-4q228-jubilees-citation-2023', bookCode: 'Q228', units: 25, chapters: 6 },
   { slug: 'en-project-4q225-pseudo-jubilees-draft', bookCode: 'PSJUBA', units: 49, chapters: 5 },
   { slug: 'en-project-4q226-pseudo-jubilees-draft', bookCode: 'PSJUBB', units: 64, chapters: 14 },
-  { slug: 'en-project-4q227-pseudo-jubilees-draft', bookCode: 'PSJUBC', units: 12, chapters: 2 }
+  { slug: 'en-project-4q227-pseudo-jubilees-draft', bookCode: 'PSJUBC', units: 12, chapters: 2 },
+  { slug: 'en-project-4q228-jubilees-citation-draft', bookCode: 'Q228', units: 25, chapters: 6 }
 ];
 
 function getSourceState(db, witness, definition) {
@@ -40,8 +42,8 @@ function sourceIsReady(state, witness, definition) {
 
 async function sourceUnitsMatch(db, witness, translationId, definition) {
   const raw = await readFile(definition.textFile, 'utf8');
-  const parsed = definition.kind === 'pseudo-jubilees-project-translation'
-    ? await parsePseudoJubileesProjectTranslation(raw, definition)
+  const parsed = definition.kind === 'qumran-project-translation'
+    ? await parseQumranProjectTranslation(raw, definition)
     : parseReviewedUnitText(raw, definition);
   const expected = parsed
     .map(({ chapter, verse, text, sourceUrl }) => ({ chapter, verse, text, source_url: sourceUrl }));
@@ -60,11 +62,13 @@ export async function ensurePseudoJubileesImported() {
       (SELECT canonical_order FROM bible_books WHERE code='PSJUBA') AS first_witness,
       (SELECT canonical_order FROM bible_books WHERE code='PSJUBB') AS second_witness,
       (SELECT canonical_order FROM bible_books WHERE code='PSJUBC') AS third_witness,
+      (SELECT canonical_order FROM bible_books WHERE code='Q228') AS fourth_witness,
       (SELECT canonical_order FROM bible_books WHERE code='AABR') AS next
   `).get();
   if (!order || order.previous !== 12 || order.first_witness !== 12.5
-    || order.second_witness !== 12.6 || order.third_witness !== 12.7 || order.next !== 13) {
-    throw new Error('يجب أن تبقى شواهد 4Q225 و4Q226 و4Q227 بعد روايات إبراهيم وقبل وصيته في المجموعة، مع عدم حسم ترتيبها القصصي');
+    || order.second_witness !== 12.6 || order.third_witness !== 12.7
+    || order.fourth_witness !== 12.8 || order.next !== 13) {
+    throw new Error('يجب أن تبقى شواهد 4Q225 و4Q226 و4Q227 و4Q228 بعد روايات إبراهيم وقبل وصيته في المجموعة، مع عدم حسم ترتيبها القصصي');
   }
 
   const sourcesToImport = [];
