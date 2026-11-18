@@ -10,7 +10,7 @@ process.env.DB_PATH = testDbPath;
 const { getDb, initDatabase } = await import('./schema.js');
 const { initBibleSchema } = await import('./bible_schema.js');
 const { ensurePseudoJubileesImported } = await import('./pseudo_jubilees_startup_import.js');
-const { parsePseudoJubileesProjectTranslation } = await import('../importers/import_noncanonical_english.js');
+const { parseQumranProjectTranslation } = await import('../importers/import_noncanonical_english.js');
 const { ADDITIONAL_SOURCES } = await import('../importers/import_noncanonical_english.js');
 const { parseReviewedUnitText } = await import('../importers/reviewed_text_source.js');
 const { readFile } = await import('node:fs/promises');
@@ -22,17 +22,18 @@ after(() => {
   for (const suffix of ['', '-wal', '-shm']) rmSync(testDbPath + suffix, { force: true });
 });
 
-test('imports separate Hebrew and English partial 4Q225, 4Q226, and 4Q227 witnesses, repairs drift, and avoids duplicates', async () => {
+test('imports separate Hebrew and English partial Qumran witnesses 4Q225 to 4Q228, repairs drift, and avoids duplicates', async () => {
   assert.equal(await ensurePseudoJubileesImported(), true);
   const db = getDb();
   assert.deepEqual(db.prepare(`
     SELECT code, canonical_order FROM bible_books
-    WHERE code IN ('ABR', 'PSJUBA', 'PSJUBB', 'PSJUBC', 'AABR') ORDER BY canonical_order
+    WHERE code IN ('ABR', 'PSJUBA', 'PSJUBB', 'PSJUBC', 'Q228', 'AABR') ORDER BY canonical_order
   `).all(), [
     { code: 'ABR', canonical_order: 12 },
     { code: 'PSJUBA', canonical_order: 12.5 },
     { code: 'PSJUBB', canonical_order: 12.6 },
     { code: 'PSJUBC', canonical_order: 12.7 },
+    { code: 'Q228', canonical_order: 12.8 },
     { code: 'AABR', canonical_order: 13 }
   ]);
 
@@ -40,9 +41,11 @@ test('imports separate Hebrew and English partial 4Q225, 4Q226, and 4Q227 witnes
     { witness: '4Q225', slug: 'he-qdr-4q225-pseudo-jubilees-a-2026', bookCode: 'PSJUBA', units: 49, groups: 5, language: 'he', sourceType: 'cc-by-sa-4.0' },
     { witness: '4Q226', slug: 'he-qdr-4q226-pseudo-jubilees-b-2026', bookCode: 'PSJUBB', units: 64, groups: 14, language: 'he', sourceType: 'cc-by-sa-4.0' },
     { witness: '4Q227', slug: 'he-qdr-4q227-pseudo-jubilees-c-2026', bookCode: 'PSJUBC', units: 12, groups: 2, language: 'he', sourceType: 'cc-by-sa-4.0' },
+    { witness: '4Q228', slug: 'he-qdr-4q228-jubilees-citation-2023', bookCode: 'Q228', units: 25, groups: 6, language: 'he', sourceType: 'cc-by-sa-4.0' },
     { witness: '4Q225', slug: 'en-project-4q225-pseudo-jubilees-draft', bookCode: 'PSJUBA', units: 49, groups: 5, language: 'en', sourceType: 'project-translation' },
     { witness: '4Q226', slug: 'en-project-4q226-pseudo-jubilees-draft', bookCode: 'PSJUBB', units: 64, groups: 14, language: 'en', sourceType: 'project-translation' },
-    { witness: '4Q227', slug: 'en-project-4q227-pseudo-jubilees-draft', bookCode: 'PSJUBC', units: 12, groups: 2, language: 'en', sourceType: 'project-translation' }
+    { witness: '4Q227', slug: 'en-project-4q227-pseudo-jubilees-draft', bookCode: 'PSJUBC', units: 12, groups: 2, language: 'en', sourceType: 'project-translation' },
+    { witness: '4Q228', slug: 'en-project-4q228-jubilees-citation-draft', bookCode: 'Q228', units: 25, groups: 6, language: 'en', sourceType: 'project-translation' }
   ];
   for (const item of expectedWitnesses) {
     const source = ADDITIONAL_SOURCES.find(({ slug }) => slug === item.slug);
@@ -58,8 +61,8 @@ test('imports separate Hebrew and English partial 4Q225, 4Q226, and 4Q227 witnes
       SELECT chapter, verse, text, source_url FROM bible_verses
       WHERE translation_id=? AND book_code=? ORDER BY chapter, verse
     `).all(translation.id, item.bookCode);
-    const expectedRows = source.kind === 'pseudo-jubilees-project-translation'
-      ? await parsePseudoJubileesProjectTranslation(await readFile(source.textFile, 'utf8'), source)
+    const expectedRows = source.kind === 'qumran-project-translation'
+      ? await parseQumranProjectTranslation(await readFile(source.textFile, 'utf8'), source)
       : parseReviewedUnitText(await readFile(source.textFile, 'utf8'), source);
     const expected = expectedRows
       .map(({ chapter, verse, text, sourceUrl }) => ({ chapter, verse, text, source_url: sourceUrl }));
@@ -78,5 +81,5 @@ test('imports separate Hebrew and English partial 4Q225, 4Q226, and 4Q227 witnes
   assert.match(db.prepare("SELECT text FROM bible_verses WHERE translation_id=? AND book_code='PSJUBA' AND chapter=1 AND verse=1").get(first.id).text, /^‹4Q225 frg\. 1, line 1›/u);
   assert.match(db.prepare("SELECT text FROM bible_verses WHERE translation_id=? AND book_code='PSJUBA' AND chapter=1 AND verse=1").get(firstEnglish.id).text, /sexual immorality/u);
   assert.equal(await ensurePseudoJubileesImported(), false);
-  assert.equal(db.prepare("SELECT COUNT(*) AS count FROM bible_verses WHERE book_code IN ('PSJUBA','PSJUBB','PSJUBC')").get().count, 250);
+  assert.equal(db.prepare("SELECT COUNT(*) AS count FROM bible_verses WHERE book_code IN ('PSJUBA','PSJUBB','PSJUBC','Q228')").get().count, 300);
 });

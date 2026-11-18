@@ -2802,7 +2802,7 @@ export const ADDITIONAL_SOURCES = [
     bookCode: code, slug: `en-project-${witness.toLowerCase()}-pseudo-jubilees-draft`,
     nameAr: `مسودة الترجمة الإنجليزية المستقلة لشذرات ${witness} (منحول اليوبيلات ${label} تقليدياً)`,
     nameEn: `Project English Draft of ${witness} Witness`, abbreviation: `${witness}-EN-DRAFT`,
-    url, kind: 'pseudo-jubilees-project-translation',
+    url, kind: 'qumran-project-translation',
     textFile: new URL('./data/pseudo_jubilees_project_english_lines.json', import.meta.url),
     sourceTextFile: new URL(`./data/pseudo_jubilees_${witness.toLowerCase()}_qumran_digital_2026.json`, import.meta.url),
     draftKey: code, expectedUnitCount: units, maxChapter: groups,
@@ -2810,6 +2810,29 @@ export const ADDITIONAL_SOURCES = [
     language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
     notes: `مسودة إنجليزية أعدها المشروع مباشرة من التفريغ العبري المرخص للشاهد القمراني ${witness}، سطراً بسطر، وتحفظ لكل سطر رابط موضعه في المصدر. هذه المجموعات وحدات عرض للشظايا وليست فصولاً أصلية؛ النص الباقي جزئي جداً، والأسطر التالفة أو التي لا تسمح بترجمة آمنة موسومة صراحة ولا تُستكمل بالتخمين. المسودة أولية وغير مراجعة من متخصص في العبرية ونصوص قمران، ولا تمثل عملاً كاملاً. التسمية «منحول اليوبيلات ${label}» تقليدية وغير حاسمة؛ لا يثبت هذا السجل أن الشاهد نسخة من سفر اليوبيلات، كما أن وحدة 4Q227 مع الشاهدين الآخرين موضع خلاف. صياغة الإنجليزية من إعداد المشروع وليست منقولة عن ترجمة منشورة؛ رخصة المصدر العبري هي المشاع الإبداعي النسب بالمثل ٤٫٠، ولا يعني ذلك تلقائياً ترخيص هذه المسودة. [تفريغ الشاهد العبري ورخصته](https://lexicon.qumran-digital.org/transcriptions/${witness}/2026-10-06/index.html)؛ [دراسة أكاديمية عن اختلاف الشواهد وصلاتها](https://ub01.uni-tuebingen.de/xmlui/bitstream/handle/10900/172632/Kratz_108.pdf?isAllowed=y&sequence=1).`
   })),
+  {
+    bookCode: 'Q228', slug: 'he-qdr-4q228-jubilees-citation-2023',
+    nameAr: 'الشاهد القمراني «عمل يذكر اليوبيلات» 4Q228',
+    nameEn: 'Qumran Digital Hebrew 4Q228 Work Mentioning Jubilees', abbreviation: '4Q228-HE',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q228/2023-12-08/index.html?v=2023-12-08',
+    kind: 'reviewed-unit-text-file', textFile: new URL('./data/4q228_qumran_digital_2023.json', import.meta.url),
+    expectedSha256: '2f55446c44a1cd05ad5d58cdc4f5c0046200de33d3f071dbc6b94a8c089ae0e0', expectedUnitCount: 25, expectedWordCount: 118, maxChapter: 6,
+    expectedChapterVerseNumbers: [[2,3,4,5,6,7,8,9,10,11,12,13,14,15],[1,2,3,4,5],[1,2,3],[1],[1],[1]],
+    incomplete: true, language: 'he', originalLanguage: 'العبرية', sourceType: 'cc-by-sa-4.0', siteScope: 'both',
+    notes: 'تفريغ عبري مرخص من ٢٥ سطراً محفوظاً في ست مجموعات عرض للشاهد القمراني 4Q228؛ كل وحدة تحتفظ برقم السطر الأصلي ورابط مباشر إلى صفحة التفريغ. هذه المجموعات ليست فصولاً أصلية. يسمّي فهرس قمران الرقمي العمل «عمل يذكر اليوبيلات»، أما هويته الأدبية فلا تُحسم بعنوان «اقتباس من كتاب اليوبيلات»؛ فعبارة «تقسيمات الأزمنة» قد تشير إلى نظام زمني مشترك ولا تثبت وحدها الاقتباس أو الانتماء إلى كتاب اليوبيلات. الشاهد شذري وجزئي. تعلن صفحة المصدر رخصة المشاع الإبداعي النسب بالمثل ٤٫٠، وتنسب التفريغ إلى مشروع قمران الرقمي وبيانات معجم قمران السابقة ونص مارتن أبيغ. لا تعرض الصفحة ترجمة إنجليزية؛ تحفظ معه مسودة مستقلة للمشروع في سجل منفصل. [تفريغ الشاهد ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q228/2023-12-08/index.html?v=2023-12-08)؛ [دراسة عن دلالة عبارة «تقسيمات الأزمنة»](https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/04/06/31/2020040631/2020040631.pdf).'
+  },
+  {
+    bookCode: 'Q228', slug: 'en-project-4q228-jubilees-citation-draft',
+    nameAr: 'مسودة ترجمة إنجليزية مستقلة لشذرات 4Q228',
+    nameEn: 'Project English Draft of 4Q228', abbreviation: '4Q228-EN-DRAFT',
+    url: 'https://lexicon.qumran-digital.org/transcriptions/4Q228/2023-12-08/index.html?v=2023-12-08',
+    kind: 'qumran-project-translation',
+    textFile: new URL('./data/q228_project_english_lines.json', import.meta.url),
+    sourceTextFile: new URL('./data/4q228_qumran_digital_2023.json', import.meta.url),
+    draftKey: 'Q228', expectedUnitCount: 25, maxChapter: 6, incomplete: true,
+    language: 'en', originalLanguage: 'العبرية', sourceType: 'project-translation', siteScope: 'both',
+    notes: 'مسودة إنجليزية مستقلة أعدها المشروع من الشاهد العبري 4Q228، وتحفظ ترتيب سطوره وروابط المصدر المباشرة. تعرض الكلمات المقروءة مع علامات الفجوات، وتضع ملاحظة صريحة عندما تكون القراءة ملتبسة أو لا تكفي للترجمة. هذه مسودة أولية غير مراجعة من متخصص في العبرية أو مخطوطات قمران، ولا تكمل الشاهد ولا تمثل العمل المفقود كاملاً. صفحة التفريغ العبري تعلن رخصة المشاع الإبداعي النسب بالمثل ٤٫٠؛ لا تُنسب هذه الرخصة تلقائياً إلى صياغة المسودة. لا تنسب الترجمة هذا الشاهد إلى سفر اليوبيلات على وجه اليقين، رغم العنوان التقليدي الذي يستعمله بعض الفهارس. [التفريغ العبري ورخصته](https://lexicon.qumran-digital.org/transcriptions/4Q228/2023-12-08/index.html?v=2023-12-08)؛ [مناقشة أكاديمية لعنوان الشاهد ودلالة مصطلحه](https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/04/06/31/2020040631/2020040631.pdf).'
+  },
   {
     bookCode: 'Q246', slug: 'arc-qdr-4q246-aramaic-apocalypse-2026',
     nameAr: 'تفريغ الشاهد الآرامي 4Q246 (أبوكريفون دانيال)',
@@ -3679,7 +3702,7 @@ export function parseActsThomas(content, source) {
   });
 }
 
-export async function parsePseudoJubileesProjectTranslation(content, source) {
+export async function parseQumranProjectTranslation(content, source) {
   let draftSet;
   let sourceUnits;
   try {
@@ -3710,7 +3733,7 @@ async function parseChapters(content, source) {
   if (source.kind === 'reviewed-text-file') return parseReviewedText(content, source);
   if (source.kind === 'reviewed-chapter-text-file') return parseReviewedChapterText(content, source);
   if (source.kind === 'reviewed-unit-text-file') return parseReviewedUnitText(content, source);
-  if (source.kind === 'pseudo-jubilees-project-translation') return parsePseudoJubileesProjectTranslation(content, source);
+  if (source.kind === 'qumran-project-translation') return parseQumranProjectTranslation(content, source);
   if (source.kind === 'complete-letter-html') {
     const body = content.split(/<h[1-6]\b[^>]*>\s*About this page\s*<\/h[1-6]>/i)[0];
     const headings = [...body.matchAll(/<h[1-6]\b[^>]*>\s*Chapter\s+(\d+)\.([\s\S]*?)<\/h[1-6]>/gi)];
@@ -3936,7 +3959,7 @@ export async function run(requestedSlugs = null, { initializeDatabase = true } =
       source.language, source.url, source.sourceType, source.notes, source.siteScope || 'both', 40 + index
     );
     const translationId = db.prepare('SELECT id FROM bible_translations WHERE slug=?').get(source.slug).id;
-    const content = ['reviewed-text-file', 'reviewed-chapter-text-file', 'reviewed-unit-text-file', 'pseudo-jubilees-project-translation'].includes(source.kind)
+    const content = ['reviewed-text-file', 'reviewed-chapter-text-file', 'reviewed-unit-text-file', 'qumran-project-translation'].includes(source.kind)
       ? await readFile(source.textFile, 'utf8')
       : ['structured-html', 'sacredthings-html', 'ertale-chapter-html', 'diatessaron-wikisource', 'intertextual-paged-chapters-html'].includes(source.kind)
         ? null

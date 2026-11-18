@@ -62,7 +62,7 @@ test('orders Old Testament pseudepigrapha approximately by story era', () => {
   `).all().map(({ canonical_order }) => canonical_order);
   const orders = Object.fromEntries(db.prepare(`
     SELECT code, canonical_order FROM bible_books
-    WHERE code IN ('TADAM', 'APMO', 'ENO2', 'NOAH', 'BNOAH', 'GENAP', 'PSJUBA', 'PSJUBB', 'PSJUBC', 'GIANTS', 'ENO3', 'SHEM', 'ABR', 'MOS', 'MOTA-MUSE', 'TSOL', 'APDAN', 'Q243', 'Q244', 'Q245', 'Q246', 'Q521', 'Q242', 'Q385', 'Q385B', 'Q386', 'Q388', 'Q391', '2BAR', 'QEZRA')
+    WHERE code IN ('TADAM', 'APMO', 'ENO2', 'NOAH', 'BNOAH', 'GENAP', 'PSJUBA', 'PSJUBB', 'PSJUBC', 'Q228', 'GIANTS', 'ENO3', 'SHEM', 'ABR', 'MOS', 'MOTA-MUSE', 'TSOL', 'APDAN', 'Q243', 'Q244', 'Q245', 'Q246', 'Q521', 'Q242', 'Q385', 'Q385B', 'Q386', 'Q388', 'Q391', '2BAR', 'QEZRA')
   `).all().map(({ code, canonical_order }) => [code, canonical_order]));
 
   assert.deepEqual(allOrders, [...allOrders].sort((left, right) => left - right));
@@ -81,6 +81,7 @@ test('orders Old Testament pseudepigrapha approximately by story era', () => {
     PSJUBA: 12.5,
     PSJUBB: 12.6,
     PSJUBC: 12.7,
+    Q228: 12.8,
     MOS: 24,
     'MOTA-MUSE': 25,
     TSOL: 28,
