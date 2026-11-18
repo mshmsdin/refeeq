@@ -20,8 +20,8 @@ after(() => {
 
 test('imports the Arabic translations with exact unit counts and honest labels', () => {
   const imported = ensureArabicTranslationsImported();
-  assert.equal(imported.length, 106);
-  for (const code of ['1MCE', '2MCE', '3MCE', 'ONK-GEN', 'TJ-GEN', 'SAAD-GEN', 'ONK-DEU', 'TJ-DEU', 'SAAD-DEU', 'MSH-MISHNAH-BERAKHOT', 'MSH-MISHNAH-OKTZIN']) {
+  assert.equal(imported.length, 107);
+  for (const code of ['MOS', '1MCE', '2MCE', '3MCE', 'ONK-GEN', 'TJ-GEN', 'SAAD-GEN', 'ONK-DEU', 'TJ-DEU', 'SAAD-DEU', 'MSH-MISHNAH-BERAKHOT', 'MSH-MISHNAH-OKTZIN']) {
     assert.ok(imported.includes(code), code);
   }
   const db = getDb();
@@ -39,6 +39,7 @@ test('imports the Arabic translations with exact unit counts and honest labels',
     { slug: 'ar-mohammad-1mce', name_ar: 'ترجمة محمد بن شمس الدين', source_type: 'machine-assisted-translation', units: 240 },
     { slug: 'ar-mohammad-2mce', name_ar: 'ترجمة محمد بن شمس الدين', source_type: 'machine-assisted-translation', units: 421 },
     { slug: 'ar-mohammad-3mce', name_ar: 'ترجمة محمد بن شمس الدين', source_type: 'machine-assisted-translation', units: 208 },
+    { slug: 'ar-mohammad-mos', name_ar: 'ترجمة محمد بن شمس الدين', source_type: 'machine-assisted-translation', units: 129 },
     { slug: 'ar-mohammad-targum-pseudo-jonathan', name_ar: 'ترجمة محمد بن شمس الدين', source_type: 'machine-assisted-translation', units: 5761 }
   ]);
   assert.deepEqual(ensureArabicTranslationsImported(), []);
